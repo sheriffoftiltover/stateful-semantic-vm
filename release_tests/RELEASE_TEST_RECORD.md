@@ -22,3 +22,7 @@ All checks below ran on this repository's release tree before the initial commit
 | Secret scan (two passes) | `python3 scripts/release_scan.py --known …` | **SCAN_CLEAN** (see `RELEASE_SECURITY_AUDIT.md`) |
 
 Not run for this release: any hosted-model (tier 2) run, and full acquisition re-execution against the response caches (tier 3). See `docs/reproduction.md`.
+
+## Commit
+
+The checks above ran on the tree of release commit `89e760fd3277d45089bc985424468cf9197c3b20`. The follow-up commit that adds this section changes only this file.
