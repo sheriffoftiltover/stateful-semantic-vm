@@ -1,5 +1,25 @@
 # Release notes
 
+## v1.0.1 (2026-09-28): review revisions
+
+Changes made in response to an external critique. No experiment was rerun and no reported number changed.
+
+- **New `docs/verification_audit.md`.** A read-only audit of every gate-deciding check:
+  - the permissive teardown class occurs in two helpers (PDX, HTG/TTP/RCI), and its permissive path was taken once (RCI LOCKED);
+  - "hosted calls" and "network attempts" are one measurement from an in-process guard;
+  - two aggregate checks would pass on empty input, but never received empty input;
+  - the oracle shares its parsing and hashing code with the runtime;
+  - completeness is relative to the lesson, not to the goal.
+- **Paper changes:**
+  - the abstract and introduction name the three roles (the library is the capability, the 120B is the acquirer, the 1.5B is a fixed retrieval front end);
+  - new subsection "Verifying the verification code";
+  - the network guard is described as instrumentation;
+  - the DEV draws are stated as carrying the causal claim;
+  - the single-author / no-replication limitation moves to the top of the list, and three explicit limitation sentences are added;
+  - future work is reordered: scaling, open-English reuse and cross-domain acquisition come first, alongside the cheap LOCKED replication, plus a boundary experiment where the teacher must invent the decomposition.
+- **Docs:** README, limitations and architecture are updated to match.
+- **Title unchanged** ("External Procedural Distillation …"); a retitle is under consideration.
+
 ## v1.0.0 (2026-09-28): initial public release
 
 This is a clean, sanitized repository. It was curated from the author's internal experiment tree by `scripts/build_release.py`, and the internal git history is not included.

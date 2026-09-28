@@ -67,7 +67,7 @@ The verifier battery:
 2. Probe the endpoint. The registered requirement is **HTTP 404 / unavailable**.
 3. Remove teaching transcripts and context.
 4. Scrub teacher credentials from the environment.
-5. Start fresh processes under a network guard (`netguard/`) that blocks and logs non-loopback connections.
+5. Start fresh processes under a network guard (`netguard/`) that patches Python's `socket.connect` / `create_connection` to block and log non-loopback connections. This is instrumentation, not isolation; see [verification_audit.md](verification_audit.md).
 6. Assert the student weight hash in every process.
 
 The helper used by all runs up to and including RCI's LOCKED accepted *any* HTTP error. It now polls until a real 404; this post-run change was not used by any RCI run. See the paper, §6.

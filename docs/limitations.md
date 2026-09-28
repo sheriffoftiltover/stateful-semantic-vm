@@ -4,6 +4,15 @@ These are the limitations of what was observed. Future work, which is not a resu
 
 ## Limitations
 
+- **Single author, single executor, no external replication.**
+  - Every number was produced under the author's own preregistered definitions, executed by one automated system.
+  - Sealed sets reduce but do not replace independent replication, so treat the central claim as a strong pilot until a different executor runs a sealed set.
+- **The 1.5B model's role is narrow.** It only ranks procedure names and writes argument text after handoff, behind deterministic checks.
+- **The teacher is in the acquisition chain but not the execution chain.** No claim is made that the student learned the teacher's knowledge.
+- **Verification infrastructure has the same completeness problem as the semantic layer.** See [verification_audit.md](verification_audit.md):
+  - the permissive teardown check;
+  - network "isolation" that is really in-process instrumentation;
+  - two checks that would pass vacuously on empty input.
 - **Synthetic, bounded domain.**
   - One personal-organizer world and a 21-primitive step language.
   - Curricula are drawn from 13–15 procedure families plus composites.

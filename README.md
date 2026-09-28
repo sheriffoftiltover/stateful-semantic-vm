@@ -1,12 +1,13 @@
 # Stateful Semantic VM (SEMVM): external procedural distillation into verified procedural memory
 
-**Headline.** A frozen Qwen2.5-Coder-1.5B–based system learned new procedures from a temporary gpt-oss-120b teacher. It then reused them after the teacher was destroyed, without any change to its neural weights. Across two independent development draws it exactly learned **70/72** target procedures with **0** wrong committed actions. The sealed LOCKED evaluation passed every behavioral acquisition, grounding, safety, and reuse criterion (**23/23** learned, **20/20** scenarios), but it failed the preregistered proof-of-teacher-disconnection condition: teardown was probed before the hosted endpoint had fully disappeared (HTTP 401 instead of the required 404). LOCKED is therefore **not a clean pass**.
+**Headline.** A temporary gpt-oss-120b teacher taught procedures that were verified and stored in an external library. After the teacher was destroyed, a system whose only resident model is a frozen Qwen2.5-Coder-1.5B reused them, with no change to any neural weights. Across two independent development draws it exactly learned **70/72** target procedures with **0** wrong committed actions. The sealed LOCKED evaluation passed every behavioral acquisition, grounding, safety, and reuse criterion (**23/23** learned, **20/20** scenarios), but it failed the preregistered proof-of-teacher-disconnection condition: teardown was probed before the hosted endpoint had fully disappeared (HTTP 401 instead of the required 404). LOCKED is therefore **not a clean pass**.
 
 | Question | Short answer |
 |---|---|
 | **What is this?** | Research code, preregistrations and raw evidence for SEMVM. It is a small frozen language model inside a deterministic runtime (SQLite world model + VM + procedure library). Neural models only *propose*; deterministic code *decides* what executes, what counts as evidence, and what gets activated. |
 | **What was shown?** | Natural-language lessons from a hosted teacher were turned into sandboxed, committed traces. A deterministic anti-unifier then produced programs from those traces, and an evidence verifier checked each one. Only verified programs were activated in `procedures.sqlite`. They were then reused exactly after restarts, with new wording and unseen arguments, and with the teacher gone. See [paper](paper/SEMVM_PREPRINT.pdf) §5–§7. |
 | **What is the caveat?** | LOCKED's teardown-verification gate failed as registered (401 race, §6 of the paper). LOCKED was not and will not be rerun. The domain is synthetic and bounded. |
+| **Who does what?** | The verified procedure library *is* the capability. The temporary 120B model is the *acquirer*: it writes lessons and grounds each lesson line. The frozen 1.5B model is a fixed *retrieval front end*: after handoff it ranks procedure names and writes argument text behind deterministic checks. |
 | **What is *not* claimed?** | The 1.5B model did not learn the 120B model's knowledge. This is not weight distillation. It is not open-domain continual learning, autonomous self-improvement, arbitrary program synthesis, indefinite scaling, or human-level generality. Library growth still needs a teacher. |
 | **Where is the evidence?** | [`experiments/`](experiments/): seven as-run experiments with specs, locks, result JSONs, engineering logs and raw teacher/grounder/judge responses. [`examples/close_oldest_open_request/`](examples/close_oldest_open_request/) is one worked case, end to end. |
 | **How do I run it?** | `scripts/run_tests.sh` (127 tests, no hosted model); `python scripts/dump_case.py --suite dev_a --scenario dev_a-022-S15 --arm D`. See [docs/reproduction.md](docs/reproduction.md). |
@@ -74,7 +75,7 @@ Tiers 2 and 3 (hosted teacher integration, and exact historical results from res
 | Path | Contents |
 |---|---|
 | `paper/` | `main.tex`, `references.bib`, TikZ and matplotlib figures, generated tables, `SEMVM_PREPRINT.pdf` |
-| `docs/` | architecture, experiment lineage, worked example, limitations, reproduction, artifact map |
+| `docs/` | architecture, experiment lineage, worked example, limitations, reproduction, artifact map, verification audit, project history |
 | `experiments/<EXPERIMENT>/` | as-run code, `spec/` (preregistration + amendments), `locks/`, `scenarios/`, `results/`, raw evidence directories |
 | `examples/close_oldest_open_request/` | the worked example (dev_a-022-S15, Arm D) as small text files |
 | `scripts/` | `build_release.py` (how this tree was curated), `run_tests.sh`, `make_figures_tables.py`, `make_example_bundle.py`, `dump_case.py`, `show_scenario.py` |
@@ -89,6 +90,7 @@ The code under `experiments/` is **as run**, one copy per experiment. It is deli
 - **Invalid and superseded runs are kept.** This includes TTP FINAL_DEV attempt 1 (`results/archive/final_dev_attempt1_INVALID`), the PDX and PDISC superseded DEV attempts, and the RCI Stage 0C wrong-app teardown. See paper §8.
 - **Four frozen files carry documented post-run edits.** These are TTP Amendment 003 (two files), an HTG evaluator repair, and the post-RCI teardown fix. Every other frozen file matches its freeze manifest, and path sanitization is recorded file by file.
 - **Sealed LOCKED sets that were never run have their contents withheld.** Their hash manifests are included.
+- **The gate-deciding checks were audited** ([docs/verification_audit.md](docs/verification_audit.md)). The permissive-teardown class of bug occurs in two helpers; the permissive path was taken once (RCI LOCKED). "0 hosted calls" and "0 network attempts" are one measurement from an in-process network guard, which is instrumentation, not isolation. Two aggregate checks would pass on empty input, but never received empty input. No released number changes.
 
 ## Citation
 
