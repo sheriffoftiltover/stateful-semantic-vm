@@ -1,0 +1,158 @@
+{
+ "scenario_id": "dev-003-S1",
+ "suite": "dev",
+ "category": "S1",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request epsilon to message beta , at 8 per beta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "8"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "WHEN",
+      "8",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "I",
+   "layout": [
+    "after_o1",
+    [
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF MESSAGE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF REQUEST"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHEN",
+      "time:08:00"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "8"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHEN",
+      "time:08:00"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHEN",
+      "time:08:00"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

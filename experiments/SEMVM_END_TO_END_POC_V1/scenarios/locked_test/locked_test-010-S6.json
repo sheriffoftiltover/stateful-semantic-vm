@@ -1,0 +1,496 @@
+{
+ "scenario_id": "locked_test-010-S6",
+ "suite": "locked_test",
+ "category": "S6",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "remind epsilon : to Ivan re alpha ; so then again soon , message alpha ; while in Dublin re epsilon",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Ivan"
+     },
+     {
+      "local_id": "v1",
+      "type": "PLACE",
+      "surface": "Dublin"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "RECIPIENT",
+      "subject": "e1",
+      "object": "v0"
+     },
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e0",
+      "object": "v1"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "RECIPIENT",
+      "Ivan",
+      "inner"
+     ],
+     [
+      "WHERE",
+      "Dublin",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o2",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "ASSERT",
+   "text": "email theta ; so and then later again , about lease per theta : note gamma",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TOPIC_VALUE",
+      "surface": "lease"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "TOPIC",
+      "lease",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "I",
+   "layout": [
+    "between_i3",
+    [
+     "M1"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY RECIPIENT OF MESSAGE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY RECIPIENT OF REMINDER"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF REMINDER"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF MESSAGE"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Ivan"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:lease"
+     ],
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Ivan"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Ivan"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:lease"
+     ],
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Ivan"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:lease"
+     ],
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Ivan"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Dublin"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:lease"
+     ],
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Ivan"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:lease"
+     ],
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Ivan"
+     ]
+    ]
+   }
+  }
+ ]
+}

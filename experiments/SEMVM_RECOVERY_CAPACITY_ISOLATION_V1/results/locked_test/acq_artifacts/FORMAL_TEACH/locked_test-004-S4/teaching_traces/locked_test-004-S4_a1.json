@@ -1,0 +1,58 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Kevin"
+ },
+ "interaction_id": "locked_test-004-S4:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-004-S4/learn/snapshots/locked_test-004-S4_a1_start.sqlite",
+ "start_snapshot_sha256": "3c4d4b5495923ff8f9468f06c758dc8f97b43383b5fc6479e384a39e71098c5e",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Kevin"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "31d4d1b5cb408781cf368282ccf92ca5eb1d7d4ab91c8c1149a47e1ec91ea2db",
+ "nl_mode": "GOLD_TRACE"
+}

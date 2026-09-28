@@ -1,0 +1,1285 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642515,
+  "utterance_id": "dev-023-S9:0",
+  "INPUT": "request delta ; at 4 per delta : next and then so ; message theta : by Dad per theta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "4",
+       4
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Dad",
+       17
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Dad",
+      17
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "4",
+      4
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1644.37890625,
+   "margin": 7.16845703125,
+   "n_outputs": 89,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Dad"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "4"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Dad",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "4",
+    "time:04:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Dad"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:04:00",
+    "TIME",
+    "04:00",
+    "4"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:04:00"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "6871a7a0242d5f604de8b0d8cba0bf620cfdae2d82d5e0f59315f3bac59a9c56",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Dad"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHEN",
+    "time:04:00"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "5c036d0e5a9a7c5421afd20ec054588dbb3ca1902124715f9a373e2721aa5c91",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:04:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dad"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642515,
+  "utterance_id": "dev-023-S9:1",
+  "INPUT": "request beta by Quinn per gamma , and after that then , message gamma and at 1:30 re beta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "5c036d0e5a9a7c5421afd20ec054588dbb3ca1902124715f9a373e2721aa5c91",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o3",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       12
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "1:30",
+       16
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       12
+      ],
+      [
+       "PERSON",
+       "Quinn",
+       3
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      12
+     ],
+     [
+      "PERSON",
+      "Quinn",
+      3
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "1:30",
+      16
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1024.94873046875,
+   "margin": 7.6116943359375,
+   "n_outputs": 95,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Quinn"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "1:30"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Quinn",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "1:30",
+    "time:01:30"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Quinn"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:01:30",
+    "TIME",
+    "01:30",
+    "1:30"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:01:30"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "213db31b5bfa236a28455a650a973f3649fe4e5d0bbc6fffe460c82ded36d863",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000002",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Quinn"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "TODO",
+    "message:000002"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "WHEN",
+    "time:01:30"
+   ],
+   [
+    "+rel",
+    "message:000002",
+    "WHO",
+    "person:000002"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "889c7a61e2e80d4de593e4e327576119a6e08eefe103671720f8509ddccae862",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:04:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:01:30"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dad"
+    ],
+    [
+     "person:000002",
+     "Quinn"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642515,
+  "utterance_id": "dev-023-S9:2",
+  "INPUT": "request theta ; at dusk per theta : next and then so ; message delta : by Mallory re delta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "889c7a61e2e80d4de593e4e327576119a6e08eefe103671720f8509ddccae862",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "dusk",
+       4
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Mallory",
+       17
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Mallory",
+      17
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "dusk",
+      4
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1416.632080078125,
+   "margin": 7.8939208984375,
+   "n_outputs": 89,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Mallory"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "dusk"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Mallory",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "dusk",
+    "time:DUSK"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Mallory"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:DUSK",
+    "TIME",
+    "DUSK",
+    "dusk"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "aead858feaf242f734a3c0ac28757f1be8339fba62510752ea0b4bcaa0086a9b",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000003",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Mallory"
+   ],
+   [
+    "+rel",
+    "request:000003",
+    "TODO",
+    "message:000003"
+   ],
+   [
+    "+rel",
+    "request:000003",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "+rel",
+    "message:000003",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "aed88f9934d924dec87e87d0829af5ec5fa4c05baa431567b6c004f5a4da77ae",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "message:000003",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "message:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:04:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:01:30"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "message:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dad"
+    ],
+    [
+     "person:000002",
+     "Quinn"
+    ],
+    [
+     "person:000003",
+     "Mallory"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642515,
+  "utterance_id": "dev-023-S9:3",
+  "INPUT": "QUERY WHO OF MESSAGE WHERE PARENT.WHEN=4",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "aed88f9934d924dec87e87d0829af5ec5fa4c05baa431567b6c004f5a4da77ae",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     "4"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       "time:04:00"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "3c2285dc3ab2949c5f41c96df00144b8aa14a954be037a12d4ae6da17edb27f8",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "aed88f9934d924dec87e87d0829af5ec5fa4c05baa431567b6c004f5a4da77ae",
+  "RESPONSE": "Dad",
+  "RETURN_RENDERED": [
+   "Dad"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "message:000003",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "message:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:04:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:01:30"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "message:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dad"
+    ],
+    [
+     "person:000002",
+     "Quinn"
+    ],
+    [
+     "person:000003",
+     "Mallory"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2642515,
+  "utterance_id": "dev-023-S9:4",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "aed88f9934d924dec87e87d0829af5ec5fa4c05baa431567b6c004f5a4da77ae",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001",
+   "person:000002",
+   "person:000003"
+  ],
+  "STATE_AFTER": "aed88f9934d924dec87e87d0829af5ec5fa4c05baa431567b6c004f5a4da77ae",
+  "RESPONSE": "Dad, Mallory, Quinn",
+  "RETURN_RENDERED": [
+   "Dad",
+   "Mallory",
+   "Quinn"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "message:000003",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "message:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:04:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:01:30"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "message:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dad"
+    ],
+    [
+     "person:000002",
+     "Quinn"
+    ],
+    [
+     "person:000003",
+     "Mallory"
+    ]
+   ]
+  }
+ }
+]

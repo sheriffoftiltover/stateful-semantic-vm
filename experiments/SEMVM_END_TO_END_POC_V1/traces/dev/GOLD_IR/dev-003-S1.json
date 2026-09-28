@@ -1,0 +1,277 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641186,
+  "utterance_id": "dev-003-S1:0",
+  "INPUT": "request epsilon to message beta , at 8 per beta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "TIME",
+     "surface": "8"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "TIME",
+    "v0",
+    "8",
+    "time:08:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:08:00",
+    "TIME",
+    "08:00",
+    "8"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHEN",
+    "time:08:00"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "52d51eaa6b400df2560b787f4d27983f2b3133ebdc0dafc9097ce51f039ebe48",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHEN",
+    "time:08:00"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "ad10d4c50fd4780e9a8661e30a5410befb888a119d293449bae5348e59c0ae35",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:08:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641186,
+  "utterance_id": "dev-003-S1:1",
+  "INPUT": "QUERY WHEN OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "ad10d4c50fd4780e9a8661e30a5410befb888a119d293449bae5348e59c0ae35",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f2d2b4f8c9d2917499cb9a4ca9ddc2bc0b05629142b0a1dfa8ddd84993d8a082",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:08:00"
+  ],
+  "STATE_AFTER": "ad10d4c50fd4780e9a8661e30a5410befb888a119d293449bae5348e59c0ae35",
+  "RESPONSE": "8",
+  "RETURN_RENDERED": [
+   "8"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:08:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641186,
+  "utterance_id": "dev-003-S1:2",
+  "INPUT": "QUERY WHEN OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "ad10d4c50fd4780e9a8661e30a5410befb888a119d293449bae5348e59c0ae35",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "32db73cd9f8ea039b52262b94825684de94b0a5a3720f4192f1257adcaad0f3b",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "ad10d4c50fd4780e9a8661e30a5410befb888a119d293449bae5348e59c0ae35",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:08:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

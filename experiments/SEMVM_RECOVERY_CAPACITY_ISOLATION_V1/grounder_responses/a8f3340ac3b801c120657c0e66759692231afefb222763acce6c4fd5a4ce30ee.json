@@ -1,0 +1,33 @@
+{
+ "text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"CALL\",\n      \"where\": {\n        \"WHO\": \"Sam\"\n      },\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"bind\": \"r2\",\n      \"op\": \"COUNT\",\n      \"of\": \"r1\"\n    }\n  ]\n}",
+ "provenance": {
+  "role": "grounder",
+  "provider": "modal-vllm",
+  "model": "openai/gpt-oss-120b",
+  "request_hash": "a8f3340ac3b801c120657c0e66759692231afefb222763acce6c4fd5a4ce30ee",
+  "prompt_sha256": "957cbd39216fdc5f749831ec02d0fa73ac988e59cdeed54123641ba85799ac90",
+  "generation": {
+   "model": "gpt-oss-120b",
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "seed": 0,
+   "reasoning_effort": "low"
+  },
+  "kind": "GROUND_RETRY",
+  "schema": "TTP_GROUNDER_ENVELOPE_V1 (HTG envelope + structured legality feedback, one retry)",
+  "card_sha256": "6c11956f99d5df11007d1fb08147da60bafac9b7ece5b5e68d3676776c243b40",
+  "meter_usd_before": 0.332,
+  "request_id": "chatcmpl-3a6dcc4aa0a047a78c665e7e5d384b8c",
+  "timestamp": "2026-09-28T03:36:56Z",
+  "latency_s": 1.74,
+  "retry_count": 0,
+  "input_tokens": 4622,
+  "output_tokens": 135,
+  "finish_reason": "stop",
+  "response_sha256": "b00ffc8a0d21adc95a6cfdda6655e07b99ae230ac90706156bd3af24eede4a53",
+  "reasoning_chars": 150,
+  "cached": false
+ },
+ "messages_sha256": "957cbd39216fdc5f749831ec02d0fa73ac988e59cdeed54123641ba85799ac90"
+}

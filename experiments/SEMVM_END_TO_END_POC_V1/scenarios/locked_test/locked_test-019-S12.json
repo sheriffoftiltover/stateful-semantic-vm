@@ -1,0 +1,321 @@
+{
+ "scenario_id": "locked_test-019-S12",
+ "suite": "locked_test",
+ "category": "S12",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request beta , by Grandma per beta ; and so then later , message alpha , to Yves re alpha",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Grandma"
+     },
+     {
+      "local_id": "v1",
+      "type": "PERSON",
+      "surface": "Yves"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "RECIPIENT",
+      "subject": "e1",
+      "object": "v1"
+     },
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "WHO",
+      "Grandma",
+      "outer"
+     ],
+     [
+      "RECIPIENT",
+      "Yves",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o1",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF REQUEST"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_REQUEST WHO=Uma"
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF REQUEST"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000002"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Grandma"
+     ],
+     [
+      "person:000002",
+      "Yves"
+     ]
+    ]
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "Grandma"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000002"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Grandma"
+     ],
+     [
+      "person:000002",
+      "Yves"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000002"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000003"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Grandma"
+     ],
+     [
+      "person:000002",
+      "Yves"
+     ],
+     [
+      "person:000003",
+      "Uma"
+     ]
+    ]
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "Uma"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "RECIPIENT",
+      "person:000002"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000003"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Grandma"
+     ],
+     [
+      "person:000002",
+      "Yves"
+     ],
+     [
+      "person:000003",
+      "Uma"
+     ]
+    ]
+   }
+  }
+ ]
+}

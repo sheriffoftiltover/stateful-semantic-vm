@@ -1,0 +1,484 @@
+{
+ "name": "move_visit_and_parent",
+ "mode": ":example",
+ "declared": {
+  "place": "Delhi"
+ },
+ "interaction_id": "dev-010-T4:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-010-T4/learn/snapshots/dev-010-T4_19_start.sqlite",
+ "start_snapshot_sha256": "ed715ef21a984933c38ecd748de569f6ff53962eaa1615fd06de4299812bb87b",
+ "utterances": [
+  {
+   "utterance": "Please get my latest visit.",
+   "uid": "dev-010-T4:20",
+   "instruction": "Please get my latest visit.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please get my latest visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+      "score": -0.353
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"VISIT\"}\n\n",
+      "score": -5.135
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -7.504
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "VISIT",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"VISIT\"}}]",
+      "score": -0.353,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"VISIT\"}, \"where\": []}]",
+      "score": -5.135,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -7.504,
+      "n": 1
+     }
+    ],
+    "margin": 4.782,
+    "reference_notes": [],
+    "seconds": 1.92,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "69b6ee58a9e3da2bf6dab24c244ad47565a042547addbf891034d95e44e81792",
+   "state_after": "69b6ee58a9e3da2bf6dab24c244ad47565a042547addbf891034d95e44e81792",
+   "seconds": 2.004
+  },
+  {
+   "utterance": "Change its place to Delhi.",
+   "uid": "dev-010-T4:21",
+   "instruction": "Change its place to Delhi.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Change its place to Delhi.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Delhi"
+     ],
+     "TOPIC": []
+    },
+    "llm_calls": 6,
+    "top": [
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Delhi\"}\n\n",
+      "score": -0.055
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -10.625
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -10.717
+     }
+    ],
+    "raw_text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Delhi\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "WHERE",
+      "value": "Delhi"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"WHERE\", \"value\": {\"const\": \"Delhi\"}}]",
+      "score": -0.055,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -9.977,
+      "n": 2
+     }
+    ],
+    "margin": 9.921,
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "seconds": 2.51,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Delhi"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "visit:000002",
+     "WHERE",
+     "place:madrid"
+    ],
+    [
+     "+rel",
+     "visit:000002",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "state_before": "69b6ee58a9e3da2bf6dab24c244ad47565a042547addbf891034d95e44e81792",
+   "state_after": "434688bd3f29ebedd9383164a010fcce7b00ea9684fd8c631aabd949432288e2",
+   "seconds": 2.666
+  },
+  {
+   "utterance": "Get its parent.",
+   "uid": "dev-010-T4:22",
+   "instruction": "Get its parent.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get its parent.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -0.126
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -6.466
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -6.74
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "PARENT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"obj\": {\"var\": \"r1\"}, \"op\": \"PARENT\"}]",
+      "score": -0.126,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"obj\": {\"var\": \"r1\"}, \"op\": \"CHILD\"}]",
+      "score": -6.466,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -6.74,
+      "n": 1
+     }
+    ],
+    "margin": 6.34,
+    "reference_notes": [
+     "PARENT.of=r1 licensed by R0"
+    ],
+    "seconds": 2.0,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "PARENT",
+     "bind": "r2",
+     "obj": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "434688bd3f29ebedd9383164a010fcce7b00ea9684fd8c631aabd949432288e2",
+   "state_after": "434688bd3f29ebedd9383164a010fcce7b00ea9684fd8c631aabd949432288e2",
+   "seconds": 2.092
+  },
+  {
+   "utterance": "Please change that one's place to Delhi as well.",
+   "uid": "dev-010-T4:23",
+   "instruction": "Please change that one's place to Delhi as well.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please change that one's place to Delhi as well.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Delhi"
+     ],
+     "TOPIC": []
+    },
+    "llm_calls": 8,
+    "top": [
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r2\", \"rel\": \"WHERE\", \"value\": \"Delhi\"}\n\n",
+      "score": -0.332
+     },
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Delhi\"}\n\n",
+      "score": -3.147
+     },
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"target\": \"r2\", \"value\": \"CLOSED\"}\n\n",
+      "score": -7.149
+     }
+    ],
+    "raw_text": "{\"op\": \"UPDATE\", \"target\": \"r2\", \"rel\": \"WHERE\", \"value\": \"Delhi\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r2",
+      "rel": "WHERE",
+      "value": "Delhi"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r2\"}, \"op\": \"UPDATE\", \"rel\": \"WHERE\", \"value\": {\"const\": \"Delhi\"}}]",
+      "score": -0.274,
+      "n": 2
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -7.149,
+      "n": 1
+     }
+    ],
+    "margin": 6.875,
+    "reference_notes": [
+     "UPDATE.target=r2 licensed by R3"
+    ],
+    "seconds": 2.75,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r2"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Delhi"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "+rel",
+     "request:000003",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "state_before": "434688bd3f29ebedd9383164a010fcce7b00ea9684fd8c631aabd949432288e2",
+   "state_after": "56f743ce6d56da359756bd74d21909a7784ca04624b57ac066706d845effa86c",
+   "seconds": 2.907
+  },
+  {
+   "utterance": "Return the visit.",
+   "uid": "dev-010-T4:24",
+   "instruction": "Return the visit.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return the visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.164
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -1.961
+     },
+     {
+      "text": "r3 = {\"op\": \"CHILD\", \"of\": \"r2\"}\n\n",
+      "score": -5.869
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.011,
+      "n": 2
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R2"
+    ],
+    "seconds": 1.87,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "56f743ce6d56da359756bd74d21909a7784ca04624b57ac066706d845effa86c",
+   "state_after": "56f743ce6d56da359756bd74d21909a7784ca04624b57ac066706d845effa86c",
+   "seconds": 1.943
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Delhi"
+   }
+  },
+  {
+   "op": "PARENT",
+   "bind": "r2",
+   "obj": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r2"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Delhi"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "f47e48fac118ec51e5c8c605db6787f1198e14895aaf0bafe5facdb0a4a03a03",
+ "nl_mode": "NL_TEACH"
+}

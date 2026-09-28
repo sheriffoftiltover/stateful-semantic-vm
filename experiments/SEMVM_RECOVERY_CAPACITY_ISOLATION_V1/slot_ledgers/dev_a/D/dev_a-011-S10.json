@@ -1,0 +1,260 @@
+[
+ {
+  "target": "person_on_call_at",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the calls at 9:30.",
+      "text": "Find the calls at 9:30.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "PARENT",
+          "WHEN",
+          {
+           "const": "9:30"
+          }
+         ]
+        ],
+        "status": null
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Take the first one.",
+      "text": "Take the first one.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIRST",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find out who it is with.",
+      "text": "Find out who it is with.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "GET",
+        "bind": "r3",
+        "obj": {
+         "var": "r2"
+        },
+        "rel": "WHO"
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot4",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return it.",
+      "text": "Return it.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r3"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 3,
+      "family": "demo1-slot4",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "target": "count_calls_with",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the calls with person Bob.",
+      "text": "Find the calls with person Bob.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Bob"
+          }
+         ]
+        ],
+        "status": null
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Count them.",
+      "text": "Count them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "COUNT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the count.",
+      "text": "Return the count.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

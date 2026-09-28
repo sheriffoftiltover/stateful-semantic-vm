@@ -1,0 +1,10 @@
+# handoff: app stop rc 0, endpoint after stop HTTP 404, teacher destroyed True
+[RESTART: student process + local LLM service restarted; teaching transcripts absent]
+REQUEST shut Trent's first still-open request
+    -> plan close_oldest_open_request(person=Trent); status OK; return {"event": "request:000006"}; expected OK {"event": "request:000006"}; world state == oracle: EXACT
+RUN close_oldest_open_request person=Ivan
+    -> plan close_oldest_open_request(person=Ivan); status NOT_FOUND; return null; expected NOT_FOUND null; world state == oracle: EXACT
+[RESTART: student process + local LLM service restarted; teaching transcripts absent]
+REQUEST close the earliest open request from Rita
+    -> plan close_oldest_open_request(person=Rita); status NOT_FOUND; return null; expected NOT_FOUND null; world state == oracle: EXACT
+# network-guard blocked attempts: 0; student weight hashes: ['9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6']

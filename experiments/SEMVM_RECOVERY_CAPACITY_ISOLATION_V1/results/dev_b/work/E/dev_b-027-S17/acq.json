@@ -1,0 +1,1305 @@
+{
+ "scenario_id": "dev_b-027-S17",
+ "mode": "SCRIPTED",
+ "arm": "E",
+ "grounder": "HOSTED",
+ "recovery": "HOSTED",
+ "teacher_max_tokens": 8192,
+ "budget": {
+  "max_clarification_exchanges_per_slot": 2,
+  "max_rephrase_exchanges_per_slot": 2,
+  "max_demonstrations_per_target": 3,
+  "max_teacher_turns_per_target": 10,
+  "max_example_requests_per_demonstration": 2,
+  "max_teacher_turns_per_demonstration": 8,
+  "max_clarification_exchanges_per_instruction": 2
+ },
+ "student_hash_before": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "fixture": [
+  {
+   "status": "OK",
+   "STATE_hash": "a0011b8f3cb192adda53c76316494723344d0738726d0ab32639348d17190353"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "62d39224b7aa6dbdd49528f8be3ee79d44ef63be3595e65a0930aa8bf8ce0721"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e868e7044fddebb0157254dc8d7339c64a8369c2b4ed7f9996547cb912502172"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "801832be45c65c5347751fa398438fa9648e10d1398e2d5f816158f27137cf72"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "5b00c08193c7e82e9665756b153c91d5d9533760a9d3877249c6ed575fc51fd7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d51762611c9ce501a9b516acb5dbd1eb462eaf9f78b23026ba9325fd15601c7b"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "59623bbc5043305aa8750c73941b43c22d391f2d215dae38c983693f42d4c877"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "ace1bfe7739116aee4117bc411ef8d52f31d4c0338c08da96de3c3cabc70670d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "cf76ecef289994b59b3e49831522b6a08ec531d8e6075ac3891150ae709bf4b4"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "74da9f077c2b2f31292e9019b7a526ba436620e300327ef7f4ca1fa7fc8bfc6b"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "cfac678e825db9af11ae9ecbcda9f52ebe6418ff62aeff683781b5803459a253"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "2ead08486f2c9df33a546e4beda9be9918c439e1078529d39fe4df14ed2b6b78"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "f27919499c12590a5bd49942181c80389086c7c0d7d907cc71c506d5be6908f0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "9dfa6509b2c9f17de9309501f17e0c4ff2729addad10e2fccfaa03632a62b776"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "56d0f741caf4dc65cb4bdb7b9d2bb10a8e0e69175f4089d843b3be3c5bba345f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1b341bc353f10a4063c5ab8c47e812dde58c36e88fb6728eee07c7b2747e97d3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3f230ac1b0948d7b3b3de979bc9c8f71c5a5545e1e177f0f363d1f60dc552f6f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0a0f1ddea8c2b5e00f75659e07a929d8c03e1e117a9c351d6da3c10dfc66a0f0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3afade4ae3a8c80c432faddb3a3a48a8f3cf277067ef7edee29c9a8126908df8"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1520e529ad537abf3e9bbe4db6a932c003c335ea82ff89507e8f0ae54d3d51f3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "ec4125878f445870419ee70bef9cd2b28ea9aae86d64f761510ba5b435efc978"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e3372923b6dad812e3b341693b3730e7d49de91ebeedfb06d4030ae3113814c7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "53b3aee70547962590b3addc53e496cc8949661235480c5cbecc3764d8270469"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "82b763c92513289e7dbb20c70564ff601ecefc9b66f8385773aa67ddaa747be0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a32c9d692485a915750cb8b0f414f2e54e55e453674cace765dd79f7a952392b"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "fda164c3a21b339d2e148ddefea9eab090658f23952fb50468cacf961d745a8d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "ca197388b0a40d55e4093c689117b886fd3da30bf5662f89079a19974a060102"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e5010c55ea9dfb9600ed3eb870c33556a78aa9a2dce39f097f1b90b43dbf75f6"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "79766436332c8f081fddfee8bafea27659fb30a90e932defdb152763d3fc5c17"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "67bf78c91e0ffa6fa080f66a09b0b86c19f976bc54c149670d17c62e2344d1df"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e836da60c749fc5caa7f81262f6336d8addfa21410287ad14cf596b0545c7821"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "52d1758b1004578f0c97acce19a87a9541ed46255225b8be181f0915da6048ee"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "52d1758b1004578f0c97acce19a87a9541ed46255225b8be181f0915da6048ee"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "08dc9b3267146bef1452b3151222a7496f1c909d47eb3ef03bcad20992c197a0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "08dc9b3267146bef1452b3151222a7496f1c909d47eb3ef03bcad20992c197a0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "b2bde099dbe8dda56a957f6efc6ce69f76d1dd1c81d6ec3b0e6fa0863d453572"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "b2bde099dbe8dda56a957f6efc6ce69f76d1dd1c81d6ec3b0e6fa0863d453572"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "4a688a7c4c12a7acce18231f7e1e28143c3748789708ce95737bbcd00b83f1e7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "4a688a7c4c12a7acce18231f7e1e28143c3748789708ce95737bbcd00b83f1e7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a53cd9f5a32ca3da35cd7766d1945ab9c4eb9e48af5a47c8ceab72fcb718b38e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a53cd9f5a32ca3da35cd7766d1945ab9c4eb9e48af5a47c8ceab72fcb718b38e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "4438fe2c7cb2aaed945be7105ecc32952f1c924499b1381915f853a82c324ece"
+  }
+ ],
+ "targets": [
+  {
+   "name": "calls_with",
+   "demos": [
+    {
+     "index": 0,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Find the calls with Heidi.",
+       "text": "Find the calls with Heidi.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "CALL"
+         },
+         "where": [
+          [
+           "SELF",
+           "WHO",
+           {
+            "const": "Heidi"
+           }
+          ]
+         ],
+         "status": null
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return them.",
+       "text": "Return them.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo1-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Find the calls with Heidi.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "CALL"
+         },
+         "where": [
+          [
+           "SELF",
+           "WHO",
+           {
+            "const": "Heidi"
+           }
+          ]
+         ],
+         "status": null
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Heidi\"}}]}",
+       "llm_calls": 1,
+       "seconds": 0.354,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "72d00a1bfa0a324d9fca7db212ff661d1b866850bb53dddeb0d3eb9ae8aead3c",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4449,
+       "grounder_output_tokens": 84,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND",
+         "type": "CALL",
+         "where": {
+          "WHO": "Heidi"
+         }
+        }
+       ],
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "72d00a1bfa0a324d9fca7db212ff661d1b866850bb53dddeb0d3eb9ae8aead3c"
+        }
+       ]
+      },
+      {
+       "line": "Return them.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.385,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "e3898e81ececfa93e076848af4111b3295131b225fd701644df12eed979c076d",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4480,
+       "grounder_output_tokens": 39,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "e3898e81ececfa93e076848af4111b3295131b225fd701644df12eed979c076d"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "person": "Heidi"
+     },
+     "lesson_lines": [
+      "Find the calls with Heidi.",
+      "Return them."
+     ],
+     "returned": true,
+     "end": "VERIFIED",
+     "end_detail": {},
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Find the calls with Heidi.",
+      "Return them."
+     ]
+    }
+   ],
+   "teacher_turns": 1,
+   "student_questions": [],
+   "injections": [],
+   "status": "ACTIVE",
+   "classes": [],
+   "first_lesson_lines_ok": true,
+   "protocol": "TTP",
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Heidi\nSTEP: Find the calls with Heidi.\nSTEP: Return them.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    }
+   ]
+  }
+ ],
+ "false_accept_probes": [
+  {
+   "target": "calls_with",
+   "variant": "FROZEN_VALUE",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL"
+  }
+ ],
+ "active": [
+  {
+   "name": "calls_with",
+   "id": "proc:calls_with:v1",
+   "parameters": [
+    {
+     "name": "person",
+     "type": "PERSON"
+    }
+   ],
+   "effect": "PURE",
+   "returns": "EVENT_LIST",
+   "aliases": []
+  }
+ ],
+ "library_bytes_before": 49152,
+ "library_bytes_after": 49152,
+ "active_before": 0,
+ "active_after": 1,
+ "world_state_after": {
+  "objects": [
+   [
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "call:000002",
+    "CALL"
+   ],
+   [
+    "call:000003",
+    "CALL"
+   ],
+   [
+    "call:000004",
+    "CALL"
+   ],
+   [
+    "call:000005",
+    "CALL"
+   ],
+   [
+    "call:000006",
+    "CALL"
+   ],
+   [
+    "call:000007",
+    "CALL"
+   ],
+   [
+    "call:000008",
+    "CALL"
+   ],
+   [
+    "call:000009",
+    "CALL"
+   ],
+   [
+    "call:000010",
+    "CALL"
+   ],
+   [
+    "call:000011",
+    "CALL"
+   ],
+   [
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "email:000002",
+    "EMAIL"
+   ],
+   [
+    "email:000003",
+    "EMAIL"
+   ],
+   [
+    "email:000004",
+    "EMAIL"
+   ],
+   [
+    "email:000005",
+    "EMAIL"
+   ],
+   [
+    "email:000006",
+    "EMAIL"
+   ],
+   [
+    "email:000007",
+    "EMAIL"
+   ],
+   [
+    "email:000008",
+    "EMAIL"
+   ],
+   [
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "person:000004",
+    "PERSON"
+   ],
+   [
+    "person:000005",
+    "PERSON"
+   ],
+   [
+    "person:000006",
+    "PERSON"
+   ],
+   [
+    "person:000007",
+    "PERSON"
+   ],
+   [
+    "person:000008",
+    "PERSON"
+   ],
+   [
+    "person:000009",
+    "PERSON"
+   ],
+   [
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "reminder:000002",
+    "REMINDER"
+   ],
+   [
+    "reminder:000003",
+    "REMINDER"
+   ],
+   [
+    "reminder:000004",
+    "REMINDER"
+   ],
+   [
+    "reminder:000005",
+    "REMINDER"
+   ],
+   [
+    "reminder:000006",
+    "REMINDER"
+   ],
+   [
+    "reminder:000007",
+    "REMINDER"
+   ],
+   [
+    "reminder:000008",
+    "REMINDER"
+   ],
+   [
+    "reminder:000009",
+    "REMINDER"
+   ],
+   [
+    "reminder:000010",
+    "REMINDER"
+   ],
+   [
+    "reminder:000011",
+    "REMINDER"
+   ],
+   [
+    "reminder:000012",
+    "REMINDER"
+   ],
+   [
+    "reminder:000013",
+    "REMINDER"
+   ],
+   [
+    "reminder:000014",
+    "REMINDER"
+   ],
+   [
+    "reminder:000015",
+    "REMINDER"
+   ],
+   [
+    "reminder:000016",
+    "REMINDER"
+   ],
+   [
+    "reminder:000017",
+    "REMINDER"
+   ],
+   [
+    "reminder:000018",
+    "REMINDER"
+   ],
+   [
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "request:000004",
+    "REQUEST"
+   ],
+   [
+    "request:000005",
+    "REQUEST"
+   ],
+   [
+    "request:000006",
+    "REQUEST"
+   ],
+   [
+    "request:000007",
+    "REQUEST"
+   ],
+   [
+    "request:000008",
+    "REQUEST"
+   ],
+   [
+    "request:000009",
+    "REQUEST"
+   ],
+   [
+    "request:000010",
+    "REQUEST"
+   ],
+   [
+    "request:000011",
+    "REQUEST"
+   ],
+   [
+    "request:000012",
+    "REQUEST"
+   ],
+   [
+    "request:000013",
+    "REQUEST"
+   ],
+   [
+    "request:000014",
+    "REQUEST"
+   ],
+   [
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "visit:000002",
+    "VISIT"
+   ],
+   [
+    "visit:000003",
+    "VISIT"
+   ],
+   [
+    "visit:000004",
+    "VISIT"
+   ],
+   [
+    "visit:000005",
+    "VISIT"
+   ],
+   [
+    "visit:000006",
+    "VISIT"
+   ],
+   [
+    "visit:000007",
+    "VISIT"
+   ],
+   [
+    "visit:000008",
+    "VISIT"
+   ],
+   [
+    "visit:000009",
+    "VISIT"
+   ],
+   [
+    "visit:000010",
+    "VISIT"
+   ],
+   [
+    "visit:000011",
+    "VISIT"
+   ],
+   [
+    "visit:000012",
+    "VISIT"
+   ],
+   [
+    "visit:000013",
+    "VISIT"
+   ]
+  ],
+  "relations": [
+   [
+    "call:000004",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000005",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "call:000006",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000007",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000008",
+    "WHO",
+    "person:000007"
+   ],
+   [
+    "call:000009",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000010",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "call:000011",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000001",
+    "TOPIC",
+    "topic:survey"
+   ],
+   [
+    "email:000002",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "email:000002",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "email:000003",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000003",
+    "TOPIC",
+    "topic:invoice"
+   ],
+   [
+    "email:000004",
+    "RECIPIENT",
+    "person:000003"
+   ],
+   [
+    "email:000004",
+    "TOPIC",
+    "topic:budget"
+   ],
+   [
+    "email:000005",
+    "RECIPIENT",
+    "person:000008"
+   ],
+   [
+    "email:000005",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "email:000006",
+    "RECIPIENT",
+    "person:000009"
+   ],
+   [
+    "email:000006",
+    "TOPIC",
+    "topic:report"
+   ],
+   [
+    "email:000007",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000007",
+    "TOPIC",
+    "topic:survey"
+   ],
+   [
+    "email:000008",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000008",
+    "TOPIC",
+    "topic:invoice"
+   ],
+   [
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "reminder:000002",
+    "TODO",
+    "email:000003"
+   ],
+   [
+    "reminder:000003",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "reminder:000004",
+    "TODO",
+    "call:000004"
+   ],
+   [
+    "reminder:000004",
+    "WHEN",
+    "time:02:45"
+   ],
+   [
+    "reminder:000005",
+    "TODO",
+    "call:000005"
+   ],
+   [
+    "reminder:000005",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "reminder:000006",
+    "TODO",
+    "call:000006"
+   ],
+   [
+    "reminder:000006",
+    "WHEN",
+    "time:NOON"
+   ],
+   [
+    "reminder:000007",
+    "TODO",
+    "call:000007"
+   ],
+   [
+    "reminder:000007",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "reminder:000008",
+    "TODO",
+    "call:000008"
+   ],
+   [
+    "reminder:000008",
+    "WHEN",
+    "time:04:30"
+   ],
+   [
+    "reminder:000009",
+    "TODO",
+    "call:000009"
+   ],
+   [
+    "reminder:000009",
+    "WHEN",
+    "time:02:45"
+   ],
+   [
+    "reminder:000010",
+    "TODO",
+    "call:000010"
+   ],
+   [
+    "reminder:000010",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "reminder:000011",
+    "TODO",
+    "email:000005"
+   ],
+   [
+    "reminder:000012",
+    "TODO",
+    "visit:000004"
+   ],
+   [
+    "reminder:000013",
+    "TODO",
+    "call:000011"
+   ],
+   [
+    "reminder:000013",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "reminder:000014",
+    "TODO",
+    "email:000006"
+   ],
+   [
+    "reminder:000015",
+    "TODO",
+    "visit:000006"
+   ],
+   [
+    "reminder:000016",
+    "TODO",
+    "email:000007"
+   ],
+   [
+    "reminder:000017",
+    "TODO",
+    "visit:000011"
+   ],
+   [
+    "reminder:000018",
+    "TODO",
+    "visit:000013"
+   ],
+   [
+    "request:000001",
+    "TODO",
+    "email:000002"
+   ],
+   [
+    "request:000002",
+    "TODO",
+    "email:000004"
+   ],
+   [
+    "request:000003",
+    "TODO",
+    "visit:000002"
+   ],
+   [
+    "request:000004",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "request:000004",
+    "WHEN",
+    "time:02:45"
+   ],
+   [
+    "request:000004",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000005",
+    "TODO",
+    "call:000002"
+   ],
+   [
+    "request:000005",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "request:000005",
+    "WHO",
+    "person:000003"
+   ],
+   [
+    "request:000006",
+    "TODO",
+    "call:000003"
+   ],
+   [
+    "request:000006",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "request:000006",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000007",
+    "TODO",
+    "visit:000003"
+   ],
+   [
+    "request:000007",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "request:000007",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "request:000008",
+    "TODO",
+    "visit:000005"
+   ],
+   [
+    "request:000008",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "request:000008",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "request:000009",
+    "TODO",
+    "email:000008"
+   ],
+   [
+    "request:000010",
+    "TODO",
+    "visit:000007"
+   ],
+   [
+    "request:000010",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "request:000010",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000011",
+    "TODO",
+    "visit:000008"
+   ],
+   [
+    "request:000011",
+    "WHEN",
+    "time:02:45"
+   ],
+   [
+    "request:000011",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000012",
+    "TODO",
+    "visit:000009"
+   ],
+   [
+    "request:000012",
+    "WHEN",
+    "time:04:30"
+   ],
+   [
+    "request:000012",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000013",
+    "TODO",
+    "visit:000010"
+   ],
+   [
+    "request:000013",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "request:000013",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000014",
+    "TODO",
+    "visit:000012"
+   ],
+   [
+    "visit:000001",
+    "WHERE",
+    "place:seoul"
+   ],
+   [
+    "visit:000002",
+    "WHERE",
+    "place:vienna"
+   ],
+   [
+    "visit:000004",
+    "WHERE",
+    "place:tokyo"
+   ],
+   [
+    "visit:000006",
+    "WHERE",
+    "place:dublin"
+   ],
+   [
+    "visit:000011",
+    "WHERE",
+    "place:lima"
+   ],
+   [
+    "visit:000012",
+    "WHERE",
+    "place:cairo"
+   ],
+   [
+    "visit:000013",
+    "WHERE",
+    "place:lima"
+   ]
+  ],
+  "aliases": [
+   [
+    "person:000001",
+    "Trent"
+   ],
+   [
+    "person:000002",
+    "Sam"
+   ],
+   [
+    "person:000003",
+    "Dave"
+   ],
+   [
+    "person:000004",
+    "Frank"
+   ],
+   [
+    "person:000005",
+    "Heidi"
+   ],
+   [
+    "person:000006",
+    "Grandma"
+   ],
+   [
+    "person:000007",
+    "Wendy"
+   ],
+   [
+    "person:000008",
+    "Mallory"
+   ],
+   [
+    "person:000009",
+    "Peggy"
+   ]
+  ],
+  "attributes": [
+   [
+    "call:000006",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000007",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000009",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000003",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000008",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000010",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000012",
+    "STATUS",
+    "CLOSED"
+   ]
+  ]
+ },
+ "student_hash_after": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "seconds": 211.69,
+ "nl_llm_calls": 0,
+ "retrieval_llm_calls": 0,
+ "hosted_calls": [
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "72d00a1bfa0a324d9fca7db212ff661d1b866850bb53dddeb0d3eb9ae8aead3c",
+   "cached": true,
+   "input_tokens": 4449,
+   "output_tokens": 84,
+   "latency_s": 1.115,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "e3898e81ececfa93e076848af4111b3295131b225fd701644df12eed979c076d",
+   "cached": true,
+   "input_tokens": 4480,
+   "output_tokens": 39,
+   "latency_s": 0.815,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  }
+ ]
+}

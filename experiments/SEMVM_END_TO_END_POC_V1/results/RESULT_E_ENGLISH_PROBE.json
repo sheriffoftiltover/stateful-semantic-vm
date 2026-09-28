@@ -1,0 +1,765 @@
+{
+ "note": "descriptive only; outside V1 scope; nothing tuned after viewing",
+ "n": 8,
+ "pipeline_UNSUPPORTED_INPUT": 8,
+ "direct_ir_valid": 1,
+ "direct_ir_exact": 0,
+ "mean_oov_fraction": 0.329,
+ "cases": [
+  {
+   "english": "Remind me to call Alice",
+   "tokens": 5,
+   "oov": [
+    "Remind",
+    "me"
+   ],
+   "oov_fraction": 0.4,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Remind",
+     "me"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "CALL",
+      null,
+      3
+     ],
+     [
+      "PERSON",
+      "Alice",
+      4
+     ]
+    ],
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "CALL",
+       null,
+       3
+      ],
+      [
+       "PERSON",
+       "Alice",
+       4
+      ]
+     ]
+    ],
+    "root": [
+     "CALL",
+     null,
+     3
+    ]
+   },
+   "direct_ir_valid": "EVENT_STRUCTURE outer=0 inner=1",
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Alice"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   }
+  },
+  {
+   "english": "Remind me at 5 to call",
+   "tokens": 6,
+   "oov": [
+    "Remind",
+    "me"
+   ],
+   "oov_fraction": 0.333,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Remind",
+     "me"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "CALL",
+      null,
+      5
+     ],
+     [
+      "TIME",
+      "5",
+      3
+     ]
+    ],
+    "edges": [
+     [
+      "WHEN",
+      [
+       "CALL",
+       null,
+       5
+      ],
+      [
+       "TIME",
+       "5",
+       3
+      ]
+     ]
+    ],
+    "root": [
+     "CALL",
+     null,
+     5
+    ]
+   },
+   "direct_ir_valid": "EVENT_STRUCTURE outer=0 inner=1",
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "5"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   }
+  },
+  {
+   "english": "Remind me to email Bob about the budget",
+   "tokens": 8,
+   "oov": [
+    "Remind",
+    "me",
+    "the"
+   ],
+   "oov_fraction": 0.375,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Remind",
+     "me",
+     "the"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      3
+     ],
+     [
+      "PERSON",
+      "Bob",
+      4
+     ],
+     [
+      "TOPIC",
+      "budget",
+      7
+     ]
+    ],
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "EMAIL",
+       null,
+       3
+      ],
+      [
+       "PERSON",
+       "Bob",
+       4
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "EMAIL",
+       null,
+       3
+      ],
+      [
+       "TOPIC",
+       "budget",
+       7
+      ]
+     ]
+    ],
+    "root": [
+     "EMAIL",
+     null,
+     3
+    ]
+   },
+   "direct_ir_valid": "EVENT_STRUCTURE outer=0 inner=1",
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Bob"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "budget"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "RECIPIENT",
+      "subject": "e1",
+      "object": "v0"
+     },
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e1",
+      "object": "v1"
+     }
+    ]
+   }
+  },
+  {
+   "english": "Remind me at noon to call Alice",
+   "tokens": 7,
+   "oov": [
+    "Remind",
+    "me"
+   ],
+   "oov_fraction": 0.286,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Remind",
+     "me"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "CALL",
+      null,
+      5
+     ],
+     [
+      "TIME",
+      "noon",
+      3
+     ]
+    ],
+    "edges": [
+     [
+      "WHEN",
+      [
+       "CALL",
+       null,
+       5
+      ],
+      [
+       "TIME",
+       "noon",
+       3
+      ]
+     ]
+    ],
+    "root": [
+     "CALL",
+     null,
+     5
+    ]
+   },
+   "direct_ir_valid": "EVENT_STRUCTURE outer=0 inner=1",
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Alice"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "noon"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   }
+  },
+  {
+   "english": "Request that Dave calls at 3",
+   "tokens": 6,
+   "oov": [
+    "Request",
+    "calls"
+   ],
+   "oov_fraction": 0.333,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Request",
+     "calls"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "PERSON",
+      "Dave",
+      2
+     ]
+    ],
+    "edges": [],
+    "root": [
+     "PERSON",
+     "Dave",
+     2
+    ]
+   },
+   "direct_ir_valid": "EVENT_STRUCTURE outer=0 inner=0",
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Dave"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "3"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e1",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   }
+  },
+  {
+   "english": "Make a note in Paris to message Carol",
+   "tokens": 8,
+   "oov": [
+    "Make",
+    "a"
+   ],
+   "oov_fraction": 0.25,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Make",
+     "a"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      6
+     ],
+     [
+      "NOTE",
+      null,
+      2
+     ],
+     [
+      "PERSON",
+      "Carol",
+      7
+     ],
+     [
+      "PLACE",
+      "Paris",
+      4
+     ]
+    ],
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "NOTE",
+       null,
+       2
+      ],
+      [
+       "PERSON",
+       "Carol",
+       7
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       2
+      ],
+      [
+       "MESSAGE",
+       null,
+       6
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "NOTE",
+       null,
+       2
+      ],
+      [
+       "PLACE",
+       "Paris",
+       4
+      ]
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     2
+    ]
+   },
+   "direct_ir_valid": true,
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Carol"
+     },
+     {
+      "local_id": "v1",
+      "type": "PLACE",
+      "surface": "Paris"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "RECIPIENT",
+      "subject": "e1",
+      "object": "v0"
+     },
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e0",
+      "object": "v1"
+     }
+    ]
+   }
+  },
+  {
+   "english": "Plan at dawn to visit",
+   "tokens": 5,
+   "oov": [
+    "Plan"
+   ],
+   "oov_fraction": 0.2,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Plan"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "TIME",
+      "dawn",
+      2
+     ],
+     [
+      "VISIT",
+      null,
+      4
+     ]
+    ],
+    "edges": [
+     [
+      "WHEN",
+      [
+       "VISIT",
+       null,
+       4
+      ],
+      [
+       "TIME",
+       "dawn",
+       2
+      ]
+     ]
+    ],
+    "root": [
+     "VISIT",
+     null,
+     4
+    ]
+   },
+   "direct_ir_valid": "EVENT_STRUCTURE outer=0 inner=1",
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "PLAN"
+     },
+     {
+      "local_id": "e1",
+      "type": "VISIT"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "dawn"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   }
+  },
+  {
+   "english": "Remind me tomorrow to call Alice and email Bob on Friday",
+   "tokens": 11,
+   "oov": [
+    "Remind",
+    "me",
+    "tomorrow",
+    "on",
+    "Friday"
+   ],
+   "oov_fraction": 0.455,
+   "envelope": {
+    "reason": "UNKNOWN_VOCABULARY",
+    "oov": [
+     "Remind",
+     "me",
+     "tomorrow",
+     "on",
+     "Friday"
+    ]
+   },
+   "pipeline_status": "UNSUPPORTED_INPUT",
+   "direct_binder_output_graph": {
+    "occs": [
+     [
+      "CALL",
+      null,
+      4
+     ],
+     [
+      "EMAIL",
+      null,
+      7
+     ],
+     [
+      "PERSON",
+      "Alice",
+      5
+     ]
+    ],
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "EMAIL",
+       null,
+       7
+      ],
+      [
+       "PERSON",
+       "Alice",
+       5
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "CALL",
+       null,
+       4
+      ],
+      [
+       "EMAIL",
+       null,
+       7
+      ]
+     ]
+    ],
+    "root": [
+     "CALL",
+     null,
+     4
+    ]
+   },
+   "direct_ir_valid": "EVENT_STRUCTURE outer=0 inner=2",
+   "direct_ir_exact": false,
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Alice"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   }
+  }
+ ]
+}

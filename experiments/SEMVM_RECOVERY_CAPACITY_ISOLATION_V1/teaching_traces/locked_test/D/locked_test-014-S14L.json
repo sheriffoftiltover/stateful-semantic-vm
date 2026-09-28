@@ -1,0 +1,149 @@
+{
+ "scenario_id": "locked_test-014-S14L",
+ "mode": "TEACHER",
+ "arm": "D",
+ "grounder": "HOSTED",
+ "backend": "MODAL",
+ "model": "openai/gpt-oss-120b",
+ "reasoning": "high",
+ "targets": [
+  {
+   "name": "close_open_emails_to",
+   "status": "ACTIVE",
+   "transcript": [
+    {
+     "role": "system",
+     "content": "You are a TUTOR. You teach a small assistant (the STUDENT) a new reusable skill. The student cannot see your reasoning; it only reads the\nlines you write, executes them one by one on its personal-organizer database, and learns the skill from what it successfully executed.\n\nWHAT THE STUDENT'S DATABASE CONTAINS\n- Scheduling events: REMINDER, REQUEST, PLAN, NOTE. Each may have one item it is about: a CALL, EMAIL, VISIT or MESSAGE.\n- Relations: WHO (the person an event is with / who made it), RECIPIENT (the person an email or message is addressed to), WHEN (a time),\n  WHERE (a place), TOPIC. Every event also has a status: open or closed (new events are open).\n- To talk about calls, emails, visits or messages at a time, just say so (\"the calls at 3\", \"the calls scheduled at noon\"); the student\n  knows where times are stored. Do not look for reminders or requests unless the skill is about them.\n\nWHAT THE STUDENT CAN DO (one action per instruction is safest)\n- find events of a type, optionally filtered by person, time, place, topic and open/closed status   (\"Find the open messages to Kevin.\")\n- take the most recent event of a type                                                              (\"Take my latest note.\")\n- take the first one of a list; count a list                                                        (\"Take the first one.\" / \"Count them.\")\n- get the item an event is about, or the event an item belongs to                                   (\"Get the message it is about.\" / \"Get its parent.\")\n- look up the person / time / place / topic of one event, or collect it from every event of a list  (\"Find out who it is with.\" / \"Collect who they are with.\")\n- sort a list or group it by a relation; make a report of a relation's values per group            (\"Group them by who they are with.\" / \"Report the places in each group.\")\n- change an event's person / time / place / topic / recipient; set an event (or each event of a list) open or closed; delete\n                                                                                                    (\"Move it to Lima.\" / \"Mark each of them closed.\")\n- call one of the student's saved skills: NAME it and give EVERY input explicitly                    (\"Call messages_to with person Kevin.\" /\n                                                                                                     \"Call messages_to with that person.\")\n- return the final result of the skill                                                              (\"Return the count.\")\nThe student CANNOT send, text, phone, email, print, browse, save files, schedule new events, or do arithmetic beyond counting.\n\nTEACH EXACTLY THE REQUESTED SKILL (goal-faithfulness contract)\n- Do not add filters, restrictions, state predicates (open / closed), ordering criteria, constants, entity scopes or side conditions unless\n  the skill description explicitly requires them, or a saved skill's signature makes them necessary.\n- Do not silently narrow \"all\" to \"open\", \"emails\" to \"open emails\", \"calls with X\" to \"open calls with X\", or make analogous restrictions.\n- If the skill description is ambiguous, ask rather than inventing a constraint.\n\nSAVED SKILLS\n- To use a saved skill, always write \"Call <skill name> with <input> <value>\" (or \"... with that <result>\"). Never rely on \"use that skill\",\n  \"do the earlier procedure\" or describing what the skill does: the student only calls a skill you name, with the inputs you give.\n\nHOW TO WRITE A DEMONSTRATION\nEXAMPLE: <input>=<value>, <input>=<value>      (REQUIRED, first line: the example values for EVERY input of the skill; no step runs before it)\nSTEP: <one instruction>\nSTEP: <one instruction>\n...\n- Use concrete example values (never placeholders). Use only values from VALUES.\n- Refer to earlier results with words like \"them\", \"it\", \"those calls\", \"the count\".\n- Only the last STEP returns the skill's result (\"Return ...\"). No earlier STEP may ask to return or give back anything.\n- Write nothing except the EXAMPLE line and STEP lines.\n\nWHEN THE STUDENT ASKS YOU SOMETHING (it always says which step it is about)\n- RESTATE step k: reply only with the replacement STEP line(s) for step k. If step k really should not be part of the demonstration,\n  reply with the single line CANCEL_SLOT (a step the student says was obscured by the evaluator cannot be cancelled: restate it).\n- WHICH RESULT for step k: the student lists the possible results with ids (r1, r2, ...). Reply with one line: REFERENT: <id>\n  (or REFERENT: NONE if none of them is meant, then restate the step).\n- MISSING EXAMPLE: reply with one line: EXAMPLE: <input>=<value>, ... for every input of the skill.\n- ANOTHER DEMONSTRATION: reply with a new EXAMPLE line (different example values) and a complete list of STEP lines."
+    },
+    {
+     "role": "user",
+     "content": "SKILL TO TEACH: close_open_emails_to(person:person)\nWHAT IT DOES: Given a person, close all still-open emails addressed to that person and return those emails.\n\nTHE STUDENT'S SAVED SKILLS: (none)\n\nVALUES (use only these for example values):\n- people: Rita, Wendy, Nina, Grace\n- times: 9, 7, 6, 5:45\n- places: Seoul, Dublin, Paris, Lima\n- topics: survey, trip, schedule, contract\n\nSTYLE: Teach compactly: a few STEP lines, each may combine two closely related actions (e.g. \"find ... and count them\").\n\nGive demonstration 1 now (EXAMPLE line, then STEP lines)."
+    },
+    {
+     "role": "assistant",
+     "content": "EXAMPLE: person=Rita\nSTEP: Find the open emails to Rita and mark each of them closed.\nSTEP: Return them."
+    },
+    {
+     "role": "user",
+     "content": "I have one demonstration. Please give another complete demonstration with DIFFERENT example values (EXAMPLE line and STEP lines)."
+    },
+    {
+     "role": "assistant",
+     "content": "EXAMPLE: person=Wendy\nSTEP: Find the open emails to Wendy and mark each of them closed.\nSTEP: Return them."
+    },
+    {
+     "role": "user",
+     "content": "Your demonstrations do not follow the same steps, so I cannot tell which is right. Please give one more complete demonstration (EXAMPLE line and STEP lines); example values may repeat values you already used."
+    },
+    {
+     "role": "assistant",
+     "content": "EXAMPLE: person=Nina\nSTEP: Find the open emails to Nina and mark each of them closed.\nSTEP: Return them."
+    }
+   ],
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Rita\nSTEP: Find the open emails to Rita and mark each of them closed.\nSTEP: Return them.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "e2fbffde0a4e75f5af8286f067a014fb81af37031d37d5cf43a432c27dad3704",
+      "prompt_sha256": "05e5c7a496a89d3b44d96fb6ee80682c7c1927174a6e93a149e68670e0e862a7",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 8192,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "LESSON",
+      "meter_usd_before": 3.447,
+      "request_id": "chatcmpl-ed11024f1dbb4d8aa06577cdc738f7a4",
+      "timestamp": "2026-09-28T08:25:33Z",
+      "latency_s": 8.929,
+      "retry_count": 0,
+      "input_tokens": 1277,
+      "output_tokens": 964,
+      "finish_reason": "stop",
+      "response_sha256": "e5dd6b513a1995f114fe7086fae1abc243e6496b1fc282034c2c86f233add96f",
+      "reasoning_chars": 4153,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: person=Wendy\nSTEP: Find the open emails to Wendy and mark each of them closed.\nSTEP: Return them.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "77210097a3abd424331d8be5cee15b5db8449ea0a5a09fd3ed719080bdba79b9",
+      "prompt_sha256": "e28f3b0fef386a99ac1b3943c2fbc3df846998f409f3a0a392c8c8dae768d51b",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 8192,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "NEW_DEMO",
+      "meter_usd_before": 3.464,
+      "request_id": "chatcmpl-a65c30c4568e447c81e42d5f65a06e53",
+      "timestamp": "2026-09-28T08:25:41Z",
+      "latency_s": 3.919,
+      "retry_count": 0,
+      "input_tokens": 1336,
+      "output_tokens": 561,
+      "finish_reason": "stop",
+      "response_sha256": "c6b503b835936fb6d4438fb93c9eadc740aa752c18a950fffaa1d283663f3b52",
+      "reasoning_chars": 2381,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: person=Nina\nSTEP: Find the open emails to Nina and mark each of them closed.\nSTEP: Return them.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "f963732f39569587c4c6f39b5782e55c4ddd0d2e2392eec2021e12a0bebf96f1",
+      "prompt_sha256": "3d54c7ee8f562e34e2663d78e81d11b514e362a4a20313149af502fcfe53d084",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 8192,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "NEW_DEMO",
+      "meter_usd_before": 3.464,
+      "request_id": "chatcmpl-e64a51d883e84a7da785ac358a727a51",
+      "timestamp": "2026-09-28T08:25:51Z",
+      "latency_s": 6.963,
+      "retry_count": 0,
+      "input_tokens": 1411,
+      "output_tokens": 1089,
+      "finish_reason": "stop",
+      "response_sha256": "4b055df4f9f62d2aff648704eb609ae3ad3d9affaef1dd7d76d08f88bd898706",
+      "reasoning_chars": 4897,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    }
+   ]
+  }
+ ]
+}

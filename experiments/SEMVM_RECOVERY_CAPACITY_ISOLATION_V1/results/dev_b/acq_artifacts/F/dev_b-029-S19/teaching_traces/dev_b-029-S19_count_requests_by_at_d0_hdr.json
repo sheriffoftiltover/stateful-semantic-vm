@@ -1,0 +1,258 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Heidi",
+  "time": "3:15"
+ },
+ "interaction_id": "dev_b-029-S19:count_requests_by_at:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/F/dev_b-029-S19/learn/snapshots/dev_b-029-S19_count_requests_by_at_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "6808341ef6f8af604c517a32cb30045c3b235c38be27ef1dfbdc2e56d152748e",
+ "utterances": [
+  {
+   "utterance": "Find the requests with who Erin and when 5.",
+   "uid": "dev_b-029-S19:count_requests_by_at:d0:demo1-slot1:0",
+   "instruction": "Find the requests with who Erin and when 5.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the requests with who Erin and when 5.",
+    "values": {
+     "PERSON": [
+      "Erin"
+     ],
+     "TIME": [
+      "5"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "7950ab26120626a36be0742909ea40aa2e300659a20fb09801773d7b57481e50"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Erin\", \"WHEN\": \"5\"}}]}",
+    "request_hash": "7950ab26120626a36be0742909ea40aa2e300659a20fb09801773d7b57481e50",
+    "cached": true,
+    "input_tokens": 4454,
+    "output_tokens": 109,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Erin",
+       "WHEN": "5"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.03
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Erin"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "5"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "state_after": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "seconds": 0.161
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev_b-029-S19:count_requests_by_at:d0:demo1-slot2:1",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "72dcae4caeb7279e63c355519a613be6258e154851472f5ec6b4514adc8c6478"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "72dcae4caeb7279e63c355519a613be6258e154851472f5ec6b4514adc8c6478",
+    "cached": false,
+    "input_tokens": 4486,
+    "output_tokens": 69,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.36
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "state_after": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "seconds": 1.567
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev_b-029-S19:count_requests_by_at:d0:demo1-slot3:2",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "3f89fb9cca9a02507da2260fabd4e682c6fd331d4d3b704740ddbda462cf2af0"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "3f89fb9cca9a02507da2260fabd4e682c6fd331d4d3b704740ddbda462cf2af0",
+    "cached": false,
+    "input_tokens": 4510,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "state_after": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "seconds": 1.298
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Erin"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "5"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "6a082e16b437745b7e8dac28208f2a040e5912bc56b5e49c211e12a2f95423ac",
+ "nl_mode": "NL_TEACH"
+}

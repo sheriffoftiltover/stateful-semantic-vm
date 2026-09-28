@@ -1,0 +1,42 @@
+{
+ "name": "close_calls_with",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE close_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\n$v2 = COUNT $v0\nRETURN $v2\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE close_calls_with()\n$v0 = FIND CALL WHERE SELF.WHO=Quinn\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\n$v2 = COUNT $v0\nRETURN $v2\nEND",
+   "program_hash": "21bea8489a3bf753e3c80fbec63c6de48586146f79307e84cc2c80f5aafbbbce"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:close_calls_with:v2",
+ "chosen": "external"
+}

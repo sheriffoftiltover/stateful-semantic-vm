@@ -1,0 +1,198 @@
+{
+ "name": "count_open_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Alice"
+ },
+ "interaction_id": "dev_b-006-S6:count_open_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/D/dev_b-006-S6/learn/snapshots/dev_b-006-S6_count_open_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "21af367308cfc9ce699286adbafceb36b65d8d649be0ad43cf3c4acf209988c4",
+ "utterances": [
+  {
+   "utterance": "Find the open calls with person Alice and count them.",
+   "uid": "dev_b-006-S6:count_open_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the open calls with person Alice and count them.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the open calls with person Alice and count them.",
+    "values": {
+     "PERSON": [
+      "Alice"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "2cf23a8f726fa601d42db68a2f98bb1786b2af0c450b9bf98b472e115cc769f4"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Alice\"}, \"status\": \"OPEN\"}, {\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "2cf23a8f726fa601d42db68a2f98bb1786b2af0c450b9bf98b472e115cc769f4",
+    "cached": true,
+    "input_tokens": 4454,
+    "output_tokens": 130,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Alice"
+      },
+      "status": "OPEN"
+     },
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Alice"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    },
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "167a438ba7f3fd94ebd0a7df6ce046b85c1cb52bc0df3cefba7f3210d3ca4691",
+   "state_after": "167a438ba7f3fd94ebd0a7df6ce046b85c1cb52bc0df3cefba7f3210d3ca4691",
+   "seconds": 0.57
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev_b-006-S6:count_open_calls_with:d0:demo1-slot2:1",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "fb28bfbfe8fbdef307f4b748602e1dbd0800853c485e1432a668c134af81166b"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "fb28bfbfe8fbdef307f4b748602e1dbd0800853c485e1432a668c134af81166b",
+    "cached": true,
+    "input_tokens": 4509,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "167a438ba7f3fd94ebd0a7df6ce046b85c1cb52bc0df3cefba7f3210d3ca4691",
+   "state_after": "167a438ba7f3fd94ebd0a7df6ce046b85c1cb52bc0df3cefba7f3210d3ca4691",
+   "seconds": 0.555
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Alice"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "93b5386330f61b1f1201ceb122d8a0ad1c1b1b0c05a17b1cd089051814d71c3b",
+ "nl_mode": "NL_TEACH"
+}

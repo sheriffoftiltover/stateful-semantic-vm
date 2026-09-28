@@ -1,0 +1,172 @@
+{
+ "name": "emails_about",
+ "mode": ":teach",
+ "declared": {
+  "topic": "budget"
+ },
+ "interaction_id": "dev_a-025-S16:emails_about:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/D/dev_a-025-S16/learn/snapshots/dev_a-025-S16_emails_about_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "4ad2fa1635d8ee93a428518ba3dc750927dd9579e9de0aba245767477daf169f",
+ "utterances": [
+  {
+   "utterance": "Find the emails about budget.",
+   "uid": "dev_a-025-S16:emails_about:d0:demo1-slot1:0",
+   "instruction": "Find the emails about budget.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the emails about budget.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": [
+      "budget"
+     ]
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "358709304f089a21b60e0624ef55874d7fcd992393c8c2cde9705aab3ccc9009"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"TOPIC\": \"budget\"}}]}",
+    "request_hash": "358709304f089a21b60e0624ef55874d7fcd992393c8c2cde9705aab3ccc9009",
+    "cached": true,
+    "input_tokens": 4449,
+    "output_tokens": 58,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "TOPIC": "budget"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "TOPIC",
+       {
+        "const": "budget"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "state_after": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "seconds": 0.393
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev_a-025-S16:emails_about:d0:demo1-slot2:1",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "79ece522665d35583593d1a15072a01e0ecc9f8cb596ea7c7480eef9ed69a6fe"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "79ece522665d35583593d1a15072a01e0ecc9f8cb596ea7c7480eef9ed69a6fe",
+    "cached": false,
+    "input_tokens": 4480,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.12
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "state_after": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "seconds": 1.539
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "TOPIC",
+     {
+      "const": "budget"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "19d09bf860de4bf77adb538f4224df62ac14f109a5538622c64f407157cdc500",
+ "nl_mode": "NL_TEACH"
+}

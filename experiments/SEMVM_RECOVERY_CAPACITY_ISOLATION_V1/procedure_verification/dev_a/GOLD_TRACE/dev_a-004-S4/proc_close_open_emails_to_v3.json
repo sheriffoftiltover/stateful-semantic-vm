@@ -1,0 +1,51 @@
+{
+ "name": "close_open_emails_to",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE close_open_emails_to(person:PERSON)\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT={person} STATUS=OPEN\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_REPLAY",
+   "verify_seconds": 0.04,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "replay_0",
+     {
+      "got": {
+       "events": [
+        "email:000007",
+        "email:000008"
+       ]
+      },
+      "want": {
+       "events": [
+        "email:000007"
+       ]
+      },
+      "status": "OK"
+     }
+    ]
+   ],
+   "program": "PROCEDURE close_open_emails_to(person:PERSON)\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT={person}\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\nRETURN $v0\nEND",
+   "program_hash": "1fd4e1039bba4d0bf0f689f8d255c2b185a17a93541077aedc551d9dda9e173e"
+  }
+ },
+ "status": "REJECTED_FAILED_REPLAY",
+ "stored": "proc:close_open_emails_to:v3",
+ "chosen": "external"
+}

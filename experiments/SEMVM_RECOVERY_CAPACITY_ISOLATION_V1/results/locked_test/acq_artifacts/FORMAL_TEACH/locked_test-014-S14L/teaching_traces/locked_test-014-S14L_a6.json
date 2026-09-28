@@ -1,0 +1,58 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Wendy"
+ },
+ "interaction_id": "locked_test-014-S14L:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-014-S14L/learn/snapshots/locked_test-014-S14L_a6_start.sqlite",
+ "start_snapshot_sha256": "c9fadf5abf6fd2568e70ddf47b77a74d955a2543a3bb0a443987739e4dc78731",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Wendy"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "0be7f3562b3fb3145e3958740d502f3adb0c6fb721f3e29401535e3083cf77f1",
+ "nl_mode": "GOLD_TRACE"
+}

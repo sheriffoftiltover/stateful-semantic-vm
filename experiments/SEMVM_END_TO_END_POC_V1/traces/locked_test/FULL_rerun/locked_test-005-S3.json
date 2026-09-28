@@ -1,0 +1,614 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645345,
+  "utterance_id": "locked_test-005-S3:0",
+  "INPUT": "request zeta , to Uncle per zeta ; and so then later , email epsilon , about schedule per epsilon",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o1",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Uncle",
+       4
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       13
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "EMAIL",
+       null,
+       13
+      ],
+      [
+       "TOPIC",
+       "schedule",
+       17
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Uncle",
+      4
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TOPIC",
+      "schedule",
+      17
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1707.20654296875,
+   "margin": 7.9208984375,
+   "n_outputs": 79,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Uncle"
+    },
+    {
+     "local_id": "v1",
+     "type": "TOPIC_VALUE",
+     "surface": "schedule"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e0",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e1",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Uncle",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "schedule",
+    "topic:schedule"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Uncle"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:schedule",
+    "TOPIC",
+    "schedule",
+    "schedule"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "TOPIC",
+    "topic:schedule"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "84889226fcf9846dde18f0c5f045a6adfa8878432dd06338db7ed0f15273eeec",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Uncle"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "TOPIC",
+    "topic:schedule"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:schedule"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uncle"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645345,
+  "utterance_id": "locked_test-005-S3:1",
+  "INPUT": "QUERY RECIPIENT OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0147b7b67ea1e6c3de9d4fc6aef410c9d9bf7874c616a24f68af36c8eb5a1192",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "RESPONSE": "Uncle",
+  "RETURN_RENDERED": [
+   "Uncle"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:schedule"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uncle"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645345,
+  "utterance_id": "locked_test-005-S3:2",
+  "INPUT": "QUERY RECIPIENT OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9b6f7fc5af2a7207cd4841f841378a209776cbdeba3c6189d219d9a268abf477",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:schedule"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uncle"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2645345,
+  "utterance_id": "locked_test-005-S3:3",
+  "INPUT": "QUERY TOPIC OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dd3e0b020373b08e911f6d9d7cf6696f2f9bea57c6a886751866e95091e7f1a0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:schedule"
+  ],
+  "STATE_AFTER": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "RESPONSE": "schedule",
+  "RETURN_RENDERED": [
+   "schedule"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:schedule"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uncle"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2645345,
+  "utterance_id": "locked_test-005-S3:4",
+  "INPUT": "QUERY TOPIC OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "991ee6c5edc0489891c77bbfcd7f108675e201165fad7dc1660e40d7b096e99f",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "7031f6ec8940fec76828679b45729fba4bb0bd833dafe02c8721d0bf965dcccd",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:schedule"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uncle"
+    ]
+   ]
+  }
+ }
+]

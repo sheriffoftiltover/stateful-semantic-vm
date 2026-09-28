@@ -1,0 +1,158 @@
+{
+ "scenario_id": "dev-001-S1",
+ "suite": "dev",
+ "category": "S1",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "note delta : so then again soon , email zeta ; while in Dublin per delta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PLACE",
+      "surface": "Dublin"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "WHERE",
+      "Dublin",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "O",
+   "layout": [
+    "straddle_o2",
+    [
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF NOTE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF EMAIL"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Dublin"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Aunt"
+ },
+ "interaction_id": "dev_b-009-S9:a9",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-009-S9/learn/snapshots/dev_b-009-S9_a9_start.sqlite",
+ "start_snapshot_sha256": "83fc478a0a77584e7769684f3cba4f8cc62fd51fc4b57aaccd96710338ed3f66",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-009-S9:a10",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Aunt"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "1ddea63c5386fcefc133158fe2e28e644aa47d90acd42fa33bf4a1b4f538dc26",
+   "state_after": "1ddea63c5386fcefc133158fe2e28e644aa47d90acd42fa33bf4a1b4f538dc26",
+   "seconds": 0.151
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-009-S9:a11",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "1ddea63c5386fcefc133158fe2e28e644aa47d90acd42fa33bf4a1b4f538dc26",
+   "state_after": "1ddea63c5386fcefc133158fe2e28e644aa47d90acd42fa33bf4a1b4f538dc26",
+   "seconds": 0.15
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-009-S9:a12",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "1ddea63c5386fcefc133158fe2e28e644aa47d90acd42fa33bf4a1b4f538dc26",
+   "state_after": "1ddea63c5386fcefc133158fe2e28e644aa47d90acd42fa33bf4a1b4f538dc26",
+   "seconds": 0.143
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Aunt"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "62bdbe01bf20d895714968315f8caaaaea89aeb96c472f8186ff07eeb3c1f311",
+ "nl_mode": "GOLD_TRACE"
+}

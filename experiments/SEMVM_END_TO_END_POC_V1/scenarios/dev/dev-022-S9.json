@@ -1,0 +1,657 @@
+{
+ "scenario_id": "dev-022-S9",
+ "suite": "dev",
+ "category": "S9",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request zeta ; by Quinn re gamma : next and then so ; message gamma : at midnight per zeta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Quinn"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "midnight"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "WHO",
+      "Quinn",
+      "inner"
+     ],
+     [
+      "WHEN",
+      "midnight",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o4",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "ASSERT",
+   "text": "request zeta : by Xena re theta ; so then again soon , message theta ; at dusk re zeta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Xena"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "dusk"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "WHO",
+      "Xena",
+      "inner"
+     ],
+     [
+      "WHEN",
+      "dusk",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o2",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "ASSERT",
+   "text": "request gamma ; at 5 re gamma : next and then so ; message zeta : by Dave re zeta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Dave"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "5"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "WHEN",
+      "5",
+      "outer"
+     ],
+     [
+      "WHO",
+      "Dave",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o4",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF MESSAGE WHERE PARENT.WHEN=5"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF MESSAGE"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "message:000002",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "message:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "message:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:DUSK"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Xena"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "message:000002",
+      "MESSAGE"
+     ],
+     [
+      "message:000003",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ],
+     [
+      "request:000003",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "message:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "message:000003",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "message:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:DUSK"
+     ],
+     [
+      "request:000003",
+      "TODO",
+      "message:000003"
+     ],
+     [
+      "request:000003",
+      "WHEN",
+      "time:05:00"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Xena"
+     ],
+     [
+      "person:000003",
+      "Dave"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Dave"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "message:000002",
+      "MESSAGE"
+     ],
+     [
+      "message:000003",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ],
+     [
+      "request:000003",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "message:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "message:000003",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "message:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:DUSK"
+     ],
+     [
+      "request:000003",
+      "TODO",
+      "message:000003"
+     ],
+     [
+      "request:000003",
+      "WHEN",
+      "time:05:00"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Xena"
+     ],
+     [
+      "person:000003",
+      "Dave"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Dave",
+    "Quinn",
+    "Xena"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "message:000002",
+      "MESSAGE"
+     ],
+     [
+      "message:000003",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ],
+     [
+      "request:000003",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "message:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "message:000003",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "message:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:DUSK"
+     ],
+     [
+      "request:000003",
+      "TODO",
+      "message:000003"
+     ],
+     [
+      "request:000003",
+      "WHEN",
+      "time:05:00"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Xena"
+     ],
+     [
+      "person:000003",
+      "Dave"
+     ]
+    ]
+   }
+  }
+ ]
+}

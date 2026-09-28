@@ -1,0 +1,410 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642697,
+  "utterance_id": "dev-030-ROLLBACK:0",
+  "INPUT": "visit gamma ; so and then later again , by Trent re gamma : remind epsilon",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "VISIT",
+    "layout": [
+     "between_i3",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       14
+      ],
+      [
+       "VISIT",
+       null,
+       0
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "VISIT",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Trent",
+       10
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "PERSON",
+      "Trent",
+      10
+     ],
+     [
+      "REMINDER",
+      null,
+      14
+     ],
+     [
+      "VISIT",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     14
+    ]
+   },
+   "log_mass": 675.994873046875,
+   "margin": 8.00042724609375,
+   "n_outputs": 31,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "VISIT"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Trent"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Trent",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "VISIT",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Trent"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "cdcd1afa22d36d33b35a65680287f07d548132340be65ea5f369cd87f567a05c",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Trent"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "+rel",
+    "visit:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "6a8fbd688947eba49167bafbe72060445f8d234d3a2e3b784c1c69141243d4c0",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Trent"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642697,
+  "utterance_id": "dev-030-ROLLBACK:1",
+  "INPUT": "UPDATE LAST_VISIT WHO=Peggy RECIPIENT=Peggy",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "6a8fbd688947eba49167bafbe72060445f8d234d3a2e3b784c1c69141243d4c0",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_VISIT",
+   "set": [
+    [
+     "WHO",
+     "Peggy"
+    ],
+    [
+     "RECIPIENT",
+     "Peggy"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "visit:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$new_Peggy"
+   ],
+   [
+    "ADD_ALIAS",
+    "$new_Peggy",
+    "Peggy"
+   ],
+   [
+    "ASSERT",
+    "visit:000001",
+    "WHO",
+    "$new_Peggy"
+   ],
+   [
+    "ASSERT",
+    "visit:000001",
+    "RECIPIENT",
+    "$new_Peggy"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "980d5e717573ac479e4f8808496ccf9f1a58dafd69ba85268ab18f49b9d865f1",
+  "status": "VM_EXEC_ERROR",
+  "failure_stage": "VM_EXEC",
+  "reason": "relation RECIPIENT not allowed on VISIT",
+  "RESPONSE": "The update failed and nothing was changed.",
+  "STATE_AFTER": "6a8fbd688947eba49167bafbe72060445f8d234d3a2e3b784c1c69141243d4c0",
+  "STATE_DIFF": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Trent"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642697,
+  "utterance_id": "dev-030-ROLLBACK:2",
+  "INPUT": "QUERY WHO OF VISIT",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "6a8fbd688947eba49167bafbe72060445f8d234d3a2e3b784c1c69141243d4c0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "VISIT",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "292a24a65ba383314de2f15ab9e5c6d6c88f3f867d5d0f064cee822413485cbe",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "6a8fbd688947eba49167bafbe72060445f8d234d3a2e3b784c1c69141243d4c0",
+  "RESPONSE": "Trent",
+  "RETURN_RENDERED": [
+   "Trent"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Trent"
+    ]
+   ]
+  }
+ }
+]

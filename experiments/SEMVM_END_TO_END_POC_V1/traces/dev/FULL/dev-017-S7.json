@@ -1,0 +1,643 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642330,
+  "utterance_id": "dev-017-S7:0",
+  "INPUT": "remind eta ; by Dave re eta : next and then so ; message epsilon : to Victor re epsilon",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Victor",
+       17
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Dave",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Dave",
+      4
+     ],
+     [
+      "PERSON",
+      "Victor",
+      17
+     ],
+     [
+      "REMINDER",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1508.624755859375,
+   "margin": 3.2374267578125,
+   "n_outputs": 145,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Dave"
+    },
+    {
+     "local_id": "v1",
+     "type": "PERSON",
+     "surface": "Victor"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e1",
+     "object": "v1"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Dave",
+    "NEW",
+    null
+   ],
+   [
+    "ENTITY",
+    "v1",
+    "Victor",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Dave"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v1"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v1",
+    "Victor"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "RECIPIENT",
+    "$v1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "cd347d53b274d054327fedbbffcb67b1591d2b87d5544c0f47c90a6ac841932c",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Dave"
+   ],
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Victor"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "f639250710b4a60b9ab6ab36a6e89f2a10f68af017d4adbfd4f9d0ba7b863993",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Victor"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642330,
+  "utterance_id": "dev-017-S7:1",
+  "INPUT": "UPDATE LAST_REMINDER WHO=Mallory",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "f639250710b4a60b9ab6ab36a6e89f2a10f68af017d4adbfd4f9d0ba7b863993",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_REMINDER",
+   "set": [
+    [
+     "WHO",
+     "Mallory"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "reminder:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$new_Mallory"
+   ],
+   [
+    "ADD_ALIAS",
+    "$new_Mallory",
+    "Mallory"
+   ],
+   [
+    "ASSERT",
+    "reminder:000001",
+    "WHO",
+    "$new_Mallory"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "74c2fdcb5de919df57ea0e064d139b42d81f8767e563277ebfe0eaec96694c2f",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "reminder:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Mallory"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "18987963871b8146f617720b5ef61b33560f59315f963e92ff2238ce51ae9236",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000003"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Victor"
+    ],
+    [
+     "person:000003",
+     "Mallory"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642330,
+  "utterance_id": "dev-017-S7:2",
+  "INPUT": "QUERY WHO OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "18987963871b8146f617720b5ef61b33560f59315f963e92ff2238ce51ae9236",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "26331ecacc2d5fb25e14753b128c337f1341849215f048c47e77788bf9819e5a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000003"
+  ],
+  "STATE_AFTER": "18987963871b8146f617720b5ef61b33560f59315f963e92ff2238ce51ae9236",
+  "RESPONSE": "Mallory",
+  "RETURN_RENDERED": [
+   "Mallory"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000003"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Victor"
+    ],
+    [
+     "person:000003",
+     "Mallory"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642330,
+  "utterance_id": "dev-017-S7:3",
+  "INPUT": "QUERY WHO OF LAST_REMINDER",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "18987963871b8146f617720b5ef61b33560f59315f963e92ff2238ce51ae9236",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "LAST_REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "reminder:000001",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "d8e157648b973bd224a2c2b33017082f03a5626e01be3fae6d79f8ecb20c6025",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000003"
+  ],
+  "STATE_AFTER": "18987963871b8146f617720b5ef61b33560f59315f963e92ff2238ce51ae9236",
+  "RESPONSE": "Mallory",
+  "RETURN_RENDERED": [
+   "Mallory"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000003"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Victor"
+    ],
+    [
+     "person:000003",
+     "Mallory"
+    ]
+   ]
+  }
+ }
+]

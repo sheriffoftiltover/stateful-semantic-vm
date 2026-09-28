@@ -1,0 +1,58 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Carol"
+ },
+ "interaction_id": "dev_a-019-S14L:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-019-S14L/learn/snapshots/dev_a-019-S14L_a6_start.sqlite",
+ "start_snapshot_sha256": "2128f926ff63aa9ced6c62bc5ad0207ae36f6d2660e33149668206c43299d9f7",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Carol"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "8f90ff378dc96bc2933be9db54f99ab2914e0f75fbc62cf8d2668807f3638e8a",
+ "nl_mode": "GOLD_TRACE"
+}

@@ -1,0 +1,1285 @@
+[
+ {
+  "turn": 0,
+  "pid": 2643188,
+  "utterance_id": "dev-022-S9:0",
+  "INPUT": "request zeta ; by Quinn re gamma : next and then so ; message gamma : at midnight per zeta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "midnight",
+       17
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Quinn",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Quinn",
+      4
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "midnight",
+      17
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1153.7249755859375,
+   "margin": 8.84130859375,
+   "n_outputs": 95,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Quinn"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "midnight"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Quinn",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "midnight",
+    "time:MIDNIGHT"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Quinn"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:MIDNIGHT",
+    "TIME",
+    "MIDNIGHT",
+    "midnight"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:MIDNIGHT"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "1a14f65fc18dc223b3916da57a52e7d73a864f2558234bffcf656cb89fedf66d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Quinn"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHEN",
+    "time:MIDNIGHT"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "7707b788c8a9821f364c9199217d997da83a0c60083447a5a8babb1d6d0ec4a4",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2643188,
+  "utterance_id": "dev-022-S9:1",
+  "INPUT": "request zeta : by Xena re theta ; so then again soon , message theta ; at dusk re zeta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "7707b788c8a9821f364c9199217d997da83a0c60083447a5a8babb1d6d0ec4a4",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o2",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "dusk",
+       17
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Xena",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Xena",
+      4
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "dusk",
+      17
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1227.447021484375,
+   "margin": 8.471923828125,
+   "n_outputs": 95,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Xena"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "dusk"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Xena",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "dusk",
+    "time:DUSK"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Xena"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:DUSK",
+    "TIME",
+    "DUSK",
+    "dusk"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "92e15e1b3b8571b261e32f594db340383ceacd14f380d1b937953a8da31befb0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000002",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Xena"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "TODO",
+    "message:000002"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "+rel",
+    "message:000002",
+    "WHO",
+    "person:000002"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "cb24fc837d2db0ff836962aa97981b8937fe9df8194686ab88e42dbbd7b4bde5",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Xena"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2643188,
+  "utterance_id": "dev-022-S9:2",
+  "INPUT": "request gamma ; at 5 re gamma : next and then so ; message zeta : by Dave re zeta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "cb24fc837d2db0ff836962aa97981b8937fe9df8194686ab88e42dbbd7b4bde5",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "5",
+       4
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Dave",
+       17
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Dave",
+      17
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "5",
+      4
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1066.2178955078125,
+   "margin": 8.82763671875,
+   "n_outputs": 89,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Dave"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "5"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Dave",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "5",
+    "time:05:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Dave"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:05:00",
+    "TIME",
+    "05:00",
+    "5"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7616fc0305168284ce8667bdaa93fdb99eb768837490915ddcf700ec8b286162",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000003",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Dave"
+   ],
+   [
+    "+rel",
+    "request:000003",
+    "TODO",
+    "message:000003"
+   ],
+   [
+    "+rel",
+    "request:000003",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "+rel",
+    "message:000003",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "6e85f6190e9068277437e424079b77a232347efd26d3f812a787b754710cd4c3",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "message:000003",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "message:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:DUSK"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "message:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:05:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Xena"
+    ],
+    [
+     "person:000003",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2643188,
+  "utterance_id": "dev-022-S9:3",
+  "INPUT": "QUERY WHO OF MESSAGE WHERE PARENT.WHEN=5",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "6e85f6190e9068277437e424079b77a232347efd26d3f812a787b754710cd4c3",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     "5"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       "time:05:00"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f7053886e011ba86c09f9939516fde4e283c2664f0d413f36d13182eb37529e1",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000003"
+  ],
+  "STATE_AFTER": "6e85f6190e9068277437e424079b77a232347efd26d3f812a787b754710cd4c3",
+  "RESPONSE": "Dave",
+  "RETURN_RENDERED": [
+   "Dave"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "message:000003",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "message:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:DUSK"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "message:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:05:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Xena"
+    ],
+    [
+     "person:000003",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2643188,
+  "utterance_id": "dev-022-S9:4",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "6e85f6190e9068277437e424079b77a232347efd26d3f812a787b754710cd4c3",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001",
+   "person:000002",
+   "person:000003"
+  ],
+  "STATE_AFTER": "6e85f6190e9068277437e424079b77a232347efd26d3f812a787b754710cd4c3",
+  "RESPONSE": "Dave, Quinn, Xena",
+  "RETURN_RENDERED": [
+   "Dave",
+   "Quinn",
+   "Xena"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "message:000003",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "message:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:DUSK"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "message:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:05:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Xena"
+    ],
+    [
+     "person:000003",
+     "Dave"
+    ]
+   ]
+  }
+ }
+]

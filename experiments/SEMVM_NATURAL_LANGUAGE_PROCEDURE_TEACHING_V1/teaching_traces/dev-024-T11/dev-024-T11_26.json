@@ -1,0 +1,327 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Quinn"
+ },
+ "interaction_id": "dev-024-T11:26",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-024-T11/learn/snapshots/dev-024-T11_26_start.sqlite",
+ "start_snapshot_sha256": "ba8707e5b83584801b03786feb8ea8c38f22524ceda84abba86b84b907d3e672",
+ "utterances": [
+  {
+   "utterance": "Please count the calls with Quinn.",
+   "uid": "dev-024-T11:27",
+   "instruction": "Please count the calls with Quinn.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please count the calls with Quinn.",
+    "values": {
+     "PERSON": [
+      "Quinn"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 12,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Quinn\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -1.39
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Quinn\"}}\n\n",
+      "score": -1.834
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -3.572
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Quinn\"}}\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -3.762
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Quinn\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHEN\"}\n\n",
+      "score": -4.015
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Quinn\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Quinn"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "GROUP",
+      "of": "r1",
+      "by": "WHO",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Quinn\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+      "score": -1.39,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Quinn\"}]]}]",
+      "score": -1.834,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -3.042,
+      "n": 3
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Quinn\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -3.762,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Quinn\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHEN\"}]",
+      "score": -4.015,
+      "n": 1
+     }
+    ],
+    "margin": 0.445,
+    "reference_notes": [
+     "GROUP.of=r1 licensed by R0"
+    ],
+    "seconds": 9.34,
+    "runner_up": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Quinn\"}]]}]",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 9.343
+  },
+  {
+   "utterance": "I mean: find all calls with Quinn and then count them.",
+   "uid": "dev-024-T11:27#rescue",
+   "instruction": "find all calls with Quinn and then count them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "find all calls with Quinn and then count them.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Find all calls with Quinn.",
+        "Count them."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Find all calls with Quinn.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Count them.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 23,
+    "seconds": 13.65,
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Quinn"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Quinn\"}}\n\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Quinn"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "margin": 2.511,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Quinn"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "f53bd8209aa6a981b835a8774646ce1f0277bfee4bc562d896159c9a70ce60d9",
+   "state_after": "f53bd8209aa6a981b835a8774646ce1f0277bfee4bc562d896159c9a70ce60d9",
+   "seconds": 13.725
+  },
+  {
+   "utterance": "Please give it back.",
+   "uid": "dev-024-T11:28",
+   "instruction": "Please give it back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.584
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.834
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.008,
+      "n": 2
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R3"
+    ],
+    "seconds": 1.34,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "f53bd8209aa6a981b835a8774646ce1f0277bfee4bc562d896159c9a70ce60d9",
+   "state_after": "f53bd8209aa6a981b835a8774646ce1f0277bfee4bc562d896159c9a70ce60d9",
+   "seconds": 1.425
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Quinn"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "e1ef5cc961bb65532b949be95072f8e7adf9f87ad3b97312995d007609f730be",
+ "nl_mode": "NL_TEACH"
+}

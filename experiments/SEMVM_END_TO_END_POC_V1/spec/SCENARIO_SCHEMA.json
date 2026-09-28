@@ -1,0 +1,92 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "SEMVM POC scenario V1",
+ "type": "object",
+ "required": [
+  "scenario_id",
+  "suite",
+  "category",
+  "reference_time",
+  "turns",
+  "expected"
+ ],
+ "properties": {
+  "turns": {
+   "type": "array",
+   "items": {
+    "oneOf": [
+     {
+      "properties": {
+       "kind": {
+        "const": "ASSERT"
+       },
+       "text": {
+        "type": "string"
+       },
+       "gold_ir": {
+        "$ref": "IR_SCHEMA.json"
+       },
+       "facts": {
+        "type": "object"
+       },
+       "pattern": {
+        "enum": [
+         "O",
+         "I",
+         "OO",
+         "II",
+         "OI",
+         "IO"
+        ]
+       },
+       "layout": {
+        "type": "array"
+       }
+      }
+     },
+     {
+      "properties": {
+       "kind": {
+        "const": "COMMAND"
+       },
+       "text": {
+        "type": "string"
+       }
+      }
+     },
+     {
+      "properties": {
+       "kind": {
+        "const": "RESTART"
+       }
+      }
+     }
+    ]
+   }
+  },
+  "expected": {
+   "type": "array",
+   "items": {
+    "type": [
+     "object",
+     "null"
+    ],
+    "properties": {
+     "status": {
+      "type": "string"
+     },
+     "result": {
+      "type": [
+       "array",
+       "null"
+      ]
+     },
+     "state": {
+      "type": "object"
+     }
+    }
+   }
+  }
+ },
+ "x-expected_source": "scenarios/oracle.py (independent reference semantics)"
+}

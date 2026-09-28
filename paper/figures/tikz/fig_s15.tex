@@ -1,0 +1,44 @@
+% Figure 6: worked example dev_a-022-S15, Arm D (all quoted text copied from results/examples/dev_a-022-S15_D.md)
+\begin{tikzpicture}[font=\sffamily\scriptsize,
+  T/.style={draw=semorange, fill=semorange!9, rounded corners=2pt, text width=50mm, align=left, inner sep=3pt},
+  C/.style={draw=semblue, fill=semblue!7, rounded corners=2pt, text width=52mm, align=left, inner sep=3pt},
+  B/.style={draw=inkmuted, fill=black!4, rounded corners=2pt, text width=50mm, align=left, inner sep=3pt},
+  arr/.style={-{Stealth[length=1.6mm]}, line width=0.55pt, draw=ink},
+  num/.style={circle, draw=ink, fill=white, inner sep=0.6pt, font=\sffamily\tiny\bfseries, minimum size=3.6mm},
+  hdr/.style={font=\sffamily\footnotesize\bfseries}]
+\providecommand{\sq}[1]{{\ttfamily\fontsize{6.4}{7.6}\selectfont #1}}
+\def\XT{0} \def\XC{6.25} \def\XB{12.5}
+\node[hdr] at (\XT,0.6) {Hosted teacher (120B)};
+\node[hdr] at (\XC,0.6) {Controller + hosted grounder};
+\node[hdr] at (\XB,0.6) {Deterministic backend};
+\node[C, anchor=north] (c1) at (\XC,0) {Asks for demonstration 1 of \sq{close\_oldest\_open\_request(person)}: goal text, saved skills (none), value pool (people Frank, Grace, Peggy, Yves; \dots)};
+\node[T, anchor=north] (t1) at ($(c1.south -| \XT,0)+(0,-2mm)$) {\sq{EXAMPLE: person=Frank}\\ \sq{STEP: Find the open requests with person}\\ \sq{\ \ \ \ \ \ Frank and sort them by when.}\\ \sq{STEP: Take the first one.}\\ \sq{STEP: Mark it closed.}\\ \sq{STEP: Return it.}};
+\draw[arr] (c1.west) -| (t1.north);
+\node[C, anchor=north] (c2) at ($(t1.north -| \XC,0)+(0,-5mm)$) {slot 1, one isolated grounder request:\\ \sq{r1 = FIND REQUEST WHO=Frank STATUS=OPEN}\\ \sq{r2 = SORT r1 WHEN}};
+\node[B, anchor=north] (b1) at (c2.north -| \XB,0) {executed in the teaching sandbox; the whole demonstration is one transaction over a start snapshot};
+\draw[arr] ($(t1.north east)+(0,-7mm)$) -- ($(c2.west)+(0,1.5mm)$);
+\draw[arr] (c2.east |- b1.west) -- (b1.west);
+\node[C, anchor=north] (c3) at ($(c2.south)+(0,-3mm)$) {slot 2, ``Take the first one.'': the grounder proposes \sq{FIRST of r2}, but the \textbf{deterministic reference check} finds two live list results $\Rightarrow$ structured CLARIFY};
+\node[T, anchor=north] (t2) at ($(c3.south -| \XT,0)+(0,-2mm)$) {receives:\\ \sq{r1: the requests found (who=Frank, status}\\ \sq{\ \ \ \ open) (1 element)}\\ \sq{r2: r1 sorted by when (1 element)}\\ \sq{Reply with one line: REFERENT: <id>}\\[2pt] answers: \sq{REFERENT: r2}};
+\draw[arr] ($(c3.south west)+(4mm,0)$) |- ($(t2.north east)+(0,-3mm)$);
+\node[C, anchor=north] (c4) at ($(t2.south -| \XC,0)+(0,6mm)$) {\sq{r3 = FIRST r2}; \sq{SET\_STATUS r3 CLOSED};\\ \sq{RETURN r3} (terminal action licensed only on the last slot); completeness check passes $\Rightarrow$ \textbf{COMMIT}};
+\draw[arr] ($(t2.south east)+(0,3mm)$) -- (c4.west |- {$(t2.south east)+(0,3mm)$});
+\node[B, anchor=north] (b2) at (c4.north -| \XB,0) {committed trace = learning evidence; result \sq{request:000011}; trace sha \sq{d8b352aa\dots}};
+\draw[arr] (c4.east |- b2.west) -- (b2.west);
+\node[B, anchor=north] (b3) at ($(b2.south)+(0,-3mm)$) {anti-unifier proposes 3 candidates; verifier:\\
+ \textbf{v1}: \sq{person} parameter, \sq{STATUS=OPEN} kept: \textbf{20/20 tests, VERIFIED}\\
+ v2: \sq{WHO=Frank} hard-coded: rejected (interface)\\
+ v3: \sq{OPEN} filter dropped: rejected (all-closed perturbation)};
+\draw[arr] (b2) -- (b3);
+\node[B, anchor=north, fill=semblue!16, draw=semblue] (b4) at ($(b3.south)+(0,-5mm)$) {ACTIVE; \sq{active\_pointer} = \sq{proc:close\_oldest\_open\_request:v1}};
+\draw[arr] (b3) -- node[font=\sffamily\tiny, right]{explicit accept} (b4);
+\coordinate (hy) at ($(b4.south)+(0,-4mm)$);
+\draw[semorange, dashed, line width=0.8pt] (hy -| -2.8,0) -- (hy -| 15.3,0);
+\node[font=\sffamily\scriptsize\bfseries, text=semorange, fill=white, inner sep=2pt] at (hy -| \XC,0) {HANDOFF: hosted app stopped, endpoint HTTP 404; transcripts removed; network guard on};
+\node[B, anchor=north, text width=172mm] (r) at ($(hy -| \XC,0)+(0,-4mm)$) {
+\textbf{Reuse in fresh processes} (student weight hash \sq{9b3db05b\dots} in every process; 0 network attempts)\\[2pt]
+{[RESTART]} \quad \sq{REQUEST shut Trent's first still-open request} $\rightarrow$ \sq{close\_oldest\_open\_request(person=Trent)} $\rightarrow$ \sq{request:000006} \hfill \textbf{exact}\\
+\phantom{{[RESTART]}} \quad \sq{RUN close\_oldest\_open\_request person=Ivan} $\rightarrow$ \sq{NOT\_FOUND} \hfill \textbf{exact}\\
+{[RESTART]} \quad \sq{REQUEST close the earliest open request from Rita} $\rightarrow$ \sq{close\_oldest\_open\_request(person=Rita)} $\rightarrow$ \sq{NOT\_FOUND} \hfill \textbf{exact}};
+\foreach \n/\nd in {1/c1,2/t1,3/c2,4/c3,5/t2,6/c4,7/b3,8/r}{\node[num] at (\nd.north west) {\n};}
+\end{tikzpicture}

@@ -1,0 +1,42 @@
+{
+ "name": "close_open_emails_to",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE close_open_emails_to()\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT=Sam STATUS=OPEN\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [
+       {
+        "name": "person",
+        "type": "PERSON"
+       }
+      ],
+      "evidence": []
+     }
+    ]
+   ],
+   "program": "PROCEDURE close_open_emails_to(person:PERSON)\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT={person}\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\nRETURN $v0\nEND",
+   "program_hash": "1fd4e1039bba4d0bf0f689f8d255c2b185a17a93541077aedc551d9dda9e173e"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:close_open_emails_to:v3",
+ "chosen": "external"
+}

@@ -1,0 +1,128 @@
+{
+ "name": "count_calls_with",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev_b-015-S12:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-015-S12/learn/snapshots/dev_b-015-S12_a6_start.sqlite",
+ "start_snapshot_sha256": "2ebe4e325d4291a38788ccdd2244f81277761d9a6d11ce9ef31b29e7c62b896d",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-015-S12:a7",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Alice"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "5cb29528ab596b7ab37a6dbe8860059919782e1996fefa487efbb5f89cd85ae9",
+   "state_after": "5cb29528ab596b7ab37a6dbe8860059919782e1996fefa487efbb5f89cd85ae9",
+   "seconds": 0.201
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-015-S12:a8",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5cb29528ab596b7ab37a6dbe8860059919782e1996fefa487efbb5f89cd85ae9",
+   "state_after": "5cb29528ab596b7ab37a6dbe8860059919782e1996fefa487efbb5f89cd85ae9",
+   "seconds": 0.167
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-015-S12:a9",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5cb29528ab596b7ab37a6dbe8860059919782e1996fefa487efbb5f89cd85ae9",
+   "state_after": "5cb29528ab596b7ab37a6dbe8860059919782e1996fefa487efbb5f89cd85ae9",
+   "seconds": 0.175
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Alice"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "6b14a2e311556d49eebd3bd3e257e279be6e101daafa34a1b37ebd7476b9bcc9",
+ "nl_mode": "GOLD_TRACE"
+}

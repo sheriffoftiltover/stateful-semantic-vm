@@ -1,0 +1,555 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645402,
+  "utterance_id": "locked_test-007-S4:0",
+  "INPUT": "note gamma : while in Vienna per theta ; so then again soon , email theta ; about budget re gamma",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o2",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "NOTE"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       14
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "TOPIC",
+       "budget",
+       18
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "EMAIL",
+       null,
+       14
+      ],
+      [
+       "PLACE",
+       "Vienna",
+       5
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      14
+     ],
+     [
+      "NOTE",
+      null,
+      0
+     ],
+     [
+      "PLACE",
+      "Vienna",
+      5
+     ],
+     [
+      "TOPIC",
+      "budget",
+      18
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1395.8070068359375,
+   "margin": 8.17919921875,
+   "n_outputs": 52,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Vienna"
+    },
+    {
+     "local_id": "v1",
+     "type": "TOPIC_VALUE",
+     "surface": "budget"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Vienna",
+    "place:vienna"
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "budget",
+    "topic:budget"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:vienna",
+    "PLACE",
+    "vienna",
+    "Vienna"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:budget",
+    "TOPIC",
+    "budget",
+    "budget"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TOPIC",
+    "topic:budget"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHERE",
+    "place:vienna"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "8ff826432d16069e8716825f4e5b8f68711ca866897e6dd753f682885cd32ad0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TOPIC",
+    "topic:budget"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "WHERE",
+    "place:vienna"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:budget"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645402,
+  "utterance_id": "locked_test-007-S4:1",
+  "INPUT": "QUERY WHERE OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f99549db16bb27827bd1fbbef6a5d29fd71d09e84bf36170923849a84b5eb74d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:vienna"
+  ],
+  "STATE_AFTER": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "RESPONSE": "Vienna",
+  "RETURN_RENDERED": [
+   "Vienna"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:budget"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645402,
+  "utterance_id": "locked_test-007-S4:2",
+  "INPUT": "QUERY WHERE OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0110bc92ce4b98850c2cfba3f4931abd247e838e6a8dc240e73f80cad69c6d13",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:budget"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2645402,
+  "utterance_id": "locked_test-007-S4:3",
+  "INPUT": "QUERY TOPIC OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "44180c4ef09b871f5384ec976a4c42ba9e51d88bb786f81245649ba7883c2e06",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:budget"
+  ],
+  "STATE_AFTER": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "RESPONSE": "budget",
+  "RETURN_RENDERED": [
+   "budget"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:budget"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2645402,
+  "utterance_id": "locked_test-007-S4:4",
+  "INPUT": "QUERY TOPIC OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dd3e0b020373b08e911f6d9d7cf6696f2f9bea57c6a886751866e95091e7f1a0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "f50dab4db9a34ec19c7fcd257e3933fc0f27d555957248f51f46a1292b85ffa0",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:budget"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

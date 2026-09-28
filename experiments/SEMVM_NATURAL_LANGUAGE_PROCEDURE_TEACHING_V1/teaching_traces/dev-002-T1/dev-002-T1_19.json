@@ -1,0 +1,148 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Aunt"
+ },
+ "interaction_id": "dev-002-T1:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-002-T1/learn/snapshots/dev-002-T1_19_start.sqlite",
+ "start_snapshot_sha256": "58435e5d02b0db87e81807bf794d2c798df473f6333b34d6cde44363301adf70",
+ "utterances": [
+  {
+   "utterance": "Show me the calls I have with Aunt and give them back.",
+   "uid": "dev-002-T1:20",
+   "instruction": "Show me the calls I have with Aunt and give them back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Show me the calls I have with Aunt and give them back.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Show me the calls I have with Aunt.",
+        "Give them back."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Show me the calls I have with Aunt.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Give them back.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 20,
+    "seconds": 14.0,
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Aunt"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Aunt\"}}\n\n{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Aunt"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "margin": 5.175,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Aunt"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "87ff25134d40231dba5e983a736cb9d7b5ecbda76298f3f8446619cb723b5d16",
+   "state_after": "87ff25134d40231dba5e983a736cb9d7b5ecbda76298f3f8446619cb723b5d16",
+   "seconds": 14.089
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Aunt"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "2bc11e0d02cee5251675bcc89f4c9014023471033f1f39fd0167e05419cb7f17",
+ "nl_mode": "NL_TEACH"
+}

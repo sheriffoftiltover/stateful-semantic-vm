@@ -1,0 +1,193 @@
+{
+ "scenario_id": "dev-019-S7",
+ "suite": "dev",
+ "category": "S7",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "note delta , while in Vienna re beta ; and later so then again soon , visit beta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "VISIT"
+     },
+     {
+      "local_id": "v0",
+      "type": "PLACE",
+      "surface": "Vienna"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "VISIT",
+    "mods": [
+     [
+      "WHERE",
+      "Vienna",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "I",
+   "layout": [
+    "between_o4",
+    [
+     "M1"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_VISIT WHERE=Tokyo"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF VISIT"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF LAST_VISIT"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "visit:000001",
+      "WHERE",
+      "place:vienna"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "visit:000001",
+      "WHERE",
+      "place:tokyo"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Tokyo"
+   ],
+   "state": {
+    "objects": [
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "visit:000001",
+      "WHERE",
+      "place:tokyo"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Tokyo"
+   ],
+   "state": {
+    "objects": [
+     [
+      "note:000001",
+      "NOTE"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "visit:000001",
+      "WHERE",
+      "place:tokyo"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

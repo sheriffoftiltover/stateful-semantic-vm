@@ -1,0 +1,99 @@
+[
+ {
+  "target": "person_on_call_at",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please look up the calls planned for 7 and take the first one.",
+      "text": "Please look up the calls planned for 7 and take the first one.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "PARENT",
+          "WHEN",
+          {
+           "const": "7"
+          }
+         ]
+        ],
+        "status": null
+       },
+       {
+        "op": "FIRST",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Check who is on it, then return that person.",
+      "text": "Check who is on it, then return that person.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "GET",
+        "bind": "r3",
+        "obj": {
+         "var": "r2"
+        },
+        "rel": "WHO"
+       },
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r3"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

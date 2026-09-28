@@ -1,0 +1,226 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Yves"
+ },
+ "interaction_id": "dev_a-018-S14L:close_open_emails_to:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/E/dev_a-018-S14L/learn/snapshots/dev_a-018-S14L_close_open_emails_to_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "91f95bae2a332be827b5b4280200a8ee8ee826fd7d1e0cc6744713766b743fd8",
+ "utterances": [
+  {
+   "utterance": "Look up the emails to Yves that are still open.",
+   "uid": "dev_a-018-S14L:close_open_emails_to:d0:demo1-slot1:0",
+   "instruction": "Look up the emails to Yves that are still open.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Look up the emails to Yves that are still open.",
+    "values": {
+     "PERSON": [
+      "Yves"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "73dc97515db23af6838f33f6430f2005d003022a4cbd2cf1e36020678a4af5f6"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": {\n        \"RECIPIENT\": \"Yves\"\n      },\n      \"status\": \"OPEN\"\n    }\n  ]\n}",
+    "request_hash": "73dc97515db23af6838f33f6430f2005d003022a4cbd2cf1e36020678a4af5f6",
+    "cached": true,
+    "input_tokens": 4454,
+    "output_tokens": 89,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Yves"
+      },
+      "status": "OPEN"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.01
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Yves"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b1b309d83d8acce725864786162e22af61d5071c31940042cfc7affa96ef8fa8",
+   "state_after": "b1b309d83d8acce725864786162e22af61d5071c31940042cfc7affa96ef8fa8",
+   "seconds": 0.447
+  },
+  {
+   "utterance": "Set each one to closed and give them back.",
+   "uid": "dev_a-018-S14L:close_open_emails_to:d0:demo1-slot2:1",
+   "instruction": "Set each one to closed and give them back.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Set each one to closed and give them back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "096da1241f92520c9a494cbf299dec820a8ba698ae28bd42bc7bd63ac7f52cbd"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    { \"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\" },\n    { \"op\": \"RETURN\", \"value\": \"r1\" }\n  ]\n}",
+    "request_hash": "096da1241f92520c9a494cbf299dec820a8ba698ae28bd42bc7bd63ac7f52cbd",
+    "cached": true,
+    "input_tokens": 4495,
+    "output_tokens": 83,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     },
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0",
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "email:000007",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "b1b309d83d8acce725864786162e22af61d5071c31940042cfc7affa96ef8fa8",
+   "state_after": "885f289a062192ddf181fb0e84d4c0d2a3676b9a3136f359cad14b382d7f0f93",
+   "seconds": 0.676
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Yves"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "74e5a8cfa556adc44478149ec32db89115e566729744379e77a4b3ee8f5fbb1d",
+ "nl_mode": "NL_TEACH"
+}

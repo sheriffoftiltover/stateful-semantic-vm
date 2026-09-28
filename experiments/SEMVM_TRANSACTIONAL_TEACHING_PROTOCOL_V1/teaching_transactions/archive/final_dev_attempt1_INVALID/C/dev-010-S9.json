@@ -1,0 +1,139 @@
+[
+ {
+  "target": "person_on_call_at",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "VERIFIED",
+    "end_detail": {},
+    "learn": null,
+    "events": [],
+    "example": {
+     "time": "3"
+    }
+   }
+  ]
+ },
+ {
+  "target": "count_calls_with",
+  "status": "PROVIDER_FAILURE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:SLOT_RECOVERY_FAIL",
+    "end_detail": {
+     "slot": "demo1-slot5",
+     "error": "MARGIN",
+     "kind": "RESTATE_SLOT",
+     "reason": "SLOT_RECOVERY_FAIL"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot1",
+      "error": "MARGIN",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot4",
+      "error": "MARGIN",
+      "reply_steps": 1,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "person": "Dave"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:EPISODE_END",
+    "end_detail": {},
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot1",
+      "error": "MARGIN",
+      "reply_steps": 1,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "person": "Dave"
+    }
+   }
+  ]
+ },
+ {
+  "target": "count_calls_for_time_person",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "VERIFIED",
+    "end_detail": {},
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot3",
+      "error": "RESULT_NOT_COMPUTED",
+      "reply_steps": 1,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "time": "1:30"
+    }
+   }
+  ]
+ }
+]

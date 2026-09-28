@@ -1,0 +1,123 @@
+{
+ "name": "move_visit_and_parent",
+ "n_traces": 2,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE move_visit_and_parent(place:PLACE)\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHERE={place}\n$v1 = PARENT $v0\nUPDATE $v1 WHERE={place}\nRETURN $v0\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 2.49,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "replay_1",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "counterfactual_t1_0",
+     true
+    ],
+    [
+     "counterfactual_t1_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "txn_inject_after_1",
+     true
+    ],
+    [
+     "txn_inject_after_2",
+     true
+    ],
+    [
+     "txn_inject_after_3",
+     true
+    ],
+    [
+     "txn_inject_after_4",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE move_visit_and_parent(place:PLACE)\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHERE={place}\n$v1 = PARENT $v0\nUPDATE $v1 WHERE={place}\nRETURN $v0\nEND",
+   "program_hash": "ed5d0974d04f20b4af47bb9ad267335dd174221340138dcc8498ee2d92bc1ca4"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:move_visit_and_parent:v1",
+ "chosen": "deterministic"
+}

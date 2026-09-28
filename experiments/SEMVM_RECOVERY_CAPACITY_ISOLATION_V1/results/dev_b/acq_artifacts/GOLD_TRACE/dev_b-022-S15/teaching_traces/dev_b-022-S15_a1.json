@@ -1,0 +1,211 @@
+{
+ "name": "close_oldest_open_request",
+ "mode": ":teach",
+ "declared": {
+  "person": "Nina"
+ },
+ "interaction_id": "dev_b-022-S15:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-022-S15/learn/snapshots/dev_b-022-S15_a1_start.sqlite",
+ "start_snapshot_sha256": "577bdd6b03aa3fda6026477848e1ed5b9cb8d0379d05d665326edf014abe8811",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-022-S15:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Nina"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "0d988332d6a4623812d85516d352c35446b4eaea4fe3c4bdb24bd808dbe6a43d",
+   "state_after": "0d988332d6a4623812d85516d352c35446b4eaea4fe3c4bdb24bd808dbe6a43d",
+   "seconds": 0.076
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-022-S15:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "SORT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     },
+     "rel": "WHEN"
+    }
+   ],
+   "diff": [],
+   "state_before": "0d988332d6a4623812d85516d352c35446b4eaea4fe3c4bdb24bd808dbe6a43d",
+   "state_after": "0d988332d6a4623812d85516d352c35446b4eaea4fe3c4bdb24bd808dbe6a43d",
+   "seconds": 0.075
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-022-S15:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIRST",
+     "bind": "r3",
+     "list": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "0d988332d6a4623812d85516d352c35446b4eaea4fe3c4bdb24bd808dbe6a43d",
+   "state_after": "0d988332d6a4623812d85516d352c35446b4eaea4fe3c4bdb24bd808dbe6a43d",
+   "seconds": 0.083
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-022-S15:a5",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "r3"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "request:000011",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "0d988332d6a4623812d85516d352c35446b4eaea4fe3c4bdb24bd808dbe6a43d",
+   "state_after": "85e6ab67950c67f743c93552d66fa8468484d9e8414d07147503951be0ff35c1",
+   "seconds": 0.135
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-022-S15:a6",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r3"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "85e6ab67950c67f743c93552d66fa8468484d9e8414d07147503951be0ff35c1",
+   "state_after": "85e6ab67950c67f743c93552d66fa8468484d9e8414d07147503951be0ff35c1",
+   "seconds": 0.082
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Nina"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "SORT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "WHEN"
+  },
+  {
+   "op": "FIRST",
+   "bind": "r3",
+   "list": {
+    "var": "r2"
+   }
+  },
+  {
+   "op": "SET_STATUS",
+   "obj": {
+    "var": "r3"
+   },
+   "value": {
+    "const": "CLOSED"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "260278d5121499ad39d9dcf050834ccd5a28c72183721a301ef29897d1ecac53",
+ "nl_mode": "GOLD_TRACE"
+}

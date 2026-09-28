@@ -1,0 +1,443 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642265,
+  "utterance_id": "dev-014-S5:0",
+  "INPUT": "request gamma , at dawn re zeta ; and so then later , email zeta , about trip per gamma",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o1",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       13
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TOPIC",
+       "trip",
+       17
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "EMAIL",
+       null,
+       13
+      ],
+      [
+       "TIME",
+       "dawn",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      13
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "dawn",
+      4
+     ],
+     [
+      "TOPIC",
+      "trip",
+      17
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1181.379638671875,
+   "margin": 13.71044921875,
+   "n_outputs": 52,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TIME",
+     "surface": "dawn"
+    },
+    {
+     "local_id": "v1",
+     "type": "TOPIC_VALUE",
+     "surface": "trip"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "TIME",
+    "v0",
+    "dawn",
+    "time:DAWN"
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "trip",
+    "topic:trip"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:DAWN",
+    "TIME",
+    "DAWN",
+    "dawn"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:trip",
+    "TOPIC",
+    "trip",
+    "trip"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TOPIC",
+    "topic:trip"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHEN",
+    "time:DAWN"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "109f78ca3807f63e7f8c474e04a1809df67a05b69dc352621a0b3fb285cfa9da",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TOPIC",
+    "topic:trip"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "WHEN",
+    "time:DAWN"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "3aae83c147c0a9518586a1776b8de8a9dc4ad2ce6f9bc34996a17f81a7ec4770",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHEN",
+     "time:DAWN"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "TOPIC",
+     "topic:trip"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642265,
+  "utterance_id": "dev-014-S5:1",
+  "INPUT": "QUERY WHEN OF EMAIL WHERE PARENT.TOPIC=trip",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "3aae83c147c0a9518586a1776b8de8a9dc4ad2ce6f9bc34996a17f81a7ec4770",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "EMAIL",
+   "where": [
+    [
+     "PARENT",
+     "TOPIC",
+     "trip"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHEN",
+     "where": [
+      [
+       "PARENT",
+       "TOPIC",
+       "topic:trip"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "335594098faa25b92cb5c2cd217e2dc92755d63718766c053e17923106c9160c",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:DAWN"
+  ],
+  "STATE_AFTER": "3aae83c147c0a9518586a1776b8de8a9dc4ad2ce6f9bc34996a17f81a7ec4770",
+  "RESPONSE": "dawn",
+  "RETURN_RENDERED": [
+   "dawn"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHEN",
+     "time:DAWN"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "TOPIC",
+     "topic:trip"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642265,
+  "utterance_id": "dev-014-S5:2",
+  "INPUT": "QUERY TOPIC OF REQUEST WHERE CHILD.WHEN=dawn",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "3aae83c147c0a9518586a1776b8de8a9dc4ad2ce6f9bc34996a17f81a7ec4770",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "REQUEST",
+   "where": [
+    [
+     "CHILD",
+     "WHEN",
+     "dawn"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "TOPIC",
+     "where": [
+      [
+       "CHILD",
+       "WHEN",
+       "time:DAWN"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "82e068c8673bf412710b7eab53cc74321264b91325a8e398cb12503de4a1032c",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:trip"
+  ],
+  "STATE_AFTER": "3aae83c147c0a9518586a1776b8de8a9dc4ad2ce6f9bc34996a17f81a7ec4770",
+  "RESPONSE": "trip",
+  "RETURN_RENDERED": [
+   "trip"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHEN",
+     "time:DAWN"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "TOPIC",
+     "topic:trip"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

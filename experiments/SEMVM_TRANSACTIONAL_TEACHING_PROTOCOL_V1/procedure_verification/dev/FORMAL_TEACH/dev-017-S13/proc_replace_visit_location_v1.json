@@ -1,0 +1,87 @@
+{
+ "name": "replace_visit_location",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE replace_visit_location(place:PLACE)\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHERE={place}\nRETURN $v0\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 1.63,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "txn_inject_after_1",
+     true
+    ],
+    [
+     "txn_inject_after_2",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE replace_visit_location(place:PLACE)\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHERE={place}\nRETURN $v0\nEND",
+   "program_hash": "fb4b45ce723bd6e3335ea358290cd687484cf71f33ff87cf53552b701a4771bb"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:replace_visit_location:v1",
+ "chosen": "deterministic"
+}

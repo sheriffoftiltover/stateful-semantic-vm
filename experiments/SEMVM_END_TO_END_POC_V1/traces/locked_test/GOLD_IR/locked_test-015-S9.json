@@ -1,0 +1,1021 @@
+[
+ {
+  "turn": 0,
+  "pid": 2644610,
+  "utterance_id": "locked_test-015-S9:0",
+  "INPUT": "request theta , by Quinn re delta ; and so then later , call delta , at 7 re theta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Quinn"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "7"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Quinn",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "7",
+    "time:07:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Quinn"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:07:00",
+    "TIME",
+    "07:00",
+    "7"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "6111f84eb3b9cb2f486dde14cb4545ad0f9ebcad46a1e05dc0603ed170ac75fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Quinn"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "+rel",
+    "call:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "627c5f4611e55305ffc197fd4476af53c77495852ed863f472881a072ed23072",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:07:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2644610,
+  "utterance_id": "locked_test-015-S9:1",
+  "INPUT": "request eta , by Trent re epsilon ; and so then later , call epsilon , at 9:30 re eta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "627c5f4611e55305ffc197fd4476af53c77495852ed863f472881a072ed23072",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Trent"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "9:30"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Trent",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "9:30",
+    "time:09:30"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Trent"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:09:30",
+    "TIME",
+    "09:30",
+    "9:30"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:09:30"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "30b51cffcc5041bf8d1201fdb60a5970d86cd70f29ee7105d702d257f70cf5a1",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "call:000002",
+    "CALL"
+   ],
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Trent"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "TODO",
+    "call:000002"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "WHEN",
+    "time:09:30"
+   ],
+   [
+    "+rel",
+    "call:000002",
+    "WHO",
+    "person:000002"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "4fa6e8060f4f21c47e525111a5ab6e854d2c443bf17c93956412965e18947c71",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "call:000002",
+     "CALL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "call:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "call:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:09:30"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Trent"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2644610,
+  "utterance_id": "locked_test-015-S9:2",
+  "INPUT": "request theta , at 1 re theta ; and so then later , call delta , by Grace re delta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "4fa6e8060f4f21c47e525111a5ab6e854d2c443bf17c93956412965e18947c71",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Grace"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "1"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Grace",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "1",
+    "time:01:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Grace"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:01:00",
+    "TIME",
+    "01:00",
+    "1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:01:00"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "8dba579cbc7dd2c96873397884c1ed61c7317ff7c622f3f838436d5c4763cd68",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "call:000003",
+    "CALL"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Grace"
+   ],
+   [
+    "+rel",
+    "request:000003",
+    "TODO",
+    "call:000003"
+   ],
+   [
+    "+rel",
+    "request:000003",
+    "WHEN",
+    "time:01:00"
+   ],
+   [
+    "+rel",
+    "call:000003",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "d293d1be5cc2316107c63d73b67fe99eb1fd3b46e9dba8563a58fc8481102a60",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "call:000002",
+     "CALL"
+    ],
+    [
+     "call:000003",
+     "CALL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "call:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "call:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "call:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:09:30"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "call:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:01:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Trent"
+    ],
+    [
+     "person:000003",
+     "Grace"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2644610,
+  "utterance_id": "locked_test-015-S9:3",
+  "INPUT": "QUERY WHO OF CALL WHERE PARENT.WHEN=9:30",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "d293d1be5cc2316107c63d73b67fe99eb1fd3b46e9dba8563a58fc8481102a60",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "CALL",
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     "9:30"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "WHO",
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       "time:09:30"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "b94af006dd5132dd1380769ac8b7108fd00506a26b0a74d92b012035d71732b7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000002"
+  ],
+  "STATE_AFTER": "d293d1be5cc2316107c63d73b67fe99eb1fd3b46e9dba8563a58fc8481102a60",
+  "RESPONSE": "Trent",
+  "RETURN_RENDERED": [
+   "Trent"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "call:000002",
+     "CALL"
+    ],
+    [
+     "call:000003",
+     "CALL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "call:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "call:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "call:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:09:30"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "call:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:01:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Trent"
+    ],
+    [
+     "person:000003",
+     "Grace"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2644610,
+  "utterance_id": "locked_test-015-S9:4",
+  "INPUT": "QUERY WHO OF CALL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "d293d1be5cc2316107c63d73b67fe99eb1fd3b46e9dba8563a58fc8481102a60",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "CALL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "35a85d7a20ac99dac56e70b244cf7f082bc07cb6243d4a581bde14d0503f860d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001",
+   "person:000002",
+   "person:000003"
+  ],
+  "STATE_AFTER": "d293d1be5cc2316107c63d73b67fe99eb1fd3b46e9dba8563a58fc8481102a60",
+  "RESPONSE": "Grace, Quinn, Trent",
+  "RETURN_RENDERED": [
+   "Grace",
+   "Quinn",
+   "Trent"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "call:000002",
+     "CALL"
+    ],
+    [
+     "call:000003",
+     "CALL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "request:000003",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "call:000002",
+     "WHO",
+     "person:000002"
+    ],
+    [
+     "call:000003",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "call:000002"
+    ],
+    [
+     "request:000002",
+     "WHEN",
+     "time:09:30"
+    ],
+    [
+     "request:000003",
+     "TODO",
+     "call:000003"
+    ],
+    [
+     "request:000003",
+     "WHEN",
+     "time:01:00"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Quinn"
+    ],
+    [
+     "person:000002",
+     "Trent"
+    ],
+    [
+     "person:000003",
+     "Grace"
+    ]
+   ]
+  }
+ }
+]

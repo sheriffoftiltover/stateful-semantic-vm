@@ -1,0 +1,30 @@
+{
+ "text": "PROCEDURE call_people_at(time:TIME)\n$v0 = FIND CALL WHERE PARENT.WHEN={time}\n$v1 = SELECT $v0 WHO\nRETURN $v1\nEND",
+ "provenance": {
+  "provider": "modal-vllm",
+  "model": "openai/gpt-oss-120b",
+  "request_hash": "4032a49113bb2937477aeb7a5b8ee256097e225cd46f46451283cf598c0a7960",
+  "prompt_sha256": "3839d80197296a3afd3169cb435ccf2dddff3deb29e60bfbabd62e1591036a59",
+  "generation": {
+   "model": "gpt-oss-120b",
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "seed": 0,
+   "reasoning_effort": "high"
+  },
+  "kind": "DIRECT_AST",
+  "meter_usd_before": 4.742,
+  "request_id": "chatcmpl-7222484838f44f98af15d92a0b8afdf6",
+  "timestamp": "2026-09-27T15:54:05Z",
+  "latency_s": 5.247,
+  "retry_count": 0,
+  "input_tokens": 1217,
+  "output_tokens": 819,
+  "finish_reason": "stop",
+  "response_sha256": "420ef9c6d80e80a6d961ea84b0965c75ce7701c5a165d17fc2638ff53b714259",
+  "reasoning_chars": 2953,
+  "cached": false
+ },
+ "messages_sha256": "3839d80197296a3afd3169cb435ccf2dddff3deb29e60bfbabd62e1591036a59"
+}

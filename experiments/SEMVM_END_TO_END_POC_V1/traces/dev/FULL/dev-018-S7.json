@@ -1,0 +1,510 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642357,
+  "utterance_id": "dev-018-S7:0",
+  "INPUT": "note epsilon ; about schedule re epsilon : next and then so ; call delta : at midnight per delta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "CALL",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "NOTE"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "CALL",
+       null,
+       13
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "TOPIC",
+       "schedule",
+       4
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "CALL",
+       null,
+       13
+      ],
+      [
+       "TIME",
+       "midnight",
+       17
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "CALL",
+      null,
+      13
+     ],
+     [
+      "NOTE",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "midnight",
+      17
+     ],
+     [
+      "TOPIC",
+      "schedule",
+      4
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1253.84765625,
+   "margin": 18.0732421875,
+   "n_outputs": 52,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TIME",
+     "surface": "midnight"
+    },
+    {
+     "local_id": "v1",
+     "type": "TOPIC_VALUE",
+     "surface": "schedule"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "TIME",
+    "v0",
+    "midnight",
+    "time:MIDNIGHT"
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "schedule",
+    "topic:schedule"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:MIDNIGHT",
+    "TIME",
+    "MIDNIGHT",
+    "midnight"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:schedule",
+    "TOPIC",
+    "schedule",
+    "schedule"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHEN",
+    "time:MIDNIGHT"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "b78abbf2ed7342602e9269e419aa54bcff0b478b59fe42712480d40cfbeb85b9",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "+rel",
+    "call:000001",
+    "WHEN",
+    "time:MIDNIGHT"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "6f7838b8ba89cf2b5b5172c02a6712a4ea4a395b8d7bfcf69dd685e2e4ea2d88",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:schedule"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642357,
+  "utterance_id": "dev-018-S7:1",
+  "INPUT": "UPDATE LAST_NOTE TOPIC=report",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "6f7838b8ba89cf2b5b5172c02a6712a4ea4a395b8d7bfcf69dd685e2e4ea2d88",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_NOTE",
+   "set": [
+    [
+     "TOPIC",
+     "report"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "note:000001",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:report",
+    "TOPIC",
+    "report",
+    "report"
+   ],
+   [
+    "ASSERT",
+    "note:000001",
+    "TOPIC",
+    "topic:report"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "6abfc317f615dce4046d19b4f583b06d17d2da26c527a36702e1c1164f28279a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "note:000001",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TOPIC",
+    "topic:report"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "fe349b33640f6176a4b3d06dae7035141416c9d706e7dc3387c67f56af15c0fe",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:report"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642357,
+  "utterance_id": "dev-018-S7:2",
+  "INPUT": "QUERY TOPIC OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "fe349b33640f6176a4b3d06dae7035141416c9d706e7dc3387c67f56af15c0fe",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "44180c4ef09b871f5384ec976a4c42ba9e51d88bb786f81245649ba7883c2e06",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:report"
+  ],
+  "STATE_AFTER": "fe349b33640f6176a4b3d06dae7035141416c9d706e7dc3387c67f56af15c0fe",
+  "RESPONSE": "report",
+  "RETURN_RENDERED": [
+   "report"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:report"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642357,
+  "utterance_id": "dev-018-S7:3",
+  "INPUT": "QUERY TOPIC OF LAST_NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "fe349b33640f6176a4b3d06dae7035141416c9d706e7dc3387c67f56af15c0fe",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "LAST_NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "note:000001",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "3c920b6dd0461dafb01b9367c6342d33ca846eae5f3c0b543359a72e2858acd6",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:report"
+  ],
+  "STATE_AFTER": "fe349b33640f6176a4b3d06dae7035141416c9d706e7dc3387c67f56af15c0fe",
+  "RESPONSE": "report",
+  "RETURN_RENDERED": [
+   "report"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:report"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

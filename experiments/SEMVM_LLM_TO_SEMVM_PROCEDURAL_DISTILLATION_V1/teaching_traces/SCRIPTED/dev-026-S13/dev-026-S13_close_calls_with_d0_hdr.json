@@ -1,0 +1,451 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Nina"
+ },
+ "interaction_id": "dev-026-S13:close_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/SCRIPTED/dev-026-S13/learn/snapshots/dev-026-S13_close_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "13972920b6e11172b8e7df6ad2f80111a38998115efccd2bef9c03e9a77995ee",
+ "utterances": [
+  {
+   "utterance": "Get every call with Nina and close each of them.",
+   "uid": "dev-026-S13:close_calls_with:d0:l0",
+   "instruction": "Get every call with Nina and close each of them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get every call with Nina and close each of them.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Get every call with Nina.",
+        "Close each of them."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Get every call with Nina.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Close each of them.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 25,
+    "seconds": 20.31,
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Nina"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Nina\"}}\n\n{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Nina"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "margin": 5.555,
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Nina"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000004",
+     "OPEN",
+     "CLOSED"
+    ],
+    [
+     "status",
+     "call:000007",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "fba3956db5619e875c1d5840e957b12697cf35fd2b0f64bb8526dcaadf6722af",
+   "state_after": "6c824d8c7c1b86b06c4e6fb526d8b3eea18fae2963faaac969d5563448d7df58",
+   "seconds": 20.482
+  },
+  {
+   "utterance": "Also send the result to Kevin by Slack.",
+   "uid": "dev-026-S13:close_calls_with:d0:l1",
+   "instruction": "Also send the result to Kevin by Slack.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Also send the result to Kevin by Slack.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.877
+     },
+     {
+      "text": "{\"op\": \"UPDATE\", \"each\": \"r1\", \"rel\": \"WHO\", \"value\": \"Kevin\"}\n\n",
+      "score": -2.347
+     },
+     {
+      "text": "{\"op\": \"UPDATE\", \"each\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Kevin\"}\n\n",
+      "score": -2.371
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -0.877,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"UPDATE\", \"rel\": \"WHO\", \"value\": {\"const\": \"Kevin\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -2.347,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"UPDATE\", \"rel\": \"RECIPIENT\", \"value\": {\"const\": \"Kevin\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -2.371,
+      "n": 1
+     }
+    ],
+    "margin": 1.47,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 3.19,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 3.187
+  },
+  {
+   "utterance": "Return how many there are.",
+   "uid": "dev-026-S13:close_calls_with:d0:l2",
+   "instruction": "Return how many there are.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return how many there are.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.725
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -1.134
+     },
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -1.672
+     },
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -5.754
+     },
+     {
+      "text": "r2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\n{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -7.72
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}, {\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.725,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -1.132,
+      "n": 2
+     }
+    ],
+    "margin": 0.408,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0",
+     "RETURN.value=r2 licensed by R1"
+    ],
+    "seconds": 2.58,
+    "runner_up": "REFERENCE_AMBIGUOUS",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 2.584
+  },
+  {
+   "utterance": "Count how many there are and return the number.",
+   "uid": "dev-026-S13:close_calls_with:d0:l3",
+   "instruction": "Count how many there are and return the number.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Count how many there are and return the number.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Count how many there are.",
+        "Return the number."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Count how many there are.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Return the number.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 8,
+    "seconds": 5.38,
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "margin": 3.507,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0",
+     "RETURN.value=r2 licensed by R1"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "6c824d8c7c1b86b06c4e6fb526d8b3eea18fae2963faaac969d5563448d7df58",
+   "state_after": "6c824d8c7c1b86b06c4e6fb526d8b3eea18fae2963faaac969d5563448d7df58",
+   "seconds": 5.466
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Nina"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "48ab6b8f8298419eb3e923f5a9386fce25cc50fb3f394d88389911473eab6a5f",
+ "nl_mode": "NL_TEACH"
+}

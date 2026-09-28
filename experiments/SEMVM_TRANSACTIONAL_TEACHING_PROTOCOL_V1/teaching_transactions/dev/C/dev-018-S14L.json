@@ -1,0 +1,103 @@
+[
+ {
+  "target": "count_open_calls_with",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": null,
+    "events": [],
+    "example": {
+     "person": "Rita"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "EVIDENCE_CONFLICT",
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot1",
+      "error": "SEGMENTATION_FAILED",
+      "reply_steps": 2,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot3",
+      "error": "UNSUPPORTED",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot2",
+      "error": "MARGIN",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot6",
+      "error": "MARGIN",
+      "reply_steps": 1,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "person": "Aunt"
+    }
+   },
+   {
+    "index": 2,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "EVIDENCE_CONFLICT",
+    "events": [],
+    "example": {
+     "person": "Rita"
+    }
+   }
+  ]
+ }
+]

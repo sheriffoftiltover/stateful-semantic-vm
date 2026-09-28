@@ -1,0 +1,3247 @@
+{
+ "scenario_id": "dev_b-009-S9",
+ "mode": "SCRIPTED",
+ "arm": "B",
+ "grounder": "HOSTED",
+ "recovery": "SCRIPTED",
+ "teacher_max_tokens": 8192,
+ "budget": {
+  "max_clarification_exchanges_per_slot": 2,
+  "max_rephrase_exchanges_per_slot": 2,
+  "max_demonstrations_per_target": 3,
+  "max_teacher_turns_per_target": 10,
+  "max_example_requests_per_demonstration": 2,
+  "max_teacher_turns_per_demonstration": 8,
+  "max_clarification_exchanges_per_instruction": 2
+ },
+ "student_hash_before": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "fixture": [
+  {
+   "status": "OK",
+   "STATE_hash": "6c182836f8644136b64e3b9e1061bf3a0951268a6b8726137edcc5857e181ade"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "8c4377f8830bb36e11ff261867a1e0d0d9f4345131e44216cf1b55b6c0f888d8"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0e1ce44a2a98e8a24d445f7d0e40b6df959b06e32fc288ef21d74dfd0adea367"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "bebd472838824d4df7eccdf3ed58500f35597d68fe38216f1c8657bfd6688ccd"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "158327459f2b5545f2374076664092dab8e95bbca190c28cb34aa4eb217e348e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "97bed72ebeed74cb3179e8e0b2b9c8b43c0449c026d3c6c93ac90f93bc6e246e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3539f85bf95434ce0ecbf3db551b407cae67777657a28cc6b0b995e869306d58"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a3e871bb14996d90f87792c1b539b99a3f2b34443425a91013864712c614a5bc"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "c62f8c83a186d88707c1051e6bdb75df7e9695005b37a0b34dd933bfff54c081"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "781b919d37f17b52c034cc1ed3c6512d690c6ca9b79f038fc2170387ac7a08ff"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a7379bad0a44da0711fce06b9e246fcb45ebc92496f24cbd4a17756b6e8542dc"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "657c75344d166b94ff5d2f115fa833e164947a5b83893edb6ecda35a0047df68"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d8cd4700647031b0106dcf87a25d5064925da70a7d4a71d9e6cf9877b766cf4d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "7a0a328f7fe4f045495f3b41f503b19ecf833b67578472680bd77f383509fff5"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "2a8207ae5d4b8a5fe0a96a00920f20ac2aa22f971b25163cfd6b103b6f77169b"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "c55242bb71a96fb3a4aa6020168cda6dea4cc46cc0029f28ed64dd32f677bddf"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "5030cee888998ed22332e2f9bb9062024f530c9d40052eb365751ba10ca85733"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1fcf3446338fee60e88376ec5030a368e1e5b3bb349f7c3db8719f6f18f30501"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "88a9a456eb5c1bc7d3b8f684b3ef7fb9becef897e9000cb56d4370201fc151c1"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a9cd6d472d2858e659c57fbeb5353ce56be4d1b237e33ba7dec5c853d90b3d13"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "6c3781a2e8e071892b41773981a3f502a363ebead2dcad03b7fb9217139a1ae8"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "57bce1a3d40a3021c65d98abb9dede892c5ecafa4b4e49a8c22cbbafe01a654e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "180687bd053bb29bfca2b313534f055a99eabd227c861f30573e834ff67d3248"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "8114024ae0c192bb4e124cd12101628bf6a824dfee285eb0851541a706fcd390"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a896502c0d7a04abae0628831e6fb793ecc1c28af50ec3027f1ac06694f18f8a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "c0caff7a084a1a6703a03fc7d38e1bcb154ef6c7d68e77e069aeab028eedec38"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d70f346c0a1ea53b329b8950ae46553159312b84a8e736c320526874252ff13e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "03ab241aa6a3f3e5aa260cb32ae13e2760bb7446963daf3a75cbbdf647c198cb"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "82eb81886e9ee0cdfa3643cfc49c9714e370ea27b6379c27b2fb4487e6fb93a7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "c6a3ed169526dbf1bb70a83592bc8c3b2caa8d78d4dd9d7550d60935819edf10"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3a54e3619a9a5daec90b5bb3df65c14c10a977a3054155df4bb8ebe377b0c129"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "626b213711a60834d27db0ef7758d66995d58d5c936e08e084ad5aba4774b513"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "626b213711a60834d27db0ef7758d66995d58d5c936e08e084ad5aba4774b513"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "75549cb6bf06754ff202658c5516ad0018e4c1adcc18d7ea5da8062742aaf7b0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "75549cb6bf06754ff202658c5516ad0018e4c1adcc18d7ea5da8062742aaf7b0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "04de6d0301cfeb1425f86e2cc7afb4a0436acf2b47eef66ba78fcfdb81429ea5"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "04de6d0301cfeb1425f86e2cc7afb4a0436acf2b47eef66ba78fcfdb81429ea5"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "374f43329f4ad0ea9febf352019991c9f394b53228da989ba9196c42b378905f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "374f43329f4ad0ea9febf352019991c9f394b53228da989ba9196c42b378905f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0592d10df1360c2444823e58bc2ea9259623c4352c0881fc8ce6a2adb2344960"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0592d10df1360c2444823e58bc2ea9259623c4352c0881fc8ce6a2adb2344960"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1ddea63c5386fcefc133158fe2e28e644aa47d90acd42fa33bf4a1b4f538dc26"
+  }
+ ],
+ "targets": [
+  {
+   "name": "person_on_call_at",
+   "demos": [
+    {
+     "index": 0,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Find the calls scheduled at dusk.",
+       "text": "Find the calls scheduled at dusk.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "CALL"
+         },
+         "where": [
+          [
+           "PARENT",
+           "WHEN",
+           {
+            "const": "dusk"
+           }
+          ]
+         ],
+         "status": null
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take the first one.",
+       "text": "Take the first one.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIRST",
+         "bind": "r2",
+         "list": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo1-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Please see who it is with.",
+       "text": "Please see who it is with.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "GET",
+         "bind": "r3",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHO"
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo1-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot4",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Give it back.",
+       "text": "Give it back.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r3"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 3,
+       "family": "demo1-slot4",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Find the calls scheduled at dusk.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "CALL"
+         },
+         "where": [
+          [
+           "PARENT",
+           "WHEN",
+           {
+            "const": "dusk"
+           }
+          ]
+         ],
+         "status": null
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"PARENT.WHEN\": \"dusk\"}}]}",
+       "llm_calls": 2,
+       "seconds": 3.713,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "54583acd2bd547d5148e90588f88c60438944e98546e74cfabc0bd61c3908f4c",
+       "grounder_cached": false,
+       "plan_errors": [
+        "FIND: condition WHEN='dusk' is not legal here (value not in the instruction, or relation/scope illegal for CALL)"
+       ],
+       "grounder_input_tokens": 4552,
+       "grounder_output_tokens": 103,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND",
+         "type": "CALL",
+         "where": {
+          "PARENT.WHEN": "dusk"
+         }
+        }
+       ],
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: FIND: condition WHEN='dusk' is not legal here (value not in the instruction, or relation/scope illegal for CALL)",
+         "feedback": [
+          {
+           "error": "ILLEGAL_RELATION_LOCATION",
+           "object_type": "CALL",
+           "relation": "WHEN",
+           "legal_path": "PARENT.WHEN"
+          }
+         ],
+         "request_hash": "611d4901d1ef70933b0152281440abc30c83b0cce7ca73d22c92c8cf90ad1610"
+        },
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "54583acd2bd547d5148e90588f88c60438944e98546e74cfabc0bd61c3908f4c"
+        }
+       ]
+      },
+      {
+       "line": "Take the first one.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIRST",
+         "bind": "r2",
+         "list": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"FIRST\", \"of\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.465,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "ebef49547d90307e28d49513cd5352fd236133c249d4c653de3d952b3605de76",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4486,
+       "grounder_output_tokens": 48,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "FIRST",
+         "of": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "ebef49547d90307e28d49513cd5352fd236133c249d4c653de3d952b3605de76"
+        }
+       ]
+      },
+      {
+       "line": "Please see who it is with.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "GET",
+         "bind": "r3",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHO"
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r3\", \"op\": \"GET\", \"of\": \"r2\", \"rel\": \"WHO\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.546,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "d36d02cbd3bced676632de9c92775247cf53b0a12559863a14952758ad8a0991",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4511,
+       "grounder_output_tokens": 54,
+       "raw_actions": [
+        {
+         "bind": "r3",
+         "op": "GET",
+         "of": "r2",
+         "rel": "WHO"
+        }
+       ],
+       "slot_id": "demo1-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "d36d02cbd3bced676632de9c92775247cf53b0a12559863a14952758ad8a0991"
+        }
+       ]
+      },
+      {
+       "line": "Give it back.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r3"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r3\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.571,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "15d43908c0e7081661292318dd20b7aaa9702f62afd37caa3c3cce3805e59eba",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4537,
+       "grounder_output_tokens": 38,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r3"
+        }
+       ],
+       "slot_id": "demo1-slot4",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "15d43908c0e7081661292318dd20b7aaa9702f62afd37caa3c3cce3805e59eba"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "time": "dusk"
+     },
+     "lesson_lines": [
+      "Find the calls scheduled at dusk.",
+      "Take the first one.",
+      "Please see who it is with.",
+      "Give it back."
+     ],
+     "returned": true,
+     "end": "VERIFIED",
+     "end_detail": {},
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Find the calls scheduled at dusk.",
+      "Take the first one.",
+      "Please see who it is with.",
+      "Give it back."
+     ]
+    }
+   ],
+   "teacher_turns": 1,
+   "student_questions": [],
+   "injections": [],
+   "status": "ACTIVE",
+   "classes": [],
+   "first_lesson_lines_ok": true,
+   "protocol": "TTP",
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: time=dusk\nSTEP: Find the calls scheduled at dusk.\nSTEP: Take the first one.\nSTEP: Please see who it is with.\nSTEP: Give it back.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    }
+   ]
+  },
+  {
+   "name": "count_calls_with",
+   "demos": [
+    {
+     "index": 0,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Find the calls with Aunt.",
+       "text": "Find the calls with Aunt.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "CALL"
+         },
+         "where": [
+          [
+           "SELF",
+           "WHO",
+           {
+            "const": "Aunt"
+           }
+          ]
+         ],
+         "status": null
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Count how many there are.",
+       "text": "Count how many there are.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "COUNT",
+         "bind": "r2",
+         "list": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo1-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return the number.",
+       "text": "Return the number.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r2"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo1-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Find the calls with Aunt.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "CALL"
+         },
+         "where": [
+          [
+           "SELF",
+           "WHO",
+           {
+            "const": "Aunt"
+           }
+          ]
+         ],
+         "status": null
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Aunt\"}}]}",
+       "llm_calls": 1,
+       "seconds": 1.591,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "cc1670b748f528cdeb2d04e8257e2f1250673053fd1b200bda6fa8e01fa14b84",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4457,
+       "grounder_output_tokens": 66,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND",
+         "type": "CALL",
+         "where": {
+          "WHO": "Aunt"
+         }
+        }
+       ],
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "cc1670b748f528cdeb2d04e8257e2f1250673053fd1b200bda6fa8e01fa14b84"
+        }
+       ]
+      },
+      {
+       "line": "Count how many there are.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "COUNT",
+         "bind": "r2",
+         "list": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.522,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "8f039c13e186021a28c812224d7dcecd27e6881d884915e3d88e2400104aff23",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4491,
+       "grounder_output_tokens": 49,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "COUNT",
+         "of": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "8f039c13e186021a28c812224d7dcecd27e6881d884915e3d88e2400104aff23"
+        }
+       ]
+      },
+      {
+       "line": "Return the number.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r2"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.353,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "21503093fb4235a68464bdb8425aaff8fb7d06eddf6b8f9abc4bac5dc0f88185",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4512,
+       "grounder_output_tokens": 38,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r2"
+        }
+       ],
+       "slot_id": "demo1-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "21503093fb4235a68464bdb8425aaff8fb7d06eddf6b8f9abc4bac5dc0f88185"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "person": "Aunt"
+     },
+     "lesson_lines": [
+      "Find the calls with Aunt.",
+      "Count how many there are.",
+      "Return the number."
+     ],
+     "returned": true,
+     "end": "VERIFIED",
+     "end_detail": {},
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Find the calls with Aunt.",
+      "Count how many there are.",
+      "Return the number."
+     ]
+    }
+   ],
+   "teacher_turns": 1,
+   "student_questions": [],
+   "injections": [],
+   "status": "ACTIVE",
+   "classes": [],
+   "first_lesson_lines_ok": true,
+   "protocol": "TTP",
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Aunt\nSTEP: Find the calls with Aunt.\nSTEP: Count how many there are.\nSTEP: Return the number.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    }
+   ]
+  },
+  {
+   "name": "count_calls_for_time_person",
+   "demos": [
+    {
+     "index": 0,
+     "state": "ABORTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "ABORTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "REPLACED",
+       "original_text": "Use person_on_call_at to find who is on the dusk call.",
+       "text": "Use person_on_call_at to find who is on the dusk call.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 3,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (bad JSON)"
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot4",
+       "source": "SCRIPTED_TEACHER",
+       "status": "REPLACED",
+       "original_text": "Use person_on_call_at to find who is on the dusk call.",
+       "text": "Use person_on_call_at to find who is on the dusk call.",
+       "replacement_for": "demo1-slot1",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (bad JSON)"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo1-slot5",
+       "source": "SCRIPTED_TEACHER",
+       "status": "CLARIFYING",
+       "original_text": "Use person_on_call_at to find who is on the dusk call.",
+       "text": "Use person_on_call_at to find who is on the dusk call.",
+       "replacement_for": "demo1-slot1",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (bad JSON)"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "PENDING",
+       "original_text": "Count the calls with that person using count_calls_with.",
+       "text": "Count the calls with that person using count_calls_with.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo1-slot2",
+       "displaced": false,
+       "history": [],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "status": "PENDING",
+       "original_text": "Give it back.",
+       "text": "Give it back.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo1-slot3",
+       "displaced": false,
+       "history": [],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Use person_on_call_at to find who is on the dusk call.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (bad JSON)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"dusk\"}}}]}",
+       "llm_calls": 2,
+       "seconds": 3.174,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9",
+       "grounder_cached": false,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4588,
+       "grounder_output_tokens": 84,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "CALL",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": "dusk"
+         }
+        },
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "5d66148c8b501d56882d8aa80097a6bac622702144a85fce8031df9de74bb8e7"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (bad JSON)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "bad JSON",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9"
+        }
+       ]
+      },
+      {
+       "line": "Use person_on_call_at to find who is on the dusk call.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (bad JSON)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"dusk\"}}}]}",
+       "llm_calls": 2,
+       "seconds": 0.001,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9",
+       "grounder_cached": true,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4588,
+       "grounder_output_tokens": 84,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "CALL",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": "dusk"
+         }
+        },
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot4",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "5d66148c8b501d56882d8aa80097a6bac622702144a85fce8031df9de74bb8e7"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (bad JSON)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "bad JSON",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9"
+        }
+       ]
+      },
+      {
+       "line": "Use person_on_call_at to find who is on the dusk call.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (bad JSON)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"dusk\"}}}]}",
+       "llm_calls": 2,
+       "seconds": 0.001,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9",
+       "grounder_cached": true,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4588,
+       "grounder_output_tokens": 84,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "CALL",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": "dusk"
+         }
+        },
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot5",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "5d66148c8b501d56882d8aa80097a6bac622702144a85fce8031df9de74bb8e7"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (bad JSON)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "bad JSON",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "time": "dusk"
+     },
+     "lesson_lines": [
+      "Use person_on_call_at to find who is on the dusk call.",
+      "Count the calls with that person using count_calls_with.",
+      "Give it back."
+     ],
+     "returned": false,
+     "end": "ABORTED:SLOT_RECOVERY_FAIL",
+     "end_detail": {
+      "slot": "demo1-slot5",
+      "error": "SCHEMA",
+      "kind": "RESTATE_SLOT",
+      "reason": "SLOT_RECOVERY_FAIL"
+     },
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 3,
+     "events": [
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo1-slot1",
+       "error": "SCHEMA",
+       "reply_steps": 1,
+       "cancel": false
+      },
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo1-slot4",
+       "error": "SCHEMA",
+       "reply_steps": 1,
+       "cancel": false
+      }
+     ],
+     "lines": [
+      "Use person_on_call_at to find who is on the dusk call.",
+      "Use person_on_call_at to find who is on the dusk call.",
+      "Use person_on_call_at to find who is on the dusk call."
+     ]
+    },
+    {
+     "index": 1,
+     "state": "ABORTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "ABORTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo2-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "REPLACED",
+       "original_text": "Use person_on_call_at to find who is on the 3:15 call.",
+       "text": "Use person_on_call_at to find who is on the 3:15 call.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 3,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo2-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (bad JSON)"
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot4",
+       "source": "SCRIPTED_TEACHER",
+       "status": "REPLACED",
+       "original_text": "Use person_on_call_at to find who is on the 3:15 call.",
+       "text": "Use person_on_call_at to find who is on the 3:15 call.",
+       "replacement_for": "demo2-slot1",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo2-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (bad JSON)"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo2-slot5",
+       "source": "SCRIPTED_TEACHER",
+       "status": "CLARIFYING",
+       "original_text": "Use person_on_call_at to find who is on the 3:15 call.",
+       "text": "Use person_on_call_at to find who is on the 3:15 call.",
+       "replacement_for": "demo2-slot1",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo2-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (bad JSON)"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo2-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "PENDING",
+       "original_text": "Count the calls with that person using count_calls_with.",
+       "text": "Count the calls with that person using count_calls_with.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo2-slot2",
+       "displaced": false,
+       "history": [],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "status": "PENDING",
+       "original_text": "Please give it back.",
+       "text": "Please give it back.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo2-slot3",
+       "displaced": false,
+       "history": [],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Use person_on_call_at to find who is on the 3:15 call.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (bad JSON)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"3:15\"}}}]}",
+       "llm_calls": 2,
+       "seconds": 3.463,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7",
+       "grounder_cached": false,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4592,
+       "grounder_output_tokens": 87,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "CALL",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": "3:15"
+         }
+        },
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo2-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "e53e49084376f3b081c1555fb88705b172ab3bc4cf6d2dc92a43555eef2b2f3f"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (bad JSON)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "bad JSON",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7"
+        }
+       ]
+      },
+      {
+       "line": "Use person_on_call_at to find who is on the 3:15 call.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (bad JSON)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"3:15\"}}}]}",
+       "llm_calls": 2,
+       "seconds": 0.001,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7",
+       "grounder_cached": true,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4592,
+       "grounder_output_tokens": 87,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "CALL",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": "3:15"
+         }
+        },
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo2-slot4",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "e53e49084376f3b081c1555fb88705b172ab3bc4cf6d2dc92a43555eef2b2f3f"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (bad JSON)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "bad JSON",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7"
+        }
+       ]
+      },
+      {
+       "line": "Use person_on_call_at to find who is on the 3:15 call.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (bad JSON)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"3:15\"}}}]}",
+       "llm_calls": 2,
+       "seconds": 0.002,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7",
+       "grounder_cached": true,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4592,
+       "grounder_output_tokens": 87,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "CALL",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": "3:15"
+         }
+        },
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo2-slot5",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "e53e49084376f3b081c1555fb88705b172ab3bc4cf6d2dc92a43555eef2b2f3f"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (bad JSON)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "bad JSON",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "time": "3:15"
+     },
+     "lesson_lines": [
+      "Use person_on_call_at to find who is on the 3:15 call.",
+      "Count the calls with that person using count_calls_with.",
+      "Please give it back."
+     ],
+     "returned": false,
+     "end": "ABORTED:SLOT_RECOVERY_FAIL",
+     "end_detail": {
+      "slot": "demo2-slot5",
+      "error": "SCHEMA",
+      "kind": "RESTATE_SLOT",
+      "reason": "SLOT_RECOVERY_FAIL"
+     },
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 3,
+     "events": [
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo2-slot1",
+       "error": "SCHEMA",
+       "reply_steps": 1,
+       "cancel": false
+      },
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo2-slot4",
+       "error": "SCHEMA",
+       "reply_steps": 1,
+       "cancel": false
+      }
+     ],
+     "lines": [
+      "Use person_on_call_at to find who is on the 3:15 call.",
+      "Use person_on_call_at to find who is on the 3:15 call.",
+      "Use person_on_call_at to find who is on the 3:15 call."
+     ]
+    },
+    {
+     "index": 2,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo3-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Please use person_on_call_at to find who is on the 5:45 call.",
+       "text": "Please use person_on_call_at to find who is on the 5:45 call.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "CALL",
+         "bind": "r1",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": {
+           "const": "5:45"
+          }
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo3-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Count the calls with that person using count_calls_with.",
+       "text": "Count the calls with that person using count_calls_with.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "CALL",
+         "bind": "r2",
+         "procedure": "count_calls_with",
+         "args": {
+          "person": {
+           "var": "r1"
+          }
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo3-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return it.",
+       "text": "Return it.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r2"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo3-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Please use person_on_call_at to find who is on the 5:45 call.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "CALL",
+         "bind": "r1",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": {
+           "const": "5:45"
+          }
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"CALL\",\n      \"procedure\": \"person_on_call_at\",\n      \"args\": {\n        \"time\": \"5:45\"\n      }\n    }\n  ]\n}",
+       "llm_calls": 2,
+       "seconds": 4.122,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "65eda9753a3e085e688ba20e888f64331ac9aba7c419969103116e39755f773f",
+       "grounder_cached": false,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4616,
+       "grounder_output_tokens": 105,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "CALL",
+         "procedure": "person_on_call_at",
+         "args": {
+          "time": "5:45"
+         }
+        }
+       ],
+       "slot_id": "demo3-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "432ad1f1fa09518419ceffdd3e3e5e9a0b5f728e062de1a242ffe7a84cdae4f1"
+        },
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "65eda9753a3e085e688ba20e888f64331ac9aba7c419969103116e39755f773f"
+        }
+       ]
+      },
+      {
+       "line": "Count the calls with that person using count_calls_with.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "CALL",
+         "bind": "r2",
+         "procedure": "count_calls_with",
+         "args": {
+          "person": {
+           "var": "r1"
+          }
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r2\",\n      \"op\": \"CALL\",\n      \"procedure\": \"count_calls_with\",\n      \"args\": {\n        \"person\": \"r1\"\n      }\n    }\n  ]\n}",
+       "llm_calls": 2,
+       "seconds": 4.28,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "51d348f91d7aba04d89ea6c5aace3ded666d9b6df58f1e7f385f568d47b0874d",
+       "grounder_cached": false,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4640,
+       "grounder_output_tokens": 101,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "CALL",
+         "procedure": "count_calls_with",
+         "args": {
+          "person": "r1"
+         }
+        }
+       ],
+       "slot_id": "demo3-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "20b2998d371e98621bccaa4f13eff868b349f31c1eb7804d19b01aa03e97d68d"
+        },
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "51d348f91d7aba04d89ea6c5aace3ded666d9b6df58f1e7f385f568d47b0874d"
+        }
+       ]
+      },
+      {
+       "line": "Return it.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r2"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.521,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "88039d8d80a41beb06246fb831a747006147d5eb86c577bf2efe89feec988efe",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4531,
+       "grounder_output_tokens": 38,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r2"
+        }
+       ],
+       "slot_id": "demo3-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "88039d8d80a41beb06246fb831a747006147d5eb86c577bf2efe89feec988efe"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "time": "5:45"
+     },
+     "lesson_lines": [
+      "Please use person_on_call_at to find who is on the 5:45 call.",
+      "Count the calls with that person using count_calls_with.",
+      "Return it."
+     ],
+     "returned": true,
+     "end": "VERIFIED",
+     "end_detail": {},
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Please use person_on_call_at to find who is on the 5:45 call.",
+      "Count the calls with that person using count_calls_with.",
+      "Return it."
+     ]
+    }
+   ],
+   "teacher_turns": 7,
+   "student_questions": [
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 1 (\"Use person_on_call_at to find who is on the dusk call.\") because I am not sure what it means. RESTATE step 1: reply only with replacement STEP line(s) for step 1, or CANCEL_SLOT.",
+     "slot_id": "demo1-slot1"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 1 (\"Use person_on_call_at to find who is on the dusk call.\") because I am not sure what it means. RESTATE step 1: reply only with replacement STEP line(s) for step 1, or CANCEL_SLOT.",
+     "slot_id": "demo1-slot4"
+    },
+    {
+     "kind": "NEW_DEMO",
+     "text": "I could not complete demonstration 1 (slot recovery fail); it was discarded and nothing was learned from it. Please give a complete new demonstration (EXAMPLE line and STEP lines).",
+     "slot_id": null
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 1 (\"Use person_on_call_at to find who is on the 3:15 call.\") because I am not sure what it means. RESTATE step 1: reply only with replacement STEP line(s) for step 1, or CANCEL_SLOT.",
+     "slot_id": "demo2-slot1"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 1 (\"Use person_on_call_at to find who is on the 3:15 call.\") because I am not sure what it means. RESTATE step 1: reply only with replacement STEP line(s) for step 1, or CANCEL_SLOT.",
+     "slot_id": "demo2-slot4"
+    },
+    {
+     "kind": "NEW_DEMO",
+     "text": "I could not complete demonstration 2 (slot recovery fail); it was discarded and nothing was learned from it. Please give a complete new demonstration (EXAMPLE line and STEP lines).",
+     "slot_id": null
+    }
+   ],
+   "injections": [],
+   "status": "ACTIVE",
+   "classes": [
+    "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+   ],
+   "first_lesson_lines_ok": false,
+   "protocol": "TTP",
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: time=dusk\nSTEP: Use person_on_call_at to find who is on the dusk call.\nSTEP: Count the calls with that person using count_calls_with.\nSTEP: Give it back.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Use person_on_call_at to find who is on the dusk call.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": true
+     },
+     "slot_id": "demo1-slot1"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Use person_on_call_at to find who is on the dusk call.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": true
+     },
+     "slot_id": "demo1-slot4"
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: time=3:15\nSTEP: Use person_on_call_at to find who is on the 3:15 call.\nSTEP: Count the calls with that person using count_calls_with.\nSTEP: Please give it back.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Use person_on_call_at to find who is on the 3:15 call.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": true
+     },
+     "slot_id": "demo2-slot1"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Use person_on_call_at to find who is on the 3:15 call.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": true
+     },
+     "slot_id": "demo2-slot4"
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: time=5:45\nSTEP: Please use person_on_call_at to find who is on the 5:45 call.\nSTEP: Count the calls with that person using count_calls_with.\nSTEP: Return it.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    }
+   ]
+  }
+ ],
+ "false_accept_probes": [
+  {
+   "target": "person_on_call_at",
+   "variant": "FROZEN_VALUE",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL"
+  },
+  {
+   "target": "count_calls_with",
+   "variant": "FROZEN_VALUE",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL"
+  },
+  {
+   "target": "count_calls_for_time_person",
+   "variant": "FROZEN_VALUE",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL"
+  }
+ ],
+ "active": [
+  {
+   "name": "count_calls_for_time_person",
+   "id": "proc:count_calls_for_time_person:v1",
+   "parameters": [
+    {
+     "name": "time",
+     "type": "TIME"
+    }
+   ],
+   "effect": "PURE",
+   "returns": "INT",
+   "aliases": []
+  },
+  {
+   "name": "count_calls_with",
+   "id": "proc:count_calls_with:v1",
+   "parameters": [
+    {
+     "name": "person",
+     "type": "PERSON"
+    }
+   ],
+   "effect": "PURE",
+   "returns": "INT",
+   "aliases": []
+  },
+  {
+   "name": "person_on_call_at",
+   "id": "proc:person_on_call_at:v1",
+   "parameters": [
+    {
+     "name": "time",
+     "type": "TIME"
+    }
+   ],
+   "effect": "PURE",
+   "returns": "PERSON",
+   "aliases": []
+  }
+ ],
+ "library_bytes_before": 49152,
+ "library_bytes_after": 57344,
+ "active_before": 0,
+ "active_after": 3,
+ "world_state_after": {
+  "objects": [
+   [
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "call:000002",
+    "CALL"
+   ],
+   [
+    "call:000003",
+    "CALL"
+   ],
+   [
+    "call:000004",
+    "CALL"
+   ],
+   [
+    "call:000005",
+    "CALL"
+   ],
+   [
+    "call:000006",
+    "CALL"
+   ],
+   [
+    "call:000007",
+    "CALL"
+   ],
+   [
+    "call:000008",
+    "CALL"
+   ],
+   [
+    "call:000009",
+    "CALL"
+   ],
+   [
+    "call:000010",
+    "CALL"
+   ],
+   [
+    "call:000011",
+    "CALL"
+   ],
+   [
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "email:000002",
+    "EMAIL"
+   ],
+   [
+    "email:000003",
+    "EMAIL"
+   ],
+   [
+    "email:000004",
+    "EMAIL"
+   ],
+   [
+    "email:000005",
+    "EMAIL"
+   ],
+   [
+    "email:000006",
+    "EMAIL"
+   ],
+   [
+    "email:000007",
+    "EMAIL"
+   ],
+   [
+    "email:000008",
+    "EMAIL"
+   ],
+   [
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "person:000004",
+    "PERSON"
+   ],
+   [
+    "person:000005",
+    "PERSON"
+   ],
+   [
+    "person:000006",
+    "PERSON"
+   ],
+   [
+    "person:000007",
+    "PERSON"
+   ],
+   [
+    "person:000008",
+    "PERSON"
+   ],
+   [
+    "person:000009",
+    "PERSON"
+   ],
+   [
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "reminder:000002",
+    "REMINDER"
+   ],
+   [
+    "reminder:000003",
+    "REMINDER"
+   ],
+   [
+    "reminder:000004",
+    "REMINDER"
+   ],
+   [
+    "reminder:000005",
+    "REMINDER"
+   ],
+   [
+    "reminder:000006",
+    "REMINDER"
+   ],
+   [
+    "reminder:000007",
+    "REMINDER"
+   ],
+   [
+    "reminder:000008",
+    "REMINDER"
+   ],
+   [
+    "reminder:000009",
+    "REMINDER"
+   ],
+   [
+    "reminder:000010",
+    "REMINDER"
+   ],
+   [
+    "reminder:000011",
+    "REMINDER"
+   ],
+   [
+    "reminder:000012",
+    "REMINDER"
+   ],
+   [
+    "reminder:000013",
+    "REMINDER"
+   ],
+   [
+    "reminder:000014",
+    "REMINDER"
+   ],
+   [
+    "reminder:000015",
+    "REMINDER"
+   ],
+   [
+    "reminder:000016",
+    "REMINDER"
+   ],
+   [
+    "reminder:000017",
+    "REMINDER"
+   ],
+   [
+    "reminder:000018",
+    "REMINDER"
+   ],
+   [
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "request:000004",
+    "REQUEST"
+   ],
+   [
+    "request:000005",
+    "REQUEST"
+   ],
+   [
+    "request:000006",
+    "REQUEST"
+   ],
+   [
+    "request:000007",
+    "REQUEST"
+   ],
+   [
+    "request:000008",
+    "REQUEST"
+   ],
+   [
+    "request:000009",
+    "REQUEST"
+   ],
+   [
+    "request:000010",
+    "REQUEST"
+   ],
+   [
+    "request:000011",
+    "REQUEST"
+   ],
+   [
+    "request:000012",
+    "REQUEST"
+   ],
+   [
+    "request:000013",
+    "REQUEST"
+   ],
+   [
+    "request:000014",
+    "REQUEST"
+   ],
+   [
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "visit:000002",
+    "VISIT"
+   ],
+   [
+    "visit:000003",
+    "VISIT"
+   ],
+   [
+    "visit:000004",
+    "VISIT"
+   ],
+   [
+    "visit:000005",
+    "VISIT"
+   ],
+   [
+    "visit:000006",
+    "VISIT"
+   ],
+   [
+    "visit:000007",
+    "VISIT"
+   ],
+   [
+    "visit:000008",
+    "VISIT"
+   ],
+   [
+    "visit:000009",
+    "VISIT"
+   ],
+   [
+    "visit:000010",
+    "VISIT"
+   ],
+   [
+    "visit:000011",
+    "VISIT"
+   ],
+   [
+    "visit:000012",
+    "VISIT"
+   ],
+   [
+    "visit:000013",
+    "VISIT"
+   ]
+  ],
+  "relations": [
+   [
+    "call:000004",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000005",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "call:000006",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000007",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000008",
+    "WHO",
+    "person:000007"
+   ],
+   [
+    "call:000009",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000010",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "call:000011",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000001",
+    "TOPIC",
+    "topic:budget"
+   ],
+   [
+    "email:000002",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "email:000002",
+    "TOPIC",
+    "topic:survey"
+   ],
+   [
+    "email:000003",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000003",
+    "TOPIC",
+    "topic:trip"
+   ],
+   [
+    "email:000004",
+    "RECIPIENT",
+    "person:000003"
+   ],
+   [
+    "email:000004",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "email:000005",
+    "RECIPIENT",
+    "person:000008"
+   ],
+   [
+    "email:000005",
+    "TOPIC",
+    "topic:lease"
+   ],
+   [
+    "email:000006",
+    "RECIPIENT",
+    "person:000009"
+   ],
+   [
+    "email:000006",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "email:000007",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000007",
+    "TOPIC",
+    "topic:budget"
+   ],
+   [
+    "email:000008",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000008",
+    "TOPIC",
+    "topic:trip"
+   ],
+   [
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "reminder:000002",
+    "TODO",
+    "email:000003"
+   ],
+   [
+    "reminder:000003",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "reminder:000004",
+    "TODO",
+    "call:000004"
+   ],
+   [
+    "reminder:000004",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "reminder:000005",
+    "TODO",
+    "call:000005"
+   ],
+   [
+    "reminder:000005",
+    "WHEN",
+    "time:03:15"
+   ],
+   [
+    "reminder:000006",
+    "TODO",
+    "call:000006"
+   ],
+   [
+    "reminder:000006",
+    "WHEN",
+    "time:09:30"
+   ],
+   [
+    "reminder:000007",
+    "TODO",
+    "call:000007"
+   ],
+   [
+    "reminder:000007",
+    "WHEN",
+    "time:06:00"
+   ],
+   [
+    "reminder:000008",
+    "TODO",
+    "call:000008"
+   ],
+   [
+    "reminder:000008",
+    "WHEN",
+    "time:06:15"
+   ],
+   [
+    "reminder:000009",
+    "TODO",
+    "call:000009"
+   ],
+   [
+    "reminder:000009",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "reminder:000010",
+    "TODO",
+    "call:000010"
+   ],
+   [
+    "reminder:000010",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "reminder:000011",
+    "TODO",
+    "email:000005"
+   ],
+   [
+    "reminder:000012",
+    "TODO",
+    "visit:000004"
+   ],
+   [
+    "reminder:000013",
+    "TODO",
+    "call:000011"
+   ],
+   [
+    "reminder:000013",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "reminder:000014",
+    "TODO",
+    "email:000006"
+   ],
+   [
+    "reminder:000015",
+    "TODO",
+    "visit:000006"
+   ],
+   [
+    "reminder:000016",
+    "TODO",
+    "email:000007"
+   ],
+   [
+    "reminder:000017",
+    "TODO",
+    "visit:000011"
+   ],
+   [
+    "reminder:000018",
+    "TODO",
+    "visit:000013"
+   ],
+   [
+    "request:000001",
+    "TODO",
+    "email:000002"
+   ],
+   [
+    "request:000002",
+    "TODO",
+    "email:000004"
+   ],
+   [
+    "request:000003",
+    "TODO",
+    "visit:000002"
+   ],
+   [
+    "request:000004",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "request:000004",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "request:000004",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000005",
+    "TODO",
+    "call:000002"
+   ],
+   [
+    "request:000005",
+    "WHEN",
+    "time:03:15"
+   ],
+   [
+    "request:000005",
+    "WHO",
+    "person:000003"
+   ],
+   [
+    "request:000006",
+    "TODO",
+    "call:000003"
+   ],
+   [
+    "request:000006",
+    "WHEN",
+    "time:03:15"
+   ],
+   [
+    "request:000006",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000007",
+    "TODO",
+    "visit:000003"
+   ],
+   [
+    "request:000007",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "request:000007",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "request:000008",
+    "TODO",
+    "visit:000005"
+   ],
+   [
+    "request:000008",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "request:000008",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "request:000009",
+    "TODO",
+    "email:000008"
+   ],
+   [
+    "request:000010",
+    "TODO",
+    "visit:000007"
+   ],
+   [
+    "request:000010",
+    "WHEN",
+    "time:06:00"
+   ],
+   [
+    "request:000010",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000011",
+    "TODO",
+    "visit:000008"
+   ],
+   [
+    "request:000011",
+    "WHEN",
+    "time:DUSK"
+   ],
+   [
+    "request:000011",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000012",
+    "TODO",
+    "visit:000009"
+   ],
+   [
+    "request:000012",
+    "WHEN",
+    "time:06:15"
+   ],
+   [
+    "request:000012",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000013",
+    "TODO",
+    "visit:000010"
+   ],
+   [
+    "request:000013",
+    "WHEN",
+    "time:03:15"
+   ],
+   [
+    "request:000013",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000014",
+    "TODO",
+    "visit:000012"
+   ],
+   [
+    "visit:000001",
+    "WHERE",
+    "place:delhi"
+   ],
+   [
+    "visit:000002",
+    "WHERE",
+    "place:vienna"
+   ],
+   [
+    "visit:000004",
+    "WHERE",
+    "place:prague"
+   ],
+   [
+    "visit:000006",
+    "WHERE",
+    "place:lima"
+   ],
+   [
+    "visit:000011",
+    "WHERE",
+    "place:paris"
+   ],
+   [
+    "visit:000012",
+    "WHERE",
+    "place:tokyo"
+   ],
+   [
+    "visit:000013",
+    "WHERE",
+    "place:paris"
+   ]
+  ],
+  "aliases": [
+   [
+    "person:000001",
+    "Dave"
+   ],
+   [
+    "person:000002",
+    "Mallory"
+   ],
+   [
+    "person:000003",
+    "Peggy"
+   ],
+   [
+    "person:000004",
+    "Kevin"
+   ],
+   [
+    "person:000005",
+    "Aunt"
+   ],
+   [
+    "person:000006",
+    "Grandma"
+   ],
+   [
+    "person:000007",
+    "Alice"
+   ],
+   [
+    "person:000008",
+    "Wendy"
+   ],
+   [
+    "person:000009",
+    "Zoe"
+   ]
+  ],
+  "attributes": [
+   [
+    "call:000006",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000007",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000009",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000003",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000008",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000010",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000012",
+    "STATUS",
+    "CLOSED"
+   ]
+  ]
+ },
+ "student_hash_after": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "seconds": 239.56,
+ "nl_llm_calls": 0,
+ "retrieval_llm_calls": 0,
+ "hosted_calls": [
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "611d4901d1ef70933b0152281440abc30c83b0cce7ca73d22c92c8cf90ad1610",
+   "cached": false,
+   "input_tokens": 4450,
+   "output_tokens": 108,
+   "latency_s": 1.242,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "54583acd2bd547d5148e90588f88c60438944e98546e74cfabc0bd61c3908f4c",
+   "cached": false,
+   "input_tokens": 4552,
+   "output_tokens": 103,
+   "latency_s": 1.229,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "ebef49547d90307e28d49513cd5352fd236133c249d4c653de3d952b3605de76",
+   "cached": false,
+   "input_tokens": 4486,
+   "output_tokens": 48,
+   "latency_s": 0.868,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "d36d02cbd3bced676632de9c92775247cf53b0a12559863a14952758ad8a0991",
+   "cached": false,
+   "input_tokens": 4511,
+   "output_tokens": 54,
+   "latency_s": 0.993,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "15d43908c0e7081661292318dd20b7aaa9702f62afd37caa3c3cce3805e59eba",
+   "cached": false,
+   "input_tokens": 4537,
+   "output_tokens": 38,
+   "latency_s": 1.005,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "cc1670b748f528cdeb2d04e8257e2f1250673053fd1b200bda6fa8e01fa14b84",
+   "cached": false,
+   "input_tokens": 4457,
+   "output_tokens": 66,
+   "latency_s": 1.002,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "8f039c13e186021a28c812224d7dcecd27e6881d884915e3d88e2400104aff23",
+   "cached": false,
+   "input_tokens": 4491,
+   "output_tokens": 49,
+   "latency_s": 0.937,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "21503093fb4235a68464bdb8425aaff8fb7d06eddf6b8f9abc4bac5dc0f88185",
+   "cached": false,
+   "input_tokens": 4512,
+   "output_tokens": 38,
+   "latency_s": 0.794,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "5d66148c8b501d56882d8aa80097a6bac622702144a85fce8031df9de74bb8e7",
+   "cached": false,
+   "input_tokens": 4475,
+   "output_tokens": 113,
+   "latency_s": 1.491,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9",
+   "cached": false,
+   "input_tokens": 4588,
+   "output_tokens": 84,
+   "latency_s": 1.249,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "5d66148c8b501d56882d8aa80097a6bac622702144a85fce8031df9de74bb8e7",
+   "cached": true,
+   "input_tokens": 4475,
+   "output_tokens": 113,
+   "latency_s": 1.491,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9",
+   "cached": true,
+   "input_tokens": 4588,
+   "output_tokens": 84,
+   "latency_s": 1.249,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "5d66148c8b501d56882d8aa80097a6bac622702144a85fce8031df9de74bb8e7",
+   "cached": true,
+   "input_tokens": 4475,
+   "output_tokens": 113,
+   "latency_s": 1.491,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "0a9858731871ea0ed3d3e2e44ab97cd7e3db1e29e5171a40fb72111b734c94c9",
+   "cached": true,
+   "input_tokens": 4588,
+   "output_tokens": 84,
+   "latency_s": 1.249,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "e53e49084376f3b081c1555fb88705b172ab3bc4cf6d2dc92a43555eef2b2f3f",
+   "cached": false,
+   "input_tokens": 4478,
+   "output_tokens": 115,
+   "latency_s": 1.511,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7",
+   "cached": false,
+   "input_tokens": 4592,
+   "output_tokens": 87,
+   "latency_s": 1.506,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "e53e49084376f3b081c1555fb88705b172ab3bc4cf6d2dc92a43555eef2b2f3f",
+   "cached": true,
+   "input_tokens": 4478,
+   "output_tokens": 115,
+   "latency_s": 1.511,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7",
+   "cached": true,
+   "input_tokens": 4592,
+   "output_tokens": 87,
+   "latency_s": 1.506,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "e53e49084376f3b081c1555fb88705b172ab3bc4cf6d2dc92a43555eef2b2f3f",
+   "cached": true,
+   "input_tokens": 4478,
+   "output_tokens": 115,
+   "latency_s": 1.511,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "f635cfb7b3e82c95bdde8a72b2f7a52593707b2573dff40e49d00115c9d497d7",
+   "cached": true,
+   "input_tokens": 4592,
+   "output_tokens": 87,
+   "latency_s": 1.506,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "432ad1f1fa09518419ceffdd3e3e5e9a0b5f728e062de1a242ffe7a84cdae4f1",
+   "cached": false,
+   "input_tokens": 4479,
+   "output_tokens": 148,
+   "latency_s": 1.809,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "65eda9753a3e085e688ba20e888f64331ac9aba7c419969103116e39755f773f",
+   "cached": false,
+   "input_tokens": 4616,
+   "output_tokens": 105,
+   "latency_s": 1.284,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "20b2998d371e98621bccaa4f13eff868b349f31c1eb7804d19b01aa03e97d68d",
+   "cached": false,
+   "input_tokens": 4505,
+   "output_tokens": 151,
+   "latency_s": 1.916,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "51d348f91d7aba04d89ea6c5aace3ded666d9b6df58f1e7f385f568d47b0874d",
+   "cached": false,
+   "input_tokens": 4640,
+   "output_tokens": 101,
+   "latency_s": 1.418,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "88039d8d80a41beb06246fb831a747006147d5eb86c577bf2efe89feec988efe",
+   "cached": false,
+   "input_tokens": 4531,
+   "output_tokens": 38,
+   "latency_s": 0.871,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  }
+ ]
+}

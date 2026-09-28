@@ -1,0 +1,259 @@
+{
+ "name": "count_open_calls_with",
+ "mode": ":example",
+ "declared": {
+  "person": "Laura"
+ },
+ "interaction_id": "dev_b-019-S14L:count_open_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/E/dev_b-019-S14L/learn/snapshots/dev_b-019-S14L_count_open_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "5e2df8dd31fa962608e1b281dd3b15158e6660c7ab6927a8697e07b6f2708419",
+ "utterances": [
+  {
+   "utterance": "Find the open calls with Laura.",
+   "uid": "dev_b-019-S14L:count_open_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the open calls with Laura.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Find the open calls with Laura.",
+    "values": {
+     "PERSON": [
+      "Laura"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "40c871aa7ee9ef98faa65dc6d5498ef8e125246584472cbeb7ad1efa3214e54d"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Laura\"}, \"status\": \"OPEN\"}]}",
+    "request_hash": "40c871aa7ee9ef98faa65dc6d5498ef8e125246584472cbeb7ad1efa3214e54d",
+    "cached": true,
+    "input_tokens": 4450,
+    "output_tokens": 79,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Laura"
+      },
+      "status": "OPEN"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Laura"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "state_after": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "seconds": 0.725
+  },
+  {
+   "utterance": "Please count them.",
+   "uid": "dev_b-019-S14L:count_open_calls_with:d0:demo1-slot2:1",
+   "instruction": "Please count them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "76067a95a28c51b5ead9de27a2b3ba9aa3fe92530d37e5b4661f3c1797dbc670"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "9be533e43355a2340d930cc67222973e42d8ebbed61e47b061cfeef8c1b6e956"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "9be533e43355a2340d930cc67222973e42d8ebbed61e47b061cfeef8c1b6e956",
+    "cached": true,
+    "input_tokens": 4586,
+    "output_tokens": 62,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "state_after": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "seconds": 0.481
+  },
+  {
+   "utterance": "Give it back.",
+   "uid": "dev_b-019-S14L:count_open_calls_with:d0:demo1-slot3:2",
+   "instruction": "Give it back.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "6f7e4e3e5188be51752c847005fe8845ff7a9b00681e3fbc598c93e1f989a877"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "6f7e4e3e5188be51752c847005fe8845ff7a9b00681e3fbc598c93e1f989a877",
+    "cached": true,
+    "input_tokens": 4509,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R3"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "state_after": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "seconds": 0.534
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Laura"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "0e5e04bec7b0307ff8b2956275efe23aca22b00665a9d95ea07f1f422212b606",
+ "nl_mode": "NL_TEACH"
+}

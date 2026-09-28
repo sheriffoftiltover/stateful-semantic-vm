@@ -1,0 +1,111 @@
+{
+ "name": "count_requests_by_at",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_requests_by_at(person:PERSON, time:TIME)\n$v0 = FIND REQUEST WHERE SELF.WHO={person}\nFOR $v1 IN $v0 : UPDATE $v1 WHEN={time}\n$v2 = COUNT $v0\nRETURN $v2\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 1.15,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "counterfactual_t0_2",
+     true
+    ],
+    [
+     "counterfactual_t0_3",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_ambiguous_entity",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "txn_inject_after_1",
+     true
+    ],
+    [
+     "txn_inject_after_2",
+     true
+    ],
+    [
+     "txn_inject_after_3",
+     true
+    ],
+    [
+     "txn_inject_after_4",
+     true
+    ],
+    [
+     "txn_inject_after_5",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE count_requests_by_at(person:PERSON, time:TIME)\n$v0 = FIND REQUEST WHERE SELF.WHO={person}\nFOR $v1 IN $v0 : UPDATE $v1 WHEN={time}\n$v2 = COUNT $v0\nRETURN $v2\nEND",
+   "program_hash": "8cbb259cda47b1aebeb68ca0fb7314febca3a8b66f6527213aa63674ef740ff1"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:count_requests_by_at:v1",
+ "chosen": "deterministic"
+}

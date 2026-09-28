@@ -1,0 +1,172 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Judy"
+ },
+ "interaction_id": "dev_a-001-S1:calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/B/dev_a-001-S1/learn/snapshots/dev_a-001-S1_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "a619c9317026fb9f8aba8e6946938b7e1a5354acd990ae7a7583684d7a29e04f",
+ "utterances": [
+  {
+   "utterance": "Find all calls with Judy.",
+   "uid": "dev_a-001-S1:calls_with:d0:demo1-slot1:0",
+   "instruction": "Find all calls with Judy.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Find all calls with Judy.",
+    "values": {
+     "PERSON": [
+      "Judy"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f5e670f188ae77f427ea713ae9439a98df007b8bae6a4a60614f35d4fef941f3"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Judy\"}}]}",
+    "request_hash": "f5e670f188ae77f427ea713ae9439a98df007b8bae6a4a60614f35d4fef941f3",
+    "cached": false,
+    "input_tokens": 4449,
+    "output_tokens": 77,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Judy"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 4.36
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Judy"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "955d0ed7a0c58d1c4f9da155909c5cc5d3cdb11c2f0ab3cb886d72cd58d613be",
+   "state_after": "955d0ed7a0c58d1c4f9da155909c5cc5d3cdb11c2f0ab3cb886d72cd58d613be",
+   "seconds": 4.946
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev_a-001-S1:calls_with:d0:demo1-slot2:1",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "d8deef7df0657ffe9d32c263aae0decc35feae04518ef2fdeffa858324308caf"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "d8deef7df0657ffe9d32c263aae0decc35feae04518ef2fdeffa858324308caf",
+    "cached": true,
+    "input_tokens": 4480,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "955d0ed7a0c58d1c4f9da155909c5cc5d3cdb11c2f0ab3cb886d72cd58d613be",
+   "state_after": "955d0ed7a0c58d1c4f9da155909c5cc5d3cdb11c2f0ab3cb886d72cd58d613be",
+   "seconds": 0.521
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Judy"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "7177391c6cc39178c05daa43036a00f99240f483857b120ecbfc0cab14d14bb5",
+ "nl_mode": "NL_TEACH"
+}

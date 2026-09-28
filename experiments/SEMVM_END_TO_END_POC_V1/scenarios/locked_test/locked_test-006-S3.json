@@ -1,0 +1,267 @@
+{
+ "scenario_id": "locked_test-006-S3",
+ "suite": "locked_test",
+ "category": "S3",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request theta ; at dusk per theta : next and then so ; email beta : about launch per beta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "dusk"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "launch"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e1",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "WHEN",
+      "dusk",
+      "outer"
+     ],
+     [
+      "TOPIC",
+      "launch",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o4",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF REQUEST"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF EMAIL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF EMAIL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF REQUEST"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:launch"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:DUSK"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "dusk"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:launch"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:DUSK"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:launch"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:DUSK"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "launch"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:launch"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:DUSK"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "TOPIC",
+      "topic:launch"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:DUSK"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

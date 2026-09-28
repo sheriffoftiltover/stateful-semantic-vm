@@ -1,0 +1,248 @@
+{
+ "name": "count_calls_for_time_person",
+ "mode": ":teach",
+ "declared": {
+  "time": "10"
+ },
+ "interaction_id": "locked_test-009-S9:count_calls_for_time_person:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-009-S9/learn/snapshots/locked_test-009-S9_count_calls_for_time_person_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "04d8fb6df43f0ea4e07a30b61fd9c13aafb5ce43b2bf0b80c321c6d56f7de4df",
+ "utterances": [
+  {
+   "utterance": "Call person_on_call_at with time 10.",
+   "uid": "locked_test-009-S9:count_calls_for_time_person:d0:demo1-slot1:0",
+   "instruction": "Call person_on_call_at with time 10.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Call person_on_call_at with time 10.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "10"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "grounder output not in the schema (bad JSON)",
+      "feedback": [
+       {
+        "error": "SCHEMA",
+        "detail": "bad JSON",
+        "rule": "reply with exactly one valid JSON object in the envelope format"
+       }
+      ],
+      "request_hash": "e53b54f4774696ca5837f6e5420a1b290c6a96faba6e8dd839cfa973dc9c1ee6"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "923e52d50fb6421dc7e8684ed0dc26aee4334f5a5d1ba0e9f44ee627dae8f2a7"
+     }
+    ],
+    "raw_text": "{\"status\":\"PLAN\",\"steps\":[{\"op\":\"CALL\",\"procedure\":\"person_on_call_at\",\"args\":{\"time\":\"10\"}}]}",
+    "request_hash": "923e52d50fb6421dc7e8684ed0dc26aee4334f5a5d1ba0e9f44ee627dae8f2a7",
+    "cached": false,
+    "input_tokens": 4564,
+    "output_tokens": 59,
+    "schema_error": "bad JSON",
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "CALL",
+      "procedure": "person_on_call_at",
+      "args": {
+       "time": "10"
+      },
+      "bind": "r1"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": true,
+    "seconds": 2.8
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r1",
+     "procedure": "person_on_call_at",
+     "args": {
+      "time": {
+       "const": "10"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 2.877
+  },
+  {
+   "utterance": "Call count_calls_with with person that result.",
+   "uid": "locked_test-009-S9:count_calls_for_time_person:d0:demo1-slot2:1",
+   "instruction": "Call count_calls_with with person that result.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Call count_calls_with with person that result.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "18e3e6d50457f6d8252be3dd6dd3a9e85f1536eaf671be72a5e63c4d4d00c4e3"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"CALL\", \"procedure\": \"count_calls_with\", \"args\": {\"person\": \"r1\"}}]}",
+    "request_hash": "18e3e6d50457f6d8252be3dd6dd3a9e85f1536eaf671be72a5e63c4d4d00c4e3",
+    "cached": false,
+    "input_tokens": 4501,
+    "output_tokens": 70,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "CALL",
+      "procedure": "count_calls_with",
+      "args": {
+       "person": "r1"
+      }
+     }
+    ],
+    "reference_notes": [
+     "CALL.args.person=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.38
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r2",
+     "procedure": "count_calls_with",
+     "args": {
+      "person": {
+       "var": "r1"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 1.551
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "locked_test-009-S9:count_calls_for_time_person:d0:demo1-slot3:2",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "2c595040cfa985b58b017ef04341cb5302b8ee49cba4f0ee399946d2fcaf54ca"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "2c595040cfa985b58b017ef04341cb5302b8ee49cba4f0ee399946d2fcaf54ca",
+    "cached": false,
+    "input_tokens": 4530,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.99
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 1.225
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "CALL",
+   "bind": "r1",
+   "procedure": "person_on_call_at",
+   "args": {
+    "time": {
+     "const": "10"
+    }
+   }
+  },
+  {
+   "op": "CALL",
+   "bind": "r2",
+   "procedure": "count_calls_with",
+   "args": {
+    "person": {
+     "var": "r1"
+    }
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "9be3493acd290a4d0e643c2ceb74f7027f099970b0affc7e6c9f95e99acec88b",
+ "nl_mode": "NL_TEACH"
+}

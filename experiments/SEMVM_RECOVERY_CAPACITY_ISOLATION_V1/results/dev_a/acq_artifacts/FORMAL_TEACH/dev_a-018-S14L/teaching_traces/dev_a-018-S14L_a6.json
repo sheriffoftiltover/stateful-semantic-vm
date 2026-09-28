@@ -1,0 +1,58 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Quinn"
+ },
+ "interaction_id": "dev_a-018-S14L:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-018-S14L/learn/snapshots/dev_a-018-S14L_a6_start.sqlite",
+ "start_snapshot_sha256": "91f95bae2a332be827b5b4280200a8ee8ee826fd7d1e0cc6744713766b743fd8",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Quinn"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "861e575ac03b487bf225e6b60b1d3d85d7926bc42d28084db898cdff581e0bd3",
+ "nl_mode": "GOLD_TRACE"
+}

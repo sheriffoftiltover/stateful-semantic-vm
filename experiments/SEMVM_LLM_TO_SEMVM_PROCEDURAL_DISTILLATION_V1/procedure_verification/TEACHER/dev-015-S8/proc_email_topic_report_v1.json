@@ -1,0 +1,51 @@
+{
+ "name": "email_topic_report",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE email_topic_report()\n$v0 = FIND EMAIL STATUS=OPEN\nRETURN $v0\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.27,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE email_topic_report()\n$v0 = FIND EMAIL STATUS=OPEN\nRETURN $v0\nEND",
+   "program_hash": "885380dec1d89d15e76351c4fe371238c3ce3a469363fb06ee5ac13ef0345a7c"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:email_topic_report:v1",
+ "chosen": "deterministic"
+}

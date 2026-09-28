@@ -1,0 +1,330 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":example",
+ "declared": {
+  "person": "Mallory",
+  "time": "12"
+ },
+ "interaction_id": "dev-013-T6:23",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-013-T6/learn/snapshots/dev-013-T6_23_start.sqlite",
+ "start_snapshot_sha256": "c5e6d5a8344af1fe70caee8500004db207890a6b1f73fb35d832cf8a28471441",
+ "utterances": [
+  {
+   "utterance": "Get the requests by Mallory for 12.",
+   "uid": "dev-013-T6:24",
+   "instruction": "Get the requests by Mallory for 12.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get the requests by Mallory for 12.",
+    "values": {
+     "PERSON": [
+      "Mallory"
+     ],
+     "TIME": [
+      "12"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 9,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Mallory\", \"WHEN\": \"12\"}}\n\n",
+      "score": -0.475
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Mallory\"}}\n\n",
+      "score": -3.481
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\"}\n\n",
+      "score": -7.138
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"REQUEST\"}\n\n",
+      "score": -7.326
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -8.969
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Mallory\", \"WHEN\": \"12\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Mallory",
+       "WHEN": "12"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"REQUEST\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Mallory\"}], [\"SELF\", \"WHEN\", {\"const\": \"12\"}]]}]",
+      "score": -0.475,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -3.435,
+      "n": 3
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -8.969,
+      "n": 1
+     }
+    ],
+    "margin": 2.961,
+    "reference_notes": [],
+    "seconds": 7.27,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Mallory"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "12"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "state_after": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "seconds": 7.351
+  },
+  {
+   "utterance": "Count how many there are.",
+   "uid": "dev-013-T6:25",
+   "instruction": "Count how many there are.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Count how many there are.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -0.44
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.992
+     },
+     {
+      "text": "r2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\n\n",
+      "score": -7.747
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -0.44,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -2.992,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"FIRST\"}]",
+      "score": -7.747,
+      "n": 1
+     }
+    ],
+    "margin": 2.552,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "seconds": 4.0,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "state_after": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "seconds": 4.066
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev-013-T6:26",
+   "instruction": "Return the count.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.061
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.854
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -9.117
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.001,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -9.117,
+      "n": 1
+     }
+    ],
+    "margin": 9.115,
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "seconds": 2.38,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "state_after": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "seconds": 2.556
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Mallory"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "12"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "fd7e87c25b7e9bc405da486cfb25790849df169a7f33eb6b519714b2f22487e9",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,422 @@
+[
+ {
+  "turn": 0,
+  "pid": 2644700,
+  "utterance_id": "locked_test-018-S12:0",
+  "INPUT": "note gamma : about launch per gamma ; so then again soon , call theta ; at 4:30 per theta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TIME",
+     "surface": "4:30"
+    },
+    {
+     "local_id": "v1",
+     "type": "TOPIC_VALUE",
+     "surface": "launch"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "TIME",
+    "v0",
+    "4:30",
+    "time:04:30"
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "launch",
+    "topic:launch"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:04:30",
+    "TIME",
+    "04:30",
+    "4:30"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:launch",
+    "TOPIC",
+    "launch",
+    "launch"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHEN",
+    "time:04:30"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "e555490c22f1fed37fc5128aef0accd37ecfec09ffdc060824c596ef5d2e0cfe",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "+rel",
+    "call:000001",
+    "WHEN",
+    "time:04:30"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "ee0e47497d92a58fa7dfca241f85c7b7e1e21db9c525b63d3052169382b69e23",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:04:30"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:launch"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2644714,
+  "utterance_id": "locked_test-018-S12:2",
+  "INPUT": "QUERY TOPIC OF NOTE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "ee0e47497d92a58fa7dfca241f85c7b7e1e21db9c525b63d3052169382b69e23",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "44180c4ef09b871f5384ec976a4c42ba9e51d88bb786f81245649ba7883c2e06",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:launch"
+  ],
+  "STATE_AFTER": "ee0e47497d92a58fa7dfca241f85c7b7e1e21db9c525b63d3052169382b69e23",
+  "RESPONSE": "launch",
+  "RETURN_RENDERED": [
+   "launch"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:04:30"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:launch"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2644714,
+  "utterance_id": "locked_test-018-S12:3",
+  "INPUT": "UPDATE LAST_NOTE TOPIC=party",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "ee0e47497d92a58fa7dfca241f85c7b7e1e21db9c525b63d3052169382b69e23",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_NOTE",
+   "set": [
+    [
+     "TOPIC",
+     "party"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "note:000001",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:party",
+    "TOPIC",
+    "party",
+    "party"
+   ],
+   [
+    "ASSERT",
+    "note:000001",
+    "TOPIC",
+    "topic:party"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c473556c58a0874febf1e72edb387603da4d53d1f95b5c05719e30d00349d09b",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "note:000001",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TOPIC",
+    "topic:party"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "5b57ef21bf9d33abaff4458c524be6137044a3896981fff82cbb2bb68835ea9e",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:04:30"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:party"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2644715,
+  "utterance_id": "locked_test-018-S12:5",
+  "INPUT": "QUERY TOPIC OF NOTE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "5b57ef21bf9d33abaff4458c524be6137044a3896981fff82cbb2bb68835ea9e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "44180c4ef09b871f5384ec976a4c42ba9e51d88bb786f81245649ba7883c2e06",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:party"
+  ],
+  "STATE_AFTER": "5b57ef21bf9d33abaff4458c524be6137044a3896981fff82cbb2bb68835ea9e",
+  "RESPONSE": "party",
+  "RETURN_RENDERED": [
+   "party"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHEN",
+     "time:04:30"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:party"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

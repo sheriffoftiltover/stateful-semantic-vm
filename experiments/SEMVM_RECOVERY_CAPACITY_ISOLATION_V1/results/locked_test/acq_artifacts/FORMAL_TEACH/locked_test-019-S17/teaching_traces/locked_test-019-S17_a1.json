@@ -1,0 +1,38 @@
+{
+ "name": "all_requests_by",
+ "mode": ":teach",
+ "declared": {
+  "person": "Frank"
+ },
+ "interaction_id": "locked_test-019-S17:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-019-S17/learn/snapshots/locked_test-019-S17_a1_start.sqlite",
+ "start_snapshot_sha256": "76ff367c944415aaec9694c0ad2063bd5505da19c5f0727a1233c6b4a6e55564",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Frank"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "624dfccc5487c278336dc851e3cb3fab1bd8a9512f7ba394a0b68a2b7151e933",
+ "nl_mode": "GOLD_TRACE"
+}

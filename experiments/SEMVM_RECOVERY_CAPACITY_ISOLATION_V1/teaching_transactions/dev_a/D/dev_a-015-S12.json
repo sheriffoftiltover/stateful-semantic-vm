@@ -1,0 +1,92 @@
+[
+ {
+  "target": "retarget_last_email",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "REQUIRE_SECOND_DEMONSTRATION",
+    "end_detail": {
+     "insufficient": "input person:PERSON is not identifiable (no hint and no varying value across demonstrations)"
+    },
+    "learn": null,
+    "events": [],
+    "example": {
+     "person": "Heidi"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:SLOT_RECOVERY_FAIL",
+    "end_detail": {
+     "slot": "demo2-slot4",
+     "error": "SCHEMA",
+     "kind": "RESTATE_SLOT",
+     "reason": "SLOT_RECOVERY_FAIL"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot2",
+      "error": "SCHEMA",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot3",
+      "error": "SCHEMA",
+      "reply_steps": 1,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "person": "Frank"
+    }
+   },
+   {
+    "index": 2,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "VERIFIED",
+    "events": [],
+    "example": {
+     "person": "Judy"
+    }
+   }
+  ]
+ }
+]

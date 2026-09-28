@@ -1,0 +1,42 @@
+{
+ "name": "call_people_at",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE call_people_at(time:TIME)\n$v0 = FIND CALL WHERE PARENT.WHEN={time}\n$v1 = SELECT $v0 WHO\nRETURN $v1\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "time",
+        "TIME"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE call_people_at()\n$v0 = FIND CALL WHERE PARENT.WHEN=3:15\n$v1 = SELECT $v0 WHO\nRETURN $v1\nEND",
+   "program_hash": "72b0cc5535c3859297d12f9408564db95f75c94a6304be45a7067364c9b629da"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:call_people_at:v2",
+ "chosen": "external"
+}

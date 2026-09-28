@@ -1,0 +1,201 @@
+{
+ "scenario_id": "dev-028-S12",
+ "suite": "dev",
+ "category": "S12",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "email eta ; later and so then again , while in Delhi per epsilon , remind epsilon",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PLACE",
+      "surface": "Delhi"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "WHERE",
+      "Delhi",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "O",
+   "layout": [
+    "between_i4",
+    [
+     "M1"
+    ]
+   ]
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF REMINDER"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_REMINDER WHERE=Dublin"
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF REMINDER"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:delhi"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "Delhi"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:delhi"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "Dublin"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:dublin"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,535 @@
+[
+ {
+  "turn": 0,
+  "pid": 2644627,
+  "utterance_id": "locked_test-016-S10:0",
+  "INPUT": "NEW PERSON Aunt",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "COMMAND_AST": {
+   "op": "NEW_PERSON",
+   "alias": "Aunt"
+  },
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "PERSON",
+    "$p"
+   ],
+   [
+    "ADD_ALIAS",
+    "$p",
+    "Aunt"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "a9b0cbcc626516d14954b13f7dec054c713103a8c0ae15ebe8a1d84509ff2a98",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Aunt"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "92530a66f242d504a74b31363724f2a30e492ab2e9e8df5dc93907131f58a6e5",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2644627,
+  "utterance_id": "locked_test-016-S10:1",
+  "INPUT": "NEW PERSON Aunt",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "92530a66f242d504a74b31363724f2a30e492ab2e9e8df5dc93907131f58a6e5",
+  "COMMAND_AST": {
+   "op": "NEW_PERSON",
+   "alias": "Aunt"
+  },
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "PERSON",
+    "$p"
+   ],
+   [
+    "ADD_ALIAS",
+    "$p",
+    "Aunt"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "a9b0cbcc626516d14954b13f7dec054c713103a8c0ae15ebe8a1d84509ff2a98",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Aunt"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "e4ed736d1fcae3d52be70c60165e974f210f5f68b5b65ec15b97d2aa3e7641b4",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ],
+    [
+     "person:000002",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2644627,
+  "utterance_id": "locked_test-016-S10:2",
+  "INPUT": "message zeta ; later and so then again , by Aunt per zeta , remind alpha",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "e4ed736d1fcae3d52be70c60165e974f210f5f68b5b65ec15b97d2aa3e7641b4",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Aunt"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "status": "RESOLUTION_AMBIGUOUS",
+  "failure_stage": "RESOLVE_ENTITY",
+  "reason": "'Aunt' matches 2 people: ['person:000001', 'person:000002']",
+  "RESPONSE": "Ambiguous: 'Aunt' matches 2 people: ['person:000001', 'person:000002'].",
+  "STATE_AFTER": "e4ed736d1fcae3d52be70c60165e974f210f5f68b5b65ec15b97d2aa3e7641b4",
+  "STATE_DIFF": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ],
+    [
+     "person:000002",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2644627,
+  "utterance_id": "locked_test-016-S10:3",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "e4ed736d1fcae3d52be70c60165e974f210f5f68b5b65ec15b97d2aa3e7641b4",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "e4ed736d1fcae3d52be70c60165e974f210f5f68b5b65ec15b97d2aa3e7641b4",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ],
+    [
+     "person:000002",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2644627,
+  "utterance_id": "locked_test-016-S10:4",
+  "INPUT": "remind epsilon , by Grace per zeta ; and so then later , message zeta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "e4ed736d1fcae3d52be70c60165e974f210f5f68b5b65ec15b97d2aa3e7641b4",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Grace"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Grace",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Grace"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "56086ec6b71b66e7a62b18b940b1a2161b5e46db571fd6fb98667918b70f04a7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Grace"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "b6947c334cf89c3f0557a72d6ee6fff2771dab1247f3f94190ee8ba60ccf7342",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ],
+    [
+     "person:000002",
+     "Aunt"
+    ],
+    [
+     "person:000003",
+     "Grace"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2644627,
+  "utterance_id": "locked_test-016-S10:5",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "b6947c334cf89c3f0557a72d6ee6fff2771dab1247f3f94190ee8ba60ccf7342",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000003"
+  ],
+  "STATE_AFTER": "b6947c334cf89c3f0557a72d6ee6fff2771dab1247f3f94190ee8ba60ccf7342",
+  "RESPONSE": "Grace",
+  "RETURN_RENDERED": [
+   "Grace"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ],
+    [
+     "person:000002",
+     "Aunt"
+    ],
+    [
+     "person:000003",
+     "Grace"
+    ]
+   ]
+  }
+ }
+]

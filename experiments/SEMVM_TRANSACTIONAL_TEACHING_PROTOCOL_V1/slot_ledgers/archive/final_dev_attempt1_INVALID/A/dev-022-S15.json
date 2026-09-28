@@ -1,0 +1,335 @@
+[
+ {
+  "target": "close_oldest_open_request",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "SCRIPTED_TEACHER",
+      "status": "REPLACED",
+      "original_text": "Find the open requests from Uncle.",
+      "text": "Find the open requests from Uncle.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 3,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "UNSUPPORTED",
+        "clarify_kind": null,
+        "reason": "frontend: UNSUPPORTED"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot6",
+      "source": "SCRIPTED_TEACHER",
+      "status": "REPLACED",
+      "original_text": "Find the open requests from Uncle.",
+      "text": "Find the open requests from Uncle.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "UNSUPPORTED",
+        "clarify_kind": null,
+        "reason": "frontend: UNSUPPORTED"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot7",
+      "source": "SCRIPTED_TEACHER",
+      "status": "CLARIFYING",
+      "original_text": "Find the open requests from Uncle.",
+      "text": "Find the open requests from Uncle.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "UNSUPPORTED",
+        "clarify_kind": null,
+        "reason": "frontend: UNSUPPORTED"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "SCRIPTED_TEACHER",
+      "status": "PENDING",
+      "original_text": "Sort them by time.",
+      "text": "Sort them by time.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "SCRIPTED_TEACHER",
+      "status": "PENDING",
+      "original_text": "Please pick the first of them.",
+      "text": "Please pick the first of them.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot4",
+      "source": "SCRIPTED_TEACHER",
+      "status": "PENDING",
+      "original_text": "Mark it closed.",
+      "text": "Mark it closed.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 3,
+      "family": "demo1-slot4",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot5",
+      "source": "SCRIPTED_TEACHER",
+      "status": "PENDING",
+      "original_text": "Please return the request.",
+      "text": "Please return the request.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 4,
+      "family": "demo1-slot5",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 1,
+    "slots": [
+     {
+      "slot_id": "demo2-slot1",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find Mom's open requests.",
+      "text": "Find Mom's open requests.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "REQUEST"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Mom"
+          }
+         ]
+        ],
+        "status": {
+         "const": "OPEN"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo2-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot2",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Sort them by when they are.",
+      "text": "Sort them by when they are.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "SORT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        },
+        "rel": "WHEN"
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot3",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Pick the first of them.",
+      "text": "Pick the first of them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIRST",
+        "bind": "r3",
+        "list": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 1,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo2-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "REFERENCE",
+        "reason": "reference for FIRST.of is ambiguous among ['r1', 'r2']"
+       },
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": {
+       "chosen": "r2",
+       "offered": [
+        "r1",
+        "r2"
+       ]
+      }
+     },
+     {
+      "slot_id": "demo2-slot4",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Mark it closed.",
+      "text": "Mark it closed.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "SET_STATUS",
+        "obj": {
+         "var": "r3"
+        },
+        "value": {
+         "const": "CLOSED"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 3,
+      "family": "demo2-slot4",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot5",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return it.",
+      "text": "Return it.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r3"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 4,
+      "family": "demo2-slot5",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

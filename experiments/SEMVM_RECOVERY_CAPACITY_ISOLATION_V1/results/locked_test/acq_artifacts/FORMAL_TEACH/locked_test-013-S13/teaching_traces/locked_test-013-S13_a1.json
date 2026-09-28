@@ -1,0 +1,38 @@
+{
+ "name": "replace_visit_location",
+ "mode": ":teach",
+ "declared": {
+  "place": "Madrid"
+ },
+ "interaction_id": "locked_test-013-S13:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-013-S13/learn/snapshots/locked_test-013-S13_a1_start.sqlite",
+ "start_snapshot_sha256": "4724b275e5b40153c1a7b44d4b7b8832d5391f7f3f47f395b4243ce8c33b7549",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Madrid"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "63c72c573fef6876b1c38c89648baacbebe49906d55cc11d3d22861a7ceeecc3",
+ "nl_mode": "GOLD_TRACE"
+}

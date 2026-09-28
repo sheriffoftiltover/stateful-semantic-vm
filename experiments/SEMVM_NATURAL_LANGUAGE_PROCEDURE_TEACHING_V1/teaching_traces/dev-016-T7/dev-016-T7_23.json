@@ -1,0 +1,400 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev-016-T7:23",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-016-T7/learn/snapshots/dev-016-T7_23_start.sqlite",
+ "start_snapshot_sha256": "51f4a679fcca5ebff8526598370a7c5c92720a278794983909454b66b3f9360e",
+ "utterances": [
+  {
+   "utterance": "Get every open email going to Mom, then close each of them.",
+   "uid": "dev-016-T7:24",
+   "instruction": "Get every open email going to Mom, then close each of them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get every open email going to Mom, then close each of them.",
+    "values": {
+     "PERSON": [
+      "Mom"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 22,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}, \"status\": \"OPEN\"}\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+      "score": -3.351
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\n\n",
+      "score": -3.744
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"WHO\": \"Mom\"}, \"status\": \"OPEN\"}\nr3 = {\"op\": \"COUNT\", \"of\": \"r2\"}\n\n",
+      "score": -4.012
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}, \"status\": \"OPEN\"}\nr3 = {\"op\": \"COUNT\", \"of\": \"r2\"}\n\n",
+      "score": -4.385
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}, \"status\": \"OPEN\"}\n\n",
+      "score": -6.101
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}, \"status\": \"OPEN\"}\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Mom"
+      },
+      "status": "OPEN",
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": {\"const\": \"OPEN\"}, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mom\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -6.489,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mom\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -7.33,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -9.467,
+      "n": 1
+     }
+    ],
+    "margin": 0.841,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "seconds": 15.52,
+    "runner_up": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mom\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Get every open email going to Mom.",
+        "Close each of them."
+       ],
+       "valid": false,
+       "why": "a clause did not ground",
+       "parts": [
+        {
+         "segment": "Get every open email going to Mom.",
+         "status": "CLARIFY",
+         "reason": "low margin 0.872 < 1.0",
+         "clarify_kind": "MARGIN",
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 22.013
+  },
+  {
+   "utterance": "I mean: find the open emails to Mom and then close each of them.",
+   "uid": "dev-016-T7:24#rescue",
+   "instruction": "find the open emails to Mom and then close each of them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "find the open emails to Mom and then close each of them.",
+    "values": {
+     "PERSON": [
+      "Mom"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 24,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"WHO\": \"Mom\"}, \"status\": \"OPEN\"}\n{\"op\": \"SET_STATUS\", \"each\": \"r2\", \"value\": \"CLOSED\"}\n\n",
+      "score": -3.72
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"WHO\": \"Mom\"}, \"status\": \"OPEN\"}\nr3 = {\"op\": \"COUNT\", \"of\": \"r2\"}\n\n",
+      "score": -3.868
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\n\n",
+      "score": -4.129
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"WHO\": \"Mom\"}, \"status\": \"OPEN\"}\n\n",
+      "score": -5.7
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\nr3 = {\"op\": \"GET\", \"of\": \"r2\", \"rel\": \"TOPIC\"}\n\n",
+      "score": -5.825
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mom\"}}\nr2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"WHO\": \"Mom\"}, \"status\": \"OPEN\"}\n{\"op\": \"SET_STATUS\", \"each\": \"r2\", \"value\": \"CLOSED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Mom"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "WHO": "Mom"
+      },
+      "status": "OPEN",
+      "bind": "r2"
+     },
+     {
+      "op": "SET_STATUS",
+      "each": "r2",
+      "value": "CLOSED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mom\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"FIRST\"}, {\"bind\": \"r3\", \"obj",
+      "score": -5.825,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mom\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -7.721,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mom\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"FIRST\"}]",
+      "score": -8.53,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -9.283,
+      "n": 1
+     }
+    ],
+    "margin": 1.897,
+    "reference_notes": [
+     "FIRST.of=r1 licensed by R0",
+     "GET.of=r2 licensed by R0"
+    ],
+    "seconds": 16.01,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Find the open emails to Mom.",
+        "Close each of them."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Find the open emails to Mom.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Close each of them.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "segmentation_disagree": true
+   },
+   "status": "CLARIFY",
+   "seconds": 27.883
+  },
+  {
+   "utterance": "Give back those emails.",
+   "uid": "dev-016-T7:25",
+   "instruction": "Give back those emails.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give back those emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -3.187
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+      "score": -3.953
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -4.049
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -4.291
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\nr2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -6.064
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "bind": "r1"
+     },
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}, {\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -3.187,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"EMAIL\"}}, {\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -4.049,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -7.167,
+      "n": 1
+     }
+    ],
+    "margin": 0.862,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 4.1,
+    "runner_up": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"EMAIL\"}}, {\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 4.096
+  },
+  {
+   "utterance": "I mean: return the emails.",
+   "uid": "dev-016-T7:25#rescue",
+   "instruction": "return the emails.",
+   "correction": false,
+   "grounding": {
+    "instruction": "return the emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+      "score": -1.558
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -4.44
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -6.993
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -6.993,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [],
+    "seconds": 3.31,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "UNSUPPORTED",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 3.312
+  }
+ ],
+ "final_steps": [],
+ "trace_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+ "nl_mode": "NL_TEACH"
+}

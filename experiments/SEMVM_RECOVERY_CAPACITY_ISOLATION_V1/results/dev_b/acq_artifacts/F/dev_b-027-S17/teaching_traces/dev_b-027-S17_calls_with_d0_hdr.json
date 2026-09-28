@@ -1,0 +1,172 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Heidi"
+ },
+ "interaction_id": "dev_b-027-S17:calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/F/dev_b-027-S17/learn/snapshots/dev_b-027-S17_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "54a1f59ebda0ed5cd23ab888f4ed463567e21ef44b0cd55f11c1dc9f22f82696",
+ "utterances": [
+  {
+   "utterance": "Find the calls with Heidi.",
+   "uid": "dev_b-027-S17:calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the calls with Heidi.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the calls with Heidi.",
+    "values": {
+     "PERSON": [
+      "Heidi"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "72d00a1bfa0a324d9fca7db212ff661d1b866850bb53dddeb0d3eb9ae8aead3c"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Heidi\"}}]}",
+    "request_hash": "72d00a1bfa0a324d9fca7db212ff661d1b866850bb53dddeb0d3eb9ae8aead3c",
+    "cached": true,
+    "input_tokens": 4449,
+    "output_tokens": 84,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Heidi"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Heidi"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "4438fe2c7cb2aaed945be7105ecc32952f1c924499b1381915f853a82c324ece",
+   "state_after": "4438fe2c7cb2aaed945be7105ecc32952f1c924499b1381915f853a82c324ece",
+   "seconds": 0.21
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev_b-027-S17:calls_with:d0:demo1-slot2:1",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "e3898e81ececfa93e076848af4111b3295131b225fd701644df12eed979c076d"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "e3898e81ececfa93e076848af4111b3295131b225fd701644df12eed979c076d",
+    "cached": true,
+    "input_tokens": 4480,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4438fe2c7cb2aaed945be7105ecc32952f1c924499b1381915f853a82c324ece",
+   "state_after": "4438fe2c7cb2aaed945be7105ecc32952f1c924499b1381915f853a82c324ece",
+   "seconds": 0.185
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Heidi"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "a0efb1b356986a77ffc22a9eab5d63f3674a99d5148692ddf0635f9fc16a10de",
+ "nl_mode": "NL_TEACH"
+}

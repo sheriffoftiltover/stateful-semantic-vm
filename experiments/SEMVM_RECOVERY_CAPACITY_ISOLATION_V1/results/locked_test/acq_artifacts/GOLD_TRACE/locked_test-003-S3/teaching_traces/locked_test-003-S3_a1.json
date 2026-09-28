@@ -1,0 +1,130 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Mallory"
+ },
+ "interaction_id": "locked_test-003-S3:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-003-S3/learn/snapshots/locked_test-003-S3_a1_start.sqlite",
+ "start_snapshot_sha256": "51f8f0ad83f6b3e54e549601bf02330dea4fc5f490a24d82b94bd413ceb6782c",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-003-S3:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Mallory"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "e55b7944250a87837d792a24f48d7ad5d16decbb1963a83390d4dfa0e1391d07",
+   "state_after": "e55b7944250a87837d792a24f48d7ad5d16decbb1963a83390d4dfa0e1391d07",
+   "seconds": 0.198
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-003-S3:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "e55b7944250a87837d792a24f48d7ad5d16decbb1963a83390d4dfa0e1391d07",
+   "state_after": "e55b7944250a87837d792a24f48d7ad5d16decbb1963a83390d4dfa0e1391d07",
+   "seconds": 0.178
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-003-S3:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "e55b7944250a87837d792a24f48d7ad5d16decbb1963a83390d4dfa0e1391d07",
+   "state_after": "e55b7944250a87837d792a24f48d7ad5d16decbb1963a83390d4dfa0e1391d07",
+   "seconds": 0.202
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Mallory"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "a3bef05b262698d33bc5244e75cbfef39e00054c4f16e19fc35d2bbef10ffa54",
+ "nl_mode": "GOLD_TRACE"
+}

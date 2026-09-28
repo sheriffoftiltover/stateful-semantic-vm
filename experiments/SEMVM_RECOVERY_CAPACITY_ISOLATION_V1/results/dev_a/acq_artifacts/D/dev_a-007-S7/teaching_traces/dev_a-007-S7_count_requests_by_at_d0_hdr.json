@@ -1,0 +1,450 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Alice",
+  "time": "midnight"
+ },
+ "interaction_id": "dev_a-007-S7:count_requests_by_at:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/D/dev_a-007-S7/learn/snapshots/dev_a-007-S7_count_requests_by_at_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "35572593a845572412717fec6ab8affa5c1e8b3f965180d4bd941940d76f5c29",
+ "utterances": [
+  {
+   "utterance": "Find the requests with person Alice and time midnight.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot1:0",
+   "instruction": "Find the requests with person Alice and time midnight.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the requests with person Alice and time midnight.",
+    "values": {
+     "PERSON": [
+      "Alice"
+     ],
+     "TIME": [
+      "midnight"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: FIND: condition PARENT.WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)",
+      "feedback": null,
+      "request_hash": "e4c68695476c9f1efd214cdfc9f432af2c2f87779736f18754b9c3c2019a5245"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"REQUEST\",\n      \"where\": {\n        \"WHO\": \"Alice\",\n        \"PARENT.WHEN\": \"midnight\"\n      }\n    }\n  ]\n}",
+    "request_hash": "e4c68695476c9f1efd214cdfc9f432af2c2f87779736f18754b9c3c2019a5245",
+    "cached": true,
+    "input_tokens": 4453,
+    "output_tokens": 99,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Alice",
+       "PARENT.WHEN": "midnight"
+      }
+     }
+    ],
+    "plan_errors": [
+     "FIND: condition PARENT.WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)"
+    ],
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "CLARIFY",
+   "seconds": 0.003
+  },
+  {
+   "utterance": "Find the requests with who Alice and when midnight.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot2:1",
+   "instruction": "Find the requests with who Alice and when midnight.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the requests with who Alice and when midnight.",
+    "values": {
+     "PERSON": [
+      "Alice"
+     ],
+     "TIME": [
+      "midnight"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "c4167beb275a7c19433693e577c4998ad1ffc8723908c313d5ac4e932bd86d70"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Alice\", \"WHEN\": \"midnight\"}}]}",
+    "request_hash": "c4167beb275a7c19433693e577c4998ad1ffc8723908c313d5ac4e932bd86d70",
+    "cached": false,
+    "input_tokens": 4453,
+    "output_tokens": 126,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Alice",
+       "WHEN": "midnight"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 2.84
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Alice"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "midnight"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "state_after": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "seconds": 3.491
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot3:2",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: FIND: event type 'REQUEST' is not named in the instruction; FIND: condition WHO='Alice' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST); FIND: condition WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)",
+      "feedback": null,
+      "request_hash": "16dc47314cc136d7b5dfe779460099fa76284e91e7c072e444113cbd699c21db"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    { \"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": { \"WHO\": \"Alice\", \"WHEN\": \"midnight\" } },\n    { \"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\" }\n  ]\n}",
+    "request_hash": "16dc47314cc136d7b5dfe779460099fa76284e91e7c072e444113cbd699c21db",
+    "cached": false,
+    "input_tokens": 4486,
+    "output_tokens": 100,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Alice",
+       "WHEN": "midnight"
+      }
+     },
+     {
+      "bind": "r3",
+      "op": "COUNT",
+      "of": "r2"
+     }
+    ],
+    "plan_errors": [
+     "FIND: event type 'REQUEST' is not named in the instruction",
+     "FIND: condition WHO='Alice' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)",
+     "FIND: condition WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)",
+     "'Alice' does not occur in the instruction",
+     "'midnight' does not occur in the instruction",
+     "event search for REQUEST not named in the instruction (V1.2)"
+    ],
+    "retried": false,
+    "seconds": 1.57
+   },
+   "status": "CLARIFY",
+   "seconds": 1.569
+  },
+  {
+   "utterance": "Count the requests.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot4:3",
+   "instruction": "Count the requests.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count the requests.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: FIND: condition WHO='Alice' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST); FIND: condition WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST); 'Alice' does not occur in the instruction",
+      "feedback": null,
+      "request_hash": "622031a3eb5364c74e49fef3ee656233ac278ef3895fdebbe5aeeafed09b3ae3"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    { \"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": { \"WHO\": \"Alice\", \"WHEN\": \"midnight\" } },\n    { \"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\" }\n  ]\n}",
+    "request_hash": "622031a3eb5364c74e49fef3ee656233ac278ef3895fdebbe5aeeafed09b3ae3",
+    "cached": false,
+    "input_tokens": 4487,
+    "output_tokens": 100,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Alice",
+       "WHEN": "midnight"
+      }
+     },
+     {
+      "bind": "r3",
+      "op": "COUNT",
+      "of": "r2"
+     }
+    ],
+    "plan_errors": [
+     "FIND: condition WHO='Alice' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)",
+     "FIND: condition WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)",
+     "'Alice' does not occur in the instruction",
+     "'midnight' does not occur in the instruction"
+    ],
+    "retried": false,
+    "seconds": 1.61
+   },
+   "status": "CLARIFY",
+   "seconds": 1.61
+  },
+  {
+   "utterance": "Count the requests you just found.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot5:4",
+   "instruction": "Count the requests you just found.",
+   "correction": false,
+   "slot_id": "demo1-slot5",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count the requests you just found.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "4f0fcbfdd6856b9c2bcc82a84437dbd3ea5320c4391718f0c5a2e8b2291b070d"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "1d9694ba29cabd31e6598c4fd304f3ca519391dcc3f37d3c57022df6058df066"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "1d9694ba29cabd31e6598c4fd304f3ca519391dcc3f37d3c57022df6058df066",
+    "cached": false,
+    "input_tokens": 4590,
+    "output_tokens": 69,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 2.89
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "state_after": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "seconds": 3.46
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot6:5",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot6",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "e42cdc0481bf238378e0e7f15aae720f89de223ac207502eb506898244c6624e"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "e42cdc0481bf238378e0e7f15aae720f89de223ac207502eb506898244c6624e",
+    "cached": false,
+    "input_tokens": 4510,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.23
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "state_after": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "seconds": 1.765
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Alice"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "midnight"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "c60aef9c3a8811182fe6393b78a86e1acf5bc32b48b00396f3422e32a6adec5c",
+ "nl_mode": "NL_TEACH"
+}

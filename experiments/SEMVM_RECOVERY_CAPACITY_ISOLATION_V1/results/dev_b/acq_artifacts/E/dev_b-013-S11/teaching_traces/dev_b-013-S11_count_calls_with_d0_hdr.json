@@ -1,0 +1,307 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Oscar"
+ },
+ "interaction_id": "dev_b-013-S11:count_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/E/dev_b-013-S11/learn/snapshots/dev_b-013-S11_count_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "306cb8914b4b65ed63e0436b72d3075f8b6f7e297d9b1631776cb8562f7db139",
+ "utterances": [
+  {
+   "utterance": "Find the calls with Oscar.",
+   "uid": "dev_b-013-S11:count_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the calls with Oscar.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Find the calls with Oscar.",
+    "values": {
+     "PERSON": [
+      "Oscar"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "e93988309286a037050295a3fcec23069ce456bce6dea42c1e53fcaf1528a8eb"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Oscar\"}}]}",
+    "request_hash": "e93988309286a037050295a3fcec23069ce456bce6dea42c1e53fcaf1528a8eb",
+    "cached": true,
+    "input_tokens": 4449,
+    "output_tokens": 58,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Oscar"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Oscar"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "state_after": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "seconds": 0.574
+  },
+  {
+   "utterance": "Now do the usual thing with it, like we did for Kevin.",
+   "uid": "dev_b-013-S11:count_calls_with:d0:demo1-slot4:1",
+   "instruction": "Now do the usual thing with it, like we did for Kevin.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Now do the usual thing with it, like we did for Kevin.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "b3ca376a62ac514224c967f3b716e7aa33124fbb428fcc50efa570b2207cc97a"
+     },
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: FIND: event type 'CALL' is not named in the instruction; FIND: condition WHO='Oscar' is not legal here (value not in the instruction, or relation/scope illegal for CALL); 'Oscar' does not occur in the instruction",
+      "feedback": null,
+      "request_hash": "7c7bb3f69ccb3cdfaed315dea2e5bf575798dbbefe0b27939a60659fb576716e"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Oscar\"}}]}",
+    "request_hash": "7c7bb3f69ccb3cdfaed315dea2e5bf575798dbbefe0b27939a60659fb576716e",
+    "cached": true,
+    "input_tokens": 4570,
+    "output_tokens": 138,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Oscar"
+      }
+     }
+    ],
+    "plan_errors": [
+     "FIND: event type 'CALL' is not named in the instruction",
+     "FIND: condition WHO='Oscar' is not legal here (value not in the instruction, or relation/scope illegal for CALL)",
+     "'Oscar' does not occur in the instruction",
+     "event search for CALL not named in the instruction (V1.2)"
+    ],
+    "retried": true,
+    "seconds": 0.0
+   },
+   "status": "CLARIFY",
+   "seconds": 0.002
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev_b-013-S11:count_calls_with:d0:demo1-slot5:2",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot5",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "d1e3490987bde9d597ac359b4a55eeb8e91563610ae5ea581b000c3916098efe"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "d1e3490987bde9d597ac359b4a55eeb8e91563610ae5ea581b000c3916098efe",
+    "cached": false,
+    "input_tokens": 4479,
+    "output_tokens": 65,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.18
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "state_after": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "seconds": 1.651
+  },
+  {
+   "utterance": "Please return it.",
+   "uid": "dev_b-013-S11:count_calls_with:d0:demo1-slot3:3",
+   "instruction": "Please return it.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "fb0968fe7cb96e891ed8d2d9addcabdd81aa53dd7bcfa6e1789d48817e573253"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "fb0968fe7cb96e891ed8d2d9addcabdd81aa53dd7bcfa6e1789d48817e573253",
+    "cached": true,
+    "input_tokens": 4503,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R3"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "state_after": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "seconds": 0.479
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Oscar"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "5162339ec33b30c62822514e1d346d9f82e793c94f2c9f966a0d0d80c0c8f620",
+ "nl_mode": "NL_TEACH"
+}

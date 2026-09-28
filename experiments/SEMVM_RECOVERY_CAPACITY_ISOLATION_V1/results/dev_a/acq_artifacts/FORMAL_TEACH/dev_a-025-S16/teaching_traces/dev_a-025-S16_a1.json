@@ -1,0 +1,38 @@
+{
+ "name": "emails_about",
+ "mode": ":teach",
+ "declared": {
+  "topic": "report"
+ },
+ "interaction_id": "dev_a-025-S16:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-025-S16/learn/snapshots/dev_a-025-S16_a1_start.sqlite",
+ "start_snapshot_sha256": "4ad2fa1635d8ee93a428518ba3dc750927dd9579e9de0aba245767477daf169f",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "TOPIC",
+     {
+      "const": "report"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "1150a6085700f75c9ea9b9bf2730206573e995c5f4ed2632931439799d7536e9",
+ "nl_mode": "GOLD_TRACE"
+}

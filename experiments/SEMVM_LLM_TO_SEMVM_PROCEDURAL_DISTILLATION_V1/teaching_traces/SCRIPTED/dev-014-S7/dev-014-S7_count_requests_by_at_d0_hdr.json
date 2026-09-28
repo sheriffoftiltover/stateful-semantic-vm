@@ -1,0 +1,322 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Ivan",
+  "time": "1:30"
+ },
+ "interaction_id": "dev-014-S7:count_requests_by_at:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/SCRIPTED/dev-014-S7/learn/snapshots/dev-014-S7_count_requests_by_at_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "a918a75e8a98490a5ae890c23f1be402df9de967f28a457b4e16d9cd76deb2e0",
+ "utterances": [
+  {
+   "utterance": "Find the requests from Ivan at 1:30.",
+   "uid": "dev-014-S7:count_requests_by_at:d0:l0",
+   "instruction": "Find the requests from Ivan at 1:30.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the requests from Ivan at 1:30.",
+    "values": {
+     "PERSON": [
+      "Ivan"
+     ],
+     "TIME": [
+      "1:30"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 9,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Ivan\", \"WHEN\": \"1:30\"}}\n\n",
+      "score": -0.524
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHEN\": \"1:30\", \"WHO\": \"Ivan\"}}\n\n",
+      "score": -2.403
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Ivan\"}}\n\n",
+      "score": -5.665
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\"}\n\n",
+      "score": -6.602
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"REQUEST\"}\n\n",
+      "score": -6.873
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Ivan\", \"WHEN\": \"1:30\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Ivan",
+       "WHEN": "1:30"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"REQUEST\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Ivan\"}], [\"SELF\", \"WHEN\", {\"const\": \"1:30\"}]]}]",
+      "score": -0.382,
+      "n": 2
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -5.14,
+      "n": 3
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -9.197,
+      "n": 1
+     }
+    ],
+    "margin": 4.758,
+    "reference_notes": [],
+    "seconds": 4.77,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Ivan"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "1:30"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "b4d659a49c553240969518f90ee66e868e6263b73aeff26bffa64a2cf03d1a63",
+   "state_after": "b4d659a49c553240969518f90ee66e868e6263b73aeff26bffa64a2cf03d1a63",
+   "seconds": 4.967
+  },
+  {
+   "utterance": "Tell me how many there are.",
+   "uid": "dev-014-S7:count_requests_by_at:d0:l1",
+   "instruction": "Tell me how many there are.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Tell me how many there are.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -0.411
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.693
+     },
+     {
+      "text": "r2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\n\n",
+      "score": -7.323
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -2.693,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [],
+    "seconds": 3.5,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 3.498
+  },
+  {
+   "utterance": "Count them, then return the number.",
+   "uid": "dev-014-S7:count_requests_by_at:d0:l2",
+   "instruction": "Count them, then return the number.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Count them, then return the number.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Count them.",
+        "Return the number."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Count them.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Return the number.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 9,
+    "seconds": 10.39,
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "margin": 2.525,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0",
+     "RETURN.value=r2 licensed by R1"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b4d659a49c553240969518f90ee66e868e6263b73aeff26bffa64a2cf03d1a63",
+   "state_after": "b4d659a49c553240969518f90ee66e868e6263b73aeff26bffa64a2cf03d1a63",
+   "seconds": 10.464
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Ivan"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "1:30"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "85ab6ce17420fab23a068b4a4fb3dce4dd46c4650e5555dd632252ef7c0f1b09",
+ "nl_mode": "NL_TEACH"
+}

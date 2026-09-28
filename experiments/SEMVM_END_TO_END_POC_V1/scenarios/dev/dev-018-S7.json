@@ -1,0 +1,229 @@
+{
+ "scenario_id": "dev-018-S7",
+ "suite": "dev",
+ "category": "S7",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "note epsilon ; about schedule re epsilon : next and then so ; call delta : at midnight per delta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "midnight"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "schedule"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "CALL",
+    "mods": [
+     [
+      "TOPIC",
+      "schedule",
+      "outer"
+     ],
+     [
+      "WHEN",
+      "midnight",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o4",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_NOTE TOPIC=report"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF NOTE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF LAST_NOTE"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:schedule"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:report"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "report"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:report"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "report"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:report"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "name": "retarget_last_email",
+ "n_traces": 2,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE retarget_last_email(person:PERSON)\n$v0 = FIND_LAST EMAIL\nUPDATE $v0 RECIPIENT={person}\nRETURN $v0\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 1.63,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "replay_1",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "counterfactual_t1_0",
+     true
+    ],
+    [
+     "counterfactual_t1_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_ambiguous_entity",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "txn_inject_after_1",
+     true
+    ],
+    [
+     "txn_inject_after_2",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE retarget_last_email(person:PERSON)\n$v0 = FIND_LAST EMAIL\nUPDATE $v0 RECIPIENT={person}\nRETURN $v0\nEND",
+   "program_hash": "375c672993debc2367d6f0bf46f9be28ea22e4c5302ad3b1b0dc2b45119bfee0"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:retarget_last_email:v1",
+ "chosen": "deterministic"
+}

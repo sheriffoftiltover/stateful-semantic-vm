@@ -1,0 +1,208 @@
+[
+ {
+  "target": "retarget_last_email",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please find my last email.",
+      "text": "Please find my last email.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r1",
+        "type": {
+         "const": "EMAIL"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Change its recipient to Frank.",
+      "text": "Change its recipient to Frank.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "UPDATE",
+        "obj": {
+         "var": "r1"
+        },
+        "rel": "RECIPIENT",
+        "value": {
+         "const": "Frank"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please return it.",
+      "text": "Please return it.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 1,
+    "slots": [
+     {
+      "slot_id": "demo2-slot1",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please get my latest email.",
+      "text": "Please get my latest email.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r1",
+        "type": {
+         "const": "EMAIL"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo2-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot2",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Address it to Oscar.",
+      "text": "Address it to Oscar.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "UPDATE",
+        "obj": {
+         "var": "r1"
+        },
+        "rel": "RECIPIENT",
+        "value": {
+         "const": "Oscar"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot3",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please give it back.",
+      "text": "Please give it back.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo2-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

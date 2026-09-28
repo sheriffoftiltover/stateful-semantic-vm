@@ -1,0 +1,19 @@
+{
+ "version": "EVIDENCE_CONFLICT_V1",
+ "implementation": "student/nlsystem.py :learn / evidence_conflict",
+ "rule": [
+  "demonstrations grouped by (skeleton, constants outside the registered signature's types); >1 group and no strict majority group of size >= 2 -> EVIDENCE_CONFLICT (was DEMONSTRATIONS_INCONSISTENT)",
+  "within the used group: a slot whose value varies and whose class is not a signature type -> EVIDENCE_CONFLICT (non-parameterizable value; this is what exhausted the parent verifier's counterfactual pool)"
+ ],
+ "frozen_verifier": "never called on a conflicting evidence set; not patched",
+ "next_states": [
+  "new demonstration (teacher asked)",
+  "episode failure at budget"
+ ],
+ "crash_guard": "a learner exception is LEARNER_ERROR and counts as VERIFIER_CRASH",
+ "metrics": [
+  "REGISTERED_EVIDENCE_CONFLICT_DETECTED",
+  "VERIFIER_CRASH",
+  "CONFLICTING_BAD_PROCEDURE_ACTIVATED"
+ ]
+}

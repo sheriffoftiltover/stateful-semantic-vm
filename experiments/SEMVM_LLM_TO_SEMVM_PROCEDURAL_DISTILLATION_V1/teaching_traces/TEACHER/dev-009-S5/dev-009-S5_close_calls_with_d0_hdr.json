@@ -1,0 +1,433 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Bob"
+ },
+ "interaction_id": "dev-009-S5:close_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/TEACHER/dev-009-S5/learn/snapshots/dev-009-S5_close_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "f1782acc453a6d3039ac3c739fa4f5174d63764215e4ee157af24fcabf1580ea",
+ "utterances": [
+  {
+   "utterance": "Find the open calls with Bob.",
+   "uid": "dev-009-S5:close_calls_with:d0:l0",
+   "instruction": "Find the open calls with Bob.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the open calls with Bob.",
+    "values": {
+     "PERSON": [
+      "Bob"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 9,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Bob\"}, \"status\": \"OPEN\"}\n\n",
+      "score": -0.905
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Bob\"}}\n\n",
+      "score": -2.712
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -7.824
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -8.496
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -10.475
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Bob\"}, \"status\": \"OPEN\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Bob"
+      },
+      "status": "OPEN",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": {\"const\": \"OPEN\"}, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Bob\"}]]}]",
+      "score": -0.905,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Bob\"}]]}]",
+      "score": -2.712,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -7.412,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -10.475,
+      "n": 1
+     }
+    ],
+    "margin": 1.808,
+    "reference_notes": [],
+    "seconds": 6.48,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Bob"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "bc92f6224ed4521254aa9396f7fdf32363e07bf6ca2ad31fcefe657487b704cf",
+   "state_after": "bc92f6224ed4521254aa9396f7fdf32363e07bf6ca2ad31fcefe657487b704cf",
+   "seconds": 6.566
+  },
+  {
+   "utterance": "Mark each of them closed.",
+   "uid": "dev-009-S5:close_calls_with:d0:l1",
+   "instruction": "Mark each of them closed.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Mark each of them closed.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+      "score": -0.024
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -8.734
+     },
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -12.408
+     }
+    ],
+    "raw_text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"SET_STATUS\", \"value\": {\"const\": \"CLOSED\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -0.024,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -8.734,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -12.408,
+      "n": 1
+     }
+    ],
+    "margin": 8.709,
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "seconds": 4.16,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000005",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "bc92f6224ed4521254aa9396f7fdf32363e07bf6ca2ad31fcefe657487b704cf",
+   "state_after": "c465b181d28c8db476818efd8bf0911f4c943db49a904e5f5af70eaebfbb9ad6",
+   "seconds": 4.392
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev-009-S5:close_calls_with:d0:l2",
+   "instruction": "Count them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -0.355
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -3.344
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -0.355,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -3.344,
+      "n": 1
+     }
+    ],
+    "margin": 2.989,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "seconds": 2.93,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c465b181d28c8db476818efd8bf0911f4c943db49a904e5f5af70eaebfbb9ad6",
+   "state_after": "c465b181d28c8db476818efd8bf0911f4c943db49a904e5f5af70eaebfbb9ad6",
+   "seconds": 3.008
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev-009-S5:close_calls_with:d0:l3",
+   "instruction": "Return the count.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.105
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.327
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -8.18
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.002,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -8.18,
+      "n": 1
+     }
+    ],
+    "margin": 8.177,
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "seconds": 2.25,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c465b181d28c8db476818efd8bf0911f4c943db49a904e5f5af70eaebfbb9ad6",
+   "state_after": "c465b181d28c8db476818efd8bf0911f4c943db49a904e5f5af70eaebfbb9ad6",
+   "seconds": 2.325
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Bob"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "4c1a6d69bc691145a3c8ddc327d29ba0a4b74b38dd1b0ba757139d8cb48cba9e",
+ "nl_mode": "NL_TEACH"
+}

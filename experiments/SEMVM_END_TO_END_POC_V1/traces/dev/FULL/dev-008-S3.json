@@ -1,0 +1,555 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642090,
+  "utterance_id": "dev-008-S3:0",
+  "INPUT": "note delta ; at 5 per delta : next and then so ; message eta : while in Seoul per eta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "NOTE"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "TIME",
+       "5",
+       4
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PLACE",
+       "Seoul",
+       18
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "NOTE",
+      null,
+      0
+     ],
+     [
+      "PLACE",
+      "Seoul",
+      18
+     ],
+     [
+      "TIME",
+      "5",
+      4
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1342.0982666015625,
+   "margin": 0.040771484375,
+   "n_outputs": 52,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Seoul"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "5"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e1",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Seoul",
+    "place:seoul"
+   ],
+   [
+    "TIME",
+    "v1",
+    "5",
+    "time:05:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:seoul",
+    "PLACE",
+    "seoul",
+    "Seoul"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:05:00",
+    "TIME",
+    "05:00",
+    "5"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "fe2807dd6685f7b37636ca48b9f861b1459dfcd97e36b69c45bcf60324e4e417",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:05:00"
+    ],
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642090,
+  "utterance_id": "dev-008-S3:1",
+  "INPUT": "QUERY WHEN OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "a6ff893f8711fd07b6b4827813a6309c2c69989051ce8ded1de7edd518c713fd",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:05:00"
+    ],
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642090,
+  "utterance_id": "dev-008-S3:2",
+  "INPUT": "QUERY WHEN OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f2d2b4f8c9d2917499cb9a4ca9ddc2bc0b05629142b0a1dfa8ddd84993d8a082",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:05:00"
+  ],
+  "STATE_AFTER": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "RESPONSE": "5",
+  "RETURN_RENDERED": [
+   "5"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:05:00"
+    ],
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642090,
+  "utterance_id": "dev-008-S3:3",
+  "INPUT": "QUERY WHERE OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7e0299949495b894abfa0d7d8a8136a132f258302e5c2c272f6dbcef90da9bf7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:seoul"
+  ],
+  "STATE_AFTER": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "RESPONSE": "Seoul",
+  "RETURN_RENDERED": [
+   "Seoul"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:05:00"
+    ],
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2642090,
+  "utterance_id": "dev-008-S3:4",
+  "INPUT": "QUERY WHERE OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0110bc92ce4b98850c2cfba3f4931abd247e838e6a8dc240e73f80cad69c6d13",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "36f3c502feeda940b96dd6be25602adc3b49e272946159008476284da7d62a63",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:05:00"
+    ],
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

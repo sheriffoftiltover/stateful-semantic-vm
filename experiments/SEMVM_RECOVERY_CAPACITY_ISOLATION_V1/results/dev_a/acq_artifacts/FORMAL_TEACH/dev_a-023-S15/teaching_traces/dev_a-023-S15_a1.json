@@ -1,0 +1,64 @@
+{
+ "name": "close_oldest_open_request",
+ "mode": ":teach",
+ "declared": {
+  "person": "Sam"
+ },
+ "interaction_id": "dev_a-023-S15:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-023-S15/learn/snapshots/dev_a-023-S15_a1_start.sqlite",
+ "start_snapshot_sha256": "9465c876d88308f4b65643f441f89d5173c9d637e855892b0680b631cd02b155",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Sam"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "SORT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "WHEN"
+  },
+  {
+   "op": "FIRST",
+   "bind": "r3",
+   "list": {
+    "var": "r2"
+   }
+  },
+  {
+   "op": "SET_STATUS",
+   "obj": {
+    "var": "r3"
+   },
+   "value": {
+    "const": "CLOSED"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "f09df681e0bb638d3997f34c143358600c4023765a0be332eed1df2eec73b84a",
+ "nl_mode": "GOLD_TRACE"
+}

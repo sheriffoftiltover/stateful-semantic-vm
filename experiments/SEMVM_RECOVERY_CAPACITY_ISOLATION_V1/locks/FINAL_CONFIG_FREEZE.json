@@ -1,0 +1,166 @@
+{
+ "frozen": "2026-09-28T03:42:46Z",
+ "config_fingerprint": "dacd7a90495f403f7fe41544f8a00c5ddc33680e056b538a3ed26d088e9c6f94",
+ "teacher": {
+  "checkpoint_sha256": "0fc58fd24ef96985db59df1bc25cfd90767f31944a8e3af2e3687b570d202f4f",
+  "reasoning_effort": "high",
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 8192,
+  "initial_prompt_version": "TTP_TEACHER_PROTOCOL_V1 (HTG + saved-skill CALL form + transactional recovery forms); RCI: unchanged prompt semantics",
+  "recovery_prompt_version": "TTP_TEACHER_PROTOCOL_V1 (HTG + saved-skill CALL form + transactional recovery forms); RCI: unchanged prompt semantics (same card; recovery questions from teacher/transactional.py)",
+  "card_sha256": "78adbf7576dae908f1419e4f5ee3f6ea0549bb4476e41c9bf4db9bac7d9c1d6a"
+ },
+ "teacher_value_pool": {
+  "size_per_class": 4,
+  "rule": "parent 2 values + 2 extra sampled per scenario with witness events (scenarios/pdx_generate.py PGen.world / pools_split); exact per-scenario contents are in the DEV-A / DEV-B / LOCKED manifests' file hashes"
+ },
+ "grounder": {
+  "checkpoint_sha256": "0fc58fd2\u2026(same)",
+  "card_sha256": "6c11956f99d5df11007d1fb08147da60bafac9b7ece5b5e68d3676776c243b40",
+  "gen": {
+   "reasoning_effort": "low",
+   "max_tokens": 4096
+  },
+  "max_tokens": 4096,
+  "retries": 1
+ },
+ "controller_budgets": {
+  "max_clarification_exchanges_per_slot": 2,
+  "max_rephrase_exchanges_per_slot": 2,
+  "max_demonstrations_per_target": 3,
+  "max_teacher_turns_per_target": 10,
+  "max_example_requests_per_demonstration": 2,
+  "max_teacher_turns_per_demonstration": 8,
+  "max_clarification_exchanges_per_instruction": 2
+ },
+ "chat_history": "full visible dialogue per target (no truncation); provider retry 6 tries / truncation 2 tries / timeout 600 s",
+ "serving": {
+  "app": "semvm-rci-hosted",
+  "vllm_version": "0.11.0",
+  "max_model_len": 32768,
+  "note": "raised from 16384 so that teacher max_tokens (8192 Stage 1, 16384 Stage 0C) plus the dialogue fit; serving parameter only, same checkpoint / sampling",
+  "gpu": "H100",
+  "gpu_memory_utilization": 0.92,
+  "max_num_seqs": 32
+ },
+ "arms": {
+  "GOLD_TRACE": [
+   "GOLD_TRACE",
+   "LOCAL",
+   null
+  ],
+  "FORMAL_TEACH": [
+   "FORMAL_TEACH",
+   "LOCAL",
+   null
+  ],
+  "B": [
+   "SCRIPTED",
+   "HOSTED",
+   "SCRIPTED"
+  ],
+  "E": [
+   "SCRIPTED",
+   "HOSTED",
+   "HOSTED"
+  ],
+  "F": [
+   "TEACHER",
+   "HOSTED",
+   "ORACLE"
+  ],
+  "D": [
+   "TEACHER",
+   "HOSTED",
+   "HOSTED"
+  ]
+ },
+ "order": [
+  "GOLD_TRACE",
+  "FORMAL_TEACH",
+  "B",
+  "E",
+  "F",
+  "D"
+ ],
+ "files_sha256": {
+  "core/ir/ir.py": "14686ea155778759f408edc94992eaaef20564986434f68a39c21d32ba68d8d2",
+  "core/neural/binder.py": "c08aa32391fd6add12b918cec40664215dbf7b95991979aa20685b40e15ab9da",
+  "core/neural/envelope.py": "bd55abdbab161119281130b5baa02dfb8692cd159c4d4e958a0f9e01b5bb8477",
+  "core/neural/vendor/ltc_core.py": "745c401cdac56fc704eb2ca8fd9fd41c43af91b4cbb1376866b39c05580824f1",
+  "core/neural/vendor/ltc_packed.py": "420f2fac324ecd9754dc732ea91d5dbdefcf3797e1cf16522be5684f31fe9290",
+  "core/neural/vendor/ltcn_model.py": "492aea22568eb1519c14e2c44a4da9ace67b931650e236d4581ad9cea34e264f",
+  "core/neural/vendor/mr_config.py": "fa6d431238231bd70978b33f1a6e97303e07b12fe57395e4d26cdcc69c5fd45f",
+  "core/neural/vendor/mr_generate.py": "d4c298f2729b738fbbb32dfa24579f705050139b4ff56064ff3b54bf143ed08c",
+  "core/pipeline.py": "4c5fad73b70358fabc399b5b7073973fc66d26ba1f8449a084acf0cf6bf35be6",
+  "core/render/render.py": "737c9ff00896de5c6dcf9e7f992c4f44dbb3e28f4c755e4c4b6bf26b854e1eaf",
+  "core/resolver/resolver.py": "30b4869f58a63a03b7920e672fcdba97897a4a291e5f98f380c1840033c8e4f6",
+  "core/state/store.py": "f2fcdce2d5ec41254e2f89782ceed573ff71049edc1594b4859a013004d2833d",
+  "core/vm/vm.py": "17ad94afd7ebe971511ca5a8c47721548db88d623e58b7d67a30d4812996d7ea",
+  "evaluator/behavior.py": "3ef9207a4b0f708353beaab5949a1c7aeae3a7a7d98ec249d6028c9bd8f9dc7d",
+  "evaluator/judge.py": "b0f05b932aaaf15001d4eaa0b3ab887a8c97703e32779d861bd3e5db2812a960",
+  "evaluator/rci_metrics.py": "32d39b6acfaa6570d4186d466c644eb53af6a5c4767dfba4f98e6ce14cd507fd",
+  "htg_evaluate.py": "33838ee27cc0896c4a13ac70f63f06b5864fc465e34538943a713bec92235f6d",
+  "locks/DEV_A_MANIFEST.json": "5a8eedb8e6e8a72fef8018640bf48fa1b72debeb74b984c77634ebdac06620a1",
+  "locks/DEV_B_MANIFEST.json": "27f70ea900ef8ef5f410ae75fed678aa96b763ab952f8b2bcd0ad98942b0dac0",
+  "locks/HOSTED_CHECKPOINT_MANIFEST.json": "d3f169395899bda569f365c19efc115470cabf115e56345ea00cb0e6142ac1e0",
+  "locks/LOCKED_PARITY_AUDIT.json": "e97bd7b28f7a7595e589c31c5b0d8213a2b120824504ec64289041f0357a4da3",
+  "locks/LOCKED_TEST_MANIFEST.json": "dcb0dd42cbf7087f1325ae0d2cd976700ff02011267315faae21139885b354cb",
+  "netguard/sitecustomize.py": "10de1cf8a5f7dc9ad9d931f0c9163f7dc8ef7a80f546f14fbdd45f54542887de",
+  "pdx_evaluate.py": "64bd3693100eee42b2e2c773b53e32c2aa2ed89c7c128dc10a0615ee37df80e2",
+  "procedure/abstraction.py": "0a078cb8c05ad4cff01f3e15c4216420edca8b51b060490ed830118c28db4c77",
+  "procedure/executor.py": "f64215142c9011c4203de544664c8008b200a88b94be0d0040bb1eff2b8b9968",
+  "procedure/lang.py": "ba6c6fc147b8e3dfe9c91c35eae3a7a90ca1c41766983fa85662540b4ac929e7",
+  "procedure/llm.py": "d0590e681df8f846cadbc655a17adebc7c926788fd5c6bd3bbaef64864989bdb",
+  "procedure/llm_service.py": "96435c410a8dfc31329ae8beedd615ce1e2c33a0de4c46e86485f464661dae8b",
+  "procedure/procstore.py": "5973bb77abcba1f9ea4f56d58712d3b68222762e3652ea53bfe8f15ba3f908fc",
+  "procedure/retrieval.py": "861096ddf2861b348075548985b30db4a5b5a58edbda40bb2e10259bfc6c64e2",
+  "procedure/system.py": "b7cd8bd2fa3e499a8a9eff27d6de7bf369fd488ad5d76fecb4f24749f0158036",
+  "procedure/validate.py": "2f066e6b21596ce5976bbb3e5d889bf68b1488f405f794f5343c5911ad26fe7c",
+  "procedure/verify.py": "ae732e62ff98d8afa9319a5873a3c42d7f2fa49e57188b1abff59089030e39a2",
+  "rci_ceiling.py": "adc2d821f6b09412c39e370a98a49cdca0c7e805f200c12934123466c4dbcfba",
+  "rci_evaluate.py": "8485db75ed6b2c638e60b55ab1f13e82abac7126161725eaf5ebcad6d555e447",
+  "rci_pool.py": "af1b28dd797b628b8b1ed7ae79d26ed5a2eb63cac1627d0cda939322cdc85288",
+  "run_acq.py": "bf46398d35d2664706e2dee8562ea690a1f2aed499fea0b869de16eb336fee2e",
+  "run_reuse.py": "8eb30cb8a2a1a38e384f4b872431caf8ae81eb6c41c162c2b06b9d01c0ffd994",
+  "scenarios/catalog.py": "18825115f93d49c5234146c1a6867e9c72db89acbd41bdf575ecf18d9299ec61",
+  "scenarios/nl_generate.py": "afcbca24ebe8186fdacaed9607f1b077ffa6acc68b5946c6ffa8a37e1b982ee7",
+  "scenarios/oracle.py": "c4915450a5afb211ffb923ceded1f7ab0db12d7d401a9e222d39413049a89636",
+  "scenarios/pdx_catalog.py": "f2400ed6c2e646b124a014518e70cfd968b88813edafd9eed2cffdfc8a6871c1",
+  "scenarios/pdx_generate.py": "483e19a729b2e8ebb0b2c454ce86862bec16e8d8f9b13b622f86e1b896bb51ab",
+  "scenarios/templates_dev.json": "f0fc25d3b841779beba575f47bbf0ce16614718822599ef24b24cfab8a35b185",
+  "scenarios/templates_htg_locked.json": "185cefcb54974a57f74a07e14a422a4d942c31453958d48f90d1085be3e8a9c8",
+  "spec/DEMONSTRATION_COMPLETENESS_V1.json": "72f748f70f650dfe4afd9e4596b9044bca67094402c61548f03d2292ab2461d5",
+  "spec/DEMONSTRATION_SLOT_SCHEMA_V1.json": "ab412ae54ed81ff766c480603a2f14ae321ad44c602d79e4e653065607ef20a8",
+  "spec/FACTORIAL_ARMS_V1.json": "19eb06f88c83140e3da6919c085ea616fa0e48b181a575673770314184060b58",
+  "spec/FAILURE_TAXONOMY_V1.json": "044ef0a1e6b96d738a8594bd04e86c3ac3512f8281f0dc8ac5a1caaff062264b",
+  "spec/HOSTED_GROUNDER_PROTOCOL.json": "8006a57dad7874c1af66c7df251067e89283e5c3537d0f7c87142042959f912e",
+  "spec/HOSTED_TEACHER_PROTOCOL.json": "0954232cb6b7af3c685f5ee71d0a65038f9e5ab402bcc8667d801ee255a246ca",
+  "spec/NL_TEACH_ACTION_SCHEMA.json": "84b24236fe19de3f67ac789ff02bf0085c8a5cdc87bda617a29e8443bce0dfeb",
+  "spec/NL_TEACH_LANGUAGE_V1.json": "d42ea06fdbe10ec5dc2548086730f7f99bec5849b67b9d684b802a44969a3579",
+  "spec/RECOVERY_CEILING_DIAGNOSTIC_V1.json": "7c9d58832115dcb7fd204372760078f3cbf5306848364a8da0beb462e67bf848",
+  "spec/RECOVERY_METRICS_V1.json": "e541f6fe0c4cbe3d4578f0bb847e6c7e7b1fcd241191d8d8e8c44edbd5e988b6",
+  "spec/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1.md": "a651f53cd72376ebfc71ef655bba8b64f29bcd6559b4f457f691de6419f59286",
+  "spec/STRUCTURED_CLARIFICATION_V1.json": "d78338e2c1704e5360dcf2b6802dbb157912b115c47acde008f3c9ce6ee727a1",
+  "spec/TEACHING_STATE_MACHINE_V1.json": "758d60afc2595e7bbcef7d1518dd223547eccefb4a288d1ba52aa90a145ae3fe",
+  "student/frontend.py": "977d8647b2f76d7bc337a9f29456ae987e941dbbc3224d98e2959e7626f3fe6f",
+  "student/hosted_grounder.py": "2ac3fcfd136cba90aba3f2af678c041a6a73f5c7c719e2f10f5d5b241ab76aa0",
+  "student/nl_llm_service.py": "125e26fee02b3c7ec512d65bc99e5999d318b1bf3cd33345cba45a4f6eabaa6f",
+  "student/nllm.py": "cb8c61f75e0ce5838c44fc7f2d837dc72bc212d1cc6f9deca878ad4999bd5240",
+  "student/nlsystem.py": "cb30ae44276a6ab7f014c3fce095becc12ae8462564feefbb6997704156332b1",
+  "teacher/client.py": "af25429360fdd99c303d3e5a38f9e0b78304a2c86dff253cfa7fef4083825d1d",
+  "teacher/episode.py": "2a47df47cfe79e6356311e84c7b65de777ac942be3fc85acabaafe19c88a1851",
+  "teacher/modal_teacher.py": "79a8401a3d386a12d4ed8db1e47ad480d5e0fc7f1124a7d245704f281b3dfc4b",
+  "teacher/protocol.py": "d04e95a19287abc52bd76eecb2c782e05f1d5156f38087b6673432bc65222da0",
+  "teacher/routing.py": "2fd0142192efbd12ec3ce717571e7dd842e00bd09559d51953d3b30612e893e3",
+  "teacher/transactional.py": "ca4b62513f450a8fab0aa81fdf58f6947c8319cb238822474b2e80e58a2f9b8d",
+  "tests/test_htg.py": "2fa8c619e71eeb32f7a4f5e3cadc2434c73e6e9b0751ca4c1ac1cf4d0218ab33",
+  "tests/test_nl_teach.py": "1f6d1338a79f5d893a5b44c25effda1d8d4d51589fe49b8c9c248030e7196f23",
+  "tests/test_pdx.py": "c6c649c5e731c66cbbe7a5023835c77f2ca060b2e3d741fee48a1de1a819f394",
+  "tests/test_procedures.py": "5cae9d45af3bf2e6a2b249048e9d3dd1c47cd1f22c8683c980439b3f0eefba5b",
+  "tests/test_rci.py": "261c5d4a880afc2c6b4df9e3b663fc1a466ee6b98a059dc27d16fca934748a0c",
+  "tests/test_ttp.py": "50525b152b7b40c198eae78419afbe6f1cd705531a09da0c63f874b641048e12",
+  "ttp_evaluate.py": "35ac90e09d424da3bd65c0f493b05fe9ee06bda40db3782fecc0c0807372909e"
+ }
+}

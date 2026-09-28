@@ -1,0 +1,172 @@
+{
+ "name": "all_requests_by",
+ "mode": ":teach",
+ "declared": {
+  "person": "Mallory"
+ },
+ "interaction_id": "dev_b-026-S17:all_requests_by:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/D/dev_b-026-S17/learn/snapshots/dev_b-026-S17_all_requests_by_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "277c1c8e98b549af5b476fbcbf359cd9788b0eab97bb4620f0ab6d2928b609be",
+ "utterances": [
+  {
+   "utterance": "Find the requests by Mallory.",
+   "uid": "dev_b-026-S17:all_requests_by:d0:demo1-slot1:0",
+   "instruction": "Find the requests by Mallory.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the requests by Mallory.",
+    "values": {
+     "PERSON": [
+      "Mallory"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "02ce4241f041b4b1375f9a172fcb6b4a409113527b362e7ae6c673a3f16388e1"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Mallory\"}}]}",
+    "request_hash": "02ce4241f041b4b1375f9a172fcb6b4a409113527b362e7ae6c673a3f16388e1",
+    "cached": false,
+    "input_tokens": 4450,
+    "output_tokens": 60,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Mallory"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.15
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Mallory"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "28a486a9e394faa4f8231afe706941edeb53ecd035dbea73cef214ed04e25fea",
+   "state_after": "28a486a9e394faa4f8231afe706941edeb53ecd035dbea73cef214ed04e25fea",
+   "seconds": 1.528
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev_b-026-S17:all_requests_by:d0:demo1-slot2:1",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "1d5caedcd4d05f564e2bf6f87145ef225aebfc4d6a04c9a86f799b6a474a94eb"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "1d5caedcd4d05f564e2bf6f87145ef225aebfc4d6a04c9a86f799b6a474a94eb",
+    "cached": true,
+    "input_tokens": 4480,
+    "output_tokens": 40,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "28a486a9e394faa4f8231afe706941edeb53ecd035dbea73cef214ed04e25fea",
+   "state_after": "28a486a9e394faa4f8231afe706941edeb53ecd035dbea73cef214ed04e25fea",
+   "seconds": 0.319
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Mallory"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "a4d4cff83632817ec8bedd0edc38f7c12e396a8b7b350f03fb9c04d2e89161b1",
+ "nl_mode": "NL_TEACH"
+}

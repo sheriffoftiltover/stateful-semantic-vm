@@ -1,0 +1,63 @@
+{
+ "name": "close_open_emails_to",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE close_open_emails_to()\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT=Sam STATUS=OPEN\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\nRETURN $v0\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.53,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "txn_inject_after_1",
+     true
+    ],
+    [
+     "txn_inject_after_2",
+     true
+    ],
+    [
+     "txn_inject_after_3",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE close_open_emails_to()\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT=Sam STATUS=OPEN\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\nRETURN $v0\nEND",
+   "program_hash": "ad3fb22dd091509a920bb43b0a09e41f786eb734a4882f6960b41e6fc51ee19e"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:close_open_emails_to:v4",
+ "chosen": "deterministic"
+}

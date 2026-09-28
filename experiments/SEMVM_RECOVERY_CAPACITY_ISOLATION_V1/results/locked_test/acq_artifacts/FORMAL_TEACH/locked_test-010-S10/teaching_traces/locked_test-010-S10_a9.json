@@ -1,0 +1,45 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Mallory"
+ },
+ "interaction_id": "locked_test-010-S10:a9",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-010-S10/learn/snapshots/locked_test-010-S10_a9_start.sqlite",
+ "start_snapshot_sha256": "af39fa8fd24659263bd6c719c52b36079512c43fd594a89f7b28fe679ab1497d",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Mallory"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "a3bef05b262698d33bc5244e75cbfef39e00054c4f16e19fc35d2bbef10ffa54",
+ "nl_mode": "GOLD_TRACE"
+}

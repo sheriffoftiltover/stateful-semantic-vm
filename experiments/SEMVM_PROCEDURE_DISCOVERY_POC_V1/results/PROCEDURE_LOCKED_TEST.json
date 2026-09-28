@@ -1,0 +1,1504 @@
+{
+ "experiment": "SEMVM_PROCEDURE_DISCOVERY_POC_V1",
+ "date": "2026-09-26",
+ "result": "RESULT A (persistent procedural learning succeeds) within the registered domain",
+ "unit_tests": {
+  "passed": 18,
+  "total": 18,
+  "pass_rate": 1.0,
+  "tests": {
+   "ast_validation": "PASS",
+   "parameter_binding_and_types": "PASS",
+   "constant_preservation_multi_example": "PASS",
+   "one_shot_ambiguity_rejected": "PASS",
+   "variable_scope_for": "PASS",
+   "call_procedure_and_dependencies": "PASS",
+   "cycle_rejection": "PASS",
+   "source_and_counterfactual_replay": "PASS",
+   "verifier_rejects_bad_candidates": "PASS",
+   "transaction_rollback": "PASS",
+   "restart_persistence": "PASS",
+   "versioning_and_revision": "PASS",
+   "disable_enable_delete": "PASS",
+   "activation_requires_verified": "PASS",
+   "alias_and_ambiguous_retrieval": "PASS",
+   "unsuccessful_trace_not_learned": "PASS",
+   "canonical_hashing": "PASS",
+   "composition_level2_save_last": "PASS"
+  }
+ },
+ "DEV": {
+  "v1": {
+   "PROCEDURE_PROPOSAL_VALID_deterministic": 0.9545,
+   "DISCOVERY_VERIFIED_deterministic": 0.9545,
+   "PROCEDURE_PROPOSAL_VALID_llm": 0.9091,
+   "DISCOVERY_VERIFIED_llm": 0.8182,
+   "DISCOVERY_VERIFIED_union": 0.9545,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "ROLLBACK_EXACT": 0.8182,
+   "COUNTERFACTUAL_EXACT": 0.72,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.5172,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "FINAL_STATE_EXACT": 0.9,
+   "SCENARIO_EXACT": 0.6,
+   "RESTART_PROCEDURE_EXACT": 0.7143,
+   "PROCEDURE_COMPOSITION_EXACT_L1": 0.6667,
+   "PROCEDURE_COMPOSITION_EXACT_L2_save": 0.6667,
+   "PROCEDURE_COMPOSITION_EXACT_L2_invoke": 0.6667,
+   "VERIFY_FALSE_ACCEPT": 0.0,
+   "n_PROCEDURE_PROPOSAL_VALID_deterministic": 44,
+   "n_DISCOVERY_VERIFIED_deterministic": 44,
+   "n_PROCEDURE_PROPOSAL_VALID_llm": 44,
+   "n_DISCOVERY_VERIFIED_llm": 44,
+   "n_DISCOVERY_VERIFIED_union": 44,
+   "n_SOURCE_REPLAY_EXACT": 42,
+   "n_NEGATIVE_CASE_SAFE": 254,
+   "n_ROLLBACK_EXACT": 22,
+   "n_COUNTERFACTUAL_EXACT": 50,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 29,
+   "n_ARGUMENT_BINDING_EXACT": 13,
+   "n_FINAL_STATE_EXACT": 30,
+   "n_SCENARIO_EXACT": 30,
+   "n_RESTART_PROCEDURE_EXACT": 21,
+   "n_PROCEDURE_COMPOSITION_EXACT_L1": 6,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_save": 6,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_invoke": 6,
+   "n_VERIFY_FALSE_ACCEPT": 6,
+   "generalization": {
+    "ARGUMENT_GENERALIZATION": {
+     "acc": 0.72,
+     "n": 50
+    },
+    "SURFACE_GENERALIZATION": {
+     "acc": 0.5862,
+     "n": 29
+    },
+    "REPLAY": {
+     "acc": 0.6667,
+     "n": 9
+    },
+    "COMPOSITION_GENERALIZATION": {
+     "acc": 0.6667,
+     "n": 12
+    }
+   },
+   "accounting": {
+    "first_time_teach_turns": {
+     "mean": 1.0,
+     "n": 49,
+     "sum": 49
+    },
+    "verify_seconds": {
+     "mean": 0.5345,
+     "n": 42,
+     "sum": 22.45
+    },
+    "proposal_seconds_llm": {
+     "mean": 6.3029,
+     "n": 42,
+     "sum": 264.72
+    },
+    "execution_seconds": {
+     "mean": 0.7653,
+     "n": 59,
+     "sum": 45.153
+    },
+    "vm_ops": {
+     "mean": 4.7966,
+     "n": 59,
+     "sum": 283
+    },
+    "retrieval_seconds": {
+     "mean": 1.4537,
+     "n": 29,
+     "sum": 42.157
+    },
+    "llm_calls_per_request": {
+     "mean": 1.6897,
+     "n": 29,
+     "sum": 49
+    }
+   },
+   "failure_taxonomy": {
+    "PR_RETRIEVE": 8,
+    "PR_COMPOSE": 2,
+    "PD_PARAMETER": 2
+   },
+   "by_category": {
+    "P1": 0.75,
+    "P10": 1.0,
+    "P11": 0.0,
+    "P12": 0.3333,
+    "P2": 0.6667,
+    "P3": 0.0,
+    "P4": 0.5,
+    "P5": 0.6667,
+    "P6": 0.5,
+    "P7": 0.6667,
+    "P8": 1.0,
+    "P9": 1.0
+   },
+   "gates": {
+    "SOURCE_REPLAY_EXACT": {
+     "threshold": 1.0,
+     "value": 1.0,
+     "pass": true
+    },
+    "COUNTERFACTUAL_EXACT": {
+     "threshold": 1.0,
+     "value": 0.72,
+     "pass": false
+    },
+    "ROLLBACK_EXACT": {
+     "threshold": 1.0,
+     "value": 0.8182,
+     "pass": false
+    },
+    "RESTART_PROCEDURE_EXACT": {
+     "threshold": 1.0,
+     "value": 0.7143,
+     "pass": false
+    },
+    "PROCEDURE_RETRIEVAL_EXACT": {
+     "threshold": 0.95,
+     "value": 0.5172,
+     "pass": false
+    },
+    "ARGUMENT_BINDING_EXACT": {
+     "threshold": 0.95,
+     "value": 1.0,
+     "pass": true
+    },
+    "SCENARIO_EXACT": {
+     "threshold": 0.9,
+     "value": 0.6,
+     "pass": false
+    }
+   },
+   "seconds": 764.3,
+   "llm_frozen": {
+    "param_hash_first_service": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+    "param_hash_end": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+    "identical_across_restarts": true,
+    "files_sha256": {
+     "config.json": "984abd4b3f21edb957012c7dc4352c462b08e15ffe8384b6d55990885e9dcc9a",
+     "generation_config.json": "444ea57ebf361c659d1f5c23508319b691e181d122588ea3cdd5f68d3e618b1f",
+     "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+     "model.safetensors": "535485b26038ac24f4e8a86e1a73ed417d8992e3192f6305b7fcc4fb92efa210",
+     "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+     "tokenizer_config.json": "4a917e4772d9b246ef600e1c5d7d81e3a81ae9f3f2d10d78ccb02c86e5fb184a",
+     "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "n_parameters": 1543714304,
+    "optimizer": null
+   },
+   "capability": {
+    "active_procedures_mean_final": 1.3333,
+    "library_bytes_mean": 50244.2667,
+    "world_bytes_mean": 119603.2,
+    "llm_calls_total": 93
+   }
+  },
+  "v2_run1": {
+   "PROCEDURE_PROPOSAL_VALID_deterministic": 1.0,
+   "DISCOVERY_VERIFIED_deterministic": 1.0,
+   "PROCEDURE_PROPOSAL_VALID_llm": 0.8478,
+   "DISCOVERY_VERIFIED_llm": 0.7826,
+   "DISCOVERY_VERIFIED_union": 1.0,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "ROLLBACK_EXACT": 1.0,
+   "COUNTERFACTUAL_EXACT": 0.9792,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.8966,
+   "PROCEDURE_RETRIEVAL_BEHAVIORAL": 0.963,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "FINAL_STATE_EXACT": 1.0,
+   "SCENARIO_EXACT": 0.9667,
+   "RESTART_PROCEDURE_EXACT": 0.9524,
+   "PROCEDURE_COMPOSITION_EXACT_L1": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L2_save": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L2_invoke": 1.0,
+   "VERIFY_FALSE_ACCEPT": 0.0,
+   "n_PROCEDURE_PROPOSAL_VALID_deterministic": 46,
+   "n_DISCOVERY_VERIFIED_deterministic": 46,
+   "n_PROCEDURE_PROPOSAL_VALID_llm": 46,
+   "n_DISCOVERY_VERIFIED_llm": 46,
+   "n_DISCOVERY_VERIFIED_union": 46,
+   "n_SOURCE_REPLAY_EXACT": 46,
+   "n_NEGATIVE_CASE_SAFE": 280,
+   "n_ROLLBACK_EXACT": 30,
+   "n_COUNTERFACTUAL_EXACT": 48,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 29,
+   "n_PROCEDURE_RETRIEVAL_BEHAVIORAL": 27,
+   "n_ARGUMENT_BINDING_EXACT": 24,
+   "n_FINAL_STATE_EXACT": 30,
+   "n_SCENARIO_EXACT": 30,
+   "n_RESTART_PROCEDURE_EXACT": 21,
+   "n_PROCEDURE_COMPOSITION_EXACT_L1": 6,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_save": 6,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_invoke": 6,
+   "n_VERIFY_FALSE_ACCEPT": 6,
+   "generalization": {
+    "ARGUMENT_GENERALIZATION": {
+     "acc": 0.9792,
+     "n": 48
+    },
+    "SURFACE_GENERALIZATION": {
+     "acc": 0.9655,
+     "n": 29
+    },
+    "REPLAY": {
+     "acc": 1.0,
+     "n": 11
+    },
+    "COMPOSITION_GENERALIZATION": {
+     "acc": 1.0,
+     "n": 12
+    }
+   },
+   "accounting": {
+    "first_time_teach_turns": {
+     "mean": 1.0,
+     "n": 51,
+     "sum": 51
+    },
+    "verify_seconds": {
+     "mean": 0.5859,
+     "n": 46,
+     "sum": 26.95
+    },
+    "proposal_seconds_llm": {
+     "mean": 6.2357,
+     "n": 46,
+     "sum": 286.84
+    },
+    "execution_seconds": {
+     "mean": 0.8513,
+     "n": 59,
+     "sum": 50.226
+    },
+    "vm_ops": {
+     "mean": 6.4068,
+     "n": 59,
+     "sum": 378
+    },
+    "retrieval_seconds": {
+     "mean": 1.6312,
+     "n": 29,
+     "sum": 47.305
+    },
+    "llm_calls_per_request": {
+     "mean": 1.8276,
+     "n": 29,
+     "sum": 53
+    }
+   },
+   "failure_taxonomy": {
+    "PR_RETRIEVE": 1
+   },
+   "by_category": {
+    "P1": 1.0,
+    "P10": 1.0,
+    "P11": 1.0,
+    "P12": 0.6667,
+    "P2": 1.0,
+    "P3": 1.0,
+    "P4": 1.0,
+    "P5": 1.0,
+    "P6": 1.0,
+    "P7": 1.0,
+    "P8": 1.0,
+    "P9": 1.0
+   },
+   "gates": {
+    "SOURCE_REPLAY_EXACT": {
+     "threshold": 1.0,
+     "value": 1.0,
+     "pass": true
+    },
+    "COUNTERFACTUAL_EXACT": {
+     "threshold": 1.0,
+     "value": 0.9792,
+     "pass": false
+    },
+    "ROLLBACK_EXACT": {
+     "threshold": 1.0,
+     "value": 1.0,
+     "pass": true
+    },
+    "RESTART_PROCEDURE_EXACT": {
+     "threshold": 1.0,
+     "value": 0.9524,
+     "pass": false
+    },
+    "PROCEDURE_RETRIEVAL_EXACT": {
+     "threshold": 0.95,
+     "value": 0.8966,
+     "pass": false
+    },
+    "ARGUMENT_BINDING_EXACT": {
+     "threshold": 0.95,
+     "value": 1.0,
+     "pass": true
+    },
+    "SCENARIO_EXACT": {
+     "threshold": 0.9,
+     "value": 0.9667,
+     "pass": true
+    }
+   },
+   "seconds": 778.6,
+   "llm_frozen": {
+    "param_hash_first_service": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+    "param_hash_end": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+    "identical_across_restarts": true,
+    "files_sha256": {
+     "config.json": "984abd4b3f21edb957012c7dc4352c462b08e15ffe8384b6d55990885e9dcc9a",
+     "generation_config.json": "444ea57ebf361c659d1f5c23508319b691e181d122588ea3cdd5f68d3e618b1f",
+     "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+     "model.safetensors": "535485b26038ac24f4e8a86e1a73ed417d8992e3192f6305b7fcc4fb92efa210",
+     "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+     "tokenizer_config.json": "4a917e4772d9b246ef600e1c5d7d81e3a81ae9f3f2d10d78ccb02c86e5fb184a",
+     "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "n_parameters": 1543714304,
+    "optimizer": null
+   },
+   "capability": {
+    "active_procedures_mean_final": 1.4667,
+    "library_bytes_mean": 50790.4,
+    "world_bytes_mean": 119603.2,
+    "llm_calls_total": 99
+   }
+  },
+  "v3_final": {
+   "GOLD_PROC": {
+    "COUNTERFACTUAL_EXACT": 1.0,
+    "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+    "PROCEDURE_RETRIEVAL_BEHAVIORAL": 1.0,
+    "ARGUMENT_BINDING_EXACT": 1.0,
+    "BEHAVIORAL_PLAN_EXACT": 1.0,
+    "FINAL_STATE_EXACT": 1.0,
+    "SCENARIO_EXACT": 1.0,
+    "RESTART_PROCEDURE_EXACT": 1.0,
+    "PROCEDURE_COMPOSITION_EXACT_L1": 1.0,
+    "PROCEDURE_COMPOSITION_EXACT_L2_save": 1.0,
+    "PROCEDURE_COMPOSITION_EXACT_L2_invoke": 1.0,
+    "NEGATIVE_CASE_SAFE": 1.0,
+    "ROLLBACK_EXACT": 1.0,
+    "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+    "DYNAMIC_RECOMPOSITION_RATE": 0.0,
+    "n_COUNTERFACTUAL_EXACT": 48,
+    "n_PROCEDURE_RETRIEVAL_EXACT": 29,
+    "n_PROCEDURE_RETRIEVAL_BEHAVIORAL": 27,
+    "n_ARGUMENT_BINDING_EXACT": 27,
+    "n_BEHAVIORAL_PLAN_EXACT": 27,
+    "n_FINAL_STATE_EXACT": 30,
+    "n_SCENARIO_EXACT": 30,
+    "n_RESTART_PROCEDURE_EXACT": 21,
+    "n_PROCEDURE_COMPOSITION_EXACT_L1": 6,
+    "n_PROCEDURE_COMPOSITION_EXACT_L2_save": 6,
+    "n_PROCEDURE_COMPOSITION_EXACT_L2_invoke": 6,
+    "n_NEGATIVE_CASE_SAFE": 2,
+    "n_ROLLBACK_EXACT": 4,
+    "n_STORED_PROCEDURE_REUSE_EXACT": 3,
+    "n_DYNAMIC_RECOMPOSITION_RATE": 3,
+    "FALSE_AMBIGUITY_COUNT": 0,
+    "EQUIVALENT_PLAN_COLLAPSE_COUNT": 0,
+    "generalization": {
+     "ARGUMENT_GENERALIZATION": {
+      "acc": 1.0,
+      "n": 48
+     },
+     "SURFACE_GENERALIZATION": {
+      "acc": 1.0,
+      "n": 29
+     },
+     "REPLAY": {
+      "acc": 1.0,
+      "n": 11
+     },
+     "COMPOSITION_GENERALIZATION": {
+      "acc": 1.0,
+      "n": 12
+     }
+    },
+    "accounting": {
+     "first_time_teach_turns": {
+      "mean": 1.0,
+      "n": 51,
+      "sum": 51
+     },
+     "execution_seconds": {
+      "mean": 0.0931,
+      "n": 59,
+      "sum": 5.492
+     },
+     "vm_ops": {
+      "mean": 6.678,
+      "n": 59,
+      "sum": 394
+     },
+     "retrieval_seconds": {
+      "mean": 0.0922,
+      "n": 29,
+      "sum": 2.673
+     },
+     "llm_calls_per_request": {
+      "mean": 0.0,
+      "n": 29,
+      "sum": 0
+     }
+    },
+    "failure_taxonomy": {},
+    "per_scenario": {
+     "dev-001-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-002-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-003-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-004-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-005-P2": {
+      "category": "P2",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-006-P2": {
+      "category": "P2",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-007-P2": {
+      "category": "P2",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-008-P3": {
+      "category": "P3",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-009-P3": {
+      "category": "P3",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-010-P4": {
+      "category": "P4",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-011-P4": {
+      "category": "P4",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-012-P5": {
+      "category": "P5",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-013-P5": {
+      "category": "P5",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-014-P5": {
+      "category": "P5",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-015-P6": {
+      "category": "P6",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-016-P6": {
+      "category": "P6",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-017-P7": {
+      "category": "P7",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-018-P7": {
+      "category": "P7",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-019-P7": {
+      "category": "P7",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-020-P8": {
+      "category": "P8",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-021-P8": {
+      "category": "P8",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-022-P9": {
+      "category": "P9",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-023-P9": {
+      "category": "P9",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-024-P10": {
+      "category": "P10",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-025-P10": {
+      "category": "P10",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-026-P11": {
+      "category": "P11",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-027-P11": {
+      "category": "P11",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-028-P12": {
+      "category": "P12",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-029-P12": {
+      "category": "P12",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-030-P12": {
+      "category": "P12",
+      "exact": true,
+      "first_failure": null
+     }
+    },
+    "by_category": {
+     "P1": 1.0,
+     "P10": 1.0,
+     "P11": 1.0,
+     "P12": 1.0,
+     "P2": 1.0,
+     "P3": 1.0,
+     "P4": 1.0,
+     "P5": 1.0,
+     "P6": 1.0,
+     "P7": 1.0,
+     "P8": 1.0,
+     "P9": 1.0
+    },
+    "seconds": 199.1,
+    "capability": {
+     "active_procedures_mean_final": 1.4667,
+     "library_bytes_mean": 49152.0,
+     "world_bytes_mean": 119603.2,
+     "llm_calls_total": 0
+    }
+   },
+   "DISCOVERED": {
+    "PROCEDURE_PROPOSAL_VALID_deterministic": 1.0,
+    "DISCOVERY_VERIFIED_deterministic": 1.0,
+    "PROCEDURE_PROPOSAL_VALID_llm": 0.8478,
+    "DISCOVERY_VERIFIED_llm": 0.7826,
+    "DISCOVERY_VERIFIED_union": 1.0,
+    "SOURCE_REPLAY_EXACT": 1.0,
+    "NEGATIVE_CASE_SAFE": 1.0,
+    "ROLLBACK_EXACT": 1.0,
+    "COUNTERFACTUAL_EXACT": 1.0,
+    "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+    "PROCEDURE_RETRIEVAL_BEHAVIORAL": 1.0,
+    "ARGUMENT_BINDING_EXACT": 1.0,
+    "BEHAVIORAL_PLAN_EXACT": 1.0,
+    "FINAL_STATE_EXACT": 1.0,
+    "SCENARIO_EXACT": 1.0,
+    "RESTART_PROCEDURE_EXACT": 1.0,
+    "PROCEDURE_COMPOSITION_EXACT_L1": 1.0,
+    "PROCEDURE_COMPOSITION_EXACT_L2_save": 1.0,
+    "PROCEDURE_COMPOSITION_EXACT_L2_invoke": 1.0,
+    "VERIFY_FALSE_ACCEPT": 0.0,
+    "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+    "DYNAMIC_RECOMPOSITION_RATE": 0.0,
+    "EQUIVALENT_PLAN_COLLAPSE_COUNT": 3,
+    "n_PROCEDURE_PROPOSAL_VALID_deterministic": 46,
+    "n_DISCOVERY_VERIFIED_deterministic": 46,
+    "n_PROCEDURE_PROPOSAL_VALID_llm": 46,
+    "n_DISCOVERY_VERIFIED_llm": 46,
+    "n_DISCOVERY_VERIFIED_union": 46,
+    "n_SOURCE_REPLAY_EXACT": 46,
+    "n_NEGATIVE_CASE_SAFE": 280,
+    "n_ROLLBACK_EXACT": 30,
+    "n_COUNTERFACTUAL_EXACT": 48,
+    "n_PROCEDURE_RETRIEVAL_EXACT": 29,
+    "n_PROCEDURE_RETRIEVAL_BEHAVIORAL": 27,
+    "n_ARGUMENT_BINDING_EXACT": 27,
+    "n_BEHAVIORAL_PLAN_EXACT": 27,
+    "n_FINAL_STATE_EXACT": 30,
+    "n_SCENARIO_EXACT": 30,
+    "n_RESTART_PROCEDURE_EXACT": 21,
+    "n_PROCEDURE_COMPOSITION_EXACT_L1": 6,
+    "n_PROCEDURE_COMPOSITION_EXACT_L2_save": 6,
+    "n_PROCEDURE_COMPOSITION_EXACT_L2_invoke": 6,
+    "n_VERIFY_FALSE_ACCEPT": 6,
+    "n_STORED_PROCEDURE_REUSE_EXACT": 3,
+    "n_DYNAMIC_RECOMPOSITION_RATE": 3,
+    "n_EQUIVALENT_PLAN_COLLAPSE_COUNT": 3,
+    "FALSE_AMBIGUITY_COUNT": 0,
+    "generalization": {
+     "ARGUMENT_GENERALIZATION": {
+      "acc": 1.0,
+      "n": 48
+     },
+     "SURFACE_GENERALIZATION": {
+      "acc": 1.0,
+      "n": 29
+     },
+     "REPLAY": {
+      "acc": 1.0,
+      "n": 11
+     },
+     "COMPOSITION_GENERALIZATION": {
+      "acc": 1.0,
+      "n": 12
+     }
+    },
+    "accounting": {
+     "first_time_teach_turns": {
+      "mean": 1.0,
+      "n": 51,
+      "sum": 51
+     },
+     "verify_seconds": {
+      "mean": 0.5248,
+      "n": 46,
+      "sum": 24.14
+     },
+     "proposal_seconds_llm": {
+      "mean": 6.1265,
+      "n": 46,
+      "sum": 281.82
+     },
+     "execution_seconds": {
+      "mean": 0.9018,
+      "n": 59,
+      "sum": 53.204
+     },
+     "vm_ops": {
+      "mean": 6.678,
+      "n": 59,
+      "sum": 394
+     },
+     "retrieval_seconds": {
+      "mean": 1.7234,
+      "n": 29,
+      "sum": 49.979
+     },
+     "llm_calls_per_request": {
+      "mean": 1.8966,
+      "n": 29,
+      "sum": 55
+     }
+    },
+    "failure_taxonomy": {},
+    "per_scenario": {
+     "dev-001-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-002-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-003-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-004-P1": {
+      "category": "P1",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-005-P2": {
+      "category": "P2",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-006-P2": {
+      "category": "P2",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-007-P2": {
+      "category": "P2",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-008-P3": {
+      "category": "P3",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-009-P3": {
+      "category": "P3",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-010-P4": {
+      "category": "P4",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-011-P4": {
+      "category": "P4",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-012-P5": {
+      "category": "P5",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-013-P5": {
+      "category": "P5",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-014-P5": {
+      "category": "P5",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-015-P6": {
+      "category": "P6",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-016-P6": {
+      "category": "P6",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-017-P7": {
+      "category": "P7",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-018-P7": {
+      "category": "P7",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-019-P7": {
+      "category": "P7",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-020-P8": {
+      "category": "P8",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-021-P8": {
+      "category": "P8",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-022-P9": {
+      "category": "P9",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-023-P9": {
+      "category": "P9",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-024-P10": {
+      "category": "P10",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-025-P10": {
+      "category": "P10",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-026-P11": {
+      "category": "P11",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-027-P11": {
+      "category": "P11",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-028-P12": {
+      "category": "P12",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-029-P12": {
+      "category": "P12",
+      "exact": true,
+      "first_failure": null
+     },
+     "dev-030-P12": {
+      "category": "P12",
+      "exact": true,
+      "first_failure": null
+     }
+    },
+    "by_category": {
+     "P1": 1.0,
+     "P10": 1.0,
+     "P11": 1.0,
+     "P12": 1.0,
+     "P2": 1.0,
+     "P3": 1.0,
+     "P4": 1.0,
+     "P5": 1.0,
+     "P6": 1.0,
+     "P7": 1.0,
+     "P8": 1.0,
+     "P9": 1.0
+    },
+    "gates": {
+     "SOURCE_REPLAY_EXACT": {
+      "threshold": 1.0,
+      "value": 1.0,
+      "pass": true
+     },
+     "COUNTERFACTUAL_EXACT": {
+      "threshold": 1.0,
+      "value": 1.0,
+      "pass": true
+     },
+     "ROLLBACK_EXACT": {
+      "threshold": 1.0,
+      "value": 1.0,
+      "pass": true
+     },
+     "RESTART_PROCEDURE_EXACT": {
+      "threshold": 1.0,
+      "value": 1.0,
+      "pass": true
+     },
+     "PROCEDURE_RETRIEVAL_EXACT": {
+      "threshold": 0.95,
+      "value": 1.0,
+      "pass": true
+     },
+     "ARGUMENT_BINDING_EXACT": {
+      "threshold": 0.95,
+      "value": 1.0,
+      "pass": true
+     },
+     "SCENARIO_EXACT": {
+      "threshold": 0.9,
+      "value": 1.0,
+      "pass": true
+     }
+    },
+    "seconds": 777.2,
+    "llm_frozen": {
+     "param_hash_first_service": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+     "param_hash_end": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+     "identical_across_restarts": true,
+     "files_sha256": {
+      "config.json": "984abd4b3f21edb957012c7dc4352c462b08e15ffe8384b6d55990885e9dcc9a",
+      "generation_config.json": "444ea57ebf361c659d1f5c23508319b691e181d122588ea3cdd5f68d3e618b1f",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "535485b26038ac24f4e8a86e1a73ed417d8992e3192f6305b7fcc4fb92efa210",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "4a917e4772d9b246ef600e1c5d7d81e3a81ae9f3f2d10d78ccb02c86e5fb184a",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+     },
+     "n_parameters": 1543714304,
+     "optimizer": null
+    },
+    "capability": {
+     "active_procedures_mean_final": 1.4667,
+     "library_bytes_mean": 50790.4,
+     "world_bytes_mean": 119603.2,
+     "llm_calls_total": 101
+    }
+   }
+  }
+ },
+ "LOCKED_TEST_v2": {
+  "GOLD_PROC": {
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+   "PROCEDURE_RETRIEVAL_BEHAVIORAL": 1.0,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "BEHAVIORAL_PLAN_EXACT": 1.0,
+   "FINAL_STATE_EXACT": 1.0,
+   "SCENARIO_EXACT": 1.0,
+   "RESTART_PROCEDURE_EXACT": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L1": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L2_save": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L2_invoke": 1.0,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "ROLLBACK_EXACT": 1.0,
+   "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+   "DYNAMIC_RECOMPOSITION_RATE": 0.0,
+   "n_COUNTERFACTUAL_EXACT": 33,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 20,
+   "n_PROCEDURE_RETRIEVAL_BEHAVIORAL": 19,
+   "n_ARGUMENT_BINDING_EXACT": 19,
+   "n_BEHAVIORAL_PLAN_EXACT": 19,
+   "n_FINAL_STATE_EXACT": 20,
+   "n_SCENARIO_EXACT": 20,
+   "n_RESTART_PROCEDURE_EXACT": 17,
+   "n_PROCEDURE_COMPOSITION_EXACT_L1": 5,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_save": 5,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_invoke": 5,
+   "n_NEGATIVE_CASE_SAFE": 1,
+   "n_ROLLBACK_EXACT": 2,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 3,
+   "n_DYNAMIC_RECOMPOSITION_RATE": 3,
+   "FALSE_AMBIGUITY_COUNT": 0,
+   "EQUIVALENT_PLAN_COLLAPSE_COUNT": 0,
+   "generalization": {
+    "ARGUMENT_GENERALIZATION": {
+     "acc": 1.0,
+     "n": 33
+    },
+    "SURFACE_GENERALIZATION": {
+     "acc": 1.0,
+     "n": 20
+    },
+    "REPLAY": {
+     "acc": 1.0,
+     "n": 7
+    },
+    "COMPOSITION_GENERALIZATION": {
+     "acc": 1.0,
+     "n": 10
+    }
+   },
+   "accounting": {
+    "first_time_teach_turns": {
+     "mean": 1.0,
+     "n": 35,
+     "sum": 35
+    },
+    "execution_seconds": {
+     "mean": 0.1018,
+     "n": 40,
+     "sum": 4.072
+    },
+    "vm_ops": {
+     "mean": 7.325,
+     "n": 40,
+     "sum": 293
+    },
+    "retrieval_seconds": {
+     "mean": 0.1011,
+     "n": 20,
+     "sum": 2.022
+    },
+    "llm_calls_per_request": {
+     "mean": 0.0,
+     "n": 20,
+     "sum": 0
+    }
+   },
+   "failure_taxonomy": {},
+   "per_scenario": {
+    "locked_test-001-P1": {
+     "category": "P1",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-002-P1": {
+     "category": "P1",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-003-P2": {
+     "category": "P2",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-004-P2": {
+     "category": "P2",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-005-P3": {
+     "category": "P3",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-006-P4": {
+     "category": "P4",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-007-P4": {
+     "category": "P4",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-008-P5": {
+     "category": "P5",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-009-P5": {
+     "category": "P5",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-010-P6": {
+     "category": "P6",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-011-P7": {
+     "category": "P7",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-012-P7": {
+     "category": "P7",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-013-P8": {
+     "category": "P8",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-014-P8": {
+     "category": "P8",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-015-P9": {
+     "category": "P9",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-016-P10": {
+     "category": "P10",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-017-P11": {
+     "category": "P11",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-018-P12": {
+     "category": "P12",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-019-P12": {
+     "category": "P12",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-020-P12": {
+     "category": "P12",
+     "exact": true,
+     "first_failure": null
+    }
+   },
+   "by_category": {
+    "P1": 1.0,
+    "P10": 1.0,
+    "P11": 1.0,
+    "P12": 1.0,
+    "P2": 1.0,
+    "P3": 1.0,
+    "P4": 1.0,
+    "P5": 1.0,
+    "P6": 1.0,
+    "P7": 1.0,
+    "P8": 1.0,
+    "P9": 1.0
+   },
+   "seconds": 125.7,
+   "capability": {
+    "active_procedures_mean_final": 1.55,
+    "library_bytes_mean": 49152.0,
+    "world_bytes_mean": 126976.0,
+    "llm_calls_total": 0
+   }
+  },
+  "DISCOVERED": {
+   "PROCEDURE_PROPOSAL_VALID_deterministic": 1.0,
+   "DISCOVERY_VERIFIED_deterministic": 1.0,
+   "PROCEDURE_PROPOSAL_VALID_llm": 0.875,
+   "DISCOVERY_VERIFIED_llm": 0.7812,
+   "DISCOVERY_VERIFIED_union": 1.0,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "ROLLBACK_EXACT": 1.0,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+   "PROCEDURE_RETRIEVAL_BEHAVIORAL": 1.0,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "BEHAVIORAL_PLAN_EXACT": 1.0,
+   "FINAL_STATE_EXACT": 1.0,
+   "SCENARIO_EXACT": 1.0,
+   "RESTART_PROCEDURE_EXACT": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L1": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L2_save": 1.0,
+   "PROCEDURE_COMPOSITION_EXACT_L2_invoke": 1.0,
+   "VERIFY_FALSE_ACCEPT": 0.0,
+   "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+   "DYNAMIC_RECOMPOSITION_RATE": 0.0,
+   "EQUIVALENT_PLAN_COLLAPSE_COUNT": 3,
+   "n_PROCEDURE_PROPOSAL_VALID_deterministic": 32,
+   "n_DISCOVERY_VERIFIED_deterministic": 32,
+   "n_PROCEDURE_PROPOSAL_VALID_llm": 32,
+   "n_DISCOVERY_VERIFIED_llm": 32,
+   "n_DISCOVERY_VERIFIED_union": 32,
+   "n_SOURCE_REPLAY_EXACT": 32,
+   "n_NEGATIVE_CASE_SAFE": 199,
+   "n_ROLLBACK_EXACT": 27,
+   "n_COUNTERFACTUAL_EXACT": 33,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 20,
+   "n_PROCEDURE_RETRIEVAL_BEHAVIORAL": 19,
+   "n_ARGUMENT_BINDING_EXACT": 19,
+   "n_BEHAVIORAL_PLAN_EXACT": 19,
+   "n_FINAL_STATE_EXACT": 20,
+   "n_SCENARIO_EXACT": 20,
+   "n_RESTART_PROCEDURE_EXACT": 17,
+   "n_PROCEDURE_COMPOSITION_EXACT_L1": 5,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_save": 5,
+   "n_PROCEDURE_COMPOSITION_EXACT_L2_invoke": 5,
+   "n_VERIFY_FALSE_ACCEPT": 6,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 3,
+   "n_DYNAMIC_RECOMPOSITION_RATE": 3,
+   "n_EQUIVALENT_PLAN_COLLAPSE_COUNT": 3,
+   "FALSE_AMBIGUITY_COUNT": 0,
+   "generalization": {
+    "ARGUMENT_GENERALIZATION": {
+     "acc": 1.0,
+     "n": 33
+    },
+    "SURFACE_GENERALIZATION": {
+     "acc": 1.0,
+     "n": 20
+    },
+    "REPLAY": {
+     "acc": 1.0,
+     "n": 7
+    },
+    "COMPOSITION_GENERALIZATION": {
+     "acc": 1.0,
+     "n": 10
+    }
+   },
+   "accounting": {
+    "first_time_teach_turns": {
+     "mean": 1.0,
+     "n": 35,
+     "sum": 35
+    },
+    "verify_seconds": {
+     "mean": 0.4825,
+     "n": 32,
+     "sum": 15.44
+    },
+    "proposal_seconds_llm": {
+     "mean": 6.105,
+     "n": 32,
+     "sum": 195.36
+    },
+    "execution_seconds": {
+     "mean": 1.06,
+     "n": 40,
+     "sum": 42.401
+    },
+    "vm_ops": {
+     "mean": 7.325,
+     "n": 40,
+     "sum": 293
+    },
+    "retrieval_seconds": {
+     "mean": 2.0171,
+     "n": 20,
+     "sum": 40.341
+    },
+    "llm_calls_per_request": {
+     "mean": 2.05,
+     "n": 20,
+     "sum": 41
+    }
+   },
+   "failure_taxonomy": {},
+   "per_scenario": {
+    "locked_test-001-P1": {
+     "category": "P1",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-002-P1": {
+     "category": "P1",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-003-P2": {
+     "category": "P2",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-004-P2": {
+     "category": "P2",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-005-P3": {
+     "category": "P3",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-006-P4": {
+     "category": "P4",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-007-P4": {
+     "category": "P4",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-008-P5": {
+     "category": "P5",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-009-P5": {
+     "category": "P5",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-010-P6": {
+     "category": "P6",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-011-P7": {
+     "category": "P7",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-012-P7": {
+     "category": "P7",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-013-P8": {
+     "category": "P8",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-014-P8": {
+     "category": "P8",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-015-P9": {
+     "category": "P9",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-016-P10": {
+     "category": "P10",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-017-P11": {
+     "category": "P11",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-018-P12": {
+     "category": "P12",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-019-P12": {
+     "category": "P12",
+     "exact": true,
+     "first_failure": null
+    },
+    "locked_test-020-P12": {
+     "category": "P12",
+     "exact": true,
+     "first_failure": null
+    }
+   },
+   "by_category": {
+    "P1": 1.0,
+    "P10": 1.0,
+    "P11": 1.0,
+    "P12": 1.0,
+    "P2": 1.0,
+    "P3": 1.0,
+    "P4": 1.0,
+    "P5": 1.0,
+    "P6": 1.0,
+    "P7": 1.0,
+    "P8": 1.0,
+    "P9": 1.0
+   },
+   "gates": {
+    "SOURCE_REPLAY_EXACT": {
+     "threshold": 1.0,
+     "value": 1.0,
+     "pass": true
+    },
+    "COUNTERFACTUAL_EXACT": {
+     "threshold": 1.0,
+     "value": 1.0,
+     "pass": true
+    },
+    "ROLLBACK_EXACT": {
+     "threshold": 1.0,
+     "value": 1.0,
+     "pass": true
+    },
+    "RESTART_PROCEDURE_EXACT": {
+     "threshold": 1.0,
+     "value": 1.0,
+     "pass": true
+    },
+    "PROCEDURE_RETRIEVAL_EXACT": {
+     "threshold": 0.95,
+     "value": 1.0,
+     "pass": true
+    },
+    "ARGUMENT_BINDING_EXACT": {
+     "threshold": 0.95,
+     "value": 1.0,
+     "pass": true
+    },
+    "SCENARIO_EXACT": {
+     "threshold": 0.9,
+     "value": 1.0,
+     "pass": true
+    }
+   },
+   "seconds": 552.0,
+   "llm_frozen": {
+    "param_hash_first_service": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+    "param_hash_end": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+    "identical_across_restarts": true,
+    "files_sha256": {
+     "config.json": "984abd4b3f21edb957012c7dc4352c462b08e15ffe8384b6d55990885e9dcc9a",
+     "generation_config.json": "444ea57ebf361c659d1f5c23508319b691e181d122588ea3cdd5f68d3e618b1f",
+     "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+     "model.safetensors": "535485b26038ac24f4e8a86e1a73ed417d8992e3192f6305b7fcc4fb92efa210",
+     "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+     "tokenizer_config.json": "4a917e4772d9b246ef600e1c5d7d81e3a81ae9f3f2d10d78ccb02c86e5fb184a",
+     "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "n_parameters": 1543714304,
+    "optimizer": null
+   },
+   "capability": {
+    "active_procedures_mean_final": 1.55,
+    "library_bytes_mean": 51200.0,
+    "world_bytes_mean": 126976.0,
+    "llm_calls_total": 73
+   }
+  }
+ },
+ "proposer_comparison": {
+  "dev_v3": {
+   "discoveries": 46,
+   "both_verified": 36,
+   "deterministic_only": 10,
+   "llm_only": 0,
+   "neither": 0,
+   "identical_program_when_both": 35
+  },
+  "locked_v2": {
+   "discoveries": 32,
+   "both_verified": 25,
+   "deterministic_only": 7,
+   "llm_only": 0,
+   "neither": 0,
+   "identical_program_when_both": 25
+  }
+ },
+ "retrieval_argument_source": {
+  "dev_v3": {
+   "llm": 22,
+   "typed_fallback": 4,
+   "CLARIFY": 2,
+   "tie_collapsed_equivalent": 1
+  },
+  "locked_v2": {
+   "llm": 11,
+   "typed_fallback": 5,
+   "CLARIFY": 1,
+   "tie_collapsed_equivalent": 3
+  }
+ },
+ "locked_history": {
+  "locked_test_v1": "archived INVALIDATED BEFORE RUN (never inspected; P11 one-shot design violated the registered one-shot criterion)",
+  "locked_test_v2": "fresh independent seed, frozen before DEV v2/v3 runs, run exactly once"
+ },
+ "hashes": {
+  "LOCKED_TEST_v2_manifest": "547b700ea62a116c602d984e41268987a2d537a5bd69f6a15bfbe75e35e8958f",
+  "DEV_v2_manifest": "1194ec5aa55b27606b135ec4a6442ff6f38a3e4bddd555cb5bf33fd53aedd677",
+  "binder_checkpoint": "3f23d13c (vendored core; binder not exercised in scenarios: fixtures via gold IR)",
+  "procedure_code": {
+   "procedure/abstraction.py": "0a078cb8c05ad4cff01f3e15c4216420edca8b51b060490ed830118c28db4c77",
+   "procedure/executor.py": "f64215142c9011c4203de544664c8008b200a88b94be0d0040bb1eff2b8b9968",
+   "procedure/lang.py": "ba6c6fc147b8e3dfe9c91c35eae3a7a90ca1c41766983fa85662540b4ac929e7",
+   "procedure/llm.py": "d0590e681df8f846cadbc655a17adebc7c926788fd5c6bd3bbaef64864989bdb",
+   "procedure/llm_service.py": "96435c410a8dfc31329ae8beedd615ce1e2c33a0de4c46e86485f464661dae8b",
+   "procedure/procstore.py": "5973bb77abcba1f9ea4f56d58712d3b68222762e3652ea53bfe8f15ba3f908fc",
+   "procedure/retrieval.py": "861096ddf2861b348075548985b30db4a5b5a58edbda40bb2e10259bfc6c64e2",
+   "procedure/system.py": "b7cd8bd2fa3e499a8a9eff27d6de7bf369fd488ad5d76fecb4f24749f0158036",
+   "procedure/validate.py": "2f066e6b21596ce5976bbb3e5d889bf68b1488f405f794f5343c5911ad26fe7c",
+   "procedure/verify.py": "ae732e62ff98d8afa9319a5873a3c42d7f2fa49e57188b1abff59089030e39a2"
+  },
+  "lock": "eac3c278b90ecd3db4d6fda8f544e85f57f725e27308584e731391cf0bc068d9"
+ },
+ "neural_weights_changed": false,
+ "optimizer_steps": 0
+}

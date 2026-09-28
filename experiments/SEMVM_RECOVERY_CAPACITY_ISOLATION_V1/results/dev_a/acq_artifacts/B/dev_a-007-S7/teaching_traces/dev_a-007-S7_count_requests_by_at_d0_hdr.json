@@ -1,0 +1,258 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Dave",
+  "time": "noon"
+ },
+ "interaction_id": "dev_a-007-S7:count_requests_by_at:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/B/dev_a-007-S7/learn/snapshots/dev_a-007-S7_count_requests_by_at_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "35572593a845572412717fec6ab8affa5c1e8b3f965180d4bd941940d76f5c29",
+ "utterances": [
+  {
+   "utterance": "Find the requests from Dave at noon.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot1:0",
+   "instruction": "Find the requests from Dave at noon.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Find the requests from Dave at noon.",
+    "values": {
+     "PERSON": [
+      "Dave"
+     ],
+     "TIME": [
+      "noon"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "97dfec2acaa92722ef31f39e122c869c5d35e2df0a31ae65451c403c6e069587"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Dave\", \"WHEN\": \"noon\"}}]}",
+    "request_hash": "97dfec2acaa92722ef31f39e122c869c5d35e2df0a31ae65451c403c6e069587",
+    "cached": true,
+    "input_tokens": 4451,
+    "output_tokens": 80,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Dave",
+       "WHEN": "noon"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.01
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Dave"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "noon"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "state_after": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "seconds": 0.435
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot2:1",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "6142266a8d6443fb547153d4935f710d958a1de3ba08711aa771244719e363b9"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "6142266a8d6443fb547153d4935f710d958a1de3ba08711aa771244719e363b9",
+    "cached": true,
+    "input_tokens": 4486,
+    "output_tokens": 65,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "state_after": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "seconds": 0.414
+  },
+  {
+   "utterance": "Please return the count.",
+   "uid": "dev_a-007-S7:count_requests_by_at:d0:demo1-slot3:2",
+   "instruction": "Please return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "03ab0dd0d3af91b7fb8e4de6a5868ab626793d598d51f6f3ee2be39f52649624"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "03ab0dd0d3af91b7fb8e4de6a5868ab626793d598d51f6f3ee2be39f52649624",
+    "cached": true,
+    "input_tokens": 4511,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "state_after": "b73941e69355a18df4e7b65457da60d21751be9da426ea7981a511f0a7170ba3",
+   "seconds": 0.452
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Dave"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "noon"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "222e596237309b0e1307aec52d7ef249b4e6d7acd6e8c9ad1e3673fba7ec715b",
+ "nl_mode": "NL_TEACH"
+}

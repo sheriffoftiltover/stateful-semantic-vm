@@ -1,0 +1,277 @@
+{
+ "name": "replace_visit_location",
+ "mode": ":teach",
+ "declared": {
+  "place": "Rome"
+ },
+ "interaction_id": "locked_test-013-S13:replace_visit_location:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-013-S13/learn/snapshots/locked_test-013-S13_replace_visit_location_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "4724b275e5b40153c1a7b44d4b7b8832d5391f7f3f47f395b4243ce8c33b7549",
+ "utterances": [
+  {
+   "utterance": "Take the most recent visit.",
+   "uid": "locked_test-013-S13:replace_visit_location:d0:demo1-slot1:0",
+   "instruction": "Take the most recent visit.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Take the most recent visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+    "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd",
+    "cached": true,
+    "input_tokens": 4449,
+    "output_tokens": 48,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND_LAST",
+      "type": "VISIT"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.01
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3be5360c4fe2a0f31aad65d963ae9aa51b6d5bc5d9862e4e0c2339adb93a4d14",
+   "state_after": "3be5360c4fe2a0f31aad65d963ae9aa51b6d5bc5d9862e4e0c2339adb93a4d14",
+   "seconds": 0.252
+  },
+  {
+   "utterance": "Also send the result to Kevin by Slack.",
+   "uid": "locked_test-013-S13:replace_visit_location:d0:demo1-slot4:1",
+   "instruction": "Also send the result to Kevin by Slack.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Also send the result to Kevin by Slack.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "UNSUPPORTED",
+      "reason": "grounder: No VM action for sending results via Slack.",
+      "feedback": null,
+      "request_hash": "a2d8f3218cf2019f26aa81f7df34f295b24695be617c20fa2c786c93d7cf9140"
+     }
+    ],
+    "raw_text": "{\"status\": \"UNSUPPORTED\", \"reason\": \"No VM action for sending results via Slack.\"}",
+    "request_hash": "a2d8f3218cf2019f26aa81f7df34f295b24695be617c20fa2c786c93d7cf9140",
+    "cached": false,
+    "input_tokens": 4475,
+    "output_tokens": 42,
+    "envelope_status": "UNSUPPORTED",
+    "retried": false,
+    "seconds": 0.92
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 0.922
+  },
+  {
+   "utterance": "Move it to Rome.",
+   "uid": "locked_test-013-S13:replace_visit_location:d0:demo1-slot2:2",
+   "instruction": "Move it to Rome.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Move it to Rome.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Rome"
+     ],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "bc9dab05cbaa54b5420a76fa5961f3324efa3d3624c8202668a9d4b9efd26c9d"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r1\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Rome\"\n    }\n  ]\n}",
+    "request_hash": "bc9dab05cbaa54b5420a76fa5961f3324efa3d3624c8202668a9d4b9efd26c9d",
+    "cached": false,
+    "input_tokens": 4471,
+    "output_tokens": 75,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "WHERE",
+      "value": "Rome"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.07
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Rome"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "visit:000013",
+     "WHERE",
+     "place:madrid"
+    ],
+    [
+     "+rel",
+     "visit:000013",
+     "WHERE",
+     "place:rome"
+    ]
+   ],
+   "state_before": "3be5360c4fe2a0f31aad65d963ae9aa51b6d5bc5d9862e4e0c2339adb93a4d14",
+   "state_after": "f29dc4f9f2cc888be74ed54b039d4d603dbc022907d9f3b6153f606799798a8b",
+   "seconds": 1.593
+  },
+  {
+   "utterance": "Return it.",
+   "uid": "locked_test-013-S13:replace_visit_location:d0:demo1-slot3:3",
+   "instruction": "Return it.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "0a41904a3e42c7692842decc02d86888ca7febd83da511b9db8a932fe6abd06f"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "0a41904a3e42c7692842decc02d86888ca7febd83da511b9db8a932fe6abd06f",
+    "cached": false,
+    "input_tokens": 4469,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.93
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "f29dc4f9f2cc888be74ed54b039d4d603dbc022907d9f3b6153f606799798a8b",
+   "state_after": "f29dc4f9f2cc888be74ed54b039d4d603dbc022907d9f3b6153f606799798a8b",
+   "seconds": 1.231
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Rome"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "727f18bcbc54d5fa66a03ed6e1c3328851a05e4d1c6c0539fd87c9ea83fd7d78",
+ "nl_mode": "NL_TEACH"
+}

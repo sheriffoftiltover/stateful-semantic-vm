@@ -1,0 +1,122 @@
+{
+ "name": "count_calls_for_time_person",
+ "mode": ":teach",
+ "declared": {
+  "time": "9:30"
+ },
+ "interaction_id": "dev_b-010-S9:a16",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-010-S9/learn/snapshots/dev_b-010-S9_a16_start.sqlite",
+ "start_snapshot_sha256": "4c9a2f19ce8aa3de0e21b53157b19131cbcea1214c69cd163cc6eb914ddce27e",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-010-S9:a17",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r1",
+     "procedure": "person_on_call_at",
+     "args": {
+      "time": {
+       "const": "9:30"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "9aaa04ea17d5eaaf17932efbbd0ae4c32cfe53d402f64afab2d2f15953700a59",
+   "state_after": "9aaa04ea17d5eaaf17932efbbd0ae4c32cfe53d402f64afab2d2f15953700a59",
+   "seconds": 0.077
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-010-S9:a18",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r2",
+     "procedure": "count_calls_with",
+     "args": {
+      "person": {
+       "var": "r1"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "9aaa04ea17d5eaaf17932efbbd0ae4c32cfe53d402f64afab2d2f15953700a59",
+   "state_after": "9aaa04ea17d5eaaf17932efbbd0ae4c32cfe53d402f64afab2d2f15953700a59",
+   "seconds": 0.074
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-010-S9:a19",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "9aaa04ea17d5eaaf17932efbbd0ae4c32cfe53d402f64afab2d2f15953700a59",
+   "state_after": "9aaa04ea17d5eaaf17932efbbd0ae4c32cfe53d402f64afab2d2f15953700a59",
+   "seconds": 0.092
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "CALL",
+   "bind": "r1",
+   "procedure": "person_on_call_at",
+   "args": {
+    "time": {
+     "const": "9:30"
+    }
+   }
+  },
+  {
+   "op": "CALL",
+   "bind": "r2",
+   "procedure": "count_calls_with",
+   "args": {
+    "person": {
+     "var": "r1"
+    }
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "69e43f600d7971ea11dd21d35610c8935b2574d6f663bd81c1ea7c1238bb9dfa",
+ "nl_mode": "GOLD_TRACE"
+}

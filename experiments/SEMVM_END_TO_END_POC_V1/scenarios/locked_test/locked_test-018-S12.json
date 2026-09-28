@@ -1,0 +1,237 @@
+{
+ "scenario_id": "locked_test-018-S12",
+ "suite": "locked_test",
+ "category": "S12",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "note gamma : about launch per gamma ; so then again soon , call theta ; at 4:30 per theta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "4:30"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "launch"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "CALL",
+    "mods": [
+     [
+      "TOPIC",
+      "launch",
+      "outer"
+     ],
+     [
+      "WHEN",
+      "4:30",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o2",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF NOTE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_NOTE TOPIC=party"
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF NOTE"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:04:30"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:launch"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "launch"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:04:30"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:launch"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:04:30"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:party"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "party"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHEN",
+      "time:04:30"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:party"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

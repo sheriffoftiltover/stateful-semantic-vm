@@ -1,0 +1,555 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642758,
+  "utterance_id": "dev-004-S2:0",
+  "INPUT": "note gamma while in Madrid per gamma , and after that then , message alpha and at 9 re gamma",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o3",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "NOTE"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "9",
+       17
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "PLACE",
+       "Madrid",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "NOTE",
+      null,
+      0
+     ],
+     [
+      "PLACE",
+      "Madrid",
+      4
+     ],
+     [
+      "TIME",
+      "9",
+      17
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1047.4598388671875,
+   "margin": 17.108642578125,
+   "n_outputs": 52,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Madrid"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "9"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Madrid",
+    "place:madrid"
+   ],
+   [
+    "TIME",
+    "v1",
+    "9",
+    "time:09:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:madrid",
+    "PLACE",
+    "madrid",
+    "Madrid"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:09:00",
+    "TIME",
+    "09:00",
+    "9"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:madrid"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "55efe7fd8b6b6ab76f3a1931482d7aa93edcea685e344c66faceb5f049cd9f3a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "WHERE",
+    "place:madrid"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "note:000001",
+     "WHEN",
+     "time:09:00"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:madrid"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642758,
+  "utterance_id": "dev-004-S2:1",
+  "INPUT": "QUERY WHERE OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0110bc92ce4b98850c2cfba3f4931abd247e838e6a8dc240e73f80cad69c6d13",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:madrid"
+  ],
+  "STATE_AFTER": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "RESPONSE": "Madrid",
+  "RETURN_RENDERED": [
+   "Madrid"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "note:000001",
+     "WHEN",
+     "time:09:00"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:madrid"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642758,
+  "utterance_id": "dev-004-S2:2",
+  "INPUT": "QUERY WHERE OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7e0299949495b894abfa0d7d8a8136a132f258302e5c2c272f6dbcef90da9bf7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "note:000001",
+     "WHEN",
+     "time:09:00"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:madrid"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642758,
+  "utterance_id": "dev-004-S2:3",
+  "INPUT": "QUERY WHEN OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "a6ff893f8711fd07b6b4827813a6309c2c69989051ce8ded1de7edd518c713fd",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:09:00"
+  ],
+  "STATE_AFTER": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "RESPONSE": "9",
+  "RETURN_RENDERED": [
+   "9"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "note:000001",
+     "WHEN",
+     "time:09:00"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:madrid"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2642758,
+  "utterance_id": "dev-004-S2:4",
+  "INPUT": "QUERY WHEN OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f2d2b4f8c9d2917499cb9a4ca9ddc2bc0b05629142b0a1dfa8ddd84993d8a082",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "4ed78aa36defc82d9e4124c51700ef8638108eb1be0ff202240ecd685968f250",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "note:000001",
+     "WHEN",
+     "time:09:00"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:madrid"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

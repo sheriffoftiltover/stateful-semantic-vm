@@ -1,0 +1,396 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641411,
+  "utterance_id": "dev-013-S5:0",
+  "INPUT": "remind beta : while in Rome re gamma ; so then again soon , email gamma ; to Kevin re beta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Kevin"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Rome"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e0",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e1",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Kevin",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Rome",
+    "place:rome"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Kevin"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:rome",
+    "PLACE",
+    "rome",
+    "Rome"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHERE",
+    "place:rome"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "4082a53a56369849ec41eed6fb57eb7b5a321ea10a21d66e496970bfdeb6f536",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Kevin"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "WHERE",
+    "place:rome"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "98fe0b6ad92e22e17d2142909b81b5ca145cac09d4094d9f33fc21eefce2dfab",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:rome"
+    ],
+    [
+     "reminder:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641411,
+  "utterance_id": "dev-013-S5:1",
+  "INPUT": "QUERY WHERE OF EMAIL WHERE PARENT.RECIPIENT=Kevin",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "98fe0b6ad92e22e17d2142909b81b5ca145cac09d4094d9f33fc21eefce2dfab",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "EMAIL",
+   "where": [
+    [
+     "PARENT",
+     "RECIPIENT",
+     "Kevin"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHERE",
+     "where": [
+      [
+       "PARENT",
+       "RECIPIENT",
+       "person:000001"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "3de82bb4aedafe9c0446a66dcb9343fe5372ced434dbd5c3b97cd3d1c341da94",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:rome"
+  ],
+  "STATE_AFTER": "98fe0b6ad92e22e17d2142909b81b5ca145cac09d4094d9f33fc21eefce2dfab",
+  "RESPONSE": "Rome",
+  "RETURN_RENDERED": [
+   "Rome"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:rome"
+    ],
+    [
+     "reminder:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641411,
+  "utterance_id": "dev-013-S5:2",
+  "INPUT": "QUERY RECIPIENT OF REMINDER WHERE CHILD.WHERE=Rome",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "98fe0b6ad92e22e17d2142909b81b5ca145cac09d4094d9f33fc21eefce2dfab",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "REMINDER",
+   "where": [
+    [
+     "CHILD",
+     "WHERE",
+     "Rome"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "RECIPIENT",
+     "where": [
+      [
+       "CHILD",
+       "WHERE",
+       "place:rome"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "6135826e8bd9986eb5360550f3deb62085ad840de7ccb9b4eaf3bb362b81a02e",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "98fe0b6ad92e22e17d2142909b81b5ca145cac09d4094d9f33fc21eefce2dfab",
+  "RESPONSE": "Kevin",
+  "RETURN_RENDERED": [
+   "Kevin"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:rome"
+    ],
+    [
+     "reminder:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ }
+]

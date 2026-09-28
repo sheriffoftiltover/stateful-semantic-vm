@@ -1,0 +1,42 @@
+{
+ "name": "replace_visit_location",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE replace_visit_location(place:PLACE)\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHERE={place}\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "place",
+        "PLACE"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE replace_visit_location()\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHERE=Rome\nRETURN $v0\nEND",
+   "program_hash": "ff31345ef3a04db3887284e0c3a7c0ec57c35c9ad0b91dadb6b3552ea05e4f29"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:replace_visit_location:v2",
+ "chosen": "external"
+}

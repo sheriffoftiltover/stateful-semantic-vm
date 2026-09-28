@@ -1,0 +1,98 @@
+{
+ "name": "emails_about",
+ "mode": ":teach",
+ "declared": {
+  "topic": "survey"
+ },
+ "interaction_id": "dev_b-025-S16:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-025-S16/learn/snapshots/dev_b-025-S16_a1_start.sqlite",
+ "start_snapshot_sha256": "6b8d194e23be8093c1ded667d8067d4ffb041c4bd84f74283075fe133c19043c",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-025-S16:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "TOPIC",
+       {
+        "const": "survey"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "cfa05622c81e221b66b94dc6ddcdfdb81110508d9f6034ea1444532df16e79b6",
+   "state_after": "cfa05622c81e221b66b94dc6ddcdfdb81110508d9f6034ea1444532df16e79b6",
+   "seconds": 0.145
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-025-S16:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "cfa05622c81e221b66b94dc6ddcdfdb81110508d9f6034ea1444532df16e79b6",
+   "state_after": "cfa05622c81e221b66b94dc6ddcdfdb81110508d9f6034ea1444532df16e79b6",
+   "seconds": 0.193
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "TOPIC",
+     {
+      "const": "survey"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "d3d5358f721de47048e122b9c40157b7fb157de016ea2d73c2fde48aa160b9c2",
+ "nl_mode": "GOLD_TRACE"
+}

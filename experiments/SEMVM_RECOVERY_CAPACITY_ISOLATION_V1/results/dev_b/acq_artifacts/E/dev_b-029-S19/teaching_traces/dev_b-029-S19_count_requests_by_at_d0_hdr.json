@@ -1,0 +1,272 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Erin",
+  "time": "8"
+ },
+ "interaction_id": "dev_b-029-S19:count_requests_by_at:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/E/dev_b-029-S19/learn/snapshots/dev_b-029-S19_count_requests_by_at_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "6808341ef6f8af604c517a32cb30045c3b235c38be27ef1dfbdc2e56d152748e",
+ "utterances": [
+  {
+   "utterance": "Please find the requests from Erin at 8.",
+   "uid": "dev_b-029-S19:count_requests_by_at:d0:demo1-slot1:0",
+   "instruction": "Please find the requests from Erin at 8.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please find the requests from Erin at 8.",
+    "values": {
+     "PERSON": [
+      "Erin"
+     ],
+     "TIME": [
+      "8"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "7bc9caa0f8fcbf60ab6e13fe773734a632c6c7ea641a31faf4d04ee4bbfe53ab"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"REQUEST\",\n      \"where\": {\n        \"WHO\": \"Erin\",\n        \"WHEN\": \"8\"\n      }\n    }\n  ]\n}",
+    "request_hash": "7bc9caa0f8fcbf60ab6e13fe773734a632c6c7ea641a31faf4d04ee4bbfe53ab",
+    "cached": true,
+    "input_tokens": 4453,
+    "output_tokens": 95,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Erin",
+       "WHEN": "8"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Erin"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "8"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "state_after": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "seconds": 0.387
+  },
+  {
+   "utterance": "Count how many there are.",
+   "uid": "dev_b-029-S19:count_requests_by_at:d0:demo1-slot2:1",
+   "instruction": "Count how many there are.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Count how many there are.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "053bcd6a8878072625db754231729ddf37ff1a318052737891be78ae72edaed3"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "1dd800aef2381c4da8111af4786f6f07b67f6a6d5b37ea1ede6cc428c07ee877"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}\n  ]\n}",
+    "request_hash": "1dd800aef2381c4da8111af4786f6f07b67f6a6d5b37ea1ede6cc428c07ee877",
+    "cached": true,
+    "input_tokens": 4597,
+    "output_tokens": 58,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "state_after": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "seconds": 0.375
+  },
+  {
+   "utterance": "Please return the count.",
+   "uid": "dev_b-029-S19:count_requests_by_at:d0:demo1-slot3:2",
+   "instruction": "Please return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "b3e1c3e4f311d71cace29c887fb43dbed00ad63401f52fc2e9d39c9143f049d8"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "b3e1c3e4f311d71cace29c887fb43dbed00ad63401f52fc2e9d39c9143f049d8",
+    "cached": true,
+    "input_tokens": 4511,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "state_after": "4bc655a458b3a8334d46871d0554bb65233356a1da9c08d63a75c3639aa07ba0",
+   "seconds": 0.396
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Erin"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "8"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "e3fc4e7da4c77eb1bdd978a49161b10e596b1eb17f0bd9d5d7a3e7d44f8579b9",
+ "nl_mode": "NL_TEACH"
+}

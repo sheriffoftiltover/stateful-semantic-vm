@@ -1,0 +1,45 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Grandpa"
+ },
+ "interaction_id": "dev_a-009-S9:a9",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-009-S9/learn/snapshots/dev_a-009-S9_a9_start.sqlite",
+ "start_snapshot_sha256": "4d10effaab2985990373063d3a8d1fcca548431f47b50bf47cf060ce876fd05a",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Grandpa"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "0a8780976046ffede2b32d17b723fe9ed3a476d1ad61b5fac0cb6c7f07d12e8f",
+ "nl_mode": "GOLD_TRACE"
+}

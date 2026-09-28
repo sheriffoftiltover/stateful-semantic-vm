@@ -1,0 +1,42 @@
+{
+ "name": "move_last_reminder_and_return_call_person",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE move_last_reminder_and_return_call_person(time:TIME)\n$v0 = FIND_LAST REMINDER\nUPDATE $v0 WHEN={time}\n$v1 = CHILD $v0\n$v2 = GET $v1 WHO\nRETURN $v2\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "time",
+        "TIME"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE move_last_reminder_and_return_call_person()\n$v0 = FIND_LAST REMINDER\nUPDATE $v0 WHEN=4\n$v1 = CHILD $v0\n$v2 = GET $v1 WHO\nRETURN $v2\nEND",
+   "program_hash": "89dcc1047bba0c1736b3df647c8d881f4c4b9b32713767603781c023921586db"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:move_last_reminder_and_return_call_person:v2",
+ "chosen": "external"
+}

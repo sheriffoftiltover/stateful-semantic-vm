@@ -1,0 +1,79 @@
+{
+ "artifact": "SEMVM_BINDER_POC_V1",
+ "status": "engineering / existence-proof checkpoint (FROZEN)",
+ "source": "A-005 P0/P2 Replay Preservation, arm R20, seed 17, epoch 40",
+ "checkpoint": {
+  "path": "neural/artifacts/binder_A005_R20_s17_ep40.pt",
+  "sha256": "3f23d13cbb38f88d8cc66ece21d6de51e2b563760df30a1959e078d8415bc823",
+  "format": "{'state': state_dict}"
+ },
+ "architecture": {
+  "class": "ltcn_model.Scorer",
+  "args": {
+   "n_vocab": 117,
+   "max_len": 40,
+   "n_templates": 348,
+   "n_roles": 6
+  }
+ },
+ "model_code_sha256": {
+  "ltcn_model.py": "492aea22568eb1519c14e2c44a4da9ace67b931650e236d4581ad9cea34e264f",
+  "ltc_core.py": "745c401cdac56fc704eb2ca8fd9fd41c43af91b4cbb1376866b39c05580824f1",
+  "ltc_packed.py": "420f2fac324ecd9754dc732ea91d5dbdefcf3797e1cf16522be5684f31fe9290",
+  "mr_config.py": "fa6d431238231bd70978b33f1a6e97303e07b12fe57395e4d26cdcc69c5fd45f",
+  "mr_generate.py": "d4c298f2729b738fbbb32dfa24579f705050139b4ff56064ff3b54bf143ed08c"
+ },
+ "union_mapping": {
+  "vocab_sha256": "97c8b5a39a85c5c464d11f61605e897cc28e5ae6c38dc43e63c75dfd01991d5a",
+  "inventory_sha256": "de1a3d85dcf3e70040a23cdac8e9c6b5eccd58bea74dca894ef43b8fdf8bff50",
+  "report_sha256": "5899a371b8acb960d3343e8ac7180af6e2cefc07230bd6f1d0736716304c85ec"
+ },
+ "training_config": {
+  "scientific_spec_sha256": "6e6d53be429528377050683563b011d3f87e46cfd5532d6cd64de4f85ca1e1c9",
+  "recipe": "CURRENT tau .03 / AdamW 3e-4 wd .01 / batch 32 / clip 1 / 40 epochs / 20% P0 replay",
+  "source_run": "results/runs/A005/R20_s17/modal_attempt_001"
+ },
+ "training_corpus_sha256": {
+  "train": "efd68901329134db238b11985328119649995556b9785dc4599cb81f507d1321",
+  "id_val": "90574a92e1ea20ea3eb1b49f417d86fdee5fa5f05f559797d43bc2d54592d985",
+  "id_test": "e14bc50e34a49dff5cd9d8165fd2dbfa64db3e48384fae4362d7c45ad8e64575",
+  "P2_train": "4ac10d2ec2aa884e14aa9fe0d7e095e4135d2ff5ee3c6739fda3b5e0a08d553f",
+  "P2_id_val": "dc0b95a5d569fdb4d09fec107c454426958b1bb5b786d6772e9c7b37a3212cd3",
+  "P2_id_test": "fd89934eb37d82e3720ea885fd7afd05ef8683f78e2918a32ae06e0767142da6"
+ },
+ "forest_sha256": {
+  "P0": {
+   "train": "8ad594c4e9af345eab23f12a991891e82052008e808c256d059a2bf0c7e22560",
+   "id_val": "1eb132c6edd5247ab740bd243c9d8e3aba0aff297b6b894b9dab9dd5c9a5503b",
+   "id_test": "d7195a7cd55256bd6e407f0768a1179fb9fa75914f551e4e3a5f67f9f4002dcf"
+  },
+  "P2": {
+   "train": "70088ab72bb8a5ccdba1ac82ea74934f27041b293273c83c95304c3d9487a7b8",
+   "id_val": "eb4ba4ad913d7dcedfc1924b4a4bfb8455397eb8613fba0c82fb521c4b730241",
+   "id_test": "d7561ddcb4d7d5041077049b27f4a39139379e67eb968946fd9d4b397f699ef4"
+  }
+ },
+ "validated_metrics": {
+  "P2_ID_VAL": {
+   "exact": 0.9775,
+   "mixed_both": 0.97,
+   "same_both": 0.995
+  },
+  "P0_ID_VAL": {
+   "exact": 0.9825,
+   "parent_acc": 0.985,
+   "direct_acc": 0.985,
+   "pair_consistency": 0.965
+  },
+  "P2_ID_TEST": {
+   "exact": 0.98
+  },
+  "P0_ID_TEST": {
+   "exact": 0.9975,
+   "parent_acc": 0.9975,
+   "direct_acc": 0.9975,
+   "pair_consistency": 0.995
+  }
+ },
+ "frozen_policy": "requires_grad False, no optimizer, eval mode, state hash identical before/after every inference session"
+}

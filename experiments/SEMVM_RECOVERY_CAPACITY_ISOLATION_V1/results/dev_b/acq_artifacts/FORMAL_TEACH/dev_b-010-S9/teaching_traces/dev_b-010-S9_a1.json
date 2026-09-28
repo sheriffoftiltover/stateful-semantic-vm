@@ -1,0 +1,53 @@
+{
+ "name": "person_on_call_at",
+ "mode": ":teach",
+ "declared": {
+  "time": "9:30"
+ },
+ "interaction_id": "dev_b-010-S9:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-010-S9/learn/snapshots/dev_b-010-S9_a1_start.sqlite",
+ "start_snapshot_sha256": "4c9a2f19ce8aa3de0e21b53157b19131cbcea1214c69cd163cc6eb914ddce27e",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     {
+      "const": "9:30"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FIRST",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "GET",
+   "bind": "r3",
+   "obj": {
+    "var": "r2"
+   },
+   "rel": "WHO"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "fc9920d4123176f13689482ebe0efd43b7310c5f799b05d54f8ecf89ae682b40",
+ "nl_mode": "GOLD_TRACE"
+}

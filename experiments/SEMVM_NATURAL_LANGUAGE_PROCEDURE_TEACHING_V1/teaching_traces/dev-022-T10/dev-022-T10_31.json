@@ -1,0 +1,267 @@
+{
+ "name": "count_calls_for_time_person",
+ "mode": ":teach",
+ "declared": {
+  "time": "6"
+ },
+ "interaction_id": "dev-022-T10:31",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-022-T10/learn/snapshots/dev-022-T10_31_start.sqlite",
+ "start_snapshot_sha256": "a1af72107eceac67cbc89278d5db14b163ea0f999ad452ed603eb4196fea8a7f",
+ "utterances": [
+  {
+   "utterance": "With person_on_call_at, work out who I call at 6.",
+   "uid": "dev-022-T10:32",
+   "instruction": "With person_on_call_at, work out who I call at 6.",
+   "correction": false,
+   "grounding": {
+    "instruction": "With person_on_call_at, work out who I call at 6.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "6"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"6\"}}\n\n",
+      "score": -0.192
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"PARENT.WHEN\": \"6\"}}\n\n",
+      "score": -7.726
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -10.617
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"6\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "CALL",
+      "procedure": "person_on_call_at",
+      "args": {
+       "time": "6"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"args\": {\"time\": {\"const\": \"6\"}}, \"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\"}]",
+      "score": -0.192,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -7.672,
+      "n": 2
+     }
+    ],
+    "margin": 7.48,
+    "reference_notes": [],
+    "seconds": 2.64,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r1",
+     "procedure": "person_on_call_at",
+     "args": {
+      "time": {
+       "const": "6"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c42e1a323b1447afe7e1b188a1195eb4343eeb12092fa7607cd6498226966aa0",
+   "state_after": "c42e1a323b1447afe7e1b188a1195eb4343eeb12092fa7607cd6498226966aa0",
+   "seconds": 2.726
+  },
+  {
+   "utterance": "Please use count_calls_with on that person and then give it back.",
+   "uid": "dev-022-T10:33",
+   "instruction": "Please use count_calls_with on that person and then give it back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please use count_calls_with on that person and then give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 6,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.095
+     },
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"target\": \"r1\", \"value\": \"OPEN\"}\n\n",
+      "score": -4.718
+     },
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"target\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+      "score": -4.932
+     },
+     {
+      "text": "r2 = {\"op\": \"GET\", \"of\": \"r1\", \"rel\": \"WHO\"}\n\n",
+      "score": -5.118
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -0.095,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [],
+    "seconds": 2.44,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Please use count_calls_with on that person.",
+        "Give it back."
+       ],
+       "valid": false,
+       "why": "a clause did not ground",
+       "parts": [
+        {
+         "segment": "Please use count_calls_with on that person.",
+         "status": "CLARIFY",
+         "reason": "RETURN asks for ['PERSON'] but no such result exists",
+         "clarify_kind": "RESULT_NOT_COMPUTED",
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 3.57
+  },
+  {
+   "utterance": "I mean: count the calls with that person using count_calls_with and then return the count.",
+   "uid": "dev-022-T10:33#rescue",
+   "instruction": "count the calls with that person using count_calls_with and then return the count.",
+   "correction": false,
+   "grounding": {
+    "instruction": "count the calls with that person using count_calls_with and then return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.638
+     },
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"target\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+      "score": -2.945
+     },
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"target\": \"r1\", \"value\": \"OPEN\"}\n\n",
+      "score": -3.399
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -0.638,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [],
+    "seconds": 2.22,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Count the calls with that person using count_calls_with.",
+        "Return the count."
+       ],
+       "valid": false,
+       "why": "a clause did not ground",
+       "parts": [
+        {
+         "segment": "Count the calls with that person using count_calls_with.",
+         "status": "CLARIFY",
+         "reason": "RETURN asks for ['CALL', 'INT', 'PERSON'] but no such result exists",
+         "clarify_kind": "RESULT_NOT_COMPUTED",
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 4.443
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "CALL",
+   "bind": "r1",
+   "procedure": "person_on_call_at",
+   "args": {
+    "time": {
+     "const": "6"
+    }
+   }
+  }
+ ],
+ "trace_sha256": "aa5cce13210036824dcc6652929500be2ae067d02e62f48be51392c76f5473d7",
+ "nl_mode": "NL_TEACH"
+}

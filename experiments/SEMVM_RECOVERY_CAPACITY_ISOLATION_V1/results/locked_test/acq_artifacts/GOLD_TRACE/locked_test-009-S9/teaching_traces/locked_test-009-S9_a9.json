@@ -1,0 +1,130 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Erin"
+ },
+ "interaction_id": "locked_test-009-S9:a9",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-009-S9/learn/snapshots/locked_test-009-S9_a9_start.sqlite",
+ "start_snapshot_sha256": "04d8fb6df43f0ea4e07a30b61fd9c13aafb5ce43b2bf0b80c321c6d56f7de4df",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-009-S9:a10",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Erin"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 0.174
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-009-S9:a11",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 0.167
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-009-S9:a12",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 0.134
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Erin"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "ae9c6e37fa63b099129e37e4a087fee13c2a5afe75886e53941d3c895c374048",
+ "nl_mode": "GOLD_TRACE"
+}

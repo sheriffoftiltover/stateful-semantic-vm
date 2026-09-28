@@ -1,0 +1,293 @@
+{
+ "name": "email_topic_report",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev_a-008-S8:email_topic_report:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/B/dev_a-008-S8/learn/snapshots/dev_a-008-S8_email_topic_report_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "98d58d357f385622c9f42dd754e0349668bfdfb30254497b2437fa0ff5fb13a1",
+ "utterances": [
+  {
+   "utterance": "Get all the emails.",
+   "uid": "dev_a-008-S8:email_topic_report:d0:demo1-slot1:0",
+   "instruction": "Get all the emails.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Get all the emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "0291b73bf599ce8a0cda35ea8ba3ef394fe22e0c847cfb38d883279cef607d3c"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\"}]}",
+    "request_hash": "0291b73bf599ce8a0cda35ea8ba3ef394fe22e0c847cfb38d883279cef607d3c",
+    "cached": true,
+    "input_tokens": 4448,
+    "output_tokens": 49,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "state_after": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "seconds": 0.755
+  },
+  {
+   "utterance": "Sort them into groups by recipient.",
+   "uid": "dev_a-008-S8:email_topic_report:d0:demo1-slot2:1",
+   "instruction": "Sort them into groups by recipient.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Sort them into groups by recipient.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "a7d79b977ac521e812c9ea4b27c437eb6790a54cd3ed7f628cd0f079c474ee3f"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"RECIPIENT\"}]}",
+    "request_hash": "a7d79b977ac521e812c9ea4b27c437eb6790a54cd3ed7f628cd0f079c474ee3f",
+    "cached": true,
+    "input_tokens": 4474,
+    "output_tokens": 67,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "GROUP",
+      "of": "r1",
+      "by": "RECIPIENT"
+     }
+    ],
+    "reference_notes": [
+     "GROUP.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "GROUP",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT"
+    }
+   ],
+   "diff": [],
+   "state_before": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "state_after": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "seconds": 0.715
+  },
+  {
+   "utterance": "Please summarize the topics per group.",
+   "uid": "dev_a-008-S8:email_topic_report:d0:demo1-slot3:2",
+   "instruction": "Please summarize the topics per group.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please summarize the topics per group.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "fc54775a9e7741b5667d7302a519589b558c41cf38204840a7ad40b2e622bb85"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r3\", \"op\": \"REPORT\", \"of\": \"r2\", \"rel\": \"TOPIC\"}]}",
+    "request_hash": "fc54775a9e7741b5667d7302a519589b558c41cf38204840a7ad40b2e622bb85",
+    "cached": true,
+    "input_tokens": 4505,
+    "output_tokens": 60,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r3",
+      "op": "REPORT",
+      "of": "r2",
+      "rel": "TOPIC"
+     }
+    ],
+    "reference_notes": [
+     "REPORT.of=r2 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "REPORT",
+     "bind": "r3",
+     "groups": {
+      "var": "r2"
+     },
+     "rel": "TOPIC"
+    }
+   ],
+   "diff": [],
+   "state_before": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "state_after": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "seconds": 0.616
+  },
+  {
+   "utterance": "Give back the report.",
+   "uid": "dev_a-008-S8:email_topic_report:d0:demo1-slot4:3",
+   "instruction": "Give back the report.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Give back the report.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": [
+      "report"
+     ]
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "78aae696333c9f8250b95d88bee70e6daa9da5b0b7113baaa11c62bbc3d4e09d"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r3\"}]}",
+    "request_hash": "78aae696333c9f8250b95d88bee70e6daa9da5b0b7113baaa11c62bbc3d4e09d",
+    "cached": true,
+    "input_tokens": 4533,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r3"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r3 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r3"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "state_after": "a02bf0907dd3c3d834f529cbd5c1a6ae44a0d46507d4a6392698123c86bbc0cb",
+   "seconds": 0.573
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [],
+   "status": null
+  },
+  {
+   "op": "GROUP",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT"
+  },
+  {
+   "op": "REPORT",
+   "bind": "r3",
+   "groups": {
+    "var": "r2"
+   },
+   "rel": "TOPIC"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "fda47d9998efb27f74c47187db6e4e6cc7a20ea2c42c17c9a44cdf3b2517c53a",
+ "nl_mode": "NL_TEACH"
+}

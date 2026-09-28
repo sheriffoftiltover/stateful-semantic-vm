@@ -1,0 +1,236 @@
+{
+ "language": "NL_TEACH_LANGUAGE_V1",
+ "registered": "2026-09-26, before any DEV run (Amendment 001 of SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1)",
+ "scope": "bounded natural-language teaching instructions over the frozen parent world (END_TO_END_POC entities + STATUS + REPORT) and the frozen PROCEDURE_PRIMITIVES_V1 inventory. NOT open English.",
+ "supported_forms": [
+  "imperatives",
+  "polite imperatives",
+  "pronouns with locally unambiguous referents",
+  "simple conjunctions (and / then / and then / comma)",
+  "simple sequencing words (first, then, next, finally)",
+  "lexical paraphrases",
+  "argument reordering",
+  "singular / plural surface variation",
+  "explicit constants (open / closed)",
+  "explicit example values (names, times, places, topics from the frozen vocabulary)",
+  "naming an ACTIVE procedure to call it"
+ ],
+ "unsupported_forms": [
+  "conditionals (if / unless / when-clauses)",
+  "unbounded loops / recursion",
+  "open-domain concepts",
+  "external-world actions (send, text, post, phone, print, browse, download ...)",
+  "shell / file / network actions",
+  "instructions requiring unstated primitives",
+  "long free-form documents",
+  "multi-party dialogue",
+  "cross-session pronoun resolution",
+  "metaphorical or highly indirect instructions"
+ ],
+ "unsupported_response": "UNSUPPORTED_TEACHING_INPUT (nothing executes, nothing enters the trace)",
+ "type_nouns": {
+  "CALL": [
+   "call",
+   "calls",
+   "phone call",
+   "phone calls"
+  ],
+  "EMAIL": [
+   "email",
+   "emails",
+   "e-mail",
+   "e-mails"
+  ],
+  "VISIT": [
+   "visit",
+   "visits"
+  ],
+  "MESSAGE": [
+   "message",
+   "messages"
+  ],
+  "REMINDER": [
+   "reminder",
+   "reminders"
+  ],
+  "REQUEST": [
+   "request",
+   "requests"
+  ],
+  "PLAN": [
+   "plan",
+   "plans"
+  ],
+  "NOTE": [
+   "note",
+   "notes"
+  ]
+ },
+ "result_nouns": {
+  "INT": [
+   "count",
+   "number",
+   "total",
+   "how many",
+   "tally"
+  ],
+  "PERSON": [
+   "person",
+   "who",
+   "name",
+   "caller"
+  ],
+  "VALUE_LIST": [
+   "people",
+   "persons",
+   "names",
+   "who"
+  ],
+  "GROUPS": [
+   "group",
+   "groups"
+  ],
+  "REPORT": [
+   "report",
+   "summary"
+  ]
+ },
+ "pronouns": {
+  "plural": [
+   "them",
+   "they",
+   "those",
+   "these",
+   "each of them",
+   "each one",
+   "every one",
+   "all of them",
+   "the results",
+   "the ones"
+  ],
+  "singular": [
+   "it",
+   "its",
+   "it's",
+   "that",
+   "this"
+  ]
+ },
+ "correction_markers": [
+  "no,",
+  "no -",
+  "no:",
+  "actually,",
+  "sorry,",
+  "correction:"
+ ],
+ "domain_conventions": {
+  "inner_time": "The time of an inner event (CALL, EMAIL, VISIT, MESSAGE) is stored on the outer event that schedules it: 'calls at 3' = FIND CALL WHERE PARENT.WHEN=3. Encoded in the action grammar: for inner event types the only WHEN constraint offered is PARENT.WHEN.",
+  "outer_scope": "Outer events (REMINDER, PLAN, REQUEST, NOTE) carry their own WHEN/WHO; a constraint on their TODO item uses CHILD.<REL>.",
+  "value_formatting": "type-preserving formatting repair: 'H:00' -> 'H', 'H o'clock' -> 'H', case-insensitive vocabulary match (Alice / alice)."
+ },
+ "reference_grammar": {
+  "candidates": "prior results of the CURRENT demonstration only (bounded local trace context), filtered by the input type the chosen operation requires",
+  "rules_in_order": [
+   "R4 (checked first, RETURN only) the instruction names result / type nouns but no type-compatible candidate matches any of them -> CLARIFY (the requested result has not been computed)",
+   "R0 exactly one type-compatible candidate -> that candidate",
+   "R1 the chosen candidate was produced earlier IN THE SAME instruction and is the most recent type-compatible result produced in it -> licensed",
+   "R2 the instruction (or its clarification answer) contains a type / result noun that matches exactly one type-compatible candidate -> that candidate",
+   "R3 the instruction contains a singular pronoun (it / its / that / this) -> the most recent type-compatible singular (non-list) candidate",
+   "otherwise -> CLARIFY (a plural pronoun with >= 2 compatible lists is NEVER resolved by recency)"
+  ],
+  "repair": "if the frontend chose a different candidate than the unique one licensed by R0/R2/R3, the licensed one is used (DETERMINISTIC_REPAIR, logged)"
+ },
+ "coverage_rule": "every PERSON / TIME / PLACE vocabulary value mentioned in the instruction must be an argument of some grounded action; every literal argument must be a vocabulary value of its class that occurs in the instruction (TOPIC values are checked for occurrence only, since topic words such as 'report' are also ordinary nouns); ACTIVE procedure names mentioned in the instruction must be CALLed. A grounding that violates coverage is a CLARIFY outcome (it competes as a candidate; never executed)",
+ "parameterization": "the frontend never decides parameters: concrete values enter the trace; the frozen anti-unifier decides parameter vs constant. UNHINTED one-shot teaching whose trace contains a PERSON / TIME / PLACE / TOPIC literal -> REQUIRE_SECOND_DEMONSTRATION",
+ "clarification": "V1.1: a pending clarification is a record {kind: REFERENCE, source_utterance_id, instruction, unresolved_slot, legal_answers}. The next utterance consumes it ONLY if it names exactly one legal answer (a type / result noun or result name matching exactly one candidate); otherwise the record is cleared and the utterance is grounded as a new instruction. Low-margin / coverage / plan / segmentation CLARIFY ask for a rephrase and leave nothing pending.",
+ "correction": "an utterance starting with a correction marker undoes the previous grounded instruction of this demonstration (world restored to its pre-instruction snapshot, its steps removed from the trace) and grounds the rest of the utterance instead; the undone proposal stays in provenance only",
+ "teaching_sandbox": "every demonstration executes against the world, and at :endteach / :endexample / :endrevise the world is restored to the demonstration's start snapshot (teaching effects are discarded; procedures persist)",
+ "restatement_marker": "I mean:",
+ "undo_command": ":undo (undo the previous grounded instruction of the current demonstration)",
+ "status_cue_roots": [
+  "open",
+  "clos",
+  "done",
+  "finish",
+  "complet",
+  "resolv",
+  "pend",
+  "outstand",
+  "unfinish",
+  "unresolv",
+  "incomplet",
+  "active",
+  "shut",
+  "settle"
+ ],
+ "status_rule": "a FIND / FILTER status constraint is offered only if the instruction contains a status cue word (a word starting with one of status_cue_roots); the LLM then chooses OPEN / CLOSED / no status",
+ "return_rule": "RETURN is always the last action of an instruction (nothing may follow it)",
+ "dangling_rule": "every result produced by an instruction must be consumed by a later action of the same instruction, except the result of the instruction's last action; violating groundings are not candidates",
+ "sequencing_rule": "V1.1: candidate segmentation. STRONG = explicit sequencing markers; FULL = strong + weak plain 'and'. Each clause is grounded to a NON-EXECUTABLE plan fragment (earlier clauses' planned results are in-instruction context for R1); the combined plan must pass whole-plan validation (liveness / DEAD_PURE_RESULT, value + named-procedure coverage, RETURN last, CLAUSE_COVERAGE = #actions >= #clauses). The finest segmentation that validates is chosen (a weak 'and' that does not yield valid clauses is not a clause boundary). The whole utterance is also grounded; if it validates, covers every clause and yields a DIFFERENT plan -> CLARIFY (segmentation uncertain). The whole-utterance fallback has the same authority: the same whole-plan validation with the strong clause count. Only the complete validated plan executes, as ONE transaction.",
+ "sequence_connectors_strong": [
+  ", and then ",
+  " and then ",
+  ", then ",
+  " then ",
+  "; ",
+  ", after that ",
+  " after that ",
+  ", afterwards ",
+  " afterwards ",
+  ", next ",
+  ", followed by ",
+  " followed by "
+ ],
+ "sequence_connectors_weak": [
+  ", and ",
+  " and "
+ ],
+ "event_search_rule": "V1.2: FIND / FIND_LAST are offered only if the instruction (clause) names an event type with a registered type noun, and only those types (no invented search)",
+ "antecedent_rule": "V1.2: a clause containing an anaphor (antecedent_pronouns; relative 'that' and 'the ones' are not anaphors) must reference at least one existing result; groundings that do not are not candidates -> if none remains, CLARIFY. Together with event_search_rule no antecedent can be invented.",
+ "output_request_cues": [
+  "\\breturn\\b",
+  "\\bgive\\b.*\\bback\\b",
+  "\\bhand\\b.*\\bback\\b",
+  "\\bhand over\\b",
+  "\\breport back\\b",
+  "\\b(tell me|let me know)\\b.*\\b(how many|the number|the count|the total)\\b"
+ ],
+ "antecedent_pronouns": [
+  "them",
+  "they",
+  "those",
+  "these",
+  "each of them",
+  "each one",
+  "every one",
+  "all of them",
+  "the results",
+  "it",
+  "its",
+  "it's"
+ ],
+ "output_obligation_rule": "V1.2: an utterance carrying an OUTPUT_REQUEST cue must be grounded to a plan whose last action is RETURN; the returned result must match the requested result kind when one is named (R4). Violating groundings are not candidates; the combined plan is checked again in whole-plan validation",
+ "set_status_cue_roots": {
+  "OPEN": [
+   "open",
+   "reopen",
+   "unfinish",
+   "pend",
+   "outstand",
+   "unresolv",
+   "incomplet",
+   "active"
+  ],
+  "CLOSED": [
+   "clos",
+   "done",
+   "finish",
+   "complet",
+   "resolv",
+   "shut",
+   "settle"
+  ]
+ },
+ "set_status_rule": "PDX (pre-freeze student safety rule): SET_STATUS value OPEN / CLOSED is offered only if the instruction contains a cue word of that value family (set_status_cue_roots); otherwise no status can be set (-> CLARIFY)"
+}

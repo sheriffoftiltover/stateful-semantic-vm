@@ -1,0 +1,172 @@
+{
+ "name": "emails_about",
+ "mode": ":teach",
+ "declared": {
+  "topic": "report"
+ },
+ "interaction_id": "dev_a-025-S16:emails_about:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/E/dev_a-025-S16/learn/snapshots/dev_a-025-S16_emails_about_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "4ad2fa1635d8ee93a428518ba3dc750927dd9579e9de0aba245767477daf169f",
+ "utterances": [
+  {
+   "utterance": "Please find the emails about report.",
+   "uid": "dev_a-025-S16:emails_about:d0:demo1-slot1:0",
+   "instruction": "Please find the emails about report.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please find the emails about report.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": [
+      "report"
+     ]
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "e7158ef2a53ef941cabc8369cde8d73a64cb51e95dc9a3ee456ecd40c4c71a52"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"TOPIC\": \"report\"}}]}",
+    "request_hash": "e7158ef2a53ef941cabc8369cde8d73a64cb51e95dc9a3ee456ecd40c4c71a52",
+    "cached": true,
+    "input_tokens": 4450,
+    "output_tokens": 60,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "TOPIC": "report"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "TOPIC",
+       {
+        "const": "report"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "state_after": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "seconds": 0.371
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev_a-025-S16:emails_about:d0:demo1-slot2:1",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "caf4bf65e195bea6c83c21ec14e5b4935529a9891f2089269061aa3b809576c0"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "caf4bf65e195bea6c83c21ec14e5b4935529a9891f2089269061aa3b809576c0",
+    "cached": true,
+    "input_tokens": 4480,
+    "output_tokens": 36,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "state_after": "d9254ed3a97dea6e7c1016afdf6f5b9f947de9b0081138018caef22be619dade",
+   "seconds": 0.352
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "TOPIC",
+     {
+      "const": "report"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "1150a6085700f75c9ea9b9bf2730206573e995c5f4ed2632931439799d7536e9",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,296 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":teach",
+ "declared": {
+  "person": "Aunt"
+ },
+ "interaction_id": "dev-003-S2:retarget_last_email:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/SCRIPTED/dev-003-S2/learn/snapshots/dev-003-S2_retarget_last_email_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "811398212724b9ff979db8759c302fb188acea29717968701990f07c4566c280",
+ "utterances": [
+  {
+   "utterance": "Please find my last email.",
+   "uid": "dev-003-S2:retarget_last_email:d0:l0",
+   "instruction": "Please find my last email.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please find my last email.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -0.162
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+      "score": -5.884
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -7.935
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "EMAIL",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"EMAIL\"}}]",
+      "score": -0.162,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}]",
+      "score": -5.884,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -7.935,
+      "n": 1
+     }
+    ],
+    "margin": 5.722,
+    "reference_notes": [],
+    "seconds": 2.0,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "8fc7b8539f67ab5b37ecc50e0f4879530bead0c96692bda10699313a891910b6",
+   "state_after": "8fc7b8539f67ab5b37ecc50e0f4879530bead0c96692bda10699313a891910b6",
+   "seconds": 2.158
+  },
+  {
+   "utterance": "Address it to Aunt.",
+   "uid": "dev-003-S2:retarget_last_email:d0:l1",
+   "instruction": "Address it to Aunt.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Address it to Aunt.",
+    "values": {
+     "PERSON": [
+      "Aunt"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 6,
+    "top": [
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Aunt\"}\n\n",
+      "score": -0.069
+     },
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHO\", \"value\": \"Aunt\"}\n\n",
+      "score": -4.522
+     },
+     {
+      "text": "r2 = {\"op\": \"GET\", \"of\": \"r1\", \"rel\": \"RECIPIENT\"}\n\n",
+      "score": -7.091
+     }
+    ],
+    "raw_text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Aunt\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "RECIPIENT",
+      "value": "Aunt"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"RECIPIENT\", \"value\": {\"const\": \"Aunt\"}}]",
+      "score": -0.069,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"WHO\", \"value\": {\"const\": \"Aunt\"}}]",
+      "score": -4.522,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -7.091,
+      "n": 1
+     }
+    ],
+    "margin": 4.453,
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "seconds": 2.72,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Aunt"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000006",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000006",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "8fc7b8539f67ab5b37ecc50e0f4879530bead0c96692bda10699313a891910b6",
+   "state_after": "8fc7b8539f67ab5b37ecc50e0f4879530bead0c96692bda10699313a891910b6",
+   "seconds": 3.046
+  },
+  {
+   "utterance": "Return it.",
+   "uid": "dev-003-S2:retarget_last_email:d0:l2",
+   "instruction": "Return it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.017
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -5.178
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -6.427
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.017,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 1.86,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "8fc7b8539f67ab5b37ecc50e0f4879530bead0c96692bda10699313a891910b6",
+   "state_after": "8fc7b8539f67ab5b37ecc50e0f4879530bead0c96692bda10699313a891910b6",
+   "seconds": 1.946
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Aunt"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "70f0824ace3dcd55a508b45149a2a82d11600f2f5d30cffb1a1bf823c5c8a41d",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,42 @@
+{
+ "name": "count_calls_with",
+ "n_traces": 2,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\n$v1 = COUNT $v0\nRETURN $v1\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE count_calls_with()\n$v0 = FIND CALL WHERE SELF.WHO=Trent\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "program_hash": "d4bd877d8a694a43deb3dd3fe1309bade2760b7e7af1c6198ceb25cbf5699bc7"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:count_calls_with:v2",
+ "chosen": "external"
+}

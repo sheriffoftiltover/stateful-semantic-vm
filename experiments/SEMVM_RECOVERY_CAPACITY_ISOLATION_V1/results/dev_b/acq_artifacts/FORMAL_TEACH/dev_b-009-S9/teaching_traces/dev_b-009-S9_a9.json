@@ -1,0 +1,45 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Aunt"
+ },
+ "interaction_id": "dev_b-009-S9:a9",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-009-S9/learn/snapshots/dev_b-009-S9_a9_start.sqlite",
+ "start_snapshot_sha256": "83fc478a0a77584e7769684f3cba4f8cc62fd51fc4b57aaccd96710338ed3f66",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Aunt"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "62bdbe01bf20d895714968315f8caaaaea89aeb96c472f8186ff07eeb3c1f311",
+ "nl_mode": "GOLD_TRACE"
+}

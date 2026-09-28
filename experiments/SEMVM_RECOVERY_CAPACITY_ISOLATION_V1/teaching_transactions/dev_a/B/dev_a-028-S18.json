@@ -1,0 +1,70 @@
+[
+ {
+  "target": "count_emails_to",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "REQUIRE_SECOND_DEMONSTRATION",
+    "end_detail": {
+     "insufficient": "EVIDENCE_VACUOUS: step 1 (FIND) found nothing in every demonstration"
+    },
+    "learn": null,
+    "events": [],
+    "example": {
+     "person": "Alice"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "EVIDENCE_CONFLICT",
+    "events": [],
+    "example": {
+     "person": "Mom"
+    }
+   },
+   {
+    "index": 2,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "VERIFIED",
+    "events": [],
+    "example": {
+     "person": "Sam"
+    }
+   }
+  ]
+ }
+]

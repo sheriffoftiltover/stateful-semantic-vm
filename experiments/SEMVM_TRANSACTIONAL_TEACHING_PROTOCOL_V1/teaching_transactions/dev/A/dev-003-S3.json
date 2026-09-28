@@ -1,0 +1,73 @@
+[
+ {
+  "target": "move_last_reminder_and_return_call_person",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:SLOT_RECOVERY_FAIL",
+    "end_detail": {
+     "slot": "demo1-slot7",
+     "error": "MARGIN",
+     "kind": "RESTATE_SLOT",
+     "reason": "SLOT_RECOVERY_FAIL"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot3",
+      "error": "MARGIN",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot6",
+      "error": "MARGIN",
+      "reply_steps": 1,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "time": "4"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "VERIFIED",
+    "events": [],
+    "example": {
+     "time": "5:45"
+    }
+   }
+  ]
+ }
+]

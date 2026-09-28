@@ -1,0 +1,129 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":teach",
+ "declared": {
+  "person": "Ivan"
+ },
+ "interaction_id": "locked_test-002-S2:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-002-S2/learn/snapshots/locked_test-002-S2_a1_start.sqlite",
+ "start_snapshot_sha256": "0df06aa18aad925644543f32d70da20de011783834197a9fb37f15f4c4b42e24",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-002-S2:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3d6446f5d6c7afe93ba03b82f15360dc51fcdd10afa33c3d7633aa2b00e25ada",
+   "state_after": "3d6446f5d6c7afe93ba03b82f15360dc51fcdd10afa33c3d7633aa2b00e25ada",
+   "seconds": 0.172
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-002-S2:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Ivan"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "3d6446f5d6c7afe93ba03b82f15360dc51fcdd10afa33c3d7633aa2b00e25ada",
+   "state_after": "3d6446f5d6c7afe93ba03b82f15360dc51fcdd10afa33c3d7633aa2b00e25ada",
+   "seconds": 0.306
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-002-S2:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3d6446f5d6c7afe93ba03b82f15360dc51fcdd10afa33c3d7633aa2b00e25ada",
+   "state_after": "3d6446f5d6c7afe93ba03b82f15360dc51fcdd10afa33c3d7633aa2b00e25ada",
+   "seconds": 0.073
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Ivan"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "fcd7e8b0d192ccdedbaa4a93065bcba73e6a5c9f7c36cc9ec04d56687a25978b",
+ "nl_mode": "GOLD_TRACE"
+}

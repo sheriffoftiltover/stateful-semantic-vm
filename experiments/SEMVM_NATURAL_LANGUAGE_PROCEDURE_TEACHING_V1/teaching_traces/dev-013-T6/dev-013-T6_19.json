@@ -1,0 +1,347 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":example",
+ "declared": {
+  "person": "Laura",
+  "time": "midnight"
+ },
+ "interaction_id": "dev-013-T6:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-013-T6/learn/snapshots/dev-013-T6_19_start.sqlite",
+ "start_snapshot_sha256": "c5e6d5a8344af1fe70caee8500004db207890a6b1f73fb35d832cf8a28471441",
+ "utterances": [
+  {
+   "utterance": "Please look up the requests Laura made for midnight and then count them.",
+   "uid": "dev-013-T6:20",
+   "instruction": "Please look up the requests Laura made for midnight and then count them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please look up the requests Laura made for midnight and then count them.",
+    "values": {
+     "PERSON": [
+      "Laura"
+     ],
+     "TIME": [
+      "midnight"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 10,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Laura\"}}\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -0.355
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Laura\"}}\n\n",
+      "score": -3.447
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Laura\", \"WHEN\": \"midnight\"}}\n\n",
+      "score": -5.707
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Laura\"}}\nr2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\n\n",
+      "score": -6.38
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -8.034
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Laura\"}}\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Laura"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -0.353,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -8.034,
+      "n": 1
+     }
+    ],
+    "margin": 7.681,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "seconds": 5.02,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Please look up the requests Laura made for midnight.",
+        "Count them."
+       ],
+       "valid": false,
+       "why": "a clause did not ground",
+       "parts": [
+        {
+         "segment": "Please look up the requests Laura made for midnight.",
+         "status": "CLARIFY",
+         "reason": "instruction mentions ['midnight'] but the grounding does not use it",
+         "clarify_kind": "COVERAGE",
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 9.1
+  },
+  {
+   "utterance": "I mean: find Laura's requests at midnight and count them.",
+   "uid": "dev-013-T6:20#rescue",
+   "instruction": "find Laura's requests at midnight and count them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "find Laura's requests at midnight and count them.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Find Laura's requests at midnight.",
+        "Count them."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Find Laura's requests at midnight.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Count them.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 24,
+    "seconds": 16.02,
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Laura",
+       "WHEN": "midnight"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Laura\", \"WHEN\": \"midnight\"}}\n\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Laura",
+       "WHEN": "midnight"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "margin": 2.714,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Laura"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "midnight"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "state_after": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "seconds": 16.109
+  },
+  {
+   "utterance": "Please give it back.",
+   "uid": "dev-013-T6:21",
+   "instruction": "Please give it back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.574
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.841
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.005,
+      "n": 2
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value: r1 -> r2 (R3)"
+    ],
+    "seconds": 2.39,
+    "repaired": true,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "state_after": "c6286f4a4215be964d834ecb80f6a6f8daf0ff8d49c720962c1ec9428ded62ce",
+   "seconds": 2.466
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Laura"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "midnight"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "8c962836fa5070a2368abf9e1c192bca87a19b1c82888dcb541f6790f58b8080",
+ "nl_mode": "NL_TEACH"
+}

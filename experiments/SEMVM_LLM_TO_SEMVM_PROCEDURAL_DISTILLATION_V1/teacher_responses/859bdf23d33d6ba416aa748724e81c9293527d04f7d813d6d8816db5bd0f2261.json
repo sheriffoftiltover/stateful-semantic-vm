@@ -1,0 +1,30 @@
+{
+ "text": "PROCEDURE close_oldest_open_request(person:PERSON)\n$v0 = FIND REQUEST WHERE SELF.WHO={person} STATUS=OPEN\n$v1 = SORT $v0 WHEN\n$v2 = FIRST $v1\nSET_STATUS $v2 CLOSED\nRETURN $v2\nEND",
+ "provenance": {
+  "provider": "modal-vllm",
+  "model": "openai/gpt-oss-120b",
+  "request_hash": "859bdf23d33d6ba416aa748724e81c9293527d04f7d813d6d8816db5bd0f2261",
+  "prompt_sha256": "5cbf16f43c7676abed821976279f8808c1abacb6c7e10272390c22f9bea9afa3",
+  "generation": {
+   "model": "gpt-oss-120b",
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "seed": 0,
+   "reasoning_effort": "high"
+  },
+  "kind": "DIRECT_AST",
+  "meter_usd_before": 4.759,
+  "request_id": "chatcmpl-b3cc11919bb74fcd9f5beba4255dc0b0",
+  "timestamp": "2026-09-27T15:54:19Z",
+  "latency_s": 6.376,
+  "retry_count": 0,
+  "input_tokens": 1226,
+  "output_tokens": 1010,
+  "finish_reason": "stop",
+  "response_sha256": "e692f9aae894132194cdbd72c0c6448902703168db928406d7a10f13c45b4203",
+  "reasoning_chars": 3497,
+  "cached": false
+ },
+ "messages_sha256": "5cbf16f43c7676abed821976279f8808c1abacb6c7e10272390c22f9bea9afa3"
+}

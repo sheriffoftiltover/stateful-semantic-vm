@@ -1,0 +1,312 @@
+{
+ "scenario_id": "locked_test-004-S2",
+ "suite": "locked_test",
+ "category": "S2",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "remind epsilon : while in Vienna re epsilon ; so then again soon , visit beta ; by Uma re epsilon",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "VISIT"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Uma"
+     },
+     {
+      "local_id": "v1",
+      "type": "PLACE",
+      "surface": "Vienna"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "VISIT",
+    "mods": [
+     [
+      "WHERE",
+      "Vienna",
+      "outer"
+     ],
+     [
+      "WHO",
+      "Uma",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "OO",
+   "layout": [
+    "straddle_o2",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF REMINDER"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF VISIT"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF REMINDER"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF VISIT"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "reminder:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Uma"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Vienna"
+   ],
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "reminder:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Uma"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "reminder:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Uma"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Uma"
+   ],
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "reminder:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Uma"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "reminder:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "reminder:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Uma"
+     ]
+    ]
+   }
+  }
+ ]
+}

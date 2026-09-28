@@ -1,0 +1,42 @@
+{
+ "name": "count_visits_in",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_visits_in(place:PLACE)\n$v0 = FIND VISIT WHERE SELF.WHERE={place}\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "place",
+        "PLACE"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE count_visits_in()\n$v0 = FIND VISIT WHERE SELF.WHERE=Seoul\nRETURN $v0\nEND",
+   "program_hash": "81b2a5d3d50c51713b17d48d61d86f663165513b9a922ae84ddd5a5d445da063"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:count_visits_in:v2",
+ "chosen": "external"
+}

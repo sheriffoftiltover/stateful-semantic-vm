@@ -1,0 +1,54 @@
+{
+ "name": "count_open_calls_with",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_open_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person} STATUS=OPEN\n$v1 = COUNT $v0\nRETURN $v1\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.01,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "counterfactual_t0_0",
+     {
+      "args": {
+       "person": "Carol"
+      },
+      "ref": [
+       "OK",
+       0
+      ],
+      "got": [
+       "OK",
+       2
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE count_open_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "program_hash": "ca0be2aec0f8e3730534e7feae1cbaa0e745e9629863de6b9506ad21acd818ed"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:count_open_calls_with:v3",
+ "chosen": "external"
+}

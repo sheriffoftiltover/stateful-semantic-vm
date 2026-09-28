@@ -1,0 +1,523 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645534,
+  "utterance_id": "locked_test-012-S7:0",
+  "INPUT": "request epsilon , by Mom re epsilon ; and later so then again soon , message eta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "between_o4",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       15
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Mom",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      15
+     ],
+     [
+      "PERSON",
+      "Mom",
+      4
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 497.0037536621094,
+   "margin": 12.1661376953125,
+   "n_outputs": 38,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Mom"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Mom",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Mom"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "8450cb7ab9bef518976a508b0139fd641ecacfcf3f00424f37aebf6c356fce0c",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Mom"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "62987676fdaad0d7385c06ae334e6404a9fc61dde5eb5426f1a5144eda8ab1cf",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Mom"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645534,
+  "utterance_id": "locked_test-012-S7:1",
+  "INPUT": "UPDATE LAST_REQUEST WHO=Uma",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "62987676fdaad0d7385c06ae334e6404a9fc61dde5eb5426f1a5144eda8ab1cf",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_REQUEST",
+   "set": [
+    [
+     "WHO",
+     "Uma"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "request:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$new_Uma"
+   ],
+   [
+    "ADD_ALIAS",
+    "$new_Uma",
+    "Uma"
+   ],
+   [
+    "ASSERT",
+    "request:000001",
+    "WHO",
+    "$new_Uma"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "ad733255918833d6ac28e5b8794f7b4a3b348f9c3791d2e8f87a98fd032f998a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "request:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Uma"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHO",
+    "person:000002"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "5d28ba5951aabb8e555ac4b0cc7e29ef392066713510cc9921cc0235b19c7afd",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000002"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Mom"
+    ],
+    [
+     "person:000002",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645534,
+  "utterance_id": "locked_test-012-S7:2",
+  "INPUT": "QUERY WHO OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "5d28ba5951aabb8e555ac4b0cc7e29ef392066713510cc9921cc0235b19c7afd",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "e1e2867f7873f8802f292bd4e1a6e5f8be92e4908f2d93d4d9b75459641d6e80",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000002"
+  ],
+  "STATE_AFTER": "5d28ba5951aabb8e555ac4b0cc7e29ef392066713510cc9921cc0235b19c7afd",
+  "RESPONSE": "Uma",
+  "RETURN_RENDERED": [
+   "Uma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000002"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Mom"
+    ],
+    [
+     "person:000002",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2645534,
+  "utterance_id": "locked_test-012-S7:3",
+  "INPUT": "QUERY WHO OF LAST_REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "5d28ba5951aabb8e555ac4b0cc7e29ef392066713510cc9921cc0235b19c7afd",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "LAST_REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "request:000001",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "6433f0a4b9f57aa724cdbda4012a47dd5578ae98c1ffdf8b14b61910369735e8",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000002"
+  ],
+  "STATE_AFTER": "5d28ba5951aabb8e555ac4b0cc7e29ef392066713510cc9921cc0235b19c7afd",
+  "RESPONSE": "Uma",
+  "RETURN_RENDERED": [
+   "Uma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000002"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Mom"
+    ],
+    [
+     "person:000002",
+     "Uma"
+    ]
+   ]
+  }
+ }
+]

@@ -1,0 +1,7 @@
+# close_oldest_open_request: committed example 1, declared {"person": "Frank"}
+$r1 = FIND REQUEST WHERE SELF.WHO=Frank STATUS=OPEN
+$r2 = SORT $r1 WHEN
+$r3 = FIRST $r2
+SET_STATUS $r3 CLOSED
+RETURN $r3
+# result at commit: {"event": "request:000011"}

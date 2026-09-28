@@ -1,0 +1,673 @@
+[
+ {
+  "turn": 0,
+  "pid": 2643268,
+  "utterance_id": "dev-025-S10:0",
+  "INPUT": "NEW PERSON Zoe",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "COMMAND_AST": {
+   "op": "NEW_PERSON",
+   "alias": "Zoe"
+  },
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "PERSON",
+    "$p"
+   ],
+   [
+    "ADD_ALIAS",
+    "$p",
+    "Zoe"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "b5a62c6330947f18e2570e7dcc8499f0d70a64937c23b9e5ed04ee43fe8635a9",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Zoe"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "2661ca29a6a945cbcc8203b8c9a4f684ef71264b42ef220a3a71558a4d2f81ae",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2643268,
+  "utterance_id": "dev-025-S10:1",
+  "INPUT": "NEW PERSON Zoe",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "2661ca29a6a945cbcc8203b8c9a4f684ef71264b42ef220a3a71558a4d2f81ae",
+  "COMMAND_AST": {
+   "op": "NEW_PERSON",
+   "alias": "Zoe"
+  },
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "PERSON",
+    "$p"
+   ],
+   [
+    "ADD_ALIAS",
+    "$p",
+    "Zoe"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "b5a62c6330947f18e2570e7dcc8499f0d70a64937c23b9e5ed04ee43fe8635a9",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Zoe"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "574d5865e0507b63eebb4ea08a44a1211deb27e04369a131b8aa44f8f9b5bbec",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Zoe"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2643268,
+  "utterance_id": "dev-025-S10:2",
+  "INPUT": "request delta to call theta , by Zoe re theta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "574d5865e0507b63eebb4ea08a44a1211deb27e04369a131b8aa44f8f9b5bbec",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "CALL",
+    "layout": [
+     "after_o1",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "CALL",
+       null,
+       3
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "CALL",
+       null,
+       3
+      ],
+      [
+       "PERSON",
+       "Zoe",
+       7
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "CALL",
+      null,
+      3
+     ],
+     [
+      "PERSON",
+      "Zoe",
+      7
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1208.3779296875,
+   "margin": 11.74853515625,
+   "n_outputs": 26,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Zoe"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "status": "RESOLUTION_AMBIGUOUS",
+  "failure_stage": "RESOLVE_ENTITY",
+  "reason": "'Zoe' matches 2 people: ['person:000001', 'person:000002']",
+  "RESPONSE": "Ambiguous: 'Zoe' matches 2 people: ['person:000001', 'person:000002'].",
+  "STATE_AFTER": "574d5865e0507b63eebb4ea08a44a1211deb27e04369a131b8aa44f8f9b5bbec",
+  "STATE_DIFF": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Zoe"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2643268,
+  "utterance_id": "dev-025-S10:3",
+  "INPUT": "QUERY WHO OF CALL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "574d5865e0507b63eebb4ea08a44a1211deb27e04369a131b8aa44f8f9b5bbec",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "CALL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "35a85d7a20ac99dac56e70b244cf7f082bc07cb6243d4a581bde14d0503f860d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "574d5865e0507b63eebb4ea08a44a1211deb27e04369a131b8aa44f8f9b5bbec",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Zoe"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2643268,
+  "utterance_id": "dev-025-S10:4",
+  "INPUT": "request alpha and after that then , message theta and by Grandma per theta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "574d5865e0507b63eebb4ea08a44a1211deb27e04369a131b8aa44f8f9b5bbec",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o3",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       7
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       7
+      ],
+      [
+       "PERSON",
+       "Grandma",
+       11
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      7
+     ],
+     [
+      "PERSON",
+      "Grandma",
+      11
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1051.9971923828125,
+   "margin": 11.3466796875,
+   "n_outputs": 32,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Grandma"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Grandma",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Grandma"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0c0375e73d5beb137b9d3c8c1c077b0b5da9cdb0b29281b37e785b212761e6b4",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Grandma"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "4393917adcddcc943a861c84114547d944e656f5e2f8034338af5c7e2a68ee30",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Zoe"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ],
+    [
+     "person:000003",
+     "Grandma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2643268,
+  "utterance_id": "dev-025-S10:5",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "4393917adcddcc943a861c84114547d944e656f5e2f8034338af5c7e2a68ee30",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000003"
+  ],
+  "STATE_AFTER": "4393917adcddcc943a861c84114547d944e656f5e2f8034338af5c7e2a68ee30",
+  "RESPONSE": "Grandma",
+  "RETURN_RENDERED": [
+   "Grandma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Zoe"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ],
+    [
+     "person:000003",
+     "Grandma"
+    ]
+   ]
+  }
+ }
+]

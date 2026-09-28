@@ -1,0 +1,240 @@
+{
+ "name": "count_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Zoe"
+ },
+ "interaction_id": "locked_test-020-S18:count_emails_to:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-020-S18/learn/snapshots/locked_test-020-S18_count_emails_to_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "84821f6360f966a9b955274dcb6f849552521fa77c573f158f71a0ed83c849cd",
+ "utterances": [
+  {
+   "utterance": "Find the emails with Zoe.",
+   "uid": "locked_test-020-S18:count_emails_to:d0:demo1-slot1:0",
+   "instruction": "Find the emails with Zoe.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Find the emails with Zoe.",
+    "values": {
+     "PERSON": [
+      "Zoe"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "5d6793c1b62a57f19639492081204aca05d52987c9fb9dfceec5dcaf24c46ed2"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Zoe\"}}]}",
+    "request_hash": "5d6793c1b62a57f19639492081204aca05d52987c9fb9dfceec5dcaf24c46ed2",
+    "cached": false,
+    "input_tokens": 4449,
+    "output_tokens": 82,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Zoe"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.16
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Zoe"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "state_after": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "seconds": 1.24
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "locked_test-020-S18:count_emails_to:d0:demo1-slot2:1",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "7928201f0c40635f8e12b6bc03ac9048fe73fe4744106212acae429f70116232"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "7928201f0c40635f8e12b6bc03ac9048fe73fe4744106212acae429f70116232",
+    "cached": false,
+    "input_tokens": 4482,
+    "output_tokens": 50,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.98
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "state_after": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "seconds": 1.051
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "locked_test-020-S18:count_emails_to:d0:demo1-slot3:2",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "ad96994f2f91fae0d1952066f3167ad982e778b94edd074b69bea7fb349f03fa"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "ad96994f2f91fae0d1952066f3167ad982e778b94edd074b69bea7fb349f03fa",
+    "cached": false,
+    "input_tokens": 4506,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.94
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "state_after": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "seconds": 1.084
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Zoe"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "69892a3649fe02aa753adf98855185acca7e92929a46e4fd280cadd4d9c7efe1",
+ "nl_mode": "NL_TEACH"
+}

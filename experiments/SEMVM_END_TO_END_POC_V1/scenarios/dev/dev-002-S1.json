@@ -1,0 +1,158 @@
+{
+ "scenario_id": "dev-002-S1",
+ "suite": "dev",
+ "category": "S1",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "note eta ; so then , about survey per eta , call epsilon",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TOPIC_VALUE",
+      "surface": "survey"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "CALL",
+    "mods": [
+     [
+      "TOPIC",
+      "survey",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "O",
+   "layout": [
+    "between_o2",
+    [
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF NOTE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF CALL"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:survey"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "survey"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:survey"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:survey"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

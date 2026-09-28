@@ -1,0 +1,206 @@
+[
+ {
+  "target": "call_people_at",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please get the calls I have at noon, then get who each of them is with.",
+      "text": "Please get the calls I have at noon, then get who each of them is with.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "PARENT",
+          "WHEN",
+          {
+           "const": "noon"
+          }
+         ]
+        ],
+        "status": null
+       },
+       {
+        "op": "SELECT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        },
+        "rel": "WHO"
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "EVALUATOR_INJECTION",
+      "status": "RESOLVED",
+      "original_text": "Now do the usual thing with it, like we did for Kevin.",
+      "text": "Now do the usual thing with it, like we did for Kevin.",
+      "replacement_for": "demo1-slot2",
+      "grounded_plan": [
+       {
+        "op": "FOR",
+        "as": "e0",
+        "list": {
+         "var": "r1"
+        },
+        "body": [
+         {
+          "op": "UPDATE",
+          "obj": {
+           "var": "e0"
+          },
+          "rel": "WHO",
+          "value": {
+           "const": "Kevin"
+          }
+         }
+        ]
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": false,
+      "lesson_index": null,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "SCRIPTED_TEACHER",
+      "status": "REPLACED",
+      "original_text": "Return the list of people.",
+      "text": "Return the list of people.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": true,
+      "history": [],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 1,
+    "slots": [
+     {
+      "slot_id": "demo2-slot1",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please get the calls I have at 2:45 and then get who each of them is with.",
+      "text": "Please get the calls I have at 2:45 and then get who each of them is with.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "PARENT",
+          "WHEN",
+          {
+           "const": "2:45"
+          }
+         ]
+        ],
+        "status": null
+       },
+       {
+        "op": "SELECT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        },
+        "rel": "WHO"
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo2-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot2",
+      "source": "SCRIPTED_TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Please hand back those names.",
+      "text": "Please hand back those names.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

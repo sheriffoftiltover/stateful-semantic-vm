@@ -1,0 +1,23 @@
+{
+ "version": "FACTORIAL_ARMS_V1",
+ "grounder": "hosted 120B for every arm (same frozen checkpoint, card, reasoning low, retry 1)",
+ "routing": "teacher/routing.py: LESSON kinds {LESSON, NEW_DEMO, FORMAT, REMAINING, MISSING_EXAMPLE}, RECOVERY kinds {RESTATE_SLOT, RESTATE_OBSCURED, CLARIFY_REFERENCE}",
+ "arms": {
+  "B": "scripted lesson + scripted recovery (frozen lookup)",
+  "E": "scripted lesson + hosted recovery (role recovery_teacher)",
+  "F": "hosted lesson (role initial_teacher) + ORACLE recovery (teacher/routing.py OracleRecovery; boundary spec \u00a731)",
+  "D": "hosted lesson + hosted recovery (primary confirmatory)"
+ },
+ "controls": [
+  "GOLD_TRACE",
+  "FORMAL_TEACH"
+ ],
+ "teacher": {
+  "reasoning_effort": "high",
+  "temperature": 0.0,
+  "max_tokens": 8192
+ },
+ "pool": "4 values per class (spec \u00a724; scenarios/pdx_generate.py PGen.world / pools_split)",
+ "budgets": "parent TTP: 2 clarifications / 2 rephrases per slot, 3 demonstrations, 10 teacher turns per target",
+ "caches": "initial_teacher_responses/, recovery_teacher_responses/, grounder_responses/, judge_responses/ (role-scoped request keys)"
+}

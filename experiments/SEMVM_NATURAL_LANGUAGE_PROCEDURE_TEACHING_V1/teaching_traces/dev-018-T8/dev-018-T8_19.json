@@ -1,0 +1,287 @@
+{
+ "name": "proc_24",
+ "mode": ":teach",
+ "declared": {
+  "place": "Rome"
+ },
+ "interaction_id": "dev-018-T8:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-018-T8/learn/snapshots/dev-018-T8_19_start.sqlite",
+ "start_snapshot_sha256": "e20f1bc00b59079631e72419e1559cf166a65ce47ed548cb0d22557776a3f84a",
+ "utterances": [
+  {
+   "utterance": "Please get my latest visit.",
+   "uid": "dev-018-T8:20",
+   "instruction": "Please get my latest visit.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please get my latest visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+      "score": -0.353
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"VISIT\"}\n\n",
+      "score": -5.135
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -7.504
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "VISIT",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"VISIT\"}}]",
+      "score": -0.353,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"VISIT\"}, \"where\": []}]",
+      "score": -5.135,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -7.504,
+      "n": 1
+     }
+    ],
+    "margin": 4.782,
+    "reference_notes": [],
+    "seconds": 3.48,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5d7a64d93d78791c5728f13542e4b929f952c6a0c565cd0017943adc721cce55",
+   "state_after": "5d7a64d93d78791c5728f13542e4b929f952c6a0c565cd0017943adc721cce55",
+   "seconds": 3.569
+  },
+  {
+   "utterance": "Please move it to Rome.",
+   "uid": "dev-018-T8:21",
+   "instruction": "Please move it to Rome.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please move it to Rome.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Rome"
+     ],
+     "TOPIC": []
+    },
+    "llm_calls": 6,
+    "top": [
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Rome\"}\n\n",
+      "score": -0.099
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -6.027
+     }
+    ],
+    "raw_text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Rome\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "WHERE",
+      "value": "Rome"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"WHERE\", \"value\": {\"const\": \"Rome\"}}]",
+      "score": -0.099,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -6.027,
+      "n": 1
+     }
+    ],
+    "margin": 5.927,
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "seconds": 3.9,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Rome"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "visit:000002",
+     "WHERE",
+     "place:madrid"
+    ],
+    [
+     "+rel",
+     "visit:000002",
+     "WHERE",
+     "place:rome"
+    ]
+   ],
+   "state_before": "5d7a64d93d78791c5728f13542e4b929f952c6a0c565cd0017943adc721cce55",
+   "state_after": "1a09711d527e50d42efe101ddb6fcf6305d04207bc7b78c0af4ffeb440d77968",
+   "seconds": 4.028
+  },
+  {
+   "utterance": "Please give it back.",
+   "uid": "dev-018-T8:22",
+   "instruction": "Please give it back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.057
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -3.713
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -5.202
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.057,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 3.14,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "1a09711d527e50d42efe101ddb6fcf6305d04207bc7b78c0af4ffeb440d77968",
+   "state_after": "1a09711d527e50d42efe101ddb6fcf6305d04207bc7b78c0af4ffeb440d77968",
+   "seconds": 3.205
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Rome"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "727f18bcbc54d5fa66a03ed6e1c3328851a05e4d1c6c0539fd87c9ea83fd7d78",
+ "nl_mode": "NL_TEACH"
+}

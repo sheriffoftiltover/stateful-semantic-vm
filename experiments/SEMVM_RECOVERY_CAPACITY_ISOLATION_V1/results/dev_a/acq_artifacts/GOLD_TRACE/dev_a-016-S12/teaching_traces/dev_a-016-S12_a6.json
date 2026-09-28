@@ -1,0 +1,128 @@
+{
+ "name": "count_calls_with",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev_a-016-S12:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/GOLD_TRACE/dev_a-016-S12/learn/snapshots/dev_a-016-S12_a6_start.sqlite",
+ "start_snapshot_sha256": "b4b54214fa9eee59b8da6f823e0d3dd7cb5117f92ea0cec4017c28da4b267504",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-016-S12:a7",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Grace"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "state_after": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "seconds": 0.151
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-016-S12:a8",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "state_after": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "seconds": 0.189
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-016-S12:a9",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "state_after": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "seconds": 0.187
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Grace"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "f51bf19b757ae187670f423f756a55bf3056e4f2d24597afa0851f780799eefa",
+ "nl_mode": "GOLD_TRACE"
+}

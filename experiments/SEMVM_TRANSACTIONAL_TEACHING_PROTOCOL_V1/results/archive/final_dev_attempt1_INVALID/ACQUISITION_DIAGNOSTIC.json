@@ -1,0 +1,4384 @@
+{
+ "A": {
+  "TEACHER_EPISODE_SUCCESS": 0.9722,
+  "n_TEACHER_EPISODE_SUCCESS": 36,
+  "VERIFIER_CRASH": 0,
+  "n_VERIFIER_CRASH": 36,
+  "TRACE_BEHAVIORAL_EXACT": 0.9756,
+  "n_TRACE_BEHAVIORAL_EXACT": 41,
+  "TRACE_STRUCTURAL_EXACT": 0.9756,
+  "n_TRACE_STRUCTURAL_EXACT": 41,
+  "DEMONSTRATION_COMPLETENESS_EXACT": 1.0,
+  "n_DEMONSTRATION_COMPLETENESS_EXACT": 41,
+  "GROUNDING_BEHAVIORAL_EXACT": 0.8947,
+  "n_GROUNDING_BEHAVIORAL_EXACT": 38,
+  "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 1.0,
+  "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 22,
+  "RELATION_BINDING_EXACT": 1.0,
+  "n_RELATION_BINDING_EXACT": 35,
+  "STATUS_SCOPE_EXACT": 1.0,
+  "n_STATUS_SCOPE_EXACT": 35,
+  "COUNTERFACTUAL_EXACT": 1.0,
+  "n_COUNTERFACTUAL_EXACT": 240,
+  "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 87,
+  "RESTART_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_RESTART_EXACT_GIVEN_ACQUISITION": 87,
+  "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 87,
+  "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 58,
+  "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 0.0,
+  "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 58,
+  "DISTILLED_SKILL_EXACT": 0.0,
+  "n_DISTILLED_SKILL_EXACT": 32,
+  "HOSTED_CALLS_POST_HANDOFF": 0,
+  "n_HOSTED_CALLS_POST_HANDOFF": 30,
+  "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+  "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+  "SLOT_RECOVERY_FAIL": 3,
+  "n_SLOT_RECOVERY_FAIL": 3,
+  "SLOT_RECOVERY_SUCCESS": 0.8,
+  "n_SLOT_RECOVERY_SUCCESS": 15,
+  "RESCUE_SUCCESS": 0.9286,
+  "n_RESCUE_SUCCESS": 14,
+  "SAVED_SKILL_CALL_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_EXACT": 2,
+  "SAVED_SKILL_CALL_RETRIEVAL_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_RETRIEVAL_EXACT": 2,
+  "SAVED_SKILL_CALL_ARGUMENT_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_ARGUMENT_EXACT": 2,
+  "INJECTED_STEP_RESTORED": 0.5,
+  "n_INJECTED_STEP_RESTORED": 2,
+  "INCOMPLETE_DEMO_BLOCKED": 1,
+  "n_INCOMPLETE_DEMO_BLOCKED": 1,
+  "DEMONSTRATION_INCOMPLETE": 1,
+  "n_DEMONSTRATION_INCOMPLETE": 1,
+  "MISSING_SLOT_DETECTED": 1,
+  "n_MISSING_SLOT_DETECTED": 1,
+  "EVIDENCE_NONVACUITY_DETECTED": 0.0,
+  "n_EVIDENCE_NONVACUITY_DETECTED": 1,
+  "LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "n_LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "WRONG_BEHAVIORAL_ACTION_EXECUTED": 1,
+  "n_WRONG_BEHAVIORAL_ACTION_EXECUTED": 1,
+  "WRONG_STRUCTURAL_ACTION_EXECUTED": 1,
+  "n_WRONG_STRUCTURAL_ACTION_EXECUTED": 1,
+  "AMBIGUOUS_REFERENCE_EXECUTED": 1,
+  "n_AMBIGUOUS_REFERENCE_EXECUTED": 1,
+  "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 3,
+  "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 3,
+  "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+  "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+  "VACUOUS_CANDIDATE_ACTIVATED": 0,
+  "n_VACUOUS_CANDIDATE_ACTIVATED": 1,
+  "REFERENCE_CLARIFICATION_REQUIRED": 3,
+  "n_REFERENCE_CLARIFICATION_REQUIRED": 3,
+  "REFERENCE_CLARIFICATION_EXACT": 1.0,
+  "n_REFERENCE_CLARIFICATION_EXACT": 3,
+  "VACUITY_PROBE_TRIGGERED": 0.0,
+  "n_VACUITY_PROBE_TRIGGERED": 1,
+  "MISSING_EXAMPLE_DETECTED": 1.0,
+  "n_MISSING_EXAMPLE_DETECTED": 2,
+  "UNREQUESTED_RETURN_BLOCKED": 0,
+  "VACUOUS_VERIFICATION_ATTEMPT": 0,
+  "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+  "MISSED_CLARIFY_COUNT": 0,
+  "PENDING_CLARIFICATION_AT_COMMIT": 0,
+  "TEACHER_SKILL_CONFUSION_COUNT": 0,
+  "PREMATURE_TERMINATION_DETECTED": 0,
+  "VERIFY_FALSE_ACCEPT": 0,
+  "DYNAMIC_REIMPLEMENTATION_WHEN_CALL_AVAILABLE": 0,
+  "INCOMPLETE_DEMO_COMMITTED": 0,
+  "UNREQUESTED_RETURN_EXECUTED": 0,
+  "FALSE_CLARIFY_COUNT": 0,
+  "hosted_accounting": {},
+  "earliest_cause": {
+   "GR_SEQUENCE": 1
+  },
+  "teacher_grounder_attribution": {},
+  "per_target": {
+   "dev-001-S1|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-002-S2|retarget_last_email": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-003-S3|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-004-S4|close_open_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-005-S5|close_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-006-S6|count_open_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-007-S7|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-008-S8|email_topic_report": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-012-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-012-S10|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-013-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "INJECTED_STEP_RESTATED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-014-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_MISSING_SLOT",
+     "MISSING_SLOT_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:MISSING_SLOT",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-015-S12|move_visit_and_parent": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-016-S12|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-017-S13|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-018-S14L|count_open_calls_with": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "GR_SEQUENCE",
+    "classes": [
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "CONSTANT_SWAP",
+      "vacuous": true,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     }
+    ],
+    "fail": "demonstration budget exhausted (last: EVIDENCE_CONFLICT)"
+   },
+   "dev-019-S14L|count_open_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W2_STATUS_FLIPPED",
+      "faithful": false,
+      "injection": "DROPPED_FILTER",
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-020-S14D|close_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "INVALID_VALUE",
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-021-S14D|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-022-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL",
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-023-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-024-S16|count_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-025-S16|emails_about": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-026-S17|all_requests_by": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-027-S17|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-028-S18|count_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "RELATION_SWAP",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-029-S19|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-030-S19|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   }
+  }
+ },
+ "B": {
+  "TEACHER_EPISODE_SUCCESS": 0.9722,
+  "n_TEACHER_EPISODE_SUCCESS": 36,
+  "VERIFIER_CRASH": 0,
+  "n_VERIFIER_CRASH": 36,
+  "TRACE_BEHAVIORAL_EXACT": 1.0,
+  "n_TRACE_BEHAVIORAL_EXACT": 43,
+  "TRACE_STRUCTURAL_EXACT": 1.0,
+  "n_TRACE_STRUCTURAL_EXACT": 43,
+  "DEMONSTRATION_COMPLETENESS_EXACT": 1.0,
+  "n_DEMONSTRATION_COMPLETENESS_EXACT": 43,
+  "GROUNDING_BEHAVIORAL_EXACT": 0.9474,
+  "n_GROUNDING_BEHAVIORAL_EXACT": 38,
+  "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 1.0,
+  "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 25,
+  "RELATION_BINDING_EXACT": 1.0,
+  "n_RELATION_BINDING_EXACT": 36,
+  "STATUS_SCOPE_EXACT": 1.0,
+  "n_STATUS_SCOPE_EXACT": 36,
+  "COUNTERFACTUAL_EXACT": 1.0,
+  "n_COUNTERFACTUAL_EXACT": 246,
+  "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 87,
+  "RESTART_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_RESTART_EXACT_GIVEN_ACQUISITION": 87,
+  "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 87,
+  "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 58,
+  "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 0.0,
+  "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 58,
+  "DISTILLED_SKILL_EXACT": 0.0,
+  "n_DISTILLED_SKILL_EXACT": 32,
+  "HOSTED_CALLS_POST_HANDOFF": 0,
+  "n_HOSTED_CALLS_POST_HANDOFF": 30,
+  "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+  "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+  "HOSTED_TEARDOWN_VERIFIED": 1.0,
+  "n_HOSTED_TEARDOWN_VERIFIED": 30,
+  "UNREQUESTED_RETURN_BLOCKED": 18,
+  "n_UNREQUESTED_RETURN_BLOCKED": 18,
+  "SLOT_RECOVERY_FAIL": 2,
+  "n_SLOT_RECOVERY_FAIL": 2,
+  "SLOT_RECOVERY_SUCCESS": 0.8,
+  "n_SLOT_RECOVERY_SUCCESS": 10,
+  "RESCUE_SUCCESS": 0.9091,
+  "n_RESCUE_SUCCESS": 11,
+  "SAVED_SKILL_CALL_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_EXACT": 2,
+  "SAVED_SKILL_CALL_RETRIEVAL_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_RETRIEVAL_EXACT": 2,
+  "SAVED_SKILL_CALL_ARGUMENT_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_ARGUMENT_EXACT": 2,
+  "INJECTED_STEP_RESTORED": 1.0,
+  "n_INJECTED_STEP_RESTORED": 2,
+  "EVIDENCE_NONVACUITY_DETECTED": 0.5,
+  "n_EVIDENCE_NONVACUITY_DETECTED": 2,
+  "LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "n_LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 3,
+  "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 3,
+  "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+  "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+  "VACUOUS_CANDIDATE_ACTIVATED": 0,
+  "n_VACUOUS_CANDIDATE_ACTIVATED": 2,
+  "REFERENCE_CLARIFICATION_REQUIRED": 4,
+  "n_REFERENCE_CLARIFICATION_REQUIRED": 4,
+  "REFERENCE_CLARIFICATION_EXACT": 1.0,
+  "n_REFERENCE_CLARIFICATION_EXACT": 4,
+  "VACUOUS_VERIFICATION_ATTEMPT": 1,
+  "n_VACUOUS_VERIFICATION_ATTEMPT": 1,
+  "VACUITY_PROBE_TRIGGERED": 1.0,
+  "n_VACUITY_PROBE_TRIGGERED": 1,
+  "MISSING_EXAMPLE_DETECTED": 1.0,
+  "n_MISSING_EXAMPLE_DETECTED": 2,
+  "DEMONSTRATION_INCOMPLETE": 0,
+  "WRONG_STRUCTURAL_ACTION_EXECUTED": 0,
+  "WRONG_BEHAVIORAL_ACTION_EXECUTED": 0,
+  "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+  "MISSED_CLARIFY_COUNT": 0,
+  "INCOMPLETE_DEMO_BLOCKED": 0,
+  "PENDING_CLARIFICATION_AT_COMMIT": 0,
+  "TEACHER_SKILL_CONFUSION_COUNT": 0,
+  "PREMATURE_TERMINATION_DETECTED": 0,
+  "VERIFY_FALSE_ACCEPT": 0,
+  "AMBIGUOUS_REFERENCE_EXECUTED": 0,
+  "DYNAMIC_REIMPLEMENTATION_WHEN_CALL_AVAILABLE": 0,
+  "INCOMPLETE_DEMO_COMMITTED": 0,
+  "UNREQUESTED_RETURN_EXECUTED": 0,
+  "FALSE_CLARIFY_COUNT": 0,
+  "MISSING_SLOT_DETECTED": 0,
+  "hosted_accounting": {
+   "grounder_calls": 181,
+   "grounder_cached": 30,
+   "grounder_input_tokens": 814198,
+   "grounder_output_tokens": 13289,
+   "grounder_truncations": 1
+  },
+  "earliest_cause": {
+   "EV_VACUOUS": 1
+  },
+  "teacher_grounder_attribution": {},
+  "per_target": {
+   "dev-001-S1|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-002-S2|retarget_last_email": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-003-S3|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-004-S4|close_open_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-005-S5|close_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-006-S6|count_open_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-007-S7|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-008-S8|email_topic_report": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-012-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-012-S10|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-013-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "INJECTED_STEP_RESTATED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-014-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "INJECTED_STEP_RESTATED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-015-S12|move_visit_and_parent": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-016-S12|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-017-S13|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-018-S14L|count_open_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "CONSTANT_SWAP",
+      "vacuous": true,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-019-S14L|count_open_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W2_STATUS_FLIPPED",
+      "faithful": false,
+      "injection": "DROPPED_FILTER",
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-020-S14D|close_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "INVALID_VALUE",
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-021-S14D|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-022-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-023-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-024-S16|count_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-025-S16|emails_about": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-026-S17|all_requests_by": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-027-S17|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-028-S18|count_emails_to": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "EV_VACUOUS",
+    "classes": [
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED",
+     "SECOND_DEMO_REQUESTED",
+     "VACUITY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "RELATION_SWAP",
+      "vacuous": true,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "REQUIRE_SECOND_DEMONSTRATION"
+     }
+    ],
+    "fail": "demonstration budget exhausted (last: REQUIRE_SECOND_DEMONSTRATION)"
+   },
+   "dev-029-S19|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-030-S19|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   }
+  }
+ },
+ "C": {
+  "TEACHER_EPISODE_SUCCESS": 0.8333,
+  "n_TEACHER_EPISODE_SUCCESS": 36,
+  "VERIFIER_CRASH": 0,
+  "n_VERIFIER_CRASH": 36,
+  "TEACHER_LESSON_BEHAVIORAL_EXACT": 0.8718,
+  "n_TEACHER_LESSON_BEHAVIORAL_EXACT": 39,
+  "TEACHER_LESSON_JUDGE_PARSE_FAIL": 0.0,
+  "n_TEACHER_LESSON_JUDGE_PARSE_FAIL": 39,
+  "FIRST_PASS_TEACHER_LESSON_EXACT": 0.9,
+  "n_FIRST_PASS_TEACHER_LESSON_EXACT": 30,
+  "TEACHER_SKILL_CONFUSION_COUNT": 0,
+  "n_TEACHER_SKILL_CONFUSION_COUNT": 0,
+  "TRACE_BEHAVIORAL_EXACT": 0.8919,
+  "n_TRACE_BEHAVIORAL_EXACT": 37,
+  "TRACE_STRUCTURAL_EXACT": 0.8649,
+  "n_TRACE_STRUCTURAL_EXACT": 37,
+  "DEMONSTRATION_COMPLETENESS_EXACT": 1.0,
+  "n_DEMONSTRATION_COMPLETENESS_EXACT": 37,
+  "GROUNDING_BEHAVIORAL_EXACT": 0.7353,
+  "n_GROUNDING_BEHAVIORAL_EXACT": 34,
+  "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 0.9524,
+  "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 21,
+  "RELATION_BINDING_EXACT": 0.931,
+  "n_RELATION_BINDING_EXACT": 29,
+  "STATUS_SCOPE_EXACT": 1.0,
+  "n_STATUS_SCOPE_EXACT": 29,
+  "TEACHER_UNREQUESTED_CONSTRAINT_RATE": 0.0,
+  "n_TEACHER_UNREQUESTED_CONSTRAINT_RATE": 26,
+  "COUNTERFACTUAL_EXACT": 1.0,
+  "n_COUNTERFACTUAL_EXACT": 198,
+  "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 69,
+  "RESTART_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_RESTART_EXACT_GIVEN_ACQUISITION": 69,
+  "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 69,
+  "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 46,
+  "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 0.0,
+  "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 46,
+  "DISTILLED_SKILL_EXACT": 0.0,
+  "n_DISTILLED_SKILL_EXACT": 32,
+  "HOSTED_CALLS_POST_HANDOFF": 0,
+  "n_HOSTED_CALLS_POST_HANDOFF": 30,
+  "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+  "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+  "HOSTED_TEARDOWN_VERIFIED": 1.0,
+  "n_HOSTED_TEARDOWN_VERIFIED": 30,
+  "WRONG_BEHAVIORAL_ACTION_EXECUTED": 4,
+  "n_WRONG_BEHAVIORAL_ACTION_EXECUTED": 4,
+  "WRONG_STRUCTURAL_ACTION_EXECUTED": 5,
+  "n_WRONG_STRUCTURAL_ACTION_EXECUTED": 5,
+  "SLOT_RECOVERY_FAIL": 5,
+  "n_SLOT_RECOVERY_FAIL": 5,
+  "SLOT_RECOVERY_SUCCESS": 0.5333,
+  "n_SLOT_RECOVERY_SUCCESS": 15,
+  "RESCUE_SUCCESS": 0.5385,
+  "n_RESCUE_SUCCESS": 13,
+  "SAVED_SKILL_CALL_EXACT": 0.0,
+  "n_SAVED_SKILL_CALL_EXACT": 2,
+  "SAVED_SKILL_CALL_RETRIEVAL_EXACT": 0.0,
+  "n_SAVED_SKILL_CALL_RETRIEVAL_EXACT": 2,
+  "SAVED_SKILL_CALL_ARGUMENT_EXACT": 0.0,
+  "n_SAVED_SKILL_CALL_ARGUMENT_EXACT": 2,
+  "INCOMPLETE_DEMO_BLOCKED": 1,
+  "n_INCOMPLETE_DEMO_BLOCKED": 1,
+  "DEMONSTRATION_INCOMPLETE": 1,
+  "n_DEMONSTRATION_INCOMPLETE": 1,
+  "MISSING_SLOT_DETECTED": 1,
+  "n_MISSING_SLOT_DETECTED": 1,
+  "REFERENCE_CLARIFICATION_REQUIRED": 4,
+  "n_REFERENCE_CLARIFICATION_REQUIRED": 4,
+  "REFERENCE_CLARIFICATION_EXACT": 1.0,
+  "n_REFERENCE_CLARIFICATION_EXACT": 4,
+  "INJECTED_STEP_RESTORED": 0.0,
+  "n_INJECTED_STEP_RESTORED": 2,
+  "EVIDENCE_NONVACUITY_DETECTED": 0.0,
+  "n_EVIDENCE_NONVACUITY_DETECTED": 1,
+  "LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "n_LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 3,
+  "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 3,
+  "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+  "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+  "VACUOUS_CANDIDATE_ACTIVATED": 0,
+  "n_VACUOUS_CANDIDATE_ACTIVATED": 1,
+  "VACUITY_PROBE_TRIGGERED": 0.0,
+  "n_VACUITY_PROBE_TRIGGERED": 1,
+  "MISSING_EXAMPLE_DETECTED": 1.0,
+  "n_MISSING_EXAMPLE_DETECTED": 2,
+  "UNREQUESTED_RETURN_BLOCKED": 0,
+  "VACUOUS_VERIFICATION_ATTEMPT": 0,
+  "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+  "MISSED_CLARIFY_COUNT": 0,
+  "PENDING_CLARIFICATION_AT_COMMIT": 0,
+  "PREMATURE_TERMINATION_DETECTED": 0,
+  "VERIFY_FALSE_ACCEPT": 0,
+  "AMBIGUOUS_REFERENCE_EXECUTED": 0,
+  "DYNAMIC_REIMPLEMENTATION_WHEN_CALL_AVAILABLE": 0,
+  "INCOMPLETE_DEMO_COMMITTED": 0,
+  "UNREQUESTED_RETURN_EXECUTED": 0,
+  "FALSE_CLARIFY_COUNT": 0,
+  "hosted_accounting": {
+   "teacher_calls": 104,
+   "teacher_cached": 65,
+   "teacher_input_tokens": 141202,
+   "teacher_output_tokens": 111715,
+   "teacher_truncations": 12
+  },
+  "earliest_cause": {
+   "GR_RELATION": 2,
+   "PROVIDER": 3,
+   "GR_SEQUENCE": 2,
+   "GT_RECOVERY_FAIL": 1,
+   "GT_UNREQUESTED_CONSTRAINT": 1
+  },
+  "teacher_grounder_attribution": {
+   "TEACHER_CORRECT_GROUNDER_CORRECT": 25,
+   "TEACHER_CORRECT_GROUNDER_WRONG": 4,
+   "TEACHER_WRONG_GROUNDER_REPAIRED": 3
+  },
+  "per_target": {
+   "dev-001-S1|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-002-S2|retarget_last_email": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-003-S3|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-004-S4|close_open_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-005-S5|close_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-006-S6|count_open_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-007-S7|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": false,
+    "earliest_cause": "GR_RELATION",
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-008-S8|email_topic_report": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|count_calls_with": {
+    "status": "PROVIDER_FAILURE",
+    "learned_exact": false,
+    "earliest_cause": "PROVIDER",
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "HOSTED_TRUNCATION x2 (finish_reason=length)"
+   },
+   "dev-009-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": false,
+    "earliest_cause": "GR_SEQUENCE",
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|count_calls_with": {
+    "status": "PROVIDER_FAILURE",
+    "learned_exact": false,
+    "earliest_cause": "PROVIDER",
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "ABORTED",
+      "end": "ABORTED:EPISODE_END",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "HOSTED_TRUNCATION x2 (finish_reason=length)"
+   },
+   "dev-010-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": false,
+    "earliest_cause": "GR_SEQUENCE",
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|count_calls_with": {
+    "status": "PROVIDER_FAILURE",
+    "learned_exact": false,
+    "earliest_cause": "PROVIDER",
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "ABORTED",
+      "end": "ABORTED:EPISODE_END",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "HOSTED_TRUNCATION x2 (finish_reason=length)"
+   },
+   "dev-012-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-012-S10|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-013-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_MISSING_SLOT",
+     "MISSING_SLOT_DETECTED",
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:MISSING_SLOT",
+      "committed": false,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-014-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL",
+     "INJECTED_STEP_RESTATED",
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-015-S12|move_visit_and_parent": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_RESTARTED_BY_TEACHER",
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "ABORTED",
+      "end": "ABORTED:RESTARTED_BY_TEACHER",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-016-S12|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-017-S13|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-018-S14L|count_open_calls_with": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "GR_RELATION",
+    "classes": [
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "CONSTANT_SWAP",
+      "vacuous": true,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     }
+    ],
+    "fail": "demonstration budget exhausted (last: EVIDENCE_CONFLICT)"
+   },
+   "dev-019-S14L|count_open_calls_with": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "GT_RECOVERY_FAIL",
+    "classes": [
+     "DEMO_ABORTED_NO_STEPS",
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W2_STATUS_FLIPPED",
+      "faithful": false,
+      "injection": "DROPPED_FILTER",
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "ABORTED",
+      "end": "ABORTED:NO_STEPS",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": false,
+      "differs_on": "NO_REFERENCE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "demonstration budget exhausted"
+   },
+   "dev-020-S14D|close_calls_with": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "GT_UNREQUESTED_CONSTRAINT",
+    "classes": [
+     "DEMO_ABORTED_NO_STEPS",
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "INVALID_VALUE",
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "ABORTED",
+      "end": "ABORTED:NO_STEPS",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": false,
+      "differs_on": "NO_REFERENCE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "demonstration budget exhausted"
+   },
+   "dev-021-S14D|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-022-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL",
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-023-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-024-S16|count_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-025-S16|emails_about": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-026-S17|all_requests_by": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-027-S17|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-028-S18|count_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "RELATION_SWAP",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-029-S19|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-030-S19|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   }
+  }
+ },
+ "D": {
+  "TEACHER_EPISODE_SUCCESS": 0.8857,
+  "n_TEACHER_EPISODE_SUCCESS": 35,
+  "VERIFIER_CRASH": 0,
+  "n_VERIFIER_CRASH": 35,
+  "TEACHER_LESSON_BEHAVIORAL_EXACT": 0.9412,
+  "n_TEACHER_LESSON_BEHAVIORAL_EXACT": 34,
+  "TEACHER_LESSON_JUDGE_PARSE_FAIL": 0.0,
+  "n_TEACHER_LESSON_JUDGE_PARSE_FAIL": 34,
+  "FIRST_PASS_TEACHER_LESSON_EXACT": 0.9655,
+  "n_FIRST_PASS_TEACHER_LESSON_EXACT": 29,
+  "TEACHER_SKILL_CONFUSION_COUNT": 0,
+  "n_TEACHER_SKILL_CONFUSION_COUNT": 0,
+  "TRACE_BEHAVIORAL_EXACT": 1.0,
+  "n_TRACE_BEHAVIORAL_EXACT": 38,
+  "TRACE_STRUCTURAL_EXACT": 0.9737,
+  "n_TRACE_STRUCTURAL_EXACT": 38,
+  "DEMONSTRATION_COMPLETENESS_EXACT": 1.0,
+  "n_DEMONSTRATION_COMPLETENESS_EXACT": 38,
+  "GROUNDING_BEHAVIORAL_EXACT": 0.9688,
+  "n_GROUNDING_BEHAVIORAL_EXACT": 32,
+  "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 1.0,
+  "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 24,
+  "RELATION_BINDING_EXACT": 1.0,
+  "n_RELATION_BINDING_EXACT": 31,
+  "STATUS_SCOPE_EXACT": 1.0,
+  "n_STATUS_SCOPE_EXACT": 31,
+  "TEACHER_UNREQUESTED_CONSTRAINT_RATE": 0.0,
+  "n_TEACHER_UNREQUESTED_CONSTRAINT_RATE": 26,
+  "COUNTERFACTUAL_EXACT": 1.0,
+  "n_COUNTERFACTUAL_EXACT": 198,
+  "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 72,
+  "RESTART_EXACT_GIVEN_ACQUISITION": 0.0,
+  "n_RESTART_EXACT_GIVEN_ACQUISITION": 72,
+  "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 72,
+  "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 0.0,
+  "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 48,
+  "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 0.0,
+  "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 48,
+  "DISTILLED_SKILL_EXACT": 0.0,
+  "n_DISTILLED_SKILL_EXACT": 31,
+  "HOSTED_CALLS_POST_HANDOFF": 0,
+  "n_HOSTED_CALLS_POST_HANDOFF": 29,
+  "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+  "n_NETWORK_ATTEMPTS_POST_HANDOFF": 29,
+  "HOSTED_TEARDOWN_VERIFIED": 1.0,
+  "n_HOSTED_TEARDOWN_VERIFIED": 29,
+  "SLOT_RECOVERY_SUCCESS": 0.8,
+  "n_SLOT_RECOVERY_SUCCESS": 10,
+  "RESCUE_SUCCESS": 0.7,
+  "n_RESCUE_SUCCESS": 10,
+  "PARENT_WHEN_RECOVERY_EXACT": 1.0,
+  "n_PARENT_WHEN_RECOVERY_EXACT": 5,
+  "SAVED_SKILL_CALL_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_EXACT": 2,
+  "SAVED_SKILL_CALL_RETRIEVAL_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_RETRIEVAL_EXACT": 2,
+  "SAVED_SKILL_CALL_ARGUMENT_EXACT": 1.0,
+  "n_SAVED_SKILL_CALL_ARGUMENT_EXACT": 2,
+  "SLOT_RECOVERY_FAIL": 2,
+  "n_SLOT_RECOVERY_FAIL": 2,
+  "UNREQUESTED_RETURN_BLOCKED": 5,
+  "n_UNREQUESTED_RETURN_BLOCKED": 5,
+  "REFERENCE_CLARIFICATION_REQUIRED": 4,
+  "n_REFERENCE_CLARIFICATION_REQUIRED": 4,
+  "REFERENCE_CLARIFICATION_EXACT": 1.0,
+  "n_REFERENCE_CLARIFICATION_EXACT": 4,
+  "INJECTED_STEP_RESTORED": 1.0,
+  "n_INJECTED_STEP_RESTORED": 2,
+  "WRONG_STRUCTURAL_ACTION_EXECUTED": 1,
+  "n_WRONG_STRUCTURAL_ACTION_EXECUTED": 1,
+  "EVIDENCE_NONVACUITY_DETECTED": 0.5,
+  "n_EVIDENCE_NONVACUITY_DETECTED": 2,
+  "LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "n_LEGAL_BAD_SANDBOX_EXECUTED": 3,
+  "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 3,
+  "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+  "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 3,
+  "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+  "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+  "VACUOUS_CANDIDATE_ACTIVATED": 0,
+  "n_VACUOUS_CANDIDATE_ACTIVATED": 2,
+  "VACUOUS_VERIFICATION_ATTEMPT": 1,
+  "n_VACUOUS_VERIFICATION_ATTEMPT": 1,
+  "VACUITY_PROBE_TRIGGERED": 1.0,
+  "n_VACUITY_PROBE_TRIGGERED": 1,
+  "MISSING_EXAMPLE_DETECTED": 1.0,
+  "n_MISSING_EXAMPLE_DETECTED": 2,
+  "DEMONSTRATION_INCOMPLETE": 0,
+  "WRONG_BEHAVIORAL_ACTION_EXECUTED": 0,
+  "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+  "MISSED_CLARIFY_COUNT": 0,
+  "INCOMPLETE_DEMO_BLOCKED": 0,
+  "PENDING_CLARIFICATION_AT_COMMIT": 0,
+  "PREMATURE_TERMINATION_DETECTED": 0,
+  "VERIFY_FALSE_ACCEPT": 0,
+  "AMBIGUOUS_REFERENCE_EXECUTED": 0,
+  "DYNAMIC_REIMPLEMENTATION_WHEN_CALL_AVAILABLE": 0,
+  "INCOMPLETE_DEMO_COMMITTED": 0,
+  "UNREQUESTED_RETURN_EXECUTED": 0,
+  "FALSE_CLARIFY_COUNT": 0,
+  "MISSING_SLOT_DETECTED": 0,
+  "hosted_accounting": {
+   "teacher_calls": 86,
+   "teacher_cached": 11,
+   "teacher_input_tokens": 114539,
+   "teacher_output_tokens": 74626,
+   "teacher_truncations": 2,
+   "grounder_calls": 159,
+   "grounder_cached": 48,
+   "grounder_input_tokens": 714462,
+   "grounder_output_tokens": 11594,
+   "grounder_truncations": 0
+  },
+  "earliest_cause": {
+   "PD_PROGRAM": 1,
+   "GT_WRONG_STEP": 1,
+   "EV_CONFLICT": 1,
+   "GT_RECOVERY_FAIL": 2
+  },
+  "teacher_grounder_attribution": {
+   "TEACHER_CORRECT_GROUNDER_CORRECT": 31,
+   "TEACHER_WRONG_GROUNDER_REPAIRED": 1
+  },
+  "per_target": {
+   "dev-001-S1|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-002-S2|retarget_last_email": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-003-S3|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-004-S4|close_open_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-005-S5|close_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-006-S6|count_open_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-007-S7|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-008-S8|email_topic_report": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-009-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-010-S9|count_calls_for_time_person": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-011-S10|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-012-S10|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-012-S10|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-013-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "INJECTED_STEP_RESTATED",
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-014-S11|call_people_at": {
+    "status": "ACTIVE",
+    "learned_exact": false,
+    "earliest_cause": "PD_PROGRAM",
+    "classes": [
+     "INJECTED_STEP_RESTATED",
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "VAGUE_STEP",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-015-S12|move_visit_and_parent": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "GT_WRONG_STEP",
+    "classes": [
+     "DEMO_ABORTED_SLOT_RECOVERY_FAIL",
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "ABORTED",
+      "end": "ABORTED:SLOT_RECOVERY_FAIL",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "budget: teacher turns per target"
+   },
+   "dev-016-S12|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "SECOND_DEMO_REQUESTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-017-S13|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-018-S14L|count_open_calls_with": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "EV_CONFLICT",
+    "classes": [
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "CONSTANT_SWAP",
+      "vacuous": true,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "REQUIRE_SECOND_DEMONSTRATION"
+     }
+    ],
+    "fail": "demonstration budget exhausted (last: REQUIRE_SECOND_DEMONSTRATION)"
+   },
+   "dev-019-S14L|count_open_calls_with": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "GT_RECOVERY_FAIL",
+    "classes": [
+     "DEMO_ABORTED_NO_STEPS",
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W2_STATUS_FLIPPED",
+      "faithful": false,
+      "injection": "DROPPED_FILTER",
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "ABORTED",
+      "end": "ABORTED:NO_STEPS",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": false,
+      "differs_on": "NO_REFERENCE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "demonstration budget exhausted"
+   },
+   "dev-021-S14D|count_calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "UNSUPPORTED_PRIMITIVE",
+      "vacuous": false,
+      "learn": "VERIFIED"
+     }
+    ],
+    "fail": null
+   },
+   "dev-022-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-023-S15|close_oldest_open_request": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "REFERENCE_CLARIFICATION_REQUIRED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-024-S16|count_emails_to": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-025-S16|emails_about": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-026-S17|all_requests_by": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-027-S17|calls_with": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-028-S18|count_emails_to": {
+    "status": "TEACHER_EPISODE_FAIL",
+    "learned_exact": false,
+    "earliest_cause": "GT_RECOVERY_FAIL",
+    "classes": [
+     "DEMO_ABORTED_NO_STEPS",
+     "EVIDENCE_CONFLICT_DETECTED",
+     "INCONSISTENCY_DETECTED",
+     "SECOND_DEMO_REQUESTED",
+     "VACUITY_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "REQUIRE_SECOND_DEMONSTRATION",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": false,
+      "differs_on": "W0_FIXTURE",
+      "faithful": false,
+      "injection": "RELATION_SWAP",
+      "vacuous": true,
+      "learn": null
+     },
+     {
+      "demo": 1,
+      "state": "COMMITTED",
+      "end": "OK",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": "EVIDENCE_CONFLICT"
+     },
+     {
+      "demo": 2,
+      "state": "ABORTED",
+      "end": "ABORTED:NO_STEPS",
+      "committed": false,
+      "complete": false,
+      "behavioral_exact": false,
+      "differs_on": "NO_REFERENCE",
+      "faithful": true,
+      "injection": null,
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": "demonstration budget exhausted"
+   },
+   "dev-029-S19|count_requests_by_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   },
+   "dev-030-S19|person_on_call_at": {
+    "status": "ACTIVE",
+    "learned_exact": true,
+    "earliest_cause": null,
+    "classes": [
+     "MISSING_EXAMPLE_DETECTED"
+    ],
+    "demos": [
+     {
+      "demo": 0,
+      "state": "COMMITTED",
+      "end": "VERIFIED",
+      "committed": true,
+      "complete": true,
+      "behavioral_exact": true,
+      "differs_on": null,
+      "faithful": false,
+      "injection": "MISSING_EXAMPLE",
+      "vacuous": false,
+      "learn": null
+     }
+    ],
+    "fail": null
+   }
+  }
+ }
+}

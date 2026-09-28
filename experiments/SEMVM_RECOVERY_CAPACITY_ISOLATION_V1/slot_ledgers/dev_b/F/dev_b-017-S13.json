@@ -1,0 +1,180 @@
+[
+ {
+  "target": "close_calls_with",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the calls with person Kevin.",
+      "text": "Find the calls with person Kevin.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Kevin"
+          }
+         ]
+        ],
+        "status": null
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot5",
+      "source": "EVALUATOR_INJECTION",
+      "status": "UNSUPPORTED",
+      "original_text": "Also send the result to Kevin by Slack.",
+      "text": "Also send the result to Kevin by Slack.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": false,
+      "lesson_index": null,
+      "family": "demo1-slot5",
+      "displaced": false,
+      "history": [
+       {
+        "status": "UNSUPPORTED",
+        "clarify_kind": null,
+        "reason": "grounder: No VM action for sending results via Slack."
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Mark each of them closed.",
+      "text": "Mark each of them closed.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FOR",
+        "as": "e0",
+        "list": {
+         "var": "r1"
+        },
+        "body": [
+         {
+          "op": "SET_STATUS",
+          "obj": {
+           "var": "e0"
+          },
+          "value": {
+           "const": "CLOSED"
+          }
+         }
+        ]
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Count them.",
+      "text": "Count them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "COUNT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot4",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the count.",
+      "text": "Return the count.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 3,
+      "family": "demo1-slot4",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

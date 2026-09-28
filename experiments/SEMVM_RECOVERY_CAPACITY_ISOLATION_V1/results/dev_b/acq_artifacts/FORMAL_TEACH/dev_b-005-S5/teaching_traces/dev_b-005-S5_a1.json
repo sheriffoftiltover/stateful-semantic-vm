@@ -1,0 +1,63 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Trent"
+ },
+ "interaction_id": "dev_b-005-S5:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-005-S5/learn/snapshots/dev_b-005-S5_a1_start.sqlite",
+ "start_snapshot_sha256": "7a79503768ccab788c6d1c2f0a85afb71d59acd6a3ce792d8814e6dfca63b5cd",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Trent"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "2c56d0bd541eedb152522b01ca493eb8a8e9bece1209bf2cd1db4ca0296b1c4a",
+ "nl_mode": "GOLD_TRACE"
+}

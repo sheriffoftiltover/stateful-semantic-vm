@@ -1,0 +1,524 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641635,
+  "utterance_id": "dev-021-S8:0",
+  "INPUT": "request delta , by Uma re beta ; so then , visit beta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "VISIT"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Uma"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Uma",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "VISIT",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Uma"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0d6b7af3f73c68d5b28131c2c1491d39d00a4f53c868a5c035a5cd8186d1823f",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Uma"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "+rel",
+    "visit:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "e6cb49c77e72bade9d2136968dcf8b0cfef2cda1124ca862a53bdfdefc70a223",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641635,
+  "utterance_id": "dev-021-S8:1",
+  "INPUT": "visit theta ; so and then later again , by Uma per theta : request delta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "e6cb49c77e72bade9d2136968dcf8b0cfef2cda1124ca862a53bdfdefc70a223",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "VISIT"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Uma"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Uma",
+    "EXISTING",
+    "person:000001"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "VISIT",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "6aa20bb0107c80d3ad990b9ab8d77f1a65f966b44247bd1ad5066bc3cf622b04",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "visit:000002",
+    "VISIT"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "TODO",
+    "visit:000002"
+   ],
+   [
+    "+rel",
+    "visit:000002",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "23e05e5fbc2d6a0555c981748b940d1fc5e8d7052ccd8fa12e3bee653bfa64c6",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ],
+    [
+     "visit:000002",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "visit:000002"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "visit:000002",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641635,
+  "utterance_id": "dev-021-S8:2",
+  "INPUT": "QUERY WHO OF VISIT",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "23e05e5fbc2d6a0555c981748b940d1fc5e8d7052ccd8fa12e3bee653bfa64c6",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "VISIT",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "292a24a65ba383314de2f15ab9e5c6d6c88f3f867d5d0f064cee822413485cbe",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "23e05e5fbc2d6a0555c981748b940d1fc5e8d7052ccd8fa12e3bee653bfa64c6",
+  "RESPONSE": "Uma",
+  "RETURN_RENDERED": [
+   "Uma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ],
+    [
+     "visit:000002",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "visit:000002"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "visit:000002",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2641635,
+  "utterance_id": "dev-021-S8:3",
+  "INPUT": "QUERY WHO OF VISIT",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "23e05e5fbc2d6a0555c981748b940d1fc5e8d7052ccd8fa12e3bee653bfa64c6",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "VISIT",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "292a24a65ba383314de2f15ab9e5c6d6c88f3f867d5d0f064cee822413485cbe",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "23e05e5fbc2d6a0555c981748b940d1fc5e8d7052ccd8fa12e3bee653bfa64c6",
+  "RESPONSE": "Uma",
+  "RETURN_RENDERED": [
+   "Uma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ],
+    [
+     "visit:000002",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "visit:000002"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "visit:000002",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ }
+]

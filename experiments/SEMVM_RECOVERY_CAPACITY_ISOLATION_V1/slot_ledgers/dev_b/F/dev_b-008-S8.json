@@ -1,0 +1,140 @@
+[
+ {
+  "target": "email_topic_report",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the emails.",
+      "text": "Find the emails.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "EMAIL"
+        },
+        "where": [],
+        "status": null
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Group them by recipient.",
+      "text": "Group them by recipient.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "GROUP",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        },
+        "rel": "RECIPIENT"
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Report the topics in each group.",
+      "text": "Report the topics in each group.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "REPORT",
+        "bind": "r3",
+        "groups": {
+         "var": "r2"
+        },
+        "rel": "TOPIC"
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot4",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the report.",
+      "text": "Return the report.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r3"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 3,
+      "family": "demo1-slot4",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

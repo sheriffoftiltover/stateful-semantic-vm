@@ -1,0 +1,53 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Grandma",
+  "time": "11"
+ },
+ "interaction_id": "dev_a-029-S19:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-029-S19/learn/snapshots/dev_a-029-S19_a1_start.sqlite",
+ "start_snapshot_sha256": "a80d64e6fdf49d142cbf698a73bc86495f18bd7303ba6c547054c7e8f8dda2c6",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Grandma"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "11"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "fbddb1ed6bb11debae05927143129070ed967f84d8211315e4702aaeaa36246c",
+ "nl_mode": "GOLD_TRACE"
+}

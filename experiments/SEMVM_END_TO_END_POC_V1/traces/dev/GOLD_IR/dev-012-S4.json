@@ -1,0 +1,526 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641389,
+  "utterance_id": "dev-012-S4:0",
+  "INPUT": "request beta : at 7 per gamma ; so then again soon , message gamma ; by Nina re beta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Nina"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "7"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e1",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Nina",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "7",
+    "time:07:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Nina"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:07:00",
+    "TIME",
+    "07:00",
+    "7"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "43e54932967a607dd685282dd0b1a3c8c3da8d52d9994efabd01cd4abec22c78",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Nina"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641389,
+  "utterance_id": "dev-012-S4:1",
+  "INPUT": "QUERY WHEN OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f2d2b4f8c9d2917499cb9a4ca9ddc2bc0b05629142b0a1dfa8ddd84993d8a082",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:07:00"
+  ],
+  "STATE_AFTER": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "RESPONSE": "7",
+  "RETURN_RENDERED": [
+   "7"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641389,
+  "utterance_id": "dev-012-S4:2",
+  "INPUT": "QUERY WHEN OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "32db73cd9f8ea039b52262b94825684de94b0a5a3720f4192f1257adcaad0f3b",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2641389,
+  "utterance_id": "dev-012-S4:3",
+  "INPUT": "QUERY WHO OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "e1e2867f7873f8802f292bd4e1a6e5f8be92e4908f2d93d4d9b75459641d6e80",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "RESPONSE": "Nina",
+  "RETURN_RENDERED": [
+   "Nina"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2641389,
+  "utterance_id": "dev-012-S4:4",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "522b182831ace2fdc4aa9a2ca58d239934bf8d0bb5f1263f2b5d96e5ca491387",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHEN",
+     "time:07:00"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ }
+]

@@ -1,0 +1,217 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Grandma"
+ },
+ "interaction_id": "dev-001-S1:calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/TEACHER/dev-001-S1/learn/snapshots/dev-001-S1_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "98f064a66886713e4a456f922f0bed670e56e71332a78eeda693e92ea28b23ad",
+ "utterances": [
+  {
+   "utterance": "Find the calls with Grandma.",
+   "uid": "dev-001-S1:calls_with:d0:l0",
+   "instruction": "Find the calls with Grandma.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the calls with Grandma.",
+    "values": {
+     "PERSON": [
+      "Grandma"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Grandma\"}}\n\n",
+      "score": -1.058
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"RECIPIENT\": \"Grandma\"}}\n\n",
+      "score": -3.484
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -7.08
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -7.621
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -10.433
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Grandma\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Grandma"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Grandma\"}]]}]",
+      "score": -1.058,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Grandma\"}]]}]",
+      "score": -3.484,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -6.621,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -10.433,
+      "n": 1
+     }
+    ],
+    "margin": 2.426,
+    "reference_notes": [],
+    "seconds": 5.47,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Grandma"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "04f819d19a415e42e29b510e0fff5b8db2f1bde57432f73371590d28cd8aaddf",
+   "state_after": "04f819d19a415e42e29b510e0fff5b8db2f1bde57432f73371590d28cd8aaddf",
+   "seconds": 5.676
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev-001-S1:calls_with:d0:l1",
+   "instruction": "Return them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.003
+     },
+     {
+      "text": "r2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\n\n",
+      "score": -9.109
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.003,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 3.55,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "04f819d19a415e42e29b510e0fff5b8db2f1bde57432f73371590d28cd8aaddf",
+   "state_after": "04f819d19a415e42e29b510e0fff5b8db2f1bde57432f73371590d28cd8aaddf",
+   "seconds": 3.642
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Grandma"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "c175f2f075abaaf986a99601c264794dcafe9f1cccd44a25629f359555267b2c",
+ "nl_mode": "NL_TEACH"
+}

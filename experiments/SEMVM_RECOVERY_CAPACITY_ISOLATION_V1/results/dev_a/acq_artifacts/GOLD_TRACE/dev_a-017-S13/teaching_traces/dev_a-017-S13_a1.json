@@ -1,0 +1,197 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Quinn"
+ },
+ "interaction_id": "dev_a-017-S13:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/GOLD_TRACE/dev_a-017-S13/learn/snapshots/dev_a-017-S13_a1_start.sqlite",
+ "start_snapshot_sha256": "615335848a01c932c187d832d287af36166b612f6338ea7f38c11cd3f4cc7b20",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-017-S13:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Quinn"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "348c4b2de59415a0b60494bc35d2a5600c3f590bc18b791b3a8d14c8d2e19efa",
+   "state_after": "348c4b2de59415a0b60494bc35d2a5600c3f590bc18b791b3a8d14c8d2e19efa",
+   "seconds": 0.152
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-017-S13:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000004",
+     "OPEN",
+     "CLOSED"
+    ],
+    [
+     "status",
+     "call:000007",
+     "CLOSED",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "348c4b2de59415a0b60494bc35d2a5600c3f590bc18b791b3a8d14c8d2e19efa",
+   "state_after": "a94a8e7f4216737072e6a31dbf5a5c9b9d810bc91c06c09f39061be515c56b8f",
+   "seconds": 0.366
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-017-S13:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "a94a8e7f4216737072e6a31dbf5a5c9b9d810bc91c06c09f39061be515c56b8f",
+   "state_after": "a94a8e7f4216737072e6a31dbf5a5c9b9d810bc91c06c09f39061be515c56b8f",
+   "seconds": 0.152
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-017-S13:a5",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "a94a8e7f4216737072e6a31dbf5a5c9b9d810bc91c06c09f39061be515c56b8f",
+   "state_after": "a94a8e7f4216737072e6a31dbf5a5c9b9d810bc91c06c09f39061be515c56b8f",
+   "seconds": 0.163
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Quinn"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "82f4ec361aff7cfe0bc975acb1914a725ce320442f0278cd1e7b25c600714b9d",
+ "nl_mode": "GOLD_TRACE"
+}

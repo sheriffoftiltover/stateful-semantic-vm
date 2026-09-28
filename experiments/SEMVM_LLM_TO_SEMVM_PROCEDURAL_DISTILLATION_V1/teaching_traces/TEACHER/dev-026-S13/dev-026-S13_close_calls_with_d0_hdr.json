@@ -1,0 +1,510 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Nina"
+ },
+ "interaction_id": "dev-026-S13:close_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/TEACHER/dev-026-S13/learn/snapshots/dev-026-S13_close_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "13972920b6e11172b8e7df6ad2f80111a38998115efccd2bef9c03e9a77995ee",
+ "utterances": [
+  {
+   "utterance": "Find the calls with Nina.",
+   "uid": "dev-026-S13:close_calls_with:d0:l0",
+   "instruction": "Find the calls with Nina.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the calls with Nina.",
+    "values": {
+     "PERSON": [
+      "Nina"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Nina\"}}\n\n",
+      "score": -1.145
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"RECIPIENT\": \"Nina\"}}\n\n",
+      "score": -6.754
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -7.292
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -7.6
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -10.862
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Nina\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Nina"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Nina\"}]]}]",
+      "score": -1.145,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -6.741,
+      "n": 2
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Nina\"}]]}]",
+      "score": -6.754,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -10.862,
+      "n": 1
+     }
+    ],
+    "margin": 5.596,
+    "reference_notes": [],
+    "seconds": 5.75,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Nina"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "fba3956db5619e875c1d5840e957b12697cf35fd2b0f64bb8526dcaadf6722af",
+   "state_after": "fba3956db5619e875c1d5840e957b12697cf35fd2b0f64bb8526dcaadf6722af",
+   "seconds": 5.86
+  },
+  {
+   "utterance": "Also send the result to Kevin by Slack.",
+   "uid": "dev-026-S13:close_calls_with:d0:l1",
+   "instruction": "Also send the result to Kevin by Slack.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Also send the result to Kevin by Slack.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.877
+     },
+     {
+      "text": "{\"op\": \"UPDATE\", \"each\": \"r1\", \"rel\": \"WHO\", \"value\": \"Kevin\"}\n\n",
+      "score": -2.347
+     },
+     {
+      "text": "{\"op\": \"UPDATE\", \"each\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Kevin\"}\n\n",
+      "score": -2.371
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -0.877,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"UPDATE\", \"rel\": \"WHO\", \"value\": {\"const\": \"Kevin\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -2.347,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"UPDATE\", \"rel\": \"RECIPIENT\", \"value\": {\"const\": \"Kevin\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -2.371,
+      "n": 1
+     }
+    ],
+    "margin": 1.47,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 3.05,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 3.045
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev-026-S13:close_calls_with:d0:l2",
+   "instruction": "Count them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -0.297
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -3.402
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -0.297,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -3.402,
+      "n": 1
+     }
+    ],
+    "margin": 3.105,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "seconds": 1.94,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "fba3956db5619e875c1d5840e957b12697cf35fd2b0f64bb8526dcaadf6722af",
+   "state_after": "fba3956db5619e875c1d5840e957b12697cf35fd2b0f64bb8526dcaadf6722af",
+   "seconds": 2.017
+  },
+  {
+   "utterance": "Mark each of them closed.",
+   "uid": "dev-026-S13:close_calls_with:d0:l3",
+   "instruction": "Mark each of them closed.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Mark each of them closed.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+      "score": -0.227
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -7.469
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -7.718
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -7.734
+     }
+    ],
+    "raw_text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"SET_STATUS\", \"value\": {\"const\": \"CLOSED\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -0.227,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -6.893,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -7.734,
+      "n": 1
+     }
+    ],
+    "margin": 6.665,
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "seconds": 2.49,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000004",
+     "OPEN",
+     "CLOSED"
+    ],
+    [
+     "status",
+     "call:000007",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "fba3956db5619e875c1d5840e957b12697cf35fd2b0f64bb8526dcaadf6722af",
+   "state_after": "6c824d8c7c1b86b06c4e6fb526d8b3eea18fae2963faaac969d5563448d7df58",
+   "seconds": 2.641
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev-026-S13:close_calls_with:d0:l4",
+   "instruction": "Return the count.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.137
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.069
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -8.0
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.002,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -8.0,
+      "n": 1
+     }
+    ],
+    "margin": 7.998,
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "seconds": 1.26,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "6c824d8c7c1b86b06c4e6fb526d8b3eea18fae2963faaac969d5563448d7df58",
+   "state_after": "6c824d8c7c1b86b06c4e6fb526d8b3eea18fae2963faaac969d5563448d7df58",
+   "seconds": 1.337
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Nina"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "f22d6b14e852c7e596b2241506fbfc1875404543f98741674bb5fe5de08cd85e",
+ "nl_mode": "NL_TEACH"
+}

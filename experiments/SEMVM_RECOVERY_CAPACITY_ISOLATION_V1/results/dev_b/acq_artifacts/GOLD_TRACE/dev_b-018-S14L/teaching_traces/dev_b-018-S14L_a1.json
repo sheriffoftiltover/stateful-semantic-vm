@@ -1,0 +1,163 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Carol"
+ },
+ "interaction_id": "dev_b-018-S14L:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-018-S14L/learn/snapshots/dev_b-018-S14L_a1_start.sqlite",
+ "start_snapshot_sha256": "158b11915c33f80f7aefcd411d39023fc3b6774228a3651654b3321982287339",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-018-S14L:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Carol"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d38a5c01f92c67760d953587b11080c347ceabcdb2faa420a9b05f6da9700988",
+   "state_after": "d38a5c01f92c67760d953587b11080c347ceabcdb2faa420a9b05f6da9700988",
+   "seconds": 0.128
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-018-S14L:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "email:000007",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "d38a5c01f92c67760d953587b11080c347ceabcdb2faa420a9b05f6da9700988",
+   "state_after": "a03aa5cdce915b589126850abc98664e253c97bd644dfb3272ccd0b6629e3eb9",
+   "seconds": 0.248
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-018-S14L:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "a03aa5cdce915b589126850abc98664e253c97bd644dfb3272ccd0b6629e3eb9",
+   "state_after": "a03aa5cdce915b589126850abc98664e253c97bd644dfb3272ccd0b6629e3eb9",
+   "seconds": 0.201
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Carol"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "8f90ff378dc96bc2933be9db54f99ab2914e0f75fbc62cf8d2668807f3638e8a",
+ "nl_mode": "GOLD_TRACE"
+}

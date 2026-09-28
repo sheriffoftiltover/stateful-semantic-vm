@@ -1,0 +1,129 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":teach",
+ "declared": {
+  "person": "Grandma"
+ },
+ "interaction_id": "dev_b-002-S2:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-002-S2/learn/snapshots/dev_b-002-S2_a1_start.sqlite",
+ "start_snapshot_sha256": "0de2c3f2ca7059985fd70c0456041fa711ce6102b98e74a4b36b228810105da8",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-002-S2:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "state_after": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "seconds": 0.184
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-002-S2:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Grandma"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "state_after": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "seconds": 0.304
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-002-S2:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "state_after": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "seconds": 0.114
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Grandma"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "e24e5f7a1a501d041d2db5e9fdf5da091bd5dbe325ee88c7f46986a8360c1055",
+ "nl_mode": "GOLD_TRACE"
+}

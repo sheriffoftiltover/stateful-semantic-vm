@@ -1,0 +1,336 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Peggy"
+ },
+ "interaction_id": "dev-023-T10:26",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-023-T10/learn/snapshots/dev-023-T10_26_start.sqlite",
+ "start_snapshot_sha256": "3906b90747c3ed227547afcd0e3b777bad4b1c824fc09435a807056729b9e706",
+ "utterances": [
+  {
+   "utterance": "Count the calls with Peggy.",
+   "uid": "dev-023-T10:27",
+   "instruction": "Count the calls with Peggy.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Count the calls with Peggy.",
+    "values": {
+     "PERSON": [
+      "Peggy"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 13,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Peggy\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -1.333
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Peggy\"}}\n\n",
+      "score": -1.864
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Peggy\"}}\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -2.594
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Peggy\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHEN\"}\n\n",
+      "score": -3.613
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Peggy\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHERE\"}\n\n",
+      "score": -3.721
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Peggy\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Peggy"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "GROUP",
+      "of": "r1",
+      "by": "WHO",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Peggy\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+      "score": -1.333,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Peggy\"}]]}]",
+      "score": -1.864,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Peggy\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -2.594,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Peggy\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHEN\"}]",
+      "score": -3.613,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -3.714,
+      "n": 3
+     }
+    ],
+    "margin": 0.53,
+    "reference_notes": [
+     "GROUP.of=r1 licensed by R0"
+    ],
+    "seconds": 7.17,
+    "runner_up": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Peggy\"}]]}]",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 7.175
+  },
+  {
+   "utterance": "I mean: find the calls with Peggy and count how many there are.",
+   "uid": "dev-023-T10:27#rescue",
+   "instruction": "find the calls with Peggy and count how many there are.",
+   "correction": false,
+   "grounding": {
+    "instruction": "find the calls with Peggy and count how many there are.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Find the calls with Peggy.",
+        "Count how many there are."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Find the calls with Peggy.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Count how many there are.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 26,
+    "seconds": 20.53,
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Peggy"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Peggy\"}}\n\nr2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Peggy"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "margin": 3.104,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Peggy"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "56191101d3a5e80cb5a107e94b93fb214fff48292bcb517f0b85bcc8ef8a2464",
+   "state_after": "56191101d3a5e80cb5a107e94b93fb214fff48292bcb517f0b85bcc8ef8a2464",
+   "seconds": 20.606
+  },
+  {
+   "utterance": "Give me the number back.",
+   "uid": "dev-023-T10:28",
+   "instruction": "Give me the number back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give me the number back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.089
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.504
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -7.875
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.003,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -7.875,
+      "n": 1
+     }
+    ],
+    "margin": 7.872,
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "seconds": 2.39,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "56191101d3a5e80cb5a107e94b93fb214fff48292bcb517f0b85bcc8ef8a2464",
+   "state_after": "56191101d3a5e80cb5a107e94b93fb214fff48292bcb517f0b85bcc8ef8a2464",
+   "seconds": 2.475
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Peggy"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "d78460e0be1b7b5f52f6fe2efb8621a7f9aa109916ba633ffe3fce6c2020c98f",
+ "nl_mode": "NL_TEACH"
+}

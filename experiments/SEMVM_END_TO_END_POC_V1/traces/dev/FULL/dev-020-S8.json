@@ -1,0 +1,662 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642446,
+  "utterance_id": "dev-020-S8:0",
+  "INPUT": "message alpha , after that and then , by Frank re alpha request zeta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_i3",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       12
+      ],
+      [
+       "MESSAGE",
+       null,
+       0
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Frank",
+       9
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      0
+     ],
+     [
+      "PERSON",
+      "Frank",
+      9
+     ],
+     [
+      "REQUEST",
+      null,
+      12
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     12
+    ]
+   },
+   "log_mass": 723.077880859375,
+   "margin": 6.6962890625,
+   "n_outputs": 38,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Frank"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Frank",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Frank"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f792453b8f4717d5794a532a039fa2a581a0707995140d39bedc53caadd09271",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Frank"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "c41c8dc1c1e3c162bad02162b28099e4269253c3d409424b966be3978cf60750",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Frank"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642446,
+  "utterance_id": "dev-020-S8:1",
+  "INPUT": "message delta ; and then , by Frank re delta , request epsilon",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "c41c8dc1c1e3c162bad02162b28099e4269253c3d409424b966be3978cf60750",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "between_i2",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       11
+      ],
+      [
+       "MESSAGE",
+       null,
+       0
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Frank",
+       7
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      0
+     ],
+     [
+      "PERSON",
+      "Frank",
+      7
+     ],
+     [
+      "REQUEST",
+      null,
+      11
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     11
+    ]
+   },
+   "log_mass": 904.9872436523438,
+   "margin": 12.74005126953125,
+   "n_outputs": 38,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Frank"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Frank",
+    "EXISTING",
+    "person:000001"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0b1f6f592ae99421e884611310ff1f6b5096cb0c439bacdb451f68256cde0d1c",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000002",
+    "MESSAGE"
+   ],
+   [
+    "+rel",
+    "request:000002",
+    "TODO",
+    "message:000002"
+   ],
+   [
+    "+rel",
+    "message:000002",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "459c5c9ee632cee8d4765c7aaa35ee447b55e82182b41bfb8f276b13959e543c",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Frank"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642446,
+  "utterance_id": "dev-020-S8:2",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "459c5c9ee632cee8d4765c7aaa35ee447b55e82182b41bfb8f276b13959e543c",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "459c5c9ee632cee8d4765c7aaa35ee447b55e82182b41bfb8f276b13959e543c",
+  "RESPONSE": "Frank",
+  "RETURN_RENDERED": [
+   "Frank"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Frank"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642446,
+  "utterance_id": "dev-020-S8:3",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "459c5c9ee632cee8d4765c7aaa35ee447b55e82182b41bfb8f276b13959e543c",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "459c5c9ee632cee8d4765c7aaa35ee447b55e82182b41bfb8f276b13959e543c",
+  "RESPONSE": "Frank",
+  "RETURN_RENDERED": [
+   "Frank"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "message:000002",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ],
+    [
+     "request:000002",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "message:000002",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000002",
+     "TODO",
+     "message:000002"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Frank"
+    ]
+   ]
+  }
+ }
+]

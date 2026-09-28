@@ -1,0 +1,204 @@
+{
+ "name": "count_calls_for_time_person",
+ "mode": ":teach",
+ "declared": {
+  "time": "midnight"
+ },
+ "interaction_id": "dev-018-S9:count_calls_for_time_person:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/TEACHER/dev-018-S9/learn/snapshots/dev-018-S9_count_calls_for_time_person_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "d5c0b2939d8b633b97178557b11a849ece4a7866e064f2e94d7dc25868189566",
+ "utterances": [
+  {
+   "utterance": "Use person_on_call_at for midnight.",
+   "uid": "dev-018-S9:count_calls_for_time_person:d0:l0",
+   "instruction": "Use person_on_call_at for midnight.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Use person_on_call_at for midnight.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "midnight"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"midnight\"}}\n\n",
+      "score": -0.198
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -9.532
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -9.743
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"midnight\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "CALL",
+      "procedure": "person_on_call_at",
+      "args": {
+       "time": "midnight"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"args\": {\"time\": {\"const\": \"midnight\"}}, \"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\"}]",
+      "score": -0.198,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -9.532,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -9.743,
+      "n": 1
+     }
+    ],
+    "margin": 9.334,
+    "reference_notes": [],
+    "seconds": 1.01,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r1",
+     "procedure": "person_on_call_at",
+     "args": {
+      "time": {
+       "const": "midnight"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "state_after": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "seconds": 1.085
+  },
+  {
+   "utterance": "Use count_calls_with for it.",
+   "uid": "dev-018-S9:count_calls_for_time_person:d0:l1",
+   "instruction": "Use count_calls_with for it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Use count_calls_with for it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.033
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -4.012
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -4.264
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.033,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -4.012,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -4.264,
+      "n": 1
+     }
+    ],
+    "margin": 3.979,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 0.81,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "state_after": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "seconds": 0.883
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "CALL",
+   "bind": "r1",
+   "procedure": "person_on_call_at",
+   "args": {
+    "time": {
+     "const": "midnight"
+    }
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "5b25d99bb633d88e80fff0ff6c0c1d680c129311f09f027bb137d9d731c6480a",
+ "nl_mode": "NL_TEACH"
+}

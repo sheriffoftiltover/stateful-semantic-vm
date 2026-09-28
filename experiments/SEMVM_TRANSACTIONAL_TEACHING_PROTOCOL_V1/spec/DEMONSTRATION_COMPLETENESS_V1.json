@@ -1,0 +1,28 @@
+{
+ "version": "DEMONSTRATION_COMPLETENESS_V1",
+ "controller_check (teacher/transactional.py completeness)": [
+  "EXAMPLE binding exists when the signature is non-empty",
+  "every required slot family RESOLVED or CANCELLED",
+  "every displaced slot restored (a RESOLVED replacement)",
+  "no PENDING / CLARIFYING slot",
+  "no pending student clarification",
+  "RETURN executed",
+  "trace non-empty"
+ ],
+ "other_guards": [
+  "RETURN_OBLIGATION: RETURN only when frontend.return_licensed(line) (frozen output cues + back/output/provide/tell|give|send|hand me)",
+  "PREMATURE_TERMINAL_ACTION: RETURN blocked while later required slots are unresolved",
+  "UNNAMED_CALL: CALL only to ACTIVE procedures the line names",
+  "never execute past a RETURN (abort)"
+ ],
+ "metrics": [
+  "DEMONSTRATION_COMPLETENESS_EXACT",
+  "INCOMPLETE_DEMO_BLOCKED",
+  "INCOMPLETE_DEMO_COMMITTED",
+  "MISSING_SLOT_DETECTED",
+  "PENDING_CLARIFICATION_AT_COMMIT",
+  "MISSING_EXAMPLE_DETECTED",
+  "PREMATURE_TERMINATION_DETECTED"
+ ],
+ "evaluator_check (ttp_evaluate.py, independent of the controller verdict)": "a COMMITTED demonstration is complete iff every required slot family has an OK line record (or an explicit teacher CANCEL_SLOT) and the demonstration returned; a wrong grounding inside a resolved slot is scored as WRONG_BEHAVIORAL_ACTION_EXECUTED, not as incompleteness"
+}

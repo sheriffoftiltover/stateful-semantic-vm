@@ -1,0 +1,45 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Yves"
+ },
+ "interaction_id": "dev_a-010-S9:a9",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-010-S9/learn/snapshots/dev_a-010-S9_a9_start.sqlite",
+ "start_snapshot_sha256": "f5cc6fd9ea2e7887858621910f83be20eaf2e5da2913614c9116db63570a457f",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Yves"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "b45e05e091de97474f7e4d863f1bac12dda2f0c6e4a6927d45dffdd82e8301d0",
+ "nl_mode": "GOLD_TRACE"
+}

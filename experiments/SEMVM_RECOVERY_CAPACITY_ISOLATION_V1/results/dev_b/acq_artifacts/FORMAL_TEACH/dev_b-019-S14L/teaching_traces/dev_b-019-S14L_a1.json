@@ -1,0 +1,47 @@
+{
+ "name": "count_open_calls_with",
+ "mode": ":example",
+ "declared": {
+  "person": "Laura"
+ },
+ "interaction_id": "dev_b-019-S14L:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-019-S14L/learn/snapshots/dev_b-019-S14L_a1_start.sqlite",
+ "start_snapshot_sha256": "5e2df8dd31fa962608e1b281dd3b15158e6660c7ab6927a8697e07b6f2708419",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Laura"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "0e5e04bec7b0307ff8b2956275efe23aca22b00665a9d95ea07f1f422212b606",
+ "nl_mode": "GOLD_TRACE"
+}

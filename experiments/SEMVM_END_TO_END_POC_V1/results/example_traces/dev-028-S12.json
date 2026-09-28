@@ -1,0 +1,436 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642639,
+  "utterance_id": "dev-028-S12:0",
+  "INPUT": "email eta ; later and so then again , while in Delhi per epsilon , remind epsilon",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "between_i4",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       15
+      ],
+      [
+       "EMAIL",
+       null,
+       0
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "REMINDER",
+       null,
+       15
+      ],
+      [
+       "PLACE",
+       "Delhi",
+       11
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      0
+     ],
+     [
+      "PLACE",
+      "Delhi",
+      11
+     ],
+     [
+      "REMINDER",
+      null,
+      15
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     15
+    ]
+   },
+   "log_mass": 1022.1721801757812,
+   "margin": 27.25421142578125,
+   "n_outputs": 20,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Delhi"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Delhi",
+    "place:delhi"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:delhi",
+    "PLACE",
+    "delhi",
+    "Delhi"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:delhi"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "ad87a1342b9c21746169b2f750cc17ad6747feafe6945b3c42602a5299890eb1",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:delhi"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "d8d19f67273c68e4c4876ceb6c3a5585670a9b897b0e88c6cab49ce445dee3ce",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642654,
+  "utterance_id": "dev-028-S12:2",
+  "INPUT": "QUERY WHERE OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "d8d19f67273c68e4c4876ceb6c3a5585670a9b897b0e88c6cab49ce445dee3ce",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "40e832621788cd729b6176ddca66b48316a19ef3723dc98892e714355af5b5fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:delhi"
+  ],
+  "STATE_AFTER": "d8d19f67273c68e4c4876ceb6c3a5585670a9b897b0e88c6cab49ce445dee3ce",
+  "RESPONSE": "Delhi",
+  "RETURN_RENDERED": [
+   "Delhi"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642654,
+  "utterance_id": "dev-028-S12:3",
+  "INPUT": "UPDATE LAST_REMINDER WHERE=Dublin",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "d8d19f67273c68e4c4876ceb6c3a5585670a9b897b0e88c6cab49ce445dee3ce",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_REMINDER",
+   "set": [
+    [
+     "WHERE",
+     "Dublin"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "reminder:000001",
+    "WHERE",
+    "place:delhi"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:dublin",
+    "PLACE",
+    "dublin",
+    "Dublin"
+   ],
+   [
+    "ASSERT",
+    "reminder:000001",
+    "WHERE",
+    "place:dublin"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "580b1a6087598169c0d9decbbbeb9926093ab4103bac6d3855f13d7d54555180",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "reminder:000001",
+    "WHERE",
+    "place:delhi"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:dublin"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "0431bdbce6e689b344bb360ed04c868db757276fc8629bf9120b0310566350ce",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2642665,
+  "utterance_id": "dev-028-S12:5",
+  "INPUT": "QUERY WHERE OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "0431bdbce6e689b344bb360ed04c868db757276fc8629bf9120b0310566350ce",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "40e832621788cd729b6176ddca66b48316a19ef3723dc98892e714355af5b5fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:dublin"
+  ],
+  "STATE_AFTER": "0431bdbce6e689b344bb360ed04c868db757276fc8629bf9120b0310566350ce",
+  "RESPONSE": "Dublin",
+  "RETURN_RENDERED": [
+   "Dublin"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

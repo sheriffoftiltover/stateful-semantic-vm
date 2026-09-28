@@ -1,0 +1,20 @@
+{
+ "version": "RECOVERY_METRICS_V1",
+ "recovery_event": "one per required slot FAMILY that ever had a non-OK grounding (or a displaced/obscured slot); begins at the first non-OK status (WAITING_FOR_CLARIFICATION / REPHRASE / SCHEMA repair / REFERENCE resolution), ends when the family RESOLVES or the demonstration aborts",
+ "recovery_attempt": "one teacher recovery exchange (RESTATE_SLOT / RESTATE_OBSCURED / CLARIFY_REFERENCE question for the family) or one hosted-grounder structured retry within the event",
+ "metrics": [
+  "RECOVERY_EVENT_SUCCESS = resolved events / events",
+  "RECOVERY_EVENT_COUNT",
+  "RECOVERY_ATTEMPTS_PER_EVENT mean / median / max / distribution",
+  "RECOVERY_TARGET_SUCCESS = learned exactly among targets with >= 1 event",
+  "TARGETS_ENTERING_RECOVERY / TARGETS_FAILED_AFTER_RECOVERY / TARGETS_FAILED_WITHOUT_RECOVERY",
+  "INITIAL_SLOT_GROUNDING_BEHAVIORAL_EXACT: original lesson slots of faithful non-injected demonstrations: first grounding OK and the demonstration's executed program behaviourally exact (committed) or a behavioural reference prefix (not returned)",
+  "RECOVERY_SLOT_GROUNDING_BEHAVIORAL_EXACT: recovery replacement slots, RESOLVED and the same program condition",
+  "GROUNDING_BEHAVIORAL_EXACT (gate) = the parent TTP demonstration-level definition, unchanged",
+  "COMMITTED_TRACE_BEHAVIORAL_EXACT = parent TRACE_BEHAVIORAL_EXACT (committed only)",
+  "TEACHER_INITIAL_LESSON_BEHAVIORAL_EXACT (F, D: judge on initial lesson lines)",
+  "TEACHER_RECOVERY_RESPONSE_EXACT (E, D): a hosted recovery response is EXACT iff it is well-formed (STEP / CANCEL_SLOT / REFERENT line), its slot family resolved and the demonstration committed behaviourally exact; FORMAT_ERROR iff not well-formed; else SEMANTIC_ERROR",
+  "PROVIDER_TRUNCATION by role (initial_teacher / recovery_teacher / grounder / judge)"
+ ],
+ "pooling": "weighted counts across DEV-A + DEV-B; min successes = ceil(threshold x denominator); per-replicate floor .80 on each primary metric"
+}

@@ -1,0 +1,265 @@
+{
+ "scenario_id": "locked_test-011-S7",
+ "suite": "locked_test",
+ "category": "S7",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request eta about lease per eta , and after that then , call epsilon and by Xena per epsilon",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Xena"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "lease"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "CALL",
+    "mods": [
+     [
+      "TOPIC",
+      "lease",
+      "outer"
+     ],
+     [
+      "WHO",
+      "Xena",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o3",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_REQUEST TOPIC=contract"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF REQUEST"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF LAST_REQUEST"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "TOPIC",
+      "topic:lease"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Xena"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "TOPIC",
+      "topic:contract"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Xena"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "contract"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "TOPIC",
+      "topic:contract"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Xena"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "contract"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "TOPIC",
+      "topic:contract"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Xena"
+     ]
+    ]
+   }
+  }
+ ]
+}

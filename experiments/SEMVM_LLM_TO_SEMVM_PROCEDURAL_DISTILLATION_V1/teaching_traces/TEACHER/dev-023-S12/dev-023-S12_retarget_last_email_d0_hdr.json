@@ -1,0 +1,298 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev-023-S12:retarget_last_email:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/TEACHER/dev-023-S12/learn/snapshots/dev-023-S12_retarget_last_email_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "a7d0d1d666c727fb4bf9767d93805c3cfd5a22fad096a3fbd51d620f44d92813",
+ "utterances": [
+  {
+   "utterance": "Take my latest email.",
+   "uid": "dev-023-S12:retarget_last_email:d0:l0",
+   "instruction": "Take my latest email.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Take my latest email.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -0.147
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+      "score": -5.854
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -10.606
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "EMAIL",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"EMAIL\"}}]",
+      "score": -0.147,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}]",
+      "score": -5.854,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -10.606,
+      "n": 1
+     }
+    ],
+    "margin": 5.707,
+    "reference_notes": [],
+    "seconds": 3.48,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "f87c658a40859bb8b30f69cc0720cd999b9814c5b3f8d773444a868d5bbcb38d",
+   "state_after": "f87c658a40859bb8b30f69cc0720cd999b9814c5b3f8d773444a868d5bbcb38d",
+   "seconds": 3.559
+  },
+  {
+   "utterance": "Change its recipient to Alice.",
+   "uid": "dev-023-S12:retarget_last_email:d0:l1",
+   "instruction": "Change its recipient to Alice.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Change its recipient to Alice.",
+    "values": {
+     "PERSON": [
+      "Alice"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Alice\"}\n\n",
+      "score": -0.029
+     },
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHO\", \"value\": \"Alice\"}\n\n",
+      "score": -5.119
+     },
+     {
+      "text": "r2 = {\"op\": \"GET\", \"of\": \"r1\", \"rel\": \"RECIPIENT\"}\n\n",
+      "score": -9.645
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -10.759
+     }
+    ],
+    "raw_text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Alice\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "RECIPIENT",
+      "value": "Alice"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"RECIPIENT\", \"value\": {\"const\": \"Alice\"}}]",
+      "score": -0.029,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"WHO\", \"value\": {\"const\": \"Alice\"}}]",
+      "score": -5.119,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -9.361,
+      "n": 2
+     }
+    ],
+    "margin": 5.09,
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "seconds": 4.11,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Alice"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000006",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000006",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "f87c658a40859bb8b30f69cc0720cd999b9814c5b3f8d773444a868d5bbcb38d",
+   "state_after": "f87c658a40859bb8b30f69cc0720cd999b9814c5b3f8d773444a868d5bbcb38d",
+   "seconds": 4.301
+  },
+  {
+   "utterance": "Return it.",
+   "uid": "dev-023-S12:retarget_last_email:d0:l2",
+   "instruction": "Return it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.017
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -5.178
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -6.427
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.017,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 3.19,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "f87c658a40859bb8b30f69cc0720cd999b9814c5b3f8d773444a868d5bbcb38d",
+   "state_after": "f87c658a40859bb8b30f69cc0720cd999b9814c5b3f8d773444a868d5bbcb38d",
+   "seconds": 3.302
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Alice"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "436a136eb80be784f186bcb3cb16e746b807d00b0921d5b37db2fcc4da4eafbf",
+ "nl_mode": "NL_TEACH"
+}

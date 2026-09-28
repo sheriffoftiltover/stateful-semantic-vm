@@ -1,0 +1,44 @@
+{
+ "version": "RECOVERY_CEILING_DIAGNOSTIC_V1",
+ "implementation": "rci_ceiling.py",
+ "targets": [
+  {
+   "scenario": "dev-009-S9",
+   "target": "count_calls_for_time_person",
+   "parent_failure": "provider truncation / composite"
+  },
+  {
+   "scenario": "dev-016-S12",
+   "target": "move_visit_and_parent",
+   "parent_failure": "false clarification / recovery budget"
+  },
+  {
+   "scenario": "dev-018-S14L",
+   "target": "count_open_calls_with",
+   "parent_failure": "evidence conflict / value-pool insufficiency"
+  },
+  {
+   "scenario": "dev-019-S14L",
+   "target": "count_open_calls_with",
+   "parent_failure": "evidence conflict / value-pool insufficiency"
+  },
+  {
+   "scenario": "dev-023-S15",
+   "target": "close_oldest_open_request",
+   "parent_failure": "teacher-turn budget exhaustion"
+  }
+ ],
+ "source": "parent TTP FINAL_DEV attempt-2 DEV2 scenario files (already exposed)",
+ "config": {
+  "arm": "D (hosted lesson, hosted recovery, hosted grounder)",
+  "teacher_max_tokens": 16384,
+  "max_teacher_turns_per_target": 20,
+  "max_clarification_exchanges_per_slot": 5,
+  "max_rephrase_exchanges_per_slot": 5,
+  "max_demonstrations_per_target": 5,
+  "pool": ">= 4 per class"
+ },
+ "pool_augmentation": "extend the parent teacher pool with the scenario's own eval-pool values, eval-pool order, witnessed values first, until 4 per class",
+ "go_no_go": "0/5 recovered exactly -> STOP (RECOVERY_CAPABILITY_LIMIT); >= 1/5 -> Stage 1 may proceed",
+ "cost_bands": "descriptive only: <=4 / 5-10 / >10 teacher turns after recovery starts"
+}

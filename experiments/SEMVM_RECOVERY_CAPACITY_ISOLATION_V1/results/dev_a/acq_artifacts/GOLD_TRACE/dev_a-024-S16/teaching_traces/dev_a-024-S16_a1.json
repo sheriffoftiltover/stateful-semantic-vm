@@ -1,0 +1,130 @@
+{
+ "name": "count_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Sam"
+ },
+ "interaction_id": "dev_a-024-S16:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/GOLD_TRACE/dev_a-024-S16/learn/snapshots/dev_a-024-S16_a1_start.sqlite",
+ "start_snapshot_sha256": "e79df3be552e8172e9858498825c1a5dcbddc4ca48d777b0bb19b15fcd018c06",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-024-S16:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Sam"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "3cbc499cb3cb869b9eb39d3c6f1486e15181cbdd53800853350ddf9e6a8e374c",
+   "state_after": "3cbc499cb3cb869b9eb39d3c6f1486e15181cbdd53800853350ddf9e6a8e374c",
+   "seconds": 0.124
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-024-S16:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3cbc499cb3cb869b9eb39d3c6f1486e15181cbdd53800853350ddf9e6a8e374c",
+   "state_after": "3cbc499cb3cb869b9eb39d3c6f1486e15181cbdd53800853350ddf9e6a8e374c",
+   "seconds": 0.163
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-024-S16:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3cbc499cb3cb869b9eb39d3c6f1486e15181cbdd53800853350ddf9e6a8e374c",
+   "state_after": "3cbc499cb3cb869b9eb39d3c6f1486e15181cbdd53800853350ddf9e6a8e374c",
+   "seconds": 0.135
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Sam"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "0e51f115b6801e98d0add7e1c4d273269a3216b75ed57cdeb351f3f3330a01ab",
+ "nl_mode": "GOLD_TRACE"
+}

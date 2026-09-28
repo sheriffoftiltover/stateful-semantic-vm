@@ -1,0 +1,17 @@
+{
+ "scenario": {
+  "scenario_id": "str",
+  "suite": "dev|locked_test",
+  "stratum": "S1..S15",
+  "style": "A..E",
+  "fixture": "[ASSERT gold_ir | STEP setup]",
+  "teacher_pool": "{people,times,places} demonstration values",
+  "eval_pool": "post-handoff values (disjoint)",
+  "curriculum": "[{name, family, sig{param:TYPE}, goal, gold (evaluator only), demo_values, protocol{hint,two_demo}, injection}]",
+  "gold_acq_turns / formal_acq_turns": "control acquisition turn lists + expected",
+  "scripted": "{name: {demos[{example, lines, rephrase}], answer}}",
+  "post_turns": "[RESTART(handoff) | REQUEST | RUN | :save-last-as | :accept | RESTART]",
+  "post_expected": "oracle expectations"
+ },
+ "generator": "scenarios/pdx_generate.py"
+}

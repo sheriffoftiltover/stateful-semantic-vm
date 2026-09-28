@@ -1,0 +1,98 @@
+{
+ "name": "emails_about",
+ "mode": ":teach",
+ "declared": {
+  "topic": "lease"
+ },
+ "interaction_id": "locked_test-018-S16:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-018-S16/learn/snapshots/locked_test-018-S16_a1_start.sqlite",
+ "start_snapshot_sha256": "9f99f59215bcc67288900c2de348da3ea40b9ee1bc619528ee060151fbfb4b0b",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-018-S16:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "TOPIC",
+       {
+        "const": "lease"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "cea83f5434d09154afa361dea1de613d94532ea67edd6049675279577894b66b",
+   "state_after": "cea83f5434d09154afa361dea1de613d94532ea67edd6049675279577894b66b",
+   "seconds": 0.084
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-018-S16:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "cea83f5434d09154afa361dea1de613d94532ea67edd6049675279577894b66b",
+   "state_after": "cea83f5434d09154afa361dea1de613d94532ea67edd6049675279577894b66b",
+   "seconds": 0.075
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "TOPIC",
+     {
+      "const": "lease"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "00c0c79122c18e993651f42729ee952e826a41331040a8cd48d780f84ece8eeb",
+ "nl_mode": "GOLD_TRACE"
+}

@@ -1,0 +1,526 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641213,
+  "utterance_id": "dev-005-S2:0",
+  "INPUT": "remind beta ; while in Delhi per theta : next and then so ; email theta : to Kevin per theta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Kevin"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Delhi"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e1",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e1",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Kevin",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Delhi",
+    "place:delhi"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Kevin"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:delhi",
+    "PLACE",
+    "delhi",
+    "Delhi"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHERE",
+    "place:delhi"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "2b562b11f9537e9c56620ddd370c05de38e693abc454749fb2072d90fe4ab267",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Kevin"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "WHERE",
+    "place:delhi"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "email:000001",
+     "WHERE",
+     "place:delhi"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641213,
+  "utterance_id": "dev-005-S2:1",
+  "INPUT": "QUERY WHERE OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f99549db16bb27827bd1fbbef6a5d29fd71d09e84bf36170923849a84b5eb74d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:delhi"
+  ],
+  "STATE_AFTER": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "RESPONSE": "Delhi",
+  "RETURN_RENDERED": [
+   "Delhi"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "email:000001",
+     "WHERE",
+     "place:delhi"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641213,
+  "utterance_id": "dev-005-S2:2",
+  "INPUT": "QUERY WHERE OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "40e832621788cd729b6176ddca66b48316a19ef3723dc98892e714355af5b5fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "email:000001",
+     "WHERE",
+     "place:delhi"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2641213,
+  "utterance_id": "dev-005-S2:3",
+  "INPUT": "QUERY RECIPIENT OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9b6f7fc5af2a7207cd4841f841378a209776cbdeba3c6189d219d9a268abf477",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "RESPONSE": "Kevin",
+  "RETURN_RENDERED": [
+   "Kevin"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "email:000001",
+     "WHERE",
+     "place:delhi"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2641213,
+  "utterance_id": "dev-005-S2:4",
+  "INPUT": "QUERY RECIPIENT OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "190469b7899b0bc8b27e2eb09e18a2a11db41a4073067559af32a25c2a1c7812",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "a0e93f97d0c02634824fcfb4913737d40274b2e3da02eb9faea728817394042e",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "email:000001",
+     "WHERE",
+     "place:delhi"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ]
+   ]
+  }
+ }
+]

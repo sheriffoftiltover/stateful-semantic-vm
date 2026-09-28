@@ -1,0 +1,78 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "SEMVM canonical IR V1",
+ "type": "object",
+ "required": [
+  "objects",
+  "relations"
+ ],
+ "properties": {
+  "objects": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "local_id",
+     "type"
+    ],
+    "properties": {
+     "local_id": {
+      "type": "string",
+      "pattern": "^(e0|e1|v[0-9]+)$"
+     },
+     "type": {
+      "enum": [
+       "CALL",
+       "EMAIL",
+       "MESSAGE",
+       "NOTE",
+       "PERSON",
+       "PLACE",
+       "PLAN",
+       "REMINDER",
+       "REQUEST",
+       "TEXT_VALUE",
+       "TIME",
+       "TOPIC_VALUE",
+       "VISIT"
+      ]
+     },
+     "surface": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "relations": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "predicate",
+     "subject",
+     "object"
+    ],
+    "properties": {
+     "predicate": {
+      "enum": [
+       "RECIPIENT",
+       "TODO",
+       "TOPIC",
+       "WHEN",
+       "WHERE",
+       "WHO"
+      ]
+     },
+     "subject": {
+      "type": "string"
+     },
+     "object": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "x-canonical": "e0 = OUTER event, e1 = INNER event, v* = values sorted by (type, surface); objects sorted by local_id; relations by (predicate, subject, object)",
+ "x-validation": "ir/ir.py validate()"
+}

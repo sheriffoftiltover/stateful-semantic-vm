@@ -1,0 +1,350 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Mallory"
+ },
+ "interaction_id": "dev-028-S14L:close_open_emails_to:d2:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/SCRIPTED/dev-028-S14L/learn/snapshots/dev-028-S14L_close_open_emails_to_d2_hdr_start.sqlite",
+ "start_snapshot_sha256": "a7b4221125486f596f3b8e2c5556b3957640b461812a8d73609002e9df31b6d0",
+ "utterances": [
+  {
+   "utterance": "Get every open email going to Mallory.",
+   "uid": "dev-028-S14L:close_open_emails_to:d2:l0",
+   "instruction": "Get every open email going to Mallory.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get every open email going to Mallory.",
+    "values": {
+     "PERSON": [
+      "Mallory"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 9,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mallory\"}, \"status\": \"OPEN\"}\n\n",
+      "score": -0.999
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mallory\"}}\n\n",
+      "score": -2.83
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+      "score": -6.139
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -7.47
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -11.164
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Mallory\"}, \"status\": \"OPEN\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Mallory"
+      },
+      "status": "OPEN",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": {\"const\": \"OPEN\"}, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mallory\"}]]}]",
+      "score": -0.999,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Mallory\"}]]}]",
+      "score": -2.83,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -5.905,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -11.164,
+      "n": 1
+     }
+    ],
+    "margin": 1.832,
+    "reference_notes": [],
+    "seconds": 3.95,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Mallory"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "52c39c780c4fdfbb27520066a8e1b88e7a233d47f22341cc60f9ec1a3cf57039",
+   "state_after": "52c39c780c4fdfbb27520066a8e1b88e7a233d47f22341cc60f9ec1a3cf57039",
+   "seconds": 4.034
+  },
+  {
+   "utterance": "Mark every one of them as closed.",
+   "uid": "dev-028-S14L:close_open_emails_to:d2:l1",
+   "instruction": "Mark every one of them as closed.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Mark every one of them as closed.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+      "score": -0.038
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -8.546
+     },
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -12.656
+     }
+    ],
+    "raw_text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"SET_STATUS\", \"value\": {\"const\": \"CLOSED\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -0.038,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -8.546,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -12.656,
+      "n": 1
+     }
+    ],
+    "margin": 8.507,
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "seconds": 2.3,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "email:000001",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "52c39c780c4fdfbb27520066a8e1b88e7a233d47f22341cc60f9ec1a3cf57039",
+   "state_after": "6ff4bfb727047216ef68957aff29491bf46329fb82097a63fc3d5ae3b19f138b",
+   "seconds": 2.525
+  },
+  {
+   "utterance": "Give back those emails.",
+   "uid": "dev-028-S14L:close_open_emails_to:d2:l2",
+   "instruction": "Give back those emails.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give back those emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.004
+     },
+     {
+      "text": "r2 = {\"op\": \"SELECT\", \"of\": \"r1\", \"rel\": \"TOPIC\"}\n\n",
+      "score": -7.745
+     },
+     {
+      "text": "r2 = {\"op\": \"SELECT\", \"of\": \"r1\", \"rel\": \"WHERE\"}\n\n",
+      "score": -8.342
+     },
+     {
+      "text": "r2 = {\"op\": \"SELECT\", \"of\": \"r1\", \"rel\": \"WHO\"}\n\n",
+      "score": -8.571
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.004,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 3.27,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "6ff4bfb727047216ef68957aff29491bf46329fb82097a63fc3d5ae3b19f138b",
+   "state_after": "6ff4bfb727047216ef68957aff29491bf46329fb82097a63fc3d5ae3b19f138b",
+   "seconds": 3.517
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Mallory"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "524f6e143c6f90b9c203a558ab3469af3cbdb242cb378022886ec0493362850f",
+ "nl_mode": "NL_TEACH"
+}

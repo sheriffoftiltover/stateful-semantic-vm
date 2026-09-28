@@ -1,0 +1,17 @@
+{
+ "version": "TTP_GROUNDER_ENVELOPE_V1 (HTG envelope + structured legality feedback, one retry)",
+ "card_plus_fewshot_sha256": "6c11956f99d5df11007d1fb08147da60bafac9b7ece5b5e68d3676776c243b40",
+ "generation": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 4096,
+  "reasoning_effort": "low (HTG preflight selection, frozen; no new preflight: spec \u00a749 no setting change)",
+  "seed": 0
+ },
+ "retries": 1,
+ "changes_vs_HTG": [
+  "RETURN rule, CALL contract, checker-feedback rule in the card",
+  "structured legality feedback + one retry",
+  "UNREQUESTED_RETURN / UNNAMED_CALL checks (shared with the local grounder)"
+ ]
+}

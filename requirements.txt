@@ -1,0 +1,12 @@
+# Tier 1 (local tests, record replays, dump_case.py, show_scenario.py): Python 3.10, standard library only for the
+# procedure / teaching suites; the END_TO_END_POC binder test and binder inference also need torch + numpy.
+# Figures and tables (scripts/make_figures_tables.py): matplotlib.
+# The frozen 1.5B request interpreter (tier 2/3 reuse runs) needs transformers and the Qwen/Qwen2.5-Coder-1.5B weights.
+# Versions below are the ones the released runs used (see experiments/*/environment/ for full freezes).
+numpy==2.2.6
+scipy==1.15.3
+torch==2.5.1
+transformers==5.12.1
+matplotlib==3.10.9
+# Hosted teacher/grounder (tier 2 only): an OpenAI-compatible endpoint serving gpt-oss-120b; the runs used vLLM 0.11.0 on Modal.
+# modal

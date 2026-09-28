@@ -1,0 +1,185 @@
+{
+ "scenario_id": "dev-030-ROLLBACK",
+ "suite": "dev",
+ "category": "ROLLBACK",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "visit gamma ; so and then later again , by Trent re gamma : remind epsilon",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "VISIT"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Trent"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "VISIT",
+    "mods": [
+     [
+      "WHO",
+      "Trent",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "I",
+   "layout": [
+    "between_i3",
+    [
+     "M1"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_VISIT WHO=Peggy RECIPIENT=Peggy"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF VISIT"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "visit:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Trent"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "VM_EXEC_ERROR",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "visit:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Trent"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Trent"
+   ],
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ],
+     [
+      "visit:000001",
+      "VISIT"
+     ]
+    ],
+    "relations": [
+     [
+      "reminder:000001",
+      "TODO",
+      "visit:000001"
+     ],
+     [
+      "visit:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Trent"
+     ]
+    ]
+   }
+  }
+ ]
+}

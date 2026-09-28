@@ -1,0 +1,69 @@
+{
+ "experiment": "SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1",
+ "version": "V1.2 (final DEV iteration)",
+ "date": "2026-09-27",
+ "status": "DEV complete; gates FAIL; LOCKED not run",
+ "model": {
+  "id": "Qwen/Qwen2.5-Coder-1.5B (base)",
+  "files_sha256": {
+   "config.json": "984abd4b3f21edb957012c7dc4352c462b08e15ffe8384b6d55990885e9dcc9a",
+   "generation_config.json": "444ea57ebf361c659d1f5c23508319b691e181d122588ea3cdd5f68d3e618b1f",
+   "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "model.safetensors": "535485b26038ac24f4e8a86e1a73ed417d8992e3192f6305b7fcc4fb92efa210",
+   "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "tokenizer_config.json": "4a917e4772d9b246ef600e1c5d7d81e3a81ae9f3f2d10d78ccb02c86e5fb184a",
+   "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "weights_sha256_all_workers_identical": true,
+  "per_worker": {
+   "gpu0:8766": {
+    "param_hash_at_load": "27b9200dc9a042ca255ea19c81b32a1da641471a959857050ca1a37b9b1bd204",
+    "param_hash_end": "27b9200dc9a042ca255ea19c81b32a1da641471a959857050ca1a37b9b1bd204",
+    "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+    "frozen": true
+   },
+   "gpu0:8767": {
+    "param_hash_at_load": "27b9200dc9a042ca255ea19c81b32a1da641471a959857050ca1a37b9b1bd204",
+    "param_hash_end": "27b9200dc9a042ca255ea19c81b32a1da641471a959857050ca1a37b9b1bd204",
+    "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+    "frozen": true
+   }
+  },
+  "n_parameters": 1543714304,
+  "dtype": "float16",
+  "transformers": "5.12.1",
+  "torch": "2.5.1+cu121",
+  "optimizer": null
+ },
+ "generation": {
+  "decoding": "grammar-constrained beam search (option ranking)",
+  "beam": 3,
+  "margin_nats": 1.0,
+  "max_actions": 4,
+  "sampling": null
+ },
+ "prompt_prefix_sha256": "8a4dde7990fe8fd7ba9c8615c7e42774ffe357dc62217f87697cc0587e2d5d9e",
+ "fewshot_sha256": "7efc22fc8f2bc9edc7893f52d0527c869a028a55129c9ddaa8a2cc4ef7473441",
+ "files_sha256": {
+  "nlteach/frontend.py": "9fb3022269e7ac1fde27db9665f970ad3166a37c8028e263ab589d6883f31187",
+  "nlteach/nlsystem.py": "a3ad081d9a8c0346ead87de63af7a2c570152e873c78e2eb0a0f2f9604f8c028",
+  "nlteach/nllm.py": "cb8c61f75e0ce5838c44fc7f2d837dc72bc212d1cc6f9deca878ad4999bd5240",
+  "nlteach/nl_llm_service.py": "125e26fee02b3c7ec512d65bc99e5999d318b1bf3cd33345cba45a4f6eabaa6f",
+  "run_segment.py": "bfb13f7b38f1dbab81562aa660fd11c818c947c8de87de930565ba2f98889ff1",
+  "evaluate.py": "717f58ae18717360d954f99652c3838469ae19e4e945150f37f53c4a1939ea6f",
+  "direct_ast.py": "8712b0c84e46a4384225e68101771ddb3fcc3f906668c744922da955b9a642c4",
+  "spec/NL_TEACH_ACTION_SCHEMA.json": "84b24236fe19de3f67ac789ff02bf0085c8a5cdc87bda617a29e8443bce0dfeb",
+  "spec/NL_TEACH_LANGUAGE_V1.json": "dab8fffc49d8b0c94cb18c4e686a2ce53bf8ca20922460b391c1e69362e4e2e3",
+  "scenarios/nl_generate.py": "afcbca24ebe8186fdacaed9607f1b077ffa6acc68b5946c6ffa8a37e1b982ee7",
+  "scenarios/templates_dev.json": "f0fc25d3b841779beba575f47bbf0ce16614718822599ef24b24cfab8a35b185",
+  "scenarios/DEV_MANIFEST.json": "69c93fe1e6f0732eed7fa1426f14cc02441938e376985355a4c59ca912203842",
+  "scenarios/LOCKED_TEST_MANIFEST.json": "8b720dcd8fe4c184fef1579baf733b4b9caa40bf872c6d97c5f5fcbd65244189",
+  "tests/test_nl_teach.py": "786f088628b2e542d521fd720b21ba1dda87cb25ef9a9e64a3fac1d715328498"
+ },
+ "parent_frozen_components": "locks/PARENT_FROZEN_COMPONENTS.json (35 files, identical to parent)",
+ "amendments": [
+  "spec/..._AMENDMENT_001.md",
+  "spec/..._AMENDMENT_002_V1_1.md",
+  "spec/..._AMENDMENT_003_V1_2.md"
+ ]
+}

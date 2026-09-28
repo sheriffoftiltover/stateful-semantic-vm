@@ -1,0 +1,29 @@
+% Figure 4: research progression (each row: what was added, what was observed, what remained)
+\begin{tikzpicture}[font=\sffamily\scriptsize,
+  exp/.style={draw=semblue, fill=semblue!10, rounded corners=2pt, text width=27mm, minimum height=11mm, align=left, inner sep=2pt, font=\sffamily\scriptsize},
+  fin/.style={exp, fill=semblue!24, line width=0.9pt},
+  cell/.style={text width=44mm, align=left, execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}, inner sep=1pt, font=\sffamily\scriptsize},
+  hdr/.style={font=\sffamily\scriptsize\bfseries, text=inkmuted, anchor=west},
+  arr/.style={-{Stealth[length=1.6mm]}, line width=0.6pt, draw=semblue}]
+\node[hdr] at (-1.45,0.75) {experiment};
+\node[hdr] at (1.35,0.75) {added};
+\node[hdr] at (6.05,0.75) {observed (registered outcome)};
+\node[hdr] at (10.75,0.75) {remaining limitation $\rightarrow$ next question};
+\def\rowgap{1.42}
+\foreach \i/\n/\a/\o/\r [count=\k] in {
+  0/{\textbf{E2E}\\ end-to-end POC}/{frozen neural binder + SQLite world model + VM; controlled input language}/{RESULT A: LOCKED \eepLocked, DEV \eepDev; runtime exact given correct semantics}/{no procedures; English outside the envelope},
+  1/{\textbf{PDISC}\\ procedure discovery}/{procedure library, anti-unifier, evidence verifier; formal step-language teaching}/{RESULT A: LOCKED\_v2 \pdLocked; 0 false accepts; LLM-only discoveries \pdLlmOnly\ of \pdDiscoveries}/{teaching is formal, not natural language},
+  2/{\textbf{NL\_TEACH}\\ natural-language lessons}/{frozen 1.5B grounds each lesson line; deterministic plan compiler}/{RESULT B + safety stop: learned \nlLearned, wrong executed \nlWrongExec; trace-mediated \nlTrace\% vs direct \nlDirect\%}/{multi-clause grounding by the 1.5B model},
+  3/{\textbf{PDX}\\ hosted teacher}/{gpt-oss-120b teacher; verified teardown; post-handoff reuse}/{retention \pdxRetention\ given exact acquisition; teacher \pdxTeacherLearned\ vs scripted \pdxScriptedLearned; wrong \pdxWrong}/{teaching channel (lesson + grounding)},
+  4/{\textbf{HTG}\\ teacher $\times$ grounder}/{hosted 120B grounder; 2$\times$2 factorial; non-vacuity and conflict checks}/{RESULT G+E: D learned \htgDLearned, grounding \htgDGround, wrong \htgDWrong}/{consistent evidence need not be complete: clarification protocol},
+  5/{\textbf{TTP}\\ transactional teaching}/{slot ledger, commit/abort, structured referent choice, completeness before commit}/{RESULT D: D learned \ttpDLearned, wrong \ttpDWrong, completeness 1.0}/{recovery capacity: value pool, truncation, budgets},
+  6/{\textbf{RCI}\\ recovery capacity}/{value pool 2$\rightarrow$4; teacher max\_tokens 4096$\rightarrow$8192; two DEV draws}/{D pooled learned \rciDLearnedPooled; LOCKED \lockedLearned\ behaviorally, teardown proof failed (401)}/{library growth still needs a teacher}}{
+  \pgfmathsetmacro\y{-\i*\rowgap}
+  \ifnum\k=7 \node[fin, anchor=west] (e\k) at (-1.5,\y) {\n}; \else \node[exp, anchor=west] (e\k) at (-1.5,\y) {\n}; \fi
+  \node[cell, anchor=west] at (1.4,\y) {\a};
+  \node[cell, anchor=west] at (6.1,\y) {\o};
+  \node[cell, anchor=west, text=inkmuted] at (10.8,\y) {\r};
+  \begin{scope}[on background layer]\fill[black!3] (-1.6,\y-0.62) rectangle (15.4,\y+0.62);\end{scope}
+}
+\foreach \k [evaluate=\k as \kk using int(\k+1)] in {1,...,6} {\draw[arr] (e\k.south) -- (e\kk.north);}
+\end{tikzpicture}

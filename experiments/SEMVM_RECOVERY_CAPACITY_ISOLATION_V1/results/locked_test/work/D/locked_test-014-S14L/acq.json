@@ -1,0 +1,2082 @@
+{
+ "scenario_id": "locked_test-014-S14L",
+ "mode": "TEACHER",
+ "arm": "D",
+ "grounder": "HOSTED",
+ "recovery": "HOSTED",
+ "teacher_max_tokens": 8192,
+ "budget": {
+  "max_clarification_exchanges_per_slot": 2,
+  "max_rephrase_exchanges_per_slot": 2,
+  "max_demonstrations_per_target": 3,
+  "max_teacher_turns_per_target": 10,
+  "max_example_requests_per_demonstration": 2,
+  "max_teacher_turns_per_demonstration": 8,
+  "max_clarification_exchanges_per_instruction": 2
+ },
+ "student_hash_before": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "fixture": [
+  {
+   "status": "OK",
+   "STATE_hash": "8522810d47860f89c42a2f189a39f5e2984a5e4d978f423d2be5d907af4ea9b4"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1747fc4053e0d4e7637dc9706c095ff001e40304e5e42ee5365b627e2fdd2d30"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "aefc88b5c59e5cc927270dae93ec7d44d9de3ab79f0d3eb11dc5df47fb5f90ff"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "b6f7a4d3eda2e79fed2f07e8941fe32e266b74996f393c6dd637812c2fb0c14b"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3b90940abc8d68ca24bfbc6d6783517214744a2f7bc60d022a09ba377bb35f85"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "dc95db17fc87e2adc24b317f7ca61251587ce633b9244a29e80d8821173c7263"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "b01b48b4ce128ca4b4e0e59c8cf5ed49e06762cb85ca902507e0005a80194e4b"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "cc2445fe6d34143cf6fb89cefc758158a41496d56004a0de4927da50dbf4bad2"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "b57e259d81f212906f6abcc236fcf9d223fcd851380705dd03a7ef4279288bc3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "fe97eb0a324206d3ad58e8ccd83340262b45d80573010e1d7c91ac0bd3469cf1"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e4ef937f232663463f1e0741b6f413f51515c428bc1200af56ed3f1098718ba0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "f8b876a2648a1367818bbb0a05fa583a8d49faa1bd3ead7a97bfe0979babb763"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "5a8f5d31c27bad564723f05bfb3731c6dc8d101e5b0e9d024450fc60d7abf957"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "05191770d95907e872734cf4aef4960b0f939c45595967a75256539a08e6e8bd"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "fcc7c4e8d5421670ee99848523b0fc481006c43fc902928cdd8a3df810b758bf"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "4a64338cb04d2b413f63a1b1d61452cb3600f22f7a8776812c94676005eeb572"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d28db9dd58e98d4701df6cc128a2f99844f11b067f81abdf64dcb9cfe34c6375"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "50c8ea8f919e3c28b6266bbf61bff7b767a588459f4dcfc5b2bbe1bb9e9cc269"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "76f063048d7e9e991cbde04bf38cc1f8ab065ab00c45ff922fcb444ce66d9901"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0159ef03f434e3c7108941659cf409bd7e2335af7833c3c0fb18c68a42f51e4e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "cefc3f6383c7316a2f6135683e8a36b93e08cb482594b1ac6da518b58c9b5ed6"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "4b5c0194e3c97d05bf7243af000d71b5c854d6eb18e9be9b55289127d53b4c33"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "48c59c9ae430bbb956ffba0ccde7eafb88577cf64da733b8890cb9ece8f22b28"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "6e96ce4428572373ab9dea4f0edd5adddefe5fc54a754fb40f299a2cc184a097"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "21a7e19dfb4c7443465666a56733de9a85911b8d24332950592a769a1a2cfa6e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d46698e69e21abbc796903f369431f35abbf1a1efc6dec30a46dee53c7113fd3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "15c315b8c0d41afe9158d5eed57fd5e49ff21d7971e128de53dbf2c54520b730"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "f17b6ed431adaf17570b4baa1cca18e67be9c2bbe19e6a76c310c5f26a4e6bb9"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "ea5bedad29f6833ac6ff03443a2501e7e6ed5b7b9c10861ff852edd3f6d33352"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "7f41ca20fe68a1339a22686884078c6a9fdb8f23ded70cdd00138425de31ac52"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "db10e24da5d7fc3f5aabc3c0ff32abf8fce65d3f39e92266bcb62bb8d1a13b1b"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d058532e70d143b66fb5c6d331f26a3fe62707509756a7f96e290a7d5455112a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d058532e70d143b66fb5c6d331f26a3fe62707509756a7f96e290a7d5455112a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "bd41496d834518aa1898429a8a06d015090d38f9cac5b43f200c1f02d5c77859"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "bd41496d834518aa1898429a8a06d015090d38f9cac5b43f200c1f02d5c77859"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3374fd1347c058afccaa21f2c94fb6dd4e3e692748a8dafe032c6eb718b1922d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3374fd1347c058afccaa21f2c94fb6dd4e3e692748a8dafe032c6eb718b1922d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d7a6bdc84af03de559bf10099c635efda960d7e17e14c8d1c0892a6fc83312e9"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d7a6bdc84af03de559bf10099c635efda960d7e17e14c8d1c0892a6fc83312e9"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "7798b5735f9ae44171eb80f84c9dfb3a74ec23b9b5678c376a723a342a08739c"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "7798b5735f9ae44171eb80f84c9dfb3a74ec23b9b5678c376a723a342a08739c"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "99169ef92707ae94a48ac2f21bdab713c1641ef9b5c68c8b5364d5a54715ea47"
+  }
+ ],
+ "targets": [
+  {
+   "name": "close_open_emails_to",
+   "demos": [
+    {
+     "index": 0,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo1-slot1",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Find the open emails to Rita and mark each of them closed.",
+       "text": "Find the open emails to Rita and mark each of them closed.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         },
+         "where": [
+          [
+           "SELF",
+           "RECIPIENT",
+           {
+            "const": "Rita"
+           }
+          ]
+         ],
+         "status": {
+          "const": "OPEN"
+         }
+        },
+        {
+         "op": "FOR",
+         "as": "e0",
+         "list": {
+          "var": "r1"
+         },
+         "body": [
+          {
+           "op": "SET_STATUS",
+           "obj": {
+            "var": "e0"
+           },
+           "value": {
+            "const": "CLOSED"
+           }
+          }
+         ]
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return them.",
+       "text": "Return them.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo1-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Find the open emails to Rita and mark each of them closed.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         },
+         "where": [
+          [
+           "SELF",
+           "RECIPIENT",
+           {
+            "const": "Rita"
+           }
+          ]
+         ],
+         "status": {
+          "const": "OPEN"
+         }
+        },
+        {
+         "op": "FOR",
+         "as": "e0",
+         "list": {
+          "var": "r1"
+         },
+         "body": [
+          {
+           "op": "SET_STATUS",
+           "obj": {
+            "var": "e0"
+           },
+           "value": {
+            "const": "CLOSED"
+           }
+          }
+         ]
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": { \"RECIPIENT\": \"Rita\" },\n      \"status\": \"OPEN\"\n    },\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 2.472,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "4a0589a7d77801cd32cf389dfd5701aebec07ec1b44368694cf054ec4b1af0f6",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4456,
+       "grounder_output_tokens": 131,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND",
+         "type": "EMAIL",
+         "where": {
+          "RECIPIENT": "Rita"
+         },
+         "status": "OPEN"
+        },
+        {
+         "op": "SET_STATUS",
+         "each": "r1",
+         "value": "CLOSED"
+        }
+       ],
+       "slot_id": "demo1-slot1",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "4a0589a7d77801cd32cf389dfd5701aebec07ec1b44368694cf054ec4b1af0f6"
+        }
+       ]
+      },
+      {
+       "line": "Return them.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.176,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "27f187df094929dd7b4e9870615332469e5cc11b9bc3bee6ab5f77cbb95b9eb6",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4488,
+       "grounder_output_tokens": 39,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "27f187df094929dd7b4e9870615332469e5cc11b9bc3bee6ab5f77cbb95b9eb6"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "person": "Rita"
+     },
+     "lesson_lines": [
+      "Find the open emails to Rita and mark each of them closed.",
+      "Return them."
+     ],
+     "returned": true,
+     "end": "OK",
+     "end_detail": {},
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Find the open emails to Rita and mark each of them closed.",
+      "Return them."
+     ]
+    },
+    {
+     "index": 1,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo2-slot1",
+       "source": "EVALUATOR_INJECTION",
+       "status": "RESOLVED",
+       "original_text": "Find the open emails to Wendy and mark each of them closed.",
+       "text": "Find the closed emails to Wendy and mark each of them closed.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         },
+         "where": [
+          [
+           "SELF",
+           "RECIPIENT",
+           {
+            "const": "Wendy"
+           }
+          ]
+         ],
+         "status": {
+          "const": "CLOSED"
+         }
+        },
+        {
+         "op": "FOR",
+         "as": "e0",
+         "list": {
+          "var": "r1"
+         },
+         "body": [
+          {
+           "op": "SET_STATUS",
+           "obj": {
+            "var": "e0"
+           },
+           "value": {
+            "const": "CLOSED"
+           }
+          }
+         ]
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo2-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return them.",
+       "text": "Return them.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo2-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Find the closed emails to Wendy and mark each of them closed.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         },
+         "where": [
+          [
+           "SELF",
+           "RECIPIENT",
+           {
+            "const": "Wendy"
+           }
+          ]
+         ],
+         "status": {
+          "const": "CLOSED"
+         }
+        },
+        {
+         "op": "FOR",
+         "as": "e0",
+         "list": {
+          "var": "r1"
+         },
+         "body": [
+          {
+           "op": "SET_STATUS",
+           "obj": {
+            "var": "e0"
+           },
+           "value": {
+            "const": "CLOSED"
+           }
+          }
+         ]
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": {\n        \"RECIPIENT\": \"Wendy\"\n      },\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 2.047,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "c9aa79c74417d9b9dd5809d5126a90101474036130897a115e64aa637bf9903d",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4456,
+       "grounder_output_tokens": 153,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND",
+         "type": "EMAIL",
+         "where": {
+          "RECIPIENT": "Wendy"
+         },
+         "status": "CLOSED"
+        },
+        {
+         "op": "SET_STATUS",
+         "each": "r1",
+         "value": "CLOSED"
+        }
+       ],
+       "slot_id": "demo2-slot1",
+       "source": "EVALUATOR_INJECTION",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "c9aa79c74417d9b9dd5809d5126a90101474036130897a115e64aa637bf9903d"
+        }
+       ]
+      },
+      {
+       "line": "Return them.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.278,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "fa3d49659b568a7db1528859a39dc5a37af6c42523412dc7a7bad7addad9ac9b",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4489,
+       "grounder_output_tokens": 39,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo2-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "fa3d49659b568a7db1528859a39dc5a37af6c42523412dc7a7bad7addad9ac9b"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "person": "Wendy"
+     },
+     "lesson_lines": [
+      "Find the open emails to Wendy and mark each of them closed.",
+      "Return them."
+     ],
+     "returned": true,
+     "end": "OK",
+     "end_detail": {},
+     "learn": "EVIDENCE_CONFLICT",
+     "learn_detail": {
+      "examples_used": null,
+      "examples_discarded_inconsistent": null,
+      "insufficient": null,
+      "conflict": "no majority procedure among the demonstrations",
+      "response": "The 2 demonstrations of close_open_emails_to do not follow one common procedure; another demonstration is needed."
+     },
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Find the closed emails to Wendy and mark each of them closed.",
+      "Return them."
+     ]
+    },
+    {
+     "index": 2,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo3-slot1",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Find the open emails to Nina and mark each of them closed.",
+       "text": "Find the open emails to Nina and mark each of them closed.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         },
+         "where": [
+          [
+           "SELF",
+           "RECIPIENT",
+           {
+            "const": "Nina"
+           }
+          ]
+         ],
+         "status": {
+          "const": "OPEN"
+         }
+        },
+        {
+         "op": "FOR",
+         "as": "e0",
+         "list": {
+          "var": "r1"
+         },
+         "body": [
+          {
+           "op": "SET_STATUS",
+           "obj": {
+            "var": "e0"
+           },
+           "value": {
+            "const": "CLOSED"
+           }
+          }
+         ]
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo3-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return them.",
+       "text": "Return them.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo3-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Find the open emails to Nina and mark each of them closed.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         },
+         "where": [
+          [
+           "SELF",
+           "RECIPIENT",
+           {
+            "const": "Nina"
+           }
+          ]
+         ],
+         "status": {
+          "const": "OPEN"
+         }
+        },
+        {
+         "op": "FOR",
+         "as": "e0",
+         "list": {
+          "var": "r1"
+         },
+         "body": [
+          {
+           "op": "SET_STATUS",
+           "obj": {
+            "var": "e0"
+           },
+           "value": {
+            "const": "CLOSED"
+           }
+          }
+         ]
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": {\n        \"RECIPIENT\": \"Nina\"\n      },\n      \"status\": \"OPEN\"\n    },\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 2.02,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "6c183c7559a37f38be10da94336eb731e693bbd39f12ff3254665e5f3b1080ce",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4456,
+       "grounder_output_tokens": 133,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND",
+         "type": "EMAIL",
+         "where": {
+          "RECIPIENT": "Nina"
+         },
+         "status": "OPEN"
+        },
+        {
+         "op": "SET_STATUS",
+         "each": "r1",
+         "value": "CLOSED"
+        }
+       ],
+       "slot_id": "demo3-slot1",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "6c183c7559a37f38be10da94336eb731e693bbd39f12ff3254665e5f3b1080ce"
+        }
+       ]
+      },
+      {
+       "line": "Return them.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.068,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "eac455f48d714d65a75cf45cf563a8a4a9259718d2a7bc978b0320d7d2605ec2",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4488,
+       "grounder_output_tokens": 39,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo3-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "eac455f48d714d65a75cf45cf563a8a4a9259718d2a7bc978b0320d7d2605ec2"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "person": "Nina"
+     },
+     "lesson_lines": [
+      "Find the open emails to Nina and mark each of them closed.",
+      "Return them."
+     ],
+     "returned": true,
+     "end": "OK",
+     "end_detail": {},
+     "learn": "VERIFIED",
+     "learn_detail": {
+      "examples_used": 2,
+      "examples_discarded_inconsistent": 1,
+      "insufficient": null,
+      "conflict": null,
+      "response": "I learned `close_open_emails_to` (deterministic proposal). It passed 26 verification cases. Save it? (:accept close_open_emails_to)"
+     },
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Find the open emails to Nina and mark each of them closed.",
+      "Return them."
+     ]
+    }
+   ],
+   "teacher_turns": 3,
+   "student_questions": [
+    {
+     "kind": "NEW_DEMO",
+     "text": "I have one demonstration. Please give another complete demonstration with DIFFERENT example values (EXAMPLE line and STEP lines).",
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "text": "Your demonstrations do not follow the same steps, so I cannot tell which is right. Please give one more complete demonstration (EXAMPLE line and STEP lines); example values may repeat values you already used.",
+     "slot_id": null
+    }
+   ],
+   "injections": [
+    {
+     "kind": "CONSTANT_SWAP",
+     "demo": 1,
+     "applied": true,
+     "before": [
+      "Find the open emails to Wendy and mark each of them closed.",
+      "Return them."
+     ],
+     "after": [
+      "Find the closed emails to Wendy and mark each of them closed.",
+      "Return them."
+     ]
+    }
+   ],
+   "status": "ACTIVE",
+   "classes": [
+    "EVIDENCE_CONFLICT_DETECTED",
+    "INCONSISTENCY_DETECTED"
+   ],
+   "first_lesson_lines_ok": true,
+   "protocol": "TTP",
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Rita\nSTEP: Find the open emails to Rita and mark each of them closed.\nSTEP: Return them.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "e2fbffde0a4e75f5af8286f067a014fb81af37031d37d5cf43a432c27dad3704",
+      "prompt_sha256": "05e5c7a496a89d3b44d96fb6ee80682c7c1927174a6e93a149e68670e0e862a7",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 8192,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "LESSON",
+      "meter_usd_before": 3.447,
+      "request_id": "chatcmpl-ed11024f1dbb4d8aa06577cdc738f7a4",
+      "timestamp": "2026-09-28T08:25:33Z",
+      "latency_s": 8.929,
+      "retry_count": 0,
+      "input_tokens": 1277,
+      "output_tokens": 964,
+      "finish_reason": "stop",
+      "response_sha256": "e5dd6b513a1995f114fe7086fae1abc243e6496b1fc282034c2c86f233add96f",
+      "reasoning_chars": 4153,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: person=Wendy\nSTEP: Find the open emails to Wendy and mark each of them closed.\nSTEP: Return them.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "77210097a3abd424331d8be5cee15b5db8449ea0a5a09fd3ed719080bdba79b9",
+      "prompt_sha256": "e28f3b0fef386a99ac1b3943c2fbc3df846998f409f3a0a392c8c8dae768d51b",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 8192,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "NEW_DEMO",
+      "meter_usd_before": 3.464,
+      "request_id": "chatcmpl-a65c30c4568e447c81e42d5f65a06e53",
+      "timestamp": "2026-09-28T08:25:41Z",
+      "latency_s": 3.919,
+      "retry_count": 0,
+      "input_tokens": 1336,
+      "output_tokens": 561,
+      "finish_reason": "stop",
+      "response_sha256": "c6b503b835936fb6d4438fb93c9eadc740aa752c18a950fffaa1d283663f3b52",
+      "reasoning_chars": 2381,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: person=Nina\nSTEP: Find the open emails to Nina and mark each of them closed.\nSTEP: Return them.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "f963732f39569587c4c6f39b5782e55c4ddd0d2e2392eec2021e12a0bebf96f1",
+      "prompt_sha256": "3d54c7ee8f562e34e2663d78e81d11b514e362a4a20313149af502fcfe53d084",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 8192,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "NEW_DEMO",
+      "meter_usd_before": 3.464,
+      "request_id": "chatcmpl-e64a51d883e84a7da785ac358a727a51",
+      "timestamp": "2026-09-28T08:25:51Z",
+      "latency_s": 6.963,
+      "retry_count": 0,
+      "input_tokens": 1411,
+      "output_tokens": 1089,
+      "finish_reason": "stop",
+      "response_sha256": "4b055df4f9f62d2aff648704eb609ae3ad3d9affaef1dd7d76d08f88bd898706",
+      "reasoning_chars": 4897,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    }
+   ]
+  }
+ ],
+ "false_accept_probes": [
+  {
+   "target": "close_open_emails_to",
+   "variant": "FROZEN_VALUE",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL"
+  },
+  {
+   "target": "close_open_emails_to",
+   "variant": "DROPPED_CONSTANT_FILTER",
+   "status": "REJECTED_FAILED_REPLAY"
+  }
+ ],
+ "active": [
+  {
+   "name": "close_open_emails_to",
+   "id": "proc:close_open_emails_to:v1",
+   "parameters": [
+    {
+     "name": "person",
+     "type": "PERSON"
+    }
+   ],
+   "effect": "STATEFUL",
+   "returns": "EVENT_LIST",
+   "aliases": []
+  }
+ ],
+ "library_bytes_before": 49152,
+ "library_bytes_after": 49152,
+ "active_before": 0,
+ "active_after": 1,
+ "world_state_after": {
+  "objects": [
+   [
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "call:000002",
+    "CALL"
+   ],
+   [
+    "call:000003",
+    "CALL"
+   ],
+   [
+    "call:000004",
+    "CALL"
+   ],
+   [
+    "call:000005",
+    "CALL"
+   ],
+   [
+    "call:000006",
+    "CALL"
+   ],
+   [
+    "call:000007",
+    "CALL"
+   ],
+   [
+    "call:000008",
+    "CALL"
+   ],
+   [
+    "call:000009",
+    "CALL"
+   ],
+   [
+    "call:000010",
+    "CALL"
+   ],
+   [
+    "call:000011",
+    "CALL"
+   ],
+   [
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "email:000002",
+    "EMAIL"
+   ],
+   [
+    "email:000003",
+    "EMAIL"
+   ],
+   [
+    "email:000004",
+    "EMAIL"
+   ],
+   [
+    "email:000005",
+    "EMAIL"
+   ],
+   [
+    "email:000006",
+    "EMAIL"
+   ],
+   [
+    "email:000007",
+    "EMAIL"
+   ],
+   [
+    "email:000008",
+    "EMAIL"
+   ],
+   [
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "person:000004",
+    "PERSON"
+   ],
+   [
+    "person:000005",
+    "PERSON"
+   ],
+   [
+    "person:000006",
+    "PERSON"
+   ],
+   [
+    "person:000007",
+    "PERSON"
+   ],
+   [
+    "person:000008",
+    "PERSON"
+   ],
+   [
+    "person:000009",
+    "PERSON"
+   ],
+   [
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "reminder:000002",
+    "REMINDER"
+   ],
+   [
+    "reminder:000003",
+    "REMINDER"
+   ],
+   [
+    "reminder:000004",
+    "REMINDER"
+   ],
+   [
+    "reminder:000005",
+    "REMINDER"
+   ],
+   [
+    "reminder:000006",
+    "REMINDER"
+   ],
+   [
+    "reminder:000007",
+    "REMINDER"
+   ],
+   [
+    "reminder:000008",
+    "REMINDER"
+   ],
+   [
+    "reminder:000009",
+    "REMINDER"
+   ],
+   [
+    "reminder:000010",
+    "REMINDER"
+   ],
+   [
+    "reminder:000011",
+    "REMINDER"
+   ],
+   [
+    "reminder:000012",
+    "REMINDER"
+   ],
+   [
+    "reminder:000013",
+    "REMINDER"
+   ],
+   [
+    "reminder:000014",
+    "REMINDER"
+   ],
+   [
+    "reminder:000015",
+    "REMINDER"
+   ],
+   [
+    "reminder:000016",
+    "REMINDER"
+   ],
+   [
+    "reminder:000017",
+    "REMINDER"
+   ],
+   [
+    "reminder:000018",
+    "REMINDER"
+   ],
+   [
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "request:000004",
+    "REQUEST"
+   ],
+   [
+    "request:000005",
+    "REQUEST"
+   ],
+   [
+    "request:000006",
+    "REQUEST"
+   ],
+   [
+    "request:000007",
+    "REQUEST"
+   ],
+   [
+    "request:000008",
+    "REQUEST"
+   ],
+   [
+    "request:000009",
+    "REQUEST"
+   ],
+   [
+    "request:000010",
+    "REQUEST"
+   ],
+   [
+    "request:000011",
+    "REQUEST"
+   ],
+   [
+    "request:000012",
+    "REQUEST"
+   ],
+   [
+    "request:000013",
+    "REQUEST"
+   ],
+   [
+    "request:000014",
+    "REQUEST"
+   ],
+   [
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "visit:000002",
+    "VISIT"
+   ],
+   [
+    "visit:000003",
+    "VISIT"
+   ],
+   [
+    "visit:000004",
+    "VISIT"
+   ],
+   [
+    "visit:000005",
+    "VISIT"
+   ],
+   [
+    "visit:000006",
+    "VISIT"
+   ],
+   [
+    "visit:000007",
+    "VISIT"
+   ],
+   [
+    "visit:000008",
+    "VISIT"
+   ],
+   [
+    "visit:000009",
+    "VISIT"
+   ],
+   [
+    "visit:000010",
+    "VISIT"
+   ],
+   [
+    "visit:000011",
+    "VISIT"
+   ],
+   [
+    "visit:000012",
+    "VISIT"
+   ],
+   [
+    "visit:000013",
+    "VISIT"
+   ]
+  ],
+  "relations": [
+   [
+    "call:000004",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000005",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "call:000006",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000007",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000008",
+    "WHO",
+    "person:000007"
+   ],
+   [
+    "call:000009",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000010",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "call:000011",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000001",
+    "TOPIC",
+    "topic:survey"
+   ],
+   [
+    "email:000002",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "email:000002",
+    "TOPIC",
+    "topic:trip"
+   ],
+   [
+    "email:000003",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000003",
+    "TOPIC",
+    "topic:lease"
+   ],
+   [
+    "email:000004",
+    "RECIPIENT",
+    "person:000003"
+   ],
+   [
+    "email:000004",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "email:000005",
+    "RECIPIENT",
+    "person:000008"
+   ],
+   [
+    "email:000005",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "email:000006",
+    "RECIPIENT",
+    "person:000009"
+   ],
+   [
+    "email:000006",
+    "TOPIC",
+    "topic:contract"
+   ],
+   [
+    "email:000007",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000007",
+    "TOPIC",
+    "topic:survey"
+   ],
+   [
+    "email:000008",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000008",
+    "TOPIC",
+    "topic:lease"
+   ],
+   [
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "reminder:000002",
+    "TODO",
+    "email:000003"
+   ],
+   [
+    "reminder:000003",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "reminder:000004",
+    "TODO",
+    "call:000004"
+   ],
+   [
+    "reminder:000004",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "reminder:000005",
+    "TODO",
+    "call:000005"
+   ],
+   [
+    "reminder:000005",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "reminder:000006",
+    "TODO",
+    "call:000006"
+   ],
+   [
+    "reminder:000006",
+    "WHEN",
+    "time:01:00"
+   ],
+   [
+    "reminder:000007",
+    "TODO",
+    "call:000007"
+   ],
+   [
+    "reminder:000007",
+    "WHEN",
+    "time:09:30"
+   ],
+   [
+    "reminder:000008",
+    "TODO",
+    "call:000008"
+   ],
+   [
+    "reminder:000008",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "reminder:000009",
+    "TODO",
+    "call:000009"
+   ],
+   [
+    "reminder:000009",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "reminder:000010",
+    "TODO",
+    "call:000010"
+   ],
+   [
+    "reminder:000010",
+    "WHEN",
+    "time:06:00"
+   ],
+   [
+    "reminder:000011",
+    "TODO",
+    "email:000005"
+   ],
+   [
+    "reminder:000012",
+    "TODO",
+    "visit:000004"
+   ],
+   [
+    "reminder:000013",
+    "TODO",
+    "call:000011"
+   ],
+   [
+    "reminder:000013",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "reminder:000014",
+    "TODO",
+    "email:000006"
+   ],
+   [
+    "reminder:000015",
+    "TODO",
+    "visit:000006"
+   ],
+   [
+    "reminder:000016",
+    "TODO",
+    "email:000007"
+   ],
+   [
+    "reminder:000017",
+    "TODO",
+    "visit:000011"
+   ],
+   [
+    "reminder:000018",
+    "TODO",
+    "visit:000013"
+   ],
+   [
+    "request:000001",
+    "TODO",
+    "email:000002"
+   ],
+   [
+    "request:000002",
+    "TODO",
+    "email:000004"
+   ],
+   [
+    "request:000003",
+    "TODO",
+    "visit:000002"
+   ],
+   [
+    "request:000004",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "request:000004",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "request:000004",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000005",
+    "TODO",
+    "call:000002"
+   ],
+   [
+    "request:000005",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "request:000005",
+    "WHO",
+    "person:000003"
+   ],
+   [
+    "request:000006",
+    "TODO",
+    "call:000003"
+   ],
+   [
+    "request:000006",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "request:000006",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000007",
+    "TODO",
+    "visit:000003"
+   ],
+   [
+    "request:000007",
+    "WHEN",
+    "time:06:00"
+   ],
+   [
+    "request:000007",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "request:000008",
+    "TODO",
+    "visit:000005"
+   ],
+   [
+    "request:000008",
+    "WHEN",
+    "time:05:45"
+   ],
+   [
+    "request:000008",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "request:000009",
+    "TODO",
+    "email:000008"
+   ],
+   [
+    "request:000010",
+    "TODO",
+    "visit:000007"
+   ],
+   [
+    "request:000010",
+    "WHEN",
+    "time:09:30"
+   ],
+   [
+    "request:000010",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000011",
+    "TODO",
+    "visit:000008"
+   ],
+   [
+    "request:000011",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "request:000011",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000012",
+    "TODO",
+    "visit:000009"
+   ],
+   [
+    "request:000012",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "request:000012",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000013",
+    "TODO",
+    "visit:000010"
+   ],
+   [
+    "request:000013",
+    "WHEN",
+    "time:07:00"
+   ],
+   [
+    "request:000013",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000014",
+    "TODO",
+    "visit:000012"
+   ],
+   [
+    "visit:000001",
+    "WHERE",
+    "place:madrid"
+   ],
+   [
+    "visit:000002",
+    "WHERE",
+    "place:rome"
+   ],
+   [
+    "visit:000004",
+    "WHERE",
+    "place:paris"
+   ],
+   [
+    "visit:000006",
+    "WHERE",
+    "place:lima"
+   ],
+   [
+    "visit:000011",
+    "WHERE",
+    "place:seoul"
+   ],
+   [
+    "visit:000012",
+    "WHERE",
+    "place:dublin"
+   ],
+   [
+    "visit:000013",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "aliases": [
+   [
+    "person:000001",
+    "Wendy"
+   ],
+   [
+    "person:000002",
+    "Kevin"
+   ],
+   [
+    "person:000003",
+    "Grandpa"
+   ],
+   [
+    "person:000004",
+    "Judy"
+   ],
+   [
+    "person:000005",
+    "Rita"
+   ],
+   [
+    "person:000006",
+    "Ivan"
+   ],
+   [
+    "person:000007",
+    "Xena"
+   ],
+   [
+    "person:000008",
+    "Nina"
+   ],
+   [
+    "person:000009",
+    "Grace"
+   ]
+  ],
+  "attributes": [
+   [
+    "call:000006",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000007",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000009",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000003",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000008",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000010",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000012",
+    "STATUS",
+    "CLOSED"
+   ]
+  ]
+ },
+ "student_hash_after": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "seconds": 101.08,
+ "nl_llm_calls": 0,
+ "retrieval_llm_calls": 0,
+ "hosted_calls": [
+  {
+   "role": "initial_teacher",
+   "kind": "LESSON",
+   "request_hash": "e2fbffde0a4e75f5af8286f067a014fb81af37031d37d5cf43a432c27dad3704",
+   "cached": false,
+   "input_tokens": 1277,
+   "output_tokens": 964,
+   "latency_s": 8.929,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "4a0589a7d77801cd32cf389dfd5701aebec07ec1b44368694cf054ec4b1af0f6",
+   "cached": false,
+   "input_tokens": 4456,
+   "output_tokens": 131,
+   "latency_s": 1.698,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "27f187df094929dd7b4e9870615332469e5cc11b9bc3bee6ab5f77cbb95b9eb6",
+   "cached": false,
+   "input_tokens": 4488,
+   "output_tokens": 39,
+   "latency_s": 0.645,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "initial_teacher",
+   "kind": "NEW_DEMO",
+   "request_hash": "77210097a3abd424331d8be5cee15b5db8449ea0a5a09fd3ed719080bdba79b9",
+   "cached": false,
+   "input_tokens": 1336,
+   "output_tokens": 561,
+   "latency_s": 3.919,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "c9aa79c74417d9b9dd5809d5126a90101474036130897a115e64aa637bf9903d",
+   "cached": false,
+   "input_tokens": 4456,
+   "output_tokens": 153,
+   "latency_s": 1.317,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "fa3d49659b568a7db1528859a39dc5a37af6c42523412dc7a7bad7addad9ac9b",
+   "cached": true,
+   "input_tokens": 4489,
+   "output_tokens": 39,
+   "latency_s": 0.889,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "initial_teacher",
+   "kind": "NEW_DEMO",
+   "request_hash": "f963732f39569587c4c6f39b5782e55c4ddd0d2e2392eec2021e12a0bebf96f1",
+   "cached": false,
+   "input_tokens": 1411,
+   "output_tokens": 1089,
+   "latency_s": 6.963,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "6c183c7559a37f38be10da94336eb731e693bbd39f12ff3254665e5f3b1080ce",
+   "cached": false,
+   "input_tokens": 4456,
+   "output_tokens": 133,
+   "latency_s": 1.27,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "eac455f48d714d65a75cf45cf563a8a4a9259718d2a7bc978b0320d7d2605ec2",
+   "cached": false,
+   "input_tokens": 4488,
+   "output_tokens": 39,
+   "latency_s": 0.647,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  }
+ ]
+}

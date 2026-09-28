@@ -1,0 +1,1660 @@
+{
+ "suite": "dev",
+ "n_scenarios": 30,
+ "n_targets": 36,
+ "teacher": "gpt-oss-120b (Modal H100, vLLM 0.11.0, reasoning high, temperature 0, max_tokens 4096)",
+ "student": "frozen Qwen2.5-Coder-1.5B + NL_TEACH V1.2 frontend + PDX baseline fixes",
+ "modes": {
+  "GOLD_TRACE": {
+   "LEARNED_PROCEDURE_EXACT": 1.0,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 36,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 234,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 39,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 41,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "UNSEEN_ARGUMENT_EXACT": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 90,
+   "RESTART_PROCEDURE_EXACT": 1.0,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 60,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 1.0,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 1.0,
+   "n_FINAL_STATE_EXACT": 30,
+   "DISTILLED_SKILL_EXACT": 1.0,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "SCENARIO_EXACT": 1.0,
+   "n_SCENARIO_EXACT": 30,
+   "COMPOSITION_L2_REUSE_EXACT": 1.0,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "WRONG_TEACHER_ACTION_EXECUTED": 0,
+   "BAD_TEACHER_SUGGESTION_EXECUTED": 0,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "accounting": {
+    "library_bytes_after": {
+     "mean": 49698.1333,
+     "sum": 1490944,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 1.2,
+     "sum": 36,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 20.9847,
+     "sum": 629.54,
+     "n": 30
+    }
+   },
+   "strata": {},
+   "failure_taxonomy": {},
+   "gates": {
+    "LEARNED_PROCEDURE_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    }
+   },
+   "handoff": {
+    "mode": "GOLD_TRACE",
+    "time": 1790514040.5359678
+   },
+   "seconds": {
+    "acquisition": 373.3,
+    "total": 1320.0
+   },
+   "per_scenario": {
+    "dev-001-S1": {
+     "stratum": "S1",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-002-S1": {
+     "stratum": "S1",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-003-S2": {
+     "stratum": "S2",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-004-S2": {
+     "stratum": "S2",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-005-S3": {
+     "stratum": "S3",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-006-S3": {
+     "stratum": "S3",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-007-S4": {
+     "stratum": "S4",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-008-S4": {
+     "stratum": "S4",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-009-S5": {
+     "stratum": "S5",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-010-S5": {
+     "stratum": "S5",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-011-S6": {
+     "stratum": "S6",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-012-S6": {
+     "stratum": "S6",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-013-S7": {
+     "stratum": "S7",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-014-S7": {
+     "stratum": "S7",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-015-S8": {
+     "stratum": "S8",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-016-S8": {
+     "stratum": "S8",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-017-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-018-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-019-S10": {
+     "stratum": "S10",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-020-S10": {
+     "stratum": "S10",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-021-S11": {
+     "stratum": "S11",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-022-S11": {
+     "stratum": "S11",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-023-S12": {
+     "stratum": "S12",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-024-S12": {
+     "stratum": "S12",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-025-S13": {
+     "stratum": "S13",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-026-S13": {
+     "stratum": "S13",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-027-S14L": {
+     "stratum": "S14L",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-028-S14L": {
+     "stratum": "S14L",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-029-S14D": {
+     "stratum": "S14D",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-030-S15": {
+     "stratum": "S15",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    }
+   },
+   "all_gates_pass": true
+  },
+  "FORMAL_TEACH": {
+   "LEARNED_PROCEDURE_EXACT": 1.0,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 36,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 234,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 39,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 41,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "UNSEEN_ARGUMENT_EXACT": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 90,
+   "RESTART_PROCEDURE_EXACT": 1.0,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 60,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 1.0,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 1.0,
+   "n_FINAL_STATE_EXACT": 30,
+   "DISTILLED_SKILL_EXACT": 1.0,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "SCENARIO_EXACT": 1.0,
+   "n_SCENARIO_EXACT": 30,
+   "COMPOSITION_L2_REUSE_EXACT": 1.0,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "WRONG_TEACHER_ACTION_EXECUTED": 0,
+   "BAD_TEACHER_SUGGESTION_EXECUTED": 0,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "accounting": {
+    "library_bytes_after": {
+     "mean": 49698.1333,
+     "sum": 1490944,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 1.2,
+     "sum": 36,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 19.1757,
+     "sum": 575.27,
+     "n": 30
+    }
+   },
+   "strata": {},
+   "failure_taxonomy": {},
+   "gates": {
+    "LEARNED_PROCEDURE_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    }
+   },
+   "handoff": {
+    "mode": "FORMAL_TEACH",
+    "time": 1790515333.499425
+   },
+   "seconds": {
+    "acquisition": 346.1,
+    "total": 1263.7
+   },
+   "per_scenario": {
+    "dev-001-S1": {
+     "stratum": "S1",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-002-S1": {
+     "stratum": "S1",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-003-S2": {
+     "stratum": "S2",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-004-S2": {
+     "stratum": "S2",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-005-S3": {
+     "stratum": "S3",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-006-S3": {
+     "stratum": "S3",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-007-S4": {
+     "stratum": "S4",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-008-S4": {
+     "stratum": "S4",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-009-S5": {
+     "stratum": "S5",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-010-S5": {
+     "stratum": "S5",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-011-S6": {
+     "stratum": "S6",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-012-S6": {
+     "stratum": "S6",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-013-S7": {
+     "stratum": "S7",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-014-S7": {
+     "stratum": "S7",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-015-S8": {
+     "stratum": "S8",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-016-S8": {
+     "stratum": "S8",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-017-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-018-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-019-S10": {
+     "stratum": "S10",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-020-S10": {
+     "stratum": "S10",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-021-S11": {
+     "stratum": "S11",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-022-S11": {
+     "stratum": "S11",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-023-S12": {
+     "stratum": "S12",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-024-S12": {
+     "stratum": "S12",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-025-S13": {
+     "stratum": "S13",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-026-S13": {
+     "stratum": "S13",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-027-S14L": {
+     "stratum": "S14L",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-028-S14L": {
+     "stratum": "S14L",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-029-S14D": {
+     "stratum": "S14D",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-030-S15": {
+     "stratum": "S15",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    }
+   },
+   "all_gates_pass": true
+  },
+  "SCRIPTED": {
+   "TEACHER_EPISODE_SUCCESS": 0.9167,
+   "n_TEACHER_EPISODE_SUCCESS": 36,
+   "LEARNED_PROCEDURE_EXACT": 0.9167,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "STUDENT_TRACE_EXACT": 0.9744,
+   "n_STUDENT_TRACE_EXACT": 39,
+   "TEACHER_INSTRUCTION_GROUNDED": 0.9254,
+   "n_TEACHER_INSTRUCTION_GROUNDED": 134,
+   "class_FIRST_LESSON_SUCCESS": 24,
+   "n_class_FIRST_LESSON_SUCCESS": 24,
+   "DISTILLATION_FIRST_PASS": 0.6667,
+   "n_DISTILLATION_FIRST_PASS": 36,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 37,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 33,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 215,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 35,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "UNSEEN_ARGUMENT_EXACT": 0.9222,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "COUNTERFACTUAL_EXACT": 0.9222,
+   "n_COUNTERFACTUAL_EXACT": 90,
+   "RESTART_PROCEDURE_EXACT": 0.9222,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 0.9222,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.9167,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 55,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 0.9333,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 0.9667,
+   "n_FINAL_STATE_EXACT": 30,
+   "DISTILLED_SKILL_EXACT": 0.9062,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "SCENARIO_EXACT": 0.9,
+   "n_SCENARIO_EXACT": 30,
+   "class_REPHRASE_SUCCESS": 5,
+   "n_class_REPHRASE_SUCCESS": 5,
+   "class_FAILED:TEACHER_EPISODE_FAIL": 3,
+   "n_class_FAILED:TEACHER_EPISODE_FAIL": 3,
+   "COMPOSITION_L2_REUSE_EXACT": 0.875,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 0.75,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "TEACHER_REPHRASE_SUCCESS": 0.5,
+   "n_TEACHER_REPHRASE_SUCCESS": 2,
+   "INSUFFICIENT_EVIDENCE_DETECTED": 1.0,
+   "n_INSUFFICIENT_EVIDENCE_DETECTED": 2,
+   "SECOND_DEMO_REQUEST_EXACT": 1.0,
+   "n_SECOND_DEMO_REQUEST_EXACT": 2,
+   "class_SECOND_DEMO_SUCCESS": 4,
+   "n_class_SECOND_DEMO_SUCCESS": 4,
+   "BAD_TEACHER_SUGGESTION_EXECUTED": 0,
+   "n_BAD_TEACHER_SUGGESTION_EXECUTED": 3,
+   "UNSUPPORTED_TEACHER_ACTION_BLOCKED": 1.0,
+   "n_UNSUPPORTED_TEACHER_ACTION_BLOCKED": 3,
+   "UNSUPPORTED_REJECTION": 1.0,
+   "n_UNSUPPORTED_REJECTION": 2,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 1.0,
+   "n_LEGAL_BAD_SANDBOX_EXECUTED": 2,
+   "LEGAL_BAD_INJECTION_APPLIED": 1.0,
+   "n_LEGAL_BAD_INJECTION_APPLIED": 2,
+   "CROSS_DEMO_INCONSISTENCY_DETECTED": 1.0,
+   "n_CROSS_DEMO_INCONSISTENCY_DETECTED": 2,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "n_BAD_PROCEDURE_ACTIVATED": 2,
+   "WRONG_TEACHER_ACTION_EXECUTED": 0,
+   "accounting": {
+    "teacher_turns_per_skill": {
+     "mean": 1.6944,
+     "sum": 61,
+     "n": 36
+    },
+    "demonstrations_per_skill": {
+     "mean": 1.1389,
+     "sum": 41,
+     "n": 36
+    },
+    "student_questions_per_skill": {
+     "mean": 0.6944,
+     "sum": 25,
+     "n": 36
+    },
+    "student_grounding_seconds": {
+     "mean": 3.9349,
+     "sum": 527.278,
+     "n": 134
+    },
+    "student_llm_calls_per_line": {
+     "mean": 5.3284,
+     "sum": 714,
+     "n": 134
+    },
+    "library_bytes_after": {
+     "mean": 49425.0667,
+     "sum": 1482752,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 1.1,
+     "sum": 33,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 47.37,
+     "sum": 1421.1,
+     "n": 30
+    }
+   },
+   "strata": {
+    "stratum_S1": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S10": {
+     "acc": 1.0,
+     "n": 4
+    },
+    "stratum_S11": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S12": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S13": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S14D": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S14L": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S15": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S2": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S3": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S4": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S5": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S6": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S7": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S8": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S9": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "style_A": {
+     "acc": 1.0,
+     "n": 7
+    },
+    "style_B": {
+     "acc": 0.7143,
+     "n": 7
+    },
+    "style_C": {
+     "acc": 1.0,
+     "n": 8
+    },
+    "style_D": {
+     "acc": 1.0,
+     "n": 8
+    },
+    "style_E": {
+     "acc": 0.8333,
+     "n": 6
+    }
+   },
+   "failure_taxonomy": {
+    "GT_TURN_BUDGET": 3
+   },
+   "gates": {
+    "WRONG_TEACHER_ACTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "BAD_TEACHER_SUGGESTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "BAD_PROCEDURE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "STUDENT_TRACE_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.9744,
+     "pass": true
+    },
+    "LEARNED_PROCEDURE_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.9167,
+     "pass": true
+    },
+    "SOURCE_REPLAY_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "COUNTERFACTUAL_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.9222,
+     "pass": false
+    },
+    "ROLLBACK_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "PROCEDURE_RETRIEVAL_EXACT": {
+     "rule": ">= 0.95",
+     "value": 0.9167,
+     "pass": false
+    },
+    "ARGUMENT_BINDING_EXACT": {
+     "rule": ">= 0.95",
+     "value": 1.0,
+     "pass": true
+    },
+    "UNSEEN_ARGUMENT_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.9222,
+     "pass": false
+    },
+    "RESTART_PROCEDURE_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.9222,
+     "pass": false
+    },
+    "TEACHER_DISCONNECT_REUSE_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.9222,
+     "pass": false
+    },
+    "STORED_PROCEDURE_REUSE_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.75,
+     "pass": false
+    },
+    "DISTILLED_SKILL_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.9062,
+     "pass": true
+    },
+    "POST_HANDOFF_TEACHER_CALLS": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "INSUFFICIENT_EVIDENCE_DETECTED": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "STUDENT_NEURAL_HASH_INVARIANT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    }
+   },
+   "handoff": {
+    "mode": "SCRIPTED",
+    "time": 1790521180.583628
+   },
+   "seconds": {
+    "acquisition": 774.1,
+    "total": 1687.2
+   },
+   "per_scenario": {
+    "dev-001-S1": {
+     "stratum": "S1",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-002-S1": {
+     "stratum": "S1",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-003-S2": {
+     "stratum": "S2",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-004-S2": {
+     "stratum": "S2",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-005-S3": {
+     "stratum": "S3",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-006-S3": {
+     "stratum": "S3",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-007-S4": {
+     "stratum": "S4",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-008-S4": {
+     "stratum": "S4",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-009-S5": {
+     "stratum": "S5",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-010-S5": {
+     "stratum": "S5",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-011-S6": {
+     "stratum": "S6",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-012-S6": {
+     "stratum": "S6",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-013-S7": {
+     "stratum": "S7",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-014-S7": {
+     "stratum": "S7",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-015-S8": {
+     "stratum": "S8",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-016-S8": {
+     "stratum": "S8",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-017-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    },
+    "dev-018-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-019-S10": {
+     "stratum": "S10",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-020-S10": {
+     "stratum": "S10",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-021-S11": {
+     "stratum": "S11",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-022-S11": {
+     "stratum": "S11",
+     "style": "B",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    },
+    "dev-023-S12": {
+     "stratum": "S12",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-024-S12": {
+     "stratum": "S12",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-025-S13": {
+     "stratum": "S13",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-026-S13": {
+     "stratum": "S13",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-027-S14L": {
+     "stratum": "S14L",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-028-S14L": {
+     "stratum": "S14L",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-029-S14D": {
+     "stratum": "S14D",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-030-S15": {
+     "stratum": "S15",
+     "style": "B",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    }
+   },
+   "all_gates_pass": false
+  },
+  "TEACHER": {
+   "TEACHER_EPISODE_SUCCESS": 0.8611,
+   "n_TEACHER_EPISODE_SUCCESS": 36,
+   "LEARNED_PROCEDURE_EXACT": 0.6667,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "STUDENT_TRACE_EXACT": 0.7,
+   "n_STUDENT_TRACE_EXACT": 40,
+   "TEACHER_INSTRUCTION_GROUNDED": 0.9296,
+   "n_TEACHER_INSTRUCTION_GROUNDED": 142,
+   "class_FIRST_LESSON_SUCCESS": 13,
+   "n_class_FIRST_LESSON_SUCCESS": 13,
+   "DISTILLATION_FIRST_PASS": 0.3611,
+   "n_DISTILLATION_FIRST_PASS": 36,
+   "VERIFY_FALSE_ACCEPT": 1,
+   "n_VERIFY_FALSE_ACCEPT": 37,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 32,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 205,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 31,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "UNSEEN_ARGUMENT_EXACT": 0.7667,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "COUNTERFACTUAL_EXACT": 0.7667,
+   "n_COUNTERFACTUAL_EXACT": 90,
+   "RESTART_PROCEDURE_EXACT": 0.7667,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 0.7667,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.8667,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 52,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 0.7833,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 0.9,
+   "n_FINAL_STATE_EXACT": 30,
+   "DISTILLED_SKILL_EXACT": 0.7188,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "SCENARIO_EXACT": 0.6333,
+   "n_SCENARIO_EXACT": 30,
+   "class_SECOND_DEMO_SUCCESS": 7,
+   "n_class_SECOND_DEMO_SUCCESS": 7,
+   "WRONG_TEACHER_ACTION_EXECUTED": 12,
+   "n_WRONG_TEACHER_ACTION_EXECUTED": 12,
+   "class_FAILED:ACTIVE": 7,
+   "n_class_FAILED:ACTIVE": 7,
+   "class_FAILED:TEACHER_EPISODE_FAIL": 5,
+   "n_class_FAILED:TEACHER_EPISODE_FAIL": 5,
+   "COMPOSITION_L2_REUSE_EXACT": 0.625,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 0.75,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "class_CLARIFICATION_SUCCESS": 1,
+   "n_class_CLARIFICATION_SUCCESS": 1,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "TEACHER_REPHRASE_SUCCESS": 0.5,
+   "n_TEACHER_REPHRASE_SUCCESS": 2,
+   "class_REPHRASE_SUCCESS": 3,
+   "n_class_REPHRASE_SUCCESS": 3,
+   "INSUFFICIENT_EVIDENCE_DETECTED": 1.0,
+   "n_INSUFFICIENT_EVIDENCE_DETECTED": 2,
+   "SECOND_DEMO_REQUEST_EXACT": 1.0,
+   "n_SECOND_DEMO_REQUEST_EXACT": 2,
+   "BAD_TEACHER_SUGGESTION_EXECUTED": 0,
+   "n_BAD_TEACHER_SUGGESTION_EXECUTED": 3,
+   "UNSUPPORTED_TEACHER_ACTION_BLOCKED": 1.0,
+   "n_UNSUPPORTED_TEACHER_ACTION_BLOCKED": 3,
+   "UNSUPPORTED_REJECTION": 1.0,
+   "n_UNSUPPORTED_REJECTION": 2,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 1.0,
+   "n_LEGAL_BAD_SANDBOX_EXECUTED": 2,
+   "LEGAL_BAD_INJECTION_APPLIED": 1.0,
+   "n_LEGAL_BAD_INJECTION_APPLIED": 2,
+   "CROSS_DEMO_INCONSISTENCY_DETECTED": 1.0,
+   "n_CROSS_DEMO_INCONSISTENCY_DETECTED": 2,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "n_BAD_PROCEDURE_ACTIVATED": 2,
+   "accounting": {
+    "teacher_turns_per_skill": {
+     "mean": 2.1667,
+     "sum": 78,
+     "n": 36
+    },
+    "demonstrations_per_skill": {
+     "mean": 1.1667,
+     "sum": 42,
+     "n": 36
+    },
+    "student_questions_per_skill": {
+     "mean": 1.1667,
+     "sum": 42,
+     "n": 36
+    },
+    "student_grounding_seconds": {
+     "mean": 3.6066,
+     "sum": 512.139,
+     "n": 142
+    },
+    "student_llm_calls_per_line": {
+     "mean": 4.9225,
+     "sum": 699,
+     "n": 142
+    },
+    "teacher_calls": {
+     "mean": 1.0,
+     "sum": 78,
+     "n": 78
+    },
+    "teacher_cached": {
+     "mean": 0.0,
+     "sum": 0,
+     "n": 78
+    },
+    "teacher_input_tokens": {
+     "mean": 995.8077,
+     "sum": 77673,
+     "n": 78
+    },
+    "teacher_output_tokens": {
+     "mean": 841.6026,
+     "sum": 65645,
+     "n": 78
+    },
+    "teacher_latency_s": {
+     "mean": 5.5403,
+     "sum": 432.146,
+     "n": 78
+    },
+    "library_bytes_after": {
+     "mean": 49152.0,
+     "sum": 1474560,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 1.0333,
+     "sum": 31,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 63.2473,
+     "sum": 1897.42,
+     "n": 30
+    }
+   },
+   "strata": {
+    "stratum_S1": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S10": {
+     "acc": 1.0,
+     "n": 4
+    },
+    "stratum_S11": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S12": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S13": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S14D": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S14L": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S15": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S2": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S3": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S4": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S5": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "stratum_S6": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S7": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S8": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "stratum_S9": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "style_A": {
+     "acc": 0.8571,
+     "n": 7
+    },
+    "style_B": {
+     "acc": 0.4286,
+     "n": 7
+    },
+    "style_C": {
+     "acc": 0.75,
+     "n": 8
+    },
+    "style_D": {
+     "acc": 0.75,
+     "n": 8
+    },
+    "style_E": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "failure_taxonomy": {
+    "PD_PROGRAM": 4,
+    "SG_FALSE_CLARIFY": 2,
+    "GT_TURN_BUDGET": 5
+   },
+   "gates": {
+    "WRONG_TEACHER_ACTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 12,
+     "pass": false
+    },
+    "BAD_TEACHER_SUGGESTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "BAD_PROCEDURE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 1,
+     "pass": false
+    },
+    "STUDENT_TRACE_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.7,
+     "pass": false
+    },
+    "LEARNED_PROCEDURE_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.6667,
+     "pass": false
+    },
+    "SOURCE_REPLAY_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "COUNTERFACTUAL_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.7667,
+     "pass": false
+    },
+    "ROLLBACK_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "PROCEDURE_RETRIEVAL_EXACT": {
+     "rule": ">= 0.95",
+     "value": 0.8667,
+     "pass": false
+    },
+    "ARGUMENT_BINDING_EXACT": {
+     "rule": ">= 0.95",
+     "value": 1.0,
+     "pass": true
+    },
+    "UNSEEN_ARGUMENT_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.7667,
+     "pass": false
+    },
+    "RESTART_PROCEDURE_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.7667,
+     "pass": false
+    },
+    "TEACHER_DISCONNECT_REUSE_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.7667,
+     "pass": false
+    },
+    "STORED_PROCEDURE_REUSE_EXACT": {
+     "rule": "== 1.0",
+     "value": 0.75,
+     "pass": false
+    },
+    "DISTILLED_SKILL_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.7188,
+     "pass": false
+    },
+    "POST_HANDOFF_TEACHER_CALLS": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "INSUFFICIENT_EVIDENCE_DETECTED": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "STUDENT_NEURAL_HASH_INVARIANT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    }
+   },
+   "handoff": {
+    "mode": "TEACHER",
+    "time": 1790523236.24078,
+    "modal_app_stop_rc": 0,
+    "endpoint_after_stop": "HTTP 404",
+    "teacher_destroyed": true
+   },
+   "seconds": {
+    "acquisition": 1142.5,
+    "total": 2050.6
+   },
+   "per_scenario": {
+    "dev-001-S1": {
+     "stratum": "S1",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-002-S1": {
+     "stratum": "S1",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-003-S2": {
+     "stratum": "S2",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-004-S2": {
+     "stratum": "S2",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-005-S3": {
+     "stratum": "S3",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-006-S3": {
+     "stratum": "S3",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-007-S4": {
+     "stratum": "S4",
+     "style": "C",
+     "exact": false,
+     "first_failure": "PD_PROGRAM"
+    },
+    "dev-008-S4": {
+     "stratum": "S4",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-009-S5": {
+     "stratum": "S5",
+     "style": "A",
+     "exact": false,
+     "first_failure": "PD_PROGRAM"
+    },
+    "dev-010-S5": {
+     "stratum": "S5",
+     "style": "B",
+     "exact": false,
+     "first_failure": "PD_PROGRAM"
+    },
+    "dev-011-S6": {
+     "stratum": "S6",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-012-S6": {
+     "stratum": "S6",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-013-S7": {
+     "stratum": "S7",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-014-S7": {
+     "stratum": "S7",
+     "style": "B",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-015-S8": {
+     "stratum": "S8",
+     "style": "C",
+     "exact": false,
+     "first_failure": "SG_FALSE_CLARIFY"
+    },
+    "dev-016-S8": {
+     "stratum": "S8",
+     "style": "D",
+     "exact": false,
+     "first_failure": "PD_PROGRAM"
+    },
+    "dev-017-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    },
+    "dev-018-S9": {
+     "stratum": "S9",
+     "style": "E",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    },
+    "dev-019-S10": {
+     "stratum": "S10",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-020-S10": {
+     "stratum": "S10",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-021-S11": {
+     "stratum": "S11",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-022-S11": {
+     "stratum": "S11",
+     "style": "B",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    },
+    "dev-023-S12": {
+     "stratum": "S12",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-024-S12": {
+     "stratum": "S12",
+     "style": "D",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-025-S13": {
+     "stratum": "S13",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-026-S13": {
+     "stratum": "S13",
+     "style": "B",
+     "exact": false,
+     "first_failure": "SG_FALSE_CLARIFY"
+    },
+    "dev-027-S14L": {
+     "stratum": "S14L",
+     "style": "C",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-028-S14L": {
+     "stratum": "S14L",
+     "style": "D",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    },
+    "dev-029-S14D": {
+     "stratum": "S14D",
+     "style": "A",
+     "exact": true,
+     "first_failure": null
+    },
+    "dev-030-S15": {
+     "stratum": "S15",
+     "style": "B",
+     "exact": false,
+     "first_failure": "GT_TURN_BUDGET"
+    }
+   },
+   "all_gates_pass": false
+  }
+ },
+ "retention": {
+  "GOLD_TRACE": {
+   "post_handoff_exact_given_exact_acquisition": 1.0,
+   "n": 86,
+   "post_handoff_exact_given_any_active": 1.0,
+   "n_any": 90
+  },
+  "FORMAL_TEACH": {
+   "post_handoff_exact_given_exact_acquisition": 1.0,
+   "n": 86,
+   "post_handoff_exact_given_any_active": 1.0,
+   "n_any": 90
+  },
+  "SCRIPTED": {
+   "post_handoff_exact_given_exact_acquisition": 1.0,
+   "n": 78,
+   "post_handoff_exact_given_any_active": 1.0,
+   "n_any": 82
+  },
+  "TEACHER": {
+   "post_handoff_exact_given_exact_acquisition": 1.0,
+   "n": 54,
+   "post_handoff_exact_given_any_active": 0.8718,
+   "n_any": 78
+  }
+ },
+ "direct_teacher_ast": {
+  "n": 36,
+  "DIRECT_TEACHER_AST_PARSED": 1.0,
+  "DIRECT_TEACHER_AST_STATIC_VALID": 0.9722,
+  "DIRECT_TEACHER_AST_VERIFIED": 0.5556,
+  "DIRECT_TEACHER_AST_EXACT": 0.6389,
+  "TRACE_MEDIATED_TEACHER_PROCEDURE_EXACT": 0.6667,
+  "direct_exact_where_trace_failed": 6,
+  "trace_exact_where_direct_failed": 7,
+  "note": "descriptive; nothing activated"
+ },
+ "preflight": {
+  "low": {
+   "learned_exact": 6,
+   "targets": 10,
+   "active": 7,
+   "tokens": 40845,
+   "student_trace_line_ok": 0.917,
+   "questions": 24,
+   "unsupported_lines": 0,
+   "errors": 0,
+   "seconds": 266.3
+  },
+  "medium": {
+   "learned_exact": 9,
+   "targets": 10,
+   "active": 9,
+   "tokens": 48191,
+   "student_trace_line_ok": 0.773,
+   "questions": 23,
+   "unsupported_lines": 0,
+   "errors": 0,
+   "seconds": 287.4
+  },
+  "high": {
+   "learned_exact": 9,
+   "targets": 10,
+   "active": 10,
+   "tokens": 41515,
+   "student_trace_line_ok": 0.814,
+   "questions": 13,
+   "unsupported_lines": 0,
+   "errors": 0,
+   "seconds": 287.0
+  },
+  "selected": "high",
+  "meter_usd_delta": 0.976
+ },
+ "history": {
+  "attempt1": "results/dev_run1_design_defect/ (controls not exact: scenario-design defect; stopped)",
+  "attempt2": "results/dev_run2_teacher_truncated/ (teacher output cap truncated 32/98 replies; consistency rule defect)",
+  "final": "results/dev/"
+ },
+ "teacher_spend_usd_meter": 4.777
+}

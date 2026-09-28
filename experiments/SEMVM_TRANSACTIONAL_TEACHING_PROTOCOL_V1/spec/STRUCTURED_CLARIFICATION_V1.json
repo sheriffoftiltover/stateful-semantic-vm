@@ -1,0 +1,21 @@
+{
+ "version": "STRUCTURED_CLARIFICATION_V1",
+ "student_questions": {
+  "CLARIFY_REFERENCE": "lists the legal referents (ids r1.. with kind + producing step); teacher replies REFERENT: <id> | NONE; a valid id becomes reference_choice={chosen, offered}: the other offered results are hidden from THIS slot's grounding (renamed kind HIDDEN_BY_REFERENCE_CHOICE; numbering unchanged)",
+  "RESTATE_SLOT": "step k + registered reason (incl. PREMATURE_TERMINAL_ACTION, UNREQUESTED_RETURN, UNNAMED_CALL, RELATION_LOCATION_ERROR legality fact, MISSING_ARGUMENT); teacher replies replacement STEP lines or CANCEL_SLOT",
+  "RESTATE_OBSCURED": "step k was obscured by the evaluator (never attributed to the teacher); teacher restates the action of step k",
+  "MISSING_EXAMPLE": "no step has run; teacher replies EXAMPLE: p=v, ...",
+  "NEW_DEMO": "after abort / insufficiency / conflict"
+ },
+ "grounder_feedback": {
+  "ILLEGAL_RELATION_LOCATION": {
+   "object_type": "...",
+   "relation": "...",
+   "legal_path": "PARENT.<rel>|CHILD.<rel>"
+  },
+  "UNREQUESTED_RETURN": "rule text",
+  "UNNAMED_CALL": "procedures + rule text"
+ },
+ "grounder_retry": "hosted grounder: one retry of the SAME line after structured rejection (same slot; feedback = legality facts only, never gold)",
+ "scripted_teacher_lookup": "MISSING_EXAMPLE: its EXAMPLE; RESTATE*: its registered band-A rephrase of lesson line k; CLARIFY_REFERENCE: the result variable its registered gold unit for line k reads"
+}

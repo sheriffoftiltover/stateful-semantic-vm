@@ -1,0 +1,254 @@
+{
+ "name": "count_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Uma"
+ },
+ "interaction_id": "dev_b-028-S18:count_emails_to:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/E/dev_b-028-S18/learn/snapshots/dev_b-028-S18_count_emails_to_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "4f7cbd0d5e81b603a46f4dae64a093f690a245e1facc6a16f8acfaef15e84ad4",
+ "utterances": [
+  {
+   "utterance": "Please look up every email with Uma.",
+   "uid": "dev_b-028-S18:count_emails_to:d0:demo1-slot1:0",
+   "instruction": "Please look up every email with Uma.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Please look up every email with Uma.",
+    "values": {
+     "PERSON": [
+      "Uma"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "91e995409b4ba1c7ca7e25a80ab844aaf87c501a1f4b9f00d63612fa45e4cd93"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"WHO\": \"Uma\"}}]}",
+    "request_hash": "91e995409b4ba1c7ca7e25a80ab844aaf87c501a1f4b9f00d63612fa45e4cd93",
+    "cached": true,
+    "input_tokens": 4451,
+    "output_tokens": 99,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "WHO": "Uma"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Uma"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "2f6649cb953c28454d9125ff93005e0dc487c44e86b634a519a631f0608decb3",
+   "state_after": "2f6649cb953c28454d9125ff93005e0dc487c44e86b634a519a631f0608decb3",
+   "seconds": 0.378
+  },
+  {
+   "utterance": "Please get the number of them.",
+   "uid": "dev_b-028-S18:count_emails_to:d0:demo1-slot2:1",
+   "instruction": "Please get the number of them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please get the number of them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "4f9382ed1ba1cace434b0a6c3d95d74f3af384f2d95ca2f911b922c65768e6f8"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "85b5bf8e4ac514cb072823f3c567c370aad063b044ea91a74ef7ebc630f37726"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    { \"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\" }\n  ]\n}",
+    "request_hash": "85b5bf8e4ac514cb072823f3c567c370aad063b044ea91a74ef7ebc630f37726",
+    "cached": true,
+    "input_tokens": 4595,
+    "output_tokens": 65,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "2f6649cb953c28454d9125ff93005e0dc487c44e86b634a519a631f0608decb3",
+   "state_after": "2f6649cb953c28454d9125ff93005e0dc487c44e86b634a519a631f0608decb3",
+   "seconds": 0.495
+  },
+  {
+   "utterance": "Give me the number back.",
+   "uid": "dev_b-028-S18:count_emails_to:d0:demo1-slot3:2",
+   "instruction": "Give me the number back.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Give me the number back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f677bb7561630504cdc5b580ac2aaf4cd310c266ad853df2b167d23771194b66"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "f677bb7561630504cdc5b580ac2aaf4cd310c266ad853df2b167d23771194b66",
+    "cached": true,
+    "input_tokens": 4505,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "2f6649cb953c28454d9125ff93005e0dc487c44e86b634a519a631f0608decb3",
+   "state_after": "2f6649cb953c28454d9125ff93005e0dc487c44e86b634a519a631f0608decb3",
+   "seconds": 0.311
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Uma"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "33f4b71fa6e3f5ffe587ec391102c9c4be3a593a12091aff7666c23d37cd4906",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,63 @@
+{
+ "scenario_id": "dev-004-S4",
+ "mode": "TEACHER",
+ "arm": "D",
+ "grounder": "HOSTED",
+ "backend": "MODAL",
+ "model": "openai/gpt-oss-120b",
+ "reasoning": "high",
+ "targets": [
+  {
+   "name": "close_open_emails_to",
+   "status": "ACTIVE",
+   "transcript": [
+    {
+     "role": "system",
+     "content": "You are a TUTOR. You teach a small assistant (the STUDENT) a new reusable skill. The student cannot see your reasoning; it only reads the\nlines you write, executes them one by one on its personal-organizer database, and learns the skill from what it successfully executed.\n\nWHAT THE STUDENT'S DATABASE CONTAINS\n- Scheduling events: REMINDER, REQUEST, PLAN, NOTE. Each may have one item it is about: a CALL, EMAIL, VISIT or MESSAGE.\n- Relations: WHO (the person an event is with / who made it), RECIPIENT (the person an email or message is addressed to), WHEN (a time),\n  WHERE (a place), TOPIC. Every event also has a status: open or closed (new events are open).\n- To talk about calls, emails, visits or messages at a time, just say so (\"the calls at 3\", \"the calls scheduled at noon\"); the student\n  knows where times are stored. Do not look for reminders or requests unless the skill is about them.\n\nWHAT THE STUDENT CAN DO (one action per instruction is safest)\n- find events of a type, optionally filtered by person, time, place, topic and open/closed status   (\"Find the open messages to Kevin.\")\n- take the most recent event of a type                                                              (\"Take my latest note.\")\n- take the first one of a list; count a list                                                        (\"Take the first one.\" / \"Count them.\")\n- get the item an event is about, or the event an item belongs to                                   (\"Get the message it is about.\" / \"Get its parent.\")\n- look up the person / time / place / topic of one event, or collect it from every event of a list  (\"Find out who it is with.\" / \"Collect who they are with.\")\n- sort a list or group it by a relation; make a report of a relation's values per group            (\"Group them by who they are with.\" / \"Report the places in each group.\")\n- change an event's person / time / place / topic / recipient; set an event (or each event of a list) open or closed; delete\n                                                                                                    (\"Move it to Lima.\" / \"Mark each of them closed.\")\n- call one of the student's saved skills: NAME it and give EVERY input explicitly                    (\"Call messages_to with person Kevin.\" /\n                                                                                                     \"Call messages_to with that person.\")\n- return the final result of the skill                                                              (\"Return the count.\")\nThe student CANNOT send, text, phone, email, print, browse, save files, schedule new events, or do arithmetic beyond counting.\n\nTEACH EXACTLY THE REQUESTED SKILL (goal-faithfulness contract)\n- Do not add filters, restrictions, state predicates (open / closed), ordering criteria, constants, entity scopes or side conditions unless\n  the skill description explicitly requires them, or a saved skill's signature makes them necessary.\n- Do not silently narrow \"all\" to \"open\", \"emails\" to \"open emails\", \"calls with X\" to \"open calls with X\", or make analogous restrictions.\n- If the skill description is ambiguous, ask rather than inventing a constraint.\n\nSAVED SKILLS\n- To use a saved skill, always write \"Call <skill name> with <input> <value>\" (or \"... with that <result>\"). Never rely on \"use that skill\",\n  \"do the earlier procedure\" or describing what the skill does: the student only calls a skill you name, with the inputs you give.\n\nHOW TO WRITE A DEMONSTRATION\nEXAMPLE: <input>=<value>, <input>=<value>      (REQUIRED, first line: the example values for EVERY input of the skill; no step runs before it)\nSTEP: <one instruction>\nSTEP: <one instruction>\n...\n- Use concrete example values (never placeholders). Use only values from VALUES.\n- Refer to earlier results with words like \"them\", \"it\", \"those calls\", \"the count\".\n- Only the last STEP returns the skill's result (\"Return ...\"). No earlier STEP may ask to return or give back anything.\n- Write nothing except the EXAMPLE line and STEP lines.\n\nWHEN THE STUDENT ASKS YOU SOMETHING (it always says which step it is about)\n- RESTATE step k: reply only with the replacement STEP line(s) for step k. If step k really should not be part of the demonstration,\n  reply with the single line CANCEL_SLOT (a step the student says was obscured by the evaluator cannot be cancelled: restate it).\n- WHICH RESULT for step k: the student lists the possible results with ids (r1, r2, ...). Reply with one line: REFERENT: <id>\n  (or REFERENT: NONE if none of them is meant, then restate the step).\n- MISSING EXAMPLE: reply with one line: EXAMPLE: <input>=<value>, ... for every input of the skill.\n- ANOTHER DEMONSTRATION: reply with a new EXAMPLE line (different example values) and a complete list of STEP lines."
+    },
+    {
+     "role": "user",
+     "content": "SKILL TO TEACH: close_open_emails_to(person:person)\nWHAT IT DOES: Given a person, close all still-open emails addressed to that person and return those emails.\n\nTHE STUDENT'S SAVED SKILLS: (none)\n\nVALUES (use only these for example values):\n- people: Bob, Grandpa\n- times: noon, 7:45\n- places: Tokyo, Rome\n- topics: contract, trip\n\nSTYLE: Teach by example: describe what you are doing for the example values in natural sentences, still one STEP line per action.\n\nGive demonstration 1 now (EXAMPLE line, then STEP lines)."
+    },
+    {
+     "role": "assistant",
+     "content": "EXAMPLE: person=Bob\nSTEP: Find the open emails to Bob.\nSTEP: Mark each of them closed.\nSTEP: Return them."
+    }
+   ],
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Bob\nSTEP: Find the open emails to Bob.\nSTEP: Mark each of them closed.\nSTEP: Return them.",
+     "provenance": {
+      "role": "teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "d69537b0d477850cad9c0a9374f4a01e6f0622eeb62bf8b0ae5fb23084b86a28",
+      "prompt_sha256": "7ae155de66a7ef5b292b81715f2ebe35048b5f9d74f44e0ea3a6889cf21ffc9d",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 4096,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "LESSON",
+      "meter_usd_before": 2.259,
+      "request_id": "chatcmpl-aab6887e6b7b4d37a91cbbd592af4a5d",
+      "timestamp": "2026-09-27T23:51:02Z",
+      "latency_s": 6.365,
+      "retry_count": 0,
+      "input_tokens": 1255,
+      "output_tokens": 933,
+      "finish_reason": "stop",
+      "response_sha256": "8d0a84823c97c2d3cb849cd8c9847a2c7dde25d5f7be6d0bf7a539b4009c504b",
+      "reasoning_chars": 3988,
+      "cached": false
+     },
+     "slot_id": null
+    }
+   ]
+  }
+ ]
+}

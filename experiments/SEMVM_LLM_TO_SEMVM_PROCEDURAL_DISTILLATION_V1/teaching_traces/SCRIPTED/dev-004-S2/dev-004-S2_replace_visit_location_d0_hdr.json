@@ -1,0 +1,281 @@
+{
+ "name": "replace_visit_location",
+ "mode": ":teach",
+ "declared": {
+  "place": "Prague"
+ },
+ "interaction_id": "dev-004-S2:replace_visit_location:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/SCRIPTED/dev-004-S2/learn/snapshots/dev-004-S2_replace_visit_location_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "95c37ab02d11c92928f2944218dbe4418c6abd49a17031ad3c99418d9ac4f677",
+ "utterances": [
+  {
+   "utterance": "Look up the most recent visit.",
+   "uid": "dev-004-S2:replace_visit_location:d0:l0",
+   "instruction": "Look up the most recent visit.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Look up the most recent visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+      "score": -0.254
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"VISIT\"}\n\n",
+      "score": -4.709
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -11.229
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "VISIT",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"VISIT\"}}]",
+      "score": -0.254,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"VISIT\"}, \"where\": []}]",
+      "score": -4.709,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -11.229,
+      "n": 1
+     }
+    ],
+    "margin": 4.454,
+    "reference_notes": [],
+    "seconds": 2.04,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "1d7eb3e8e6c38824958a3dcce8c97f74d3bceef6f2df26cfb41d4be8262bb7dc",
+   "state_after": "1d7eb3e8e6c38824958a3dcce8c97f74d3bceef6f2df26cfb41d4be8262bb7dc",
+   "seconds": 2.169
+  },
+  {
+   "utterance": "Set its location to Prague.",
+   "uid": "dev-004-S2:replace_visit_location:d0:l1",
+   "instruction": "Set its location to Prague.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Set its location to Prague.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Prague"
+     ],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Prague\"}\n\n",
+      "score": -0.034
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -9.968
+     }
+    ],
+    "raw_text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Prague\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "WHERE",
+      "value": "Prague"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"WHERE\", \"value\": {\"const\": \"Prague\"}}]",
+      "score": -0.034,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -9.968,
+      "n": 1
+     }
+    ],
+    "margin": 9.934,
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "seconds": 2.25,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Prague"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "+rel",
+     "visit:000006",
+     "WHERE",
+     "place:prague"
+    ]
+   ],
+   "state_before": "1d7eb3e8e6c38824958a3dcce8c97f74d3bceef6f2df26cfb41d4be8262bb7dc",
+   "state_after": "3ae71cf64b9e4e3b8cd66b41af24b0f4330ccd8f4023e095d9c0bbc416a65697",
+   "seconds": 2.399
+  },
+  {
+   "utterance": "Give back the visit.",
+   "uid": "dev-004-S2:replace_visit_location:d0:l2",
+   "instruction": "Give back the visit.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give back the visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.046
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -4.167
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -5.252
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.046,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 2.03,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3ae71cf64b9e4e3b8cd66b41af24b0f4330ccd8f4023e095d9c0bbc416a65697",
+   "state_after": "3ae71cf64b9e4e3b8cd66b41af24b0f4330ccd8f4023e095d9c0bbc416a65697",
+   "seconds": 2.231
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Prague"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "8eeec44fe01c1d32bdd56bb596e5c93a392d77f1c0be8eb7d959421743a73378",
+ "nl_mode": "NL_TEACH"
+}

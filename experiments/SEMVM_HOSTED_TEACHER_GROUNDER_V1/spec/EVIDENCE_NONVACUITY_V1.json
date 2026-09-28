@@ -1,0 +1,13 @@
+{
+ "version": "EVIDENCE_NONVACUITY_V1",
+ "implementation": "student/nlsystem.py NLSystem.evidence_nonvacuous / _witness",
+ "when": "after evidence sufficiency, before ANY verification (:endteach one-shot, :learn)",
+ "rule": "each demonstration is replayed on its start snapshot in a rolled-back transaction. For every FIND with a constraint and every FILTER (aligned by position across the used demonstrations): (1) non-empty in >= 1 demonstration; (2) for each registered contrast of its constraints \u2014 STATUS_DROPPED (status removed) and WHO<->RECIPIENT at SELF scope when the ontology allows the sibling for the type \u2014 some demonstration where the contrast result differs.",
+ "on_failure": "status REQUIRE_SECOND_DEMONSTRATION, insufficient='EVIDENCE_VACUOUS: ...' (the demonstration is kept as example 1 on the one-shot path); the teacher is asked for another demonstration with different example values",
+ "metrics": [
+  "VACUOUS_VERIFICATION_ATTEMPT",
+  "VACUOUS_CANDIDATE_ACTIVATED",
+  "EVIDENCE_NONVACUITY_DETECTED (over demonstrations the oracle finds vacuous)",
+  "VACUITY_PROBE_TRIGGERED"
+ ]
+}

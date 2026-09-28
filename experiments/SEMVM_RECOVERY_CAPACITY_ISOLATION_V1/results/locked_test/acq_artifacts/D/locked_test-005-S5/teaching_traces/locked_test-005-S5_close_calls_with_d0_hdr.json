@@ -1,0 +1,343 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Sam"
+ },
+ "interaction_id": "locked_test-005-S5:close_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-005-S5/learn/snapshots/locked_test-005-S5_close_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "bed5f4a59021d092b8fc5c6e07cf5f2535c5eb6fcdd9371c29d74f36367b1c90",
+ "utterances": [
+  {
+   "utterance": "Find the calls with person Sam.",
+   "uid": "locked_test-005-S5:close_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the calls with person Sam.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the calls with person Sam.",
+    "values": {
+     "PERSON": [
+      "Sam"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "cc3248f1b2b895ad4940cf2b8b637bf6887a59f8b785c74d992e8c8988023c2e"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Sam\"}}]}",
+    "request_hash": "cc3248f1b2b895ad4940cf2b8b637bf6887a59f8b785c74d992e8c8988023c2e",
+    "cached": false,
+    "input_tokens": 4450,
+    "output_tokens": 58,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Sam"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.96
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Sam"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "4caf4e29c6b19127eefe1aa954dbb90e45af6754a248f30766544bbf3051d013",
+   "state_after": "4caf4e29c6b19127eefe1aa954dbb90e45af6754a248f30766544bbf3051d013",
+   "seconds": 1.24
+  },
+  {
+   "utterance": "Mark each of them closed.",
+   "uid": "locked_test-005-S5:close_calls_with:d0:demo1-slot2:1",
+   "instruction": "Mark each of them closed.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Mark each of them closed.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "518097e5a9c25f5fa2e9c06970045e66a919b537936d87d9c55f364f78489aa3"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+    "request_hash": "518097e5a9c25f5fa2e9c06970045e66a919b537936d87d9c55f364f78489aa3",
+    "cached": false,
+    "input_tokens": 4482,
+    "output_tokens": 66,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.17
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000004",
+     "OPEN",
+     "CLOSED"
+    ],
+    [
+     "status",
+     "call:000007",
+     "CLOSED",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "4caf4e29c6b19127eefe1aa954dbb90e45af6754a248f30766544bbf3051d013",
+   "state_after": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "seconds": 1.698
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "locked_test-005-S5:close_calls_with:d0:demo1-slot3:2",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "42bcc1c68346e6a15a7ce45168b3b916bd7a20e471074148b9e1dd29f1bcdb01"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "42bcc1c68346e6a15a7ce45168b3b916bd7a20e471074148b9e1dd29f1bcdb01",
+    "cached": false,
+    "input_tokens": 4479,
+    "output_tokens": 52,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.06
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "state_after": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "seconds": 1.363
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "locked_test-005-S5:close_calls_with:d0:demo1-slot4:3",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "9a50912aaf295eef4e9d3ff9c2b1c6ae2f09a8160b08b69890938dc546077a41"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "9a50912aaf295eef4e9d3ff9c2b1c6ae2f09a8160b08b69890938dc546077a41",
+    "cached": false,
+    "input_tokens": 4503,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.94
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "state_after": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "seconds": 1.257
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Sam"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "f2ab8c859cbd8dd625071c533c2d8a49e18b301cd18272b68e5de95798b9e56b",
+ "nl_mode": "NL_TEACH"
+}

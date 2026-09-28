@@ -1,0 +1,212 @@
+{
+ "name": "count_open_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Alice"
+ },
+ "interaction_id": "dev_a-006-S6:count_open_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/D/dev_a-006-S6/learn/snapshots/dev_a-006-S6_count_open_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "6e4df1d50a78910039e8dcbe3283f4107c76c6957471d6f44f0257b566167daa",
+ "utterances": [
+  {
+   "utterance": "Find the open calls with Alice and count them.",
+   "uid": "dev_a-006-S6:count_open_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the open calls with Alice and count them.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the open calls with Alice and count them.",
+    "values": {
+     "PERSON": [
+      "Alice"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "6ff9a61fb1a786d3724cd66c71fa0abf1846200c514033f0c6ac6ac78eb18f3d"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "63176db2bf6f0c25f8a8d33185d27de83e0e976c82d0f16c7ffb8c1d6e098336"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"CALL\",\n      \"where\": { \"WHO\": \"Alice\" },\n      \"status\": \"OPEN\"\n    },\n    {\n      \"bind\": \"r2\",\n      \"op\": \"COUNT\",\n      \"of\": \"r1\"\n    }\n  ]\n}",
+    "request_hash": "63176db2bf6f0c25f8a8d33185d27de83e0e976c82d0f16c7ffb8c1d6e098336",
+    "cached": false,
+    "input_tokens": 4618,
+    "output_tokens": 150,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Alice"
+      },
+      "status": "OPEN"
+     },
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 3.81
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Alice"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    },
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "22a18cd6326e42c5ce3fdca70d70774eb01012d8029f28bf03a566582cf89ab0",
+   "state_after": "22a18cd6326e42c5ce3fdca70d70774eb01012d8029f28bf03a566582cf89ab0",
+   "seconds": 4.302
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev_a-006-S6:count_open_calls_with:d0:demo1-slot2:1",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "fb28bfbfe8fbdef307f4b748602e1dbd0800853c485e1432a668c134af81166b"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "fb28bfbfe8fbdef307f4b748602e1dbd0800853c485e1432a668c134af81166b",
+    "cached": false,
+    "input_tokens": 4509,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.08
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "22a18cd6326e42c5ce3fdca70d70774eb01012d8029f28bf03a566582cf89ab0",
+   "state_after": "22a18cd6326e42c5ce3fdca70d70774eb01012d8029f28bf03a566582cf89ab0",
+   "seconds": 1.684
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Alice"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "93b5386330f61b1f1201ceb122d8a0ad1c1b1b0c05a17b1cd089051814d71c3b",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,724 @@
+[
+ {
+  "turn": 0,
+  "pid": 2643057,
+  "utterance_id": "dev-016-S6:0",
+  "INPUT": "note zeta ; so then , about survey re eta , call eta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "CALL",
+    "layout": [
+     "between_o2",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "NOTE"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "CALL",
+       null,
+       11
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "CALL",
+       null,
+       11
+      ],
+      [
+       "TOPIC",
+       "survey",
+       7
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "CALL",
+      null,
+      11
+     ],
+     [
+      "NOTE",
+      null,
+      0
+     ],
+     [
+      "TOPIC",
+      "survey",
+      7
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     0
+    ]
+   },
+   "log_mass": 561.456298828125,
+   "margin": 14.56390380859375,
+   "n_outputs": 20,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TOPIC_VALUE",
+     "surface": "survey"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "survey",
+    "topic:survey"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:survey",
+    "TOPIC",
+    "survey",
+    "survey"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "TOPIC",
+    "topic:survey"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "5efb64fec48fd36cd1620f97a72d2237192bee22ab354da079d482c8f02c624a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "+rel",
+    "call:000001",
+    "TOPIC",
+    "topic:survey"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "a70b107b171121256c05029e5b0c404968300e6c648f89ef59d421c434b55180",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "TOPIC",
+     "topic:survey"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2643057,
+  "utterance_id": "dev-016-S6:1",
+  "INPUT": "remind beta ; while in Cairo re beta : next and then so ; email epsilon : to Dave per beta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "a70b107b171121256c05029e5b0c404968300e6c648f89ef59d421c434b55180",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Dave",
+       18
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       14
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "PLACE",
+       "Cairo",
+       5
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      14
+     ],
+     [
+      "PERSON",
+      "Dave",
+      18
+     ],
+     [
+      "PLACE",
+      "Cairo",
+      5
+     ],
+     [
+      "REMINDER",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1752.1907958984375,
+   "margin": 11.177978515625,
+   "n_outputs": 76,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Dave"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Cairo"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e0",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Dave",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Cairo",
+    "place:cairo"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Dave"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:cairo",
+    "PLACE",
+    "cairo",
+    "Cairo"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:cairo"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "fe7a4882e4dec4eed1107df18bc39450c651f9f7cbe0ccd84f8c4b9cde9cfe70",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Dave"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:cairo"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "4cae07aa2be84ac81930c605847cc0f5b8601a2f913e82b81784923b33ea627a",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "TOPIC",
+     "topic:survey"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "reminder:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:cairo"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2643057,
+  "utterance_id": "dev-016-S6:2",
+  "INPUT": "QUERY TOPIC OF CALL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "4cae07aa2be84ac81930c605847cc0f5b8601a2f913e82b81784923b33ea627a",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "CALL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c075038a52cd3771505e860df1ae0cce592c6a2cc4cff9228cf20bf1d8c328a0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:survey"
+  ],
+  "STATE_AFTER": "4cae07aa2be84ac81930c605847cc0f5b8601a2f913e82b81784923b33ea627a",
+  "RESPONSE": "survey",
+  "RETURN_RENDERED": [
+   "survey"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "TOPIC",
+     "topic:survey"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "reminder:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:cairo"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2643057,
+  "utterance_id": "dev-016-S6:3",
+  "INPUT": "QUERY TOPIC OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "4cae07aa2be84ac81930c605847cc0f5b8601a2f913e82b81784923b33ea627a",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "44180c4ef09b871f5384ec976a4c42ba9e51d88bb786f81245649ba7883c2e06",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "4cae07aa2be84ac81930c605847cc0f5b8601a2f913e82b81784923b33ea627a",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "TOPIC",
+     "topic:survey"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "reminder:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:cairo"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ]
+   ]
+  }
+ }
+]

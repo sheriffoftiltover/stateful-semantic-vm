@@ -1,0 +1,443 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645458,
+  "utterance_id": "locked_test-009-S5:0",
+  "INPUT": "request alpha : about launch per gamma ; so then again soon , call gamma ; at 3 per alpha",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "CALL",
+    "layout": [
+     "straddle_o2",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "CALL",
+       null,
+       13
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "CALL",
+       null,
+       13
+      ],
+      [
+       "TOPIC",
+       "launch",
+       4
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "3",
+       17
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "CALL",
+      null,
+      13
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "3",
+      17
+     ],
+     [
+      "TOPIC",
+      "launch",
+      4
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1334.625244140625,
+   "margin": 6.7486572265625,
+   "n_outputs": 52,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TIME",
+     "surface": "3"
+    },
+    {
+     "local_id": "v1",
+     "type": "TOPIC_VALUE",
+     "surface": "launch"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e1",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "TIME",
+    "v0",
+    "3",
+    "time:03:00"
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "launch",
+    "topic:launch"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:03:00",
+    "TIME",
+    "03:00",
+    "3"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:launch",
+    "TOPIC",
+    "launch",
+    "launch"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:03:00"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "ebc8597ac48ea81a69bcb0b33335877532b0de006d710e19001f754e6c912173",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "+rel",
+    "call:000001",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHEN",
+    "time:03:00"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "110f544df8736808957e2207f6316bfe29472f439036c287aa16bab70c9fe9da",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:03:00"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645458,
+  "utterance_id": "locked_test-009-S5:1",
+  "INPUT": "QUERY TOPIC OF CALL WHERE PARENT.WHEN=3",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "110f544df8736808957e2207f6316bfe29472f439036c287aa16bab70c9fe9da",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "CALL",
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     "3"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "TOPIC",
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       "time:03:00"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "edb51788147e6a118fcfc76876cbc40b73bbd1b4b35341c346dfcab8f6c58098",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:launch"
+  ],
+  "STATE_AFTER": "110f544df8736808957e2207f6316bfe29472f439036c287aa16bab70c9fe9da",
+  "RESPONSE": "launch",
+  "RETURN_RENDERED": [
+   "launch"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:03:00"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645458,
+  "utterance_id": "locked_test-009-S5:2",
+  "INPUT": "QUERY WHEN OF REQUEST WHERE CHILD.TOPIC=launch",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "110f544df8736808957e2207f6316bfe29472f439036c287aa16bab70c9fe9da",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "REQUEST",
+   "where": [
+    [
+     "CHILD",
+     "TOPIC",
+     "launch"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHEN",
+     "where": [
+      [
+       "CHILD",
+       "TOPIC",
+       "topic:launch"
+      ]
+     ]
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "16ace7609b3cf1c77de7cbc05a1aba60e83c955336b5a6bb0f6080d3d5de3372",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:03:00"
+  ],
+  "STATE_AFTER": "110f544df8736808957e2207f6316bfe29472f439036c287aa16bab70c9fe9da",
+  "RESPONSE": "3",
+  "RETURN_RENDERED": [
+   "3"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:03:00"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

@@ -1,0 +1,346 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645281,
+  "utterance_id": "locked_test-002-S1:0",
+  "INPUT": "message gamma ; so and then later again , while in Seoul per gamma : remind eta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "between_i3",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       15
+      ],
+      [
+       "MESSAGE",
+       null,
+       0
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "MESSAGE",
+       null,
+       0
+      ],
+      [
+       "PLACE",
+       "Seoul",
+       11
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      0
+     ],
+     [
+      "PLACE",
+      "Seoul",
+      11
+     ],
+     [
+      "REMINDER",
+      null,
+      15
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     15
+    ]
+   },
+   "log_mass": 841.0927734375,
+   "margin": 22.6251220703125,
+   "n_outputs": 20,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Seoul"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Seoul",
+    "place:seoul"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:seoul",
+    "PLACE",
+    "seoul",
+    "Seoul"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "a2802c50a457118dda8241e7efeec6a2e368cfa7b839f15abe425e6996be383e",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "cdedaaa68a348e3f140fb544698c49d9e275d72e18319587fde0103af361b514",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645281,
+  "utterance_id": "locked_test-002-S1:1",
+  "INPUT": "QUERY WHERE OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "cdedaaa68a348e3f140fb544698c49d9e275d72e18319587fde0103af361b514",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7e0299949495b894abfa0d7d8a8136a132f258302e5c2c272f6dbcef90da9bf7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:seoul"
+  ],
+  "STATE_AFTER": "cdedaaa68a348e3f140fb544698c49d9e275d72e18319587fde0103af361b514",
+  "RESPONSE": "Seoul",
+  "RETURN_RENDERED": [
+   "Seoul"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645281,
+  "utterance_id": "locked_test-002-S1:2",
+  "INPUT": "QUERY WHERE OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "cdedaaa68a348e3f140fb544698c49d9e275d72e18319587fde0103af361b514",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "40e832621788cd729b6176ddca66b48316a19ef3723dc98892e714355af5b5fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "cdedaaa68a348e3f140fb544698c49d9e275d72e18319587fde0103af361b514",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHERE",
+     "place:seoul"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

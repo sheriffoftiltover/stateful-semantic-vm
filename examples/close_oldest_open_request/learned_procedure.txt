@@ -1,0 +1,7 @@
+PROCEDURE close_oldest_open_request(person:PERSON)
+$v0 = FIND REQUEST WHERE SELF.WHO={person} STATUS=OPEN
+$v1 = SORT $v0 WHEN
+$v2 = FIRST $v1
+SET_STATUS $v2 CLOSED
+RETURN $v2
+END

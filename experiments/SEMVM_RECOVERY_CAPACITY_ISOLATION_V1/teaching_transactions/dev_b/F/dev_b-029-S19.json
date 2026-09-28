@@ -1,0 +1,82 @@
+[
+ {
+  "target": "count_requests_by_at",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_EXAMPLE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "REQUIRE_SECOND_DEMONSTRATION",
+    "end_detail": {
+     "insufficient": "EVIDENCE_VACUOUS: step 1 (FIND) found nothing in every demonstration"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "MISSING_EXAMPLE",
+      "missing": [
+       "person",
+       "time"
+      ]
+     }
+    ],
+    "example": {
+     "person": "Heidi",
+     "time": "3:15"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "REQUIRE_SECOND_DEMONSTRATION",
+    "events": [],
+    "example": {
+     "person": "Erin",
+     "time": "5"
+    }
+   },
+   {
+    "index": 2,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "REQUIRE_SECOND_DEMONSTRATION",
+    "events": [],
+    "example": {
+     "person": "Nina",
+     "time": "8"
+    }
+   }
+  ]
+ }
+]

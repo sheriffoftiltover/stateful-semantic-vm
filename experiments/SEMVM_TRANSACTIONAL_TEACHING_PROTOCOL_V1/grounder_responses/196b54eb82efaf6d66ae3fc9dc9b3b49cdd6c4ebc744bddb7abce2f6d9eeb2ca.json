@@ -1,0 +1,33 @@
+{
+ "text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"CALL\",\n      \"where\": { \"WHO\": \"Rita\" },\n      \"status\": \"OPEN\"\n    },\n    {\n      \"bind\": \"r2\",\n      \"op\": \"COUNT\",\n      \"of\": \"r1\"\n    },\n    {\n      \"op\": \"RETURN\",\n      \"value\": \"r2\"\n    }\n  ]\n}",
+ "provenance": {
+  "role": "grounder",
+  "provider": "modal-vllm",
+  "model": "openai/gpt-oss-120b",
+  "request_hash": "196b54eb82efaf6d66ae3fc9dc9b3b49cdd6c4ebc744bddb7abce2f6d9eeb2ca",
+  "prompt_sha256": "f6678fa1004a28d32583a34e778e088d4f3dd985feb64efb1942da8574124951",
+  "generation": {
+   "model": "gpt-oss-120b",
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "seed": 0,
+   "reasoning_effort": "low"
+  },
+  "kind": "GROUND",
+  "schema": "TTP_GROUNDER_ENVELOPE_V1 (HTG envelope + structured legality feedback, one retry)",
+  "card_sha256": "6c11956f99d5df11007d1fb08147da60bafac9b7ece5b5e68d3676776c243b40",
+  "meter_usd_before": 2.294,
+  "request_id": "chatcmpl-6e3873d30401487989952bee9c663084",
+  "timestamp": "2026-09-27T23:51:24Z",
+  "latency_s": 1.516,
+  "retry_count": 0,
+  "input_tokens": 4453,
+  "output_tokens": 179,
+  "finish_reason": "stop",
+  "response_sha256": "2834efc380ddb675fe0c4809d2688198ca2ea97a205c88649d365d87cdc5b42c",
+  "reasoning_chars": 293,
+  "cached": false
+ },
+ "messages_sha256": "f6678fa1004a28d32583a34e778e088d4f3dd985feb64efb1942da8574124951"
+}

@@ -1,0 +1,83 @@
+{
+ "name": "count_calls_with",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.62,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_ambiguous_entity",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE count_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "program_hash": "ca0be2aec0f8e3730534e7feae1cbaa0e745e9629863de6b9506ad21acd818ed"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:count_calls_with:v1",
+ "chosen": "deterministic"
+}

@@ -1,0 +1,280 @@
+{
+ "name": "person_on_call_at",
+ "mode": ":example",
+ "declared": {
+  "time": "11"
+ },
+ "interaction_id": "dev_a-030-S19:person_on_call_at:d2:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/D/dev_a-030-S19/learn/snapshots/dev_a-030-S19_person_on_call_at_d2_hdr_start.sqlite",
+ "start_snapshot_sha256": "30e725616d94521d93f9c28c12a1c69da8729f9fb6cd4fa304b5ffb91a57fc5f",
+ "utterances": [
+  {
+   "utterance": "Find the calls at 11 and take the first one.",
+   "uid": "dev_a-030-S19:person_on_call_at:d2:demo3-slot1:0",
+   "instruction": "Find the calls at 11 and take the first one.",
+   "correction": false,
+   "slot_id": "demo3-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the calls at 11 and take the first one.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "11"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: FIND: condition WHEN='11' is not legal here (value not in the instruction, or relation/scope illegal for CALL)",
+      "feedback": [
+       {
+        "error": "ILLEGAL_RELATION_LOCATION",
+        "object_type": "CALL",
+        "relation": "WHEN",
+        "legal_path": "PARENT.WHEN"
+       }
+      ],
+      "request_hash": "d52e7f0cc665a626e4df20505e996e7601e89354f8139fe9143756c5e84c9d87"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "14a8356dcfd06545bd3bd8695bcf0d055e4bf6009d923b936ac6368f81f56653"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"CALL\",\n      \"where\": { \"PARENT.WHEN\": \"11\" }\n    },\n    {\n      \"bind\": \"r2\",\n      \"op\": \"FIRST\",\n      \"of\": \"r1\"\n    }\n  ]\n}",
+    "request_hash": "14a8356dcfd06545bd3bd8695bcf0d055e4bf6009d923b936ac6368f81f56653",
+    "cached": false,
+    "input_tokens": 4599,
+    "output_tokens": 173,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "PARENT.WHEN": "11"
+      }
+     },
+     {
+      "bind": "r2",
+      "op": "FIRST",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "FIND: condition WHEN='11' is not legal here (value not in the instruction, or relation/scope illegal for CALL)"
+    ],
+    "reference_notes": [
+     "FIRST.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 3.55
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       {
+        "const": "11"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "FIRST",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5aa8d5cb0ce6c8ff36e74e58f85df20f0b48ee2976437c42b7674b402bfcec03",
+   "state_after": "5aa8d5cb0ce6c8ff36e74e58f85df20f0b48ee2976437c42b7674b402bfcec03",
+   "seconds": 3.635
+  },
+  {
+   "utterance": "Find out who it is with.",
+   "uid": "dev_a-030-S19:person_on_call_at:d2:demo3-slot2:1",
+   "instruction": "Find out who it is with.",
+   "correction": false,
+   "slot_id": "demo3-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find out who it is with.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "0a158a7f229cd4e6dd8b30cfa7481bc61d6c30dbc1324b0a81b9fe84f13b20cd"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r3\", \"op\": \"GET\", \"of\": \"r2\", \"rel\": \"WHO\"}]}",
+    "request_hash": "0a158a7f229cd4e6dd8b30cfa7481bc61d6c30dbc1324b0a81b9fe84f13b20cd",
+    "cached": false,
+    "input_tokens": 4510,
+    "output_tokens": 57,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r3",
+      "op": "GET",
+      "of": "r2",
+      "rel": "WHO"
+     }
+    ],
+    "reference_notes": [
+     "GET.of=r2 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.2
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "GET",
+     "bind": "r3",
+     "obj": {
+      "var": "r2"
+     },
+     "rel": "WHO"
+    }
+   ],
+   "diff": [],
+   "state_before": "5aa8d5cb0ce6c8ff36e74e58f85df20f0b48ee2976437c42b7674b402bfcec03",
+   "state_after": "5aa8d5cb0ce6c8ff36e74e58f85df20f0b48ee2976437c42b7674b402bfcec03",
+   "seconds": 1.353
+  },
+  {
+   "utterance": "Return the person.",
+   "uid": "dev_a-030-S19:person_on_call_at:d2:demo3-slot3:2",
+   "instruction": "Return the person.",
+   "correction": false,
+   "slot_id": "demo3-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the person.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "6f987894783880a32c35afb06467ee87217da8b91eff772fab5a42825aa0df70"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r3\"}]}",
+    "request_hash": "6f987894783880a32c35afb06467ee87217da8b91eff772fab5a42825aa0df70",
+    "cached": false,
+    "input_tokens": 4536,
+    "output_tokens": 45,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r3"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r3 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.14
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r3"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5aa8d5cb0ce6c8ff36e74e58f85df20f0b48ee2976437c42b7674b402bfcec03",
+   "state_after": "5aa8d5cb0ce6c8ff36e74e58f85df20f0b48ee2976437c42b7674b402bfcec03",
+   "seconds": 1.239
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     {
+      "const": "11"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FIRST",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "GET",
+   "bind": "r3",
+   "obj": {
+    "var": "r2"
+   },
+   "rel": "WHO"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "1f9ad95c17a4ac5d46e653288b0afffe97be7dd3c538869aebb4f5e16ee9cc99",
+ "nl_mode": "NL_TEACH"
+}

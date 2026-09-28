@@ -1,0 +1,191 @@
+{
+ "scenario_id": "dev-014-S5",
+ "suite": "dev",
+ "category": "S5",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request gamma , at dawn re zeta ; and so then later , email zeta , about trip per gamma",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "dawn"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "trip"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "WHEN",
+      "dawn",
+      "inner"
+     ],
+     [
+      "TOPIC",
+      "trip",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o1",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF EMAIL WHERE PARENT.TOPIC=trip"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF REQUEST WHERE CHILD.WHEN=dawn"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHEN",
+      "time:DAWN"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "TOPIC",
+      "topic:trip"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "dawn"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHEN",
+      "time:DAWN"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "TOPIC",
+      "topic:trip"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "trip"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHEN",
+      "time:DAWN"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "request:000001",
+      "TOPIC",
+      "topic:trip"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

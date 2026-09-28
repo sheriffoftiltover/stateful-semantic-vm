@@ -1,0 +1,53 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Bob",
+  "time": "noon"
+ },
+ "interaction_id": "dev_b-007-S7:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-007-S7/learn/snapshots/dev_b-007-S7_a1_start.sqlite",
+ "start_snapshot_sha256": "1e878177bb4471075ab64bd6344f453a0c1d9d9a6db8ad9949a61a616eaa73a6",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Bob"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "noon"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "3df595d917484ab2cf9c5b5a3481e750ac7ae69a543b42230b6b863dbe5cdf7d",
+ "nl_mode": "GOLD_TRACE"
+}

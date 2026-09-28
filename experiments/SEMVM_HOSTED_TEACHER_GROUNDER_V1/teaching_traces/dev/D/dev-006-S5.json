@@ -1,0 +1,62 @@
+{
+ "scenario_id": "dev-006-S5",
+ "mode": "TEACHER",
+ "arm": "D",
+ "grounder": "HOSTED",
+ "backend": "MODAL",
+ "model": "openai/gpt-oss-120b",
+ "reasoning": "high",
+ "targets": [
+  {
+   "name": "close_calls_with",
+   "status": "ACTIVE",
+   "transcript": [
+    {
+     "role": "system",
+     "content": "You are a TUTOR. You teach a small assistant (the STUDENT) a new reusable skill. The student cannot see your reasoning; it only reads the\nlines you write, executes them one by one on its personal-organizer database, and learns the skill from what it successfully executed.\n\nWHAT THE STUDENT'S DATABASE CONTAINS\n- Scheduling events: REMINDER, REQUEST, PLAN, NOTE. Each may have one item it is about: a CALL, EMAIL, VISIT or MESSAGE.\n- Relations: WHO (the person an event is with / who made it), RECIPIENT (the person an email or message is addressed to), WHEN (a time),\n  WHERE (a place), TOPIC. Every event also has a status: open or closed (new events are open).\n- To talk about calls, emails, visits or messages at a time, just say so (\"the calls at 3\", \"the calls scheduled at noon\"); the student\n  knows where times are stored. Do not look for reminders or requests unless the skill is about them.\n\nWHAT THE STUDENT CAN DO (one action per instruction is safest)\n- find events of a type, optionally filtered by person, time, place, topic and open/closed status   (\"Find the open messages to Kevin.\")\n- take the most recent event of a type                                                              (\"Take my latest note.\")\n- take the first one of a list; count a list                                                        (\"Take the first one.\" / \"Count them.\")\n- get the item an event is about, or the event an item belongs to                                   (\"Get the message it is about.\" / \"Get its parent.\")\n- look up the person / time / place / topic of one event, or collect it from every event of a list  (\"Find out who it is with.\" / \"Collect who they are with.\")\n- sort a list or group it by a relation; make a report of a relation's values per group            (\"Group them by who they are with.\" / \"Report the places in each group.\")\n- change an event's person / time / place / topic / recipient; set an event (or each event of a list) open or closed; delete\n                                                                                                    (\"Move it to Lima.\" / \"Mark each of them closed.\")\n- use one of the student's saved skills by its exact name                                           (\"Use messages_to for that person.\")\n- return the final result of the skill                                                              (\"Return the count.\")\nThe student CANNOT send, text, phone, email, print, browse, save files, schedule new events, or do arithmetic beyond counting.\n\nTEACH EXACTLY THE REQUESTED SKILL (goal-faithfulness contract)\n- Do not add filters, restrictions, state predicates (open / closed), ordering criteria, constants, entity scopes or side conditions unless\n  the skill description explicitly requires them, or a saved skill's signature makes them necessary.\n- Do not silently narrow \"all\" to \"open\", \"emails\" to \"open emails\", \"calls with X\" to \"open calls with X\", or make analogous restrictions.\n- If the skill description is ambiguous, ask rather than inventing a constraint.\n\nHOW TO WRITE A DEMONSTRATION\nEXAMPLE: <input>=<value>, <input>=<value>      (the example values you use for the skill's inputs in this demonstration)\nSTEP: <one instruction>\nSTEP: <one instruction>\n...\n- Use concrete example values (never placeholders). Use only values from VALUES.\n- Refer to earlier results with words like \"them\", \"it\", \"those calls\", \"the count\".\n- The last STEP must return the skill's result.\n- Write nothing except the EXAMPLE line and STEP lines.\n\nWHEN THE STUDENT ASKS YOU SOMETHING\n- If it asks you to rephrase an instruction, reply only with the replacement STEP line(s) for that instruction.\n- If it asks which earlier result you mean, reply with one line: ANSWER: <short noun phrase, e.g. \"the people\" or \"the calls\">.\n- If it asks for another demonstration, reply with a new EXAMPLE line (different example values) and a complete list of STEP lines."
+    },
+    {
+     "role": "user",
+     "content": "SKILL TO TEACH: close_calls_with(person:person)\nWHAT IT DOES: Given a person, mark every call with that person as closed, then return how many calls there were.\n\nTHE STUDENT'S SAVED SKILLS: (none)\n\nVALUES (use only these for example values):\n- people: Mom, Kevin\n- times: dawn, 4\n- places: Delhi, Rome\n- topics: lease, survey\n\nSTYLE: Teach compactly: a few STEP lines, each may combine two closely related actions (e.g. \"find ... and count them\").\n\nGive demonstration 1 now (EXAMPLE line, then STEP lines)."
+    },
+    {
+     "role": "assistant",
+     "content": "EXAMPLE: person=Mom\nSTEP: Find the calls with Mom and mark each of them closed.\nSTEP: Count them.\nSTEP: Return the count."
+    }
+   ],
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Mom\nSTEP: Find the calls with Mom and mark each of them closed.\nSTEP: Count them.\nSTEP: Return the count.",
+     "provenance": {
+      "role": "teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "34a1beef0583884cd298d18c8b1fc95dde35168f6ef207821ae30aaf0a78a74f",
+      "prompt_sha256": "24f03e0613dcf4e8f1ba7c37650202cd81858b3e5d5c9c9220dfed4a081a0627",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 4096,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "LESSON",
+      "meter_usd_before": 0.875,
+      "request_id": "chatcmpl-07a240f7ab6d438fb1bb7b37a103b114",
+      "timestamp": "2026-09-27T18:42:27Z",
+      "latency_s": 4.964,
+      "retry_count": 0,
+      "input_tokens": 1056,
+      "output_tokens": 751,
+      "finish_reason": "stop",
+      "response_sha256": "f82da107764fb02321a570508f3775bf4d266ac5f8c102123d6535e60d45c353",
+      "reasoning_chars": 3038,
+      "cached": false
+     }
+    }
+   ]
+  }
+ ]
+}

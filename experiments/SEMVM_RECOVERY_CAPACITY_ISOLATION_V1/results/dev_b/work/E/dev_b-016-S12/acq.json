@@ -1,0 +1,1716 @@
+{
+ "scenario_id": "dev_b-016-S12",
+ "mode": "SCRIPTED",
+ "arm": "E",
+ "grounder": "HOSTED",
+ "recovery": "HOSTED",
+ "teacher_max_tokens": 8192,
+ "budget": {
+  "max_clarification_exchanges_per_slot": 2,
+  "max_rephrase_exchanges_per_slot": 2,
+  "max_demonstrations_per_target": 3,
+  "max_teacher_turns_per_target": 10,
+  "max_example_requests_per_demonstration": 2,
+  "max_teacher_turns_per_demonstration": 8,
+  "max_clarification_exchanges_per_instruction": 2
+ },
+ "student_hash_before": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "fixture": [
+  {
+   "status": "OK",
+   "STATE_hash": "3c22212b091724c80147000b23030d52380007b59b641ac1c8346ac2eea5ed88"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "59038a9cb2acbb8e064299c1583fc4e44e256edf919eb9babc3624ef59b8421e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "34028ed3b3d6236a3e11d5f5287df9cc57a7721e10737d624431d784e8169633"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "5a501d562f41dc1f14b96c722d4de41a11a9842ef8242558dbbe543f47c7dd73"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "c05eb9f487f22b18cd0b67fe86ce8550101d4e42bd332cc9e3fd9a3583ead4c4"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "95ff97698cbb3d67f635c5490b1ae4eff2f9b7be04a9465eecd5b21bac5fa2de"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0d4acda70c9a2bef35e4967945cda4cbff16cc1d36097bfeb3ebf77f5e9d2f0f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "b2e71e66b9588ba81fefb7d0cdbd1e4b45ade41f1211a921bad5faced7210649"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "fe24b45cc1e352e9978c1c9c9bae25c111510f0a456e88cda8b7d648bc5437e3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "351aa3c140edc2d68eb1b9d122792b6eb0e3f8eedf23dd36881416b2cfab8149"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3e0c3e469365b258c13371719cc4c62176bb3db5c91ead4b2f73b6d4ebfeca3d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "717639595ab8b6b5d5f5c9d3d4a67e6ef74d17928e7c03736965d6c7fabea0ea"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "5277a66ba351e5d141091e3314b5b508bf179758e8c6d2ec73c15e978b46715e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3e4f5378c35817e90598f23476316a36058420379cb5e09388f9d87e81b90da3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "aee00ccfcfb7c56b158fac70cac9da20cd3ce202ef3a677dddd318e117c3ed69"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "204ebd0d804f73da0a6d68c052db27158e959e7ec389ce356491f8d217a93da0"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "742387e5498c2314ccf4e2a5a81458c92c17e842b571b47143f8228360a35a9a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "6ff3ebe954c15102ec420563813695b7af91ed071a5bd6ad39f3e7532ada5d44"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "61b0628c1d10ca28f918829377c2422fc462205dbed4de39652a3b2fad201440"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "405f3d1cfc24c93fc10856fa3042c8097e63d149c18d2db785915134bd69dbcc"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "503a57b6e952c4d18fbe2b49a1956df81361cc7bb670fa4c7852a46f8d674269"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "80332f3c2b24bf3b73f0c2c271d159f6121eede52363483663b817b97174aa74"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "b7380739d2ece5427c033d36e77929d758049c0f238df22af063d1ad18af1c81"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d8ba5240b4bbacb655ca7091bdc83060741fd1e726844299bf449ee6a6e7c51c"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "4434efe6f175a08b533c029eabaa66961283a06b82d4531038eca0a31e8bdfe9"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "2111a4bcbb37e942299d3e4bf867ddf97f467ca68964722ef28a1d1637b063a6"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "16406c4a31d5803b27de799e2d7be562481f616d8eae644a99b6179f1d6b287f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "283fd30912f27306ba70a4ee5aece2431f9b800203fe6526fdb313f5f02fa99f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "4afafa6469bcbf82b86c025e9faf89f5a2567644bb7ca655d229ecec3d3d03af"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "49b9f8c2d261f4f28ed26fec95085e33309545a914e772a6dde46e9755b7fd3f"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e0d12b2fb966b3a99ec3db5ed425ad63baa0e664cd1b065d4621c643a57232da"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "141c22c18b4f8d90ee4fd6e91b521c5c3dd8d644257059a043962c65b44828cf"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "141c22c18b4f8d90ee4fd6e91b521c5c3dd8d644257059a043962c65b44828cf"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d7cca5129eb91dd017add21f0df4eeab9e6781794c833415d1514b6ffe57d935"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d7cca5129eb91dd017add21f0df4eeab9e6781794c833415d1514b6ffe57d935"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3a928792b8a98b93cc61640e29192e7056c71970226122703d35097af8062b2d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3a928792b8a98b93cc61640e29192e7056c71970226122703d35097af8062b2d"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "29742fcdc94a08b2c16e9a94931a2aa6830d3a1500939817ca6eb10604f4aaee"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "29742fcdc94a08b2c16e9a94931a2aa6830d3a1500939817ca6eb10604f4aaee"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "8fb507be1bc2c5e9a9fbdd21dfd807347924a358ccc531d146523880f0f127d5"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "8fb507be1bc2c5e9a9fbdd21dfd807347924a358ccc531d146523880f0f127d5"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e0e744d6500416d40db4b290917e00c00848fb796dd58ece3cd06de5ffe5d569"
+  }
+ ],
+ "targets": [
+  {
+   "name": "retarget_last_email",
+   "demos": [
+    {
+     "index": 0,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take my newest email.",
+       "text": "Take my newest email.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Please make Carol its recipient.",
+       "text": "Please make Carol its recipient.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "RECIPIENT",
+         "value": {
+          "const": "Carol"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo1-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Please give back the email.",
+       "text": "Please give back the email.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo1-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Take my newest email.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.365,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "bd8e143859f6862347407c22737de3ea86d42be19fef268d22c27f34f3d49521",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4448,
+       "grounder_output_tokens": 51,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND_LAST",
+         "type": "EMAIL"
+        }
+       ],
+       "slot_id": "demo1-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "bd8e143859f6862347407c22737de3ea86d42be19fef268d22c27f34f3d49521"
+        }
+       ]
+      },
+      {
+       "line": "Please make Carol its recipient.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "RECIPIENT",
+         "value": {
+          "const": "Carol"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Carol\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.709,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "9ad9b71741332b4d3732f3f848fc34d5cdd6af07055a4fa4fba5e618c538d21a",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 65,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r1",
+         "rel": "RECIPIENT",
+         "value": "Carol"
+        }
+       ],
+       "slot_id": "demo1-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "9ad9b71741332b4d3732f3f848fc34d5cdd6af07055a4fa4fba5e618c538d21a"
+        }
+       ]
+      },
+      {
+       "line": "Please give back the email.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.409,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "44bb03a1c934862d02903018a4d4cec68294b7270f979512ab880c991530a70c",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 39,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "44bb03a1c934862d02903018a4d4cec68294b7270f979512ab880c991530a70c"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "person": "Carol"
+     },
+     "lesson_lines": [
+      "Take my newest email.",
+      "Please make Carol its recipient.",
+      "Please give back the email."
+     ],
+     "returned": true,
+     "end": "REQUIRE_SECOND_DEMONSTRATION",
+     "end_detail": {
+      "insufficient": "input person:PERSON is not identifiable (no hint and no varying value across demonstrations)"
+     },
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Take my newest email.",
+      "Please make Carol its recipient.",
+      "Please give back the email."
+     ]
+    },
+    {
+     "index": 1,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo2-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Look up the most recent email.",
+       "text": "Look up the most recent email.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo2-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Make Xena its recipient.",
+       "text": "Make Xena its recipient.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "RECIPIENT",
+         "value": {
+          "const": "Xena"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo2-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Give back the email.",
+       "text": "Give back the email.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo2-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Look up the most recent email.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "EMAIL"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.417,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "6b8cf5df92bd8761edab9b5ee12f9208df70300938b30482fdad899977eb5018",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4450,
+       "grounder_output_tokens": 46,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND_LAST",
+         "type": "EMAIL"
+        }
+       ],
+       "slot_id": "demo2-slot1",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "6b8cf5df92bd8761edab9b5ee12f9208df70300938b30482fdad899977eb5018"
+        }
+       ]
+      },
+      {
+       "line": "Make Xena its recipient.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "RECIPIENT",
+         "value": {
+          "const": "Xena"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Xena\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.699,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "21d99179cdb299f4156d1279cae0b152d3b031f67788b0948a34b1054d8863b9",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 64,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r1",
+         "rel": "RECIPIENT",
+         "value": "Xena"
+        }
+       ],
+       "slot_id": "demo2-slot2",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "21d99179cdb299f4156d1279cae0b152d3b031f67788b0948a34b1054d8863b9"
+        }
+       ]
+      },
+      {
+       "line": "Give back the email.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.444,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "2766cd1c88a5f81d28e560041a81970a035b27e05f2ea4fbcdee2241dbed96ac",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4469,
+       "grounder_output_tokens": 36,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo2-slot3",
+       "source": "SCRIPTED_TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "2766cd1c88a5f81d28e560041a81970a035b27e05f2ea4fbcdee2241dbed96ac"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "person": "Xena"
+     },
+     "lesson_lines": [
+      "Look up the most recent email.",
+      "Make Xena its recipient.",
+      "Give back the email."
+     ],
+     "returned": true,
+     "end": "OK",
+     "end_detail": {},
+     "learn": "VERIFIED",
+     "learn_detail": {
+      "examples_used": 2,
+      "examples_discarded_inconsistent": 0,
+      "insufficient": null,
+      "conflict": null,
+      "response": "I learned `retarget_last_email` (deterministic proposal). It passed 25 verification cases. Save it? (:accept retarget_last_email)"
+     },
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Look up the most recent email.",
+      "Make Xena its recipient.",
+      "Give back the email."
+     ]
+    }
+   ],
+   "teacher_turns": 2,
+   "student_questions": [
+    {
+     "kind": "NEW_DEMO",
+     "text": "I have 1 demonstration(s) but cannot yet tell which values are inputs of retarget_last_email. Please give another complete demonstration with DIFFERENT example values (EXAMPLE line and STEP lines).",
+     "slot_id": null
+    }
+   ],
+   "injections": [],
+   "status": "ACTIVE",
+   "classes": [
+    "SECOND_DEMO_REQUESTED"
+   ],
+   "first_lesson_lines_ok": true,
+   "protocol": "TTP",
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Carol\nSTEP: Take my newest email.\nSTEP: Please make Carol its recipient.\nSTEP: Please give back the email.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: person=Xena\nSTEP: Look up the most recent email.\nSTEP: Make Xena its recipient.\nSTEP: Give back the email.",
+     "provenance": {
+      "provider": "scripted",
+      "route": "SCRIPTED",
+      "recovery": false
+     },
+     "slot_id": null
+    }
+   ]
+  }
+ ],
+ "false_accept_probes": [
+  {
+   "target": "retarget_last_email",
+   "variant": "FROZEN_VALUE",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL"
+  }
+ ],
+ "active": [
+  {
+   "name": "retarget_last_email",
+   "id": "proc:retarget_last_email:v1",
+   "parameters": [
+    {
+     "name": "person",
+     "type": "PERSON"
+    }
+   ],
+   "effect": "STATEFUL",
+   "returns": "EVENT",
+   "aliases": []
+  }
+ ],
+ "library_bytes_before": 49152,
+ "library_bytes_after": 49152,
+ "active_before": 0,
+ "active_after": 1,
+ "world_state_after": {
+  "objects": [
+   [
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "call:000002",
+    "CALL"
+   ],
+   [
+    "call:000003",
+    "CALL"
+   ],
+   [
+    "call:000004",
+    "CALL"
+   ],
+   [
+    "call:000005",
+    "CALL"
+   ],
+   [
+    "call:000006",
+    "CALL"
+   ],
+   [
+    "call:000007",
+    "CALL"
+   ],
+   [
+    "call:000008",
+    "CALL"
+   ],
+   [
+    "call:000009",
+    "CALL"
+   ],
+   [
+    "call:000010",
+    "CALL"
+   ],
+   [
+    "call:000011",
+    "CALL"
+   ],
+   [
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "email:000002",
+    "EMAIL"
+   ],
+   [
+    "email:000003",
+    "EMAIL"
+   ],
+   [
+    "email:000004",
+    "EMAIL"
+   ],
+   [
+    "email:000005",
+    "EMAIL"
+   ],
+   [
+    "email:000006",
+    "EMAIL"
+   ],
+   [
+    "email:000007",
+    "EMAIL"
+   ],
+   [
+    "email:000008",
+    "EMAIL"
+   ],
+   [
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "person:000004",
+    "PERSON"
+   ],
+   [
+    "person:000005",
+    "PERSON"
+   ],
+   [
+    "person:000006",
+    "PERSON"
+   ],
+   [
+    "person:000007",
+    "PERSON"
+   ],
+   [
+    "person:000008",
+    "PERSON"
+   ],
+   [
+    "person:000009",
+    "PERSON"
+   ],
+   [
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "reminder:000002",
+    "REMINDER"
+   ],
+   [
+    "reminder:000003",
+    "REMINDER"
+   ],
+   [
+    "reminder:000004",
+    "REMINDER"
+   ],
+   [
+    "reminder:000005",
+    "REMINDER"
+   ],
+   [
+    "reminder:000006",
+    "REMINDER"
+   ],
+   [
+    "reminder:000007",
+    "REMINDER"
+   ],
+   [
+    "reminder:000008",
+    "REMINDER"
+   ],
+   [
+    "reminder:000009",
+    "REMINDER"
+   ],
+   [
+    "reminder:000010",
+    "REMINDER"
+   ],
+   [
+    "reminder:000011",
+    "REMINDER"
+   ],
+   [
+    "reminder:000012",
+    "REMINDER"
+   ],
+   [
+    "reminder:000013",
+    "REMINDER"
+   ],
+   [
+    "reminder:000014",
+    "REMINDER"
+   ],
+   [
+    "reminder:000015",
+    "REMINDER"
+   ],
+   [
+    "reminder:000016",
+    "REMINDER"
+   ],
+   [
+    "reminder:000017",
+    "REMINDER"
+   ],
+   [
+    "reminder:000018",
+    "REMINDER"
+   ],
+   [
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "request:000004",
+    "REQUEST"
+   ],
+   [
+    "request:000005",
+    "REQUEST"
+   ],
+   [
+    "request:000006",
+    "REQUEST"
+   ],
+   [
+    "request:000007",
+    "REQUEST"
+   ],
+   [
+    "request:000008",
+    "REQUEST"
+   ],
+   [
+    "request:000009",
+    "REQUEST"
+   ],
+   [
+    "request:000010",
+    "REQUEST"
+   ],
+   [
+    "request:000011",
+    "REQUEST"
+   ],
+   [
+    "request:000012",
+    "REQUEST"
+   ],
+   [
+    "request:000013",
+    "REQUEST"
+   ],
+   [
+    "request:000014",
+    "REQUEST"
+   ],
+   [
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "visit:000002",
+    "VISIT"
+   ],
+   [
+    "visit:000003",
+    "VISIT"
+   ],
+   [
+    "visit:000004",
+    "VISIT"
+   ],
+   [
+    "visit:000005",
+    "VISIT"
+   ],
+   [
+    "visit:000006",
+    "VISIT"
+   ],
+   [
+    "visit:000007",
+    "VISIT"
+   ],
+   [
+    "visit:000008",
+    "VISIT"
+   ],
+   [
+    "visit:000009",
+    "VISIT"
+   ],
+   [
+    "visit:000010",
+    "VISIT"
+   ],
+   [
+    "visit:000011",
+    "VISIT"
+   ],
+   [
+    "visit:000012",
+    "VISIT"
+   ],
+   [
+    "visit:000013",
+    "VISIT"
+   ]
+  ],
+  "relations": [
+   [
+    "call:000004",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000005",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "call:000006",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000007",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000008",
+    "WHO",
+    "person:000007"
+   ],
+   [
+    "call:000009",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000010",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "call:000011",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000001",
+    "TOPIC",
+    "topic:report"
+   ],
+   [
+    "email:000002",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "email:000002",
+    "TOPIC",
+    "topic:lease"
+   ],
+   [
+    "email:000003",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000003",
+    "TOPIC",
+    "topic:trip"
+   ],
+   [
+    "email:000004",
+    "RECIPIENT",
+    "person:000003"
+   ],
+   [
+    "email:000004",
+    "TOPIC",
+    "topic:budget"
+   ],
+   [
+    "email:000005",
+    "RECIPIENT",
+    "person:000008"
+   ],
+   [
+    "email:000005",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "email:000006",
+    "RECIPIENT",
+    "person:000009"
+   ],
+   [
+    "email:000006",
+    "TOPIC",
+    "topic:invoice"
+   ],
+   [
+    "email:000007",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000007",
+    "TOPIC",
+    "topic:report"
+   ],
+   [
+    "email:000008",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000008",
+    "TOPIC",
+    "topic:trip"
+   ],
+   [
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "reminder:000002",
+    "TODO",
+    "email:000003"
+   ],
+   [
+    "reminder:000003",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "reminder:000004",
+    "TODO",
+    "call:000004"
+   ],
+   [
+    "reminder:000004",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "reminder:000005",
+    "TODO",
+    "call:000005"
+   ],
+   [
+    "reminder:000005",
+    "WHEN",
+    "time:04:00"
+   ],
+   [
+    "reminder:000006",
+    "TODO",
+    "call:000006"
+   ],
+   [
+    "reminder:000006",
+    "WHEN",
+    "time:MIDNIGHT"
+   ],
+   [
+    "reminder:000007",
+    "TODO",
+    "call:000007"
+   ],
+   [
+    "reminder:000007",
+    "WHEN",
+    "time:01:30"
+   ],
+   [
+    "reminder:000008",
+    "TODO",
+    "call:000008"
+   ],
+   [
+    "reminder:000008",
+    "WHEN",
+    "time:06:15"
+   ],
+   [
+    "reminder:000009",
+    "TODO",
+    "call:000009"
+   ],
+   [
+    "reminder:000009",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "reminder:000010",
+    "TODO",
+    "call:000010"
+   ],
+   [
+    "reminder:000010",
+    "WHEN",
+    "time:08:00"
+   ],
+   [
+    "reminder:000011",
+    "TODO",
+    "email:000005"
+   ],
+   [
+    "reminder:000012",
+    "TODO",
+    "visit:000004"
+   ],
+   [
+    "reminder:000013",
+    "TODO",
+    "call:000011"
+   ],
+   [
+    "reminder:000013",
+    "WHEN",
+    "time:02:00"
+   ],
+   [
+    "reminder:000014",
+    "TODO",
+    "email:000006"
+   ],
+   [
+    "reminder:000015",
+    "TODO",
+    "visit:000006"
+   ],
+   [
+    "reminder:000016",
+    "TODO",
+    "email:000007"
+   ],
+   [
+    "reminder:000017",
+    "TODO",
+    "visit:000011"
+   ],
+   [
+    "reminder:000018",
+    "TODO",
+    "visit:000013"
+   ],
+   [
+    "request:000001",
+    "TODO",
+    "email:000002"
+   ],
+   [
+    "request:000002",
+    "TODO",
+    "email:000004"
+   ],
+   [
+    "request:000003",
+    "TODO",
+    "visit:000002"
+   ],
+   [
+    "request:000004",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "request:000004",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "request:000004",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000005",
+    "TODO",
+    "call:000002"
+   ],
+   [
+    "request:000005",
+    "WHEN",
+    "time:04:00"
+   ],
+   [
+    "request:000005",
+    "WHO",
+    "person:000003"
+   ],
+   [
+    "request:000006",
+    "TODO",
+    "call:000003"
+   ],
+   [
+    "request:000006",
+    "WHEN",
+    "time:04:00"
+   ],
+   [
+    "request:000006",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000007",
+    "TODO",
+    "visit:000003"
+   ],
+   [
+    "request:000007",
+    "WHEN",
+    "time:08:00"
+   ],
+   [
+    "request:000007",
+    "WHO",
+    "person:000008"
+   ],
+   [
+    "request:000008",
+    "TODO",
+    "visit:000005"
+   ],
+   [
+    "request:000008",
+    "WHEN",
+    "time:02:00"
+   ],
+   [
+    "request:000008",
+    "WHO",
+    "person:000009"
+   ],
+   [
+    "request:000009",
+    "TODO",
+    "email:000008"
+   ],
+   [
+    "request:000010",
+    "TODO",
+    "visit:000007"
+   ],
+   [
+    "request:000010",
+    "WHEN",
+    "time:01:30"
+   ],
+   [
+    "request:000010",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000011",
+    "TODO",
+    "visit:000008"
+   ],
+   [
+    "request:000011",
+    "WHEN",
+    "time:05:00"
+   ],
+   [
+    "request:000011",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000012",
+    "TODO",
+    "visit:000009"
+   ],
+   [
+    "request:000012",
+    "WHEN",
+    "time:06:15"
+   ],
+   [
+    "request:000012",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000013",
+    "TODO",
+    "visit:000010"
+   ],
+   [
+    "request:000013",
+    "WHEN",
+    "time:04:00"
+   ],
+   [
+    "request:000013",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000014",
+    "TODO",
+    "visit:000012"
+   ],
+   [
+    "visit:000001",
+    "WHERE",
+    "place:madrid"
+   ],
+   [
+    "visit:000002",
+    "WHERE",
+    "place:paris"
+   ],
+   [
+    "visit:000004",
+    "WHERE",
+    "place:tokyo"
+   ],
+   [
+    "visit:000006",
+    "WHERE",
+    "place:delhi"
+   ],
+   [
+    "visit:000011",
+    "WHERE",
+    "place:seoul"
+   ],
+   [
+    "visit:000012",
+    "WHERE",
+    "place:prague"
+   ],
+   [
+    "visit:000013",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "aliases": [
+   [
+    "person:000001",
+    "Xena"
+   ],
+   [
+    "person:000002",
+    "Heidi"
+   ],
+   [
+    "person:000003",
+    "Peggy"
+   ],
+   [
+    "person:000004",
+    "Victor"
+   ],
+   [
+    "person:000005",
+    "Carol"
+   ],
+   [
+    "person:000006",
+    "Erin"
+   ],
+   [
+    "person:000007",
+    "Alice"
+   ],
+   [
+    "person:000008",
+    "Dad"
+   ],
+   [
+    "person:000009",
+    "Grace"
+   ]
+  ],
+  "attributes": [
+   [
+    "call:000006",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000007",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000009",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000003",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000008",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000010",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000012",
+    "STATUS",
+    "CLOSED"
+   ]
+  ]
+ },
+ "student_hash_after": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "seconds": 231.18,
+ "nl_llm_calls": 0,
+ "retrieval_llm_calls": 0,
+ "hosted_calls": [
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "bd8e143859f6862347407c22737de3ea86d42be19fef268d22c27f34f3d49521",
+   "cached": true,
+   "input_tokens": 4448,
+   "output_tokens": 51,
+   "latency_s": 0.847,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "9ad9b71741332b4d3732f3f848fc34d5cdd6af07055a4fa4fba5e618c538d21a",
+   "cached": true,
+   "input_tokens": 4470,
+   "output_tokens": 65,
+   "latency_s": 0.942,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "44bb03a1c934862d02903018a4d4cec68294b7270f979512ab880c991530a70c",
+   "cached": true,
+   "input_tokens": 4470,
+   "output_tokens": 39,
+   "latency_s": 0.788,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "6b8cf5df92bd8761edab9b5ee12f9208df70300938b30482fdad899977eb5018",
+   "cached": true,
+   "input_tokens": 4450,
+   "output_tokens": 46,
+   "latency_s": 0.836,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "21d99179cdb299f4156d1279cae0b152d3b031f67788b0948a34b1054d8863b9",
+   "cached": true,
+   "input_tokens": 4470,
+   "output_tokens": 64,
+   "latency_s": 0.987,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "2766cd1c88a5f81d28e560041a81970a035b27e05f2ea4fbcdee2241dbed96ac",
+   "cached": true,
+   "input_tokens": 4469,
+   "output_tokens": 36,
+   "latency_s": 0.801,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  }
+ ]
+}

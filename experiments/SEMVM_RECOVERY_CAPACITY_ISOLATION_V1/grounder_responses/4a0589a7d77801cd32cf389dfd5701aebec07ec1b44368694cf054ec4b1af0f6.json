@@ -1,0 +1,33 @@
+{
+ "text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": { \"RECIPIENT\": \"Rita\" },\n      \"status\": \"OPEN\"\n    },\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+ "provenance": {
+  "role": "grounder",
+  "provider": "modal-vllm",
+  "model": "openai/gpt-oss-120b",
+  "request_hash": "4a0589a7d77801cd32cf389dfd5701aebec07ec1b44368694cf054ec4b1af0f6",
+  "prompt_sha256": "4332af68ce4e7230067fa10bfe71bd9251c7e0194ed632b6f03f651c23850b97",
+  "generation": {
+   "model": "gpt-oss-120b",
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "seed": 0,
+   "reasoning_effort": "low"
+  },
+  "kind": "GROUND",
+  "schema": "TTP_GROUNDER_ENVELOPE_V1 (HTG envelope + structured legality feedback, one retry)",
+  "card_sha256": "6c11956f99d5df11007d1fb08147da60bafac9b7ece5b5e68d3676776c243b40",
+  "meter_usd_before": 3.447,
+  "request_id": "chatcmpl-cc73cd3ed7c14698bc73dca05110e9a9",
+  "timestamp": "2026-09-28T08:25:35Z",
+  "latency_s": 1.698,
+  "retry_count": 0,
+  "input_tokens": 4456,
+  "output_tokens": 131,
+  "finish_reason": "stop",
+  "response_sha256": "c57262526d639019170348758fbb7c78b386fedcc446491d665c04a59c031ec7",
+  "reasoning_chars": 118,
+  "cached": false
+ },
+ "messages_sha256": "4332af68ce4e7230067fa10bfe71bd9251c7e0194ed632b6f03f651c23850b97"
+}

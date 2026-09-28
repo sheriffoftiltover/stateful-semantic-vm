@@ -1,0 +1,267 @@
+{
+ "scenario_id": "locked_test-007-S4",
+ "suite": "locked_test",
+ "category": "S4",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "note gamma : while in Vienna per theta ; so then again soon , email theta ; about budget re gamma",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PLACE",
+      "surface": "Vienna"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "budget"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "WHERE",
+      "Vienna",
+      "inner"
+     ],
+     [
+      "TOPIC",
+      "budget",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o2",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF EMAIL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF NOTE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF NOTE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF EMAIL"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:budget"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Vienna"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:budget"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:budget"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "budget"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:budget"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHERE",
+      "place:vienna"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "email:000001"
+     ],
+     [
+      "note:000001",
+      "TOPIC",
+      "topic:budget"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

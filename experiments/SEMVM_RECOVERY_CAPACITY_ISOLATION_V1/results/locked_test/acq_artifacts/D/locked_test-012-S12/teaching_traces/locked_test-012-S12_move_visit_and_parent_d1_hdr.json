@@ -1,0 +1,389 @@
+{
+ "name": "move_visit_and_parent",
+ "mode": ":example",
+ "declared": {
+  "place": "Vienna"
+ },
+ "interaction_id": "locked_test-012-S12:move_visit_and_parent:d1:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-012-S12/learn/snapshots/locked_test-012-S12_move_visit_and_parent_d1_hdr_start.sqlite",
+ "start_snapshot_sha256": "57b78011ad6a2d730aae82d9b490260c983779df81a58e206fa9bdf8bef01a98",
+ "utterances": [
+  {
+   "utterance": "Take my latest visit.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d1:demo2-slot1:0",
+   "instruction": "Take my latest visit.",
+   "correction": false,
+   "slot_id": "demo2-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Take my latest visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+    "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221",
+    "cached": true,
+    "input_tokens": 4448,
+    "output_tokens": 48,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND_LAST",
+      "type": "VISIT"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "state_after": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "seconds": 0.345
+  },
+  {
+   "utterance": "Move it to Vienna.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d1:demo2-slot2:1",
+   "instruction": "Move it to Vienna.",
+   "correction": false,
+   "slot_id": "demo2-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Move it to Vienna.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Vienna"
+     ],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "5236fd298bfc7cd35006a4685403b7bb107fa721798fcf594989e2b6c5627fe1"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r1\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Vienna\"\n    }\n  ]\n}",
+    "request_hash": "5236fd298bfc7cd35006a4685403b7bb107fa721798fcf594989e2b6c5627fe1",
+    "cached": true,
+    "input_tokens": 4471,
+    "output_tokens": 85,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "WHERE",
+      "value": "Vienna"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Vienna"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "visit:000013",
+     "WHERE",
+     "place:madrid"
+    ],
+    [
+     "+rel",
+     "visit:000013",
+     "WHERE",
+     "place:vienna"
+    ]
+   ],
+   "state_before": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "state_after": "79c84410cd109cc32540bffa9815e530b509aa35978e3d70fbf7f5620a0c14a1",
+   "seconds": 0.559
+  },
+  {
+   "utterance": "Get its parent.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d1:demo2-slot3:2",
+   "instruction": "Get its parent.",
+   "correction": false,
+   "slot_id": "demo2-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Get its parent.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"PARENT\", \"of\": \"r1\"}]}",
+    "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+    "cached": true,
+    "input_tokens": 4470,
+    "output_tokens": 111,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "PARENT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "PARENT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "PARENT",
+     "bind": "r2",
+     "obj": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "79c84410cd109cc32540bffa9815e530b509aa35978e3d70fbf7f5620a0c14a1",
+   "state_after": "79c84410cd109cc32540bffa9815e530b509aa35978e3d70fbf7f5620a0c14a1",
+   "seconds": 0.271
+  },
+  {
+   "utterance": "Move it to Vienna.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d1:demo2-slot4:3",
+   "instruction": "Move it to Vienna.",
+   "correction": false,
+   "slot_id": "demo2-slot4",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Move it to Vienna.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Vienna"
+     ],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "9cdf4d059389c35b09ae7d490ad84e8a413d9cd050c0f55cf17fb936f1bac7f2"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r2\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Vienna\"\n    }\n  ]\n}",
+    "request_hash": "9cdf4d059389c35b09ae7d490ad84e8a413d9cd050c0f55cf17fb936f1bac7f2",
+    "cached": true,
+    "input_tokens": 4496,
+    "output_tokens": 91,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r2",
+      "rel": "WHERE",
+      "value": "Vienna"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r2 licensed by R3"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r2"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Vienna"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "+rel",
+     "reminder:000018",
+     "WHERE",
+     "place:vienna"
+    ]
+   ],
+   "state_before": "79c84410cd109cc32540bffa9815e530b509aa35978e3d70fbf7f5620a0c14a1",
+   "state_after": "6bc2147c2070bf5ce1ea1fe93a7d872d81e4c1189998f9bd19fe77d46125f4ab",
+   "seconds": 0.569
+  },
+  {
+   "utterance": "Return the visit.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d1:demo2-slot5:4",
+   "instruction": "Return the visit.",
+   "correction": false,
+   "slot_id": "demo2-slot5",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+    "cached": true,
+    "input_tokens": 4495,
+    "output_tokens": 45,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "6bc2147c2070bf5ce1ea1fe93a7d872d81e4c1189998f9bd19fe77d46125f4ab",
+   "state_after": "6bc2147c2070bf5ce1ea1fe93a7d872d81e4c1189998f9bd19fe77d46125f4ab",
+   "seconds": 0.278
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Vienna"
+   }
+  },
+  {
+   "op": "PARENT",
+   "bind": "r2",
+   "obj": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r2"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Vienna"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "475b815e5541465835afce96f94bec507d064c35e24efa73c120f11b094bbcbb",
+ "nl_mode": "NL_TEACH"
+}

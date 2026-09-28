@@ -1,0 +1,263 @@
+{
+ "name": "count_calls_for_time_person",
+ "mode": ":teach",
+ "declared": {
+  "time": "noon"
+ },
+ "interaction_id": "dev_a-010-S9:count_calls_for_time_person:d1:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/B/dev_a-010-S9/learn/snapshots/dev_a-010-S9_count_calls_for_time_person_d1_hdr_start.sqlite",
+ "start_snapshot_sha256": "f5cc6fd9ea2e7887858621910f83be20eaf2e5da2913614c9116db63570a457f",
+ "utterances": [
+  {
+   "utterance": "Use person_on_call_at to find who is on the noon call.",
+   "uid": "dev_a-010-S9:count_calls_for_time_person:d1:demo2-slot1:0",
+   "instruction": "Use person_on_call_at to find who is on the noon call.",
+   "correction": false,
+   "slot_id": "demo2-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Use person_on_call_at to find who is on the noon call.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "noon"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "ccbb7091fbf0f4c4b657b5528e6950dc98c44de6fdf5f1a2c662788ca95d53fd"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "cc916ae72176a6cd4466914161aeb8390884925259f771d0a9ebc56282e0b239"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"CALL\",\n      \"procedure\": \"person_on_call_at\",\n      \"args\": {\n        \"time\": \"noon\"\n      }\n    }\n  ]\n}",
+    "request_hash": "cc916ae72176a6cd4466914161aeb8390884925259f771d0a9ebc56282e0b239",
+    "cached": false,
+    "input_tokens": 4611,
+    "output_tokens": 100,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "CALL",
+      "procedure": "person_on_call_at",
+      "args": {
+       "time": "noon"
+      }
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": true,
+    "seconds": 3.27
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r1",
+     "procedure": "person_on_call_at",
+     "args": {
+      "time": {
+       "const": "noon"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "122fb966f940bed8ab00066d47ec758cc313b8bc65955efbbb31b59314cf1d94",
+   "state_after": "122fb966f940bed8ab00066d47ec758cc313b8bc65955efbbb31b59314cf1d94",
+   "seconds": 3.772
+  },
+  {
+   "utterance": "Count the calls with that person using count_calls_with.",
+   "uid": "dev_a-010-S9:count_calls_for_time_person:d1:demo2-slot2:1",
+   "instruction": "Count the calls with that person using count_calls_with.",
+   "correction": false,
+   "slot_id": "demo2-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Count the calls with that person using count_calls_with.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "8f1aec6145820d636cff6b75e489a4339ae0643917cb004a6da457b5851bd6da"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "0d55e421f2b6a163e9251c44e3ca2173c0c29d4400524cfd05d1d82e869b1776"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r2\",\n      \"op\": \"CALL\",\n      \"procedure\": \"count_calls_with\",\n      \"args\": {\n        \"person\": \"r1\"\n      }\n    }\n  ]\n}",
+    "request_hash": "0d55e421f2b6a163e9251c44e3ca2173c0c29d4400524cfd05d1d82e869b1776",
+    "cached": false,
+    "input_tokens": 4639,
+    "output_tokens": 101,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "CALL",
+      "procedure": "count_calls_with",
+      "args": {
+       "person": "r1"
+      }
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "CALL.args.person=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 3.58
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r2",
+     "procedure": "count_calls_with",
+     "args": {
+      "person": {
+       "var": "r1"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "122fb966f940bed8ab00066d47ec758cc313b8bc65955efbbb31b59314cf1d94",
+   "state_after": "122fb966f940bed8ab00066d47ec758cc313b8bc65955efbbb31b59314cf1d94",
+   "seconds": 4.157
+  },
+  {
+   "utterance": "Return the number.",
+   "uid": "dev_a-010-S9:count_calls_for_time_person:d1:demo2-slot3:2",
+   "instruction": "Return the number.",
+   "correction": false,
+   "slot_id": "demo2-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return the number.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "d52683597a1790a0bc057b4d3075b86aa8cd78d9d84dd927d89192f7b5a0baf1"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "d52683597a1790a0bc057b4d3075b86aa8cd78d9d84dd927d89192f7b5a0baf1",
+    "cached": false,
+    "input_tokens": 4531,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.23
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "122fb966f940bed8ab00066d47ec758cc313b8bc65955efbbb31b59314cf1d94",
+   "state_after": "122fb966f940bed8ab00066d47ec758cc313b8bc65955efbbb31b59314cf1d94",
+   "seconds": 1.76
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "CALL",
+   "bind": "r1",
+   "procedure": "person_on_call_at",
+   "args": {
+    "time": {
+     "const": "noon"
+    }
+   }
+  },
+  {
+   "op": "CALL",
+   "bind": "r2",
+   "procedure": "count_calls_with",
+   "args": {
+    "person": {
+     "var": "r1"
+    }
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "3116cb22e9a85bcd079cee8b85e2eeb1ef3809ee8b13684bb2090482fe339566",
+ "nl_mode": "NL_TEACH"
+}

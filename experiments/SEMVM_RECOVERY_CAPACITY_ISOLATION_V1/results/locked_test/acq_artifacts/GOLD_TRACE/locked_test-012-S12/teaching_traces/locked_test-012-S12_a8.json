@@ -1,0 +1,206 @@
+{
+ "name": "move_visit_and_parent",
+ "mode": ":example",
+ "declared": {
+  "place": "Paris"
+ },
+ "interaction_id": "locked_test-012-S12:a8",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-012-S12/learn/snapshots/locked_test-012-S12_a8_start.sqlite",
+ "start_snapshot_sha256": "57b78011ad6a2d730aae82d9b490260c983779df81a58e206fa9bdf8bef01a98",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-012-S12:a9",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "state_after": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "seconds": 0.193
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-012-S12:a10",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Paris"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "visit:000013",
+     "WHERE",
+     "place:madrid"
+    ],
+    [
+     "+rel",
+     "visit:000013",
+     "WHERE",
+     "place:paris"
+    ]
+   ],
+   "state_before": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "state_after": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "seconds": 0.316
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-012-S12:a11",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "PARENT",
+     "bind": "r2",
+     "obj": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "state_after": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "seconds": 0.144
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-012-S12:a12",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r2"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Paris"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "+rel",
+     "reminder:000018",
+     "WHERE",
+     "place:paris"
+    ]
+   ],
+   "state_before": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "state_after": "06e6d5728a23409a4fd197253c6b82a9b30ad0d75e0b3d836b6cc625de92ecb4",
+   "seconds": 0.34
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-012-S12:a13",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "06e6d5728a23409a4fd197253c6b82a9b30ad0d75e0b3d836b6cc625de92ecb4",
+   "state_after": "06e6d5728a23409a4fd197253c6b82a9b30ad0d75e0b3d836b6cc625de92ecb4",
+   "seconds": 0.175
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Paris"
+   }
+  },
+  {
+   "op": "PARENT",
+   "bind": "r2",
+   "obj": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r2"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Paris"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "d8b92c76102197d2d15f8faf60b413e931f605b034a3a47c95547de27b01a96d",
+ "nl_mode": "GOLD_TRACE"
+}

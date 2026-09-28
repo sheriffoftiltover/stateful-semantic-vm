@@ -1,0 +1,142 @@
+{
+ "name": "email_topic_report",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE email_topic_report()\n$v0 = FIND EMAIL STATUS=OPEN\n$v1 = GROUP $v0 RECIPIENT\n$v2 = REPORT $v1 TOPIC\nRETURN $v2\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_REPLAY",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "replay_0",
+     {
+      "got": {
+       "report": [
+        [
+         {
+          "person": "Erin"
+         },
+         1,
+         [
+          {
+           "topic": "report"
+          }
+         ]
+        ],
+        [
+         {
+          "person": "Heidi"
+         },
+         1,
+         [
+          {
+           "topic": "survey"
+          }
+         ]
+        ],
+        [
+         {
+          "person": "Sam"
+         },
+         2,
+         [
+          {
+           "topic": "lease"
+          },
+          {
+           "topic": "trip"
+          }
+         ]
+        ],
+        [
+         {
+          "person": "Uncle"
+         },
+         2,
+         [
+          {
+           "topic": "lease"
+          },
+          {
+           "topic": "trip"
+          }
+         ]
+        ]
+       ]
+      },
+      "want": {
+       "report": [
+        [
+         {
+          "person": "Erin"
+         },
+         1,
+         [
+          {
+           "topic": "report"
+          }
+         ]
+        ],
+        [
+         {
+          "person": "Heidi"
+         },
+         1,
+         [
+          {
+           "topic": "survey"
+          }
+         ]
+        ],
+        [
+         {
+          "person": "Sam"
+         },
+         1,
+         [
+          {
+           "topic": "lease"
+          }
+         ]
+        ],
+        [
+         {
+          "person": "Uncle"
+         },
+         1,
+         [
+          {
+           "topic": "lease"
+          }
+         ]
+        ]
+       ]
+      },
+      "status": "OK"
+     }
+    ]
+   ],
+   "program": "PROCEDURE email_topic_report()\n$v0 = FIND EMAIL\n$v1 = GROUP $v0 RECIPIENT\n$v2 = REPORT $v1 TOPIC\nRETURN $v2\nEND",
+   "program_hash": "5111d5342f9890c590ea7a1cd2c1b1314ed505e959bd377ced0845bc5f4d02f7"
+  }
+ },
+ "status": "REJECTED_FAILED_REPLAY",
+ "stored": "proc:email_topic_report:v2",
+ "chosen": "external"
+}

@@ -1,0 +1,436 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642397,
+  "utterance_id": "dev-019-S7:0",
+  "INPUT": "note delta , while in Vienna re beta ; and later so then again soon , visit beta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "VISIT",
+    "layout": [
+     "between_o4",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "NOTE"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "VISIT",
+       null,
+       16
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "VISIT",
+       null,
+       16
+      ],
+      [
+       "PLACE",
+       "Vienna",
+       5
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "NOTE",
+      null,
+      0
+     ],
+     [
+      "PLACE",
+      "Vienna",
+      5
+     ],
+     [
+      "VISIT",
+      null,
+      16
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1323.486328125,
+   "margin": 17.58984375,
+   "n_outputs": 20,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "VISIT"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Vienna"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Vienna",
+    "place:vienna"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "VISIT",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:vienna",
+    "PLACE",
+    "vienna",
+    "Vienna"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHERE",
+    "place:vienna"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7bea1ac933588e67d91167dc7103e03db13c4ea0cc1304a471ed6626c8942c76",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "+rel",
+    "visit:000001",
+    "WHERE",
+    "place:vienna"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "6235f534453b917450109a64cdc4c4cf29ab8d6f895bd39c2cdc80f332803933",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHERE",
+     "place:vienna"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642397,
+  "utterance_id": "dev-019-S7:1",
+  "INPUT": "UPDATE LAST_VISIT WHERE=Tokyo",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "6235f534453b917450109a64cdc4c4cf29ab8d6f895bd39c2cdc80f332803933",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_VISIT",
+   "set": [
+    [
+     "WHERE",
+     "Tokyo"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "visit:000001",
+    "WHERE",
+    "place:vienna"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:tokyo",
+    "PLACE",
+    "tokyo",
+    "Tokyo"
+   ],
+   [
+    "ASSERT",
+    "visit:000001",
+    "WHERE",
+    "place:tokyo"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "634dd4ea550fd099b06a391112273a2f12e2a71037d4a6f028ea6609c814c7b8",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "visit:000001",
+    "WHERE",
+    "place:vienna"
+   ],
+   [
+    "+rel",
+    "visit:000001",
+    "WHERE",
+    "place:tokyo"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "291cfe18e13c54ff3d19b05cd535e3d247d98089231ffda85cc830365bb673f0",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHERE",
+     "place:tokyo"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642397,
+  "utterance_id": "dev-019-S7:2",
+  "INPUT": "QUERY WHERE OF VISIT",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "291cfe18e13c54ff3d19b05cd535e3d247d98089231ffda85cc830365bb673f0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "VISIT",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "55276ad90403eb2a16c6ee1dbb3dcd4e5189d6734ad063659bcdbbb4887bd7a7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:tokyo"
+  ],
+  "STATE_AFTER": "291cfe18e13c54ff3d19b05cd535e3d247d98089231ffda85cc830365bb673f0",
+  "RESPONSE": "Tokyo",
+  "RETURN_RENDERED": [
+   "Tokyo"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHERE",
+     "place:tokyo"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642397,
+  "utterance_id": "dev-019-S7:3",
+  "INPUT": "QUERY WHERE OF LAST_VISIT",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "291cfe18e13c54ff3d19b05cd535e3d247d98089231ffda85cc830365bb673f0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "LAST_VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "visit:000001",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "990f33dcad573bae7c598becf963b258674781357c79eae694e19667cf3bbcf1",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:tokyo"
+  ],
+  "STATE_AFTER": "291cfe18e13c54ff3d19b05cd535e3d247d98089231ffda85cc830365bb673f0",
+  "RESPONSE": "Tokyo",
+  "RETURN_RENDERED": [
+   "Tokyo"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHERE",
+     "place:tokyo"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

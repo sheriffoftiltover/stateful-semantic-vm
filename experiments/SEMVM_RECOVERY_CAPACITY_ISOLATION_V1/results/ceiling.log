@@ -1,0 +1,29 @@
+{
+ "diagnostic": "RCI Stage 0C (non-confirmatory; cannot earn LOCKED)",
+ "budget": {
+  "max_teacher_turns_per_target": 20,
+  "max_clarification_exchanges_per_slot": 5,
+  "max_rephrase_exchanges_per_slot": 5,
+  "max_demonstrations_per_target": 5
+ },
+ "teacher_max_tokens": 16384,
+ "pool_size": 4,
+ "handoff": {
+  "app": "semvm-htg-hosted",
+  "time": "2026-09-28T03:39:34Z",
+  "modal_app_stop_rc": 1,
+  "endpoint_after_stop": "HTTP 401",
+  "app_state_after": null,
+  "teacher_destroyed": false,
+  "grounder_destroyed": false,
+  "meter_usd_at_deploy": 0.262,
+  "meter_usd_after": 0.529
+ },
+ "recovered_exactly": "4/5",
+ "go_no_go": "GO (>= 1 of 5 recovered exactly; Stage 1 may proceed)"
+}
+dev-009-S9 {'target': 'count_calls_for_time_person', 'RECOVERED_EXACTLY': True, 'status': 'ACTIVE', 'fail': None, 'teacher_turns': 2, 'cost_band': 'LOW-COST', 'demo_ends': ['VERIFIED'], 'provider_truncations': 0}
+dev-016-S12 {'target': 'move_visit_and_parent', 'RECOVERED_EXACTLY': False, 'status': 'TEACHER_EPISODE_FAIL', 'fail': 'demonstration budget exhausted (last: EVIDENCE_CONFLICT)', 'teacher_turns': 13, 'cost_band': 'HIGH', 'demo_ends': ['ABORTED:SLOT_RECOVERY_FAIL', 'REQUIRE_SECOND_DEMONSTRATION', 'ABORTED:RESTARTED_BY_TEACHER', 'ABORTED:RESTARTED_BY_TEACHER', 'OK'], 'provider_truncations': 0}
+dev-018-S14L {'target': 'count_open_calls_with', 'RECOVERED_EXACTLY': True, 'status': 'ACTIVE', 'fail': None, 'teacher_turns': 3, 'cost_band': 'LOW-COST', 'demo_ends': ['OK', 'OK', 'OK'], 'provider_truncations': 0}
+dev-019-S14L {'target': 'count_open_calls_with', 'RECOVERED_EXACTLY': True, 'status': 'ACTIVE', 'fail': None, 'teacher_turns': 7, 'cost_band': 'LOW-COST', 'demo_ends': ['OK', 'OK', 'OK'], 'provider_truncations': 0}
+dev-023-S15 {'target': 'close_oldest_open_request', 'RECOVERED_EXACTLY': True, 'status': 'ACTIVE', 'fail': None, 'teacher_turns': 6, 'cost_band': 'LOW-COST', 'demo_ends': ['VERIFIED'], 'provider_truncations': 0}

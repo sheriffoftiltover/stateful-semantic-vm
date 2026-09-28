@@ -1,0 +1,99 @@
+{
+ "name": "close_calls_with",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE close_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person} STATUS=OPEN\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\n$v2 = COUNT $v0\nRETURN $v2\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.89,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_ambiguous_entity",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "txn_inject_after_1",
+     true
+    ],
+    [
+     "txn_inject_after_2",
+     true
+    ],
+    [
+     "txn_inject_after_3",
+     true
+    ],
+    [
+     "txn_inject_after_4",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE close_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person} STATUS=OPEN\nFOR $v1 IN $v0 : SET_STATUS $v1 CLOSED\n$v2 = COUNT $v0\nRETURN $v2\nEND",
+   "program_hash": "f2f7df837abe4997330d20821438019f461a3923854a27d7ae2319ef792ca61c"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:close_calls_with:v1",
+ "chosen": "deterministic"
+}

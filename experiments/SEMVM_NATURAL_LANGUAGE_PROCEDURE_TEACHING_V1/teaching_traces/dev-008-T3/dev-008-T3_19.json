@@ -1,0 +1,379 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Rita"
+ },
+ "interaction_id": "dev-008-T3:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-008-T3/learn/snapshots/dev-008-T3_19_start.sqlite",
+ "start_snapshot_sha256": "4fc5efc002ba98acd9f7df8f7314e65cefa6cf67969d53e8d7c8fe83fbc4f1c1",
+ "utterances": [
+  {
+   "utterance": "Please look up Rita's calls.",
+   "uid": "dev-008-T3:20",
+   "instruction": "Please look up Rita's calls.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please look up Rita's calls.",
+    "values": {
+     "PERSON": [
+      "Rita"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Rita\"}}\n\n",
+      "score": -0.431
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"RECIPIENT\": \"Rita\"}}\n\n",
+      "score": -2.639
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -5.272
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -6.528
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -7.832
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Rita\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Rita"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Rita\"}]]}]",
+      "score": -0.431,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Rita\"}]]}]",
+      "score": -2.639,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -5.021,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -7.832,
+      "n": 1
+     }
+    ],
+    "margin": 2.208,
+    "reference_notes": [],
+    "seconds": 5.84,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Rita"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "73b95dca1153cf006acefead13b417204c8194337cbc9ccef3b7375de93f89ef",
+   "state_after": "73b95dca1153cf006acefead13b417204c8194337cbc9ccef3b7375de93f89ef",
+   "seconds": 5.91
+  },
+  {
+   "utterance": "Set each one to closed.",
+   "uid": "dev-008-T3:21",
+   "instruction": "Set each one to closed.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Set each one to closed.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+      "score": -0.043
+     },
+     {
+      "text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"OPEN\"}\n\n",
+      "score": -4.681
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -8.638
+     },
+     {
+      "text": "{\"op\": \"DELETE\", \"each\": \"r1\"}\n\n",
+      "score": -9.177
+     }
+    ],
+    "raw_text": "{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"SET_STATUS\", \"value\": {\"const\": \"CLOSED\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -0.043,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"SET_STATUS\", \"value\": {\"const\": \"OPEN\"}}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -4.681,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -8.638,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"as\": \"e0\", \"body\": [{\"obj\": {\"var\": \"e0\"}, \"op\": \"DELETE\"}], \"list\": {\"var\": \"r1\"}, \"op\": \"FOR\"}]",
+      "score": -9.177,
+      "n": 1
+     }
+    ],
+    "margin": 4.639,
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "seconds": 4.71,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000008",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "73b95dca1153cf006acefead13b417204c8194337cbc9ccef3b7375de93f89ef",
+   "state_after": "288594051395faa492bd4ad7e8fa10f03fd0fde35c22d5b61ed12aec4c81337e",
+   "seconds": 4.825
+  },
+  {
+   "utterance": "Work out how many there are and return it.",
+   "uid": "dev-008-T3:22",
+   "instruction": "Work out how many there are and return it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Work out how many there are and return it.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Work out how many there are.",
+        "Return it."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Work out how many there are.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Return it.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 11,
+    "seconds": 7.6,
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "margin": 3.355,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0",
+     "RETURN.value=r2 licensed by R1"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "288594051395faa492bd4ad7e8fa10f03fd0fde35c22d5b61ed12aec4c81337e",
+   "state_after": "288594051395faa492bd4ad7e8fa10f03fd0fde35c22d5b61ed12aec4c81337e",
+   "seconds": 7.681
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Rita"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "7a5080543e5a076031352a8cafde5e0f51aa057c16fde0404509ef173d5bc351",
+ "nl_mode": "NL_TEACH"
+}

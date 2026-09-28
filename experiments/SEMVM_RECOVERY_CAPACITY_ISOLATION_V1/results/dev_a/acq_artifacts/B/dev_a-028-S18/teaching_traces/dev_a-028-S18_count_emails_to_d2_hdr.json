@@ -1,0 +1,240 @@
+{
+ "name": "count_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Sam"
+ },
+ "interaction_id": "dev_a-028-S18:count_emails_to:d2:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/B/dev_a-028-S18/learn/snapshots/dev_a-028-S18_count_emails_to_d2_hdr_start.sqlite",
+ "start_snapshot_sha256": "6b78801a720f1d5dbd70f79d42812d73c8540c1a9a5c04ec919e29fdde02306e",
+ "utterances": [
+  {
+   "utterance": "Please look up every email sent to Sam.",
+   "uid": "dev_a-028-S18:count_emails_to:d2:demo3-slot1:0",
+   "instruction": "Please look up every email sent to Sam.",
+   "correction": false,
+   "slot_id": "demo3-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please look up every email sent to Sam.",
+    "values": {
+     "PERSON": [
+      "Sam"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "cf778ecb238268b685999ba9af8523e0d6c53d26d15a5c8e3f75913300438577"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Sam\"}}]}",
+    "request_hash": "cf778ecb238268b685999ba9af8523e0d6c53d26d15a5c8e3f75913300438577",
+    "cached": false,
+    "input_tokens": 4452,
+    "output_tokens": 88,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Sam"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.6
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Sam"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "bdab58ac4a406ef854e54cd2aa661db5aa699fd2539d635a125ee926e25faab6",
+   "state_after": "bdab58ac4a406ef854e54cd2aa661db5aa699fd2539d635a125ee926e25faab6",
+   "seconds": 1.894
+  },
+  {
+   "utterance": "Get the number of them.",
+   "uid": "dev_a-028-S18:count_emails_to:d2:demo3-slot2:1",
+   "instruction": "Get the number of them.",
+   "correction": false,
+   "slot_id": "demo3-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Get the number of them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "08b6bda274eb3636cded77ca09a59946919697fa355d18a8d9e6cafbf4cfe6a3"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "08b6bda274eb3636cded77ca09a59946919697fa355d18a8d9e6cafbf4cfe6a3",
+    "cached": false,
+    "input_tokens": 4484,
+    "output_tokens": 46,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.25
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "bdab58ac4a406ef854e54cd2aa661db5aa699fd2539d635a125ee926e25faab6",
+   "state_after": "bdab58ac4a406ef854e54cd2aa661db5aa699fd2539d635a125ee926e25faab6",
+   "seconds": 1.671
+  },
+  {
+   "utterance": "Please hand back the total.",
+   "uid": "dev_a-028-S18:count_emails_to:d2:demo3-slot3:2",
+   "instruction": "Please hand back the total.",
+   "correction": false,
+   "slot_id": "demo3-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please hand back the total.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "8fd9ca75041ec67ea09d79e97642fe86855ac301e436d590944eb0f30bb958a7"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "8fd9ca75041ec67ea09d79e97642fe86855ac301e436d590944eb0f30bb958a7",
+    "cached": false,
+    "input_tokens": 4507,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.11
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "bdab58ac4a406ef854e54cd2aa661db5aa699fd2539d635a125ee926e25faab6",
+   "state_after": "bdab58ac4a406ef854e54cd2aa661db5aa699fd2539d635a125ee926e25faab6",
+   "seconds": 1.469
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Sam"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "0e51f115b6801e98d0add7e1c4d273269a3216b75ed57cdeb351f3f3330a01ab",
+ "nl_mode": "NL_TEACH"
+}

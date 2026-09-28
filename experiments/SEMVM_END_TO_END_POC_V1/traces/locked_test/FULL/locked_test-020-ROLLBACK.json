@@ -1,0 +1,410 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645253,
+  "utterance_id": "locked_test-020-ROLLBACK:0",
+  "INPUT": "remind beta : by Grandma re epsilon ; so then again soon , visit epsilon",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "VISIT",
+    "layout": [
+     "straddle_o2",
+     [
+      "M1"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "VISIT",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "VISIT",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Grandma",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "PERSON",
+      "Grandma",
+      4
+     ],
+     [
+      "REMINDER",
+      null,
+      0
+     ],
+     [
+      "VISIT",
+      null,
+      13
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     0
+    ]
+   },
+   "log_mass": 936.99072265625,
+   "margin": 9.9903564453125,
+   "n_outputs": 31,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "VISIT"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Grandma"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Grandma",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "VISIT",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Grandma"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7578565a79aab8fd015373fd873e57097e551b1e272e02b691eedd2c3580d0b7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Grandma"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "+rel",
+    "visit:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "a059f7b9be87495a9b4af2d0f32a2b5135072d54fb96e39c43179465e4d10ae4",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Grandma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645253,
+  "utterance_id": "locked_test-020-ROLLBACK:1",
+  "INPUT": "UPDATE LAST_VISIT WHO=Rita RECIPIENT=Rita",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "a059f7b9be87495a9b4af2d0f32a2b5135072d54fb96e39c43179465e4d10ae4",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_VISIT",
+   "set": [
+    [
+     "WHO",
+     "Rita"
+    ],
+    [
+     "RECIPIENT",
+     "Rita"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "visit:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$new_Rita"
+   ],
+   [
+    "ADD_ALIAS",
+    "$new_Rita",
+    "Rita"
+   ],
+   [
+    "ASSERT",
+    "visit:000001",
+    "WHO",
+    "$new_Rita"
+   ],
+   [
+    "ASSERT",
+    "visit:000001",
+    "RECIPIENT",
+    "$new_Rita"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "15b27e394f022a1d4f54ed9cae02eab2b8bbb609f86848a2964ca0d0a742ee85",
+  "status": "VM_EXEC_ERROR",
+  "failure_stage": "VM_EXEC",
+  "reason": "relation RECIPIENT not allowed on VISIT",
+  "RESPONSE": "The update failed and nothing was changed.",
+  "STATE_AFTER": "a059f7b9be87495a9b4af2d0f32a2b5135072d54fb96e39c43179465e4d10ae4",
+  "STATE_DIFF": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Grandma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645253,
+  "utterance_id": "locked_test-020-ROLLBACK:2",
+  "INPUT": "QUERY WHO OF VISIT",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "a059f7b9be87495a9b4af2d0f32a2b5135072d54fb96e39c43179465e4d10ae4",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "VISIT",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "292a24a65ba383314de2f15ab9e5c6d6c88f3f867d5d0f064cee822413485cbe",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "a059f7b9be87495a9b4af2d0f32a2b5135072d54fb96e39c43179465e4d10ae4",
+  "RESPONSE": "Grandma",
+  "RETURN_RENDERED": [
+   "Grandma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "visit:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Grandma"
+    ]
+   ]
+  }
+ }
+]

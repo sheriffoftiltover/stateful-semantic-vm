@@ -1,0 +1,190 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":teach",
+ "declared": {
+  "person": "Grandma"
+ },
+ "interaction_id": "dev_b-002-S2:retarget_last_email:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/E/dev_b-002-S2/learn/snapshots/dev_b-002-S2_retarget_last_email_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "0de2c3f2ca7059985fd70c0456041fa711ce6102b98e74a4b36b228810105da8",
+ "utterances": [
+  {
+   "utterance": "Take my newest email, then address it to Grandma.",
+   "uid": "dev_b-002-S2:retarget_last_email:d0:demo1-slot1:0",
+   "instruction": "Take my newest email, then address it to Grandma.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Take my newest email, then address it to Grandma.",
+    "values": {
+     "PERSON": [
+      "Grandma"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f7b54e91b2997f4724547219e13d3433cb918eca7f35f226fadbc42048693dba"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}, {\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Grandma\"}]}",
+    "request_hash": "f7b54e91b2997f4724547219e13d3433cb918eca7f35f226fadbc42048693dba",
+    "cached": true,
+    "input_tokens": 4454,
+    "output_tokens": 107,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND_LAST",
+      "type": "EMAIL"
+     },
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "RECIPIENT",
+      "value": "Grandma"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.01
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    },
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Grandma"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "state_after": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "seconds": 1.141
+  },
+  {
+   "utterance": "Return the email.",
+   "uid": "dev_b-002-S2:retarget_last_email:d0:demo1-slot2:1",
+   "instruction": "Return the email.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return the email.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "375f36d9fe378043bfc08acb3ea170946e966c046ea2b930c081c754d4b80da8"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "375f36d9fe378043bfc08acb3ea170946e966c046ea2b930c081c754d4b80da8",
+    "cached": true,
+    "input_tokens": 4468,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "state_after": "2d603ba31060e32591a7d70084ff9723b558595870c7e31af98c3bd8211f154e",
+   "seconds": 0.691
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Grandma"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "e24e5f7a1a501d041d2db5e9fdf5da091bd5dbe325ee88c7f46986a8360c1055",
+ "nl_mode": "NL_TEACH"
+}

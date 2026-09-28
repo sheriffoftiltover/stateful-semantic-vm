@@ -1,0 +1,168 @@
+[
+ {
+  "target": "call_people_at",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the calls at noon.",
+      "text": "Find the calls at noon.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "PARENT",
+          "WHEN",
+          {
+           "const": "noon"
+          }
+         ]
+        ],
+        "status": null
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot4",
+      "source": "EVALUATOR_INJECTION",
+      "status": "ABANDONED",
+      "original_text": "Now do the usual thing with it, like we did for Kevin.",
+      "text": "Now do the usual thing with it, like we did for Kevin.",
+      "replacement_for": "demo1-slot2",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": false,
+      "lesson_index": null,
+      "family": "demo1-slot4",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "SCHEMA",
+        "reason": "grounder output not in the schema (PLAN without steps)"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Collect who they are with.",
+      "text": "Collect who they are with.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 1,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": true,
+      "history": [],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot5",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Collect who they are with.",
+      "text": "Collect who they are with.",
+      "replacement_for": "demo1-slot2",
+      "grounded_plan": [
+       {
+        "op": "SELECT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        },
+        "rel": "WHO"
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null,
+      "from_recovery": true
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return them.",
+      "text": "Return them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 1,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "REFERENCE",
+        "reason": "reference for RETURN.value is ambiguous among ['r1', 'r2']"
+       },
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": {
+       "chosen": "r2",
+       "offered": [
+        "r1",
+        "r2"
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

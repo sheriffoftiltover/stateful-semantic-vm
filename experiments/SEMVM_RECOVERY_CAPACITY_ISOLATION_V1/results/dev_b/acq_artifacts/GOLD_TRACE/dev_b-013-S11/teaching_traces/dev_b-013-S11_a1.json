@@ -1,0 +1,130 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Oscar"
+ },
+ "interaction_id": "dev_b-013-S11:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-013-S11/learn/snapshots/dev_b-013-S11_a1_start.sqlite",
+ "start_snapshot_sha256": "306cb8914b4b65ed63e0436b72d3075f8b6f7e297d9b1631776cb8562f7db139",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-013-S11:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Oscar"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "state_after": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "seconds": 0.16
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-013-S11:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "state_after": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "seconds": 0.145
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-013-S11:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "state_after": "ec62418a8f18e2b91aef27032531b60b812481eee7bf9415bf1080b6ff77d485",
+   "seconds": 0.184
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Oscar"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "5162339ec33b30c62822514e1d346d9f82e793c94f2c9f966a0d0d80c0c8f620",
+ "nl_mode": "GOLD_TRACE"
+}

@@ -1,0 +1,234 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev-019-T9:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-019-T9/learn/snapshots/dev-019-T9_19_start.sqlite",
+ "start_snapshot_sha256": "3c8e6f878d2a969dea844694bf8c0bd83c10d88986b9a6c4333d3c2284e8fd77",
+ "utterances": [
+  {
+   "utterance": "Look up the most recent email and change its recipient to Ivan.",
+   "uid": "dev-019-T9:20",
+   "instruction": "Look up the most recent email and change its recipient to Ivan.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Look up the most recent email and change its recipient to Ivan.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Look up the most recent email.",
+        "Change its recipient to Ivan."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Look up the most recent email.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Change its recipient to Ivan.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 32,
+    "seconds": 19.0,
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "EMAIL",
+      "bind": "r1"
+     },
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "RECIPIENT",
+      "value": "Ivan"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Ivan\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "EMAIL",
+      "bind": "r1"
+     },
+     {
+      "op": "CHILD",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "GET",
+      "of": "r2",
+      "rel": "RECIPIENT",
+      "bind": "r3"
+     },
+     {
+      "op": "UPDATE",
+      "target": "r2",
+      "rel": "RECIPIENT",
+      "value": "Ivan"
+     }
+    ],
+    "margin": 4.941,
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    },
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Ivan"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000004",
+     "RECIPIENT",
+     "person:000003"
+    ],
+    [
+     "+rel",
+     "email:000004",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "0c9e9e93e3121ef74df3568efef7a131328378c688a960188392cd85e3fb6efd",
+   "state_after": "826ab480c22b7a7b514361702acf421028ebc98447d7285f63a53d2c645c150d",
+   "seconds": 19.135
+  },
+  {
+   "utterance": "Return it.",
+   "uid": "dev-019-T9:21",
+   "instruction": "Return it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.016
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -5.264
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -6.73
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.016,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 3.04,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "826ab480c22b7a7b514361702acf421028ebc98447d7285f63a53d2c645c150d",
+   "state_after": "826ab480c22b7a7b514361702acf421028ebc98447d7285f63a53d2c645c150d",
+   "seconds": 3.147
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Ivan"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "fcd7e8b0d192ccdedbaa4a93065bcba73e6a5c9f7c36cc9ec04d56687a25978b",
+ "nl_mode": "NL_TEACH"
+}

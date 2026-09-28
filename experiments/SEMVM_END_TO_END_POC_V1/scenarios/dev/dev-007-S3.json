@@ -1,0 +1,267 @@
+{
+ "scenario_id": "dev-007-S3",
+ "suite": "dev",
+ "category": "S3",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "note theta : at 1:30 re theta ; so then again soon , call gamma ; about schedule re gamma",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "NOTE"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "TIME",
+      "surface": "1:30"
+     },
+     {
+      "local_id": "v1",
+      "type": "TOPIC_VALUE",
+      "surface": "schedule"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "TOPIC",
+      "subject": "e1",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "NOTE",
+    "inner": "CALL",
+    "mods": [
+     [
+      "WHEN",
+      "1:30",
+      "outer"
+     ],
+     [
+      "TOPIC",
+      "schedule",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o2",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF NOTE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF CALL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF CALL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY TOPIC OF NOTE"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "TOPIC",
+      "topic:schedule"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "WHEN",
+      "time:01:30"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "1:30"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "TOPIC",
+      "topic:schedule"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "WHEN",
+      "time:01:30"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "TOPIC",
+      "topic:schedule"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "WHEN",
+      "time:01:30"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "schedule"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "TOPIC",
+      "topic:schedule"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "WHEN",
+      "time:01:30"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "note:000001",
+      "NOTE"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "TOPIC",
+      "topic:schedule"
+     ],
+     [
+      "note:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "note:000001",
+      "WHEN",
+      "time:01:30"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

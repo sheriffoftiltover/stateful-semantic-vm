@@ -1,0 +1,198 @@
+{
+ "name": "count_open_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Sam"
+ },
+ "interaction_id": "locked_test-006-S6:count_open_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-006-S6/learn/snapshots/locked_test-006-S6_count_open_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "55c0a80360d5c7df2c902a1daf4361ac32ee526e440b54eb86f9d525bd50063e",
+ "utterances": [
+  {
+   "utterance": "Find the open calls with person Sam and count them.",
+   "uid": "locked_test-006-S6:count_open_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the open calls with person Sam and count them.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the open calls with person Sam and count them.",
+    "values": {
+     "PERSON": [
+      "Sam"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "fd68bba4a60582bba63493e0ac272cad5abe4b72bf3bb520ac901a6ccb70a6ec"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Sam\"}, \"status\": \"OPEN\"}, {\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "fd68bba4a60582bba63493e0ac272cad5abe4b72bf3bb520ac901a6ccb70a6ec",
+    "cached": false,
+    "input_tokens": 4454,
+    "output_tokens": 138,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Sam"
+      },
+      "status": "OPEN"
+     },
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.59
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Sam"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    },
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "state_after": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "seconds": 1.831
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "locked_test-006-S6:count_open_calls_with:d0:demo1-slot2:1",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "c45a7a8235354ce6e9112eac506e910a4a942c532dbe41129ab067ad53433aef"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "c45a7a8235354ce6e9112eac506e910a4a942c532dbe41129ab067ad53433aef",
+    "cached": true,
+    "input_tokens": 4509,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "state_after": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "seconds": 0.167
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Sam"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "68931c106d5cdf1bb71426e6c70923287ea1bd09e671ce352be9580b8e04b7d5",
+ "nl_mode": "NL_TEACH"
+}

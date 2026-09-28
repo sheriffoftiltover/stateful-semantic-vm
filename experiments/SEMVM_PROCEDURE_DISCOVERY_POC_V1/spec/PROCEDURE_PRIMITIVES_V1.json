@@ -1,0 +1,153 @@
+{
+ "inventory": "PROCEDURE_PRIMITIVES_V1",
+ "frozen": "2026-09-26, before any procedure discovery (Amendment 001)",
+ "world": "SEMVM_END_TO_END_POC_V1 world model + STATUS attribute (OPEN|CLOSED, absent=OPEN) on events",
+ "primitives": {
+  "FIND": {
+   "effect": "PURE",
+   "result": "EVENT_LIST"
+  },
+  "FIND_LAST": {
+   "effect": "PURE",
+   "result": "EVENT"
+  },
+  "GET": {
+   "effect": "PURE",
+   "result": "VALUE"
+  },
+  "CHILD": {
+   "effect": "PURE",
+   "result": "EVENT"
+  },
+  "PARENT": {
+   "effect": "PURE",
+   "result": "EVENT"
+  },
+  "FIRST": {
+   "effect": "PURE",
+   "result": "EVENT"
+  },
+  "COUNT": {
+   "effect": "PURE",
+   "result": "INT"
+  },
+  "FILTER": {
+   "effect": "PURE",
+   "result": "EVENT_LIST"
+  },
+  "SELECT": {
+   "effect": "PURE",
+   "result": "VALUE_LIST"
+  },
+  "SORT": {
+   "effect": "PURE",
+   "result": "EVENT_LIST"
+  },
+  "GROUP": {
+   "effect": "PURE",
+   "result": "GROUPS"
+  },
+  "REPORT": {
+   "effect": "PURE",
+   "result": "REPORT"
+  },
+  "UPDATE": {
+   "effect": "STATEFUL",
+   "result": null
+  },
+  "RETRACT": {
+   "effect": "STATEFUL",
+   "result": null
+  },
+  "SET_STATUS": {
+   "effect": "STATEFUL",
+   "result": null
+  },
+  "DELETE": {
+   "effect": "STATEFUL",
+   "result": null
+  },
+  "FOR": {
+   "effect": "CONTROL",
+   "result": null
+  },
+  "IF": {
+   "effect": "CONTROL",
+   "result": null
+  },
+  "PRECONDITION": {
+   "effect": "CONTROL",
+   "result": null
+  },
+  "CALL": {
+   "effect": "CALL",
+   "result": "CALLEE"
+  },
+  "RETURN": {
+   "effect": "CONTROL",
+   "result": null
+  }
+ },
+ "semantics": {
+  "FIND": "active events of TYPE in creation order satisfying every [SCOPE.REL=VALUE] (SELF / PARENT via TODO / CHILD via TODO) and optional STATUS",
+  "FIND_LAST": "most recently created active event of TYPE; none -> NOT_FOUND",
+  "GET": "the active REL value of an EVENT (PERSON or scalar) or NONE",
+  "CHILD": "TODO child or NONE",
+  "PARENT": "TODO parent or NONE",
+  "FIRST": "first EVENT of a list or NONE",
+  "COUNT": "INT length of an EVENT_LIST / VALUE_LIST",
+  "FILTER": "sub-list with REL=VALUE or STATUS=VALUE",
+  "SELECT": "VALUE_LIST of the REL values (NONE skipped)",
+  "SORT": "list sorted by the rendered REL value (NONE last), ties by creation order",
+  "GROUP": "GROUPS keyed by the rendered REL value (NONE key null), keys sorted",
+  "REPORT": "REPORT rows [key, count, sorted distinct rendered REL values] from GROUPS (structured REPORT value; Amendment 001)",
+  "UPDATE": "retract active (EVENT, REL, *), assert (EVENT, REL, VALUE); REL must be legal for the event type (frozen matrix); a new PERSON surface is created with its alias",
+  "RETRACT": "retract active (EVENT, REL, *)",
+  "SET_STATUS": "set STATUS attribute",
+  "DELETE": "object deleted, all its active relations retracted",
+  "FOR": "bounded iteration over an EVENT_LIST (<= 100 items)",
+  "IF": "IF NONEMPTY x : step",
+  "PRECONDITION": "REQUIRE NONEMPTY x -> PRECONDITION_FALSE",
+  "CALL": "call an ACTIVE procedure (no recursion, DAG only)",
+  "RETURN": "return a value; every procedure ends with RETURN"
+ },
+ "types": [
+  "EVENT",
+  "EVENT_LIST",
+  "PERSON",
+  "TIME",
+  "PLACE",
+  "TOPIC",
+  "VALUE_LIST",
+  "INT",
+  "GROUPS",
+  "REPORT",
+  "EVENT_TYPE",
+  "STATUS",
+  "NONE"
+ ],
+ "parameter_types": [
+  "PERSON",
+  "TIME",
+  "PLACE",
+  "TOPIC",
+  "EVENT_TYPE",
+  "STATUS"
+ ],
+ "effect_classes": {
+  "PURE": "no state mutation",
+  "STATEFUL": "modifies Semantic VM state",
+  "EXTERNAL": "out of scope V1 (none exists)"
+ },
+ "transaction": "one invocation = one SQLite transaction (nested CALLs share it); world postconditions before commit; any error -> rollback",
+ "forbidden": [
+  "shell",
+  "eval",
+  "dynamic import",
+  "file operations",
+  "network",
+  "external side effects",
+  "recursion",
+  "unbounded loops"
+ ]
+}

@@ -1,0 +1,291 @@
+{
+ "name": "replace_visit_location",
+ "mode": ":teach",
+ "declared": {
+  "place": "Oslo"
+ },
+ "interaction_id": "dev-009-T4:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-009-T4/learn/snapshots/dev-009-T4_19_start.sqlite",
+ "start_snapshot_sha256": "4a04d293d866ac2db0e0ff3e65b4efa020fe6cf63377e4fd53e373dcacfcf11b",
+ "utterances": [
+  {
+   "utterance": "Get my latest visit.",
+   "uid": "dev-009-T4:20",
+   "instruction": "Get my latest visit.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get my latest visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+      "score": -0.111
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"VISIT\"}\n\n",
+      "score": -5.736
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -10.79
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"VISIT\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "VISIT",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"VISIT\"}}]",
+      "score": -0.111,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"VISIT\"}, \"where\": []}]",
+      "score": -5.736,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -10.79,
+      "n": 1
+     }
+    ],
+    "margin": 5.625,
+    "reference_notes": [],
+    "seconds": 2.77,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "8ab69da49962315faa75760f4f885c4abb8d6d3c31620e5e17d05af1b52fa4c3",
+   "state_after": "8ab69da49962315faa75760f4f885c4abb8d6d3c31620e5e17d05af1b52fa4c3",
+   "seconds": 2.93
+  },
+  {
+   "utterance": "Change its place to Oslo.",
+   "uid": "dev-009-T4:21",
+   "instruction": "Change its place to Oslo.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Change its place to Oslo.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Oslo"
+     ],
+     "TOPIC": []
+    },
+    "llm_calls": 6,
+    "top": [
+     {
+      "text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Oslo\"}\n\n",
+      "score": -0.037
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -10.244
+     },
+     {
+      "text": "r2 = {\"op\": \"GET\", \"of\": \"r1\", \"rel\": \"WHERE\"}\n\n",
+      "score": -11.244
+     }
+    ],
+    "raw_text": "{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Oslo\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "WHERE",
+      "value": "Oslo"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"obj\": {\"var\": \"r1\"}, \"op\": \"UPDATE\", \"rel\": \"WHERE\", \"value\": {\"const\": \"Oslo\"}}]",
+      "score": -0.037,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -9.931,
+      "n": 2
+     }
+    ],
+    "margin": 9.893,
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "seconds": 2.55,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Oslo"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "visit:000002",
+     "WHERE",
+     "place:lima"
+    ],
+    [
+     "+rel",
+     "visit:000002",
+     "WHERE",
+     "place:oslo"
+    ]
+   ],
+   "state_before": "8ab69da49962315faa75760f4f885c4abb8d6d3c31620e5e17d05af1b52fa4c3",
+   "state_after": "e134d6b111217f3e8edbb6e08232ecb36bbe5766e29885ac66477361eb5215b5",
+   "seconds": 2.851
+  },
+  {
+   "utterance": "Give it back.",
+   "uid": "dev-009-T4:22",
+   "instruction": "Give it back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.032
+     },
+     {
+      "text": "r2 = {\"op\": \"PARENT\", \"of\": \"r1\"}\n\n",
+      "score": -4.519
+     },
+     {
+      "text": "r2 = {\"op\": \"CHILD\", \"of\": \"r1\"}\n\n",
+      "score": -5.46
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.032,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 1.75,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "e134d6b111217f3e8edbb6e08232ecb36bbe5766e29885ac66477361eb5215b5",
+   "state_after": "e134d6b111217f3e8edbb6e08232ecb36bbe5766e29885ac66477361eb5215b5",
+   "seconds": 1.863
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Oslo"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "389d6f26a3606cf413b628f6902407682dbfa76e07f4ff438a264906ea1df856",
+ "nl_mode": "NL_TEACH"
+}

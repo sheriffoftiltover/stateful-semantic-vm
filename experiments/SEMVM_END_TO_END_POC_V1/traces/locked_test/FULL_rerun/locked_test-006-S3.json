@@ -1,0 +1,555 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645372,
+  "utterance_id": "locked_test-006-S3:0",
+  "INPUT": "request theta ; at dusk per theta : next and then so ; email beta : about launch per beta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       13
+      ]
+     ],
+     [
+      "TOPIC",
+      [
+       "EMAIL",
+       null,
+       13
+      ],
+      [
+       "TOPIC",
+       "launch",
+       17
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "TIME",
+       "dusk",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      13
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "dusk",
+      4
+     ],
+     [
+      "TOPIC",
+      "launch",
+      17
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1324.7532958984375,
+   "margin": 13.0384521484375,
+   "n_outputs": 52,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TIME",
+     "surface": "dusk"
+    },
+    {
+     "local_id": "v1",
+     "type": "TOPIC_VALUE",
+     "surface": "launch"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e1",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "TIME",
+    "v0",
+    "dusk",
+    "time:DUSK"
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "launch",
+    "topic:launch"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:DUSK",
+    "TIME",
+    "DUSK",
+    "dusk"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:launch",
+    "TOPIC",
+    "launch",
+    "launch"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:DUSK"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "82cb3c268f4b6ed13a24ea323fc1606f99711e1a113a2e48bbd880581afe0b8f",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHEN",
+    "time:DUSK"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645372,
+  "utterance_id": "locked_test-006-S3:1",
+  "INPUT": "QUERY WHEN OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "32db73cd9f8ea039b52262b94825684de94b0a5a3720f4192f1257adcaad0f3b",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:DUSK"
+  ],
+  "STATE_AFTER": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "RESPONSE": "dusk",
+  "RETURN_RENDERED": [
+   "dusk"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645372,
+  "utterance_id": "locked_test-006-S3:2",
+  "INPUT": "QUERY WHEN OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c289c2c09f2856a043061942abeb942bdfa4616ab29841346a7f9f0270309968",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2645372,
+  "utterance_id": "locked_test-006-S3:3",
+  "INPUT": "QUERY TOPIC OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dd3e0b020373b08e911f6d9d7cf6696f2f9bea57c6a886751866e95091e7f1a0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:launch"
+  ],
+  "STATE_AFTER": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "RESPONSE": "launch",
+  "RETURN_RENDERED": [
+   "launch"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2645372,
+  "utterance_id": "locked_test-006-S3:4",
+  "INPUT": "QUERY TOPIC OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "991ee6c5edc0489891c77bbfcd7f108675e201165fad7dc1660e40d7b096e99f",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "d469e1da5d5bba5b8b9d834e705c39c60a22457609037caae5c40ade86e5c430",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:launch"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "request:000001",
+     "WHEN",
+     "time:DUSK"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

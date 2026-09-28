@@ -1,0 +1,98 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Dave"
+ },
+ "interaction_id": "dev_b-001-S1:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-001-S1/learn/snapshots/dev_b-001-S1_a1_start.sqlite",
+ "start_snapshot_sha256": "c17563cf52681f73ce671eccd8190da24f89a15c6eb8f1ff6d2c88849dacd878",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-001-S1:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Dave"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "50b425faa54e1353c4ccf7a58503eb71793f2244c0bd396e193746daf59cb9c6",
+   "state_after": "50b425faa54e1353c4ccf7a58503eb71793f2244c0bd396e193746daf59cb9c6",
+   "seconds": 0.175
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-001-S1:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "50b425faa54e1353c4ccf7a58503eb71793f2244c0bd396e193746daf59cb9c6",
+   "state_after": "50b425faa54e1353c4ccf7a58503eb71793f2244c0bd396e193746daf59cb9c6",
+   "seconds": 0.182
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Dave"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "7ec4e4ddce0531c4b1bbece36abe2a0df75866bb621b2b7812818d016f000043",
+ "nl_mode": "GOLD_TRACE"
+}

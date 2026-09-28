@@ -1,0 +1,30 @@
+{
+ "text": "PROCEDURE person_on_call_at(time:TIME)\n$v0 = FIND CALL WHERE PARENT.WHEN={time}\n$v1 = FIRST $v0\n$v2 = GET $v1 WHO\nRETURN $v2\nEND",
+ "provenance": {
+  "provider": "modal-vllm",
+  "model": "openai/gpt-oss-120b",
+  "request_hash": "c6f839b7e3ba1e3c90c5cee5319d54b660dcc372f0c99a82ec7d0a1a8de43296",
+  "prompt_sha256": "be8f66bf745f3eb88cc7b63d52d3657057aa151338b3b75c2375be19a6b1311b",
+  "generation": {
+   "model": "gpt-oss-120b",
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "seed": 0,
+   "reasoning_effort": "high"
+  },
+  "kind": "DIRECT_AST",
+  "meter_usd_before": 4.689,
+  "request_id": "chatcmpl-a2b259e71f604963b18108768a299993",
+  "timestamp": "2026-09-27T15:53:20Z",
+  "latency_s": 5.135,
+  "retry_count": 0,
+  "input_tokens": 1217,
+  "output_tokens": 802,
+  "finish_reason": "stop",
+  "response_sha256": "77925452eb0cf697e154ce5dd41c79f5c09bd89c34d8a1afa82fab62b287d27f",
+  "reasoning_chars": 2891,
+  "cached": false
+ },
+ "messages_sha256": "be8f66bf745f3eb88cc7b63d52d3657057aa151338b3b75c2375be19a6b1311b"
+}

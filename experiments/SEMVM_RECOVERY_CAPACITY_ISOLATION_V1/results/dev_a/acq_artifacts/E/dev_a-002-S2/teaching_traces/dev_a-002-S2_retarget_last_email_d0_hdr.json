@@ -1,0 +1,190 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":teach",
+ "declared": {
+  "person": "Uma"
+ },
+ "interaction_id": "dev_a-002-S2:retarget_last_email:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/E/dev_a-002-S2/learn/snapshots/dev_a-002-S2_retarget_last_email_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "fa60037c5a1b0290077ed8a26bac07b4bdbfcab8c4841f89496f1e56af2d3651",
+ "utterances": [
+  {
+   "utterance": "Change the recipient of my last email to Uma.",
+   "uid": "dev_a-002-S2:retarget_last_email:d0:demo1-slot1:0",
+   "instruction": "Change the recipient of my last email to Uma.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Change the recipient of my last email to Uma.",
+    "values": {
+     "PERSON": [
+      "Uma"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "d8fb188170f86b63f053494106ce0a5d46569fe2d772ef254b96f88a8f16d2aa"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    { \"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"EMAIL\" },\n    { \"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Uma\" }\n  ]\n}",
+    "request_hash": "d8fb188170f86b63f053494106ce0a5d46569fe2d772ef254b96f88a8f16d2aa",
+    "cached": true,
+    "input_tokens": 4453,
+    "output_tokens": 100,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND_LAST",
+      "type": "EMAIL"
+     },
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "RECIPIENT",
+      "value": "Uma"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    },
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Uma"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "15eaf78a4a668f529d657f4b6bbea0baece4bfd6f402ea78136ad017a1447dd1",
+   "state_after": "15eaf78a4a668f529d657f4b6bbea0baece4bfd6f402ea78136ad017a1447dd1",
+   "seconds": 1.4
+  },
+  {
+   "utterance": "Please return it.",
+   "uid": "dev_a-002-S2:retarget_last_email:d0:demo1-slot2:1",
+   "instruction": "Please return it.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f67f605af9f66e60a7ff6184a18766ab07b90281fd89d3a9716da9fe6380e7f0"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "f67f605af9f66e60a7ff6184a18766ab07b90281fd89d3a9716da9fe6380e7f0",
+    "cached": true,
+    "input_tokens": 4468,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "15eaf78a4a668f529d657f4b6bbea0baece4bfd6f402ea78136ad017a1447dd1",
+   "state_after": "15eaf78a4a668f529d657f4b6bbea0baece4bfd6f402ea78136ad017a1447dd1",
+   "seconds": 0.634
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Uma"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "e9edebc1563c8d0195d5dcad614383ff82f28843d1c7878e3168417aa21c40fa",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,127 @@
+{
+ "name": "count_requests_by_at",
+ "n_traces": 2,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_requests_by_at(person:PERSON, time:TIME)\n$v0 = FIND REQUEST WHERE SELF.WHO={person} SELF.WHEN={time}\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.8,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "replay_1",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "counterfactual_t0_2",
+     true
+    ],
+    [
+     "counterfactual_t0_3",
+     true
+    ],
+    [
+     "counterfactual_t1_0",
+     true
+    ],
+    [
+     "counterfactual_t1_1",
+     true
+    ],
+    [
+     "counterfactual_t1_2",
+     true
+    ],
+    [
+     "counterfactual_t1_3",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_ambiguous_entity",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE count_requests_by_at(person:PERSON, time:TIME)\n$v0 = FIND REQUEST WHERE SELF.WHO={person} SELF.WHEN={time}\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "program_hash": "cb3b45896707ce3a5c325b55c4a86edc65d9e9754365fdd8052b090bf400023e"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:count_requests_by_at:v1",
+ "chosen": "deterministic"
+}

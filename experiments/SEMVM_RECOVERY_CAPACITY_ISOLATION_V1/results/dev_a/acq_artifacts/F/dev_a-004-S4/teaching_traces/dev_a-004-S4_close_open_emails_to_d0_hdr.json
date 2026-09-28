@@ -1,0 +1,274 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Heidi"
+ },
+ "interaction_id": "dev_a-004-S4:close_open_emails_to:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/F/dev_a-004-S4/learn/snapshots/dev_a-004-S4_close_open_emails_to_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "1147fdb1205882e77454b0607c3e27f3f2418c3d548ecf50c85f4a29e83e8bda",
+ "utterances": [
+  {
+   "utterance": "Find the open emails to Heidi.",
+   "uid": "dev_a-004-S4:close_open_emails_to:d0:demo1-slot1:0",
+   "instruction": "Find the open emails to Heidi.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the open emails to Heidi.",
+    "values": {
+     "PERSON": [
+      "Heidi"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "2b82aee9d27cfc3f66b42accaba73b068c3f30e394254d46f1d6f7b75b699b66"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Heidi\"}, \"status\": \"OPEN\"}]}",
+    "request_hash": "2b82aee9d27cfc3f66b42accaba73b068c3f30e394254d46f1d6f7b75b699b66",
+    "cached": false,
+    "input_tokens": 4450,
+    "output_tokens": 75,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Heidi"
+      },
+      "status": "OPEN"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.38
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Heidi"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5d9b32aea615ab0c798c83f35bc1d5063d5951549676b73d449173920aa540d4",
+   "state_after": "5d9b32aea615ab0c798c83f35bc1d5063d5951549676b73d449173920aa540d4",
+   "seconds": 1.856
+  },
+  {
+   "utterance": "Mark each of them closed.",
+   "uid": "dev_a-004-S4:close_open_emails_to:d0:demo1-slot2:1",
+   "instruction": "Mark each of them closed.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Mark each of them closed.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "b92aa89c31067490952ef5952f388d1d7984e1381d5bea50360b737523f017c5"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+    "request_hash": "b92aa89c31067490952ef5952f388d1d7984e1381d5bea50360b737523f017c5",
+    "cached": false,
+    "input_tokens": 4491,
+    "output_tokens": 66,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.31
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "email:000007",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "5d9b32aea615ab0c798c83f35bc1d5063d5951549676b73d449173920aa540d4",
+   "state_after": "9a026f56be052cb6a92facd37782e9c7e46e41383a2999412b183ec36be44c8e",
+   "seconds": 2.238
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev_a-004-S4:close_open_emails_to:d0:demo1-slot3:2",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "6e58bff1a9ac1e2319afa61e318903dd96d3cb65f4c688a801c7fcdfc432ab34"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "6e58bff1a9ac1e2319afa61e318903dd96d3cb65f4c688a801c7fcdfc432ab34",
+    "cached": false,
+    "input_tokens": 4488,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.17
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "9a026f56be052cb6a92facd37782e9c7e46e41383a2999412b183ec36be44c8e",
+   "state_after": "9a026f56be052cb6a92facd37782e9c7e46e41383a2999412b183ec36be44c8e",
+   "seconds": 1.604
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Heidi"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "dab3f9f0c6c31d166e17a145249107c9cd2f138778e4fcee0a8e62d91a092a28",
+ "nl_mode": "NL_TEACH"
+}

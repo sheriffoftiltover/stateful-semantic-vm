@@ -1,0 +1,389 @@
+{
+ "name": "move_visit_and_parent",
+ "mode": ":teach",
+ "declared": {
+  "place": "Paris"
+ },
+ "interaction_id": "locked_test-012-S12:move_visit_and_parent:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-012-S12/learn/snapshots/locked_test-012-S12_move_visit_and_parent_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "57b78011ad6a2d730aae82d9b490260c983779df81a58e206fa9bdf8bef01a98",
+ "utterances": [
+  {
+   "utterance": "Take my latest visit.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d0:demo1-slot1:0",
+   "instruction": "Take my latest visit.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Take my latest visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+    "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221",
+    "cached": true,
+    "input_tokens": 4448,
+    "output_tokens": 48,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND_LAST",
+      "type": "VISIT"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.01
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "VISIT"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "state_after": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "seconds": 0.36
+  },
+  {
+   "utterance": "Move it to Paris.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d0:demo1-slot2:1",
+   "instruction": "Move it to Paris.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Move it to Paris.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Paris"
+     ],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "cb98ca5004b43c1457c5aca820aa4197370592dce7bfb638076f78f5604373b1"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Paris\"}]}",
+    "request_hash": "cb98ca5004b43c1457c5aca820aa4197370592dce7bfb638076f78f5604373b1",
+    "cached": false,
+    "input_tokens": 4471,
+    "output_tokens": 61,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "WHERE",
+      "value": "Paris"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Paris"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "visit:000013",
+     "WHERE",
+     "place:madrid"
+    ],
+    [
+     "+rel",
+     "visit:000013",
+     "WHERE",
+     "place:paris"
+    ]
+   ],
+   "state_before": "647de28ad27760b3c3d053dd50ddfbb8ca98fef6fc58ad460607d6176c29ec54",
+   "state_after": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "seconds": 1.691
+  },
+  {
+   "utterance": "Get its parent.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d0:demo1-slot3:2",
+   "instruction": "Get its parent.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Get its parent.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"PARENT\", \"of\": \"r1\"}]}",
+    "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+    "cached": true,
+    "input_tokens": 4470,
+    "output_tokens": 111,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "PARENT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "PARENT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "PARENT",
+     "bind": "r2",
+     "obj": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "state_after": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "seconds": 0.34
+  },
+  {
+   "utterance": "Move it to Paris.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d0:demo1-slot4:3",
+   "instruction": "Move it to Paris.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Move it to Paris.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [
+      "Paris"
+     ],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "9a41284ec47a45fe533edb86514f98076f004e4eaf8ca4906aeb691f0b1a3d15"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r2\", \"rel\": \"WHERE\", \"value\": \"Paris\"}]}",
+    "request_hash": "9a41284ec47a45fe533edb86514f98076f004e4eaf8ca4906aeb691f0b1a3d15",
+    "cached": false,
+    "input_tokens": 4496,
+    "output_tokens": 84,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r2",
+      "rel": "WHERE",
+      "value": "Paris"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r2 licensed by R3"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.29
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r2"
+     },
+     "rel": "WHERE",
+     "value": {
+      "const": "Paris"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "+rel",
+     "reminder:000018",
+     "WHERE",
+     "place:paris"
+    ]
+   ],
+   "state_before": "75a484d332851756bf9be0c936cbd0a7f15309469629974ab3b8f3f072eb7654",
+   "state_after": "06e6d5728a23409a4fd197253c6b82a9b30ad0d75e0b3d836b6cc625de92ecb4",
+   "seconds": 1.665
+  },
+  {
+   "utterance": "Return the visit.",
+   "uid": "locked_test-012-S12:move_visit_and_parent:d0:demo1-slot5:4",
+   "instruction": "Return the visit.",
+   "correction": false,
+   "slot_id": "demo1-slot5",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the visit.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+    "cached": true,
+    "input_tokens": 4495,
+    "output_tokens": 45,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "06e6d5728a23409a4fd197253c6b82a9b30ad0d75e0b3d836b6cc625de92ecb4",
+   "state_after": "06e6d5728a23409a4fd197253c6b82a9b30ad0d75e0b3d836b6cc625de92ecb4",
+   "seconds": 0.247
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "VISIT"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Paris"
+   }
+  },
+  {
+   "op": "PARENT",
+   "bind": "r2",
+   "obj": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r2"
+   },
+   "rel": "WHERE",
+   "value": {
+    "const": "Paris"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "d8b92c76102197d2d15f8faf60b413e931f605b034a3a47c95547de27b01a96d",
+ "nl_mode": "NL_TEACH"
+}

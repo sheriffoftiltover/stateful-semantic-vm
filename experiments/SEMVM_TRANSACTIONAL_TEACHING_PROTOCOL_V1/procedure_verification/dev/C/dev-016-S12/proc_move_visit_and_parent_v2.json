@@ -1,0 +1,42 @@
+{
+ "name": "move_visit_and_parent",
+ "n_traces": 2,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE move_visit_and_parent(place:PLACE)\n$v0 = FIND VISIT\n$v1 = FIND_LAST VISIT\n$v2 = PARENT $v1\nUPDATE $v2 WHERE={place}\nUPDATE $v1 WHERE={place}\nRETURN $v1\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "place",
+        "PLACE"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE move_visit_and_parent()\n$v0 = FIND VISIT\n$v1 = FIND_LAST VISIT\n$v2 = PARENT $v1\nUPDATE $v2 WHERE=Vienna\nUPDATE $v1 WHERE=Vienna\nRETURN $v1\nEND",
+   "program_hash": "bf5d8f128931bd5e4d2088c7a7d6efd85b41fe795fc06062592e855fdbdd275a"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:move_visit_and_parent:v2",
+ "chosen": "external"
+}

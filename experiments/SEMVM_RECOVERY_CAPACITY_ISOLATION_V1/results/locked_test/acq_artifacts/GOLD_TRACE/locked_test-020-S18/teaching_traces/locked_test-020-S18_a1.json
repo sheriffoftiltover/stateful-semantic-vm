@@ -1,0 +1,130 @@
+{
+ "name": "count_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Ivan"
+ },
+ "interaction_id": "locked_test-020-S18:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-020-S18/learn/snapshots/locked_test-020-S18_a1_start.sqlite",
+ "start_snapshot_sha256": "84821f6360f966a9b955274dcb6f849552521fa77c573f158f71a0ed83c849cd",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-020-S18:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Ivan"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "state_after": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "seconds": 0.076
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-020-S18:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "state_after": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "seconds": 0.075
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-020-S18:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "state_after": "b5c04b91e07389660efee9132dc93d76996e211ab2d7611b7145358d0f564bdd",
+   "seconds": 0.083
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Ivan"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "151f2b3da316521a688ef1efe2bba37eb52db8ea5f349fb28c0edd977104eede",
+ "nl_mode": "GOLD_TRACE"
+}

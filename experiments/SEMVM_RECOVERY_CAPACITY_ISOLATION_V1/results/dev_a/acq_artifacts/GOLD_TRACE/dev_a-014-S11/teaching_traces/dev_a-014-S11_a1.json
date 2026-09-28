@@ -1,0 +1,132 @@
+{
+ "name": "call_people_at",
+ "mode": ":teach",
+ "declared": {
+  "time": "noon"
+ },
+ "interaction_id": "dev_a-014-S11:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/GOLD_TRACE/dev_a-014-S11/learn/snapshots/dev_a-014-S11_a1_start.sqlite",
+ "start_snapshot_sha256": "de94456015bfee229d2b3f7e6f7e19c190acea64e0b4c933151bac2c8a7515b1",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-014-S11:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       {
+        "const": "noon"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "4f2d949256be00b9ebf464ffc24f833d6860abc7e0990d13b582b80a86c28988",
+   "state_after": "4f2d949256be00b9ebf464ffc24f833d6860abc7e0990d13b582b80a86c28988",
+   "seconds": 0.177
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-014-S11:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "SELECT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     },
+     "rel": "WHO"
+    }
+   ],
+   "diff": [],
+   "state_before": "4f2d949256be00b9ebf464ffc24f833d6860abc7e0990d13b582b80a86c28988",
+   "state_after": "4f2d949256be00b9ebf464ffc24f833d6860abc7e0990d13b582b80a86c28988",
+   "seconds": 0.194
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-014-S11:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4f2d949256be00b9ebf464ffc24f833d6860abc7e0990d13b582b80a86c28988",
+   "state_after": "4f2d949256be00b9ebf464ffc24f833d6860abc7e0990d13b582b80a86c28988",
+   "seconds": 0.207
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     {
+      "const": "noon"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "SELECT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "WHO"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "4d48eaf038d1b7114b807d94306f4f9460553d297cbb28cfc75e7eb94f501c5c",
+ "nl_mode": "GOLD_TRACE"
+}

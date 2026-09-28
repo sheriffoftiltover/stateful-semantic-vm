@@ -1,0 +1,130 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Bob"
+ },
+ "interaction_id": "dev_a-011-S10:a9",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/GOLD_TRACE/dev_a-011-S10/learn/snapshots/dev_a-011-S10_a9_start.sqlite",
+ "start_snapshot_sha256": "912b9236fc4630c91b6ece70fb83bc93dafe26beaea9bd4ea7b6aaaf0045c422",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-011-S10:a10",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Bob"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "73d02e0c4db2e1eb9d5d5a88db9e9f015c24be5872d8666a5d312e30ced3523d",
+   "state_after": "73d02e0c4db2e1eb9d5d5a88db9e9f015c24be5872d8666a5d312e30ced3523d",
+   "seconds": 0.169
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-011-S10:a11",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "73d02e0c4db2e1eb9d5d5a88db9e9f015c24be5872d8666a5d312e30ced3523d",
+   "state_after": "73d02e0c4db2e1eb9d5d5a88db9e9f015c24be5872d8666a5d312e30ced3523d",
+   "seconds": 0.175
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-011-S10:a12",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "73d02e0c4db2e1eb9d5d5a88db9e9f015c24be5872d8666a5d312e30ced3523d",
+   "state_after": "73d02e0c4db2e1eb9d5d5a88db9e9f015c24be5872d8666a5d312e30ced3523d",
+   "seconds": 0.168
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Bob"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "096dd776da0653599291fce132b5a91e913eff8995f03174245bed32015ee6eb",
+ "nl_mode": "GOLD_TRACE"
+}

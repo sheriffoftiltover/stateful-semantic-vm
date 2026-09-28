@@ -1,0 +1,98 @@
+[
+ {
+  "target": "close_oldest_open_request",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_CLARIFICATION",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "ABORTED"
+    ],
+    "end": "ABORTED:RESTARTED_BY_TEACHER",
+    "end_detail": {
+     "reason": "RESTARTED_BY_TEACHER"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "CLARIFY_REFERENCE",
+      "slot": "demo1-slot3",
+      "offered": [
+       "r1",
+       "r2"
+      ],
+      "answer": "r2"
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot3",
+      "error": "GROUNDER",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot5",
+      "error": "NOT_FOUND",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot6",
+      "error": "NOT_FOUND",
+      "reply_steps": 0,
+      "cancel": true
+     }
+    ],
+    "example": {
+     "person": "Mallory"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:EPISODE_END",
+    "end_detail": {},
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo2-slot4",
+      "error": "NOT_FOUND",
+      "reply_steps": 0,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "person": "Nina"
+    }
+   }
+  ]
+ }
+]

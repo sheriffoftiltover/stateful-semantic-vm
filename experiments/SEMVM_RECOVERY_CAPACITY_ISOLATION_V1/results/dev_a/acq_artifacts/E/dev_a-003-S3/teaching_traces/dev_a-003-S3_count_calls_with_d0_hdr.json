@@ -1,0 +1,240 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Grandma"
+ },
+ "interaction_id": "dev_a-003-S3:count_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/E/dev_a-003-S3/learn/snapshots/dev_a-003-S3_count_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "8bb5dbf8c6c9928c8c32ff5d5523163bcad7e8fbca2afb4ac6d7307900b41acf",
+ "utterances": [
+  {
+   "utterance": "Find all calls with Grandma.",
+   "uid": "dev_a-003-S3:count_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find all calls with Grandma.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Find all calls with Grandma.",
+    "values": {
+     "PERSON": [
+      "Grandma"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "e0007092465973739b95cfb13f540ddd8530eaee0428d1dc1fdfb3dec3049f2a"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Grandma\"}}]}",
+    "request_hash": "e0007092465973739b95cfb13f540ddd8530eaee0428d1dc1fdfb3dec3049f2a",
+    "cached": false,
+    "input_tokens": 4449,
+    "output_tokens": 75,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Grandma"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.77
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Grandma"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "535111003ef20a75e8cceabf389b7b9c424771c24835c3bd659494992da9ab9e",
+   "state_after": "535111003ef20a75e8cceabf389b7b9c424771c24835c3bd659494992da9ab9e",
+   "seconds": 2.4
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev_a-003-S3:count_calls_with:d0:demo1-slot2:1",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "1c51a6dec55f7b5c031ade588465ebfda69f4c807768861e23ffeb421eac78c3"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "1c51a6dec55f7b5c031ade588465ebfda69f4c807768861e23ffeb421eac78c3",
+    "cached": false,
+    "input_tokens": 4480,
+    "output_tokens": 52,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.22
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "535111003ef20a75e8cceabf389b7b9c424771c24835c3bd659494992da9ab9e",
+   "state_after": "535111003ef20a75e8cceabf389b7b9c424771c24835c3bd659494992da9ab9e",
+   "seconds": 2.12
+  },
+  {
+   "utterance": "Please return the count.",
+   "uid": "dev_a-003-S3:count_calls_with:d0:demo1-slot3:2",
+   "instruction": "Please return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "c3e2307cc8e33efd81e7f66a7315860a361dce987b7990109ab869170917db79"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "c3e2307cc8e33efd81e7f66a7315860a361dce987b7990109ab869170917db79",
+    "cached": false,
+    "input_tokens": 4505,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.82
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "535111003ef20a75e8cceabf389b7b9c424771c24835c3bd659494992da9ab9e",
+   "state_after": "535111003ef20a75e8cceabf389b7b9c424771c24835c3bd659494992da9ab9e",
+   "seconds": 2.66
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Grandma"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "dd68cbf6d14644f9516adabae021d9b53d388cfae483040e1e13f5cb16367f9f",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,253 @@
+{
+ "scenario_id": "locked_test-012-S7",
+ "suite": "locked_test",
+ "category": "S7",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request epsilon , by Mom re epsilon ; and later so then again soon , message eta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Mom"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e0",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "WHO",
+      "Mom",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "O",
+   "layout": [
+    "between_o4",
+    [
+     "M1"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_REQUEST WHO=Uma"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF REQUEST"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF LAST_REQUEST"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Mom"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000002"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Mom"
+     ],
+     [
+      "person:000002",
+      "Uma"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Uma"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000002"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Mom"
+     ],
+     [
+      "person:000002",
+      "Uma"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Uma"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "request:000001",
+      "TODO",
+      "message:000001"
+     ],
+     [
+      "request:000001",
+      "WHO",
+      "person:000002"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Mom"
+     ],
+     [
+      "person:000002",
+      "Uma"
+     ]
+    ]
+   }
+  }
+ ]
+}

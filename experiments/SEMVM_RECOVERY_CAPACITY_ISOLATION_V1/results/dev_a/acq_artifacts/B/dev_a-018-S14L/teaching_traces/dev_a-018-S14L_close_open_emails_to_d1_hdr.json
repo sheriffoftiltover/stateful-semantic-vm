@@ -1,0 +1,227 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Quinn"
+ },
+ "interaction_id": "dev_a-018-S14L:close_open_emails_to:d1:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/B/dev_a-018-S14L/learn/snapshots/dev_a-018-S14L_close_open_emails_to_d1_hdr_start.sqlite",
+ "start_snapshot_sha256": "91f95bae2a332be827b5b4280200a8ee8ee826fd7d1e0cc6744713766b743fd8",
+ "utterances": [
+  {
+   "utterance": "Please get every closed email going to Quinn, then close each of them.",
+   "uid": "dev_a-018-S14L:close_open_emails_to:d1:demo2-slot1:0",
+   "instruction": "Please get every closed email going to Quinn, then close each of them.",
+   "correction": false,
+   "slot_id": "demo2-slot1",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Please get every closed email going to Quinn, then close each of them.",
+    "values": {
+     "PERSON": [
+      "Quinn"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "edd89c9813d29db847381516d717acdd68449dc7269f84b726b1810b245c44aa"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": {\n        \"RECIPIENT\": \"Quinn\"\n      },\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+    "request_hash": "edd89c9813d29db847381516d717acdd68449dc7269f84b726b1810b245c44aa",
+    "cached": false,
+    "input_tokens": 4458,
+    "output_tokens": 160,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Quinn"
+      },
+      "status": "CLOSED"
+     },
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.99
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Quinn"
+       }
+      ]
+     ],
+     "status": {
+      "const": "CLOSED"
+     }
+    },
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "email:000003",
+     "CLOSED",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "b1b309d83d8acce725864786162e22af61d5071c31940042cfc7affa96ef8fa8",
+   "state_after": "b1b309d83d8acce725864786162e22af61d5071c31940042cfc7affa96ef8fa8",
+   "seconds": 3.022
+  },
+  {
+   "utterance": "Please return the emails.",
+   "uid": "dev_a-018-S14L:close_open_emails_to:d1:demo2-slot2:1",
+   "instruction": "Please return the emails.",
+   "correction": false,
+   "slot_id": "demo2-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please return the emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "c626d275d92676c043ffb482875f1e80dc6b9f447a29cf379c2dcee98986c840"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "c626d275d92676c043ffb482875f1e80dc6b9f447a29cf379c2dcee98986c840",
+    "cached": false,
+    "input_tokens": 4491,
+    "output_tokens": 40,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.18
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b1b309d83d8acce725864786162e22af61d5071c31940042cfc7affa96ef8fa8",
+   "state_after": "b1b309d83d8acce725864786162e22af61d5071c31940042cfc7affa96ef8fa8",
+   "seconds": 1.75
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Quinn"
+     }
+    ]
+   ],
+   "status": {
+    "const": "CLOSED"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "26e9c52293cc474f6d58732c17f28c0cf07dbcad6d72300730db3969e8378e52",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,79 @@
+{
+ "name": "count_visits_in",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_visits_in(place:PLACE)\n$v0 = FIND VISIT WHERE SELF.WHERE={place}\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.45,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE count_visits_in(place:PLACE)\n$v0 = FIND VISIT WHERE SELF.WHERE={place}\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "program_hash": "224679d303a4177b78441bd9b280c849ef6139c114fd58d321de4776be8c3f2b"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:count_visits_in:v1",
+ "chosen": "deterministic"
+}

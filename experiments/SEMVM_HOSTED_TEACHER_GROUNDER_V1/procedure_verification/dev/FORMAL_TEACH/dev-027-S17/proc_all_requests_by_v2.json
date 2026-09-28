@@ -1,0 +1,42 @@
+{
+ "name": "all_requests_by",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE all_requests_by(person:PERSON)\n$v0 = FIND REQUEST WHERE SELF.WHO={person}\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE all_requests_by()\n$v0 = FIND REQUEST WHERE SELF.WHO=Grandpa\nRETURN $v0\nEND",
+   "program_hash": "6e8c1eb07b598e821fc2f056ca422cfd2afc0ff31a8d1dd32bc9381d00cc9edd"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:all_requests_by:v2",
+ "chosen": "external"
+}

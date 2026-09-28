@@ -1,0 +1,148 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Uncle"
+ },
+ "interaction_id": "dev-002-S1:calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/SCRIPTED/dev-002-S1/learn/snapshots/dev-002-S1_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "3e4b05468f952ff87648c39bdf82df9adf3c5154348fb1f2482e7fd4ca813ae4",
+ "utterances": [
+  {
+   "utterance": "Please look up Uncle's calls and then return the calls.",
+   "uid": "dev-002-S1:calls_with:d0:l0",
+   "instruction": "Please look up Uncle's calls and then return the calls.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please look up Uncle's calls and then return the calls.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Please look up Uncle's calls.",
+        "Return the calls."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Please look up Uncle's calls.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Return the calls.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 20,
+    "seconds": 14.44,
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Uncle"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Uncle\"}}\n\n{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Uncle"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "margin": 3.431,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Uncle"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "86cd4b90a44b1bd6cd2889caf6835d8ce08267b203a1e7a51e01790b0f540eb4",
+   "state_after": "86cd4b90a44b1bd6cd2889caf6835d8ce08267b203a1e7a51e01790b0f540eb4",
+   "seconds": 14.515
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Uncle"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "8d0c6b71ba24b5ac1ca396fe0faad41b470407d9a5b819ff7959c73d8681d147",
+ "nl_mode": "NL_TEACH"
+}

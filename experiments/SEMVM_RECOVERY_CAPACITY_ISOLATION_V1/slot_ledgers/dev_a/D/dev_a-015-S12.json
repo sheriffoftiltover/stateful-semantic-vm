@@ -1,0 +1,315 @@
+[
+ {
+  "target": "retarget_last_email",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Take the most recent email.",
+      "text": "Take the most recent email.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r1",
+        "type": {
+         "const": "EMAIL"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Change its recipient to Heidi.",
+      "text": "Change its recipient to Heidi.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "UPDATE",
+        "obj": {
+         "var": "r1"
+        },
+        "rel": "RECIPIENT",
+        "value": {
+         "const": "Heidi"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return it.",
+      "text": "Return it.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 1,
+    "slots": [
+     {
+      "slot_id": "demo2-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Take the most recent email.",
+      "text": "Take the most recent email.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r1",
+        "type": {
+         "const": "EMAIL"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo2-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot2",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Take the most recent email.",
+      "text": "Take the most recent email.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 3,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "SCHEMA",
+        "reason": "grounder output not in the schema (PLAN without steps)"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot3",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Take the most recent email.",
+      "text": "Take the most recent email.",
+      "replacement_for": "demo2-slot2",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "SCHEMA",
+        "reason": "grounder output not in the schema (PLAN without steps)"
+       }
+      ],
+      "reference_choice": null,
+      "from_recovery": true
+     },
+     {
+      "slot_id": "demo2-slot4",
+      "source": "TEACHER",
+      "status": "CLARIFYING",
+      "original_text": "Take the most recent email.",
+      "text": "Take the most recent email.",
+      "replacement_for": "demo2-slot2",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "SCHEMA",
+        "reason": "grounder output not in the schema (PLAN without steps)"
+       }
+      ],
+      "reference_choice": null,
+      "from_recovery": true
+     }
+    ]
+   },
+   {
+    "index": 2,
+    "slots": [
+     {
+      "slot_id": "demo3-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Take the most recent email.",
+      "text": "Take the most recent email.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r1",
+        "type": {
+         "const": "EMAIL"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo3-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo3-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Change its recipient to Judy.",
+      "text": "Change its recipient to Judy.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "UPDATE",
+        "obj": {
+         "var": "r1"
+        },
+        "rel": "RECIPIENT",
+        "value": {
+         "const": "Judy"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo3-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo3-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return it.",
+      "text": "Return it.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo3-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

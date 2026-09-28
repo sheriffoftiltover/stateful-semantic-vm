@@ -1,0 +1,471 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Ivan"
+ },
+ "interaction_id": "dev-026-T12:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-026-T12/learn/snapshots/dev-026-T12_19_start.sqlite",
+ "start_snapshot_sha256": "337361de8d9783e2352f75d7e890c965d97daf1bd4c6af503cb290d698aece2f",
+ "utterances": [
+  {
+   "utterance": "Take my latest plan and mark it closed.",
+   "uid": "dev-026-T12:20",
+   "instruction": "Take my latest plan and mark it closed.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Take my latest plan and mark it closed.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Take my latest plan.",
+        "Mark it closed."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Take my latest plan.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Mark it closed.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 22,
+    "seconds": 9.01,
+    "raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "PLAN",
+      "bind": "r1"
+     },
+     {
+      "op": "SET_STATUS",
+      "target": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"PLAN\"}\n\n{\"op\": \"SET_STATUS\", \"target\": \"r1\", \"value\": \"CLOSED\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND_LAST",
+      "type": "PLAN",
+      "bind": "r1"
+     },
+     {
+      "op": "SET_STATUS",
+      "target": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "margin": 4.395,
+    "reference_notes": [
+     "SET_STATUS.target=r1 licensed by R0"
+    ]
+   },
+   "status": "NOT_FOUND",
+   "reason": "no active PLAN",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "PLAN"
+     }
+    },
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "r1"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ],
+   "seconds": 9.075
+  },
+  {
+   "utterance": "Post it on Slack.",
+   "uid": "dev-026-T12:21",
+   "instruction": "Post it on Slack.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Post it on Slack.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -0.021
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -3.896
+     }
+    ],
+    "raw_text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UNSUPPORTED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -0.021,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -3.896,
+      "n": 1
+     }
+    ],
+    "margin": 3.876,
+    "reference_notes": [],
+    "seconds": 0.74,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "UNSUPPORTED",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 0.744
+  },
+  {
+   "utterance": "Please get every call with Ivan.",
+   "uid": "dev-026-T12:22",
+   "instruction": "Please get every call with Ivan.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please get every call with Ivan.",
+    "values": {
+     "PERSON": [
+      "Ivan"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Ivan\"}}\n\n",
+      "score": -0.144
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -6.435
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -6.67
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"RECIPIENT\": \"Ivan\"}}\n\n",
+      "score": -6.847
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -8.442
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Ivan\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Ivan"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Ivan\"}]]}]",
+      "score": -0.144,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -5.853,
+      "n": 2
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"RECIPIENT\", {\"const\": \"Ivan\"}]]}]",
+      "score": -6.847,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -8.442,
+      "n": 1
+     }
+    ],
+    "margin": 5.709,
+    "reference_notes": [],
+    "seconds": 3.43,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Ivan"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "8a112e5ade5e86a9bf043a55121295b782cdf06f33cb84d35819b3f99fe70784",
+   "state_after": "8a112e5ade5e86a9bf043a55121295b782cdf06f33cb84d35819b3f99fe70784",
+   "seconds": 3.565
+  },
+  {
+   "utterance": "Work out how many there are.",
+   "uid": "dev-026-T12:23",
+   "instruction": "Work out how many there are.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Work out how many there are.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -0.285
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -3.714
+     },
+     {
+      "text": "r2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\n\n",
+      "score": -6.167
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"COUNT\"}]",
+      "score": -0.285,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -3.714,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"FIRST\"}]",
+      "score": -6.167,
+      "n": 1
+     }
+    ],
+    "margin": 3.43,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "seconds": 2.96,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "8a112e5ade5e86a9bf043a55121295b782cdf06f33cb84d35819b3f99fe70784",
+   "state_after": "8a112e5ade5e86a9bf043a55121295b782cdf06f33cb84d35819b3f99fe70784",
+   "seconds": 3.032
+  },
+  {
+   "utterance": "Give me the number back.",
+   "uid": "dev-026-T12:24",
+   "instruction": "Give me the number back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give me the number back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -0.129
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.126
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -8.533
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.002,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -8.533,
+      "n": 1
+     }
+    ],
+    "margin": 8.531,
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "seconds": 1.6,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "8a112e5ade5e86a9bf043a55121295b782cdf06f33cb84d35819b3f99fe70784",
+   "state_after": "8a112e5ade5e86a9bf043a55121295b782cdf06f33cb84d35819b3f99fe70784",
+   "seconds": 1.679
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Ivan"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "89374bbd2b2d4ab9e28c88d35ab74dc192940f9cbf03bda0364a388028c92a78",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,164 @@
+{
+ "name": "person_on_call_at",
+ "mode": ":teach",
+ "declared": {
+  "time": "6:15"
+ },
+ "interaction_id": "locked_test-009-S9:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-009-S9/learn/snapshots/locked_test-009-S9_a1_start.sqlite",
+ "start_snapshot_sha256": "04d8fb6df43f0ea4e07a30b61fd9c13aafb5ce43b2bf0b80c321c6d56f7de4df",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-009-S9:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       {
+        "const": "6:15"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 0.207
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-009-S9:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIRST",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 0.196
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-009-S9:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "GET",
+     "bind": "r3",
+     "obj": {
+      "var": "r2"
+     },
+     "rel": "WHO"
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 0.124
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-009-S9:a5",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r3"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "state_after": "c204e0b9abf2f88c4d3c7c285906e8c5a0aa8121a725f88fea8e1b68a6a20e71",
+   "seconds": 0.191
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     {
+      "const": "6:15"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FIRST",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "GET",
+   "bind": "r3",
+   "obj": {
+    "var": "r2"
+   },
+   "rel": "WHO"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "47749e4cf7c64e9920b8c682ba614ba673746fbce53d7afb8b62e7235752f631",
+ "nl_mode": "GOLD_TRACE"
+}

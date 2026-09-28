@@ -1,0 +1,346 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642717,
+  "utterance_id": "dev-001-S1:0",
+  "INPUT": "note delta : so then again soon , email zeta ; while in Dublin per delta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o2",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "NOTE"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       8
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "NOTE",
+       null,
+       0
+      ],
+      [
+       "PLACE",
+       "Dublin",
+       13
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      8
+     ],
+     [
+      "NOTE",
+      null,
+      0
+     ],
+     [
+      "PLACE",
+      "Dublin",
+      13
+     ]
+    ],
+    "root": [
+     "NOTE",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1354.3504638671875,
+   "margin": 9.7117919921875,
+   "n_outputs": 18,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Dublin"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Dublin",
+    "place:dublin"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:dublin",
+    "PLACE",
+    "dublin",
+    "Dublin"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:dublin"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "8a67da59e962ae3d2a19161d29ff1e7a46a7f1af9df3a3cb95043289cc6e4edc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "WHERE",
+    "place:dublin"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "735d5395a107e58aa2655fd8a4bb64b5af11e171af08de2447d00a4f25a50aa3",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642717,
+  "utterance_id": "dev-001-S1:1",
+  "INPUT": "QUERY WHERE OF NOTE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "735d5395a107e58aa2655fd8a4bb64b5af11e171af08de2447d00a4f25a50aa3",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0110bc92ce4b98850c2cfba3f4931abd247e838e6a8dc240e73f80cad69c6d13",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:dublin"
+  ],
+  "STATE_AFTER": "735d5395a107e58aa2655fd8a4bb64b5af11e171af08de2447d00a4f25a50aa3",
+  "RESPONSE": "Dublin",
+  "RETURN_RENDERED": [
+   "Dublin"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642717,
+  "utterance_id": "dev-001-S1:2",
+  "INPUT": "QUERY WHERE OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "735d5395a107e58aa2655fd8a4bb64b5af11e171af08de2447d00a4f25a50aa3",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f99549db16bb27827bd1fbbef6a5d29fd71d09e84bf36170923849a84b5eb74d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "735d5395a107e58aa2655fd8a4bb64b5af11e171af08de2447d00a4f25a50aa3",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

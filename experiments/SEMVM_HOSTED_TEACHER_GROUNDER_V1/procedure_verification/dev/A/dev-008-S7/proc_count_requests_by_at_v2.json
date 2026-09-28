@@ -1,0 +1,46 @@
+{
+ "name": "count_requests_by_at",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_requests_by_at(person:PERSON, time:TIME)\n$v0 = FIND REQUEST WHERE SELF.WHO={person} SELF.WHEN={time}\n$v1 = COUNT $v0\nRETURN $v1\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ],
+       [
+        "time",
+        "TIME"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE count_requests_by_at()\n$v0 = FIND REQUEST WHERE SELF.WHO=Rita SELF.WHEN=8\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "program_hash": "56584fae99bf8b4096cffae0001e544e061580d8437c8732545751e10eddb43d"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:count_requests_by_at:v2",
+ "chosen": "external"
+}

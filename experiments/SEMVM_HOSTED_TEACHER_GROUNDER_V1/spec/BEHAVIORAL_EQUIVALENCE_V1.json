@@ -1,0 +1,33 @@
+{
+ "version": "BEHAVIORAL_EQUIVALENCE_V1",
+ "implementation": "evaluator/behavior.py (independent oracle interpreter scenarios/oracle.py)",
+ "worlds": [
+  "W0_FIXTURE",
+  "W1_ALL_OPEN",
+  "W2_STATUS_FLIPPED",
+  "W3_RELATION_WITNESSES",
+  "W4_WITNESSES_FLIPPED"
+ ],
+ "world_definitions": {
+  "W0_FIXTURE": "scenario fixture (every demonstration starts here: acquisition is sandboxed)",
+  "W1_ALL_OPEN": "every event OPEN",
+  "W2_STATUS_FLIPPED": "every event status toggled",
+  "W3_RELATION_WITNESSES": "W0 + per pool person: EMAIL WHO=p, CALL RECIPIENT=p, MESSAGE RECIPIENT=p (outer REQUEST), MESSAGE WHO=p; per pool topic: CALL TOPIC=t; per pool place: EMAIL WHERE=pl, CALL WHERE=pl; alternate ones CLOSED",
+  "W4_WITNESSES_FLIPPED": "W3 with statuses toggled"
+ },
+ "signature": "canonical JSON of (status, rendered return incl. order, full canonical world state after the program)",
+ "reference": "gold family steps for the demonstration's own EXAMPLE values (missing example values -> no reference -> not equivalent)",
+ "CALL semantics": "gold procedures of earlier curriculum items",
+ "complete_demo": "behaviorally_equivalent(P, G) iff signature equal on every world",
+ "incomplete_demo": "world state after P equals the state after SOME prefix of G on every world (no return compared)",
+ "metrics": {
+  "WRONG_BEHAVIORAL_ACTION_EXECUTED": "count of executed demonstrations (>=1 executed step) not equivalent, excluding registered legal-bad / relation-swap injected demonstrations (scored as LEGAL_BAD_SANDBOX_EXECUTED)",
+  "WRONG_STRUCTURAL_ACTION_EXECUTED": "diagnostic: completed, not trace_exact (parent metric)",
+  "GROUNDING_BEHAVIORAL_EXACT": "over non-injected demonstrations whose LESSON is faithful (scripted: by construction; hosted teacher: judge faithful AND no lexical unrequested status): completed and equivalent",
+  "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": "same, demonstration 1 with zero clarification exchanges",
+  "TEACHER_LESSON_BEHAVIORAL_EXACT": "hosted-teacher arms: judge faithful AND no lexical unrequested status predicate",
+  "TEACHER_UNREQUESTED_CONSTRAINT_RATE": "per non-injected target: any lesson line with a status word when the registered goal has none (deterministic regex evaluator/judge.py STATUS_WORDS)",
+  "LINE_GROUNDING_STRUCTURAL_EXACT": "scripted arms: per registered lesson line, executed steps == gold unit steps (variable names ignored)",
+  "RELATION_BINDING_EXACT": "FIND/FILTER (type, scope.relation) multiset equal, by relation family"
+ }
+}

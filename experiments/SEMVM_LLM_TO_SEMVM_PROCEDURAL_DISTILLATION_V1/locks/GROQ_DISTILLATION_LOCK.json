@@ -1,0 +1,59 @@
+{
+ "experiment": "SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1",
+ "date": "2026-09-27",
+ "status": "DEV complete (final: results/dev); gates FAIL; LOCKED not run",
+ "teacher": {
+  "model": "openai/gpt-oss-120b",
+  "hf_revision": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+  "checkpoint_sha256": "0fc58fd24ef96985db59df1bc25cfd90767f31944a8e3af2e3687b570d202f4f",
+  "total_bytes": 65276857639,
+  "serving": "Modal H100, vLLM 0.11.0, teacher/modal_teacher.py",
+  "generation": {
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "reasoning_effort": "low",
+   "seed": 0
+  },
+  "reasoning_effort": "high (preflight)",
+  "app": "semvm-pdx-teacher (stopped)"
+ },
+ "student": {
+  "model": "Qwen/Qwen2.5-Coder-1.5B (frozen)",
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "prompt_prefix_sha256": "4215a28d5f9bd7f450284fb51d70e3874e778eafdaf4c76b19c77b6d8f6677fc",
+  "margin": 1.0,
+  "beam": 3
+ },
+ "protocol_card_sha256": "e4a5109fad250436df96e50a0ef7e32f33f21c03eedffeb54b67576685310a2f",
+ "files_sha256": {
+  "direct_teacher_ast.py": "5365347ce0607c12d63eed49c7266862269e9b1fd4b3b5532c4754441df3160b",
+  "netguard/sitecustomize.py": "10de1cf8a5f7dc9ad9d931f0c9163f7dc8ef7a80f546f14fbdd45f54542887de",
+  "pdx_evaluate.py": "64bd3693100eee42b2e2c773b53e32c2aa2ed89c7c128dc10a0615ee37df80e2",
+  "preflight.py": "e24dab7e13b455092f48639a15ea77962522c188751c8241acd38318a6de8db7",
+  "run_acq.py": "4331ee99b65577607af5390a79047de7b9d6dc14d3dd37c7481fb529e44d894f",
+  "run_reuse.py": "8eb30cb8a2a1a38e384f4b872431caf8ae81eb6c41c162c2b06b9d01c0ffd994",
+  "scenarios/PDX_DEV_MANIFEST.json": "1d28f8d0cdc2c37b1158695068e4bdc0f9b084384cb186284512bc6df9725404",
+  "scenarios/PDX_LOCKED_TEST_MANIFEST.json": "64daa951e50d48d9f6a0e8e003da31b68ad9003890b8ad3afb64aecde330a7b6",
+  "scenarios/audit_pdx_locked_templates.py": "3f41fcd0bc12f8ea3ee1f15f943921e86b14a3947c84a91ee4c0d5431a66578b",
+  "scenarios/catalog.py": "18825115f93d49c5234146c1a6867e9c72db89acbd41bdf575ecf18d9299ec61",
+  "scenarios/nl_generate.py": "afcbca24ebe8186fdacaed9607f1b077ffa6acc68b5946c6ffa8a37e1b982ee7",
+  "scenarios/oracle.py": "c4915450a5afb211ffb923ceded1f7ab0db12d7d401a9e222d39413049a89636",
+  "scenarios/pdx_catalog.py": "6efde97b80f66da36b468c16eef84976b4a24f2ab33b477a7cae951c7d0e2ac6",
+  "scenarios/pdx_generate.py": "42db376370e16ce7ade990014844a6d7a9f84636849e21d3a8cc8e90eaf7a98a",
+  "spec/GROQ_DISTILLATION_SCENARIO_SCHEMA.json": "48240e99bf6adfde00e78dcc33022a3a90a31702d7ea77fa10bbb2dc303abdd9",
+  "spec/GROQ_TEACHER_CAPABILITY_CARD_V1.json": "5b2328f8ece4f9185ae6b0f1feff2083d84f84fe56e7f8367ff909f2490c9992",
+  "spec/GROQ_TEACHER_PROTOCOL_V1.json": "a2d621e091552731e6bc4b9f7db0d60a7966bca6907984f4b71415efc65738ca",
+  "spec/NL_TEACH_ACTION_SCHEMA.json": "84b24236fe19de3f67ac789ff02bf0085c8a5cdc87bda617a29e8443bce0dfeb",
+  "spec/NL_TEACH_LANGUAGE_V1.json": "d42ea06fdbe10ec5dc2548086730f7f99bec5849b67b9d684b802a44969a3579",
+  "student/frontend.py": "8feddd24fa6d71081eae4b8ad91ee0d72caa51b3e2dbcb30b5eaa492cf61801b",
+  "student/nl_llm_service.py": "125e26fee02b3c7ec512d65bc99e5999d318b1bf3cd33345cba45a4f6eabaa6f",
+  "student/nllm.py": "cb8c61f75e0ce5838c44fc7f2d837dc72bc212d1cc6f9deca878ad4999bd5240",
+  "student/nlsystem.py": "cce146537c4a430e439b1c83fbfad0b9517ebfc4d4ddba93de13eb927f4391a4",
+  "teacher/client.py": "9da6ddc5f12a1d7b1ced0f07acd44e18c3fb033e4c732f9b1873402fb83b8195",
+  "teacher/episode.py": "f9e0e47952809d3ff0da2cfef87300cc0e718cc7e91e83fb7e33047715c48aff",
+  "teacher/modal_teacher.py": "d3e7323a7c047215a9c4897f2e16d467025a47a99e39e1637755a7d2ac7baa32",
+  "teacher/protocol.py": "2e8d4b11c9643916390fb18eaed89271c15a4c7b381eccca5f58d367d8195618"
+ },
+ "parent_frozen": "locks/PARENT_FROZEN_COMPONENTS.json"
+}

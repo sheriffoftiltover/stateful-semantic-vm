@@ -1,0 +1,526 @@
+[
+ {
+  "turn": 0,
+  "pid": 2644348,
+  "utterance_id": "locked_test-004-S2:0",
+  "INPUT": "remind epsilon : while in Vienna re epsilon ; so then again soon , visit beta ; by Uma re epsilon",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "VISIT"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Uma"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Vienna"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Uma",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Vienna",
+    "place:vienna"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "VISIT",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Uma"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:vienna",
+    "PLACE",
+    "vienna",
+    "Vienna"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:vienna"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dbc742c4e3c5dce1ccaba6ad92709b946c071c26b2aeb86990616934967c16e0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Uma"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:vienna"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2644348,
+  "utterance_id": "locked_test-004-S2:1",
+  "INPUT": "QUERY WHERE OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "40e832621788cd729b6176ddca66b48316a19ef3723dc98892e714355af5b5fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:vienna"
+  ],
+  "STATE_AFTER": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "RESPONSE": "Vienna",
+  "RETURN_RENDERED": [
+   "Vienna"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2644348,
+  "utterance_id": "locked_test-004-S2:2",
+  "INPUT": "QUERY WHERE OF VISIT",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "VISIT",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "55276ad90403eb2a16c6ee1dbb3dcd4e5189d6734ad063659bcdbbb4887bd7a7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2644348,
+  "utterance_id": "locked_test-004-S2:3",
+  "INPUT": "QUERY WHO OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "26331ecacc2d5fb25e14753b128c337f1341849215f048c47e77788bf9819e5a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "RESPONSE": "Uma",
+  "RETURN_RENDERED": [
+   "Uma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2644348,
+  "utterance_id": "locked_test-004-S2:4",
+  "INPUT": "QUERY WHO OF VISIT",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "VISIT",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "VISIT",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "292a24a65ba383314de2f15ab9e5c6d6c88f3f867d5d0f064cee822413485cbe",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "7e638202134388761f8dd5759adee89a91af3798074f16779e05673d26b11be0",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ],
+    [
+     "visit:000001",
+     "VISIT"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "visit:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:vienna"
+    ],
+    [
+     "reminder:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Uma"
+    ]
+   ]
+  }
+ }
+]

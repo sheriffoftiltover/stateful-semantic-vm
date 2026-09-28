@@ -1,0 +1,227 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Wendy"
+ },
+ "interaction_id": "locked_test-014-S14L:close_open_emails_to:d1:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-014-S14L/learn/snapshots/locked_test-014-S14L_close_open_emails_to_d1_hdr_start.sqlite",
+ "start_snapshot_sha256": "c9fadf5abf6fd2568e70ddf47b77a74d955a2543a3bb0a443987739e4dc78731",
+ "utterances": [
+  {
+   "utterance": "Find the closed emails to Wendy and mark each of them closed.",
+   "uid": "locked_test-014-S14L:close_open_emails_to:d1:demo2-slot1:0",
+   "instruction": "Find the closed emails to Wendy and mark each of them closed.",
+   "correction": false,
+   "slot_id": "demo2-slot1",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Find the closed emails to Wendy and mark each of them closed.",
+    "values": {
+     "PERSON": [
+      "Wendy"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "c9aa79c74417d9b9dd5809d5126a90101474036130897a115e64aa637bf9903d"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": {\n        \"RECIPIENT\": \"Wendy\"\n      },\n      \"status\": \"CLOSED\"\n    },\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+    "request_hash": "c9aa79c74417d9b9dd5809d5126a90101474036130897a115e64aa637bf9903d",
+    "cached": false,
+    "input_tokens": 4456,
+    "output_tokens": 153,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Wendy"
+      },
+      "status": "CLOSED"
+     },
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.54
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Wendy"
+       }
+      ]
+     ],
+     "status": {
+      "const": "CLOSED"
+     }
+    },
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "email:000003",
+     "CLOSED",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "99169ef92707ae94a48ac2f21bdab713c1641ef9b5c68c8b5364d5a54715ea47",
+   "state_after": "99169ef92707ae94a48ac2f21bdab713c1641ef9b5c68c8b5364d5a54715ea47",
+   "seconds": 2.047
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "locked_test-014-S14L:close_open_emails_to:d1:demo2-slot2:1",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo2-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "fa3d49659b568a7db1528859a39dc5a37af6c42523412dc7a7bad7addad9ac9b"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "fa3d49659b568a7db1528859a39dc5a37af6c42523412dc7a7bad7addad9ac9b",
+    "cached": true,
+    "input_tokens": 4489,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "99169ef92707ae94a48ac2f21bdab713c1641ef9b5c68c8b5364d5a54715ea47",
+   "state_after": "99169ef92707ae94a48ac2f21bdab713c1641ef9b5c68c8b5364d5a54715ea47",
+   "seconds": 0.278
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Wendy"
+     }
+    ]
+   ],
+   "status": {
+    "const": "CLOSED"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "11ee6d1ab8e790a1d06208c870554433f06f67c581bbcc79f97937972410d6cb",
+ "nl_mode": "NL_TEACH"
+}

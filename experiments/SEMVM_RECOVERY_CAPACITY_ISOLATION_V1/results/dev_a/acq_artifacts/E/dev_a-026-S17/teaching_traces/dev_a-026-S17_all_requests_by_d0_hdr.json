@@ -1,0 +1,172 @@
+{
+ "name": "all_requests_by",
+ "mode": ":teach",
+ "declared": {
+  "person": "Laura"
+ },
+ "interaction_id": "dev_a-026-S17:all_requests_by:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/E/dev_a-026-S17/learn/snapshots/dev_a-026-S17_all_requests_by_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "66c0118da8b1c128b4ff9e9fb0fb93aea10c4315aff7a7ed87571ad0d800b250",
+ "utterances": [
+  {
+   "utterance": "Find all the requests from Laura.",
+   "uid": "dev_a-026-S17:all_requests_by:d0:demo1-slot1:0",
+   "instruction": "Find all the requests from Laura.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Find all the requests from Laura.",
+    "values": {
+     "PERSON": [
+      "Laura"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "7892afc11fce6133fb5b9da83bd1290125cf81d2c6b20b249ec90e38d067e983"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Laura\"}}]}",
+    "request_hash": "7892afc11fce6133fb5b9da83bd1290125cf81d2c6b20b249ec90e38d067e983",
+    "cached": true,
+    "input_tokens": 4450,
+    "output_tokens": 54,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Laura"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.01
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Laura"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "7f8cd5bff2604dd8ec1db153d1b8c4cbf921e4cb32f26ffbf8386a45b6f720ab",
+   "state_after": "7f8cd5bff2604dd8ec1db153d1b8c4cbf921e4cb32f26ffbf8386a45b6f720ab",
+   "seconds": 0.354
+  },
+  {
+   "utterance": "Return them.",
+   "uid": "dev_a-026-S17:all_requests_by:d0:demo1-slot2:1",
+   "instruction": "Return them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "cb206c0eabae83b8418bd4ab54f1d80d765a26807359b09a163da2770c84f940"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "cb206c0eabae83b8418bd4ab54f1d80d765a26807359b09a163da2770c84f940",
+    "cached": true,
+    "input_tokens": 4479,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "7f8cd5bff2604dd8ec1db153d1b8c4cbf921e4cb32f26ffbf8386a45b6f720ab",
+   "state_after": "7f8cd5bff2604dd8ec1db153d1b8c4cbf921e4cb32f26ffbf8386a45b6f720ab",
+   "seconds": 0.388
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Laura"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "7000d51a0db9659808f6478b770230dfcab3615dbabf7885bc8c83474aba272d",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,310 @@
+[
+ {
+  "target": "count_open_calls_with",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the open calls with Oscar and count them.",
+      "text": "Find the open calls with Oscar and count them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Oscar"
+          }
+         ]
+        ],
+        "status": {
+         "const": "OPEN"
+        }
+       },
+       {
+        "op": "COUNT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the count.",
+      "text": "Return the count.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 1,
+    "slots": [
+     {
+      "slot_id": "demo2-slot1",
+      "source": "EVALUATOR_INJECTION",
+      "status": "RESOLVED",
+      "original_text": "Find the open calls with Erin and count them.",
+      "text": "Find the closed calls with Erin and count them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Erin"
+          }
+         ]
+        ],
+        "status": {
+         "const": "CLOSED"
+        }
+       },
+       {
+        "op": "COUNT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo2-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the count.",
+      "text": "Return the count.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 2,
+    "slots": [
+     {
+      "slot_id": "demo3-slot1",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Find the open calls with that person and count them.",
+      "text": "Find the open calls with that person and count them.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 1,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo3-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "GROUNDER",
+        "reason": "grounder asks: Which earlier result provides the person to use for the open calls?"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo3-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the open calls with Oscar.",
+      "text": "Find the open calls with Oscar.",
+      "replacement_for": "demo3-slot1",
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "CALL"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Oscar"
+          }
+         ]
+        ],
+        "status": {
+         "const": "OPEN"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo3-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo3-slot4",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Count them.",
+      "text": "Count them.",
+      "replacement_for": "demo3-slot1",
+      "grounded_plan": [
+       {
+        "op": "COUNT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo3-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo3-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the count.",
+      "text": "Return the count.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo3-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

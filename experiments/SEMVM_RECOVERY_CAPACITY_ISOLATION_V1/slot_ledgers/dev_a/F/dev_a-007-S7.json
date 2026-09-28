@@ -1,0 +1,384 @@
+[
+ {
+  "target": "count_requests_by_at",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Find the requests with person Alice and time midnight.",
+      "text": "Find the requests with person Alice and time midnight.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 3,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "PLAN_INVALID",
+        "reason": "hosted plan rejected: FIND: condition PARENT.WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Find Alice's requests at midnight.",
+      "text": "Find Alice's requests at midnight.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "PLAN_INVALID",
+        "reason": "hosted plan rejected: FIND: condition PARENT.WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)"
+       }
+      ],
+      "reference_choice": null,
+      "from_recovery": true
+     },
+     {
+      "slot_id": "demo1-slot5",
+      "source": "TEACHER",
+      "status": "CLARIFYING",
+      "original_text": "Find Alice's requests at midnight.",
+      "text": "Find Alice's requests at midnight.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "PLAN_INVALID",
+        "reason": "hosted plan rejected: FIND: condition PARENT.WHEN='midnight' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)"
+       }
+      ],
+      "reference_choice": null,
+      "from_recovery": true
+     },
+     {
+      "slot_id": "demo1-slot6",
+      "source": "TEACHER",
+      "status": "PENDING",
+      "original_text": "Count them.",
+      "text": "Count them.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null,
+      "from_recovery": true
+     },
+     {
+      "slot_id": "demo1-slot7",
+      "source": "TEACHER",
+      "status": "PENDING",
+      "original_text": "Give it back.",
+      "text": "Give it back.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null,
+      "from_recovery": true
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Count them.",
+      "text": "Count them.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null,
+      "from_recovery": true
+     },
+     {
+      "slot_id": "demo1-slot4",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Give it back.",
+      "text": "Give it back.",
+      "replacement_for": "demo1-slot1",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [],
+      "reference_choice": null,
+      "from_recovery": true
+     }
+    ]
+   },
+   {
+    "index": 1,
+    "slots": [
+     {
+      "slot_id": "demo2-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the requests with person Dave and time 9.",
+      "text": "Find the requests with person Dave and time 9.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "REQUEST"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Dave"
+          }
+         ],
+         [
+          "SELF",
+          "WHEN",
+          {
+           "const": "9"
+          }
+         ]
+        ],
+        "status": null
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo2-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Count them.",
+      "text": "Count them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "COUNT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the count.",
+      "text": "Return the count.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo2-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 2,
+    "slots": [
+     {
+      "slot_id": "demo3-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Find the requests with person Alice and time noon.",
+      "text": "Find the requests with person Alice and time noon.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND",
+        "bind": "r1",
+        "type": {
+         "const": "REQUEST"
+        },
+        "where": [
+         [
+          "SELF",
+          "WHO",
+          {
+           "const": "Alice"
+          }
+         ],
+         [
+          "SELF",
+          "WHEN",
+          {
+           "const": "noon"
+          }
+         ]
+        ],
+        "status": null
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo3-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo3-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Count them.",
+      "text": "Count them.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "COUNT",
+        "bind": "r2",
+        "list": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo3-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo3-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the count.",
+      "text": "Return the count.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r2"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo3-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

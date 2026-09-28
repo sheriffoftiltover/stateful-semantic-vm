@@ -1,0 +1,42 @@
+{
+ "name": "close_oldest_open_request",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE close_oldest_open_request(person:PERSON)\n$v0 = FIND REQUEST WHERE SELF.WHO={person} STATUS=OPEN\n$v1 = SORT $v0 WHEN\n$v2 = FIRST $v1\nSET_STATUS $v2 CLOSED\nRETURN $v2\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE close_oldest_open_request()\n$v0 = FIND REQUEST WHERE SELF.WHO=Nina STATUS=OPEN\n$v1 = SORT $v0 WHEN\n$v2 = FIRST $v1\nSET_STATUS $v2 CLOSED\nRETURN $v2\nEND",
+   "program_hash": "930b85fc01c234fd455cc091a92c4ae2408c3030f934f01a3e7f38ea38352545"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:close_oldest_open_request:v2",
+ "chosen": "external"
+}

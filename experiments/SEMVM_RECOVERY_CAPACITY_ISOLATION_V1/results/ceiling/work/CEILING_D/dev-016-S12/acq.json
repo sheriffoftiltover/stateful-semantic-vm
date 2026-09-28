@@ -1,0 +1,5068 @@
+{
+ "scenario_id": "dev-016-S12",
+ "mode": "TEACHER",
+ "arm": "CEILING_D",
+ "grounder": "HOSTED",
+ "recovery": "HOSTED",
+ "teacher_max_tokens": 16384,
+ "budget": {
+  "max_clarification_exchanges_per_slot": 5,
+  "max_rephrase_exchanges_per_slot": 5,
+  "max_demonstrations_per_target": 5,
+  "max_teacher_turns_per_target": 20,
+  "max_example_requests_per_demonstration": 2,
+  "max_teacher_turns_per_demonstration": 8,
+  "max_clarification_exchanges_per_instruction": 2
+ },
+ "student_hash_before": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "fixture": [
+  {
+   "status": "OK",
+   "STATE_hash": "b3afb3513ab1d2ccb235eca541fed3fb419e3772dd3aee6f20817a3c50121317"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0dfb1a90eef4a2f5d851daab173fb25882e72658c984c6c0eea1e69c1afb0bbd"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "520305e16beb458c41897421b3bf4a1b010403da9c73d108157c47a55eae76ad"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "ddc65e519d19e6be013f4aa886a5ea86ee64f86660ad2aa7898accdbc03e2c83"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "5c00e2a5e6bc7240b8d89e9bead83eb51bf31c867e9db0147fa0cc1a70326b29"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a921a83fb52004003d5c296fb10c290afb78bd2ec6c78bbf6e46b00586286123"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "98e7c2b0e1f5aaf4a7d4376a63a5bb9e66d5cb0032f0188ce97752160423eb45"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "bf15f30e2390a5970c98c6fb3c359bccbb0fa93b8dced4c5093bb9cfc4a446b1"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "fa093a8d9e148a4ee4a2252148b8a3726f479516237ebad058fc03419926fa41"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "ec4318ff8d07cc834fdacc13dfb65456c063e2c936c7ea0c8c5441461cfff5b7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1f6846d4a4dc8e96829b3a87ecc2ef52ea0527819d033f9549dca366e7315193"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "57148aa21ac09c9da04b55d1ab95d0764d8a99177e95a040a49ce07fc6337634"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "5e0816bb98c0dd7db698c27c0fa40627022873da5fe2acd430d23b59a8d465a8"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "e213296d59eec8226586dd30ef88b7fe7493b36bed68262fc3e326657bc653c7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "6b924c5e6a8c9f3d8824a9a55960ac3f34f32b1056a3d10b7d1a27b8d2415838"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "8960aee7ba00db921436f3498e2a426fbd59ea23c12c19a4ff68f6b5842513fa"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "eb69ee3a08d00926b3938ca4f1f81ae9e960af35c383cd7f35b177ffe2d3e9b1"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1a9dc517c3bc9feacbde9bd220e75f6eb2bf5dc16639c5ca0eba131b216faf50"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d583338463fc495f98c77e2517ff988fdab2ffa5efb9ea1e1c6d8ab9d9051949"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "1d07e30bca9c812db82f7b5b93eacee48698e43a0911105eda76f668d4e6106e"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "bd3b84828c168b3af7274260a28602ceac6d003a906e0ecd058d78cd5119d1a5"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "d8ab6ade2c3e4cd1905525bf93160cb0523fa35397d568c35d9a8cc562ed8ea7"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "c1f0361930c185ec68f629d8cd06592092253c17e726dd16e0662551ee67aeae"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "fe95854f3e0c56459180e099eec80b0f6f915729ead171568ad09bddcfd3a22a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "fe95854f3e0c56459180e099eec80b0f6f915729ead171568ad09bddcfd3a22a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a6353249c078c0fafcd9ad09d28fb134d413179af2b45344b93251b5e0cbbf9a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a6353249c078c0fafcd9ad09d28fb134d413179af2b45344b93251b5e0cbbf9a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0928dfd1624d75cc4e3e75c835845918b9982d8e4f3035e77494df162b2f355a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "0928dfd1624d75cc4e3e75c835845918b9982d8e4f3035e77494df162b2f355a"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a08728036870f0b9a4131bb7f3a1fd169253fe9487a4fd7b1086dd921462a3c3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "a08728036870f0b9a4131bb7f3a1fd169253fe9487a4fd7b1086dd921462a3c3"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3617736c8e7ce05777a2806a61729064901917838f38eacc2ddd6c50d4b83a11"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "3617736c8e7ce05777a2806a61729064901917838f38eacc2ddd6c50d4b83a11"
+  },
+  {
+   "status": "OK",
+   "STATE_hash": "acd89391902c7b7546d5e33f98240d5508f11ab4f84e5ed808b493bd4b815248"
+  }
+ ],
+ "targets": [
+  {
+   "name": "move_visit_and_parent",
+   "demos": [
+    {
+     "index": 0,
+     "state": "ABORTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "ABORTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo1-slot1",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take the most recent visit.",
+       "text": "Take the most recent visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo1-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Seoul.",
+       "text": "Move it to Seoul.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo1-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot3",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Get its parent.",
+       "text": "Get its parent.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo1-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot4",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Seoul.",
+       "text": "Move it to Seoul.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 3,
+       "family": "demo1-slot4",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot5",
+       "source": "TEACHER",
+       "status": "REPLACED",
+       "original_text": "Take the most recent visit.",
+       "text": "Take the most recent visit.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 6,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo1-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (PLAN without steps)"
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo1-slot7",
+       "source": "TEACHER",
+       "status": "REPLACED",
+       "original_text": "Return it.",
+       "text": "Return it.",
+       "replacement_for": "demo1-slot5",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo1-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "PREMATURE_TERMINAL_ACTION",
+         "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+         "reason": "a RETURN while later required steps of the demonstration are unresolved"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo1-slot8",
+       "source": "TEACHER",
+       "status": "REPLACED",
+       "original_text": "Return the visit.",
+       "text": "Return the visit.",
+       "replacement_for": "demo1-slot5",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo1-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "PREMATURE_TERMINAL_ACTION",
+         "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+         "reason": "a RETURN while later required steps of the demonstration are unresolved"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo1-slot9",
+       "source": "TEACHER",
+       "status": "REPLACED",
+       "original_text": "Return it.",
+       "text": "Return it.",
+       "replacement_for": "demo1-slot5",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo1-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "PREMATURE_TERMINAL_ACTION",
+         "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+         "reason": "a RETURN while later required steps of the demonstration are unresolved"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo1-slot10",
+       "source": "TEACHER",
+       "status": "REPLACED",
+       "original_text": "Return the visit.",
+       "text": "Return the visit.",
+       "replacement_for": "demo1-slot5",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo1-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "PREMATURE_TERMINAL_ACTION",
+         "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+         "reason": "a RETURN while later required steps of the demonstration are unresolved"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo1-slot11",
+       "source": "TEACHER",
+       "status": "CLARIFYING",
+       "original_text": "Return the visit.",
+       "text": "Return the visit.",
+       "replacement_for": "demo1-slot5",
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo1-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "PREMATURE_TERMINAL_ACTION",
+         "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+         "reason": "a RETURN while later required steps of the demonstration are unresolved"
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo1-slot6",
+       "source": "TEACHER",
+       "status": "PENDING",
+       "original_text": "Return it.",
+       "text": "Return it.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 5,
+       "family": "demo1-slot6",
+       "displaced": false,
+       "history": [],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Take the most recent visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.369,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4449,
+       "grounder_output_tokens": 48,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo1-slot1",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Seoul.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Seoul\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.598,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "a96f8cfa35820113cb0f6456a037227a146190f80e5331f424544c80b9bcadcb",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4471,
+       "grounder_output_tokens": 63,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r1",
+         "rel": "WHERE",
+         "value": "Seoul"
+        }
+       ],
+       "slot_id": "demo1-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "a96f8cfa35820113cb0f6456a037227a146190f80e5331f424544c80b9bcadcb"
+        }
+       ]
+      },
+      {
+       "line": "Get its parent.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"PARENT\", \"of\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.728,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 111,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "PARENT",
+         "of": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot3",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Seoul.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r2\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Seoul\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 1.676,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "2649c112a9a965a4bab3c6cb5d9d2974fd46c0056a2c358790dfe2b7f3121c76",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4496,
+       "grounder_output_tokens": 89,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r2",
+         "rel": "WHERE",
+         "value": "Seoul"
+        }
+       ],
+       "slot_id": "demo1-slot4",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "2649c112a9a965a4bab3c6cb5d9d2974fd46c0056a2c358790dfe2b7f3121c76"
+        }
+       ]
+      },
+      {
+       "line": "Take the most recent visit.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (PLAN without steps)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": []}",
+       "llm_calls": 2,
+       "seconds": 2.873,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "b36cd99ccd6794d007cd890b7a6ae4bc8a740ae863d99730005d3d7ad710283f",
+       "grounder_cached": false,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4577,
+       "grounder_output_tokens": 122,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot5",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "51ac1ac73039f8ca78bca7638d4bc9d56032d146a3c6fa41411db943829773c8"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (PLAN without steps)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "PLAN without steps",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "b36cd99ccd6794d007cd890b7a6ae4bc8a740ae863d99730005d3d7ad710283f"
+        }
+       ]
+      },
+      {
+       "line": "Return it.",
+       "status": "PREMATURE_TERMINAL_ACTION",
+       "reason": "a RETURN while later required steps of the demonstration are unresolved",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.166,
+       "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "343f294017447982e6e87d88c1ed97ca1b3176c10222656114ac50496655b124",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4494,
+       "grounder_output_tokens": 42,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r2"
+        }
+       ],
+       "slot_id": "demo1-slot7",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": [
+        {
+         "op": "RETURN",
+         "value": "r2"
+        }
+       ],
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "343f294017447982e6e87d88c1ed97ca1b3176c10222656114ac50496655b124"
+        }
+       ]
+      },
+      {
+       "line": "Return the visit.",
+       "status": "PREMATURE_TERMINAL_ACTION",
+       "reason": "a RETURN while later required steps of the demonstration are unresolved",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.056,
+       "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4495,
+       "grounder_output_tokens": 45,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot8",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22"
+        }
+       ]
+      },
+      {
+       "line": "Return it.",
+       "status": "PREMATURE_TERMINAL_ACTION",
+       "reason": "a RETURN while later required steps of the demonstration are unresolved",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.001,
+       "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "343f294017447982e6e87d88c1ed97ca1b3176c10222656114ac50496655b124",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4494,
+       "grounder_output_tokens": 42,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r2"
+        }
+       ],
+       "slot_id": "demo1-slot9",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": [
+        {
+         "op": "RETURN",
+         "value": "r2"
+        }
+       ],
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "343f294017447982e6e87d88c1ed97ca1b3176c10222656114ac50496655b124"
+        }
+       ]
+      },
+      {
+       "line": "Return the visit.",
+       "status": "PREMATURE_TERMINAL_ACTION",
+       "reason": "a RETURN while later required steps of the demonstration are unresolved",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.001,
+       "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4495,
+       "grounder_output_tokens": 45,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot10",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22"
+        }
+       ]
+      },
+      {
+       "line": "Return the visit.",
+       "status": "PREMATURE_TERMINAL_ACTION",
+       "reason": "a RETURN while later required steps of the demonstration are unresolved",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.005,
+       "clarify_kind": "PREMATURE_TERMINAL_ACTION",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4495,
+       "grounder_output_tokens": 45,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo1-slot11",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "place": "Seoul"
+     },
+     "lesson_lines": [
+      "Take the most recent visit.",
+      "Move it to Seoul.",
+      "Get its parent.",
+      "Move it to Seoul.",
+      "Take the most recent visit.",
+      "Return it."
+     ],
+     "returned": false,
+     "end": "ABORTED:SLOT_RECOVERY_FAIL",
+     "end_detail": {
+      "slot": "demo1-slot11",
+      "error": "PREMATURE_TERMINAL_ACTION",
+      "kind": "RESTATE_SLOT",
+      "reason": "SLOT_RECOVERY_FAIL"
+     },
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 6,
+     "events": [
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo1-slot5",
+       "error": "SCHEMA",
+       "reply_steps": 1,
+       "cancel": false
+      },
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo1-slot7",
+       "error": "PREMATURE_TERMINAL_ACTION",
+       "reply_steps": 1,
+       "cancel": false
+      },
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo1-slot8",
+       "error": "PREMATURE_TERMINAL_ACTION",
+       "reply_steps": 1,
+       "cancel": false
+      },
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo1-slot9",
+       "error": "PREMATURE_TERMINAL_ACTION",
+       "reply_steps": 1,
+       "cancel": false
+      },
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo1-slot10",
+       "error": "PREMATURE_TERMINAL_ACTION",
+       "reply_steps": 1,
+       "cancel": false
+      }
+     ],
+     "lines": [
+      "Take the most recent visit.",
+      "Move it to Seoul.",
+      "Get its parent.",
+      "Move it to Seoul.",
+      "Take the most recent visit.",
+      "Return it.",
+      "Return the visit.",
+      "Return it.",
+      "Return the visit.",
+      "Return the visit."
+     ]
+    },
+    {
+     "index": 1,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo2-slot1",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take the most recent visit.",
+       "text": "Take the most recent visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo2-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Delhi.",
+       "text": "Move it to Delhi.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Delhi"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo2-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot3",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Get its parent.",
+       "text": "Get its parent.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo2-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot4",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Delhi.",
+       "text": "Move it to Delhi.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Delhi"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 3,
+       "family": "demo2-slot4",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo2-slot5",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return the visit.",
+       "text": "Return the visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo2-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Take the most recent visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.077,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4449,
+       "grounder_output_tokens": 48,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo2-slot1",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Delhi.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Delhi"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Delhi\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.503,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "58cb9059bbf92babfe2859f690a66b252904bb7e9348a8edb29267e5a26e8e0f",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4471,
+       "grounder_output_tokens": 104,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r1",
+         "rel": "WHERE",
+         "value": "Delhi"
+        }
+       ],
+       "slot_id": "demo2-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "58cb9059bbf92babfe2859f690a66b252904bb7e9348a8edb29267e5a26e8e0f"
+        }
+       ]
+      },
+      {
+       "line": "Get its parent.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"PARENT\", \"of\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.084,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 111,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "PARENT",
+         "of": "r1"
+        }
+       ],
+       "slot_id": "demo2-slot3",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Delhi.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Delhi"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r2\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Delhi\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 1.491,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "5490c13f8ab6a16f4857465366c64511357c4a83c24b52164858430ac8d81418",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4496,
+       "grounder_output_tokens": 90,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r2",
+         "rel": "WHERE",
+         "value": "Delhi"
+        }
+       ],
+       "slot_id": "demo2-slot4",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "5490c13f8ab6a16f4857465366c64511357c4a83c24b52164858430ac8d81418"
+        }
+       ]
+      },
+      {
+       "line": "Return the visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.078,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4495,
+       "grounder_output_tokens": 45,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo2-slot5",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "place": "Delhi"
+     },
+     "lesson_lines": [
+      "Take the most recent visit.",
+      "Move it to Delhi.",
+      "Get its parent.",
+      "Move it to Delhi.",
+      "Return the visit."
+     ],
+     "returned": true,
+     "end": "REQUIRE_SECOND_DEMONSTRATION",
+     "end_detail": {
+      "insufficient": "\"one-shot: place=Delhi occurs in 2 slots; variable/constant split ambiguous -> need another example\""
+     },
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 0,
+     "events": [],
+     "lines": [
+      "Take the most recent visit.",
+      "Move it to Delhi.",
+      "Get its parent.",
+      "Move it to Delhi.",
+      "Return the visit."
+     ]
+    },
+    {
+     "index": 2,
+     "state": "ABORTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "ABORTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo3-slot1",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take the most recent visit.",
+       "text": "Take the most recent visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo3-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Vienna.",
+       "text": "Move it to Vienna.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Vienna"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo3-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot3",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Get its parent.",
+       "text": "Get its parent.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo3-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot4",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Vienna.",
+       "text": "Move it to Vienna.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Vienna"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 3,
+       "family": "demo3-slot4",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot5",
+       "source": "TEACHER",
+       "status": "REPLACED",
+       "original_text": "Take the most recent visit.",
+       "text": "Take the most recent visit.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 1,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo3-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "SCHEMA",
+         "reason": "grounder output not in the schema (PLAN without steps)"
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo3-slot7",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take my latest visit.",
+       "text": "Take my latest visit.",
+       "replacement_for": "demo3-slot5",
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r3",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo3-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null,
+       "from_recovery": true
+      },
+      {
+       "slot_id": "demo3-slot6",
+       "source": "TEACHER",
+       "status": "CLARIFYING",
+       "original_text": "Return it.",
+       "text": "Return it.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 1,
+       "required": true,
+       "lesson_index": 5,
+       "family": "demo3-slot6",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "GROUNDER",
+         "reason": "grounder asks: Which result should be returned: r1, r2, or r3?"
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Take the most recent visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.091,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4449,
+       "grounder_output_tokens": 48,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo3-slot1",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Vienna.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Vienna"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r1\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Vienna\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 1.442,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "5236fd298bfc7cd35006a4685403b7bb107fa721798fcf594989e2b6c5627fe1",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4471,
+       "grounder_output_tokens": 85,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r1",
+         "rel": "WHERE",
+         "value": "Vienna"
+        }
+       ],
+       "slot_id": "demo3-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "5236fd298bfc7cd35006a4685403b7bb107fa721798fcf594989e2b6c5627fe1"
+        }
+       ]
+      },
+      {
+       "line": "Get its parent.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"PARENT\", \"of\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.071,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 111,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "PARENT",
+         "of": "r1"
+        }
+       ],
+       "slot_id": "demo3-slot3",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Vienna.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Vienna"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r2\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Vienna\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 1.456,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "9cdf4d059389c35b09ae7d490ad84e8a413d9cd050c0f55cf17fb936f1bac7f2",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4496,
+       "grounder_output_tokens": 91,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r2",
+         "rel": "WHERE",
+         "value": "Vienna"
+        }
+       ],
+       "slot_id": "demo3-slot4",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "9cdf4d059389c35b09ae7d490ad84e8a413d9cd050c0f55cf17fb936f1bac7f2"
+        }
+       ]
+      },
+      {
+       "line": "Take the most recent visit.",
+       "status": "CLARIFY",
+       "reason": "grounder output not in the schema (PLAN without steps)",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": []}",
+       "llm_calls": 2,
+       "seconds": 0.003,
+       "clarify_kind": "SCHEMA",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "b36cd99ccd6794d007cd890b7a6ae4bc8a740ae863d99730005d3d7ad710283f",
+       "grounder_cached": true,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4577,
+       "grounder_output_tokens": 122,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo3-slot5",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "51ac1ac73039f8ca78bca7638d4bc9d56032d146a3c6fa41411db943829773c8"
+        },
+        {
+         "status": "CLARIFY",
+         "reason": "grounder output not in the schema (PLAN without steps)",
+         "feedback": [
+          {
+           "error": "SCHEMA",
+           "detail": "PLAN without steps",
+           "rule": "reply with exactly one valid JSON object in the envelope format"
+          }
+         ],
+         "request_hash": "b36cd99ccd6794d007cd890b7a6ae4bc8a740ae863d99730005d3d7ad710283f"
+        }
+       ]
+      },
+      {
+       "line": "Take my latest visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r3",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 2,
+       "seconds": 3.327,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa",
+       "grounder_cached": false,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4576,
+       "grounder_output_tokens": 215,
+       "raw_actions": [
+        {
+         "bind": "r3",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo3-slot7",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "c139418e38141a904c02543aecce583858c621f3398d5c3c83d2ad3829fbbe55"
+        },
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa"
+        }
+       ]
+      },
+      {
+       "line": "Return it.",
+       "status": "CLARIFY",
+       "reason": "grounder asks: Which result should be returned: r1, r2, or r3?",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"CLARIFY\", \"question\": \"Which result should be returned: r1, r2, or r3?\"}",
+       "llm_calls": 1,
+       "seconds": 1.301,
+       "clarify_kind": "GROUNDER",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "c0755ca64da6d45ce2f8ea65150aea938ce6ce8ed1b8498f1f81229fffe9dc4a",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4520,
+       "grounder_output_tokens": 88,
+       "raw_actions": null,
+       "slot_id": "demo3-slot6",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "grounder asks: Which result should be returned: r1, r2, or r3?",
+         "feedback": null,
+         "request_hash": "c0755ca64da6d45ce2f8ea65150aea938ce6ce8ed1b8498f1f81229fffe9dc4a"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "place": "Vienna"
+     },
+     "lesson_lines": [
+      "Take the most recent visit.",
+      "Move it to Vienna.",
+      "Get its parent.",
+      "Move it to Vienna.",
+      "Take the most recent visit.",
+      "Return it."
+     ],
+     "returned": false,
+     "end": "ABORTED:RESTARTED_BY_TEACHER",
+     "end_detail": {
+      "reason": "RESTARTED_BY_TEACHER"
+     },
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 2,
+     "events": [
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo3-slot5",
+       "error": "SCHEMA",
+       "reply_steps": 1,
+       "cancel": false
+      },
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo3-slot6",
+       "error": "GROUNDER",
+       "reply_steps": 6,
+       "cancel": false
+      }
+     ],
+     "lines": [
+      "Take the most recent visit.",
+      "Move it to Vienna.",
+      "Get its parent.",
+      "Move it to Vienna.",
+      "Take the most recent visit.",
+      "Take my latest visit.",
+      "Return it."
+     ]
+    },
+    {
+     "index": 3,
+     "state": "ABORTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_REPHRASE",
+      "ABORTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo4-slot1",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take my latest visit.",
+       "text": "Take my latest visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo4-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo4-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Dublin.",
+       "text": "Move it to Dublin.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Dublin"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo4-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo4-slot3",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Get its parent.",
+       "text": "Get its parent.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo4-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo4-slot4",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Dublin.",
+       "text": "Move it to Dublin.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Dublin"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 3,
+       "family": "demo4-slot4",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo4-slot5",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take my latest visit.",
+       "text": "Take my latest visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r3",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo4-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo4-slot6",
+       "source": "TEACHER",
+       "status": "CLARIFYING",
+       "original_text": "Return it.",
+       "text": "Return it.",
+       "replacement_for": null,
+       "grounded_plan": null,
+       "clarification_count": 0,
+       "rephrase_count": 1,
+       "required": true,
+       "lesson_index": 5,
+       "family": "demo4-slot6",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "GROUNDER",
+         "reason": "grounder asks: Which result should be returned: r1, r2, or r3?"
+        }
+       ],
+       "reference_choice": null
+      }
+     ],
+     "results": [
+      {
+       "line": "Take my latest visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.054,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4448,
+       "grounder_output_tokens": 48,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo4-slot1",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Dublin.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Dublin"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Dublin\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.335,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "c19b3e564e3af7dcd86dface75899cb11000c053ae3876e9d0e183dcdc281695",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4471,
+       "grounder_output_tokens": 79,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r1",
+         "rel": "WHERE",
+         "value": "Dublin"
+        }
+       ],
+       "slot_id": "demo4-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "c19b3e564e3af7dcd86dface75899cb11000c053ae3876e9d0e183dcdc281695"
+        }
+       ]
+      },
+      {
+       "line": "Get its parent.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"PARENT\", \"of\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.078,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 111,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "PARENT",
+         "of": "r1"
+        }
+       ],
+       "slot_id": "demo4-slot3",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Dublin.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Dublin"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r2\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Dublin\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 1.403,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "73377027caee073c8941d1b7573191a78c9ba9cf5ed2a96d522658eebcafc00d",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4496,
+       "grounder_output_tokens": 91,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r2",
+         "rel": "WHERE",
+         "value": "Dublin"
+        }
+       ],
+       "slot_id": "demo4-slot4",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "73377027caee073c8941d1b7573191a78c9ba9cf5ed2a96d522658eebcafc00d"
+        }
+       ]
+      },
+      {
+       "line": "Take my latest visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r3",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 2,
+       "seconds": 0.082,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa",
+       "grounder_cached": true,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4576,
+       "grounder_output_tokens": 215,
+       "raw_actions": [
+        {
+         "bind": "r3",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo4-slot5",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "c139418e38141a904c02543aecce583858c621f3398d5c3c83d2ad3829fbbe55"
+        },
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa"
+        }
+       ]
+      },
+      {
+       "line": "Return it.",
+       "status": "CLARIFY",
+       "reason": "grounder asks: Which result should be returned: r1, r2, or r3?",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"CLARIFY\", \"question\": \"Which result should be returned: r1, r2, or r3?\"}",
+       "llm_calls": 1,
+       "seconds": 0.001,
+       "clarify_kind": "GROUNDER",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "c0755ca64da6d45ce2f8ea65150aea938ce6ce8ed1b8498f1f81229fffe9dc4a",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4520,
+       "grounder_output_tokens": 88,
+       "raw_actions": null,
+       "slot_id": "demo4-slot6",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "grounder asks: Which result should be returned: r1, r2, or r3?",
+         "feedback": null,
+         "request_hash": "c0755ca64da6d45ce2f8ea65150aea938ce6ce8ed1b8498f1f81229fffe9dc4a"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "place": "Dublin"
+     },
+     "lesson_lines": [
+      "Take my latest visit.",
+      "Move it to Dublin.",
+      "Get its parent.",
+      "Move it to Dublin.",
+      "Take my latest visit.",
+      "Return it."
+     ],
+     "returned": false,
+     "end": "ABORTED:RESTARTED_BY_TEACHER",
+     "end_detail": {
+      "reason": "RESTARTED_BY_TEACHER"
+     },
+     "learn": null,
+     "learn_detail": null,
+     "clarifications": 1,
+     "events": [
+      {
+       "event": "RESTATE_SLOT",
+       "slot": "demo4-slot6",
+       "error": "GROUNDER",
+       "reply_steps": 6,
+       "cancel": false
+      }
+     ],
+     "lines": [
+      "Take my latest visit.",
+      "Move it to Dublin.",
+      "Get its parent.",
+      "Move it to Dublin.",
+      "Take my latest visit.",
+      "Return it."
+     ]
+    },
+    {
+     "index": 4,
+     "state": "COMMITTED",
+     "states": [
+      "NEW",
+      "OPEN",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_CLARIFICATION",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_CLARIFICATION",
+      "WAITING_FOR_GROUNDING",
+      "WAITING_FOR_GROUNDING",
+      "READY_TO_COMMIT",
+      "COMMITTED"
+     ],
+     "slots": [
+      {
+       "slot_id": "demo5-slot1",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take my latest visit.",
+       "text": "Take my latest visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 0,
+       "family": "demo5-slot1",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo5-slot2",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Seoul.",
+       "text": "Move it to Seoul.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 1,
+       "family": "demo5-slot2",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo5-slot3",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Get its parent.",
+       "text": "Get its parent.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 2,
+       "family": "demo5-slot3",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo5-slot4",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Move it to Seoul.",
+       "text": "Move it to Seoul.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 3,
+       "family": "demo5-slot4",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo5-slot5",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Take my latest visit.",
+       "text": "Take my latest visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r3",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "clarification_count": 0,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 4,
+       "family": "demo5-slot5",
+       "displaced": false,
+       "history": [
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": null
+      },
+      {
+       "slot_id": "demo5-slot6",
+       "source": "TEACHER",
+       "status": "RESOLVED",
+       "original_text": "Return the visit.",
+       "text": "Return the visit.",
+       "replacement_for": null,
+       "grounded_plan": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "clarification_count": 2,
+       "rephrase_count": 0,
+       "required": true,
+       "lesson_index": 5,
+       "family": "demo5-slot6",
+       "displaced": false,
+       "history": [
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "REFERENCE",
+         "reason": "reference for RETURN.value is ambiguous among ['r1', 'r2', 'r3']"
+        },
+        {
+         "status": "CLARIFY",
+         "clarify_kind": "REFERENCE",
+         "reason": "reference for RETURN.value is ambiguous among ['r1', 'r2', 'r3']"
+        },
+        {
+         "status": "OK",
+         "clarify_kind": null,
+         "reason": ""
+        }
+       ],
+       "reference_choice": {
+        "chosen": "r1",
+        "offered": [
+         "r1",
+         "r2",
+         "r3"
+        ]
+       }
+      }
+     ],
+     "results": [
+      {
+       "line": "Take my latest visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r1",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.088,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4448,
+       "grounder_output_tokens": 48,
+       "raw_actions": [
+        {
+         "bind": "r1",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo5-slot1",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Seoul.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r1"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"WHERE\", \"value\": \"Seoul\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.147,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "a96f8cfa35820113cb0f6456a037227a146190f80e5331f424544c80b9bcadcb",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4471,
+       "grounder_output_tokens": 63,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r1",
+         "rel": "WHERE",
+         "value": "Seoul"
+        }
+       ],
+       "slot_id": "demo5-slot2",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "a96f8cfa35820113cb0f6456a037227a146190f80e5331f424544c80b9bcadcb"
+        }
+       ]
+      },
+      {
+       "line": "Get its parent.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "PARENT",
+         "bind": "r2",
+         "obj": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"PARENT\", \"of\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.075,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4470,
+       "grounder_output_tokens": 111,
+       "raw_actions": [
+        {
+         "bind": "r2",
+         "op": "PARENT",
+         "of": "r1"
+        }
+       ],
+       "slot_id": "demo5-slot3",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559"
+        }
+       ]
+      },
+      {
+       "line": "Move it to Seoul.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "UPDATE",
+         "obj": {
+          "var": "r2"
+         },
+         "rel": "WHERE",
+         "value": {
+          "const": "Seoul"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"op\": \"UPDATE\",\n      \"target\": \"r2\",\n      \"rel\": \"WHERE\",\n      \"value\": \"Seoul\"\n    }\n  ]\n}",
+       "llm_calls": 1,
+       "seconds": 0.155,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "2649c112a9a965a4bab3c6cb5d9d2974fd46c0056a2c358790dfe2b7f3121c76",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4496,
+       "grounder_output_tokens": 89,
+       "raw_actions": [
+        {
+         "op": "UPDATE",
+         "target": "r2",
+         "rel": "WHERE",
+         "value": "Seoul"
+        }
+       ],
+       "slot_id": "demo5-slot4",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "2649c112a9a965a4bab3c6cb5d9d2974fd46c0056a2c358790dfe2b7f3121c76"
+        }
+       ]
+      },
+      {
+       "line": "Take my latest visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "FIND_LAST",
+         "bind": "r3",
+         "type": {
+          "const": "VISIT"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"VISIT\"}]}",
+       "llm_calls": 2,
+       "seconds": 0.094,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa",
+       "grounder_cached": true,
+       "plan_errors": [
+        "UNREQUESTED_RETURN"
+       ],
+       "grounder_input_tokens": 4576,
+       "grounder_output_tokens": 215,
+       "raw_actions": [
+        {
+         "bind": "r3",
+         "op": "FIND_LAST",
+         "type": "VISIT"
+        }
+       ],
+       "slot_id": "demo5-slot5",
+       "source": "TEACHER",
+       "terminal_allowed": false,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+         "feedback": [
+          {
+           "error": "UNREQUESTED_RETURN",
+           "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+          }
+         ],
+         "request_hash": "c139418e38141a904c02543aecce583858c621f3398d5c3c83d2ad3829fbbe55"
+        },
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa"
+        }
+       ]
+      },
+      {
+       "line": "Return the visit.",
+       "status": "CLARIFY",
+       "reason": "reference for RETURN.value is ambiguous among ['r1', 'r2', 'r3']",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.995,
+       "clarify_kind": "REFERENCE",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "2578e664b594484c85eb72bb12d18987184766a7a670fce0468d0b4c5049cbd5",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4521,
+       "grounder_output_tokens": 45,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo5-slot6",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "reference for RETURN.value is ambiguous among ['r1', 'r2', 'r3']",
+         "feedback": null,
+         "request_hash": "2578e664b594484c85eb72bb12d18987184766a7a670fce0468d0b4c5049cbd5"
+        }
+       ]
+      },
+      {
+       "line": "Return the visit.",
+       "status": "CLARIFY",
+       "reason": "reference for RETURN.value is ambiguous among ['r1', 'r2', 'r3']",
+       "executed_steps": [],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 0.006,
+       "clarify_kind": "REFERENCE",
+       "grounder": "HOSTED",
+       "grounder_request_hash": "2578e664b594484c85eb72bb12d18987184766a7a670fce0468d0b4c5049cbd5",
+       "grounder_cached": true,
+       "plan_errors": null,
+       "grounder_input_tokens": 4521,
+       "grounder_output_tokens": 45,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo5-slot6",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": null,
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "CLARIFY",
+         "reason": "reference for RETURN.value is ambiguous among ['r1', 'r2', 'r3']",
+         "feedback": null,
+         "request_hash": "2578e664b594484c85eb72bb12d18987184766a7a670fce0468d0b4c5049cbd5"
+        }
+       ]
+      },
+      {
+       "line": "Return the visit.",
+       "status": "OK",
+       "reason": null,
+       "executed_steps": [
+        {
+         "op": "RETURN",
+         "value": {
+          "var": "r1"
+         }
+        }
+       ],
+       "attempted_steps": [],
+       "grounding_raw": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+       "llm_calls": 1,
+       "seconds": 1.146,
+       "clarify_kind": null,
+       "grounder": "HOSTED",
+       "grounder_request_hash": "891b9122e86a0aaf5ca56da2432846215ff709bd2f5f8c9d4086d795993a0aa7",
+       "grounder_cached": false,
+       "plan_errors": null,
+       "grounder_input_tokens": 4531,
+       "grounder_output_tokens": 51,
+       "raw_actions": [
+        {
+         "op": "RETURN",
+         "value": "r1"
+        }
+       ],
+       "slot_id": "demo5-slot6",
+       "source": "TEACHER",
+       "terminal_allowed": true,
+       "reference_choice": {
+        "chosen": "r1",
+        "offered": [
+         "r1",
+         "r2",
+         "r3"
+        ]
+       },
+       "blocked_plan": null,
+       "structured": null,
+       "attempts": [
+        {
+         "status": "OK",
+         "reason": null,
+         "feedback": null,
+         "request_hash": "891b9122e86a0aaf5ca56da2432846215ff709bd2f5f8c9d4086d795993a0aa7"
+        }
+       ]
+      }
+     ],
+     "example": {
+      "place": "Seoul"
+     },
+     "lesson_lines": [
+      "Take my latest visit.",
+      "Move it to Seoul.",
+      "Get its parent.",
+      "Move it to Seoul.",
+      "Take my latest visit.",
+      "Return the visit."
+     ],
+     "returned": true,
+     "end": "OK",
+     "end_detail": {},
+     "learn": "EVIDENCE_CONFLICT",
+     "learn_detail": {
+      "examples_used": null,
+      "examples_discarded_inconsistent": null,
+      "insufficient": null,
+      "conflict": "no majority procedure among the demonstrations",
+      "response": "The 2 demonstrations of move_visit_and_parent do not follow one common procedure; another demonstration is needed."
+     },
+     "clarifications": 2,
+     "events": [
+      {
+       "event": "CLARIFY_REFERENCE",
+       "slot": "demo5-slot6",
+       "offered": [
+        "r1",
+        "r2",
+        "r3"
+       ],
+       "answer": null
+      },
+      {
+       "event": "CLARIFY_REFERENCE",
+       "slot": "demo5-slot6",
+       "offered": [
+        "r1",
+        "r2",
+        "r3"
+       ],
+       "answer": "r1"
+      }
+     ],
+     "lines": [
+      "Take my latest visit.",
+      "Move it to Seoul.",
+      "Get its parent.",
+      "Move it to Seoul.",
+      "Take my latest visit.",
+      "Return the visit.",
+      "Return the visit.",
+      "Return the visit."
+     ]
+    }
+   ],
+   "teacher_turns": 13,
+   "student_questions": [
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 5 (\"Take the most recent visit.\") because I am not sure what it means. RESTATE step 5: reply only with replacement STEP line(s) for step 5, or CANCEL_SLOT.",
+     "slot_id": "demo1-slot5"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 5 (\"Return it.\") because it would return the result, but the steps after step 5 are still to come. RESTATE step 5: reply only with replacement STEP line(s) for step 5, or CANCEL_SLOT.",
+     "slot_id": "demo1-slot7"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 5 (\"Return the visit.\") because it would return the result, but the steps after step 5 are still to come. RESTATE step 5: reply only with replacement STEP line(s) for step 5, or CANCEL_SLOT.",
+     "slot_id": "demo1-slot8"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 5 (\"Return it.\") because it would return the result, but the steps after step 5 are still to come. RESTATE step 5: reply only with replacement STEP line(s) for step 5, or CANCEL_SLOT.",
+     "slot_id": "demo1-slot9"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 5 (\"Return the visit.\") because it would return the result, but the steps after step 5 are still to come. RESTATE step 5: reply only with replacement STEP line(s) for step 5, or CANCEL_SLOT.",
+     "slot_id": "demo1-slot10"
+    },
+    {
+     "kind": "NEW_DEMO",
+     "text": "I could not complete demonstration 1 (slot recovery fail); it was discarded and nothing was learned from it. Please give a complete new demonstration (EXAMPLE line and STEP lines).",
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "text": "I have 2 demonstration(s) but cannot yet tell which values are inputs of move_visit_and_parent. Please give another complete demonstration with DIFFERENT example values (EXAMPLE line and STEP lines).",
+     "slot_id": null
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 5 (\"Take the most recent visit.\") because I am not sure what it means. RESTATE step 5: reply only with replacement STEP line(s) for step 5, or CANCEL_SLOT.",
+     "slot_id": "demo3-slot5"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 6 (\"Return it.\") because I am not sure what it means. RESTATE step 6: reply only with replacement STEP line(s) for step 6, or CANCEL_SLOT.",
+     "slot_id": "demo3-slot6"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "text": "I could not carry out step 6 (\"Return it.\") because I am not sure what it means. RESTATE step 6: reply only with replacement STEP line(s) for step 6, or CANCEL_SLOT.",
+     "slot_id": "demo4-slot6"
+    },
+    {
+     "kind": "CLARIFY_REFERENCE",
+     "text": "For step 6 (\"Return the visit.\") more than one earlier result fits:\n  r1: the most recent visit, from the step \"Take my latest visit.\"\n  r2: the event r1 belongs to, from the step \"Get its parent.\"\n  r3: the most recent visit, from the step \"Take my latest visit.\"\nReply with one line: REFERENT: <id>",
+     "slot_id": "demo5-slot6"
+    },
+    {
+     "kind": "CLARIFY_REFERENCE",
+     "text": "For step 6 (\"Return the visit.\") more than one earlier result fits:\n  r1: the most recent visit, from the step \"Take my latest visit.\"\n  r2: the event r1 belongs to, from the step \"Get its parent.\"\n  r3: the most recent visit, from the step \"Take my latest visit.\"\nReply with one line: REFERENT: <id>",
+     "slot_id": "demo5-slot6"
+    }
+   ],
+   "injections": [],
+   "status": "TEACHER_EPISODE_FAIL",
+   "classes": [
+    "DEMO_ABORTED_RESTARTED_BY_TEACHER",
+    "DEMO_ABORTED_SLOT_RECOVERY_FAIL",
+    "EVIDENCE_CONFLICT_DETECTED",
+    "REFERENCE_CLARIFICATION_REQUIRED",
+    "SECOND_DEMO_REQUESTED"
+   ],
+   "first_lesson_lines_ok": false,
+   "protocol": "TTP",
+   "fail": "demonstration budget exhausted (last: EVIDENCE_CONFLICT)",
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: place=Seoul\nSTEP: Take the most recent visit.\nSTEP: Move it to Seoul.\nSTEP: Get its parent.\nSTEP: Move it to Seoul.\nSTEP: Take the most recent visit.\nSTEP: Return it.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "addfd9ba71a40fa871858f0ffd7f0958f6c4a81f8483bc4007d9f400e88270b7",
+      "prompt_sha256": "e73a0c07b11ab92a2ed3fd3c86bb91c14588a634fe7868b3b42a2a538b96d907",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "LESSON",
+      "meter_usd_before": 0.28,
+      "request_id": "chatcmpl-b96b3564caab4d269203ca2b5aa6bd71",
+      "timestamp": "2026-09-28T03:36:22Z",
+      "latency_s": 17.734,
+      "retry_count": 0,
+      "input_tokens": 1284,
+      "output_tokens": 2422,
+      "finish_reason": "stop",
+      "response_sha256": "7cfabe5e0de6ba80883a928def296cf8d9014eee5ff5138ea677142e23734457",
+      "reasoning_chars": 10014,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Return it.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "99d7ed9228e5f38306e54044ea8e0981c939bc30800e63265d294ecafbb78698",
+      "prompt_sha256": "9803fda1bf3f55cefef9e4a07477792114ac7bdead3b3cac02a4a1102bc09500",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.315,
+      "request_id": "chatcmpl-2562e594e2ad41a086e9081c7e276530",
+      "timestamp": "2026-09-28T03:36:37Z",
+      "latency_s": 5.45,
+      "retry_count": 0,
+      "input_tokens": 1388,
+      "output_tokens": 551,
+      "finish_reason": "stop",
+      "response_sha256": "1612d7f1ad4233032147aa6eb642f7d7418831dcab3d4bf0124d59cfdb8f47b2",
+      "reasoning_chars": 2162,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo1-slot5"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Return the visit.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "8794848f9fe18f1fa859851dad4f0ce703b21ab46234731899afa132944ec956",
+      "prompt_sha256": "5b16c037e2650f6740b1eaf47242bcc09293f9631b9dc797abef70aae892c60e",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.315,
+      "request_id": "chatcmpl-2ceb37c89683404ba5d0cfd4b1732e85",
+      "timestamp": "2026-09-28T03:37:03Z",
+      "latency_s": 24.821,
+      "retry_count": 0,
+      "input_tokens": 1455,
+      "output_tokens": 2657,
+      "finish_reason": "stop",
+      "response_sha256": "00effd33e968568df955f0bafb9761822fc548663689abbbf881f13839fbc088",
+      "reasoning_chars": 11212,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo1-slot7"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Return it.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "db8cceb409a8a881379a760370e3943487b28cecb96c9812c64629a104ebf8ac",
+      "prompt_sha256": "d391acb4f57e4787ebe33cb8c1f670b067a98d82bf836aafc1d84d199a35567f",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.35,
+      "request_id": "chatcmpl-5cdcd6c4bcc445c8b1593f26512a1d62",
+      "timestamp": "2026-09-28T03:37:19Z",
+      "latency_s": 14.944,
+      "retry_count": 0,
+      "input_tokens": 1524,
+      "output_tokens": 1906,
+      "finish_reason": "stop",
+      "response_sha256": "1612d7f1ad4233032147aa6eb642f7d7418831dcab3d4bf0124d59cfdb8f47b2",
+      "reasoning_chars": 7830,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo1-slot8"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Return the visit.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "8d15ee14d414ff2e5ee9063bfc33cc584ac9c9e8450b0f1acf0f2b1c58640154",
+      "prompt_sha256": "bd3dbcb50ecbeea55a80e656b24837e9e6b3fd49a89f61bcb19a71c13a2641e2",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.367,
+      "request_id": "chatcmpl-b0737fa8a4ac43d5b496be0b1db05288",
+      "timestamp": "2026-09-28T03:37:28Z",
+      "latency_s": 7.504,
+      "retry_count": 0,
+      "input_tokens": 1591,
+      "output_tokens": 1051,
+      "finish_reason": "stop",
+      "response_sha256": "00effd33e968568df955f0bafb9761822fc548663689abbbf881f13839fbc088",
+      "reasoning_chars": 4328,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo1-slot9"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Return the visit.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "3d3f4bf37100b20af24a9e0b0af5da6aafa21bd772bb57d7f27f696240347972",
+      "prompt_sha256": "edf3ee0a4daf0282424314683e51cde4289737ae3239e9f155b0da7f7d44079d",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.385,
+      "request_id": "chatcmpl-f94162c7fe2c4db290bc0699150f15c3",
+      "timestamp": "2026-09-28T03:37:42Z",
+      "latency_s": 12.882,
+      "retry_count": 0,
+      "input_tokens": 1660,
+      "output_tokens": 1873,
+      "finish_reason": "stop",
+      "response_sha256": "00effd33e968568df955f0bafb9761822fc548663689abbbf881f13839fbc088",
+      "reasoning_chars": 8110,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo1-slot10"
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: place=Delhi\nSTEP: Take the most recent visit.\nSTEP: Move it to Delhi.\nSTEP: Get its parent.\nSTEP: Move it to Delhi.\nSTEP: Return the visit.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "0b6452b99cc038a3e0d6ee3edafc47e5589ac87777b78bfd54103b29b1fdad63",
+      "prompt_sha256": "5fae1a8df6f3684b061135989c5d8f22454b5cae78f3b46904fe3f6d352f30bb",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "NEW_DEMO",
+      "meter_usd_before": 0.402,
+      "request_id": "chatcmpl-24101ac7ae92474d8b31f185eb11c5ca",
+      "timestamp": "2026-09-28T03:37:52Z",
+      "latency_s": 10.226,
+      "retry_count": 0,
+      "input_tokens": 1710,
+      "output_tokens": 1428,
+      "finish_reason": "stop",
+      "response_sha256": "6bddb90f8b070b8925b0a296f0e2e558a1c1061b59828087d403bc956d138b1f",
+      "reasoning_chars": 5759,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: place=Vienna\nSTEP: Take the most recent visit.\nSTEP: Move it to Vienna.\nSTEP: Get its parent.\nSTEP: Move it to Vienna.\nSTEP: Take the most recent visit.\nSTEP: Return it.",
+     "provenance": {
+      "role": "initial_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "c55fc290fbc4aa854b9b587f6cf3dbc7a9901c457d83e37551df888d295d3f79",
+      "prompt_sha256": "9006bba6243cdf1fc270bb67ff32e87c3ee32ee547b5b7a49f9c59eb0e839753",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "NEW_DEMO",
+      "meter_usd_before": 0.42,
+      "request_id": "chatcmpl-051805e614984b8bbf1346d383a6051e",
+      "timestamp": "2026-09-28T03:38:13Z",
+      "latency_s": 17.445,
+      "retry_count": 0,
+      "input_tokens": 1798,
+      "output_tokens": 2534,
+      "finish_reason": "stop",
+      "response_sha256": "32a1109dcbe84086ab1eca11a48f98a8ee2bb0f9a75ccffe798c092d00659c5b",
+      "reasoning_chars": 10609,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Take my latest visit.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "c80336a584e5e5c1d1ba40e447d55ee292802ee1753aa9fea0f2a9f3bab41ece",
+      "prompt_sha256": "5b049575af61c03889ff0cb8e3d31f0018b572b03e00a0a07a8d9162d7e7988c",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.437,
+      "request_id": "chatcmpl-c331c3de525e46258567da3bdd643471",
+      "timestamp": "2026-09-28T03:38:32Z",
+      "latency_s": 15.68,
+      "retry_count": 0,
+      "input_tokens": 1902,
+      "output_tokens": 2228,
+      "finish_reason": "stop",
+      "response_sha256": "ac5906d145d52b946d0597f242030b240d2fa2e6a060202d4ada43db4e388630",
+      "reasoning_chars": 9789,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo3-slot5"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "EXAMPLE: place=Dublin\nSTEP: Take my latest visit.\nSTEP: Move it to Dublin.\nSTEP: Get its parent.\nSTEP: Move it to Dublin.\nSTEP: Take my latest visit.\nSTEP: Return it.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "847fd2524a9e47e3b6a6209e3c621da38b5d1855f8b6550475ad38f4a57cb1f2",
+      "prompt_sha256": "4b837f26169d34da0dd7fc36dceadf52268187750d28783571d682b6d0679a65",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.455,
+      "request_id": "chatcmpl-313d3b0ecd6543ca86d103e060b45e73",
+      "timestamp": "2026-09-28T03:38:49Z",
+      "latency_s": 11.493,
+      "retry_count": 0,
+      "input_tokens": 1961,
+      "output_tokens": 1682,
+      "finish_reason": "stop",
+      "response_sha256": "cc8dd419a9b563fafef7252ae16a96514d20fc81c57aed8fe4974183bef0938a",
+      "reasoning_chars": 7223,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo3-slot6"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "EXAMPLE: place=Seoul\nSTEP: Take my latest visit.\nSTEP: Move it to Seoul.\nSTEP: Get its parent.\nSTEP: Move it to Seoul.\nSTEP: Take my latest visit.\nSTEP: Return the visit.",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "2a03e4113391bc35ef86555bc7d12d840c156d5a40407ca13329dad6bf59db03",
+      "prompt_sha256": "ba9dd9a7102a672dcc2a7da2e637f9133f22cdac72af7e7ea8037b6a08e70a79",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 0.472,
+      "request_id": "chatcmpl-34e20554d3f842c68474dd8e3f20df1d",
+      "timestamp": "2026-09-28T03:39:05Z",
+      "latency_s": 11.964,
+      "retry_count": 0,
+      "input_tokens": 2059,
+      "output_tokens": 1783,
+      "finish_reason": "stop",
+      "response_sha256": "bcd2acc35b3b77daa573bc3a805425d3bd3f9bdc51d4d4e3cac6114f2aac93c1",
+      "reasoning_chars": 7491,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo4-slot6"
+    },
+    {
+     "kind": "CLARIFY_REFERENCE",
+     "reply": "All four places (Dublin, Vienna, Delhi, Seoul) have already been used as examples. Could you provide a new place value for the next demonstration?",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "9601516138022f5fe6e8afa81db862c230f012859a4a155fe9886fe1d1ec7aef",
+      "prompt_sha256": "33e7f17470f31b1a53ecfa7bdab343abfd7790f922647e09772126ffea168b8c",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "CLARIFY_REFERENCE",
+      "meter_usd_before": 0.494,
+      "request_id": "chatcmpl-5d9b143f31534ad9b5bd102fda7ed287",
+      "timestamp": "2026-09-28T03:39:18Z",
+      "latency_s": 11.15,
+      "retry_count": 0,
+      "input_tokens": 2197,
+      "output_tokens": 1645,
+      "finish_reason": "stop",
+      "response_sha256": "a836b338176395cd9cd36c6dddcf7bdff9891371ac4f627eee85a9df88c69951",
+      "reasoning_chars": 7556,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo5-slot6"
+    },
+    {
+     "kind": "CLARIFY_REFERENCE",
+     "reply": "REFERENT: r1",
+     "provenance": {
+      "role": "recovery_teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "f93aa35d098960fe284c09e0a849c50b79f231ca88521d69993927dcf0f06353",
+      "prompt_sha256": "5020a3f234efc9a93e467732329a238d9246da559d4132e1ab76f8fcad5fbe92",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 16384,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "CLARIFY_REFERENCE",
+      "meter_usd_before": 0.512,
+      "request_id": "chatcmpl-4ed2dc35daba499bb07aa8192fd62ce7",
+      "timestamp": "2026-09-28T03:39:25Z",
+      "latency_s": 6.527,
+      "retry_count": 0,
+      "input_tokens": 2319,
+      "output_tokens": 932,
+      "finish_reason": "stop",
+      "response_sha256": "3a6ebc4076358363d6eb1d44882dd3cba846750450901b867ee9c43cb7b43442",
+      "reasoning_chars": 3741,
+      "cached": false,
+      "route": "HOSTED",
+      "recovery": true
+     },
+     "slot_id": "demo5-slot6"
+    }
+   ]
+  }
+ ],
+ "false_accept_probes": [],
+ "active": [],
+ "library_bytes_before": 49152,
+ "library_bytes_after": 49152,
+ "active_before": 0,
+ "active_after": 0,
+ "world_state_after": {
+  "objects": [
+   [
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "call:000002",
+    "CALL"
+   ],
+   [
+    "call:000003",
+    "CALL"
+   ],
+   [
+    "call:000004",
+    "CALL"
+   ],
+   [
+    "call:000005",
+    "CALL"
+   ],
+   [
+    "call:000006",
+    "CALL"
+   ],
+   [
+    "call:000007",
+    "CALL"
+   ],
+   [
+    "call:000008",
+    "CALL"
+   ],
+   [
+    "call:000009",
+    "CALL"
+   ],
+   [
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "email:000002",
+    "EMAIL"
+   ],
+   [
+    "email:000003",
+    "EMAIL"
+   ],
+   [
+    "email:000004",
+    "EMAIL"
+   ],
+   [
+    "email:000005",
+    "EMAIL"
+   ],
+   [
+    "email:000006",
+    "EMAIL"
+   ],
+   [
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "person:000004",
+    "PERSON"
+   ],
+   [
+    "person:000005",
+    "PERSON"
+   ],
+   [
+    "person:000006",
+    "PERSON"
+   ],
+   [
+    "person:000007",
+    "PERSON"
+   ],
+   [
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "reminder:000002",
+    "REMINDER"
+   ],
+   [
+    "reminder:000003",
+    "REMINDER"
+   ],
+   [
+    "reminder:000004",
+    "REMINDER"
+   ],
+   [
+    "reminder:000005",
+    "REMINDER"
+   ],
+   [
+    "reminder:000006",
+    "REMINDER"
+   ],
+   [
+    "reminder:000007",
+    "REMINDER"
+   ],
+   [
+    "reminder:000008",
+    "REMINDER"
+   ],
+   [
+    "reminder:000009",
+    "REMINDER"
+   ],
+   [
+    "reminder:000010",
+    "REMINDER"
+   ],
+   [
+    "reminder:000011",
+    "REMINDER"
+   ],
+   [
+    "reminder:000012",
+    "REMINDER"
+   ],
+   [
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "request:000002",
+    "REQUEST"
+   ],
+   [
+    "request:000003",
+    "REQUEST"
+   ],
+   [
+    "request:000004",
+    "REQUEST"
+   ],
+   [
+    "request:000005",
+    "REQUEST"
+   ],
+   [
+    "request:000006",
+    "REQUEST"
+   ],
+   [
+    "request:000007",
+    "REQUEST"
+   ],
+   [
+    "request:000008",
+    "REQUEST"
+   ],
+   [
+    "request:000009",
+    "REQUEST"
+   ],
+   [
+    "request:000010",
+    "REQUEST"
+   ],
+   [
+    "request:000011",
+    "REQUEST"
+   ],
+   [
+    "request:000012",
+    "REQUEST"
+   ],
+   [
+    "visit:000001",
+    "VISIT"
+   ],
+   [
+    "visit:000002",
+    "VISIT"
+   ],
+   [
+    "visit:000003",
+    "VISIT"
+   ],
+   [
+    "visit:000004",
+    "VISIT"
+   ],
+   [
+    "visit:000005",
+    "VISIT"
+   ],
+   [
+    "visit:000006",
+    "VISIT"
+   ],
+   [
+    "visit:000007",
+    "VISIT"
+   ],
+   [
+    "visit:000008",
+    "VISIT"
+   ],
+   [
+    "visit:000009",
+    "VISIT"
+   ]
+  ],
+  "relations": [
+   [
+    "call:000004",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000005",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "call:000006",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "call:000007",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "call:000008",
+    "WHO",
+    "person:000007"
+   ],
+   [
+    "call:000009",
+    "WHO",
+    "person:000006"
+   ],
+   [
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000001",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "email:000002",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "email:000002",
+    "TOPIC",
+    "topic:party"
+   ],
+   [
+    "email:000003",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "email:000003",
+    "TOPIC",
+    "topic:contract"
+   ],
+   [
+    "email:000004",
+    "RECIPIENT",
+    "person:000003"
+   ],
+   [
+    "email:000004",
+    "TOPIC",
+    "topic:schedule"
+   ],
+   [
+    "email:000005",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000005",
+    "TOPIC",
+    "topic:launch"
+   ],
+   [
+    "email:000006",
+    "RECIPIENT",
+    "person:000005"
+   ],
+   [
+    "email:000006",
+    "TOPIC",
+    "topic:contract"
+   ],
+   [
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "reminder:000002",
+    "TODO",
+    "email:000003"
+   ],
+   [
+    "reminder:000003",
+    "TODO",
+    "visit:000001"
+   ],
+   [
+    "reminder:000004",
+    "TODO",
+    "call:000004"
+   ],
+   [
+    "reminder:000004",
+    "WHEN",
+    "time:07:45"
+   ],
+   [
+    "reminder:000005",
+    "TODO",
+    "call:000005"
+   ],
+   [
+    "reminder:000005",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "reminder:000006",
+    "TODO",
+    "call:000006"
+   ],
+   [
+    "reminder:000006",
+    "WHEN",
+    "time:12:00"
+   ],
+   [
+    "reminder:000007",
+    "TODO",
+    "call:000007"
+   ],
+   [
+    "reminder:000007",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "reminder:000008",
+    "TODO",
+    "call:000008"
+   ],
+   [
+    "reminder:000008",
+    "WHEN",
+    "time:09:30"
+   ],
+   [
+    "reminder:000009",
+    "TODO",
+    "call:000009"
+   ],
+   [
+    "reminder:000009",
+    "WHEN",
+    "time:07:45"
+   ],
+   [
+    "reminder:000010",
+    "TODO",
+    "email:000005"
+   ],
+   [
+    "reminder:000011",
+    "TODO",
+    "visit:000007"
+   ],
+   [
+    "reminder:000012",
+    "TODO",
+    "visit:000009"
+   ],
+   [
+    "request:000001",
+    "TODO",
+    "email:000002"
+   ],
+   [
+    "request:000002",
+    "TODO",
+    "email:000004"
+   ],
+   [
+    "request:000003",
+    "TODO",
+    "visit:000002"
+   ],
+   [
+    "request:000004",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "request:000004",
+    "WHEN",
+    "time:07:45"
+   ],
+   [
+    "request:000004",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000005",
+    "TODO",
+    "call:000002"
+   ],
+   [
+    "request:000005",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "request:000005",
+    "WHO",
+    "person:000003"
+   ],
+   [
+    "request:000006",
+    "TODO",
+    "call:000003"
+   ],
+   [
+    "request:000006",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "request:000006",
+    "WHO",
+    "person:000004"
+   ],
+   [
+    "request:000007",
+    "TODO",
+    "email:000006"
+   ],
+   [
+    "request:000008",
+    "TODO",
+    "visit:000003"
+   ],
+   [
+    "request:000008",
+    "WHEN",
+    "time:09:00"
+   ],
+   [
+    "request:000008",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000009",
+    "TODO",
+    "visit:000004"
+   ],
+   [
+    "request:000009",
+    "WHEN",
+    "time:07:45"
+   ],
+   [
+    "request:000009",
+    "WHO",
+    "person:000005"
+   ],
+   [
+    "request:000010",
+    "TODO",
+    "visit:000005"
+   ],
+   [
+    "request:000010",
+    "WHEN",
+    "time:09:30"
+   ],
+   [
+    "request:000010",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000011",
+    "TODO",
+    "visit:000006"
+   ],
+   [
+    "request:000011",
+    "WHEN",
+    "time:03:00"
+   ],
+   [
+    "request:000011",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "request:000012",
+    "TODO",
+    "visit:000008"
+   ],
+   [
+    "visit:000001",
+    "WHERE",
+    "place:delhi"
+   ],
+   [
+    "visit:000002",
+    "WHERE",
+    "place:seoul"
+   ],
+   [
+    "visit:000007",
+    "WHERE",
+    "place:dublin"
+   ],
+   [
+    "visit:000008",
+    "WHERE",
+    "place:vienna"
+   ],
+   [
+    "visit:000009",
+    "WHERE",
+    "place:dublin"
+   ]
+  ],
+  "aliases": [
+   [
+    "person:000001",
+    "Dad"
+   ],
+   [
+    "person:000002",
+    "Zoe"
+   ],
+   [
+    "person:000003",
+    "Wendy"
+   ],
+   [
+    "person:000004",
+    "Rita"
+   ],
+   [
+    "person:000005",
+    "Alice"
+   ],
+   [
+    "person:000006",
+    "Bob"
+   ],
+   [
+    "person:000007",
+    "Judy"
+   ]
+  ],
+  "attributes": [
+   [
+    "call:000006",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000007",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "call:000009",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000003",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "email:000006",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000008",
+    "STATUS",
+    "CLOSED"
+   ],
+   [
+    "request:000010",
+    "STATUS",
+    "CLOSED"
+   ]
+  ]
+ },
+ "student_hash_after": {
+  "weights_sha256": "9b3db05bd8eb1ea1e7a7f7725b73ac5e7ca16c08ea6659e013f0f59a2bb746b6",
+  "frozen": true,
+  "n_parameters": 1543714304
+ },
+ "seconds": 227.74,
+ "nl_llm_calls": 0,
+ "retrieval_llm_calls": 0,
+ "hosted_calls": [
+  {
+   "role": "initial_teacher",
+   "kind": "LESSON",
+   "request_hash": "addfd9ba71a40fa871858f0ffd7f0958f6c4a81f8483bc4007d9f400e88270b7",
+   "cached": false,
+   "input_tokens": 1284,
+   "output_tokens": 2422,
+   "latency_s": 17.734,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd",
+   "cached": false,
+   "input_tokens": 4449,
+   "output_tokens": 48,
+   "latency_s": 0.932,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "a96f8cfa35820113cb0f6456a037227a146190f80e5331f424544c80b9bcadcb",
+   "cached": false,
+   "input_tokens": 4471,
+   "output_tokens": 63,
+   "latency_s": 1.069,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+   "cached": false,
+   "input_tokens": 4470,
+   "output_tokens": 111,
+   "latency_s": 1.274,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "2649c112a9a965a4bab3c6cb5d9d2974fd46c0056a2c358790dfe2b7f3121c76",
+   "cached": false,
+   "input_tokens": 4496,
+   "output_tokens": 89,
+   "latency_s": 1.123,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "51ac1ac73039f8ca78bca7638d4bc9d56032d146a3c6fa41411db943829773c8",
+   "cached": false,
+   "input_tokens": 4497,
+   "output_tokens": 51,
+   "latency_s": 0.926,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "b36cd99ccd6794d007cd890b7a6ae4bc8a740ae863d99730005d3d7ad710283f",
+   "cached": false,
+   "input_tokens": 4577,
+   "output_tokens": 122,
+   "latency_s": 1.503,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "99d7ed9228e5f38306e54044ea8e0981c939bc30800e63265d294ecafbb78698",
+   "cached": false,
+   "input_tokens": 1388,
+   "output_tokens": 551,
+   "latency_s": 5.45,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "343f294017447982e6e87d88c1ed97ca1b3176c10222656114ac50496655b124",
+   "cached": false,
+   "input_tokens": 4494,
+   "output_tokens": 42,
+   "latency_s": 0.947,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "8794848f9fe18f1fa859851dad4f0ce703b21ab46234731899afa132944ec956",
+   "cached": false,
+   "input_tokens": 1455,
+   "output_tokens": 2657,
+   "latency_s": 24.821,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+   "cached": false,
+   "input_tokens": 4495,
+   "output_tokens": 45,
+   "latency_s": 0.853,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "db8cceb409a8a881379a760370e3943487b28cecb96c9812c64629a104ebf8ac",
+   "cached": false,
+   "input_tokens": 1524,
+   "output_tokens": 1906,
+   "latency_s": 14.944,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "343f294017447982e6e87d88c1ed97ca1b3176c10222656114ac50496655b124",
+   "cached": true,
+   "input_tokens": 4494,
+   "output_tokens": 42,
+   "latency_s": 0.947,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "8d15ee14d414ff2e5ee9063bfc33cc584ac9c9e8450b0f1acf0f2b1c58640154",
+   "cached": false,
+   "input_tokens": 1591,
+   "output_tokens": 1051,
+   "latency_s": 7.504,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+   "cached": true,
+   "input_tokens": 4495,
+   "output_tokens": 45,
+   "latency_s": 0.853,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "3d3f4bf37100b20af24a9e0b0af5da6aafa21bd772bb57d7f27f696240347972",
+   "cached": false,
+   "input_tokens": 1660,
+   "output_tokens": 1873,
+   "latency_s": 12.882,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+   "cached": true,
+   "input_tokens": 4495,
+   "output_tokens": 45,
+   "latency_s": 0.853,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "initial_teacher",
+   "kind": "NEW_DEMO",
+   "request_hash": "0b6452b99cc038a3e0d6ee3edafc47e5589ac87777b78bfd54103b29b1fdad63",
+   "cached": false,
+   "input_tokens": 1710,
+   "output_tokens": 1428,
+   "latency_s": 10.226,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd",
+   "cached": true,
+   "input_tokens": 4449,
+   "output_tokens": 48,
+   "latency_s": 0.932,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "58cb9059bbf92babfe2859f690a66b252904bb7e9348a8edb29267e5a26e8e0f",
+   "cached": false,
+   "input_tokens": 4471,
+   "output_tokens": 104,
+   "latency_s": 1.146,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+   "cached": true,
+   "input_tokens": 4470,
+   "output_tokens": 111,
+   "latency_s": 1.274,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "5490c13f8ab6a16f4857465366c64511357c4a83c24b52164858430ac8d81418",
+   "cached": false,
+   "input_tokens": 4496,
+   "output_tokens": 90,
+   "latency_s": 1.083,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "b95383fc08b88c6fbe72f31c567d98978bbb7a5015b5f93b5c6489f59ab4ed22",
+   "cached": true,
+   "input_tokens": 4495,
+   "output_tokens": 45,
+   "latency_s": 0.853,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "initial_teacher",
+   "kind": "NEW_DEMO",
+   "request_hash": "c55fc290fbc4aa854b9b587f6cf3dbc7a9901c457d83e37551df888d295d3f79",
+   "cached": false,
+   "input_tokens": 1798,
+   "output_tokens": 2534,
+   "latency_s": 17.445,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "97e6bfee0bd49480460cca573cfc2107c748ffc8f29fb9f4f16fafb6b66339bd",
+   "cached": true,
+   "input_tokens": 4449,
+   "output_tokens": 48,
+   "latency_s": 0.932,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "5236fd298bfc7cd35006a4685403b7bb107fa721798fcf594989e2b6c5627fe1",
+   "cached": false,
+   "input_tokens": 4471,
+   "output_tokens": 85,
+   "latency_s": 1.05,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+   "cached": true,
+   "input_tokens": 4470,
+   "output_tokens": 111,
+   "latency_s": 1.274,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "9cdf4d059389c35b09ae7d490ad84e8a413d9cd050c0f55cf17fb936f1bac7f2",
+   "cached": false,
+   "input_tokens": 4496,
+   "output_tokens": 91,
+   "latency_s": 1.1,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "51ac1ac73039f8ca78bca7638d4bc9d56032d146a3c6fa41411db943829773c8",
+   "cached": true,
+   "input_tokens": 4497,
+   "output_tokens": 51,
+   "latency_s": 0.926,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "b36cd99ccd6794d007cd890b7a6ae4bc8a740ae863d99730005d3d7ad710283f",
+   "cached": true,
+   "input_tokens": 4577,
+   "output_tokens": 122,
+   "latency_s": 1.503,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "c80336a584e5e5c1d1ba40e447d55ee292802ee1753aa9fea0f2a9f3bab41ece",
+   "cached": false,
+   "input_tokens": 1902,
+   "output_tokens": 2228,
+   "latency_s": 15.68,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "c139418e38141a904c02543aecce583858c621f3398d5c3c83d2ad3829fbbe55",
+   "cached": false,
+   "input_tokens": 4496,
+   "output_tokens": 62,
+   "latency_s": 0.878,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa",
+   "cached": false,
+   "input_tokens": 4576,
+   "output_tokens": 215,
+   "latency_s": 1.897,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "c0755ca64da6d45ce2f8ea65150aea938ce6ce8ed1b8498f1f81229fffe9dc4a",
+   "cached": false,
+   "input_tokens": 4520,
+   "output_tokens": 88,
+   "latency_s": 1.078,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "847fd2524a9e47e3b6a6209e3c621da38b5d1855f8b6550475ad38f4a57cb1f2",
+   "cached": false,
+   "input_tokens": 1961,
+   "output_tokens": 1682,
+   "latency_s": 11.493,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221",
+   "cached": false,
+   "input_tokens": 4448,
+   "output_tokens": 48,
+   "latency_s": 0.761,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "c19b3e564e3af7dcd86dface75899cb11000c053ae3876e9d0e183dcdc281695",
+   "cached": false,
+   "input_tokens": 4471,
+   "output_tokens": 79,
+   "latency_s": 0.951,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+   "cached": true,
+   "input_tokens": 4470,
+   "output_tokens": 111,
+   "latency_s": 1.274,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "73377027caee073c8941d1b7573191a78c9ba9cf5ed2a96d522658eebcafc00d",
+   "cached": false,
+   "input_tokens": 4496,
+   "output_tokens": 91,
+   "latency_s": 1.048,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "c139418e38141a904c02543aecce583858c621f3398d5c3c83d2ad3829fbbe55",
+   "cached": true,
+   "input_tokens": 4496,
+   "output_tokens": 62,
+   "latency_s": 0.878,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa",
+   "cached": true,
+   "input_tokens": 4576,
+   "output_tokens": 215,
+   "latency_s": 1.897,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "c0755ca64da6d45ce2f8ea65150aea938ce6ce8ed1b8498f1f81229fffe9dc4a",
+   "cached": true,
+   "input_tokens": 4520,
+   "output_tokens": 88,
+   "latency_s": 1.078,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "RESTATE_SLOT",
+   "request_hash": "2a03e4113391bc35ef86555bc7d12d840c156d5a40407ca13329dad6bf59db03",
+   "cached": false,
+   "input_tokens": 2059,
+   "output_tokens": 1783,
+   "latency_s": 11.964,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "f3cf2c74c6060257a445f6b10b324e1467208761cbf30f9bf0660b08e89d8221",
+   "cached": true,
+   "input_tokens": 4448,
+   "output_tokens": 48,
+   "latency_s": 0.761,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "a96f8cfa35820113cb0f6456a037227a146190f80e5331f424544c80b9bcadcb",
+   "cached": true,
+   "input_tokens": 4471,
+   "output_tokens": 63,
+   "latency_s": 1.069,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "ce8ab5574ba3dd3abf1e07fd8006b708f907568a06061cd290fce86c739ac559",
+   "cached": true,
+   "input_tokens": 4470,
+   "output_tokens": 111,
+   "latency_s": 1.274,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "2649c112a9a965a4bab3c6cb5d9d2974fd46c0056a2c358790dfe2b7f3121c76",
+   "cached": true,
+   "input_tokens": 4496,
+   "output_tokens": 89,
+   "latency_s": 1.123,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "c139418e38141a904c02543aecce583858c621f3398d5c3c83d2ad3829fbbe55",
+   "cached": true,
+   "input_tokens": 4496,
+   "output_tokens": 62,
+   "latency_s": 0.878,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND_RETRY",
+   "request_hash": "5f6abcdfdf99e277fab9282d8c17de75f2c8d581e82919bdf66b50cca00b76aa",
+   "cached": true,
+   "input_tokens": 4576,
+   "output_tokens": 215,
+   "latency_s": 1.897,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "2578e664b594484c85eb72bb12d18987184766a7a670fce0468d0b4c5049cbd5",
+   "cached": false,
+   "input_tokens": 4521,
+   "output_tokens": 45,
+   "latency_s": 0.766,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "CLARIFY_REFERENCE",
+   "request_hash": "9601516138022f5fe6e8afa81db862c230f012859a4a155fe9886fe1d1ec7aef",
+   "cached": false,
+   "input_tokens": 2197,
+   "output_tokens": 1645,
+   "latency_s": 11.15,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "2578e664b594484c85eb72bb12d18987184766a7a670fce0468d0b4c5049cbd5",
+   "cached": true,
+   "input_tokens": 4521,
+   "output_tokens": 45,
+   "latency_s": 0.766,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "recovery_teacher",
+   "kind": "CLARIFY_REFERENCE",
+   "request_hash": "f93aa35d098960fe284c09e0a849c50b79f231ca88521d69993927dcf0f06353",
+   "cached": false,
+   "input_tokens": 2319,
+   "output_tokens": 932,
+   "latency_s": 6.527,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  },
+  {
+   "role": "grounder",
+   "kind": "GROUND",
+   "request_hash": "891b9122e86a0aaf5ca56da2432846215ff709bd2f5f8c9d4086d795993a0aa7",
+   "cached": false,
+   "input_tokens": 4531,
+   "output_tokens": 51,
+   "latency_s": 0.805,
+   "finish_reason": "stop",
+   "truncations": null,
+   "retry_count": 0
+  }
+ ]
+}

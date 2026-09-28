@@ -1,0 +1,428 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Trent"
+ },
+ "interaction_id": "dev-025-T11:26",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-025-T11/learn/snapshots/dev-025-T11_26_start.sqlite",
+ "start_snapshot_sha256": "2ad55c7432024eac980c421956f9f16bc41643f5c34222afce1a28a416e6fcb4",
+ "utterances": [
+  {
+   "utterance": "Get every call with Trent.",
+   "uid": "dev-025-T11:27",
+   "instruction": "Get every call with Trent.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get every call with Trent.",
+    "values": {
+     "PERSON": [
+      "Trent"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 11,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Trent\"}}\n\n",
+      "score": -1.094
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -2.652
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -2.924
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\nr2 = {\"op\": \"FILTER\", \"of\": \"r1\", \"where\": {\"WHO\": \"Trent\"}}\n\n",
+      "score": -3.738
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -6.439
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Trent\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Trent"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Trent\"}]]}]",
+      "score": -1.094,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -2.073,
+      "n": 3
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": []}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"FILTER\", \"rel\": \"WHO\", \"value\": {\"const\": \"Trent\"}}]",
+      "score": -3.738,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -10.037,
+      "n": 1
+     }
+    ],
+    "margin": 0.979,
+    "reference_notes": [],
+    "seconds": 4.55,
+    "runner_up": "COVERAGE_INCOMPLETE",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 4.551
+  },
+  {
+   "utterance": "I mean: find all calls with Trent.",
+   "uid": "dev-025-T11:27#rescue",
+   "instruction": "find all calls with Trent.",
+   "correction": false,
+   "grounding": {
+    "instruction": "find all calls with Trent.",
+    "values": {
+     "PERSON": [
+      "Trent"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 13,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Trent\"}}\n\n",
+      "score": -1.064
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Trent\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -1.269
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -3.363
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -3.412
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Trent\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHEN\"}\n\n",
+      "score": -3.783
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Trent\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Trent"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Trent\"}]]}]",
+      "score": -1.064,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Trent\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+      "score": -1.269,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -2.663,
+      "n": 3
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Trent\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHEN\"}]",
+      "score": -3.783,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Trent\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHERE\"}]",
+      "score": -3.798,
+      "n": 1
+     }
+    ],
+    "margin": 0.205,
+    "reference_notes": [],
+    "seconds": 6.01,
+    "runner_up": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Trent\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 6.006
+  },
+  {
+   "utterance": "Get the number of them.",
+   "uid": "dev-025-T11:28",
+   "instruction": "Get the number of them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Get the number of them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -0.208
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -1.673
+     }
+    ],
+    "raw_text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UNSUPPORTED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -0.208,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -1.673,
+      "n": 1
+     }
+    ],
+    "margin": 1.465,
+    "reference_notes": [],
+    "seconds": 0.75,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "UNSUPPORTED",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 0.748
+  },
+  {
+   "utterance": "I mean: count how many there are.",
+   "uid": "dev-025-T11:28#rescue",
+   "instruction": "count how many there are.",
+   "correction": false,
+   "grounding": {
+    "instruction": "count how many there are.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -0.479
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -0.965
+     }
+    ],
+    "raw_text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UNSUPPORTED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -0.479,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -0.965,
+      "n": 1
+     }
+    ],
+    "margin": 0.486,
+    "reference_notes": [],
+    "seconds": 0.75,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "UNSUPPORTED",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 0.749
+  },
+  {
+   "utterance": "Return it.",
+   "uid": "dev-025-T11:29",
+   "instruction": "Return it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -0.412
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -1.086
+     }
+    ],
+    "raw_text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UNSUPPORTED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -0.412,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -1.086,
+      "n": 1
+     }
+    ],
+    "margin": 0.674,
+    "reference_notes": [],
+    "seconds": 0.75,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "UNSUPPORTED",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 0.746
+  },
+  {
+   "utterance": "I mean: return the count.",
+   "uid": "dev-025-T11:29#rescue",
+   "instruction": "return the count.",
+   "correction": false,
+   "grounding": {
+    "instruction": "return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -0.142
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -2.025
+     }
+    ],
+    "raw_text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UNSUPPORTED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -0.142,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -2.025,
+      "n": 1
+     }
+    ],
+    "margin": 1.883,
+    "reference_notes": [],
+    "seconds": 0.77,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "UNSUPPORTED",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 0.769
+  }
+ ],
+ "final_steps": [],
+ "trace_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+ "nl_mode": "NL_TEACH"
+}

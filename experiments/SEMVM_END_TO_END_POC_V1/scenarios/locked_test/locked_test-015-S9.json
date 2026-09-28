@@ -1,0 +1,657 @@
+{
+ "scenario_id": "locked_test-015-S9",
+ "suite": "locked_test",
+ "category": "S9",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request theta , by Quinn re delta ; and so then later , call delta , at 7 re theta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Quinn"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "7"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "CALL",
+    "mods": [
+     [
+      "WHO",
+      "Quinn",
+      "inner"
+     ],
+     [
+      "WHEN",
+      "7",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o1",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "ASSERT",
+   "text": "request eta , by Trent re epsilon ; and so then later , call epsilon , at 9:30 re eta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Trent"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "9:30"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "CALL",
+    "mods": [
+     [
+      "WHO",
+      "Trent",
+      "inner"
+     ],
+     [
+      "WHEN",
+      "9:30",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o1",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "ASSERT",
+   "text": "request theta , at 1 re theta ; and so then later , call delta , by Grace re delta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Grace"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "1"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e0",
+      "object": "v1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "CALL",
+    "mods": [
+     [
+      "WHEN",
+      "1",
+      "outer"
+     ],
+     [
+      "WHO",
+      "Grace",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "OI",
+   "layout": [
+    "straddle_o1",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF CALL WHERE PARENT.WHEN=9:30"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF CALL"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:07:00"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "call:000002",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "call:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:07:00"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "call:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:09:30"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Trent"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "call:000002",
+      "CALL"
+     ],
+     [
+      "call:000003",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ],
+     [
+      "request:000003",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "call:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "call:000003",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:07:00"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "call:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:09:30"
+     ],
+     [
+      "request:000003",
+      "TODO",
+      "call:000003"
+     ],
+     [
+      "request:000003",
+      "WHEN",
+      "time:01:00"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Trent"
+     ],
+     [
+      "person:000003",
+      "Grace"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Trent"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "call:000002",
+      "CALL"
+     ],
+     [
+      "call:000003",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ],
+     [
+      "request:000003",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "call:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "call:000003",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:07:00"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "call:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:09:30"
+     ],
+     [
+      "request:000003",
+      "TODO",
+      "call:000003"
+     ],
+     [
+      "request:000003",
+      "WHEN",
+      "time:01:00"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Trent"
+     ],
+     [
+      "person:000003",
+      "Grace"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Grace",
+    "Quinn",
+    "Trent"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "call:000002",
+      "CALL"
+     ],
+     [
+      "call:000003",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ],
+     [
+      "request:000002",
+      "REQUEST"
+     ],
+     [
+      "request:000003",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000001"
+     ],
+     [
+      "call:000002",
+      "WHO",
+      "person:000002"
+     ],
+     [
+      "call:000003",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "call:000001"
+     ],
+     [
+      "request:000001",
+      "WHEN",
+      "time:07:00"
+     ],
+     [
+      "request:000002",
+      "TODO",
+      "call:000002"
+     ],
+     [
+      "request:000002",
+      "WHEN",
+      "time:09:30"
+     ],
+     [
+      "request:000003",
+      "TODO",
+      "call:000003"
+     ],
+     [
+      "request:000003",
+      "WHEN",
+      "time:01:00"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Quinn"
+     ],
+     [
+      "person:000002",
+      "Trent"
+     ],
+     [
+      "person:000003",
+      "Grace"
+     ]
+    ]
+   }
+  }
+ ]
+}

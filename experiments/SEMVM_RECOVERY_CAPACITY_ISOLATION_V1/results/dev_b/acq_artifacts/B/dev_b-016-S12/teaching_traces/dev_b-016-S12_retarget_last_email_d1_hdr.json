@@ -1,0 +1,235 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev_b-016-S12:retarget_last_email:d1:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/B/dev_b-016-S12/learn/snapshots/dev_b-016-S12_retarget_last_email_d1_hdr_start.sqlite",
+ "start_snapshot_sha256": "540325a5d5b78c66f98fd2d3f83108e5ce6877ccf090f260360d9e973c996e24",
+ "utterances": [
+  {
+   "utterance": "Look up the most recent email.",
+   "uid": "dev_b-016-S12:retarget_last_email:d1:demo2-slot1:0",
+   "instruction": "Look up the most recent email.",
+   "correction": false,
+   "slot_id": "demo2-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Look up the most recent email.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "6b8cf5df92bd8761edab9b5ee12f9208df70300938b30482fdad899977eb5018"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}]}",
+    "request_hash": "6b8cf5df92bd8761edab9b5ee12f9208df70300938b30482fdad899977eb5018",
+    "cached": false,
+    "input_tokens": 4450,
+    "output_tokens": 46,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND_LAST",
+      "type": "EMAIL"
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.08
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "e0e744d6500416d40db4b290917e00c00848fb796dd58ece3cd06de5ffe5d569",
+   "state_after": "e0e744d6500416d40db4b290917e00c00848fb796dd58ece3cd06de5ffe5d569",
+   "seconds": 1.489
+  },
+  {
+   "utterance": "Make Xena its recipient.",
+   "uid": "dev_b-016-S12:retarget_last_email:d1:demo2-slot2:1",
+   "instruction": "Make Xena its recipient.",
+   "correction": false,
+   "slot_id": "demo2-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Make Xena its recipient.",
+    "values": {
+     "PERSON": [
+      "Xena"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "21d99179cdb299f4156d1279cae0b152d3b031f67788b0948a34b1054d8863b9"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Xena\"}]}",
+    "request_hash": "21d99179cdb299f4156d1279cae0b152d3b031f67788b0948a34b1054d8863b9",
+    "cached": false,
+    "input_tokens": 4470,
+    "output_tokens": 64,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "RECIPIENT",
+      "value": "Xena"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.21
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Xena"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000001"
+    ]
+   ],
+   "state_before": "e0e744d6500416d40db4b290917e00c00848fb796dd58ece3cd06de5ffe5d569",
+   "state_after": "b996e729e65aaf20503c17bf778cf6f327cf70688a345f95de2c92042e753bed",
+   "seconds": 2.006
+  },
+  {
+   "utterance": "Give back the email.",
+   "uid": "dev_b-016-S12:retarget_last_email:d1:demo2-slot3:2",
+   "instruction": "Give back the email.",
+   "correction": false,
+   "slot_id": "demo2-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Give back the email.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "2766cd1c88a5f81d28e560041a81970a035b27e05f2ea4fbcdee2241dbed96ac"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "2766cd1c88a5f81d28e560041a81970a035b27e05f2ea4fbcdee2241dbed96ac",
+    "cached": false,
+    "input_tokens": 4469,
+    "output_tokens": 36,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.04
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b996e729e65aaf20503c17bf778cf6f327cf70688a345f95de2c92042e753bed",
+   "state_after": "b996e729e65aaf20503c17bf778cf6f327cf70688a345f95de2c92042e753bed",
+   "seconds": 1.722
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Xena"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "106fa090c7f58e0743c4ef4ec81e57cec5b9bad0667c53fb506de4079761a886",
+ "nl_mode": "NL_TEACH"
+}

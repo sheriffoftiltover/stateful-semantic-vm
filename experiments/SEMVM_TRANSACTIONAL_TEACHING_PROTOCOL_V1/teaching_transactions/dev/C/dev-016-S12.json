@@ -1,0 +1,94 @@
+[
+ {
+  "target": "move_visit_and_parent",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_CLARIFICATION",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "REQUIRE_SECOND_DEMONSTRATION",
+    "end_detail": {
+     "insufficient": "\"one-shot: place=Vienna occurs in 2 slots; variable/constant split ambiguous -> need another example\""
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "CLARIFY_REFERENCE",
+      "slot": "demo1-slot6",
+      "offered": [
+       "r1",
+       "r2",
+       "r3"
+      ],
+      "answer": "r2"
+     }
+    ],
+    "example": {
+     "place": "Vienna"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_CLARIFICATION",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_CLARIFICATION",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "VERIFIED",
+    "events": [
+     {
+      "event": "CLARIFY_REFERENCE",
+      "slot": "demo2-slot6",
+      "offered": [
+       "r1",
+       "r2",
+       "r3"
+      ],
+      "answer": null
+     },
+     {
+      "event": "CLARIFY_REFERENCE",
+      "slot": "demo2-slot6",
+      "offered": [
+       "r1",
+       "r2",
+       "r3"
+      ],
+      "answer": "r2"
+     }
+    ],
+    "example": {
+     "place": "Dublin"
+    }
+   }
+  ]
+ }
+]

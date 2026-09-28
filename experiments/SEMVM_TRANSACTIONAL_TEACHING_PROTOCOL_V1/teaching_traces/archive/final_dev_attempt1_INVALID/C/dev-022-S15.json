@@ -1,0 +1,223 @@
+{
+ "scenario_id": "dev-022-S15",
+ "mode": "TEACHER",
+ "arm": "C",
+ "grounder": "LOCAL",
+ "backend": "MODAL",
+ "model": "openai/gpt-oss-120b",
+ "reasoning": "high",
+ "targets": [
+  {
+   "name": "close_oldest_open_request",
+   "status": "ACTIVE",
+   "transcript": [
+    {
+     "role": "system",
+     "content": "You are a TUTOR. You teach a small assistant (the STUDENT) a new reusable skill. The student cannot see your reasoning; it only reads the\nlines you write, executes them one by one on its personal-organizer database, and learns the skill from what it successfully executed.\n\nWHAT THE STUDENT'S DATABASE CONTAINS\n- Scheduling events: REMINDER, REQUEST, PLAN, NOTE. Each may have one item it is about: a CALL, EMAIL, VISIT or MESSAGE.\n- Relations: WHO (the person an event is with / who made it), RECIPIENT (the person an email or message is addressed to), WHEN (a time),\n  WHERE (a place), TOPIC. Every event also has a status: open or closed (new events are open).\n- To talk about calls, emails, visits or messages at a time, just say so (\"the calls at 3\", \"the calls scheduled at noon\"); the student\n  knows where times are stored. Do not look for reminders or requests unless the skill is about them.\n\nWHAT THE STUDENT CAN DO (one action per instruction is safest)\n- find events of a type, optionally filtered by person, time, place, topic and open/closed status   (\"Find the open messages to Kevin.\")\n- take the most recent event of a type                                                              (\"Take my latest note.\")\n- take the first one of a list; count a list                                                        (\"Take the first one.\" / \"Count them.\")\n- get the item an event is about, or the event an item belongs to                                   (\"Get the message it is about.\" / \"Get its parent.\")\n- look up the person / time / place / topic of one event, or collect it from every event of a list  (\"Find out who it is with.\" / \"Collect who they are with.\")\n- sort a list or group it by a relation; make a report of a relation's values per group            (\"Group them by who they are with.\" / \"Report the places in each group.\")\n- change an event's person / time / place / topic / recipient; set an event (or each event of a list) open or closed; delete\n                                                                                                    (\"Move it to Lima.\" / \"Mark each of them closed.\")\n- call one of the student's saved skills: NAME it and give EVERY input explicitly                    (\"Call messages_to with person Kevin.\" /\n                                                                                                     \"Call messages_to with that person.\")\n- return the final result of the skill                                                              (\"Return the count.\")\nThe student CANNOT send, text, phone, email, print, browse, save files, schedule new events, or do arithmetic beyond counting.\n\nTEACH EXACTLY THE REQUESTED SKILL (goal-faithfulness contract)\n- Do not add filters, restrictions, state predicates (open / closed), ordering criteria, constants, entity scopes or side conditions unless\n  the skill description explicitly requires them, or a saved skill's signature makes them necessary.\n- Do not silently narrow \"all\" to \"open\", \"emails\" to \"open emails\", \"calls with X\" to \"open calls with X\", or make analogous restrictions.\n- If the skill description is ambiguous, ask rather than inventing a constraint.\n\nSAVED SKILLS\n- To use a saved skill, always write \"Call <skill name> with <input> <value>\" (or \"... with that <result>\"). Never rely on \"use that skill\",\n  \"do the earlier procedure\" or describing what the skill does: the student only calls a skill you name, with the inputs you give.\n\nHOW TO WRITE A DEMONSTRATION\nEXAMPLE: <input>=<value>, <input>=<value>      (REQUIRED, first line: the example values for EVERY input of the skill; no step runs before it)\nSTEP: <one instruction>\nSTEP: <one instruction>\n...\n- Use concrete example values (never placeholders). Use only values from VALUES.\n- Refer to earlier results with words like \"them\", \"it\", \"those calls\", \"the count\".\n- Only the last STEP returns the skill's result (\"Return ...\"). No earlier STEP may ask to return or give back anything.\n- Write nothing except the EXAMPLE line and STEP lines.\n\nWHEN THE STUDENT ASKS YOU SOMETHING (it always says which step it is about)\n- RESTATE step k: reply only with the replacement STEP line(s) for step k. If step k really should not be part of the demonstration,\n  reply with the single line CANCEL_SLOT (a step the student says was obscured by the evaluator cannot be cancelled: restate it).\n- WHICH RESULT for step k: the student lists the possible results with ids (r1, r2, ...). Reply with one line: REFERENT: <id>\n  (or REFERENT: NONE if none of them is meant, then restate the step).\n- MISSING EXAMPLE: reply with one line: EXAMPLE: <input>=<value>, ... for every input of the skill.\n- ANOTHER DEMONSTRATION: reply with a new EXAMPLE line (different example values) and a complete list of STEP lines."
+    },
+    {
+     "role": "user",
+     "content": "SKILL TO TEACH: close_oldest_open_request(person:person)\nWHAT IT DOES: Given a person, take that person's open requests, sort them by time, close the first one, and return it.\n\nTHE STUDENT'S SAVED SKILLS: (none)\n\nVALUES (use only these for example values):\n- people: Uncle, Mom\n- times: 10, 1:30\n- places: Seoul, Tokyo\n- topics: schedule, contract\n\nSTYLE: Teach compactly: a few STEP lines, each may combine two closely related actions (e.g. \"find ... and count them\").\n\nGive demonstration 1 now (EXAMPLE line, then STEP lines)."
+    },
+    {
+     "role": "assistant",
+     "content": "EXAMPLE: person=Uncle\nSTEP: Find the open requests with person Uncle and sort them by when.\nSTEP: Take the first one.\nSTEP: Mark it closed.\nSTEP: Return it."
+    },
+    {
+     "role": "user",
+     "content": "I could not carry out step 1 (\"Find the open requests with person Uncle and sort them by when.\") because I could not split it into separate actions. RESTATE step 1: reply only with replacement STEP line(s) for step 1, or CANCEL_SLOT."
+    },
+    {
+     "role": "assistant",
+     "content": "STEP: Find the open requests with person Uncle.\nSTEP: Sort them by when."
+    },
+    {
+     "role": "user",
+     "content": "I could not carry out step 1 (\"Find the open requests with person Uncle.\") because it needs an action I do not have. RESTATE step 1: reply only with replacement STEP line(s) for step 1, or CANCEL_SLOT."
+    },
+    {
+     "role": "assistant",
+     "content": "STEP: Find the open requests with who Uncle.  \nSTEP: Sort them by when."
+    },
+    {
+     "role": "user",
+     "content": "I could not complete demonstration 1 (slot recovery fail); it was discarded and nothing was learned from it. Please give a complete new demonstration (EXAMPLE line and STEP lines)."
+    },
+    {
+     "role": "assistant",
+     "content": "EXAMPLE: person=Mom\nSTEP: Find the open requests with who Mom.\nSTEP: Sort them by when.\nSTEP: Take the first one.\nSTEP: Mark it closed.\nSTEP: Return it."
+    },
+    {
+     "role": "user",
+     "content": "For step 3 (\"Take the first one.\") more than one earlier result fits:\n  r1: the requests found (who=Mom, status open) (1 element), from the step \"Find the open requests with who Mom.\"\n  r2: r1 sorted by when (1 element), from the step \"Sort them by when.\"\nReply with one line: REFERENT: <id>"
+    },
+    {
+     "role": "assistant",
+     "content": "REFERENT: r2"
+    }
+   ],
+   "teacher_log": [
+    {
+     "kind": "LESSON",
+     "reply": "EXAMPLE: person=Uncle\nSTEP: Find the open requests with person Uncle and sort them by when.\nSTEP: Take the first one.\nSTEP: Mark it closed.\nSTEP: Return it.",
+     "provenance": {
+      "role": "teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "42edfcbdc2211ee059af35a27a4cc34db9ebabbd374a1049c79e28b7f05731a2",
+      "prompt_sha256": "fc400bf240d2508e9fbdecd09125e9a36e662ba923325d93f8c330997d2d3ecd",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 4096,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "LESSON",
+      "meter_usd_before": 0.244,
+      "request_id": "chatcmpl-86f0854bf7c54cfba58361314950f858",
+      "timestamp": "2026-09-27T22:10:24Z",
+      "latency_s": 7.382,
+      "retry_count": 0,
+      "input_tokens": 1265,
+      "output_tokens": 860,
+      "finish_reason": "stop",
+      "response_sha256": "4ea03a799c3a4dbb23c6da53222fa23f4d91b0755bfd490c2e92993a4e2b6acf",
+      "reasoning_chars": 3516,
+      "cached": true
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Find the open requests with person Uncle.\nSTEP: Sort them by when.",
+     "provenance": {
+      "role": "teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "de0fa3f6ab81ada94b1ca31d9d2f25ccc165b705a982da666899632ff700a824",
+      "prompt_sha256": "d9a639587f3899b36281358078346d819d6a774c4ff5d9b05cbac33e650f7358",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 4096,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 1.805,
+      "request_id": "chatcmpl-28b5568651ec433f9344e8d553a4d6fc",
+      "timestamp": "2026-09-27T23:08:12Z",
+      "latency_s": 4.548,
+      "retry_count": 0,
+      "input_tokens": 1369,
+      "output_tokens": 685,
+      "finish_reason": "stop",
+      "response_sha256": "d6046cdae03c2275cedf1d0e5757301158745d45c28c97d878f25331d3e811e7",
+      "reasoning_chars": 2728,
+      "cached": false
+     },
+     "slot_id": "demo1-slot1"
+    },
+    {
+     "kind": "RESTATE_SLOT",
+     "reply": "STEP: Find the open requests with who Uncle.  \nSTEP: Sort them by when.",
+     "provenance": {
+      "role": "teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "558b60a828eb87a6a0ce8904208a5d936020dce7585ce50bcb882fd5ed52a8db",
+      "prompt_sha256": "8606702c4e4e70bfb0f8fd54ab49fc875a0b8df6d36647a21030b47f43f2dfae",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 4096,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "RESTATE_SLOT",
+      "meter_usd_before": 1.805,
+      "request_id": "chatcmpl-62c7a41da09043fcbe7bf963d8fc8351",
+      "timestamp": "2026-09-27T23:08:22Z",
+      "latency_s": 4.24,
+      "retry_count": 0,
+      "input_tokens": 1444,
+      "output_tokens": 632,
+      "finish_reason": "stop",
+      "response_sha256": "acb3ed060388a2e7f178ef9a4c03f9321e6820f54e0a6a91a7fee4a1953029d0",
+      "reasoning_chars": 2627,
+      "cached": false
+     },
+     "slot_id": "demo1-slot5"
+    },
+    {
+     "kind": "NEW_DEMO",
+     "reply": "EXAMPLE: person=Mom\nSTEP: Find the open requests with who Mom.\nSTEP: Sort them by when.\nSTEP: Take the first one.\nSTEP: Mark it closed.\nSTEP: Return it.",
+     "provenance": {
+      "role": "teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "6f23206303f9715b14e1917d7a2ecabb4fc92080e18faf6c60d826f57b111d9b",
+      "prompt_sha256": "64398f3e7f66bf10c8de2e4fb1bccb2e2d1ef875014005511fa1cc56ef4166f8",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 4096,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "NEW_DEMO",
+      "meter_usd_before": 1.822,
+      "request_id": "chatcmpl-ef3f10f6f38642079d81d55c349c235a",
+      "timestamp": "2026-09-27T23:08:32Z",
+      "latency_s": 4.954,
+      "retry_count": 0,
+      "input_tokens": 1506,
+      "output_tokens": 731,
+      "finish_reason": "stop",
+      "response_sha256": "3f731a288cb6ed062c341350b4b5996696521725360d464d9d52d9f2db70273b",
+      "reasoning_chars": 2948,
+      "cached": false
+     },
+     "slot_id": null
+    },
+    {
+     "kind": "CLARIFY_REFERENCE",
+     "reply": "REFERENT: r2",
+     "provenance": {
+      "role": "teacher",
+      "provider": "modal-vllm",
+      "model": "openai/gpt-oss-120b",
+      "request_hash": "ac715bab4cfa1375b7641e9c09f4cebf6ee87999a46990d39147971e2d58380e",
+      "prompt_sha256": "033640d493ad12837458af27e957e6a056c805d208f940b4931b691e6142a28d",
+      "generation": {
+       "model": "gpt-oss-120b",
+       "temperature": 0.0,
+       "top_p": 1.0,
+       "max_tokens": 4096,
+       "seed": 0,
+       "reasoning_effort": "high"
+      },
+      "kind": "CLARIFY_REFERENCE",
+      "meter_usd_before": 1.84,
+      "request_id": "chatcmpl-2fe83bdffec44a99b8e22b18db7e82de",
+      "timestamp": "2026-09-27T23:08:47Z",
+      "latency_s": 5.4,
+      "retry_count": 0,
+      "input_tokens": 1637,
+      "output_tokens": 832,
+      "finish_reason": "stop",
+      "response_sha256": "0c0ec6a03ef90562f498906915932f0ef4fd6cab072b7e9d41294442f5785e11",
+      "reasoning_chars": 3535,
+      "cached": false
+     },
+     "slot_id": "demo2-slot3"
+    }
+   ]
+  }
+ ]
+}

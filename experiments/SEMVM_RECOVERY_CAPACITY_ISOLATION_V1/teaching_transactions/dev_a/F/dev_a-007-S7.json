@@ -1,0 +1,94 @@
+[
+ {
+  "target": "count_requests_by_at",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:SLOT_RECOVERY_FAIL",
+    "end_detail": {
+     "slot": "demo1-slot5",
+     "error": "PLAN_INVALID",
+     "kind": "RESTATE_SLOT",
+     "reason": "SLOT_RECOVERY_FAIL"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot1",
+      "error": "PLAN_INVALID",
+      "reply_steps": 3,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot2",
+      "error": "PLAN_INVALID",
+      "reply_steps": 3,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "person": "Alice",
+     "time": "midnight"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "REQUIRE_SECOND_DEMONSTRATION",
+    "end_detail": {
+     "insufficient": "EVIDENCE_VACUOUS: step 1 (FIND) found nothing in every demonstration"
+    },
+    "learn": null,
+    "events": [],
+    "example": {
+     "person": "Dave",
+     "time": "9"
+    }
+   },
+   {
+    "index": 2,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "REQUIRE_SECOND_DEMONSTRATION",
+    "events": [],
+    "example": {
+     "person": "Alice",
+     "time": "noon"
+    }
+   }
+  ]
+ }
+]

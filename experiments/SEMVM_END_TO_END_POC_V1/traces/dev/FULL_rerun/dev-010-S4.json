@@ -1,0 +1,614 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642932,
+  "utterance_id": "dev-010-S4:0",
+  "INPUT": "remind gamma ; to Wendy re alpha : next and then so ; email alpha : while in Seoul re gamma",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o4",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "EMAIL",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Wendy",
+       4
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "PLACE",
+       "Seoul",
+       18
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Wendy",
+      4
+     ],
+     [
+      "PLACE",
+      "Seoul",
+      18
+     ],
+     [
+      "REMINDER",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     0
+    ]
+   },
+   "log_mass": 931.5590209960938,
+   "margin": 7.18951416015625,
+   "n_outputs": 79,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Wendy"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Seoul"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e1",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Wendy",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Seoul",
+    "place:seoul"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Wendy"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:seoul",
+    "PLACE",
+    "seoul",
+    "Seoul"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9a7e3d924414faba9d322390c5363664e13b6c12e89263f4b9efb1782379dda0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Wendy"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:seoul"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:seoul"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Wendy"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2642932,
+  "utterance_id": "dev-010-S4:1",
+  "INPUT": "QUERY RECIPIENT OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9b6f7fc5af2a7207cd4841f841378a209776cbdeba3c6189d219d9a268abf477",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "RESPONSE": "Wendy",
+  "RETURN_RENDERED": [
+   "Wendy"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:seoul"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Wendy"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642932,
+  "utterance_id": "dev-010-S4:2",
+  "INPUT": "QUERY RECIPIENT OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "190469b7899b0bc8b27e2eb09e18a2a11db41a4073067559af32a25c2a1c7812",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:seoul"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Wendy"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642932,
+  "utterance_id": "dev-010-S4:3",
+  "INPUT": "QUERY WHERE OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "40e832621788cd729b6176ddca66b48316a19ef3723dc98892e714355af5b5fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:seoul"
+  ],
+  "STATE_AFTER": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "RESPONSE": "Seoul",
+  "RETURN_RENDERED": [
+   "Seoul"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:seoul"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Wendy"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2642932,
+  "utterance_id": "dev-010-S4:4",
+  "INPUT": "QUERY WHERE OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f99549db16bb27827bd1fbbef6a5d29fd71d09e84bf36170923849a84b5eb74d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "31b4982343af3512acd47083f0f23d047ae3644a321c559259e77dc880f8ea66",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:seoul"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Wendy"
+    ]
+   ]
+  }
+ }
+]

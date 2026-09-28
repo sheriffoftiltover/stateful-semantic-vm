@@ -1,0 +1,42 @@
+{
+ "name": "retarget_last_email",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE retarget_last_email(person:PERSON)\n$v0 = FIND_LAST EMAIL\nUPDATE $v0 RECIPIENT={person}\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE retarget_last_email()\n$v0 = FIND_LAST EMAIL\nUPDATE $v0 RECIPIENT=Grandma\nRETURN $v0\nEND",
+   "program_hash": "24e28d714903b8e6800d6e8dbcb1c9cee16efdec2c8452c4e01be444d5dd9f69"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:retarget_last_email:v2",
+ "chosen": "external"
+}

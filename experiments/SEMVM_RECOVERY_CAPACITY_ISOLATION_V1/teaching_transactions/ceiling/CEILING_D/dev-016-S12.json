@@ -1,0 +1,225 @@
+[
+ {
+  "target": "move_visit_and_parent",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:SLOT_RECOVERY_FAIL",
+    "end_detail": {
+     "slot": "demo1-slot11",
+     "error": "PREMATURE_TERMINAL_ACTION",
+     "kind": "RESTATE_SLOT",
+     "reason": "SLOT_RECOVERY_FAIL"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot5",
+      "error": "SCHEMA",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot7",
+      "error": "PREMATURE_TERMINAL_ACTION",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot8",
+      "error": "PREMATURE_TERMINAL_ACTION",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot9",
+      "error": "PREMATURE_TERMINAL_ACTION",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo1-slot10",
+      "error": "PREMATURE_TERMINAL_ACTION",
+      "reply_steps": 1,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "place": "Seoul"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "REQUIRE_SECOND_DEMONSTRATION",
+    "end_detail": {
+     "insufficient": "\"one-shot: place=Delhi occurs in 2 slots; variable/constant split ambiguous -> need another example\""
+    },
+    "learn": null,
+    "events": [],
+    "example": {
+     "place": "Delhi"
+    }
+   },
+   {
+    "index": 2,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:RESTARTED_BY_TEACHER",
+    "end_detail": {
+     "reason": "RESTARTED_BY_TEACHER"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo3-slot5",
+      "error": "SCHEMA",
+      "reply_steps": 1,
+      "cancel": false
+     },
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo3-slot6",
+      "error": "GROUNDER",
+      "reply_steps": 6,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "place": "Vienna"
+    }
+   },
+   {
+    "index": 3,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_REPHRASE",
+     "ABORTED"
+    ],
+    "end": "ABORTED:RESTARTED_BY_TEACHER",
+    "end_detail": {
+     "reason": "RESTARTED_BY_TEACHER"
+    },
+    "learn": null,
+    "events": [
+     {
+      "event": "RESTATE_SLOT",
+      "slot": "demo4-slot6",
+      "error": "GROUNDER",
+      "reply_steps": 6,
+      "cancel": false
+     }
+    ],
+    "example": {
+     "place": "Dublin"
+    }
+   },
+   {
+    "index": 4,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_CLARIFICATION",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_CLARIFICATION",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "EVIDENCE_CONFLICT",
+    "events": [
+     {
+      "event": "CLARIFY_REFERENCE",
+      "slot": "demo5-slot6",
+      "offered": [
+       "r1",
+       "r2",
+       "r3"
+      ],
+      "answer": null
+     },
+     {
+      "event": "CLARIFY_REFERENCE",
+      "slot": "demo5-slot6",
+      "offered": [
+       "r1",
+       "r2",
+       "r3"
+      ],
+      "answer": "r1"
+     }
+    ],
+    "example": {
+     "place": "Seoul"
+    }
+   }
+  ]
+ }
+]

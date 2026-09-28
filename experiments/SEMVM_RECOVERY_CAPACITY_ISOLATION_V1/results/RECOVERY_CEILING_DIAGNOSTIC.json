@@ -1,0 +1,254 @@
+{
+ "diagnostic": "RCI Stage 0C (non-confirmatory; cannot earn LOCKED)",
+ "budget": {
+  "max_teacher_turns_per_target": 20,
+  "max_clarification_exchanges_per_slot": 5,
+  "max_rephrase_exchanges_per_slot": 5,
+  "max_demonstrations_per_target": 5
+ },
+ "teacher_max_tokens": 16384,
+ "pool_size": 4,
+ "handoff": {
+  "app": "semvm-rci-hosted",
+  "time": "2026-09-28T03:40:02Z",
+  "modal_app_stop_rc": 0,
+  "endpoint_after_stop": "HTTP 404",
+  "app_state_after": null,
+  "teacher_destroyed": true,
+  "grounder_destroyed": true
+ },
+ "targets": {
+  "dev-009-S9": {
+   "target": "count_calls_for_time_person",
+   "parent_failure": "provider truncation / composite",
+   "added_pool_values": {
+    "people": [
+     "Victor",
+     "Trent"
+    ],
+    "times": [
+     "midnight",
+     "noon"
+    ],
+    "places": [
+     "Dublin",
+     "Tokyo"
+    ],
+    "topics": [
+     "trip",
+     "launch"
+    ]
+   },
+   "RECOVERED_EXACTLY": true,
+   "LEARNED_EXACTLY": true,
+   "status": "ACTIVE",
+   "fail": null,
+   "teacher_turns": 2,
+   "teacher_turns_after_recovery_start": 1,
+   "cost_band": "LOW-COST",
+   "grounder_calls": 12,
+   "grounder_retries": 1,
+   "clarification_events": 0,
+   "clarification_attempts": 0,
+   "rephrase_attempts": 1,
+   "demonstrations": 1,
+   "demo_ends": [
+    "VERIFIED"
+   ],
+   "input_tokens": 59383,
+   "output_tokens": 6427,
+   "provider_truncations": 0,
+   "transcript": "teaching_traces/ceiling/CEILING_D/dev-009-S9.json"
+  },
+  "dev-016-S12": {
+   "target": "move_visit_and_parent",
+   "parent_failure": "false clarification / recovery budget",
+   "added_pool_values": {
+    "people": [
+     "Rita",
+     "Bob"
+    ],
+    "times": [
+     "12",
+     "9"
+    ],
+    "places": [
+     "Delhi",
+     "Seoul"
+    ],
+    "topics": [
+     "contract",
+     "schedule"
+    ]
+   },
+   "RECOVERED_EXACTLY": false,
+   "LEARNED_EXACTLY": false,
+   "status": "TEACHER_EPISODE_FAIL",
+   "fail": "demonstration budget exhausted (last: EVIDENCE_CONFLICT)",
+   "teacher_turns": 13,
+   "teacher_turns_after_recovery_start": 12,
+   "cost_band": "HIGH",
+   "grounder_calls": 41,
+   "grounder_retries": 5,
+   "clarification_events": 2,
+   "clarification_attempts": 2,
+   "rephrase_attempts": 8,
+   "demonstrations": 5,
+   "demo_ends": [
+    "ABORTED:SLOT_RECOVERY_FAIL",
+    "REQUIRE_SECOND_DEMONSTRATION",
+    "ABORTED:RESTARTED_BY_TEACHER",
+    "ABORTED:RESTARTED_BY_TEACHER",
+    "OK"
+   ],
+   "input_tokens": 207221,
+   "output_tokens": 26089,
+   "provider_truncations": 0,
+   "transcript": "teaching_traces/ceiling/CEILING_D/dev-016-S12.json"
+  },
+  "dev-018-S14L": {
+   "target": "count_open_calls_with",
+   "parent_failure": "evidence conflict / value-pool insufficiency",
+   "added_pool_values": {
+    "people": [
+     "Sam",
+     "Ivan"
+    ],
+    "times": [
+     "5:45",
+     "3:15"
+    ],
+    "places": [
+     "Lima",
+     "Delhi"
+    ],
+    "topics": [
+     "schedule",
+     "survey"
+    ]
+   },
+   "RECOVERED_EXACTLY": true,
+   "LEARNED_EXACTLY": true,
+   "status": "ACTIVE",
+   "fail": null,
+   "teacher_turns": 3,
+   "teacher_turns_after_recovery_start": 2,
+   "cost_band": "LOW-COST",
+   "grounder_calls": 7,
+   "grounder_retries": 1,
+   "clarification_events": 0,
+   "clarification_attempts": 0,
+   "rephrase_attempts": 0,
+   "demonstrations": 3,
+   "demo_ends": [
+    "OK",
+    "OK",
+    "OK"
+   ],
+   "input_tokens": 35540,
+   "output_tokens": 2650,
+   "provider_truncations": 0,
+   "transcript": "teaching_traces/ceiling/CEILING_D/dev-018-S14L.json"
+  },
+  "dev-019-S14L": {
+   "target": "count_open_calls_with",
+   "parent_failure": "evidence conflict / value-pool insufficiency",
+   "added_pool_values": {
+    "people": [
+     "Mallory",
+     "Heidi"
+    ],
+    "times": [
+     "7:45",
+     "6"
+    ],
+    "places": [
+     "Paris",
+     "Lima"
+    ],
+    "topics": [
+     "contract",
+     "schedule"
+    ]
+   },
+   "RECOVERED_EXACTLY": true,
+   "LEARNED_EXACTLY": true,
+   "status": "ACTIVE",
+   "fail": null,
+   "teacher_turns": 7,
+   "teacher_turns_after_recovery_start": 4,
+   "cost_band": "LOW-COST",
+   "grounder_calls": 9,
+   "grounder_retries": 0,
+   "clarification_events": 0,
+   "clarification_attempts": 0,
+   "rephrase_attempts": 0,
+   "demonstrations": 3,
+   "demo_ends": [
+    "OK",
+    "OK",
+    "OK"
+   ],
+   "input_tokens": 49927,
+   "output_tokens": 3216,
+   "provider_truncations": 0,
+   "transcript": "teaching_traces/ceiling/CEILING_D/dev-019-S14L.json"
+  },
+  "dev-023-S15": {
+   "target": "close_oldest_open_request",
+   "parent_failure": "teacher-turn budget exhaustion",
+   "added_pool_values": {
+    "people": [
+     "Grandpa",
+     "Carol"
+    ],
+    "times": [
+     "2:45",
+     "dusk"
+    ],
+    "places": [
+     "Delhi",
+     "Oslo"
+    ],
+    "topics": [
+     "budget",
+     "invoice"
+    ]
+   },
+   "RECOVERED_EXACTLY": true,
+   "LEARNED_EXACTLY": true,
+   "status": "ACTIVE",
+   "fail": null,
+   "teacher_turns": 6,
+   "teacher_turns_after_recovery_start": 3,
+   "cost_band": "LOW-COST",
+   "grounder_calls": 6,
+   "grounder_retries": 0,
+   "clarification_events": 1,
+   "clarification_attempts": 1,
+   "rephrase_attempts": 0,
+   "demonstrations": 1,
+   "demo_ends": [
+    "VERIFIED"
+   ],
+   "input_tokens": 35401,
+   "output_tokens": 3085,
+   "provider_truncations": 0,
+   "transcript": "teaching_traces/ceiling/CEILING_D/dev-023-S15.json"
+  }
+ },
+ "recovered_exactly": "4/5",
+ "go_no_go": "GO (>= 1 of 5 recovered exactly; Stage 1 may proceed)",
+ "handoff_initial_defect": {
+  "app": "semvm-htg-hosted",
+  "time": "2026-09-28T03:39:34Z",
+  "modal_app_stop_rc": 1,
+  "endpoint_after_stop": "HTTP 401",
+  "app_state_after": null,
+  "teacher_destroyed": false,
+  "grounder_destroyed": false,
+  "meter_usd_at_deploy": 0.262,
+  "meter_usd_after": 0.529
+ },
+ "handoff_note": "rci_ceiling.py called htg_evaluate.teardown without setting its app name (stopped the absent semvm-htg-hosted, rc 1, endpoint still 401). Repaired immediately after: semvm-rci-hosted stopped, 404 verified. Stage 0C is acquisition-only (no reuse phase); no student process ran post-acquisition."
+}

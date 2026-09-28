@@ -1,0 +1,560 @@
+[
+ {
+  "turn": 0,
+  "pid": 2642668,
+  "utterance_id": "dev-029-S12:0",
+  "INPUT": "request gamma at midnight per delta , and after that then , email delta and to Oscar per gamma",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "straddle_o3",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Oscar",
+       16
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       12
+      ]
+     ],
+     [
+      "WHEN",
+      [
+       "EMAIL",
+       null,
+       12
+      ],
+      [
+       "TIME",
+       "midnight",
+       3
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      12
+     ],
+     [
+      "PERSON",
+      "Oscar",
+      16
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ],
+     [
+      "TIME",
+      "midnight",
+      3
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1022.0307006835938,
+   "margin": 1.95782470703125,
+   "n_outputs": 76,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Oscar"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "midnight"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e0",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e1",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Oscar",
+    "NEW",
+    null
+   ],
+   [
+    "TIME",
+    "v1",
+    "midnight",
+    "time:MIDNIGHT"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Oscar"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:MIDNIGHT",
+    "TIME",
+    "MIDNIGHT",
+    "midnight"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHEN",
+    "time:MIDNIGHT"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9871b40ca50a8a3135d7578506dbe936ea0b8a0161707169f9327fc2f336669b",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Oscar"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "WHEN",
+    "time:MIDNIGHT"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "af67661266b4ab927b7d593496f1aaeda4eb15c4557914b9a5cf5eb841aa530e",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Oscar"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2642688,
+  "utterance_id": "dev-029-S12:2",
+  "INPUT": "QUERY WHEN OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "af67661266b4ab927b7d593496f1aaeda4eb15c4557914b9a5cf5eb841aa530e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c289c2c09f2856a043061942abeb942bdfa4616ab29841346a7f9f0270309968",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:MIDNIGHT"
+  ],
+  "STATE_AFTER": "af67661266b4ab927b7d593496f1aaeda4eb15c4557914b9a5cf5eb841aa530e",
+  "RESPONSE": "midnight",
+  "RETURN_RENDERED": [
+   "midnight"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHEN",
+     "time:MIDNIGHT"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Oscar"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2642688,
+  "utterance_id": "dev-029-S12:3",
+  "INPUT": "UPDATE LAST_EMAIL WHEN=6:15",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "af67661266b4ab927b7d593496f1aaeda4eb15c4557914b9a5cf5eb841aa530e",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_EMAIL",
+   "set": [
+    [
+     "WHEN",
+     "6:15"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "email:000001",
+    "WHEN",
+    "time:MIDNIGHT"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:06:15",
+    "TIME",
+    "06:15",
+    "6:15"
+   ],
+   [
+    "ASSERT",
+    "email:000001",
+    "WHEN",
+    "time:06:15"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7ded8dc7059a65ce50e92a3782d974da7661d02b95e0a2f6681d1a271e407cad",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "email:000001",
+    "WHEN",
+    "time:MIDNIGHT"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "WHEN",
+    "time:06:15"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "57fc67b9f77e6c8bd68922e623829c8173abdaeac8e55c5ed92190d6b6715f7e",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHEN",
+     "time:06:15"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Oscar"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2642691,
+  "utterance_id": "dev-029-S12:5",
+  "INPUT": "QUERY WHEN OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "57fc67b9f77e6c8bd68922e623829c8173abdaeac8e55c5ed92190d6b6715f7e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c289c2c09f2856a043061942abeb942bdfa4616ab29841346a7f9f0270309968",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "time:06:15"
+  ],
+  "STATE_AFTER": "57fc67b9f77e6c8bd68922e623829c8173abdaeac8e55c5ed92190d6b6715f7e",
+  "RESPONSE": "6:15",
+  "RETURN_RENDERED": [
+   "6:15"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHEN",
+     "time:06:15"
+    ],
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Oscar"
+    ]
+   ]
+  }
+ }
+]

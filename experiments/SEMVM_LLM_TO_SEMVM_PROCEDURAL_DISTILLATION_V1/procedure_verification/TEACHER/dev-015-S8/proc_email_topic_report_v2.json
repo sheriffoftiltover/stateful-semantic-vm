@@ -1,0 +1,58 @@
+{
+ "name": "email_topic_report",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE email_topic_report()\n$v0 = FIND EMAIL STATUS=OPEN\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_REPLAY",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "replay_0",
+     {
+      "got": {
+       "events": [
+        "email:000001",
+        "email:000002",
+        "email:000003",
+        "email:000004",
+        "email:000005",
+        "email:000006"
+       ]
+      },
+      "want": {
+       "events": [
+        "email:000001",
+        "email:000002",
+        "email:000004",
+        "email:000005"
+       ]
+      },
+      "status": "OK"
+     }
+    ]
+   ],
+   "program": "PROCEDURE email_topic_report()\n$v0 = FIND EMAIL\nRETURN $v0\nEND",
+   "program_hash": "29ed450df5f519790a1f3c2d433d793a971f6dfc9e9d5447c5646a40639609a1"
+  }
+ },
+ "status": "REJECTED_FAILED_REPLAY",
+ "stored": "proc:email_topic_report:v2",
+ "chosen": "external"
+}

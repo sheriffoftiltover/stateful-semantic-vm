@@ -1,0 +1,197 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Sam"
+ },
+ "interaction_id": "locked_test-005-S5:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-005-S5/learn/snapshots/locked_test-005-S5_a1_start.sqlite",
+ "start_snapshot_sha256": "bed5f4a59021d092b8fc5c6e07cf5f2535c5eb6fcdd9371c29d74f36367b1c90",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-005-S5:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Sam"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "4caf4e29c6b19127eefe1aa954dbb90e45af6754a248f30766544bbf3051d013",
+   "state_after": "4caf4e29c6b19127eefe1aa954dbb90e45af6754a248f30766544bbf3051d013",
+   "seconds": 0.181
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-005-S5:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000004",
+     "OPEN",
+     "CLOSED"
+    ],
+    [
+     "status",
+     "call:000007",
+     "CLOSED",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "4caf4e29c6b19127eefe1aa954dbb90e45af6754a248f30766544bbf3051d013",
+   "state_after": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "seconds": 0.319
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-005-S5:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "state_after": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "seconds": 0.174
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-005-S5:a5",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "state_after": "c5d506f99826da3e210f504fd53bacc63883e41eedd832b6fd71ce35ad135070",
+   "seconds": 0.196
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Sam"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "f2ab8c859cbd8dd625071c533c2d8a49e18b301cd18272b68e5de95798b9e56b",
+ "nl_mode": "GOLD_TRACE"
+}

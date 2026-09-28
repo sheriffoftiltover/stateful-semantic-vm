@@ -1,0 +1,277 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641161,
+  "utterance_id": "dev-002-S1:0",
+  "INPUT": "note eta ; so then , about survey per eta , call epsilon",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TOPIC_VALUE",
+     "surface": "survey"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "survey",
+    "topic:survey"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:survey",
+    "TOPIC",
+    "survey",
+    "survey"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TOPIC",
+    "topic:survey"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "20e36a3e17b36f7c7c30bb37e60cd8315cd8d1217476e270204b56970752b882",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TOPIC",
+    "topic:survey"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "1a2e2e96811594bd2e77637abe4bcc0979902ff2c3cda4de29ef23c5b9731333",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:survey"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641161,
+  "utterance_id": "dev-002-S1:1",
+  "INPUT": "QUERY TOPIC OF NOTE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "1a2e2e96811594bd2e77637abe4bcc0979902ff2c3cda4de29ef23c5b9731333",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "44180c4ef09b871f5384ec976a4c42ba9e51d88bb786f81245649ba7883c2e06",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "topic:survey"
+  ],
+  "STATE_AFTER": "1a2e2e96811594bd2e77637abe4bcc0979902ff2c3cda4de29ef23c5b9731333",
+  "RESPONSE": "survey",
+  "RETURN_RENDERED": [
+   "survey"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:survey"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641161,
+  "utterance_id": "dev-002-S1:2",
+  "INPUT": "QUERY TOPIC OF CALL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "1a2e2e96811594bd2e77637abe4bcc0979902ff2c3cda4de29ef23c5b9731333",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "TOPIC",
+   "target": "CALL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "TOPIC",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c075038a52cd3771505e860df1ae0cce592c6a2cc4cff9228cf20bf1d8c328a0",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "1a2e2e96811594bd2e77637abe4bcc0979902ff2c3cda4de29ef23c5b9731333",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "note:000001",
+     "TODO",
+     "call:000001"
+    ],
+    [
+     "note:000001",
+     "TOPIC",
+     "topic:survey"
+    ]
+   ],
+   "aliases": []
+  }
+ }
+]

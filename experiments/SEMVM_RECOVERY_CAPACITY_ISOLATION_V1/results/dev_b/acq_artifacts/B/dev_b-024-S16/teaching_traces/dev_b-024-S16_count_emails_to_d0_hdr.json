@@ -1,0 +1,254 @@
+{
+ "name": "count_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Kevin"
+ },
+ "interaction_id": "dev_b-024-S16:count_emails_to:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/B/dev_b-024-S16/learn/snapshots/dev_b-024-S16_count_emails_to_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "f947d4089fcce8cae3fb13ff166fb3d3fe680d01a9be178a3a898d7b0551b80b",
+ "utterances": [
+  {
+   "utterance": "Look up every email sent to Kevin.",
+   "uid": "dev_b-024-S16:count_emails_to:d0:demo1-slot1:0",
+   "instruction": "Look up every email sent to Kevin.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Look up every email sent to Kevin.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "97aab79aff6b669f05c8bd28fd4d667057fe03ca3294eb81ea4af9375d0de45e"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"EMAIL\", \"where\": {\"RECIPIENT\": \"Kevin\"}}]}",
+    "request_hash": "97aab79aff6b669f05c8bd28fd4d667057fe03ca3294eb81ea4af9375d0de45e",
+    "cached": false,
+    "input_tokens": 4451,
+    "output_tokens": 60,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Kevin"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.61
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Kevin"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "1f6a685187691af3008bdba4614c9f8cebf60af9324c7d90712456187ad34735",
+   "state_after": "1f6a685187691af3008bdba4614c9f8cebf60af9324c7d90712456187ad34735",
+   "seconds": 2.161
+  },
+  {
+   "utterance": "Get the number of them.",
+   "uid": "dev_b-024-S16:count_emails_to:d0:demo1-slot2:1",
+   "instruction": "Get the number of them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Get the number of them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "bedc3475d44b1ced09e977739face4e4213c89ea757303e3eb2b4e189c0ed73d"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "a794b030019167874fa3ef9f119df98a1e5079db78ab2129292db88f597f3f22"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "a794b030019167874fa3ef9f119df98a1e5079db78ab2129292db88f597f3f22",
+    "cached": false,
+    "input_tokens": 4584,
+    "output_tokens": 73,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 2.48
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "1f6a685187691af3008bdba4614c9f8cebf60af9324c7d90712456187ad34735",
+   "state_after": "1f6a685187691af3008bdba4614c9f8cebf60af9324c7d90712456187ad34735",
+   "seconds": 2.934
+  },
+  {
+   "utterance": "Please give it back.",
+   "uid": "dev_b-024-S16:count_emails_to:d0:demo1-slot3:2",
+   "instruction": "Please give it back.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "11953634fc275b981f1acc2708345090553222ba8f32e21ebfda6c1771ba5d4e"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "11953634fc275b981f1acc2708345090553222ba8f32e21ebfda6c1771ba5d4e",
+    "cached": false,
+    "input_tokens": 4506,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R3"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.99
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "1f6a685187691af3008bdba4614c9f8cebf60af9324c7d90712456187ad34735",
+   "state_after": "1f6a685187691af3008bdba4614c9f8cebf60af9324c7d90712456187ad34735",
+   "seconds": 1.443
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Kevin"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "8dc509a4e413566b4de3b08ce87058940afaad0141498e1d18978dacfcbc9f7e",
+ "nl_mode": "NL_TEACH"
+}

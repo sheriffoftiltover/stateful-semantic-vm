@@ -1,0 +1,36 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev_b-016-S12:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-016-S12/learn/snapshots/dev_b-016-S12_a6_start.sqlite",
+ "start_snapshot_sha256": "540325a5d5b78c66f98fd2d3f83108e5ce6877ccf090f260360d9e973c996e24",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Xena"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "106fa090c7f58e0743c4ef4ec81e57cec5b9bad0667c53fb506de4079761a886",
+ "nl_mode": "GOLD_TRACE"
+}

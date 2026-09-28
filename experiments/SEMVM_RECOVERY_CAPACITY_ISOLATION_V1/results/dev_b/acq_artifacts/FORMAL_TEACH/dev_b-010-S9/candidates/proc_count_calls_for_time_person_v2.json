@@ -1,0 +1,42 @@
+{
+ "name": "count_calls_for_time_person",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_calls_for_time_person(time:TIME)\n$v0 = CALL person_on_call_at time={time}\n$v1 = CALL count_calls_with person=$v0\nRETURN $v1\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "time",
+        "TIME"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE count_calls_for_time_person()\n$v0 = CALL person_on_call_at time=9:30\n$v1 = CALL count_calls_with person=$v0\nRETURN $v1\nEND",
+   "program_hash": "99d1e52e465b4787cf99b5e2270ca4c97b72fa0b6cb508f0382eb66ddcb702c6"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:count_calls_for_time_person:v2",
+ "chosen": "external"
+}

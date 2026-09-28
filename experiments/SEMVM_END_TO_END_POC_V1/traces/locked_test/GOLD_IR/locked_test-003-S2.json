@@ -1,0 +1,580 @@
+[
+ {
+  "turn": 0,
+  "pid": 2644324,
+  "utterance_id": "locked_test-003-S2:0",
+  "INPUT": "remind gamma ; by Kevin per zeta : next and then so ; message zeta : to Zoe re zeta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Kevin"
+    },
+    {
+     "local_id": "v1",
+     "type": "PERSON",
+     "surface": "Zoe"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e1",
+     "object": "v1"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Kevin",
+    "NEW",
+    null
+   ],
+   [
+    "ENTITY",
+    "v1",
+    "Zoe",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Kevin"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v1"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v1",
+    "Zoe"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "RECIPIENT",
+    "$v1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "67ad4cf5763956560a2212844811cbff5dba6d0e5aeb34b6d5eac23109704b76",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Kevin"
+   ],
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Zoe"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2644324,
+  "utterance_id": "locked_test-003-S2:1",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "RESPONSE": "Kevin",
+  "RETURN_RENDERED": [
+   "Kevin"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2644324,
+  "utterance_id": "locked_test-003-S2:2",
+  "INPUT": "QUERY WHO OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "26331ecacc2d5fb25e14753b128c337f1341849215f048c47e77788bf9819e5a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2644324,
+  "utterance_id": "locked_test-003-S2:3",
+  "INPUT": "QUERY RECIPIENT OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c2e9d9dde65f568a67173bb3593548fa99c78ca17f84ad59a02e35f0e1e31933",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000002"
+  ],
+  "STATE_AFTER": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "RESPONSE": "Zoe",
+  "RETURN_RENDERED": [
+   "Zoe"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2644324,
+  "utterance_id": "locked_test-003-S2:4",
+  "INPUT": "QUERY RECIPIENT OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "190469b7899b0bc8b27e2eb09e18a2a11db41a4073067559af32a25c2a1c7812",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "afb24a19b1fb160f6828572b5f7edba47c730486bb5a37c4e780b0862d58cade",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Kevin"
+    ],
+    [
+     "person:000002",
+     "Zoe"
+    ]
+   ]
+  }
+ }
+]

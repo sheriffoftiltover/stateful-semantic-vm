@@ -1,0 +1,45 @@
+{
+ "name": "count_calls_with",
+ "mode": ":example",
+ "declared": {
+  "person": "Xena"
+ },
+ "interaction_id": "locked_test-015-S14D:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-015-S14D/learn/snapshots/locked_test-015-S14D_a1_start.sqlite",
+ "start_snapshot_sha256": "b4249583d6d5a253a85e756d50db5c81e2a5a2f5fb004aa0cec2a4eaff182417",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Xena"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "505e1de30632dd0a3adfc04073f2ac9c90c3c4e50392619a7ebe44d6ff44bd62",
+ "nl_mode": "GOLD_TRACE"
+}

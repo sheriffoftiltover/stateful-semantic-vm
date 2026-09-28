@@ -1,0 +1,479 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641815,
+  "utterance_id": "dev-026-S11:0",
+  "INPUT": "remind delta ; to Nina per alpha : next and then so ; email alpha : while in Delhi per delta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Nina"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Delhi"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e1",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Nina",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Delhi",
+    "place:delhi"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Nina"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:delhi",
+    "PLACE",
+    "delhi",
+    "Delhi"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:delhi"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0eeb02de6578231cda03f0055767aaa927a5648ed4f1507f079f3162e7fdef92",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Nina"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:delhi"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "5bcff093bd023c003d4b5d4cf743dc7fcfbd0c3877c906587f862854042dabe7",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641815,
+  "utterance_id": "dev-026-S11:1",
+  "INPUT": "RETRACT LAST_EMAIL RECIPIENT",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "5bcff093bd023c003d4b5d4cf743dc7fcfbd0c3877c906587f862854042dabe7",
+  "COMMAND_AST": {
+   "op": "RETRACT",
+   "ref": "LAST_EMAIL",
+   "rel": "RECIPIENT"
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "43926623c1907054746525ab6936f3f49d2e590f72efed6a97f9842faeb06a8e",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "email:000001",
+    "RECIPIENT",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "8b6c15952fa86bbc94bfabe18116a5a5e4e8e51c83d44df4f94e8f56c5199f80",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641815,
+  "utterance_id": "dev-026-S11:2",
+  "INPUT": "QUERY RECIPIENT OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "8b6c15952fa86bbc94bfabe18116a5a5e4e8e51c83d44df4f94e8f56c5199f80",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9b6f7fc5af2a7207cd4841f841378a209776cbdeba3c6189d219d9a268abf477",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "8b6c15952fa86bbc94bfabe18116a5a5e4e8e51c83d44df4f94e8f56c5199f80",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2641815,
+  "utterance_id": "dev-026-S11:3",
+  "INPUT": "DELETE LAST_EMAIL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "8b6c15952fa86bbc94bfabe18116a5a5e4e8e51c83d44df4f94e8f56c5199f80",
+  "COMMAND_AST": {
+   "op": "DELETE",
+   "ref": "LAST_EMAIL"
+  },
+  "VM_PROGRAM": [
+   [
+    "DELETE",
+    "email:000001"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "266f0791eb2104451c48532dd54a3573458ae50ec733784773326ced7e8e0c0d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-obj",
+    "email:000001"
+   ],
+   [
+    "-rel",
+    "reminder:000001",
+    "TODO",
+    "email:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "1b503b02d1dd31506259160fda7fb0f51f661b7438115bfb043a1d567a2bcdd6",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2641815,
+  "utterance_id": "dev-026-S11:4",
+  "INPUT": "QUERY WHERE OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "1b503b02d1dd31506259160fda7fb0f51f661b7438115bfb043a1d567a2bcdd6",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f99549db16bb27827bd1fbbef6a5d29fd71d09e84bf36170923849a84b5eb74d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "1b503b02d1dd31506259160fda7fb0f51f661b7438115bfb043a1d567a2bcdd6",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Nina"
+    ]
+   ]
+  }
+ }
+]

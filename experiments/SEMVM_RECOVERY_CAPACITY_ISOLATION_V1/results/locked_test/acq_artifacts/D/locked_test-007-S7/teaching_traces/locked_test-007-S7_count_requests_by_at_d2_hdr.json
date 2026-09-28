@@ -1,0 +1,258 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Oscar",
+  "time": "8"
+ },
+ "interaction_id": "locked_test-007-S7:count_requests_by_at:d2:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/D/locked_test-007-S7/learn/snapshots/locked_test-007-S7_count_requests_by_at_d2_hdr_start.sqlite",
+ "start_snapshot_sha256": "bfb2085f0e3c4b349e484226173816ed27bd702e06e0bfbfeb3001784ee8df20",
+ "utterances": [
+  {
+   "utterance": "Find the requests with who Oscar and when 8.",
+   "uid": "locked_test-007-S7:count_requests_by_at:d2:demo3-slot1:0",
+   "instruction": "Find the requests with who Oscar and when 8.",
+   "correction": false,
+   "slot_id": "demo3-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the requests with who Oscar and when 8.",
+    "values": {
+     "PERSON": [
+      "Oscar"
+     ],
+     "TIME": [
+      "8"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "722c0eef50dc7dba84db304347c7f9579fec78b5ca09bed93279387364630a28"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Oscar\", \"WHEN\": \"8\"}}]}",
+    "request_hash": "722c0eef50dc7dba84db304347c7f9579fec78b5ca09bed93279387364630a28",
+    "cached": false,
+    "input_tokens": 4454,
+    "output_tokens": 93,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Oscar",
+       "WHEN": "8"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.27
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Oscar"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "8"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "3dc9099149c5f0231fb179e7ea0c5b1d4b4aa34e05bb41217d09bf90d07b7d7d",
+   "state_after": "3dc9099149c5f0231fb179e7ea0c5b1d4b4aa34e05bb41217d09bf90d07b7d7d",
+   "seconds": 1.655
+  },
+  {
+   "utterance": "Count the requests.",
+   "uid": "locked_test-007-S7:count_requests_by_at:d2:demo3-slot2:1",
+   "instruction": "Count the requests.",
+   "correction": false,
+   "slot_id": "demo3-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count the requests.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "1cf22055b277c739cd72d391dca60379009f6d91a8b77aa13048792c30ec2d01"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "1cf22055b277c739cd72d391dca60379009f6d91a8b77aa13048792c30ec2d01",
+    "cached": false,
+    "input_tokens": 4486,
+    "output_tokens": 50,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.99
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3dc9099149c5f0231fb179e7ea0c5b1d4b4aa34e05bb41217d09bf90d07b7d7d",
+   "state_after": "3dc9099149c5f0231fb179e7ea0c5b1d4b4aa34e05bb41217d09bf90d07b7d7d",
+   "seconds": 1.373
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "locked_test-007-S7:count_requests_by_at:d2:demo3-slot3:2",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo3-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "e386e6585e6f944549ad2fe9c9bf0d5c47222e0616df4e9c9d82cb079023791c"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "e386e6585e6f944549ad2fe9c9bf0d5c47222e0616df4e9c9d82cb079023791c",
+    "cached": false,
+    "input_tokens": 4509,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.95
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "3dc9099149c5f0231fb179e7ea0c5b1d4b4aa34e05bb41217d09bf90d07b7d7d",
+   "state_after": "3dc9099149c5f0231fb179e7ea0c5b1d4b4aa34e05bb41217d09bf90d07b7d7d",
+   "seconds": 1.273
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Oscar"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "8"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "94fd57bb8b04121f9d04445510e5c7a7480913b59f72535dee463514cc6b6749",
+ "nl_mode": "NL_TEACH"
+}

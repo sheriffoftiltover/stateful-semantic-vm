@@ -1,0 +1,134 @@
+{
+ "name": "count_open_calls_with",
+ "mode": ":example",
+ "declared": {
+  "person": "Laura"
+ },
+ "interaction_id": "dev_b-019-S14L:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-019-S14L/learn/snapshots/dev_b-019-S14L_a1_start.sqlite",
+ "start_snapshot_sha256": "5e2df8dd31fa962608e1b281dd3b15158e6660c7ab6927a8697e07b6f2708419",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-019-S14L:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Laura"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "state_after": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "seconds": 0.116
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-019-S14L:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "state_after": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "seconds": 0.171
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-019-S14L:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "state_after": "d38d1cd0e0e2a9c833ac21e2ac1ebfc9054bc2d2bd9f272fc51cd59b1063ab69",
+   "seconds": 0.134
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Laura"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "0e5e04bec7b0307ff8b2956275efe23aca22b00665a9d95ea07f1f422212b606",
+ "nl_mode": "GOLD_TRACE"
+}

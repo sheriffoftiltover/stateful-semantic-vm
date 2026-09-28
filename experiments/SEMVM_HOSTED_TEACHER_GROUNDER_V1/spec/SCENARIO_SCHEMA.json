@@ -1,0 +1,34 @@
+{
+ "version": "HTG_SCENARIO_SCHEMA_V1 (= PDX schema + HTG strata)",
+ "generator": "scenarios/pdx_generate.py",
+ "seeds": {
+  "dev": "SEMVM-HTG-V1-DEV-20260928",
+  "locked_test": "SEMVM-HTG-V1-LOCKED-20260928-independent"
+ },
+ "strata_added": {
+  "S16": "relation-sensitive query (count_emails_to RECIPIENT / emails_about TOPIC / count_visits_in WHERE)",
+  "S17": "teacher over-constraint probe (all_requests_by / calls_with / count_emails_to; OPEN and CLOSED instances for the teacher pool)",
+  "S18": "evidence vacuity probe (count_emails_to; RELATION_SWAP 'to P' -> 'with P' in demonstration 1)"
+ },
+ "fixture_added": [
+  "visits at teacher-pool places",
+  "a CLOSED call with teacher-pool person 0 (T3)",
+  "a CLOSED request by teacher-pool person 0 (T3)",
+  "topic pools (teach: 2, eval: 2)"
+ ],
+ "fields": [
+  "scenario_id",
+  "suite",
+  "stratum",
+  "style",
+  "fixture",
+  "teacher_pool",
+  "eval_pool",
+  "curriculum[name, family, sig, goal, gold, demo_values, protocol, injection]",
+  "post_turns",
+  "post_expected",
+  "gold_acq_turns",
+  "formal_acq_turns",
+  "scripted{demos[example, lines, rephrase, units]}"
+ ]
+}

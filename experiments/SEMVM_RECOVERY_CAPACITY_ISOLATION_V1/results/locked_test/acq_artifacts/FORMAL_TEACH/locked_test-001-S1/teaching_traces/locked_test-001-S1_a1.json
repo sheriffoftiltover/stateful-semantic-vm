@@ -1,0 +1,38 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Oscar"
+ },
+ "interaction_id": "locked_test-001-S1:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-001-S1/learn/snapshots/locked_test-001-S1_a1_start.sqlite",
+ "start_snapshot_sha256": "a45c6ff8e6fb1276b5b6f6f411ae9e686324bae290f4a844654527fd3adb11e4",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Oscar"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "f6376f480c22448a9412cc875d5de71ba2ec49b677560bc0d20539e256b3c18d",
+ "nl_mode": "GOLD_TRACE"
+}

@@ -1,0 +1,42 @@
+{
+ "name": "emails_about",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE emails_about(topic:TOPIC)\n$v0 = FIND EMAIL WHERE SELF.TOPIC={topic}\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "topic",
+        "TOPIC"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE emails_about()\n$v0 = FIND EMAIL WHERE SELF.TOPIC=report\nRETURN $v0\nEND",
+   "program_hash": "28e07e5c10862d9d4e57f7209f0e669c364fcf2f444a78f8b14ce08f22117a2c"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:emails_about:v2",
+ "chosen": "external"
+}

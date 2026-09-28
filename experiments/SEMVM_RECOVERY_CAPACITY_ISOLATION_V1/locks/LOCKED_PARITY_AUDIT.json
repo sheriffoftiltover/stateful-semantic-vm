@@ -1,0 +1,50 @@
+{
+ "stage": "0A",
+ "date": "2026-09-28",
+ "inspected": [
+  "HTG generator source scenarios/pdx_generate.py (sha 26f2eb3cfa87291e439b216900b1fce5becd86d54da2f15ff1966430a5f287f1)",
+  "parent LOCKED manifest metadata (locks/PARENT_HTG_LOCKED_MANIFEST.json)",
+  "spec/SCENARIO_SCHEMA.json fields",
+  "run_acq.py / teacher/protocol.py (runtime settings)"
+ ],
+ "not_inspected": "no LOCKED scenario file content, answers, gold traces, gold procedures or scenario values",
+ "generator_matches_manifest": true,
+ "manifest_generator_sha256": "26f2eb3cfa87291e439b216900b1fce5becd86d54da2f15ff1966430a5f287f1",
+ "questions": {
+  "teacher_example_value_pool_size": {
+   "encoded_in_LOCKED": true,
+   "evidence": "PGen.pools_split returns a 2-value teacher pool per class and build() writes it into every scenario as 'teacher_pool' (also the source of the scripted demo_values and of the post-handoff eval pool split): {\"people\": [P[0], P[1]], \"times\": [T[0], T[1]], \"places\": [PLc[2], PLc[3]], \"topics\": [TO[0], TO[1]]}, {\"people\": P[2:], \"times\": T[2:], \"places\": PLc[:2], \"topics\": TO[2:]}"
+  },
+  "teacher_example_value_pool_contents": {
+   "encoded_in_LOCKED": true,
+   "evidence": "teacher_pool values are sampled per scenario at generation time; the complementary eval_pool (post-handoff novel arguments) is defined relative to it"
+  },
+  "teacher_max_tokens": {
+   "encoded_in_LOCKED": false,
+   "evidence": "runtime (run_acq.py --teacher-max-tokens / client GEN); not a scenario field"
+  },
+  "teacher_reasoning_effort": {
+   "encoded_in_LOCKED": false,
+   "evidence": "runtime (run_acq.py --reasoning)"
+  },
+  "teacher_turn_budgets": {
+   "encoded_in_LOCKED": false,
+   "evidence": "runtime (teacher/protocol.py BUDGET)"
+  },
+  "grounder_retry_budgets": {
+   "encoded_in_LOCKED": false,
+   "evidence": "runtime (student/hosted_grounder.py RETRIES)"
+  },
+  "recovery_budgets": {
+   "encoded_in_LOCKED": false,
+   "evidence": "runtime (teacher/protocol.py BUDGET)"
+  },
+  "hosted_endpoint_configuration": {
+   "encoded_in_LOCKED": false,
+   "evidence": "runtime (teacher/modal_teacher.py)"
+  }
+ },
+ "outcome": "N",
+ "ruling": "the successor's 4-value teacher pool is a generation-time property of every LOCKED scenario (teacher_pool, scripted demo values, eval-pool split). Parity cannot hold. The old 20-scenario LOCKED stays sealed and unused; a fresh successor LOCKED set is generated under the successor generator (4-value pool) from the SAME blind template file (templates_htg_locked.json, never inspected) with a new seed, hashed and sealed BEFORE DEV-A, and not inspected.",
+ "old_locked_manifest_sha256": "fb695df0475ac6ebdefd1f2c01a4ad192b14b08fd095a1c7fc1d78d57a4c186c"
+}

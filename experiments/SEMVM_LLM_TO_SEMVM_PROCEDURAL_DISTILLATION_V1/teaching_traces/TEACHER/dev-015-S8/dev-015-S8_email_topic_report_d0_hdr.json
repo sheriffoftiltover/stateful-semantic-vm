@@ -1,0 +1,280 @@
+{
+ "name": "email_topic_report",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev-015-S8:email_topic_report:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/TEACHER/dev-015-S8/learn/snapshots/dev-015-S8_email_topic_report_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "6a8c537b8ebe0e9eedd854307828ecc5d33556150d372d010c985e3611379c8e",
+ "utterances": [
+  {
+   "utterance": "Find the open emails.",
+   "uid": "dev-015-S8:email_topic_report:d0:l0",
+   "instruction": "Find the open emails.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the open emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"status\": \"OPEN\"}\n\n",
+      "score": -0.122
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+      "score": -3.979
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -6.315
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -10.784
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"status\": \"OPEN\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "status": "OPEN",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": {\"const\": \"OPEN\"}, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}]",
+      "score": -0.122,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}]",
+      "score": -3.979,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"EMAIL\"}}]",
+      "score": -6.315,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -10.784,
+      "n": 1
+     }
+    ],
+    "margin": 3.857,
+    "reference_notes": [],
+    "seconds": 2.85,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "7ca879b573d8d330f25acffe107adb9e111af02ae03ded8f531305cce0664835",
+   "state_after": "7ca879b573d8d330f25acffe107adb9e111af02ae03ded8f531305cce0664835",
+   "seconds": 2.933
+  },
+  {
+   "utterance": "Find the open emails.",
+   "uid": "dev-015-S8:email_topic_report:d0:l1",
+   "instruction": "Find the open emails.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the open emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"status\": \"OPEN\"}\n\n",
+      "score": -0.872
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -1.029
+     },
+     {
+      "text": "r2 = {\"op\": \"FILTER\", \"of\": \"r1\", \"status\": \"OPEN\"}\n\n",
+      "score": -3.084
+     },
+     {
+      "text": "r2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"status\": \"CLOSED\"}\n\n",
+      "score": -5.824
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"FIND\", \"type\": \"EMAIL\", \"status\": \"OPEN\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "status": "OPEN",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"op\": \"FIND\", \"status\": {\"const\": \"OPEN\"}, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}]",
+      "score": -0.872,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -1.029,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"FILTER\", \"rel\": \"STATUS\", \"value\": {\"const\": \"OPEN\"}}]",
+      "score": -3.084,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"op\": \"FIND\", \"status\": {\"const\": \"CLOSED\"}, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}]",
+      "score": -5.824,
+      "n": 1
+     }
+    ],
+    "margin": 0.157,
+    "reference_notes": [],
+    "seconds": 4.01,
+    "runner_up": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 4.012
+  },
+  {
+   "utterance": "Find the emails that are open.",
+   "uid": "dev-015-S8:email_topic_report:d0:l2",
+   "instruction": "Find the emails that are open.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the emails that are open.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.89
+     },
+     {
+      "text": "r2 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -3.291
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r1\"}}]",
+      "score": -0.89,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"EMAIL\"}}]",
+      "score": -3.291,
+      "n": 1
+     }
+    ],
+    "margin": 2.401,
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "seconds": 2.19,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "7ca879b573d8d330f25acffe107adb9e111af02ae03ded8f531305cce0664835",
+   "state_after": "7ca879b573d8d330f25acffe107adb9e111af02ae03ded8f531305cce0664835",
+   "seconds": 2.265
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "13a80d7dd14e693376f17c243b1f1f0df07ac55d67c3338b0f692f7c7e63a9c0",
+ "nl_mode": "NL_TEACH"
+}

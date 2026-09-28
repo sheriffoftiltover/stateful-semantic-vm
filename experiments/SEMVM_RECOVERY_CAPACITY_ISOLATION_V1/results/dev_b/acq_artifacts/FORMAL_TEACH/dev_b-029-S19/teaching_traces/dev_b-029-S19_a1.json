@@ -1,0 +1,53 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Erin",
+  "time": "8"
+ },
+ "interaction_id": "dev_b-029-S19:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-029-S19/learn/snapshots/dev_b-029-S19_a1_start.sqlite",
+ "start_snapshot_sha256": "6808341ef6f8af604c517a32cb30045c3b235c38be27ef1dfbdc2e56d152748e",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Erin"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "8"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "e3fc4e7da4c77eb1bdd978a49161b10e596b1eb17f0bd9d5d7a3e7d44f8579b9",
+ "nl_mode": "GOLD_TRACE"
+}

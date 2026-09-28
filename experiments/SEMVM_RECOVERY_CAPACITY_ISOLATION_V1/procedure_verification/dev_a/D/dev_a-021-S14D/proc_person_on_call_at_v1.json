@@ -1,0 +1,107 @@
+{
+ "name": "person_on_call_at",
+ "n_traces": 2,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE person_on_call_at(time:TIME)\n$v0 = FIND CALL WHERE PARENT.WHEN={time}\n$v1 = FIRST $v0\n$v2 = GET $v1 WHO\nRETURN $v2\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 2.85,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "replay_1",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "counterfactual_t1_0",
+     true
+    ],
+    [
+     "counterfactual_t1_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t1_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t1_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE person_on_call_at(time:TIME)\n$v0 = FIND CALL WHERE PARENT.WHEN={time}\n$v1 = FIRST $v0\n$v2 = GET $v1 WHO\nRETURN $v2\nEND",
+   "program_hash": "f12cf29d13139338e2f7a7d3656d247c6431e6839387d6695b6ec2080ac5b75b"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:person_on_call_at:v1",
+ "chosen": "deterministic"
+}

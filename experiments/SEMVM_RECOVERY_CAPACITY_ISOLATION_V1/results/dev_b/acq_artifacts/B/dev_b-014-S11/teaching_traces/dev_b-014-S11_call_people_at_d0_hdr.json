@@ -1,0 +1,251 @@
+{
+ "name": "call_people_at",
+ "mode": ":teach",
+ "declared": {
+  "time": "10"
+ },
+ "interaction_id": "dev_b-014-S11:call_people_at:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/B/dev_b-014-S11/learn/snapshots/dev_b-014-S11_call_people_at_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "834ae090e82b578c40ee43d94b1ce60a9788f812ed7750f10354c4eab630da3a",
+ "utterances": [
+  {
+   "utterance": "Please get the calls I have at 10 and get who each of them is with.",
+   "uid": "dev_b-014-S11:call_people_at:d0:demo1-slot1:0",
+   "instruction": "Please get the calls I have at 10 and get who each of them is with.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please get the calls I have at 10 and get who each of them is with.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "10"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "deff773f9e8b853a2a385c4fd61ee473051ce2e36cd7a3d0185db085045d2aa7"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "eb825dd418f9635215ed9e70ae91cf4d55e7e4812d5872fde8175ba83a5a9071"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"PARENT.WHEN\": \"10\"}}, {\"bind\": \"r2\", \"op\": \"SELECT\", \"of\": \"r1\", \"rel\": \"WHO\"}]}",
+    "request_hash": "eb825dd418f9635215ed9e70ae91cf4d55e7e4812d5872fde8175ba83a5a9071",
+    "cached": false,
+    "input_tokens": 4604,
+    "output_tokens": 135,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "PARENT.WHEN": "10"
+      }
+     },
+     {
+      "bind": "r2",
+      "op": "SELECT",
+      "of": "r1",
+      "rel": "WHO"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "SELECT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 4.46
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       {
+        "const": "10"
+       }
+      ]
+     ],
+     "status": null
+    },
+    {
+     "op": "SELECT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     },
+     "rel": "WHO"
+    }
+   ],
+   "diff": [],
+   "state_before": "f27c0e235de2e73bc411deb82c6af2ab7b0363652ae8bee93e11f25fb37e5768",
+   "state_after": "f27c0e235de2e73bc411deb82c6af2ab7b0363652ae8bee93e11f25fb37e5768",
+   "seconds": 4.998
+  },
+  {
+   "utterance": "Now do the usual thing with it, like we did for Kevin.",
+   "uid": "dev_b-014-S11:call_people_at:d0:demo1-slot3:1",
+   "instruction": "Now do the usual thing with it, like we did for Kevin.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Now do the usual thing with it, like we did for Kevin.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "grounder asks: What specific action should be performed on the list of WHO values (r2) \u2013 e.g., filter, count, return, etc.?",
+      "feedback": null,
+      "request_hash": "7df2529ff9726799109982a012a7498ff738aa5f017dbb56c2b5d3eb70e2db80"
+     }
+    ],
+    "raw_text": "{\"status\": \"CLARIFY\", \"question\": \"What specific action should be performed on the list of WHO values (r2) \u2013 e.g., filter, count, return, etc.?\"}",
+    "request_hash": "7df2529ff9726799109982a012a7498ff738aa5f017dbb56c2b5d3eb70e2db80",
+    "cached": false,
+    "input_tokens": 4527,
+    "output_tokens": 179,
+    "envelope_status": "CLARIFY",
+    "question": "What specific action should be performed on the list of WHO values (r2) \u2013 e.g., filter, count, return, etc.?",
+    "retried": false,
+    "seconds": 1.84
+   },
+   "status": "CLARIFY",
+   "seconds": 1.839
+  },
+  {
+   "utterance": "Return the list of people.",
+   "uid": "dev_b-014-S11:call_people_at:d0:demo1-slot4:2",
+   "instruction": "Return the list of people.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return the list of people.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "9fb842be7c1e25e31e5d607981f4960e71d2afe034977bbd6402e081b70cbaac"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "9fb842be7c1e25e31e5d607981f4960e71d2afe034977bbd6402e081b70cbaac",
+    "cached": true,
+    "input_tokens": 4519,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "f27c0e235de2e73bc411deb82c6af2ab7b0363652ae8bee93e11f25fb37e5768",
+   "state_after": "f27c0e235de2e73bc411deb82c6af2ab7b0363652ae8bee93e11f25fb37e5768",
+   "seconds": 0.392
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     {
+      "const": "10"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "SELECT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "WHO"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "31edca33d70f6cfdf9f7b45d8a2cff10349e68d2c9c17db75330eb47fa813c6b",
+ "nl_mode": "NL_TEACH"
+}

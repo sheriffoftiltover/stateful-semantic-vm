@@ -1,0 +1,227 @@
+{
+ "name": "close_open_emails_to",
+ "mode": ":example",
+ "declared": {
+  "person": "Grace"
+ },
+ "interaction_id": "dev_b-018-S14L:close_open_emails_to:d2:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/E/dev_b-018-S14L/learn/snapshots/dev_b-018-S14L_close_open_emails_to_d2_hdr_start.sqlite",
+ "start_snapshot_sha256": "158b11915c33f80f7aefcd411d39023fc3b6774228a3651654b3321982287339",
+ "utterances": [
+  {
+   "utterance": "Please get every open email going to Grace, then close each of them.",
+   "uid": "dev_b-018-S14L:close_open_emails_to:d2:demo3-slot1:0",
+   "instruction": "Please get every open email going to Grace, then close each of them.",
+   "correction": false,
+   "slot_id": "demo3-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please get every open email going to Grace, then close each of them.",
+    "values": {
+     "PERSON": [
+      "Grace"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "5983495a28612f32e7416e582ea134492cd757eb7d51854db5ea1782488895d8"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"EMAIL\",\n      \"where\": { \"RECIPIENT\": \"Grace\" },\n      \"status\": \"OPEN\"\n    },\n    {\n      \"op\": \"SET_STATUS\",\n      \"each\": \"r1\",\n      \"value\": \"CLOSED\"\n    }\n  ]\n}",
+    "request_hash": "5983495a28612f32e7416e582ea134492cd757eb7d51854db5ea1782488895d8",
+    "cached": true,
+    "input_tokens": 4458,
+    "output_tokens": 125,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "EMAIL",
+      "where": {
+       "RECIPIENT": "Grace"
+      },
+      "status": "OPEN"
+     },
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [
+      [
+       "SELF",
+       "RECIPIENT",
+       {
+        "const": "Grace"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    },
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "email:000005",
+     "OPEN",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "d38a5c01f92c67760d953587b11080c347ceabcdb2faa420a9b05f6da9700988",
+   "state_after": "563ec24f7cb7f97099a60094d9c5f46f663ddbb22a5d4bbd6ccd89a492780193",
+   "seconds": 0.561
+  },
+  {
+   "utterance": "Return the emails.",
+   "uid": "dev_b-018-S14L:close_open_emails_to:d2:demo3-slot2:1",
+   "instruction": "Return the emails.",
+   "correction": false,
+   "slot_id": "demo3-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return the emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "616d42d86692aee7884439dc062c6b377765ce3feea8acd91ec67dc1d1549509"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "616d42d86692aee7884439dc062c6b377765ce3feea8acd91ec67dc1d1549509",
+    "cached": true,
+    "input_tokens": 4488,
+    "output_tokens": 40,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "563ec24f7cb7f97099a60094d9c5f46f663ddbb22a5d4bbd6ccd89a492780193",
+   "state_after": "563ec24f7cb7f97099a60094d9c5f46f663ddbb22a5d4bbd6ccd89a492780193",
+   "seconds": 0.27
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Grace"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "0f92b9737096672dddec8e7a565d4986a551df70ceef99c31e213a1e99850ffe",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,64 @@
+[
+ {
+  "target": "call_people_at",
+  "status": "ACTIVE",
+  "demos": [
+   {
+    "index": 0,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "ABORTED"
+    ],
+    "end": "ABORTED:MISSING_SLOT",
+    "end_detail": {
+     "slots": [
+      "demo1-slot2"
+     ],
+     "reason": "MISSING_SLOT"
+    },
+    "learn": null,
+    "events": [],
+    "example": {
+     "time": "3"
+    }
+   },
+   {
+    "index": 1,
+    "states": [
+     "NEW",
+     "OPEN",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_CLARIFICATION",
+     "WAITING_FOR_GROUNDING",
+     "WAITING_FOR_GROUNDING",
+     "READY_TO_COMMIT",
+     "COMMITTED"
+    ],
+    "end": "OK",
+    "end_detail": {},
+    "learn": "VERIFIED",
+    "events": [
+     {
+      "event": "CLARIFY_REFERENCE",
+      "slot": "demo2-slot3",
+      "offered": [
+       "r1",
+       "r2"
+      ],
+      "answer": "r2"
+     }
+    ],
+    "example": {
+     "time": "3:15"
+    }
+   }
+  ]
+ }
+]

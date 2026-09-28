@@ -1,0 +1,312 @@
+{
+ "scenario_id": "dev-005-S2",
+ "suite": "dev",
+ "category": "S2",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "remind beta ; while in Delhi per theta : next and then so ; email theta : to Kevin per theta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Kevin"
+     },
+     {
+      "local_id": "v1",
+      "type": "PLACE",
+      "surface": "Delhi"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "RECIPIENT",
+      "subject": "e1",
+      "object": "v0"
+     },
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e1",
+      "object": "v1"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "WHERE",
+      "Delhi",
+      "inner"
+     ],
+     [
+      "RECIPIENT",
+      "Kevin",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "II",
+   "layout": [
+    "straddle_o4",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF EMAIL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF REMINDER"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY RECIPIENT OF EMAIL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY RECIPIENT OF REMINDER"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "email:000001",
+      "WHERE",
+      "place:delhi"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Kevin"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Delhi"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "email:000001",
+      "WHERE",
+      "place:delhi"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Kevin"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "email:000001",
+      "WHERE",
+      "place:delhi"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Kevin"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Kevin"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "email:000001",
+      "WHERE",
+      "place:delhi"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Kevin"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "email:000001",
+      "WHERE",
+      "place:delhi"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Kevin"
+     ]
+    ]
+   }
+  }
+ ]
+}

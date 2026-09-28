@@ -1,0 +1,328 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Laura",
+  "time": "midnight"
+ },
+ "interaction_id": "dev_a-029-S19:count_requests_by_at:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/F/dev_a-029-S19/learn/snapshots/dev_a-029-S19_count_requests_by_at_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "a80d64e6fdf49d142cbf698a73bc86495f18bd7303ba6c547054c7e8f8dda2c6",
+ "utterances": [
+  {
+   "utterance": "Find the requests with person Grandma and time 11.",
+   "uid": "dev_a-029-S19:count_requests_by_at:d0:demo1-slot1:0",
+   "instruction": "Find the requests with person Grandma and time 11.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the requests with person Grandma and time 11.",
+    "values": {
+     "PERSON": [
+      "Grandma"
+     ],
+     "TIME": [
+      "11"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: FIND: condition PARENT.WHEN='11' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)",
+      "feedback": null,
+      "request_hash": "697d6c95b75d248be31030292c725283e3b5a6c6a66e389a5508e7e07ceb72d5"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"REQUEST\",\n      \"where\": {\n        \"WHO\": \"Grandma\",\n        \"PARENT.WHEN\": \"11\"\n      }\n    }\n  ]\n}",
+    "request_hash": "697d6c95b75d248be31030292c725283e3b5a6c6a66e389a5508e7e07ceb72d5",
+    "cached": false,
+    "input_tokens": 4454,
+    "output_tokens": 114,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Grandma",
+       "PARENT.WHEN": "11"
+      }
+     }
+    ],
+    "plan_errors": [
+     "FIND: condition PARENT.WHEN='11' is not legal here (value not in the instruction, or relation/scope illegal for REQUEST)"
+    ],
+    "retried": false,
+    "seconds": 1.65
+   },
+   "status": "CLARIFY",
+   "seconds": 1.647
+  },
+  {
+   "utterance": "Find Laura's requests at midnight.",
+   "uid": "dev_a-029-S19:count_requests_by_at:d0:demo1-slot4:1",
+   "instruction": "Find Laura's requests at midnight.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find Laura's requests at midnight.",
+    "values": {
+     "PERSON": [
+      "Laura"
+     ],
+     "TIME": [
+      "midnight"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "9aad1e972ba7fbfad5eaafa639a85af18b27944180d910d07bd14e3f9cdd028b"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    {\n      \"bind\": \"r1\",\n      \"op\": \"FIND\",\n      \"type\": \"REQUEST\",\n      \"where\": {\n        \"WHO\": \"Laura\",\n        \"WHEN\": \"midnight\"\n      }\n    }\n  ]\n}",
+    "request_hash": "9aad1e972ba7fbfad5eaafa639a85af18b27944180d910d07bd14e3f9cdd028b",
+    "cached": false,
+    "input_tokens": 4450,
+    "output_tokens": 111,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Laura",
+       "WHEN": "midnight"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.55
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Laura"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "midnight"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "6eab990d15a09e3eb59afc326571a9e95e893d94d4d9f54007e8e6437b854e97",
+   "state_after": "6eab990d15a09e3eb59afc326571a9e95e893d94d4d9f54007e8e6437b854e97",
+   "seconds": 1.785
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev_a-029-S19:count_requests_by_at:d0:demo1-slot2:2",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "9ea91d0a11274fb4ba09b073aacf6bbe047a1ce947b9f3d14caddafdd2db76d6"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "0738cdd61995653f16bcff704a93c1de4ab4fe003d1a3318ed0fece6afdb7e93"
+     }
+    ],
+    "raw_text": "{\n  \"status\": \"PLAN\",\n  \"steps\": [\n    { \"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\" }\n  ]\n}",
+    "request_hash": "0738cdd61995653f16bcff704a93c1de4ab4fe003d1a3318ed0fece6afdb7e93",
+    "cached": false,
+    "input_tokens": 4598,
+    "output_tokens": 62,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 2.95
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "6eab990d15a09e3eb59afc326571a9e95e893d94d4d9f54007e8e6437b854e97",
+   "state_after": "6eab990d15a09e3eb59afc326571a9e95e893d94d4d9f54007e8e6437b854e97",
+   "seconds": 3.194
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev_a-029-S19:count_requests_by_at:d0:demo1-slot3:3",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "7a68cda045e7b5865c13a98284e581b7e5ad14a71b93c31bd339f55dc36a8f72"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "7a68cda045e7b5865c13a98284e581b7e5ad14a71b93c31bd339f55dc36a8f72",
+    "cached": false,
+    "input_tokens": 4510,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "6eab990d15a09e3eb59afc326571a9e95e893d94d4d9f54007e8e6437b854e97",
+   "state_after": "6eab990d15a09e3eb59afc326571a9e95e893d94d4d9f54007e8e6437b854e97",
+   "seconds": 1.426
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Laura"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "midnight"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "8c962836fa5070a2368abf9e1c192bca87a19b1c82888dcb541f6790f58b8080",
+ "nl_mode": "NL_TEACH"
+}

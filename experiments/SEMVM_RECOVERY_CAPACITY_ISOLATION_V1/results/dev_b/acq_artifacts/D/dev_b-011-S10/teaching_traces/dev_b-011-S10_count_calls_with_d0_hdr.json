@@ -1,0 +1,240 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Kevin"
+ },
+ "interaction_id": "dev_b-011-S10:count_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/D/dev_b-011-S10/learn/snapshots/dev_b-011-S10_count_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "ff68982e8c8c8400ce2ded81a36ce97f6cb9361dc2421553fed503f26e26d011",
+ "utterances": [
+  {
+   "utterance": "Find the calls with person Kevin.",
+   "uid": "dev_b-011-S10:count_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find the calls with person Kevin.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Find the calls with person Kevin.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f16facfe1f855d82bfdc7059272c36964c9a05ec32b743bcd0076eb8f3c1d89a"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Kevin\"}}]}",
+    "request_hash": "f16facfe1f855d82bfdc7059272c36964c9a05ec32b743bcd0076eb8f3c1d89a",
+    "cached": false,
+    "input_tokens": 4458,
+    "output_tokens": 77,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Kevin"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.39
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Kevin"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "d0706adcf63e18d893c84e2b45fb20f2f305dfede88cebca05243818a0e62a6d",
+   "state_after": "d0706adcf63e18d893c84e2b45fb20f2f305dfede88cebca05243818a0e62a6d",
+   "seconds": 1.788
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev_b-011-S10:count_calls_with:d0:demo1-slot2:1",
+   "instruction": "Count them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "f26b8024eebd9dd10734a729834ad9c2b2b9090d65a8195bc75557554c043518"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "f26b8024eebd9dd10734a729834ad9c2b2b9090d65a8195bc75557554c043518",
+    "cached": true,
+    "input_tokens": 4487,
+    "output_tokens": 62,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d0706adcf63e18d893c84e2b45fb20f2f305dfede88cebca05243818a0e62a6d",
+   "state_after": "d0706adcf63e18d893c84e2b45fb20f2f305dfede88cebca05243818a0e62a6d",
+   "seconds": 0.383
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev_b-011-S10:count_calls_with:d0:demo1-slot3:2",
+   "instruction": "Return the count.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "TEACHER",
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "bb481b097c35013725c2379dc8016095ef37e7ec056dd759a7e53d797ff62ce6"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "bb481b097c35013725c2379dc8016095ef37e7ec056dd759a7e53d797ff62ce6",
+    "cached": false,
+    "input_tokens": 4511,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.07
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "d0706adcf63e18d893c84e2b45fb20f2f305dfede88cebca05243818a0e62a6d",
+   "state_after": "d0706adcf63e18d893c84e2b45fb20f2f305dfede88cebca05243818a0e62a6d",
+   "seconds": 1.35
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Kevin"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "6b7d386152d2b1a5759826dd05d9fbe515520ca7c229666e04b2b8d4571a0b10",
+ "nl_mode": "NL_TEACH"
+}

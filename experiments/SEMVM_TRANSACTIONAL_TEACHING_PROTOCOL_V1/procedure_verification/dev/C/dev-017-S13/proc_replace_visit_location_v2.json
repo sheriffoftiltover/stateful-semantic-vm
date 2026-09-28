@@ -1,0 +1,42 @@
+{
+ "name": "replace_visit_location",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE replace_visit_location(place:PLACE)\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHO=Kevin\nUPDATE $v0 WHERE={place}\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "place",
+        "PLACE"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE replace_visit_location()\n$v0 = FIND_LAST VISIT\nUPDATE $v0 WHO=Kevin\nUPDATE $v0 WHERE=Tokyo\nRETURN $v0\nEND",
+   "program_hash": "a531d73b697d34ec608b6cdf5a7c23937ea22d14f21342a9e9b047bf80435e2b"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:replace_visit_location:v2",
+ "chosen": "external"
+}

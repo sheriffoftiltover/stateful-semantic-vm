@@ -1,0 +1,338 @@
+{
+ "scenario_id": "dev-024-S10",
+ "suite": "dev",
+ "category": "S10",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "COMMAND",
+   "text": "NEW PERSON Dave"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "NEW PERSON Dave"
+  },
+  {
+   "kind": "ASSERT",
+   "text": "remind zeta , by Dave re alpha ; and later so then again soon , call alpha",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Dave"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "CALL",
+    "mods": [
+     [
+      "WHO",
+      "Dave",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "I",
+   "layout": [
+    "between_o4",
+    [
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF CALL"
+  },
+  {
+   "kind": "ASSERT",
+   "text": "call gamma , by Rita per gamma ; and then , remind theta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "CALL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Rita"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHO",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "CALL",
+    "mods": [
+     [
+      "WHO",
+      "Rita",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "I",
+   "layout": [
+    "between_i1",
+    [
+     "M1"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHO OF CALL"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ]
+    ],
+    "relations": [],
+    "aliases": [
+     [
+      "person:000001",
+      "Dave"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ]
+    ],
+    "relations": [],
+    "aliases": [
+     [
+      "person:000001",
+      "Dave"
+     ],
+     [
+      "person:000002",
+      "Dave"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "RESOLUTION_AMBIGUOUS",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ]
+    ],
+    "relations": [],
+    "aliases": [
+     [
+      "person:000001",
+      "Dave"
+     ],
+     [
+      "person:000002",
+      "Dave"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ]
+    ],
+    "relations": [],
+    "aliases": [
+     [
+      "person:000001",
+      "Dave"
+     ],
+     [
+      "person:000002",
+      "Dave"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "call:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Dave"
+     ],
+     [
+      "person:000002",
+      "Dave"
+     ],
+     [
+      "person:000003",
+      "Rita"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Rita"
+   ],
+   "state": {
+    "objects": [
+     [
+      "call:000001",
+      "CALL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "person:000002",
+      "PERSON"
+     ],
+     [
+      "person:000003",
+      "PERSON"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "call:000001",
+      "WHO",
+      "person:000003"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "call:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Dave"
+     ],
+     [
+      "person:000002",
+      "Dave"
+     ],
+     [
+      "person:000003",
+      "Rita"
+     ]
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,375 @@
+{
+ "name": "call_people_at",
+ "mode": ":teach",
+ "declared": {
+  "time": "9:30"
+ },
+ "interaction_id": "dev-030-T13:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-030-T13/learn/snapshots/dev-030-T13_19_start.sqlite",
+ "start_snapshot_sha256": "ac626e0c5a11cb139c762d57d1626617ebb822ddae22cce610ced1a35d8ec1dc",
+ "utterances": [
+  {
+   "utterance": "Find the calls scheduled at 9:30.",
+   "uid": "dev-030-T13:20",
+   "instruction": "Find the calls scheduled at 9:30.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the calls scheduled at 9:30.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "9:30"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 5,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"PARENT.WHEN\": \"9:30\"}}\n\n",
+      "score": -0.152
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -6.427
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -7.935
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -9.903
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"PARENT.WHEN\": \"9:30\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "PARENT.WHEN": "9:30"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"PARENT\", \"WHEN\", {\"const\": \"9:30\"}]]}]",
+      "score": -0.152,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -6.227,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -9.903,
+      "n": 1
+     }
+    ],
+    "margin": 6.076,
+    "reference_notes": [],
+    "seconds": 4.49,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "PARENT",
+       "WHEN",
+       {
+        "const": "9:30"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "a6c2af83942afe92c0c1da9f25e2297ed5155587a6e15a24687e7c6c11ebbc83",
+   "state_after": "a6c2af83942afe92c0c1da9f25e2297ed5155587a6e15a24687e7c6c11ebbc83",
+   "seconds": 4.578
+  },
+  {
+   "utterance": "List the people on them.",
+   "uid": "dev-030-T13:21",
+   "instruction": "List the people on them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "List the people on them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 6,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"SELECT\", \"of\": \"r1\", \"rel\": \"WHO\"}\n\n",
+      "score": -0.498
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -1.96
+     },
+     {
+      "text": "r2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -2.939
+     },
+     {
+      "text": "r2 = {\"op\": \"SELECT\", \"of\": \"r1\", \"rel\": \"TOPIC\"}\n\n",
+      "score": -3.677
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"SELECT\", \"of\": \"r1\", \"rel\": \"WHO\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "SELECT",
+      "of": "r1",
+      "rel": "WHO",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"SELECT\", \"rel\": \"WHO\"}]",
+      "score": -0.498,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -1.96,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+      "score": -2.939,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"SELECT\", \"rel\": \"TOPIC\"}]",
+      "score": -3.677,
+      "n": 1
+     }
+    ],
+    "margin": 1.462,
+    "reference_notes": [
+     "SELECT.of=r1 licensed by R0"
+    ],
+    "seconds": 3.99,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "SELECT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     },
+     "rel": "WHO"
+    }
+   ],
+   "diff": [],
+   "state_before": "a6c2af83942afe92c0c1da9f25e2297ed5155587a6e15a24687e7c6c11ebbc83",
+   "state_after": "a6c2af83942afe92c0c1da9f25e2297ed5155587a6e15a24687e7c6c11ebbc83",
+   "seconds": 4.061
+  },
+  {
+   "utterance": "Give them back.",
+   "uid": "dev-030-T13:22",
+   "instruction": "Give them back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give them back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.162
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -1.959
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -6.404
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -0.008,
+      "n": 2
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -6.404,
+      "n": 1
+     }
+    ],
+    "margin": 6.395,
+    "reference_notes": [],
+    "seconds": 1.35,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 1.346
+  },
+  {
+   "utterance": "the people, please",
+   "uid": "dev-030-T13:23",
+   "consumed_clarification": "dev-030-T13:22",
+   "instruction": "Give them back. (the people, please)",
+   "correction": false,
+   "grounding": {
+    "instruction": "Give them back. (the people, please)",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -0.392
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -1.16
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -0.011,
+      "n": 2
+     }
+    ],
+    "margin": null,
+    "reference_notes": [
+     "RETURN.value: r1 -> r2 (R2)"
+    ],
+    "seconds": 1.48,
+    "repaired": true,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "a6c2af83942afe92c0c1da9f25e2297ed5155587a6e15a24687e7c6c11ebbc83",
+   "state_after": "a6c2af83942afe92c0c1da9f25e2297ed5155587a6e15a24687e7c6c11ebbc83",
+   "seconds": 1.582
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "PARENT",
+     "WHEN",
+     {
+      "const": "9:30"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "SELECT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "WHO"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "bf342b2a7235dc34d15a6f896e36a750e482d0243b1613f1f27f4aa5f9e10c68",
+ "nl_mode": "NL_TEACH"
+}

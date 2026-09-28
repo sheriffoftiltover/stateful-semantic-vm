@@ -1,0 +1,130 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Judy"
+ },
+ "interaction_id": "dev_b-003-S3:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-003-S3/learn/snapshots/dev_b-003-S3_a1_start.sqlite",
+ "start_snapshot_sha256": "bbbb9f1e7d3eaeed60b302931c28c294fb1fd1ac0fe5300023a31146db23dc59",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-003-S3:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Judy"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "5329be569e23d2b32537e098de4c0b2b8b43d49320e57e4cb9e73c482da479f4",
+   "state_after": "5329be569e23d2b32537e098de4c0b2b8b43d49320e57e4cb9e73c482da479f4",
+   "seconds": 0.174
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-003-S3:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5329be569e23d2b32537e098de4c0b2b8b43d49320e57e4cb9e73c482da479f4",
+   "state_after": "5329be569e23d2b32537e098de4c0b2b8b43d49320e57e4cb9e73c482da479f4",
+   "seconds": 0.151
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-003-S3:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5329be569e23d2b32537e098de4c0b2b8b43d49320e57e4cb9e73c482da479f4",
+   "state_after": "5329be569e23d2b32537e098de4c0b2b8b43d49320e57e4cb9e73c482da479f4",
+   "seconds": 0.151
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Judy"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "e13dedbd11adc1904c685af39db58b30b12f1d5c28077de432460d2058818934",
+ "nl_mode": "GOLD_TRACE"
+}

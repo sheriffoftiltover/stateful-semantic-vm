@@ -1,0 +1,635 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645224,
+  "utterance_id": "locked_test-019-S12:0",
+  "INPUT": "request beta , by Grandma per beta ; and so then later , message alpha , to Yves re alpha",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o1",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "MESSAGE",
+       null,
+       13
+      ],
+      [
+       "PERSON",
+       "Yves",
+       17
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       13
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Grandma",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      13
+     ],
+     [
+      "PERSON",
+      "Grandma",
+      4
+     ],
+     [
+      "PERSON",
+      "Yves",
+      17
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1359.02978515625,
+   "margin": 4.946044921875,
+   "n_outputs": 145,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Grandma"
+    },
+    {
+     "local_id": "v1",
+     "type": "PERSON",
+     "surface": "Yves"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e1",
+     "object": "v1"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e0",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Grandma",
+    "NEW",
+    null
+   ],
+   [
+    "ENTITY",
+    "v1",
+    "Yves",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Grandma"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v1"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v1",
+    "Yves"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "RECIPIENT",
+    "$v1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9d0c38faa4b6d223daa348c4997ae6c49cb158b26488cda16c2a46deb700aaa1",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Grandma"
+   ],
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Yves"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "RECIPIENT",
+    "person:000002"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "67cb0dcb57f0d901757adc67b66dae4c046e5699f84b91c5beee4b2fbbd11d3a",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Grandma"
+    ],
+    [
+     "person:000002",
+     "Yves"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645238,
+  "utterance_id": "locked_test-019-S12:2",
+  "INPUT": "QUERY WHO OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "67cb0dcb57f0d901757adc67b66dae4c046e5699f84b91c5beee4b2fbbd11d3a",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "e1e2867f7873f8802f292bd4e1a6e5f8be92e4908f2d93d4d9b75459641d6e80",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "67cb0dcb57f0d901757adc67b66dae4c046e5699f84b91c5beee4b2fbbd11d3a",
+  "RESPONSE": "Grandma",
+  "RETURN_RENDERED": [
+   "Grandma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Grandma"
+    ],
+    [
+     "person:000002",
+     "Yves"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2645238,
+  "utterance_id": "locked_test-019-S12:3",
+  "INPUT": "UPDATE LAST_REQUEST WHO=Uma",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "67cb0dcb57f0d901757adc67b66dae4c046e5699f84b91c5beee4b2fbbd11d3a",
+  "COMMAND_AST": {
+   "op": "UPDATE",
+   "ref": "LAST_REQUEST",
+   "set": [
+    [
+     "WHO",
+     "Uma"
+    ]
+   ]
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "request:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$new_Uma"
+   ],
+   [
+    "ADD_ALIAS",
+    "$new_Uma",
+    "Uma"
+   ],
+   [
+    "ASSERT",
+    "request:000001",
+    "WHO",
+    "$new_Uma"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "ad733255918833d6ac28e5b8794f7b4a3b348f9c3791d2e8f87a98fd032f998a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "request:000001",
+    "WHO",
+    "person:000001"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Uma"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "ae87444ddff5b16ef14f58dc9e57e08041738835a74f1ab8a8a026bca60de0ea",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000003"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Grandma"
+    ],
+    [
+     "person:000002",
+     "Yves"
+    ],
+    [
+     "person:000003",
+     "Uma"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2645239,
+  "utterance_id": "locked_test-019-S12:5",
+  "INPUT": "QUERY WHO OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "ae87444ddff5b16ef14f58dc9e57e08041738835a74f1ab8a8a026bca60de0ea",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "e1e2867f7873f8802f292bd4e1a6e5f8be92e4908f2d93d4d9b75459641d6e80",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000003"
+  ],
+  "STATE_AFTER": "ae87444ddff5b16ef14f58dc9e57e08041738835a74f1ab8a8a026bca60de0ea",
+  "RESPONSE": "Uma",
+  "RETURN_RENDERED": [
+   "Uma"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000002"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "request:000001",
+     "WHO",
+     "person:000003"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Grandma"
+    ],
+    [
+     "person:000002",
+     "Yves"
+    ],
+    [
+     "person:000003",
+     "Uma"
+    ]
+   ]
+  }
+ }
+]

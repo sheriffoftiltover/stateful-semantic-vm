@@ -1,0 +1,326 @@
+{
+ "DISCOVERED": {
+  "PROCEDURE_PROPOSAL_VALID_deterministic": 1.0,
+  "DISCOVERY_VERIFIED_deterministic": 1.0,
+  "PROCEDURE_PROPOSAL_VALID_llm": 0.8478,
+  "DISCOVERY_VERIFIED_llm": 0.7826,
+  "DISCOVERY_VERIFIED_union": 1.0,
+  "SOURCE_REPLAY_EXACT": 1.0,
+  "NEGATIVE_CASE_SAFE": 1.0,
+  "ROLLBACK_EXACT": 1.0,
+  "COUNTERFACTUAL_EXACT": 0.9792,
+  "PROCEDURE_RETRIEVAL_EXACT": 0.8966,
+  "PROCEDURE_RETRIEVAL_BEHAVIORAL": 0.963,
+  "ARGUMENT_BINDING_EXACT": 1.0,
+  "FINAL_STATE_EXACT": 1.0,
+  "SCENARIO_EXACT": 0.9667,
+  "RESTART_PROCEDURE_EXACT": 0.9524,
+  "PROCEDURE_COMPOSITION_EXACT_L1": 1.0,
+  "PROCEDURE_COMPOSITION_EXACT_L2_save": 1.0,
+  "PROCEDURE_COMPOSITION_EXACT_L2_invoke": 1.0,
+  "VERIFY_FALSE_ACCEPT": 0.0,
+  "n_PROCEDURE_PROPOSAL_VALID_deterministic": 46,
+  "n_DISCOVERY_VERIFIED_deterministic": 46,
+  "n_PROCEDURE_PROPOSAL_VALID_llm": 46,
+  "n_DISCOVERY_VERIFIED_llm": 46,
+  "n_DISCOVERY_VERIFIED_union": 46,
+  "n_SOURCE_REPLAY_EXACT": 46,
+  "n_NEGATIVE_CASE_SAFE": 280,
+  "n_ROLLBACK_EXACT": 30,
+  "n_COUNTERFACTUAL_EXACT": 48,
+  "n_PROCEDURE_RETRIEVAL_EXACT": 29,
+  "n_PROCEDURE_RETRIEVAL_BEHAVIORAL": 27,
+  "n_ARGUMENT_BINDING_EXACT": 24,
+  "n_FINAL_STATE_EXACT": 30,
+  "n_SCENARIO_EXACT": 30,
+  "n_RESTART_PROCEDURE_EXACT": 21,
+  "n_PROCEDURE_COMPOSITION_EXACT_L1": 6,
+  "n_PROCEDURE_COMPOSITION_EXACT_L2_save": 6,
+  "n_PROCEDURE_COMPOSITION_EXACT_L2_invoke": 6,
+  "n_VERIFY_FALSE_ACCEPT": 6,
+  "generalization": {
+   "ARGUMENT_GENERALIZATION": {
+    "acc": 0.9792,
+    "n": 48
+   },
+   "SURFACE_GENERALIZATION": {
+    "acc": 0.9655,
+    "n": 29
+   },
+   "REPLAY": {
+    "acc": 1.0,
+    "n": 11
+   },
+   "COMPOSITION_GENERALIZATION": {
+    "acc": 1.0,
+    "n": 12
+   }
+  },
+  "accounting": {
+   "first_time_teach_turns": {
+    "mean": 1.0,
+    "n": 51,
+    "sum": 51
+   },
+   "verify_seconds": {
+    "mean": 0.5859,
+    "n": 46,
+    "sum": 26.95
+   },
+   "proposal_seconds_llm": {
+    "mean": 6.2357,
+    "n": 46,
+    "sum": 286.84
+   },
+   "execution_seconds": {
+    "mean": 0.8513,
+    "n": 59,
+    "sum": 50.226
+   },
+   "vm_ops": {
+    "mean": 6.4068,
+    "n": 59,
+    "sum": 378
+   },
+   "retrieval_seconds": {
+    "mean": 1.6312,
+    "n": 29,
+    "sum": 47.305
+   },
+   "llm_calls_per_request": {
+    "mean": 1.8276,
+    "n": 29,
+    "sum": 53
+   }
+  },
+  "failure_taxonomy": {
+   "PR_RETRIEVE": 1
+  },
+  "per_scenario": {
+   "dev-001-P1": {
+    "category": "P1",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-002-P1": {
+    "category": "P1",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-003-P1": {
+    "category": "P1",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-004-P1": {
+    "category": "P1",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-005-P2": {
+    "category": "P2",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-006-P2": {
+    "category": "P2",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-007-P2": {
+    "category": "P2",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-008-P3": {
+    "category": "P3",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-009-P3": {
+    "category": "P3",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-010-P4": {
+    "category": "P4",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-011-P4": {
+    "category": "P4",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-012-P5": {
+    "category": "P5",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-013-P5": {
+    "category": "P5",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-014-P5": {
+    "category": "P5",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-015-P6": {
+    "category": "P6",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-016-P6": {
+    "category": "P6",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-017-P7": {
+    "category": "P7",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-018-P7": {
+    "category": "P7",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-019-P7": {
+    "category": "P7",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-020-P8": {
+    "category": "P8",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-021-P8": {
+    "category": "P8",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-022-P9": {
+    "category": "P9",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-023-P9": {
+    "category": "P9",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-024-P10": {
+    "category": "P10",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-025-P10": {
+    "category": "P10",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-026-P11": {
+    "category": "P11",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-027-P11": {
+    "category": "P11",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-028-P12": {
+    "category": "P12",
+    "exact": false,
+    "first_failure": "PR_RETRIEVE"
+   },
+   "dev-029-P12": {
+    "category": "P12",
+    "exact": true,
+    "first_failure": null
+   },
+   "dev-030-P12": {
+    "category": "P12",
+    "exact": true,
+    "first_failure": null
+   }
+  },
+  "by_category": {
+   "P1": 1.0,
+   "P10": 1.0,
+   "P11": 1.0,
+   "P12": 0.6667,
+   "P2": 1.0,
+   "P3": 1.0,
+   "P4": 1.0,
+   "P5": 1.0,
+   "P6": 1.0,
+   "P7": 1.0,
+   "P8": 1.0,
+   "P9": 1.0
+  },
+  "gates": {
+   "SOURCE_REPLAY_EXACT": {
+    "threshold": 1.0,
+    "value": 1.0,
+    "pass": true
+   },
+   "COUNTERFACTUAL_EXACT": {
+    "threshold": 1.0,
+    "value": 0.9792,
+    "pass": false
+   },
+   "ROLLBACK_EXACT": {
+    "threshold": 1.0,
+    "value": 1.0,
+    "pass": true
+   },
+   "RESTART_PROCEDURE_EXACT": {
+    "threshold": 1.0,
+    "value": 0.9524,
+    "pass": false
+   },
+   "PROCEDURE_RETRIEVAL_EXACT": {
+    "threshold": 0.95,
+    "value": 0.8966,
+    "pass": false
+   },
+   "ARGUMENT_BINDING_EXACT": {
+    "threshold": 0.95,
+    "value": 1.0,
+    "pass": true
+   },
+   "SCENARIO_EXACT": {
+    "threshold": 0.9,
+    "value": 0.9667,
+    "pass": true
+   }
+  },
+  "seconds": 778.6,
+  "llm_frozen": {
+   "param_hash_first_service": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+   "param_hash_end": "80aead4bc5a9bf41b346d186a25abc1b637efc57e35d832ff09cc54d35ddd468",
+   "identical_across_restarts": true,
+   "files_sha256": {
+    "config.json": "984abd4b3f21edb957012c7dc4352c462b08e15ffe8384b6d55990885e9dcc9a",
+    "generation_config.json": "444ea57ebf361c659d1f5c23508319b691e181d122588ea3cdd5f68d3e618b1f",
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "model.safetensors": "535485b26038ac24f4e8a86e1a73ed417d8992e3192f6305b7fcc4fb92efa210",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "4a917e4772d9b246ef600e1c5d7d81e3a81ae9f3f2d10d78ccb02c86e5fb184a",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+   },
+   "n_parameters": 1543714304,
+   "optimizer": null
+  },
+  "capability": {
+   "active_procedures_mean_final": 1.4667,
+   "library_bytes_mean": 50790.4,
+   "world_bytes_mean": 119603.2,
+   "llm_calls_total": 99
+  }
+ }
+}

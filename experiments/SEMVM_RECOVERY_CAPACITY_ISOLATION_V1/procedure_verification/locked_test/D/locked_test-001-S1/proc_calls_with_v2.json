@@ -1,0 +1,42 @@
+{
+ "name": "calls_with",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\nRETURN $v0\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE calls_with()\n$v0 = FIND CALL WHERE SELF.WHO=Oscar\nRETURN $v0\nEND",
+   "program_hash": "49cc48c85f6a64debe3d1896fb086f0fdc737885d2e6a5c668cc8e897c3647a0"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:calls_with:v2",
+ "chosen": "external"
+}

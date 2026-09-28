@@ -1,0 +1,72 @@
+{
+ "version": "FAILURE_TAXONOMY_V1",
+ "frozen": "2026-09-28, before Stage 0C and before any successor DEV scoring",
+ "taxonomy": {
+  "provider": [
+   "PROVIDER_TRUNCATION",
+   "PROVIDER_TRANSPORT",
+   "PROVIDER_RUNTIME"
+  ],
+  "teacher_initial": [
+   "TEACHER_INITIAL_SEMANTIC_ERROR",
+   "TEACHER_INITIAL_MISSING_CONTENT",
+   "TEACHER_INITIAL_FORMAT_ERROR"
+  ],
+  "grounder_initial": [
+   "GROUNDER_INITIAL_OP_ERROR",
+   "GROUNDER_INITIAL_ARGUMENT_ERROR",
+   "GROUNDER_INITIAL_RELATION_ERROR",
+   "GROUNDER_INITIAL_REFERENCE_ERROR",
+   "GROUNDER_INITIAL_SEQUENCE_ERROR",
+   "GROUNDER_INITIAL_SCOPE_ERROR"
+  ],
+  "recovery": [
+   "GROUNDER_FALSE_CLARIFICATION",
+   "GROUNDER_RECOVERY_SEMANTIC_ERROR",
+   "TEACHER_RECOVERY_SEMANTIC_ERROR",
+   "TEACHER_RECOVERY_MISSING_CONTENT",
+   "TEACHER_RECOVERY_FORMAT_ERROR",
+   "RECOVERY_CLARIFICATION_BUDGET",
+   "RECOVERY_REPHRASE_BUDGET",
+   "RECOVERY_TEACHER_TURN_BUDGET",
+   "RECOVERY_DEMONSTRATION_BUDGET"
+  ],
+  "controller": [
+   "CONTROLLER_STATE_ERROR",
+   "CONTROLLER_REFERENCE_ERROR",
+   "CONTROLLER_EVIDENCE_COUNT_ERROR",
+   "CONTROLLER_PROTOCOL_VIOLATION"
+  ],
+  "evidence": [
+   "EVIDENCE_INSUFFICIENT_VARIATION",
+   "EVIDENCE_CONFLICT_UNRESOLVED",
+   "EVIDENCE_NONVACUITY_FAILURE"
+  ],
+  "procedure": [
+   "PROCEDURE_ABSTRACTION_ERROR",
+   "PROCEDURE_RETRIEVAL_ERROR",
+   "VERIFIER_FALSE_ACCEPT",
+   "VERIFIER_FALSE_REJECT",
+   "VERIFIER_CRASH"
+  ],
+  "fallback": [
+   "OTHER_PREDECLARED"
+  ]
+ },
+ "precedence": [
+  "teacher",
+  "grounder",
+  "controller",
+  "evidence",
+  "procedure"
+ ],
+ "earliest_cause_rule": "walk the target's demonstrations chronologically, skipping registered legal-bad / relation-swap probe\ndemonstrations; the FIRST demonstration that did not end COMMITTED-and-behaviourally-exact is the divergence point, and within it the layers are\nevaluated in the frozen precedence  teacher -> grounder -> controller -> evidence -> procedure  (spec \u00a713). If no demonstration diverged, the\nlearn-level / budget / provider outcome decides. A provider failure is the cause only if nothing diverged earlier (spec \u00a712 example).",
+ "implementation": "evaluator/rci_metrics.py earliest_cause / wrong_action_cause (sha256 32d39b6acfaa6570d4186d466c644eb53af6a5c4767dfba4f98e6ce14cd507fd)",
+ "mapping_notes": [
+  "aborted demonstration reasons: NO_STEPS / RESTARTED_BY_TEACHER / TEACHER_GAVE_NO_REMAINING_STEPS -> TEACHER_INITIAL_FORMAT_ERROR; EXAMPLE_INCOMPLETE -> TEACHER_INITIAL_MISSING_CONTENT; MISSING_SLOT -> GROUNDER_INITIAL_OP_ERROR; INCOMPLETE / PREMATURE_TERMINATION -> CONTROLLER_PROTOCOL_VIOLATION",
+  "first recovery event of the divergent demonstration: structured illegal-plan classes -> GROUNDER_INITIAL_* (relation / sequence / op / argument); execution failure -> GROUNDER_INITIAL_ARGUMENT_ERROR; a NEEDED reference clarification -> RECOVERY_CLARIFICATION_BUDGET (or TEACHER_RECOVERY_FORMAT_ERROR if no REFERENT answer was parseable); obscured-slot restoration failure -> TEACHER_RECOVERY_MISSING_CONTENT (hosted) / GROUNDER_RECOVERY_SEMANTIC_ERROR (scripted/oracle); any other clarification of a faithful line -> GROUNDER_FALSE_CLARIFICATION (or TEACHER_RECOVERY_FORMAT_ERROR if hosted restatements had no STEP / CANCEL_SLOT line)",
+  "hosted lessons: judge label of the INITIAL lesson (unfaithful -> TEACHER_INITIAL_SEMANTIC_ERROR / MISSING_CONTENT); hosted recovery: judge label of the FINAL lesson (faithful initial + unfaithful final -> TEACHER_RECOVERY_SEMANTIC_ERROR)",
+  "no divergent demonstration: PROVIDER_* > VERIFIER_CRASH > EVIDENCE_NONVACUITY_FAILURE > PROCEDURE_ABSTRACTION_ERROR (ACTIVE but wrong) > VERIFIER_FALSE_REJECT > EVIDENCE_CONFLICT_UNRESOLVED > EVIDENCE_INSUFFICIENT_VARIATION > RECOVERY_TEACHER_TURN_BUDGET > RECOVERY_DEMONSTRATION_BUDGET > OTHER_PREDECLARED"
+ ],
+ "wrong_action_cause": "committed non-exact non-probe demonstration: hosted initial lesson unfaithful -> TEACHER_INITIAL_SEMANTIC_ERROR; recovery happened -> TEACHER_RECOVERY_SEMANTIC_ERROR (hosted recovery, final lesson unfaithful) else GROUNDER_RECOVERY_SEMANTIC_ERROR; otherwise GROUNDER_INITIAL_* by the frozen diff order relation > scope > op/sequence > argument > reference"
+}

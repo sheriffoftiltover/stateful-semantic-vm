@@ -1,0 +1,40 @@
+{
+ "schema": "NL_TEACH_ACTION_SCHEMA_V1",
+ "registered": "2026-09-26, before any DEV run",
+ "line_format": "one JSON object per line; an action that produces a result is prefixed 'rN = ' with N = (number of prior results of the demonstration) + (results produced earlier in this instruction) + 1; the instruction's action list ends with a blank line",
+ "key_order": ["op", "type", "procedure", "of", "target", "each", "where", "status", "rel", "by", "value", "args"],
+ "actions": {
+  "FIND":       {"fields": {"type": "EVENT_TYPE", "where": "optional {KEY: value}; KEY = REL (SELF scope) | PARENT.REL | CHILD.REL", "status": "optional OPEN|CLOSED"}, "result": "EVENT_LIST", "step": "$rN = FIND <type> WHERE <scope>.<rel>=<value> ... [STATUS=<s>]"},
+  "FIND_LAST":  {"fields": {"type": "EVENT_TYPE"}, "result": "EVENT"},
+  "FIRST":      {"fields": {"of": "result (EVENT_LIST | VALUE_LIST)"}, "result": "EVENT"},
+  "COUNT":      {"fields": {"of": "result (EVENT_LIST | VALUE_LIST)"}, "result": "INT"},
+  "CHILD":      {"fields": {"of": "result (EVENT)"}, "result": "EVENT"},
+  "PARENT":     {"fields": {"of": "result (EVENT)"}, "result": "EVENT"},
+  "GET":        {"fields": {"of": "result (EVENT)", "rel": "REL (legal for the event type)"}, "result": "VALUE (PERSON for WHO / RECIPIENT)"},
+  "SELECT":     {"fields": {"of": "result (EVENT_LIST)", "rel": "REL"}, "result": "VALUE_LIST"},
+  "GROUP":      {"fields": {"of": "result (EVENT_LIST)", "by": "REL"}, "result": "GROUPS"},
+  "SORT":       {"fields": {"of": "result (EVENT_LIST)", "by": "REL"}, "result": "EVENT_LIST"},
+  "REPORT":     {"fields": {"of": "result (GROUPS)", "rel": "REL"}, "result": "REPORT"},
+  "FILTER":     {"fields": {"of": "result (EVENT_LIST)", "where": "exactly one {REL: value}", "status": "or OPEN|CLOSED"}, "result": "EVENT_LIST"},
+  "UPDATE":     {"fields": {"target": "result (EVENT)  | each: result (EVENT_LIST) -> FOR loop", "rel": "REL legal for the event type", "value": "vocabulary value of the relation's class occurring in the instruction"}, "result": null},
+  "SET_STATUS": {"fields": {"target": "result (EVENT) | each: result (EVENT_LIST)", "value": "OPEN|CLOSED"}, "result": null},
+  "DELETE":     {"fields": {"target": "result (EVENT) | each: result (EVENT_LIST)"}, "result": null},
+  "RETRACT":    {"fields": {"target": "result (EVENT) | each: result (EVENT_LIST)", "rel": "REL"}, "result": null},
+  "CALL":       {"fields": {"procedure": "an ACTIVE procedure", "args": "{parameter: vocabulary value occurring in the instruction | result of the parameter's type}"}, "result": "the callee's return type"},
+  "RETURN":     {"fields": {"value": "result"}, "result": null},
+  "UNSUPPORTED": {"fields": {}, "note": "the whole instruction -> UNSUPPORTED_TEACHING_INPUT"},
+  "CLARIFY":    {"fields": {}, "note": "the whole instruction -> CLARIFY"}
+ },
+ "not_in_V1": ["IF", "PRECONDITION (conditionals are unsupported teaching forms)", "FOR with a multi-step body (only 'each' over one action)"],
+ "grammar_constraints": [
+  "values are vocabulary items of the field's class that occur in the instruction (case-insensitive; 'H:00' -> 'H')",
+  "for inner event types (CALL EMAIL VISIT MESSAGE) the only time constraint is PARENT.WHEN; outer types (REMINDER PLAN REQUEST NOTE) use SELF.* or CHILD.<non-WHEN rel>",
+  "SELF relations must be legal for the event type (frozen ontology validity matrix)",
+  "references only to type-compatible prior results of the current demonstration",
+  "at most 4 actions per instruction; the action list may end only when every PERSON / TIME / PLACE value mentioned in the instruction is used",
+  "UNSUPPORTED / CLARIFY only as the first and only action"
+ ],
+ "decoding": "grammar-constrained beam search (beam 3). At each decision the frozen LLM scores every legal option string (each option ends with its JSON delimiter, so decisions split at natural token boundaries); scores are log P(option | prompt + text so far) renormalized over the legal options. The best complete action list is the raw LLM proposal.",
+ "post_checks": ["static validation (unknown results, value class / occurrence, CALL signature)", "registered reference grammar R0-R3 (NL_TEACH_LANGUAGE_V1)", "value coverage", "margin: best vs best DISTINCT complete action list >= MARGIN nats, else CLARIFY"],
+ "to_steps": "deterministic mapping to parent SEMVM_STEP_V1 ASTs (procedure/lang.py); FIND constraints in canonical order SELF < PARENT < CHILD then WHO WHEN WHERE RECIPIENT TOPIC; 'each' -> FOR $eK IN $x : <step>"
+}

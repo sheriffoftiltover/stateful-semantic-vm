@@ -1,0 +1,57 @@
+% Figure 1: architecture and authority boundaries (orange = neural, proposes only; blue = deterministic, decides; grey = durable stores)
+\begin{tikzpicture}[
+  font=\sffamily\footnotesize,
+  neural/.style={draw=semorange, fill=semorange!9, rounded corners=2pt, align=center, minimum height=9mm, text width=32mm, line width=0.6pt},
+  det/.style={draw=semblue, fill=semblue!7, rounded corners=2pt, align=center, minimum height=9mm, text width=32mm, line width=0.6pt},
+  store/.style={draw=inkmuted, fill=black!4, cylinder, shape border rotate=90, aspect=0.16, align=center, minimum height=12mm, text width=25mm, line width=0.6pt},
+  arr/.style={-{Stealth[length=1.8mm]}, line width=0.55pt, draw=ink},
+  lab/.style={font=\sffamily\scriptsize, text=inkmuted, align=center, inner sep=1pt},
+  sec/.style={font=\sffamily\small\bfseries, text=ink}]
+\def\ya{0} \def\yb{-1.9} \def\yc{-3.8} \def\yd{-5.7}
+% hosted models
+\node[neural] (teacher)  at (0,\ya) {Hosted teacher\\ gpt-oss-120b, reasoning high};
+\node[neural] (grounder) at (0,\yb) {Hosted grounder\\ gpt-oss-120b, reasoning low};
+% acquisition pipeline
+\node[det] (ctrl)   at (5.3,\ya) {Transactional teaching\\ controller (slot ledger)};
+\node[det] (sand)   at (5.3,\yb) {Plan checks + one\\ sandboxed VM transaction};
+\node[det] (anti)   at (5.3,\yc) {Anti-unifier\\ (candidate programs)};
+\node[det] (verify) at (5.3,\yd) {Evidence verifier: replay,\\ counterfactual, perturbation,\\ negatives, rollback};
+% stores
+\node[store] (world) at (9.8,\yb) {World model\\ (SQLite)};
+\node[store] (lib)   at (9.8,\yd) {Procedure library\\ \texttt{procedures.sqlite}};
+% execution (flows upward)
+\node[det]    (vm)      at (14.3,\yb) {VM: one transaction\\ per request, rollback};
+\node[det]    (checks)  at (14.3,\yc) {Argument, type and\\ vocabulary checks};
+\node[neural] (student) at (14.3,\yd) {Frozen student LM\\ Qwen2.5-Coder-1.5B};
+\node[det]    (req)     at (14.3,-7.6) {User request\\ (controlled paraphrase)};
+% acquisition arrows
+\draw[arr] ([yshift=1.6mm]teacher.east) -- node[lab, above]{lesson lines,\\ answers} ([yshift=1.6mm]ctrl.west);
+\draw[arr] ([yshift=-1.6mm]ctrl.west) -- node[lab, below]{structured\\ questions} ([yshift=-1.6mm]teacher.east);
+\draw[arr] (ctrl.south west) ++(3mm,0) -- node[lab, right, pos=0.45]{\,one line} (grounder.north east);
+\draw[arr] (grounder) -- node[lab, above]{typed plan} (sand);
+\draw[arr] (sand) -- node[lab, right]{on COMMIT only:\\ complete traces} (anti);
+\draw[arr] (anti) -- (verify);
+\draw[arr] (ctrl) -- (sand);
+\draw[arr] (sand) -- node[lab, above]{sandbox} (world);
+\draw[arr] (verify) -- node[lab, above]{VERIFIED}  node[lab, below]{+ accept} (lib);
+% execution arrows
+\draw[arr] (req) -- (student);
+\draw[arr] (student) -- node[lab, right]{procedure name\\ + argument text} (checks);
+\draw[arr] (checks) -- (vm);
+\draw[arr] (lib) -- node[lab, above]{ACTIVE only} (student);
+\draw[arr] (vm) -- node[lab, above]{read / write} (world);
+% boundaries
+\begin{scope}[on background layer]
+  \node[draw=semorange, dashed, line width=0.6pt, rounded corners=4pt, fit=(teacher)(grounder), inner sep=2.5mm] (hosted) {};
+  \node[lab, text=semorange, anchor=north] at (hosted.south) {removed at handoff};
+  \node[draw=inkmuted!50, rounded corners=6pt, fit=(teacher)(grounder)(ctrl)(verify), inner xsep=4mm, inner ysep=4mm] (acq) {};
+  \node[sec, anchor=south] at (acq.north) {Acquisition (teacher present)};
+  \node[draw=inkmuted!50, rounded corners=6pt, fit=(vm)(req), inner xsep=4mm, inner ysep=4mm] (exe) {};
+  \node[sec, anchor=south] at (exe.north) {Execution (teacher absent)};
+  \node[sec, anchor=south] at (9.8,0.55) {Durable state};
+\end{scope}
+% legend
+\node[neural, text width=18mm, minimum height=5mm, font=\sffamily\scriptsize] (l1) at (0.6,-7.6) {neural: proposes};
+\node[det, text width=18mm, minimum height=5mm, font=\sffamily\scriptsize, right=3mm of l1] (l2) {deterministic: decides};
+\node[store, text width=14mm, minimum height=7mm, font=\sffamily\scriptsize, right=3mm of l2] {durable store};
+\end{tikzpicture}

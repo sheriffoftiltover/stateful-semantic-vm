@@ -1,0 +1,243 @@
+{
+ "name": "email_topic_report",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev-011-T5:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-011-T5/learn/snapshots/dev-011-T5_19_start.sqlite",
+ "start_snapshot_sha256": "7109726386cfcc4fd593407d896f4bbea1d56f1a2107f4d31da49984a0f6c7b0",
+ "utterances": [
+  {
+   "utterance": "Look up all of my emails and group them by who they are addressed to.",
+   "uid": "dev-011-T5:20",
+   "instruction": "Look up all of my emails and group them by who they are addressed to.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Look up all of my emails and group them by who they are addressed to.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Look up all of my emails.",
+        "Group them by who they are addressed to."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Look up all of my emails.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Group them by who they are addressed to.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 20,
+    "seconds": 9.44,
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "bind": "r1"
+     },
+     {
+      "op": "GROUP",
+      "of": "r1",
+      "by": "RECIPIENT",
+      "bind": "r2"
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"RECIPIENT\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "bind": "r1"
+     },
+     {
+      "op": "GROUP",
+      "of": "r1",
+      "by": "RECIPIENT",
+      "bind": "r2"
+     }
+    ],
+    "margin": 3.399,
+    "reference_notes": [
+     "GROUP.of=r1 licensed by R0"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [],
+     "status": null
+    },
+    {
+     "op": "GROUP",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT"
+    }
+   ],
+   "diff": [],
+   "state_before": "42158f501d8eebad722496880e4a2e087d4cfc8d3ecc45fe3fa7790b211139da",
+   "state_after": "42158f501d8eebad722496880e4a2e087d4cfc8d3ecc45fe3fa7790b211139da",
+   "seconds": 9.535
+  },
+  {
+   "utterance": "Report the topics for every group and then return the report.",
+   "uid": "dev-011-T5:21",
+   "instruction": "Report the topics for every group and then return the report.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Report the topics for every group and then return the report.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Report the topics for every group.",
+        "Return the report."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Report the topics for every group.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Return the report.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 18,
+    "seconds": 9.54,
+    "raw_actions": [
+     {
+      "op": "REPORT",
+      "of": "r2",
+      "rel": "TOPIC",
+      "bind": "r3"
+     },
+     {
+      "op": "RETURN",
+      "value": "r3"
+     }
+    ],
+    "raw_text": "r3 = {\"op\": \"REPORT\", \"of\": \"r2\", \"rel\": \"TOPIC\"}\n\n{\"op\": \"RETURN\", \"value\": \"r3\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "REPORT",
+      "of": "r2",
+      "rel": "TOPIC",
+      "bind": "r3"
+     },
+     {
+      "op": "RETURN",
+      "value": "r3"
+     }
+    ],
+    "margin": 3.294,
+    "reference_notes": [
+     "REPORT.of=r2 licensed by R0",
+     "RETURN.value=r3 licensed by R1"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "REPORT",
+     "bind": "r3",
+     "groups": {
+      "var": "r2"
+     },
+     "rel": "TOPIC"
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r3"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "42158f501d8eebad722496880e4a2e087d4cfc8d3ecc45fe3fa7790b211139da",
+   "state_after": "42158f501d8eebad722496880e4a2e087d4cfc8d3ecc45fe3fa7790b211139da",
+   "seconds": 9.653
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [],
+   "status": null
+  },
+  {
+   "op": "GROUP",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT"
+  },
+  {
+   "op": "REPORT",
+   "bind": "r3",
+   "groups": {
+    "var": "r2"
+   },
+   "rel": "TOPIC"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "fda47d9998efb27f74c47187db6e4e6cc7a20ea2c42c17c9a44cdf3b2517c53a",
+ "nl_mode": "NL_TEACH"
+}

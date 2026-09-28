@@ -1,0 +1,127 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev_a-015-S12:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/GOLD_TRACE/dev_a-015-S12/learn/snapshots/dev_a-015-S12_a1_start.sqlite",
+ "start_snapshot_sha256": "dc68acfc49921123cd3b3704d2e550ab71c1c9579b6dea79132889f51e846b99",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-015-S12:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "state_after": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "seconds": 0.17
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-015-S12:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Judy"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ]
+   ],
+   "state_before": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "state_after": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "seconds": 0.273
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_a-015-S12:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "state_after": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "seconds": 0.169
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Judy"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "ae500e3fdc8bb40f70b326e92a832e2bff12cb15700bc5f28f7d6c7fdfff1cb1",
+ "nl_mode": "GOLD_TRACE"
+}

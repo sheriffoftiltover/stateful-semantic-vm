@@ -1,0 +1,775 @@
+[
+ {
+  "turn": 0,
+  "pid": 2644490,
+  "utterance_id": "locked_test-010-S6:0",
+  "INPUT": "remind epsilon : to Ivan re alpha ; so then again soon , message alpha ; while in Dublin re epsilon",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Ivan"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Dublin"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e1",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Ivan",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Dublin",
+    "place:dublin"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Ivan"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:dublin",
+    "PLACE",
+    "dublin",
+    "Dublin"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:dublin"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "8640dafef76ef1509ffc3e7480197ed607651638859e524fd265a9be8660eaa3",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Ivan"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:dublin"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "b22836c3e3f88470bf95d4233523ca40ead08cf0741ff13b0c95e3fa10a4bb3a",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Ivan"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2644490,
+  "utterance_id": "locked_test-010-S6:1",
+  "INPUT": "email theta ; so and then later again , about lease per theta : note gamma",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "b22836c3e3f88470bf95d4233523ca40ead08cf0741ff13b0c95e3fa10a4bb3a",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "TOPIC_VALUE",
+     "surface": "lease"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "TOPIC",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "lease",
+    "topic:lease"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "topic:lease",
+    "TOPIC",
+    "lease",
+    "lease"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "TOPIC",
+    "topic:lease"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "48f2e19b1d45f79de28cc4a5a875dd931bec448ee3f2c92b1ecb45fe989b2be4",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "TOPIC",
+    "topic:lease"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:lease"
+    ],
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Ivan"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2644490,
+  "utterance_id": "locked_test-010-S6:2",
+  "INPUT": "QUERY RECIPIENT OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c2e9d9dde65f568a67173bb3593548fa99c78ca17f84ad59a02e35f0e1e31933",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "RESPONSE": "Ivan",
+  "RETURN_RENDERED": [
+   "Ivan"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:lease"
+    ],
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Ivan"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2644490,
+  "utterance_id": "locked_test-010-S6:3",
+  "INPUT": "QUERY RECIPIENT OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "190469b7899b0bc8b27e2eb09e18a2a11db41a4073067559af32a25c2a1c7812",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:lease"
+    ],
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Ivan"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2644490,
+  "utterance_id": "locked_test-010-S6:4",
+  "INPUT": "QUERY WHERE OF REMINDER",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "REMINDER",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REMINDER",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "40e832621788cd729b6176ddca66b48316a19ef3723dc98892e714355af5b5fb",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "place:dublin"
+  ],
+  "STATE_AFTER": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "RESPONSE": "Dublin",
+  "RETURN_RENDERED": [
+   "Dublin"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:lease"
+    ],
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Ivan"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2644490,
+  "utterance_id": "locked_test-010-S6:5",
+  "INPUT": "QUERY WHERE OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7e0299949495b894abfa0d7d8a8136a132f258302e5c2c272f6dbcef90da9bf7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "fc38a0ef0f75ae5df47535d2372dfd55a20d88239fa10956ed8e84e8c2f8446f",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "TOPIC",
+     "topic:lease"
+    ],
+    [
+     "message:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:dublin"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Ivan"
+    ]
+   ]
+  }
+ }
+]

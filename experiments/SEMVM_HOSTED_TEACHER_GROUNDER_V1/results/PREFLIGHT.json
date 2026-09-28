@@ -1,0 +1,46 @@
+{
+ "scenarios": [
+  "dev-003-S3",
+  "dev-004-S4",
+  "dev-007-S6",
+  "dev-009-S8",
+  "dev-014-S11",
+  "dev-023-S15",
+  "dev-024-S16",
+  "dev-029-S18"
+ ],
+ "rule": "(registered before running): primary = LINE_GROUNDING_STRUCTURAL_EXACT on the scripted lines; a setting with any\nWRONG_BEHAVIORAL_ACTION_EXECUTED > the other's is excluded first; if the primaries differ by < 0.02, choose 'low' (cheaper, fewer truncations).",
+ "settings": {
+  "low": {
+   "LINE_GROUNDING_STRUCTURAL_EXACT": 0.9048,
+   "n_LINE_GROUNDING_STRUCTURAL_EXACT": 21,
+   "GROUNDING_BEHAVIORAL_EXACT": 1.0,
+   "n_GROUNDING_BEHAVIORAL_EXACT": 6,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 0,
+   "FALSE_CLARIFY_COUNT": 1,
+   "LINE_RELATION_BINDING_EXACT": 1.0,
+   "errors": 0,
+   "provider_failures": 0,
+   "schema_failures": 0,
+   "truncations": 0,
+   "grounder_calls": 34,
+   "mean_output_tokens": 68.0
+  },
+  "medium": {
+   "LINE_GROUNDING_STRUCTURAL_EXACT": 0.5625,
+   "n_LINE_GROUNDING_STRUCTURAL_EXACT": 16,
+   "GROUNDING_BEHAVIORAL_EXACT": 1.0,
+   "n_GROUNDING_BEHAVIORAL_EXACT": 6,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 1,
+   "FALSE_CLARIFY_COUNT": 0,
+   "LINE_RELATION_BINDING_EXACT": 1.0,
+   "errors": 0,
+   "provider_failures": 0,
+   "schema_failures": 0,
+   "truncations": 0,
+   "grounder_calls": 28,
+   "mean_output_tokens": 271.4
+  }
+ },
+ "selected_reasoning_effort": "low"
+}

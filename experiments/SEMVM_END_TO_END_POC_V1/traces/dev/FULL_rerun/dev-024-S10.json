@@ -1,0 +1,673 @@
+[
+ {
+  "turn": 0,
+  "pid": 2643229,
+  "utterance_id": "dev-024-S10:0",
+  "INPUT": "NEW PERSON Dave",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "COMMAND_AST": {
+   "op": "NEW_PERSON",
+   "alias": "Dave"
+  },
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "PERSON",
+    "$p"
+   ],
+   [
+    "ADD_ALIAS",
+    "$p",
+    "Dave"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "21d7aabc476354b591368b1ac8e5301da314964a0ae404ae9cd4608bf2daf331",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Dave"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "f2f34ec75ed3efd3ffe55749e49ea16bc81a25199331463014f24fd53e80cd89",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2643229,
+  "utterance_id": "dev-024-S10:1",
+  "INPUT": "NEW PERSON Dave",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "f2f34ec75ed3efd3ffe55749e49ea16bc81a25199331463014f24fd53e80cd89",
+  "COMMAND_AST": {
+   "op": "NEW_PERSON",
+   "alias": "Dave"
+  },
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "PERSON",
+    "$p"
+   ],
+   [
+    "ADD_ALIAS",
+    "$p",
+    "Dave"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "21d7aabc476354b591368b1ac8e5301da314964a0ae404ae9cd4608bf2daf331",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "person:000002",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000002",
+    "Dave"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "ab4cb2da4d0ee447b6f276ac51cec34a392f9711cd9531d16f11487503a2cc4f",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2643229,
+  "utterance_id": "dev-024-S10:2",
+  "INPUT": "remind zeta , by Dave re alpha ; and later so then again soon , call alpha",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "ab4cb2da4d0ee447b6f276ac51cec34a392f9711cd9531d16f11487503a2cc4f",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "CALL",
+    "layout": [
+     "between_o4",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "CALL",
+       null,
+       15
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "CALL",
+       null,
+       15
+      ],
+      [
+       "PERSON",
+       "Dave",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "CALL",
+      null,
+      15
+     ],
+     [
+      "PERSON",
+      "Dave",
+      4
+     ],
+     [
+      "REMINDER",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1066.3336181640625,
+   "margin": 9.94677734375,
+   "n_outputs": 31,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Dave"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "status": "RESOLUTION_AMBIGUOUS",
+  "failure_stage": "RESOLVE_ENTITY",
+  "reason": "'Dave' matches 2 people: ['person:000001', 'person:000002']",
+  "RESPONSE": "Ambiguous: 'Dave' matches 2 people: ['person:000001', 'person:000002'].",
+  "STATE_AFTER": "ab4cb2da4d0ee447b6f276ac51cec34a392f9711cd9531d16f11487503a2cc4f",
+  "STATE_DIFF": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2643229,
+  "utterance_id": "dev-024-S10:3",
+  "INPUT": "QUERY WHO OF CALL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "ab4cb2da4d0ee447b6f276ac51cec34a392f9711cd9531d16f11487503a2cc4f",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "CALL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "35a85d7a20ac99dac56e70b244cf7f082bc07cb6243d4a581bde14d0503f860d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "ab4cb2da4d0ee447b6f276ac51cec34a392f9711cd9531d16f11487503a2cc4f",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ]
+   ],
+   "relations": [],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Dave"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2643229,
+  "utterance_id": "dev-024-S10:4",
+  "INPUT": "call gamma , by Rita per gamma ; and then , remind theta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "ab4cb2da4d0ee447b6f276ac51cec34a392f9711cd9531d16f11487503a2cc4f",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "CALL",
+    "layout": [
+     "between_i1",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       11
+      ],
+      [
+       "CALL",
+       null,
+       0
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "CALL",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Rita",
+       4
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "CALL",
+      null,
+      0
+     ],
+     [
+      "PERSON",
+      "Rita",
+      4
+     ],
+     [
+      "REMINDER",
+      null,
+      11
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     11
+    ]
+   },
+   "log_mass": 163.25245666503906,
+   "margin": 12.335281372070312,
+   "n_outputs": 31,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "CALL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Rita"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Rita",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "CALL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Rita"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "b8d4e4f9c6a7372a2a114a2651dd95f3ef4734bdbe72da97782b6e96ebb34ba7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "call:000001",
+    "CALL"
+   ],
+   [
+    "+obj",
+    "person:000003",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000003",
+    "Rita"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "call:000001"
+   ],
+   [
+    "+rel",
+    "call:000001",
+    "WHO",
+    "person:000003"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "507edafc3fc75b01eccb0f9dc3700b0c74a0f307b7640a486087105550f1f2a6",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "call:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Dave"
+    ],
+    [
+     "person:000003",
+     "Rita"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 5,
+  "pid": 2643229,
+  "utterance_id": "dev-024-S10:5",
+  "INPUT": "QUERY WHO OF CALL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t005",
+  "STATE_BEFORE": "507edafc3fc75b01eccb0f9dc3700b0c74a0f307b7640a486087105550f1f2a6",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "CALL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "CALL",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "35a85d7a20ac99dac56e70b244cf7f082bc07cb6243d4a581bde14d0503f860d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000003"
+  ],
+  "STATE_AFTER": "507edafc3fc75b01eccb0f9dc3700b0c74a0f307b7640a486087105550f1f2a6",
+  "RESPONSE": "Rita",
+  "RETURN_RENDERED": [
+   "Rita"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "call:000001",
+     "CALL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "person:000002",
+     "PERSON"
+    ],
+    [
+     "person:000003",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "call:000001",
+     "WHO",
+     "person:000003"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "call:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Dave"
+    ],
+    [
+     "person:000002",
+     "Dave"
+    ],
+    [
+     "person:000003",
+     "Rita"
+    ]
+   ]
+  }
+ }
+]

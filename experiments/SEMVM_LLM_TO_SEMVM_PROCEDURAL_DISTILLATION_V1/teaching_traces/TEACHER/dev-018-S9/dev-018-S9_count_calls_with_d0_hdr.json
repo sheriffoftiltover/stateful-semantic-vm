@@ -1,0 +1,436 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev-018-S9:count_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_LLM_TO_SEMVM_PROCEDURAL_DISTILLATION_V1/results/dev/work/TEACHER/dev-018-S9/learn/snapshots/dev-018-S9_count_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "d5c0b2939d8b633b97178557b11a849ece4a7866e064f2e94d7dc25868189566",
+ "utterances": [
+  {
+   "utterance": "Use person_on_call_at for time=midnight.",
+   "uid": "dev-018-S9:count_calls_with:d0:l0",
+   "instruction": "Use person_on_call_at for time=midnight.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Use person_on_call_at for time=midnight.",
+    "values": {
+     "PERSON": [],
+     "TIME": [
+      "midnight"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"midnight\"}}\n\n",
+      "score": -0.217
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -9.703
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -9.764
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"CALL\", \"procedure\": \"person_on_call_at\", \"args\": {\"time\": \"midnight\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "CALL",
+      "procedure": "person_on_call_at",
+      "args": {
+       "time": "midnight"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"args\": {\"time\": {\"const\": \"midnight\"}}, \"bind\": \"r1\", \"op\": \"CALL\", \"procedure\": \"person_on_call_at\"}]",
+      "score": -0.217,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -9.703,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -9.764,
+      "n": 1
+     }
+    ],
+    "margin": 9.486,
+    "reference_notes": [],
+    "seconds": 1.02,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "CALL",
+     "bind": "r1",
+     "procedure": "person_on_call_at",
+     "args": {
+      "time": {
+       "const": "midnight"
+      }
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "state_after": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "seconds": 1.094
+  },
+  {
+   "utterance": "Find the open calls with it.",
+   "uid": "dev-018-S9:count_calls_with:d0:l1",
+   "instruction": "Find the open calls with it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the open calls with it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 10,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"FIND\", \"type\": \"CALL\", \"status\": \"OPEN\"}\n\n",
+      "score": -1.217
+     },
+     {
+      "text": "r2 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -7.032
+     },
+     {
+      "text": "r2 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -7.164
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"FIND\", \"type\": \"CALL\", \"status\": \"OPEN\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "status": "OPEN",
+      "bind": "r2"
+     }
+    ],
+    "seconds": 3.55,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 3.552
+  },
+  {
+   "utterance": "Find the open calls with that person.",
+   "uid": "dev-018-S9:count_calls_with:d0:l2",
+   "instruction": "Find the open calls with that person.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find the open calls with that person.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 10,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"FIND\", \"type\": \"CALL\", \"status\": \"OPEN\"}\n\n",
+      "score": -1.281
+     },
+     {
+      "text": "r2 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -7.589
+     },
+     {
+      "text": "r2 = {\"op\": \"FIND_LAST\", \"type\": \"CALL\"}\n\n",
+      "score": -7.604
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"FIND\", \"type\": \"CALL\", \"status\": \"OPEN\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "status": "OPEN",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"op\": \"FIND\", \"status\": {\"const\": \"OPEN\"}, \"type\": {\"const\": \"CALL\"}, \"where\": []}]",
+      "score": -1.281,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": []}]",
+      "score": -7.589,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"CALL\"}}]",
+      "score": -7.604,
+      "n": 1
+     }
+    ],
+    "margin": 6.308,
+    "reference_notes": [],
+    "seconds": 3.36,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r2",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "state_after": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "seconds": 3.495
+  },
+  {
+   "utterance": "Count them.",
+   "uid": "dev-018-S9:count_calls_with:d0:l3",
+   "instruction": "Count them.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "r3 = {\"op\": \"COUNT\", \"of\": \"r2\"}\n\n",
+      "score": -0.551
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -2.498
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -4.099
+     }
+    ],
+    "raw_text": "r3 = {\"op\": \"COUNT\", \"of\": \"r2\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r2",
+      "bind": "r3"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r3\", \"list\": {\"var\": \"r2\"}, \"op\": \"COUNT\"}]",
+      "score": -0.551,
+      "n": 1
+     },
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -2.314,
+      "n": 2
+     }
+    ],
+    "margin": 1.763,
+    "reference_notes": [
+     "COUNT.of=r2 licensed by R0"
+    ],
+    "seconds": 1.83,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r3",
+     "list": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "state_after": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "seconds": 1.9
+  },
+  {
+   "utterance": "Return the count.",
+   "uid": "dev-018-S9:count_calls_with:d0:l4",
+   "instruction": "Return the count.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r3\"}\n\n",
+      "score": -0.018
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -4.641
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -5.331
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -8.204
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r3\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r3"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r3\"}}]",
+      "score": -0.003,
+      "n": 3
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -8.204,
+      "n": 1
+     }
+    ],
+    "margin": 8.201,
+    "reference_notes": [
+     "RETURN.value=r3 licensed by R2"
+    ],
+    "seconds": 1.36,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r3"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "state_after": "4e735fe33c6f3eb3cf10a02d9ed41e72fedcc837e7419483612868c552d05532",
+   "seconds": 1.433
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "CALL",
+   "bind": "r1",
+   "procedure": "person_on_call_at",
+   "args": {
+    "time": {
+     "const": "midnight"
+    }
+   }
+  },
+  {
+   "op": "FIND",
+   "bind": "r2",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r3",
+   "list": {
+    "var": "r2"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "42c6052fcf4723df70cbb0945c6a8ca39d5b35aa1f6915e0f90aceae3230a1e9",
+ "nl_mode": "NL_TEACH"
+}

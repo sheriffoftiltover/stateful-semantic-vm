@@ -1,0 +1,2216 @@
+{
+ "suite": "dev",
+ "arms": {
+  "GOLD_TRACE": {
+   "LEARNED_PROCEDURE_EXACT": 1.0,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 36,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 224,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 25,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 41,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 60,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 1.0,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 1.0,
+   "n_FINAL_STATE_EXACT": 30,
+   "SCENARIO_EXACT": 1.0,
+   "n_SCENARIO_EXACT": 30,
+   "COMPOSITION_L2_REUSE_EXACT": 1.0,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "WRONG_TEACHER_ACTION_EXECUTED": 0,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "accounting": {
+    "library_bytes_after": {
+     "mean": 49698.1333,
+     "sum": 1490944,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 1.2,
+     "sum": 36,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 36.1103,
+     "sum": 1083.31,
+     "n": 30
+    }
+   },
+   "strata": {},
+   "failure_taxonomy": {},
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED_inherited": 0,
+   "POST_HANDOFF_UNSEEN_ARGUMENT_EXACT_ALL": 1.0,
+   "RESTART_EXACT_ALL_TARGETS": 1.0,
+   "VERIFIER_CRASH": 0,
+   "n_VERIFIER_CRASH": 294,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 500,
+   "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 90,
+   "RESTART_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_RESTART_EXACT_GIVEN_ACQUISITION": 90,
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 90,
+   "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 60,
+   "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 1.0,
+   "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 60,
+   "DISTILLED_SKILL_EXACT": 1.0,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "HOSTED_CALLS_POST_HANDOFF": 0,
+   "n_HOSTED_CALLS_POST_HANDOFF": 30,
+   "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+   "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 0,
+   "WRONG_STRUCTURAL_ACTION_EXECUTED": 0,
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+   "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+   "VACUOUS_CANDIDATE_ACTIVATED": 0,
+   "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+   "FALSE_CLARIFY_COUNT": 0,
+   "MISSED_CLARIFY_COUNT": 0,
+   "VACUOUS_VERIFICATION_ATTEMPT": 0,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 0,
+   "CLARIFICATION_PRECISION": null,
+   "hosted_accounting": {},
+   "earliest_cause": {},
+   "teacher_grounder_attribution": {},
+   "FIRST_PASS_SCENARIO_EXACT": 1.0,
+   "gates": {
+    "LEARNED_PROCEDURE_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "SCENARIO_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFIER_CRASH": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    }
+   },
+   "arm": "GOLD_TRACE",
+   "mode": "GOLD_TRACE",
+   "grounder": "LOCAL",
+   "seconds": {
+    "acquisition": 543.2,
+    "reuse": 918.8
+   }
+  },
+  "FORMAL_TEACH": {
+   "LEARNED_PROCEDURE_EXACT": 1.0,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 36,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 224,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 25,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 41,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 1.0,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 60,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 1.0,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 1.0,
+   "n_FINAL_STATE_EXACT": 30,
+   "SCENARIO_EXACT": 1.0,
+   "n_SCENARIO_EXACT": 30,
+   "COMPOSITION_L2_REUSE_EXACT": 1.0,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 1.0,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "WRONG_TEACHER_ACTION_EXECUTED": 0,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "accounting": {
+    "library_bytes_after": {
+     "mean": 49698.1333,
+     "sum": 1490944,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 1.2,
+     "sum": 36,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 34.2843,
+     "sum": 1028.53,
+     "n": 30
+    }
+   },
+   "strata": {},
+   "failure_taxonomy": {},
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED_inherited": 0,
+   "POST_HANDOFF_UNSEEN_ARGUMENT_EXACT_ALL": 1.0,
+   "RESTART_EXACT_ALL_TARGETS": 1.0,
+   "VERIFIER_CRASH": 0,
+   "n_VERIFIER_CRASH": 294,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 500,
+   "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 90,
+   "RESTART_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_RESTART_EXACT_GIVEN_ACQUISITION": 90,
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 90,
+   "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 60,
+   "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 1.0,
+   "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 60,
+   "DISTILLED_SKILL_EXACT": 1.0,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "HOSTED_CALLS_POST_HANDOFF": 0,
+   "n_HOSTED_CALLS_POST_HANDOFF": 30,
+   "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+   "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 0,
+   "WRONG_STRUCTURAL_ACTION_EXECUTED": 0,
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+   "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+   "VACUOUS_CANDIDATE_ACTIVATED": 0,
+   "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+   "FALSE_CLARIFY_COUNT": 0,
+   "MISSED_CLARIFY_COUNT": 0,
+   "VACUOUS_VERIFICATION_ATTEMPT": 0,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 0,
+   "CLARIFICATION_PRECISION": null,
+   "hosted_accounting": {},
+   "earliest_cause": {},
+   "teacher_grounder_attribution": {},
+   "FIRST_PASS_SCENARIO_EXACT": 1.0,
+   "gates": {
+    "LEARNED_PROCEDURE_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "SCENARIO_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFIER_CRASH": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    }
+   },
+   "arm": "FORMAL_TEACH",
+   "mode": "FORMAL_TEACH",
+   "grounder": "LOCAL",
+   "seconds": {
+    "acquisition": 516.3,
+    "reuse": 919.4
+   }
+  },
+  "A": {
+   "TEACHER_EPISODE_SUCCESS": 0.8889,
+   "n_TEACHER_EPISODE_SUCCESS": 36,
+   "LEARNED_PROCEDURE_EXACT": 0.8611,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "STUDENT_TRACE_EXACT": 0.881,
+   "n_STUDENT_TRACE_EXACT": 42,
+   "TEACHER_INSTRUCTION_GROUNDED": 0.8182,
+   "n_TEACHER_INSTRUCTION_GROUNDED": 143,
+   "class_FIRST_LESSON_SUCCESS": 17,
+   "n_class_FIRST_LESSON_SUCCESS": 17,
+   "DISTILLATION_FIRST_PASS": 0.4722,
+   "n_DISTILLATION_FIRST_PASS": 36,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 35,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 32,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 200,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 21,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 0.8778,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.9,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 54,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 0.9,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 0.9667,
+   "n_FINAL_STATE_EXACT": 30,
+   "SCENARIO_EXACT": 0.8333,
+   "n_SCENARIO_EXACT": 30,
+   "class_REPHRASE_SUCCESS": 11,
+   "n_class_REPHRASE_SUCCESS": 11,
+   "class_FAILED:TEACHER_EPISODE_FAIL": 4,
+   "n_class_FAILED:TEACHER_EPISODE_FAIL": 4,
+   "COMPOSITION_L2_REUSE_EXACT": 0.75,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 0.5,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "TEACHER_REPHRASE_SUCCESS": 1.0,
+   "n_TEACHER_REPHRASE_SUCCESS": 2,
+   "INSUFFICIENT_EVIDENCE_DETECTED": 1.0,
+   "n_INSUFFICIENT_EVIDENCE_DETECTED": 2,
+   "SECOND_DEMO_REQUEST_EXACT": 1.0,
+   "n_SECOND_DEMO_REQUEST_EXACT": 2,
+   "class_SECOND_DEMO_SUCCESS": 3,
+   "n_class_SECOND_DEMO_SUCCESS": 3,
+   "n_BAD_TEACHER_SUGGESTION_EXECUTED": 3,
+   "UNSUPPORTED_TEACHER_ACTION_BLOCKED": 1.0,
+   "n_UNSUPPORTED_TEACHER_ACTION_BLOCKED": 2,
+   "UNSUPPORTED_REJECTION": 1.0,
+   "n_UNSUPPORTED_REJECTION": 1,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 3,
+   "n_LEGAL_BAD_SANDBOX_EXECUTED": 4,
+   "LEGAL_BAD_INJECTION_APPLIED": 1.0,
+   "n_LEGAL_BAD_INJECTION_APPLIED": 2,
+   "CROSS_DEMO_INCONSISTENCY_DETECTED": 1.0,
+   "n_CROSS_DEMO_INCONSISTENCY_DETECTED": 2,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "n_BAD_PROCEDURE_ACTIVATED": 2,
+   "WRONG_TEACHER_ACTION_EXECUTED": 1,
+   "n_WRONG_TEACHER_ACTION_EXECUTED": 1,
+   "class_FAILED:ACTIVE": 1,
+   "n_class_FAILED:ACTIVE": 1,
+   "accounting": {
+    "teacher_turns_per_skill": {
+     "mean": 2.3889,
+     "sum": 86,
+     "n": 36
+    },
+    "demonstrations_per_skill": {
+     "mean": 1.2222,
+     "sum": 44,
+     "n": 36
+    },
+    "student_questions_per_skill": {
+     "mean": 1.3889,
+     "sum": 50,
+     "n": 36
+    },
+    "student_grounding_seconds": {
+     "mean": 3.8824,
+     "sum": 555.183,
+     "n": 143
+    },
+    "student_llm_calls_per_line": {
+     "mean": 5.4476,
+     "sum": 779,
+     "n": 143
+    },
+    "library_bytes_after": {
+     "mean": 49152.0,
+     "sum": 1474560,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 1.0667,
+     "sum": 32,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 48.8377,
+     "sum": 1465.13,
+     "n": 30
+    }
+   },
+   "strata": {
+    "stratum_S1": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S10": {
+     "acc": 1.0,
+     "n": 4
+    },
+    "stratum_S11": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S12": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S13": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S14D": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S14L": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S15": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S16": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "stratum_S17": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S18": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S2": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S3": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S4": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S5": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S6": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S7": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S8": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S9": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "style_A": {
+     "acc": 1.0,
+     "n": 9
+    },
+    "style_B": {
+     "acc": 0.8571,
+     "n": 7
+    },
+    "style_C": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "style_D": {
+     "acc": 1.0,
+     "n": 8
+    },
+    "style_E": {
+     "acc": 0.6667,
+     "n": 6
+    }
+   },
+   "failure_taxonomy": {
+    "GT_TURN_BUDGET": 4,
+    "SG_FALSE_CLARIFY": 1
+   },
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED_inherited": 0,
+   "POST_HANDOFF_UNSEEN_ARGUMENT_EXACT_ALL": 0.8778,
+   "RESTART_EXACT_ALL_TARGETS": 0.8778,
+   "VERIFIER_CRASH": 0,
+   "n_VERIFIER_CRASH": 36,
+   "TRACE_BEHAVIORAL_EXACT": 0.973,
+   "n_TRACE_BEHAVIORAL_EXACT": 37,
+   "TRACE_STRUCTURAL_EXACT": 0.973,
+   "n_TRACE_STRUCTURAL_EXACT": 37,
+   "GROUNDING_BEHAVIORAL_EXACT": 0.9429,
+   "n_GROUNDING_BEHAVIORAL_EXACT": 35,
+   "GROUNDING_STRUCTURAL_EXACT": 0.9429,
+   "n_GROUNDING_STRUCTURAL_EXACT": 35,
+   "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 1.0,
+   "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 22,
+   "RELATION_BINDING_EXACT": 1.0,
+   "n_RELATION_BINDING_EXACT": 34,
+   "RELATION_BINDING_EXACT_WHO": 1.0,
+   "n_RELATION_BINDING_EXACT_WHO": 13,
+   "STATUS_SCOPE_EXACT": 1.0,
+   "n_STATUS_SCOPE_EXACT": 34,
+   "OP_EXACT": 0.9706,
+   "n_OP_EXACT": 34,
+   "LINE_GROUNDING_STRUCTURAL_EXACT": 0.9016,
+   "n_LINE_GROUNDING_STRUCTURAL_EXACT": 122,
+   "FIRST_PASS_LINE_GROUNDING_EXACT": 0.9167,
+   "n_FIRST_PASS_LINE_GROUNDING_EXACT": 108,
+   "LINE_RELATION_BINDING_EXACT": 0.9444,
+   "n_LINE_RELATION_BINDING_EXACT": 36,
+   "LINE_RELATION_BINDING_EXACT_WHO": 0.9375,
+   "n_LINE_RELATION_BINDING_EXACT_WHO": 16,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 226,
+   "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 77,
+   "RESTART_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_RESTART_EXACT_GIVEN_ACQUISITION": 77,
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 77,
+   "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 52,
+   "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 1.0,
+   "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 52,
+   "DISTILLED_SKILL_EXACT": 0.8438,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "HOSTED_CALLS_POST_HANDOFF": 0,
+   "n_HOSTED_CALLS_POST_HANDOFF": 30,
+   "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+   "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+   "FALSE_CLARIFY_COUNT": 8,
+   "n_FALSE_CLARIFY_COUNT": 8,
+   "RESCUE_SUCCESS": 0.9091,
+   "n_RESCUE_SUCCESS": 11,
+   "RELATION_BINDING_EXACT_RECIPIENT": 1.0,
+   "n_RELATION_BINDING_EXACT_RECIPIENT": 8,
+   "LINE_RELATION_BINDING_EXACT_RECIPIENT": 0.875,
+   "n_LINE_RELATION_BINDING_EXACT_RECIPIENT": 8,
+   "RELATION_BINDING_EXACT_WHEN": 1.0,
+   "n_RELATION_BINDING_EXACT_WHEN": 8,
+   "LINE_RELATION_BINDING_EXACT_WHEN": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_WHEN": 11,
+   "CLARIFICATION_RECALL": 1.0,
+   "n_CLARIFICATION_RECALL": 2,
+   "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 4,
+   "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 4,
+   "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+   "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+   "RELATION_BINDING_EXACT_TOPIC": 1.0,
+   "n_RELATION_BINDING_EXACT_TOPIC": 1,
+   "LINE_RELATION_BINDING_EXACT_TOPIC": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_TOPIC": 1,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 1,
+   "n_WRONG_BEHAVIORAL_ACTION_EXECUTED": 1,
+   "WRONG_STRUCTURAL_ACTION_EXECUTED": 1,
+   "n_WRONG_STRUCTURAL_ACTION_EXECUTED": 1,
+   "RELATION_BINDING_EXACT_WHERE": 1.0,
+   "n_RELATION_BINDING_EXACT_WHERE": 1,
+   "LINE_RELATION_BINDING_EXACT_WHERE": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_WHERE": 1,
+   "VACUITY_PROBE_TRIGGERED": 0.0,
+   "n_VACUITY_PROBE_TRIGGERED": 2,
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+   "VACUOUS_CANDIDATE_ACTIVATED": 0,
+   "MISSED_CLARIFY_COUNT": 0,
+   "VACUOUS_VERIFICATION_ATTEMPT": 0,
+   "CLARIFICATION_PRECISION": 0.2,
+   "hosted_accounting": {},
+   "earliest_cause": {
+    "GT_TURN_BUDGET": 4,
+    "GR_OP": 1
+   },
+   "teacher_grounder_attribution": {},
+   "FIRST_PASS_SCENARIO_EXACT": 0.4667,
+   "gates": {
+    "DETECTABLE_BAD_SUGGESTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "LEGAL_BAD_PROCEDURE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFIER_CRASH": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VACUOUS_CANDIDATE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    }
+   },
+   "arm": "A",
+   "mode": "SCRIPTED",
+   "grounder": "LOCAL",
+   "seconds": {
+    "acquisition": 751.0,
+    "reuse": 904.0
+   }
+  },
+  "B": {
+   "TEACHER_EPISODE_SUCCESS": 0.75,
+   "n_TEACHER_EPISODE_SUCCESS": 36,
+   "LEARNED_PROCEDURE_EXACT": 0.7222,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "STUDENT_TRACE_EXACT": 0.8718,
+   "n_STUDENT_TRACE_EXACT": 39,
+   "TEACHER_INSTRUCTION_GROUNDED": 0.964,
+   "n_TEACHER_INSTRUCTION_GROUNDED": 111,
+   "class_FIRST_LESSON_SUCCESS": 20,
+   "n_class_FIRST_LESSON_SUCCESS": 20,
+   "DISTILLATION_FIRST_PASS": 0.5556,
+   "n_DISTILLATION_FIRST_PASS": 36,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 32,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 27,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 177,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 21,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 0.7333,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.7667,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 46,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 0.75,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 0.9667,
+   "n_FINAL_STATE_EXACT": 30,
+   "SCENARIO_EXACT": 0.7,
+   "n_SCENARIO_EXACT": 30,
+   "WRONG_TEACHER_ACTION_EXECUTED": 5,
+   "n_WRONG_TEACHER_ACTION_EXECUTED": 5,
+   "class_FAILED:ACTIVE": 1,
+   "n_class_FAILED:ACTIVE": 1,
+   "class_FAILED:TEACHER_EPISODE_FAIL": 9,
+   "n_class_FAILED:TEACHER_EPISODE_FAIL": 9,
+   "COMPOSITION_L2_REUSE_EXACT": 0.625,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 0.5,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "TEACHER_REPHRASE_SUCCESS": 0.5,
+   "n_TEACHER_REPHRASE_SUCCESS": 2,
+   "class_REPHRASE_SUCCESS": 2,
+   "n_class_REPHRASE_SUCCESS": 2,
+   "INSUFFICIENT_EVIDENCE_DETECTED": 1.0,
+   "n_INSUFFICIENT_EVIDENCE_DETECTED": 2,
+   "SECOND_DEMO_REQUEST_EXACT": 1.0,
+   "n_SECOND_DEMO_REQUEST_EXACT": 2,
+   "class_SECOND_DEMO_SUCCESS": 4,
+   "n_class_SECOND_DEMO_SUCCESS": 4,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 4,
+   "n_LEGAL_BAD_SANDBOX_EXECUTED": 4,
+   "LEGAL_BAD_INJECTION_APPLIED": 1.0,
+   "n_LEGAL_BAD_INJECTION_APPLIED": 2,
+   "CROSS_DEMO_INCONSISTENCY_DETECTED": 1.0,
+   "n_CROSS_DEMO_INCONSISTENCY_DETECTED": 2,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "n_BAD_PROCEDURE_ACTIVATED": 2,
+   "n_BAD_TEACHER_SUGGESTION_EXECUTED": 2,
+   "UNSUPPORTED_TEACHER_ACTION_BLOCKED": 1.0,
+   "n_UNSUPPORTED_TEACHER_ACTION_BLOCKED": 1,
+   "accounting": {
+    "teacher_turns_per_skill": {
+     "mean": 1.8611,
+     "sum": 67,
+     "n": 36
+    },
+    "demonstrations_per_skill": {
+     "mean": 1.1389,
+     "sum": 41,
+     "n": 36
+    },
+    "student_questions_per_skill": {
+     "mean": 0.8611,
+     "sum": 31,
+     "n": 36
+    },
+    "student_grounding_seconds": {
+     "mean": 1.4032,
+     "sum": 155.753,
+     "n": 111
+    },
+    "student_llm_calls_per_line": {
+     "mean": 1.0,
+     "sum": 111,
+     "n": 111
+    },
+    "library_bytes_after": {
+     "mean": 49152.0,
+     "sum": 1474560,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 0.9,
+     "sum": 27,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 118.1207,
+     "sum": 3543.62,
+     "n": 30
+    }
+   },
+   "strata": {
+    "stratum_S1": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S10": {
+     "acc": 1.0,
+     "n": 4
+    },
+    "stratum_S11": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S12": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S13": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S14D": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S14L": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S15": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S16": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "stratum_S17": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S18": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S2": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S3": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S4": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S5": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S6": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S7": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S8": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S9": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "style_A": {
+     "acc": 0.7778,
+     "n": 9
+    },
+    "style_B": {
+     "acc": 0.7143,
+     "n": 7
+    },
+    "style_C": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "style_D": {
+     "acc": 0.875,
+     "n": 8
+    },
+    "style_E": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "failure_taxonomy": {
+    "PD_PROGRAM": 1,
+    "GT_TURN_BUDGET": 8
+   },
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED_inherited": 0,
+   "POST_HANDOFF_UNSEEN_ARGUMENT_EXACT_ALL": 0.7333,
+   "RESTART_EXACT_ALL_TARGETS": 0.7333,
+   "VERIFIER_CRASH": 0,
+   "n_VERIFIER_CRASH": 36,
+   "TRACE_BEHAVIORAL_EXACT": 0.8919,
+   "n_TRACE_BEHAVIORAL_EXACT": 37,
+   "TRACE_STRUCTURAL_EXACT": 0.8919,
+   "n_TRACE_STRUCTURAL_EXACT": 37,
+   "GROUNDING_BEHAVIORAL_EXACT": 0.9118,
+   "n_GROUNDING_BEHAVIORAL_EXACT": 34,
+   "GROUNDING_STRUCTURAL_EXACT": 0.9118,
+   "n_GROUNDING_STRUCTURAL_EXACT": 34,
+   "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 0.9615,
+   "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 26,
+   "RELATION_BINDING_EXACT": 1.0,
+   "n_RELATION_BINDING_EXACT": 34,
+   "RELATION_BINDING_EXACT_WHO": 1.0,
+   "n_RELATION_BINDING_EXACT_WHO": 14,
+   "STATUS_SCOPE_EXACT": 1.0,
+   "n_STATUS_SCOPE_EXACT": 34,
+   "OP_EXACT": 0.9118,
+   "n_OP_EXACT": 34,
+   "LINE_GROUNDING_STRUCTURAL_EXACT": 0.9223,
+   "n_LINE_GROUNDING_STRUCTURAL_EXACT": 103,
+   "FIRST_PASS_LINE_GROUNDING_EXACT": 0.93,
+   "n_FIRST_PASS_LINE_GROUNDING_EXACT": 100,
+   "LINE_RELATION_BINDING_EXACT": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT": 33,
+   "LINE_RELATION_BINDING_EXACT_WHO": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_WHO": 15,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 194,
+   "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 65,
+   "RESTART_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_RESTART_EXACT_GIVEN_ACQUISITION": 65,
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 65,
+   "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 44,
+   "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 1.0,
+   "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 44,
+   "DISTILLED_SKILL_EXACT": 0.7188,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "HOSTED_CALLS_POST_HANDOFF": 0,
+   "n_HOSTED_CALLS_POST_HANDOFF": 30,
+   "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+   "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+   "HOSTED_TEARDOWN_VERIFIED": 1.0,
+   "n_HOSTED_TEARDOWN_VERIFIED": 30,
+   "RELATION_BINDING_EXACT_RECIPIENT": 1.0,
+   "n_RELATION_BINDING_EXACT_RECIPIENT": 9,
+   "LINE_RELATION_BINDING_EXACT_RECIPIENT": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_RECIPIENT": 9,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 4,
+   "n_WRONG_BEHAVIORAL_ACTION_EXECUTED": 4,
+   "WRONG_STRUCTURAL_ACTION_EXECUTED": 4,
+   "n_WRONG_STRUCTURAL_ACTION_EXECUTED": 4,
+   "RELATION_BINDING_EXACT_WHEN": 1.0,
+   "n_RELATION_BINDING_EXACT_WHEN": 6,
+   "LINE_RELATION_BINDING_EXACT_WHEN": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_WHEN": 8,
+   "FALSE_CLARIFY_COUNT": 1,
+   "n_FALSE_CLARIFY_COUNT": 1,
+   "CLARIFICATION_RECALL": 1.0,
+   "n_CLARIFICATION_RECALL": 1,
+   "RESCUE_SUCCESS": 0.5,
+   "n_RESCUE_SUCCESS": 2,
+   "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 4,
+   "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 4,
+   "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+   "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+   "RELATION_BINDING_EXACT_TOPIC": 1.0,
+   "n_RELATION_BINDING_EXACT_TOPIC": 1,
+   "LINE_RELATION_BINDING_EXACT_TOPIC": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_TOPIC": 1,
+   "RELATION_BINDING_EXACT_WHERE": 1.0,
+   "n_RELATION_BINDING_EXACT_WHERE": 1,
+   "LINE_RELATION_BINDING_EXACT_WHERE": 1.0,
+   "n_LINE_RELATION_BINDING_EXACT_WHERE": 1,
+   "EVIDENCE_NONVACUITY_DETECTED": 1.0,
+   "n_EVIDENCE_NONVACUITY_DETECTED": 1,
+   "VACUOUS_VERIFICATION_ATTEMPT": 1,
+   "n_VACUOUS_VERIFICATION_ATTEMPT": 1,
+   "VACUITY_PROBE_TRIGGERED": 0.5,
+   "n_VACUITY_PROBE_TRIGGERED": 2,
+   "VACUOUS_CANDIDATE_ACTIVATED": 0,
+   "n_VACUOUS_CANDIDATE_ACTIVATED": 1,
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+   "MISSED_CLARIFY_COUNT": 0,
+   "CLARIFICATION_PRECISION": 0.5,
+   "hosted_accounting": {
+    "grounder_calls": 138,
+    "grounder_cached": 48,
+    "grounder_input_tokens": 599858,
+    "grounder_output_tokens": 9711,
+    "grounder_truncations": 0
+   },
+   "earliest_cause": {
+    "GR_OP": 2,
+    "GT_TURN_BUDGET": 7,
+    "EV_VACUOUS": 1
+   },
+   "teacher_grounder_attribution": {},
+   "FIRST_PASS_SCENARIO_EXACT": 0.5333,
+   "gates": {
+    "DETECTABLE_BAD_SUGGESTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "LEGAL_BAD_PROCEDURE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFIER_CRASH": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VACUOUS_CANDIDATE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    }
+   },
+   "arm": "B",
+   "mode": "SCRIPTED",
+   "grounder": "HOSTED",
+   "seconds": {
+    "acquisition": 495.7,
+    "reuse": 903.9
+   }
+  },
+  "C": {
+   "TEACHER_EPISODE_SUCCESS": 0.6667,
+   "n_TEACHER_EPISODE_SUCCESS": 36,
+   "LEARNED_PROCEDURE_EXACT": 0.6667,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "STUDENT_TRACE_EXACT": 0.8571,
+   "n_STUDENT_TRACE_EXACT": 35,
+   "TEACHER_INSTRUCTION_GROUNDED": 0.9375,
+   "n_TEACHER_INSTRUCTION_GROUNDED": 112,
+   "class_FIRST_LESSON_SUCCESS": 15,
+   "n_class_FIRST_LESSON_SUCCESS": 15,
+   "DISTILLATION_FIRST_PASS": 0.4167,
+   "n_DISTILLATION_FIRST_PASS": 36,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 25,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 24,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 144,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 12,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 0.6222,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.6333,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 38,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 0.6333,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 0.8667,
+   "n_FINAL_STATE_EXACT": 30,
+   "SCENARIO_EXACT": 0.6,
+   "n_SCENARIO_EXACT": 30,
+   "WRONG_TEACHER_ACTION_EXECUTED": 2,
+   "n_WRONG_TEACHER_ACTION_EXECUTED": 2,
+   "class_FAILED:TEACHER_EPISODE_FAIL": 12,
+   "n_class_FAILED:TEACHER_EPISODE_FAIL": 12,
+   "class_REPHRASE_SUCCESS": 5,
+   "n_class_REPHRASE_SUCCESS": 5,
+   "COMPOSITION_L2_REUSE_EXACT": 0.625,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 0.75,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "COMPOSITION_L1_EXACT": 0.5,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "TEACHER_REPHRASE_SUCCESS": 0.5,
+   "n_TEACHER_REPHRASE_SUCCESS": 2,
+   "class_CLARIFICATION_SUCCESS": 1,
+   "n_class_CLARIFICATION_SUCCESS": 1,
+   "INSUFFICIENT_EVIDENCE_DETECTED": 1.0,
+   "n_INSUFFICIENT_EVIDENCE_DETECTED": 2,
+   "SECOND_DEMO_REQUEST_EXACT": 1.0,
+   "n_SECOND_DEMO_REQUEST_EXACT": 2,
+   "class_SECOND_DEMO_SUCCESS": 3,
+   "n_class_SECOND_DEMO_SUCCESS": 3,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 4,
+   "n_LEGAL_BAD_SANDBOX_EXECUTED": 4,
+   "LEGAL_BAD_INJECTION_APPLIED": 1.0,
+   "n_LEGAL_BAD_INJECTION_APPLIED": 2,
+   "CROSS_DEMO_INCONSISTENCY_DETECTED": 1.0,
+   "n_CROSS_DEMO_INCONSISTENCY_DETECTED": 2,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "n_BAD_PROCEDURE_ACTIVATED": 2,
+   "accounting": {
+    "teacher_turns_per_skill": {
+     "mean": 2.25,
+     "sum": 81,
+     "n": 36
+    },
+    "demonstrations_per_skill": {
+     "mean": 1.0278,
+     "sum": 37,
+     "n": 36
+    },
+    "student_questions_per_skill": {
+     "mean": 1.25,
+     "sum": 45,
+     "n": 36
+    },
+    "student_grounding_seconds": {
+     "mean": 9.194,
+     "sum": 1029.724,
+     "n": 112
+    },
+    "student_llm_calls_per_line": {
+     "mean": 4.6786,
+     "sum": 524,
+     "n": 112
+    },
+    "teacher_calls": {
+     "mean": 1.0,
+     "sum": 81,
+     "n": 81
+    },
+    "teacher_cached": {
+     "mean": 0.6543,
+     "sum": 53,
+     "n": 81
+    },
+    "teacher_input_tokens": {
+     "mean": 1121.0123,
+     "sum": 90802,
+     "n": 81
+    },
+    "teacher_output_tokens": {
+     "mean": 778.8272,
+     "sum": 63085,
+     "n": 81
+    },
+    "teacher_latency_s": {
+     "mean": 7.0707,
+     "sum": 572.728,
+     "n": 81
+    },
+    "library_bytes_after": {
+     "mean": 49425.0667,
+     "sum": 1482752,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 0.8,
+     "sum": 24,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 80.835,
+     "sum": 2425.05,
+     "n": 30
+    }
+   },
+   "strata": {
+    "stratum_S1": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S10": {
+     "acc": 0.75,
+     "n": 4
+    },
+    "stratum_S11": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S12": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S13": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S14D": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "stratum_S14L": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "stratum_S15": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S16": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "stratum_S17": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S18": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S2": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S3": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S4": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S5": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S6": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S7": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S8": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S9": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "style_A": {
+     "acc": 0.8889,
+     "n": 9
+    },
+    "style_B": {
+     "acc": 0.5714,
+     "n": 7
+    },
+    "style_C": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "style_D": {
+     "acc": 0.5,
+     "n": 8
+    },
+    "style_E": {
+     "acc": 0.8333,
+     "n": 6
+    }
+   },
+   "failure_taxonomy": {
+    "GT_TURN_BUDGET": 12
+   },
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED_inherited": 0,
+   "POST_HANDOFF_UNSEEN_ARGUMENT_EXACT_ALL": 0.6222,
+   "RESTART_EXACT_ALL_TARGETS": 0.6222,
+   "VERIFIER_CRASH": 0,
+   "n_VERIFIER_CRASH": 36,
+   "TEACHER_LESSON_BEHAVIORAL_EXACT": 0.8438,
+   "n_TEACHER_LESSON_BEHAVIORAL_EXACT": 32,
+   "TEACHER_LESSON_JUDGE_PARSE_FAIL": 0.0938,
+   "n_TEACHER_LESSON_JUDGE_PARSE_FAIL": 32,
+   "FIRST_PASS_TEACHER_LESSON_EXACT": 0.9231,
+   "n_FIRST_PASS_TEACHER_LESSON_EXACT": 26,
+   "TEACHER_LESSON_LEXICAL_UNREQUESTED": 0.0,
+   "n_TEACHER_LESSON_LEXICAL_UNREQUESTED": 32,
+   "TRACE_BEHAVIORAL_EXACT": 0.9333,
+   "n_TRACE_BEHAVIORAL_EXACT": 30,
+   "TRACE_STRUCTURAL_EXACT": 0.9333,
+   "n_TRACE_STRUCTURAL_EXACT": 30,
+   "GROUNDING_BEHAVIORAL_EXACT": 0.9259,
+   "n_GROUNDING_BEHAVIORAL_EXACT": 27,
+   "GROUNDING_STRUCTURAL_EXACT": 0.9259,
+   "n_GROUNDING_STRUCTURAL_EXACT": 27,
+   "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 0.9048,
+   "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 21,
+   "RELATION_BINDING_EXACT": 0.9259,
+   "n_RELATION_BINDING_EXACT": 27,
+   "RELATION_BINDING_EXACT_WHO": 1.0,
+   "n_RELATION_BINDING_EXACT_WHO": 12,
+   "STATUS_SCOPE_EXACT": 1.0,
+   "n_STATUS_SCOPE_EXACT": 27,
+   "OP_EXACT": 1.0,
+   "n_OP_EXACT": 27,
+   "TEACHER_UNREQUESTED_CONSTRAINT_RATE": 0.0,
+   "n_TEACHER_UNREQUESTED_CONSTRAINT_RATE": 27,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 152,
+   "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 55,
+   "RESTART_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_RESTART_EXACT_GIVEN_ACQUISITION": 55,
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 55,
+   "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 37,
+   "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 1.0,
+   "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 37,
+   "DISTILLED_SKILL_EXACT": 0.625,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "HOSTED_CALLS_POST_HANDOFF": 0,
+   "n_HOSTED_CALLS_POST_HANDOFF": 30,
+   "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+   "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+   "HOSTED_TEARDOWN_VERIFIED": 1.0,
+   "n_HOSTED_TEARDOWN_VERIFIED": 30,
+   "EVIDENCE_NONVACUITY_DETECTED": 0.5,
+   "n_EVIDENCE_NONVACUITY_DETECTED": 2,
+   "VACUOUS_VERIFICATION_ATTEMPT": 1,
+   "n_VACUOUS_VERIFICATION_ATTEMPT": 1,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 2,
+   "n_WRONG_BEHAVIORAL_ACTION_EXECUTED": 2,
+   "WRONG_STRUCTURAL_ACTION_EXECUTED": 2,
+   "n_WRONG_STRUCTURAL_ACTION_EXECUTED": 2,
+   "RELATION_BINDING_EXACT_RECIPIENT": 0.6667,
+   "n_RELATION_BINDING_EXACT_RECIPIENT": 6,
+   "VACUOUS_CANDIDATE_ACTIVATED": 0,
+   "n_VACUOUS_CANDIDATE_ACTIVATED": 2,
+   "FALSE_CLARIFY_COUNT": 3,
+   "n_FALSE_CLARIFY_COUNT": 3,
+   "RESCUE_SUCCESS": 1.0,
+   "n_RESCUE_SUCCESS": 6,
+   "RELATION_BINDING_EXACT_WHEN": 1.0,
+   "n_RELATION_BINDING_EXACT_WHEN": 3,
+   "CLARIFICATION_RECALL": 1.0,
+   "n_CLARIFICATION_RECALL": 1,
+   "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 4,
+   "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 4,
+   "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+   "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+   "RELATION_BINDING_EXACT_TOPIC": 1.0,
+   "n_RELATION_BINDING_EXACT_TOPIC": 1,
+   "VACUITY_PROBE_TRIGGERED": 0.0,
+   "n_VACUITY_PROBE_TRIGGERED": 2,
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+   "MISSED_CLARIFY_COUNT": 0,
+   "CLARIFICATION_PRECISION": 0.25,
+   "hosted_accounting": {
+    "teacher_calls": 82,
+    "teacher_cached": 53,
+    "teacher_input_tokens": 92031,
+    "teacher_output_tokens": 67181,
+    "teacher_truncations": 2
+   },
+   "earliest_cause": {
+    "GR_RELATION": 2,
+    "GT_TURN_BUDGET": 8,
+    "GT_AMBIGUOUS": 1,
+    "GT_WRONG_ARGUMENT": 1
+   },
+   "teacher_grounder_attribution": {
+    "TEACHER_CORRECT_GROUNDER_CORRECT": 25,
+    "TEACHER_CORRECT_GROUNDER_WRONG": 2,
+    "TEACHER_WRONG_GROUNDER_NOT_REPAIRED": 3,
+    "TEACHER_WRONG_GROUNDER_REPAIRED": 2
+   },
+   "FIRST_PASS_SCENARIO_EXACT": 0.3333,
+   "gates": {
+    "DETECTABLE_BAD_SUGGESTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "LEGAL_BAD_PROCEDURE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFIER_CRASH": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VACUOUS_CANDIDATE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    }
+   },
+   "arm": "C",
+   "mode": "TEACHER",
+   "grounder": "LOCAL",
+   "seconds": {
+    "acquisition": 1225.7,
+    "reuse": 897.0
+   }
+  },
+  "D": {
+   "TEACHER_EPISODE_SUCCESS": 0.8056,
+   "n_TEACHER_EPISODE_SUCCESS": 36,
+   "LEARNED_PROCEDURE_EXACT": 0.75,
+   "n_LEARNED_PROCEDURE_EXACT": 36,
+   "STUDENT_TRACE_EXACT": 0.85,
+   "n_STUDENT_TRACE_EXACT": 40,
+   "TEACHER_INSTRUCTION_GROUNDED": 0.9304,
+   "n_TEACHER_INSTRUCTION_GROUNDED": 115,
+   "class_FIRST_LESSON_SUCCESS": 20,
+   "n_class_FIRST_LESSON_SUCCESS": 20,
+   "DISTILLATION_FIRST_PASS": 0.5556,
+   "n_DISTILLATION_FIRST_PASS": 36,
+   "VERIFY_FALSE_ACCEPT": 0,
+   "n_VERIFY_FALSE_ACCEPT": 31,
+   "SOURCE_REPLAY_EXACT": 1.0,
+   "n_SOURCE_REPLAY_EXACT": 29,
+   "NEGATIVE_CASE_SAFE": 1.0,
+   "n_NEGATIVE_CASE_SAFE": 176,
+   "ROLLBACK_EXACT": 1.0,
+   "n_ROLLBACK_EXACT": 15,
+   "STUDENT_NEURAL_HASH_INVARIANT": 1.0,
+   "n_STUDENT_NEURAL_HASH_INVARIANT": 30,
+   "POST_HANDOFF_TEACHER_CALLS": 0,
+   "n_POST_HANDOFF_TEACHER_CALLS": 0,
+   "TEACHER_REMOVAL_AUDIT_CLEAN": 1.0,
+   "n_TEACHER_REMOVAL_AUDIT_CLEAN": 30,
+   "n_UNSEEN_ARGUMENT_EXACT": 90,
+   "n_RESTART_PROCEDURE_EXACT": 90,
+   "TEACHER_DISCONNECT_REUSE_EXACT": 0.7333,
+   "n_TEACHER_DISCONNECT_REUSE_EXACT": 90,
+   "PROCEDURE_RETRIEVAL_EXACT": 0.7667,
+   "n_PROCEDURE_RETRIEVAL_EXACT": 60,
+   "ARGUMENT_BINDING_EXACT": 1.0,
+   "n_ARGUMENT_BINDING_EXACT": 46,
+   "POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 0.75,
+   "n_POST_HANDOFF_SURFACE_GENERALIZATION_EXACT": 60,
+   "FINAL_STATE_EXACT": 0.9,
+   "n_FINAL_STATE_EXACT": 30,
+   "SCENARIO_EXACT": 0.7,
+   "n_SCENARIO_EXACT": 30,
+   "class_SECOND_DEMO_SUCCESS": 4,
+   "n_class_SECOND_DEMO_SUCCESS": 4,
+   "class_REPHRASE_SUCCESS": 3,
+   "n_class_REPHRASE_SUCCESS": 3,
+   "class_FAILED:TEACHER_EPISODE_FAIL": 7,
+   "n_class_FAILED:TEACHER_EPISODE_FAIL": 7,
+   "COMPOSITION_L2_REUSE_EXACT": 0.625,
+   "n_COMPOSITION_L2_REUSE_EXACT": 8,
+   "STORED_PROCEDURE_REUSE_EXACT": 0.5,
+   "n_STORED_PROCEDURE_REUSE_EXACT": 4,
+   "WRONG_TEACHER_ACTION_EXECUTED": 2,
+   "n_WRONG_TEACHER_ACTION_EXECUTED": 2,
+   "class_FAILED:ACTIVE": 2,
+   "n_class_FAILED:ACTIVE": 2,
+   "COMPOSITION_L1_EXACT": 1.0,
+   "n_COMPOSITION_L1_EXACT": 2,
+   "COMPOSITION_L2_SAVE_EXACT": 1.0,
+   "n_COMPOSITION_L2_SAVE_EXACT": 2,
+   "TEACHER_REPHRASE_SUCCESS": 0.0,
+   "n_TEACHER_REPHRASE_SUCCESS": 2,
+   "INSUFFICIENT_EVIDENCE_DETECTED": 1.0,
+   "n_INSUFFICIENT_EVIDENCE_DETECTED": 2,
+   "SECOND_DEMO_REQUEST_EXACT": 1.0,
+   "n_SECOND_DEMO_REQUEST_EXACT": 2,
+   "LEGAL_BAD_SANDBOX_EXECUTED": 4,
+   "n_LEGAL_BAD_SANDBOX_EXECUTED": 4,
+   "LEGAL_BAD_INJECTION_APPLIED": 1.0,
+   "n_LEGAL_BAD_INJECTION_APPLIED": 2,
+   "CROSS_DEMO_INCONSISTENCY_DETECTED": 1.0,
+   "n_CROSS_DEMO_INCONSISTENCY_DETECTED": 2,
+   "BAD_PROCEDURE_ACTIVATED": 0,
+   "n_BAD_PROCEDURE_ACTIVATED": 2,
+   "n_BAD_TEACHER_SUGGESTION_EXECUTED": 1,
+   "UNSUPPORTED_TEACHER_ACTION_BLOCKED": 1.0,
+   "n_UNSUPPORTED_TEACHER_ACTION_BLOCKED": 1,
+   "accounting": {
+    "teacher_turns_per_skill": {
+     "mean": 2.0,
+     "sum": 72,
+     "n": 36
+    },
+    "demonstrations_per_skill": {
+     "mean": 1.1667,
+     "sum": 42,
+     "n": 36
+    },
+    "student_questions_per_skill": {
+     "mean": 1.0,
+     "sum": 36,
+     "n": 36
+    },
+    "student_grounding_seconds": {
+     "mean": 1.3906,
+     "sum": 159.921,
+     "n": 115
+    },
+    "student_llm_calls_per_line": {
+     "mean": 1.0,
+     "sum": 115,
+     "n": 115
+    },
+    "teacher_calls": {
+     "mean": 1.0,
+     "sum": 72,
+     "n": 72
+    },
+    "teacher_cached": {
+     "mean": 0.0139,
+     "sum": 1,
+     "n": 72
+    },
+    "teacher_input_tokens": {
+     "mean": 1115.5556,
+     "sum": 80320,
+     "n": 72
+    },
+    "teacher_output_tokens": {
+     "mean": 779.75,
+     "sum": 56142,
+     "n": 72
+    },
+    "teacher_latency_s": {
+     "mean": 7.4108,
+     "sum": 533.575,
+     "n": 72
+    },
+    "library_bytes_after": {
+     "mean": 49425.0667,
+     "sum": 1482752,
+     "n": 30
+    },
+    "active_after": {
+     "mean": 0.9667,
+     "sum": 29,
+     "n": 30
+    },
+    "acquisition_seconds": {
+     "mean": 127.086,
+     "sum": 3812.58,
+     "n": 30
+    }
+   },
+   "strata": {
+    "stratum_S1": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S10": {
+     "acc": 1.0,
+     "n": 4
+    },
+    "stratum_S11": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "stratum_S12": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S13": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S14D": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S14L": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "stratum_S15": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "stratum_S16": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "stratum_S17": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S18": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "stratum_S2": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S3": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S4": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "stratum_S5": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S6": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S7": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S8": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "stratum_S9": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "style_A": {
+     "acc": 1.0,
+     "n": 9
+    },
+    "style_B": {
+     "acc": 0.5714,
+     "n": 7
+    },
+    "style_C": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "style_D": {
+     "acc": 0.875,
+     "n": 8
+    },
+    "style_E": {
+     "acc": 0.6667,
+     "n": 6
+    }
+   },
+   "failure_taxonomy": {
+    "GT_TURN_BUDGET": 7,
+    "SG_FALSE_CLARIFY": 2
+   },
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED_inherited": 0,
+   "POST_HANDOFF_UNSEEN_ARGUMENT_EXACT_ALL": 0.7333,
+   "RESTART_EXACT_ALL_TARGETS": 0.7333,
+   "VERIFIER_CRASH": 0,
+   "n_VERIFIER_CRASH": 36,
+   "TEACHER_LESSON_BEHAVIORAL_EXACT": 0.8571,
+   "n_TEACHER_LESSON_BEHAVIORAL_EXACT": 35,
+   "TEACHER_LESSON_JUDGE_PARSE_FAIL": 0.0857,
+   "n_TEACHER_LESSON_JUDGE_PARSE_FAIL": 35,
+   "FIRST_PASS_TEACHER_LESSON_EXACT": 0.931,
+   "n_FIRST_PASS_TEACHER_LESSON_EXACT": 29,
+   "TEACHER_LESSON_LEXICAL_UNREQUESTED": 0.0,
+   "n_TEACHER_LESSON_LEXICAL_UNREQUESTED": 35,
+   "TRACE_BEHAVIORAL_EXACT": 0.9429,
+   "n_TRACE_BEHAVIORAL_EXACT": 35,
+   "TRACE_STRUCTURAL_EXACT": 0.9429,
+   "n_TRACE_STRUCTURAL_EXACT": 35,
+   "GROUNDING_BEHAVIORAL_EXACT": 1.0,
+   "n_GROUNDING_BEHAVIORAL_EXACT": 30,
+   "GROUNDING_STRUCTURAL_EXACT": 1.0,
+   "n_GROUNDING_STRUCTURAL_EXACT": 30,
+   "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 1.0,
+   "n_FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": 24,
+   "RELATION_BINDING_EXACT": 1.0,
+   "n_RELATION_BINDING_EXACT": 30,
+   "RELATION_BINDING_EXACT_WHO": 1.0,
+   "n_RELATION_BINDING_EXACT_WHO": 13,
+   "STATUS_SCOPE_EXACT": 1.0,
+   "n_STATUS_SCOPE_EXACT": 30,
+   "OP_EXACT": 1.0,
+   "n_OP_EXACT": 30,
+   "TEACHER_UNREQUESTED_CONSTRAINT_RATE": 0.0,
+   "n_TEACHER_UNREQUESTED_CONSTRAINT_RATE": 27,
+   "COUNTERFACTUAL_EXACT": 1.0,
+   "n_COUNTERFACTUAL_EXACT": 190,
+   "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": 65,
+   "RESTART_EXACT_GIVEN_ACQUISITION": 1.0,
+   "n_RESTART_EXACT_GIVEN_ACQUISITION": 65,
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 65,
+   "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 1.0,
+   "n_STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": 44,
+   "SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 1.0,
+   "n_SURFACE_GENERALIZATION_GIVEN_ACQUISITION": 44,
+   "DISTILLED_SKILL_EXACT": 0.7188,
+   "n_DISTILLED_SKILL_EXACT": 32,
+   "HOSTED_CALLS_POST_HANDOFF": 0,
+   "n_HOSTED_CALLS_POST_HANDOFF": 30,
+   "NETWORK_ATTEMPTS_POST_HANDOFF": 0,
+   "n_NETWORK_ATTEMPTS_POST_HANDOFF": 30,
+   "HOSTED_TEARDOWN_VERIFIED": 1.0,
+   "n_HOSTED_TEARDOWN_VERIFIED": 30,
+   "RELATION_BINDING_EXACT_RECIPIENT": 1.0,
+   "n_RELATION_BINDING_EXACT_RECIPIENT": 6,
+   "RELATION_BINDING_EXACT_WHEN": 1.0,
+   "n_RELATION_BINDING_EXACT_WHEN": 6,
+   "FALSE_CLARIFY_COUNT": 3,
+   "n_FALSE_CLARIFY_COUNT": 3,
+   "RESCUE_SUCCESS": 0.5,
+   "n_RESCUE_SUCCESS": 6,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 2,
+   "n_WRONG_BEHAVIORAL_ACTION_EXECUTED": 2,
+   "WRONG_STRUCTURAL_ACTION_EXECUTED": 2,
+   "n_WRONG_STRUCTURAL_ACTION_EXECUTED": 2,
+   "CLARIFICATION_RECALL": 1.0,
+   "n_CLARIFICATION_RECALL": 1,
+   "LEGAL_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_LEGAL_BAD_PROCEDURE_ACTIVATED": 4,
+   "CONFLICTING_BAD_PROCEDURE_ACTIVATED": 0,
+   "n_CONFLICTING_BAD_PROCEDURE_ACTIVATED": 4,
+   "REGISTERED_EVIDENCE_CONFLICT_DETECTED": 1.0,
+   "n_REGISTERED_EVIDENCE_CONFLICT_DETECTED": 2,
+   "RELATION_BINDING_EXACT_TOPIC": 1.0,
+   "n_RELATION_BINDING_EXACT_TOPIC": 1,
+   "RELATION_BINDING_EXACT_WHERE": 1.0,
+   "n_RELATION_BINDING_EXACT_WHERE": 1,
+   "VACUITY_PROBE_TRIGGERED": 0.5,
+   "n_VACUITY_PROBE_TRIGGERED": 2,
+   "EVIDENCE_NONVACUITY_DETECTED": 1.0,
+   "n_EVIDENCE_NONVACUITY_DETECTED": 1,
+   "VACUOUS_VERIFICATION_ATTEMPT": 1,
+   "n_VACUOUS_VERIFICATION_ATTEMPT": 1,
+   "VACUOUS_CANDIDATE_ACTIVATED": 0,
+   "n_VACUOUS_CANDIDATE_ACTIVATED": 1,
+   "DETECTABLE_BAD_SUGGESTION_EXECUTED": 0,
+   "MISSED_CLARIFY_COUNT": 0,
+   "CLARIFICATION_PRECISION": 0.25,
+   "hosted_accounting": {
+    "teacher_calls": 72,
+    "teacher_cached": 1,
+    "teacher_input_tokens": 80320,
+    "teacher_output_tokens": 56142,
+    "teacher_truncations": 0,
+    "grounder_calls": 131,
+    "grounder_cached": 26,
+    "grounder_input_tokens": 569569,
+    "grounder_output_tokens": 8897,
+    "grounder_truncations": 0
+   },
+   "earliest_cause": {
+    "GT_TURN_BUDGET": 4,
+    "GT_MISSING_STEP": 1,
+    "GR_OP": 1,
+    "GT_AMBIGUOUS": 3
+   },
+   "teacher_grounder_attribution": {
+    "TEACHER_CORRECT_GROUNDER_CORRECT": 30,
+    "TEACHER_WRONG_GROUNDER_NOT_REPAIRED": 4,
+    "TEACHER_WRONG_GROUNDER_REPAIRED": 1
+   },
+   "FIRST_PASS_SCENARIO_EXACT": 0.6,
+   "gates": {
+    "DETECTABLE_BAD_SUGGESTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "LEGAL_BAD_PROCEDURE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFY_FALSE_ACCEPT": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VERIFIER_CRASH": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "VACUOUS_CANDIDATE_ACTIVATED": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "WRONG_BEHAVIORAL_ACTION_EXECUTED": {
+     "rule": "== 0",
+     "value": 2,
+     "pass": false
+    },
+    "GROUNDING_BEHAVIORAL_EXACT": {
+     "rule": ">= 0.95",
+     "value": 1.0,
+     "pass": true
+    },
+    "LEARNED_PROCEDURE_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.75,
+     "pass": false
+    },
+    "SCENARIO_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.7,
+     "pass": false
+    },
+    "SOURCE_REPLAY_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "COUNTERFACTUAL_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "ROLLBACK_EXACT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "PROCEDURE_RETRIEVAL_EXACT": {
+     "rule": ">= 0.95",
+     "value": 0.7667,
+     "pass": false
+    },
+    "ARGUMENT_BINDING_EXACT": {
+     "rule": ">= 0.95",
+     "value": 1.0,
+     "pass": true
+    },
+    "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "RESTART_EXACT_GIVEN_ACQUISITION": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "STORED_PROCEDURE_REUSE_GIVEN_ACQUISITION": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "DISTILLED_SKILL_EXACT": {
+     "rule": ">= 0.9",
+     "value": 0.7188,
+     "pass": false
+    },
+    "HOSTED_TEARDOWN_VERIFIED": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    },
+    "HOSTED_CALLS_POST_HANDOFF": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "NETWORK_ATTEMPTS_POST_HANDOFF": {
+     "rule": "== 0",
+     "value": 0,
+     "pass": true
+    },
+    "STUDENT_NEURAL_HASH_INVARIANT": {
+     "rule": "== 1.0",
+     "value": 1.0,
+     "pass": true
+    }
+   },
+   "arm": "D",
+   "mode": "TEACHER",
+   "grounder": "HOSTED",
+   "seconds": {
+    "acquisition": 524.5,
+    "reuse": 923.2
+   }
+  }
+ },
+ "factorial": {
+  "GROUNDING_BEHAVIORAL_EXACT": {
+   "A": 0.9429,
+   "B": 0.9118,
+   "C": 0.9259,
+   "D": 1.0,
+   "B-A": -0.0311,
+   "D-C": 0.0741,
+   "C-A": -0.017,
+   "D-B": 0.0882
+  },
+  "FIRST_PASS_GROUNDING_BEHAVIORAL_EXACT": {
+   "A": 1.0,
+   "B": 0.9615,
+   "C": 0.9048,
+   "D": 1.0,
+   "B-A": -0.0385,
+   "D-C": 0.0952,
+   "C-A": -0.0952,
+   "D-B": 0.0385
+  },
+  "TRACE_BEHAVIORAL_EXACT": {
+   "A": 0.973,
+   "B": 0.8919,
+   "C": 0.9333,
+   "D": 0.9429,
+   "B-A": -0.0811,
+   "D-C": 0.0096,
+   "C-A": -0.0397,
+   "D-B": 0.051
+  },
+  "LEARNED_PROCEDURE_EXACT": {
+   "A": 0.8611,
+   "B": 0.7222,
+   "C": 0.6667,
+   "D": 0.75,
+   "B-A": -0.1389,
+   "D-C": 0.0833,
+   "C-A": -0.1944,
+   "D-B": 0.0278
+  },
+  "SCENARIO_EXACT": {
+   "A": 0.8333,
+   "B": 0.7,
+   "C": 0.6,
+   "D": 0.7,
+   "B-A": -0.1333,
+   "D-C": 0.1,
+   "C-A": -0.2333,
+   "D-B": 0.0
+  },
+  "FIRST_PASS_SCENARIO_EXACT": {
+   "A": 0.4667,
+   "B": 0.5333,
+   "C": 0.3333,
+   "D": 0.6,
+   "B-A": 0.0666,
+   "D-C": 0.2667,
+   "C-A": -0.1334,
+   "D-B": 0.0667
+  },
+  "DISTILLED_SKILL_EXACT": {
+   "A": 0.8438,
+   "B": 0.7188,
+   "C": 0.625,
+   "D": 0.7188,
+   "B-A": -0.125,
+   "D-C": 0.0938,
+   "C-A": -0.2188,
+   "D-B": 0.0
+  },
+  "RELATION_BINDING_EXACT": {
+   "A": 1.0,
+   "B": 1.0,
+   "C": 0.9259,
+   "D": 1.0,
+   "B-A": 0.0,
+   "D-C": 0.0741,
+   "C-A": -0.0741,
+   "D-B": 0.0
+  },
+  "WRONG_BEHAVIORAL_ACTION_EXECUTED": {
+   "A": 1,
+   "B": 4,
+   "C": 2,
+   "D": 2,
+   "B-A": 3,
+   "D-C": 0,
+   "C-A": 1,
+   "D-B": -2
+  },
+  "TEACHER_LESSON_BEHAVIORAL_EXACT": {
+   "A": null,
+   "B": null,
+   "C": 0.8438,
+   "D": 0.8571,
+   "B-A": null,
+   "D-C": 0.0133,
+   "C-A": null,
+   "D-B": null
+  },
+  "TEACHER_UNREQUESTED_CONSTRAINT_RATE": {
+   "A": null,
+   "B": null,
+   "C": 0.0,
+   "D": 0.0,
+   "B-A": null,
+   "D-C": 0.0,
+   "C-A": null,
+   "D-B": null
+  },
+  "UNSEEN_ARGUMENT_EXACT_GIVEN_ACQUISITION": {
+   "A": 1.0,
+   "B": 1.0,
+   "C": 1.0,
+   "D": 1.0,
+   "B-A": 0.0,
+   "D-C": 0.0,
+   "C-A": 0.0,
+   "D-B": 0.0
+  },
+  "RESTART_EXACT_GIVEN_ACQUISITION": {
+   "A": 1.0,
+   "B": 1.0,
+   "C": 1.0,
+   "D": 1.0,
+   "B-A": 0.0,
+   "D-C": 0.0,
+   "C-A": 0.0,
+   "D-B": 0.0
+  },
+  "CLARIFICATION_PRECISION": {
+   "A": 0.2,
+   "B": 0.5,
+   "C": 0.25,
+   "D": 0.25,
+   "B-A": 0.3,
+   "D-C": 0.0,
+   "C-A": 0.05,
+   "D-B": -0.25
+  },
+  "CLARIFICATION_RECALL": {
+   "A": 1.0,
+   "B": 1.0,
+   "C": 1.0,
+   "D": 1.0,
+   "B-A": 0.0,
+   "D-C": 0.0,
+   "C-A": 0.0,
+   "D-B": 0.0
+  },
+  "FALSE_CLARIFY_COUNT": {
+   "A": 8,
+   "B": 1,
+   "C": 3,
+   "D": 3,
+   "B-A": -7,
+   "D-C": 0,
+   "C-A": -5,
+   "D-B": 2
+  },
+  "GROUNDER_INDEPENDENCE_PAIRED_LINES": {
+   "n": 90,
+   "both_exact": 76,
+   "local_only": 4,
+   "hosted_only": 7,
+   "neither": 3
+  }
+ },
+ "handoff": {
+  "app": "semvm-htg-hosted",
+  "time": "2026-09-27T19:01:56Z",
+  "modal_app_stop_rc": 0,
+  "endpoint_after_stop": "HTTP 404",
+  "app_state_after": null,
+  "teacher_destroyed": true,
+  "grounder_destroyed": true,
+  "meter_usd_at_deploy": 0.823,
+  "meter_usd_after": 2.245,
+  "moved_learn": {
+   "GOLD_TRACE": [
+    "dev-001-S1",
+    "dev-002-S2",
+    "dev-003-S3",
+    "dev-004-S4",
+    "dev-005-S4",
+    "dev-006-S5",
+    "dev-007-S6",
+    "dev-008-S7",
+    "dev-009-S8",
+    "dev-010-S9",
+    "dev-011-S9",
+    "dev-012-S10",
+    "dev-013-S10",
+    "dev-014-S11",
+    "dev-015-S11",
+    "dev-016-S12",
+    "dev-017-S12",
+    "dev-018-S13",
+    "dev-019-S14L",
+    "dev-020-S14L",
+    "dev-021-S14D",
+    "dev-022-S14D",
+    "dev-023-S15",
+    "dev-024-S16",
+    "dev-025-S16",
+    "dev-026-S16",
+    "dev-027-S17",
+    "dev-028-S17",
+    "dev-029-S18",
+    "dev-030-S18"
+   ],
+   "FORMAL_TEACH": [
+    "dev-001-S1",
+    "dev-002-S2",
+    "dev-003-S3",
+    "dev-004-S4",
+    "dev-005-S4",
+    "dev-006-S5",
+    "dev-007-S6",
+    "dev-008-S7",
+    "dev-009-S8",
+    "dev-010-S9",
+    "dev-011-S9",
+    "dev-012-S10",
+    "dev-013-S10",
+    "dev-014-S11",
+    "dev-015-S11",
+    "dev-016-S12",
+    "dev-017-S12",
+    "dev-018-S13",
+    "dev-019-S14L",
+    "dev-020-S14L",
+    "dev-021-S14D",
+    "dev-022-S14D",
+    "dev-023-S15",
+    "dev-024-S16",
+    "dev-025-S16",
+    "dev-026-S16",
+    "dev-027-S17",
+    "dev-028-S17",
+    "dev-029-S18",
+    "dev-030-S18"
+   ],
+   "A": [
+    "dev-001-S1",
+    "dev-002-S2",
+    "dev-003-S3",
+    "dev-004-S4",
+    "dev-005-S4",
+    "dev-006-S5",
+    "dev-007-S6",
+    "dev-008-S7",
+    "dev-009-S8",
+    "dev-010-S9",
+    "dev-011-S9",
+    "dev-012-S10",
+    "dev-013-S10",
+    "dev-014-S11",
+    "dev-015-S11",
+    "dev-016-S12",
+    "dev-017-S12",
+    "dev-018-S13",
+    "dev-019-S14L",
+    "dev-020-S14L",
+    "dev-021-S14D",
+    "dev-022-S14D",
+    "dev-023-S15",
+    "dev-024-S16",
+    "dev-025-S16",
+    "dev-026-S16",
+    "dev-027-S17",
+    "dev-028-S17",
+    "dev-029-S18",
+    "dev-030-S18"
+   ],
+   "B": [
+    "dev-001-S1",
+    "dev-002-S2",
+    "dev-003-S3",
+    "dev-004-S4",
+    "dev-005-S4",
+    "dev-006-S5",
+    "dev-007-S6",
+    "dev-008-S7",
+    "dev-009-S8",
+    "dev-010-S9",
+    "dev-011-S9",
+    "dev-012-S10",
+    "dev-013-S10",
+    "dev-014-S11",
+    "dev-015-S11",
+    "dev-016-S12",
+    "dev-017-S12",
+    "dev-018-S13",
+    "dev-019-S14L",
+    "dev-020-S14L",
+    "dev-021-S14D",
+    "dev-022-S14D",
+    "dev-023-S15",
+    "dev-024-S16",
+    "dev-025-S16",
+    "dev-026-S16",
+    "dev-027-S17",
+    "dev-028-S17",
+    "dev-029-S18",
+    "dev-030-S18"
+   ],
+   "C": [
+    "dev-001-S1",
+    "dev-002-S2",
+    "dev-003-S3",
+    "dev-004-S4",
+    "dev-005-S4",
+    "dev-006-S5",
+    "dev-007-S6",
+    "dev-008-S7",
+    "dev-009-S8",
+    "dev-010-S9",
+    "dev-011-S9",
+    "dev-012-S10",
+    "dev-013-S10",
+    "dev-014-S11",
+    "dev-015-S11",
+    "dev-016-S12",
+    "dev-017-S12",
+    "dev-018-S13",
+    "dev-019-S14L",
+    "dev-020-S14L",
+    "dev-021-S14D",
+    "dev-022-S14D",
+    "dev-023-S15",
+    "dev-024-S16",
+    "dev-025-S16",
+    "dev-026-S16",
+    "dev-027-S17",
+    "dev-028-S17",
+    "dev-029-S18",
+    "dev-030-S18"
+   ],
+   "D": [
+    "dev-001-S1",
+    "dev-002-S2",
+    "dev-003-S3",
+    "dev-004-S4",
+    "dev-005-S4",
+    "dev-006-S5",
+    "dev-007-S6",
+    "dev-008-S7",
+    "dev-009-S8",
+    "dev-010-S9",
+    "dev-011-S9",
+    "dev-012-S10",
+    "dev-013-S10",
+    "dev-014-S11",
+    "dev-015-S11",
+    "dev-016-S12",
+    "dev-017-S12",
+    "dev-018-S13",
+    "dev-019-S14L",
+    "dev-020-S14L",
+    "dev-021-S14D",
+    "dev-022-S14D",
+    "dev-023-S15",
+    "dev-024-S16",
+    "dev-025-S16",
+    "dev-026-S16",
+    "dev-027-S17",
+    "dev-028-S17",
+    "dev-029-S18",
+    "dev-030-S18"
+   ]
+  }
+ },
+ "controls_pass": true,
+ "arm_D_pass": false
+}

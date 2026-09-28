@@ -1,0 +1,309 @@
+[
+ {
+  "target": "move_visit_and_parent",
+  "status": "TEACHER_EPISODE_FAIL",
+  "demos": [
+   {
+    "index": 0,
+    "slots": [
+     {
+      "slot_id": "demo1-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Take my latest visit.",
+      "text": "Take my latest visit.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r1",
+        "type": {
+         "const": "VISIT"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo1-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Move it to Paris.",
+      "text": "Move it to Paris.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "UPDATE",
+        "obj": {
+         "var": "r1"
+        },
+        "rel": "WHERE",
+        "value": {
+         "const": "Paris"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo1-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot3",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Get its parent.",
+      "text": "Get its parent.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "PARENT",
+        "bind": "r2",
+        "obj": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo1-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot4",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Move it to Paris.",
+      "text": "Move it to Paris.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "UPDATE",
+        "obj": {
+         "var": "r2"
+        },
+        "rel": "WHERE",
+        "value": {
+         "const": "Paris"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 3,
+      "family": "demo1-slot4",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo1-slot5",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Return the visit.",
+      "text": "Return the visit.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "RETURN",
+        "value": {
+         "var": "r1"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 4,
+      "family": "demo1-slot5",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   },
+   {
+    "index": 1,
+    "slots": [
+     {
+      "slot_id": "demo2-slot1",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Take my latest visit.",
+      "text": "Take my latest visit.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r1",
+        "type": {
+         "const": "VISIT"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 0,
+      "family": "demo2-slot1",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot2",
+      "source": "TEACHER",
+      "status": "RESOLVED",
+      "original_text": "Take my latest visit.",
+      "text": "Take my latest visit.",
+      "replacement_for": null,
+      "grounded_plan": [
+       {
+        "op": "FIND_LAST",
+        "bind": "r2",
+        "type": {
+         "const": "VISIT"
+        }
+       }
+      ],
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 1,
+      "family": "demo2-slot2",
+      "displaced": false,
+      "history": [
+       {
+        "status": "OK",
+        "clarify_kind": null,
+        "reason": ""
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot3",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Move it to Dublin.",
+      "text": "Move it to Dublin.",
+      "replacement_for": null,
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 3,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo2-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "GROUNDER",
+        "reason": "grounder asks: The instruction refers to \"it\" but there are two results (r1 and r2). Which one should be moved to Dublin?"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot4",
+      "source": "TEACHER",
+      "status": "REPLACED",
+      "original_text": "Change its place to Dublin.",
+      "text": "Change its place to Dublin.",
+      "replacement_for": "demo2-slot3",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo2-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "GROUNDER",
+        "reason": "grounder asks: Which visit (r1 or r2) should have its place changed to Dublin?"
+       }
+      ],
+      "reference_choice": null
+     },
+     {
+      "slot_id": "demo2-slot5",
+      "source": "TEACHER",
+      "status": "CLARIFYING",
+      "original_text": "Set its place to Dublin.",
+      "text": "Set its place to Dublin.",
+      "replacement_for": "demo2-slot3",
+      "grounded_plan": null,
+      "clarification_count": 0,
+      "rephrase_count": 0,
+      "required": true,
+      "lesson_index": 2,
+      "family": "demo2-slot3",
+      "displaced": false,
+      "history": [
+       {
+        "status": "CLARIFY",
+        "clarify_kind": "GROUNDER",
+        "reason": "grounder asks: Which result (r1 or r2) should have its WHERE set to Dublin?"
+       }
+      ],
+      "reference_choice": null
+     }
+    ]
+   }
+  ]
+ }
+]

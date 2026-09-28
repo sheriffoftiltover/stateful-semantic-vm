@@ -1,0 +1,42 @@
+{
+ "name": "count_emails_to",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE count_emails_to(person:PERSON)\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT={person}\n$v1 = COUNT $v0\nRETURN $v1\nEND"
+  },
+  "external": {
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "verify_seconds": 0.0,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     false
+    ]
+   ],
+   "failed": [
+    [
+     "interface",
+     {
+      "candidate": [],
+      "evidence": [
+       [
+        "person",
+        "PERSON"
+       ]
+      ]
+     }
+    ]
+   ],
+   "program": "PROCEDURE count_emails_to()\n$v0 = FIND EMAIL WHERE SELF.RECIPIENT=Oscar\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+   "program_hash": "8f6397fd37f032fc704db9f6c2bedb7aff53be4550689bb4ef43316282ed72ed"
+  }
+ },
+ "status": "REJECTED_FAILED_COUNTERFACTUAL",
+ "stored": "proc:count_emails_to:v2",
+ "chosen": "external"
+}

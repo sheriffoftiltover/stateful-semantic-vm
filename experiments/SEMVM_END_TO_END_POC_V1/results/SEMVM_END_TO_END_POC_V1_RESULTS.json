@@ -1,0 +1,767 @@
+{
+ "experiment": "SEMVM_END_TO_END_POC_V1",
+ "date": "2026-09-26",
+ "language": "SEMVM_POC_LANGUAGE_V1 (Amendment 001)",
+ "binder": {
+  "artifact": "SEMVM_BINDER_POC_V1",
+  "status": "engineering / existence-proof checkpoint (FROZEN)",
+  "source": "A-005 P0/P2 Replay Preservation, arm R20, seed 17, epoch 40",
+  "checkpoint": {
+   "path": "neural/artifacts/binder_A005_R20_s17_ep40.pt",
+   "sha256": "3f23d13cbb38f88d8cc66ece21d6de51e2b563760df30a1959e078d8415bc823",
+   "format": "{'state': state_dict}"
+  },
+  "architecture": {
+   "class": "ltcn_model.Scorer",
+   "args": {
+    "n_vocab": 117,
+    "max_len": 40,
+    "n_templates": 348,
+    "n_roles": 6
+   }
+  },
+  "model_code_sha256": {
+   "ltcn_model.py": "492aea22568eb1519c14e2c44a4da9ace67b931650e236d4581ad9cea34e264f",
+   "ltc_core.py": "745c401cdac56fc704eb2ca8fd9fd41c43af91b4cbb1376866b39c05580824f1",
+   "ltc_packed.py": "420f2fac324ecd9754dc732ea91d5dbdefcf3797e1cf16522be5684f31fe9290",
+   "mr_config.py": "fa6d431238231bd70978b33f1a6e97303e07b12fe57395e4d26cdcc69c5fd45f",
+   "mr_generate.py": "d4c298f2729b738fbbb32dfa24579f705050139b4ff56064ff3b54bf143ed08c"
+  },
+  "union_mapping": {
+   "vocab_sha256": "97c8b5a39a85c5c464d11f61605e897cc28e5ae6c38dc43e63c75dfd01991d5a",
+   "inventory_sha256": "de1a3d85dcf3e70040a23cdac8e9c6b5eccd58bea74dca894ef43b8fdf8bff50",
+   "report_sha256": "5899a371b8acb960d3343e8ac7180af6e2cefc07230bd6f1d0736716304c85ec"
+  },
+  "training_config": {
+   "scientific_spec_sha256": "6e6d53be429528377050683563b011d3f87e46cfd5532d6cd64de4f85ca1e1c9",
+   "recipe": "CURRENT tau .03 / AdamW 3e-4 wd .01 / batch 32 / clip 1 / 40 epochs / 20% P0 replay",
+   "source_run": "results/runs/A005/R20_s17/modal_attempt_001"
+  },
+  "training_corpus_sha256": {
+   "train": "efd68901329134db238b11985328119649995556b9785dc4599cb81f507d1321",
+   "id_val": "90574a92e1ea20ea3eb1b49f417d86fdee5fa5f05f559797d43bc2d54592d985",
+   "id_test": "e14bc50e34a49dff5cd9d8165fd2dbfa64db3e48384fae4362d7c45ad8e64575",
+   "P2_train": "4ac10d2ec2aa884e14aa9fe0d7e095e4135d2ff5ee3c6739fda3b5e0a08d553f",
+   "P2_id_val": "dc0b95a5d569fdb4d09fec107c454426958b1bb5b786d6772e9c7b37a3212cd3",
+   "P2_id_test": "fd89934eb37d82e3720ea885fd7afd05ef8683f78e2918a32ae06e0767142da6"
+  },
+  "forest_sha256": {
+   "P0": {
+    "train": "8ad594c4e9af345eab23f12a991891e82052008e808c256d059a2bf0c7e22560",
+    "id_val": "1eb132c6edd5247ab740bd243c9d8e3aba0aff297b6b894b9dab9dd5c9a5503b",
+    "id_test": "d7195a7cd55256bd6e407f0768a1179fb9fa75914f551e4e3a5f67f9f4002dcf"
+   },
+   "P2": {
+    "train": "70088ab72bb8a5ccdba1ac82ea74934f27041b293273c83c95304c3d9487a7b8",
+    "id_val": "eb4ba4ad913d7dcedfc1924b4a4bfb8455397eb8613fba0c82fb521c4b730241",
+    "id_test": "d7561ddcb4d7d5041077049b27f4a39139379e67eb968946fd9d4b397f699ef4"
+   }
+  },
+  "validated_metrics": {
+   "P2_ID_VAL": {
+    "exact": 0.9775,
+    "mixed_both": 0.97,
+    "same_both": 0.995
+   },
+   "P0_ID_VAL": {
+    "exact": 0.9825,
+    "parent_acc": 0.985,
+    "direct_acc": 0.985,
+    "pair_consistency": 0.965
+   },
+   "P2_ID_TEST": {
+    "exact": 0.98
+   },
+   "P0_ID_TEST": {
+    "exact": 0.9975,
+    "parent_acc": 0.9975,
+    "direct_acc": 0.9975,
+    "pair_consistency": 0.995
+   }
+  },
+  "frozen_policy": "requires_grad False, no optimizer, eval mode, state hash identical before/after every inference session"
+ },
+ "neural_regression": {
+  "stage_matched": {
+   "policy": "stage-matched inventory (registered)",
+   "P0": {
+    "n": 400,
+    "identical_decisions": 400,
+    "poc_exact": 0.9825,
+    "reference_exact": 0.9825,
+    "mismatch_ids": []
+   },
+   "P2": {
+    "n": 400,
+    "identical_decisions": 400,
+    "poc_exact": 0.9775,
+    "reference_exact": 0.9775,
+    "mismatch_ids": []
+   },
+   "all_identical": true
+  },
+  "union_policy_diagnostic": {
+   "policy": "union inventory for all inputs (diagnostic)",
+   "P0": {
+    "n": 400,
+    "identical_decisions": 400,
+    "poc_exact": 0.9825,
+    "reference_exact": 0.9825,
+    "mismatch_ids": []
+   },
+   "P2": {
+    "n": 400,
+    "identical_decisions": 400,
+    "poc_exact": 0.9775,
+    "reference_exact": 0.9775,
+    "mismatch_ids": []
+   },
+   "all_identical": true
+  }
+ },
+ "unit_tests": {
+  "passed": 17,
+  "total": 17,
+  "pass_rate": 1.0,
+  "tests": {
+   "ir_canonical_order_and_roundtrip": "PASS",
+   "ir_type_and_signature_errors": "PASS",
+   "ir_constructor_matrix": "PASS",
+   "ir_unattached_value": "PASS",
+   "resolver_new_existing_alias_reuse": "PASS",
+   "resolver_ambiguity_no_mutation": "PASS",
+   "resolver_time_normalization": "PASS",
+   "resolver_reference": "PASS",
+   "compiler_expected_program": "PASS",
+   "vm_create_assert_query": "PASS",
+   "vm_update_retract_delete": "PASS",
+   "vm_rollback_on_postcondition": "PASS",
+   "vm_rollback_injected": "PASS",
+   "update_same_new_person_once": "PASS",
+   "command_syntax": "PASS",
+   "persistence_restart": "PASS",
+   "determinism_bit_identical": "PASS"
+  }
+ },
+ "DEV": {
+  "STATE_EXACT": 0.9624,
+  "RESPONSE_EXACT": 0.9846,
+  "RENDER_EXACT": 1.0,
+  "IR_EXACT": 0.975,
+  "PARENT_ACC": 0.9846,
+  "PARENT_ACC_single": 1.0,
+  "VM_PROGRAM_EXACT": 1.0,
+  "QUERY_RESULT_EXACT": 0.9747,
+  "SCENARIO_EXACT": 0.9667,
+  "TIME_RESOLUTION_ACC": 1.0,
+  "PARENT_ACC_same": 1.0,
+  "ENTITY_RESOLUTION_ACC": 1.0,
+  "PARENT_ACC_mixed": 0.975,
+  "REFERENCE_RESOLUTION_ACC": 1.0,
+  "n_STATE_EXACT": 133,
+  "n_RESPONSE_EXACT": 130,
+  "n_RENDER_EXACT": 130,
+  "n_IR_EXACT": 40,
+  "n_PARENT_ACC": 65,
+  "n_PARENT_ACC_single": 15,
+  "n_VM_PROGRAM_EXACT": 126,
+  "n_QUERY_RESULT_EXACT": 79,
+  "n_SCENARIO_EXACT": 30,
+  "n_TIME_RESOLUTION_ACC": 17,
+  "n_PARENT_ACC_same": 10,
+  "n_ENTITY_RESOLUTION_ACC": 26,
+  "n_PARENT_ACC_mixed": 40,
+  "n_REFERENCE_RESOLUTION_ACC": 13,
+  "GOLD_IR_SCENARIO_EXACT": 1.0,
+  "gates": {
+   "IR_EXACT": {
+    "threshold": 0.95,
+    "value": 0.975,
+    "pass": true
+   },
+   "PARENT_ACC": {
+    "threshold": 0.97,
+    "value": 0.9846,
+    "pass": true
+   },
+   "VM_PROGRAM_EXACT": {
+    "threshold": 1.0,
+    "value": 1.0,
+    "pass": true
+   },
+   "STATE_EXACT": {
+    "threshold": 0.95,
+    "value": 0.9624,
+    "pass": true
+   },
+   "QUERY_RESULT_EXACT": {
+    "threshold": 0.95,
+    "value": 0.9747,
+    "pass": true
+   },
+   "SCENARIO_EXACT": {
+    "threshold": 0.9,
+    "value": 0.9667,
+    "pass": true
+   },
+   "GOLD_IR_SCENARIO_EXACT": {
+    "threshold": 1.0,
+    "value": 1.0,
+    "pass": true
+   }
+  },
+  "all_gates_pass": true,
+  "failure_taxonomy": {
+   "N_BIND": 1
+  },
+  "per_scenario": {
+   "dev-001-S1": {
+    "category": "S1",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-002-S1": {
+    "category": "S1",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-003-S1": {
+    "category": "S1",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-004-S2": {
+    "category": "S2",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-005-S2": {
+    "category": "S2",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-006-S2": {
+    "category": "S2",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-007-S3": {
+    "category": "S3",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-008-S3": {
+    "category": "S3",
+    "FULL_exact": false,
+    "GOLD_IR_exact": true,
+    "first_failure": "N_BIND"
+   },
+   "dev-009-S3": {
+    "category": "S3",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-010-S4": {
+    "category": "S4",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-011-S4": {
+    "category": "S4",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-012-S4": {
+    "category": "S4",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-013-S5": {
+    "category": "S5",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-014-S5": {
+    "category": "S5",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-015-S6": {
+    "category": "S6",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-016-S6": {
+    "category": "S6",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-017-S7": {
+    "category": "S7",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-018-S7": {
+    "category": "S7",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-019-S7": {
+    "category": "S7",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-020-S8": {
+    "category": "S8",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-021-S8": {
+    "category": "S8",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-022-S9": {
+    "category": "S9",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-023-S9": {
+    "category": "S9",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-024-S10": {
+    "category": "S10",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-025-S10": {
+    "category": "S10",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-026-S11": {
+    "category": "S11",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-027-S11": {
+    "category": "S11",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-028-S12": {
+    "category": "S12",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-029-S12": {
+    "category": "S12",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "dev-030-ROLLBACK": {
+    "category": "ROLLBACK",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   }
+  },
+  "by_category": {
+   "ROLLBACK": {
+    "n": 1,
+    "FULL_exact": 1.0
+   },
+   "S1": {
+    "n": 3,
+    "FULL_exact": 1.0
+   },
+   "S10": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S11": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S12": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S2": {
+    "n": 3,
+    "FULL_exact": 1.0
+   },
+   "S3": {
+    "n": 3,
+    "FULL_exact": 0.6667
+   },
+   "S4": {
+    "n": 3,
+    "FULL_exact": 1.0
+   },
+   "S5": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S6": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S7": {
+    "n": 3,
+    "FULL_exact": 1.0
+   },
+   "S8": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S9": {
+    "n": 2,
+    "FULL_exact": 1.0
+   }
+  },
+  "neural_pass": {
+   "checkpoint_sha256": "3f23d13cbb38f88d8cc66ece21d6de51e2b563760df30a1959e078d8415bc823",
+   "state_hash_before": "c254dd854c29f40013b396d5e05f9ae56ef1aa250f29c785a458f9cfe4215086",
+   "state_hash_after": "c254dd854c29f40013b396d5e05f9ae56ef1aa250f29c785a458f9cfe4215086",
+   "frozen_ok": true,
+   "requires_grad_any": false,
+   "optimizer": null,
+   "device": "cpu",
+   "torch": "2.5.1+cu121",
+   "python": "3.10.12",
+   "machine": "x86_64",
+   "n_assertions": 40,
+   "seconds": 5.3
+  },
+  "determinism_full_replay_bit_identical": true,
+  "restart_segments_fresh_process": {
+   "dev-028-S12": 3,
+   "dev-029-S12": 3
+  },
+  "seconds": 149.1
+ },
+ "LOCKED_TEST": {
+  "STATE_EXACT": 1.0,
+  "RESPONSE_EXACT": 1.0,
+  "RENDER_EXACT": 1.0,
+  "IR_EXACT": 1.0,
+  "PARENT_ACC": 1.0,
+  "PARENT_ACC_single": 1.0,
+  "ENTITY_RESOLUTION_ACC": 1.0,
+  "VM_PROGRAM_EXACT": 1.0,
+  "QUERY_RESULT_EXACT": 1.0,
+  "SCENARIO_EXACT": 1.0,
+  "PARENT_ACC_same": 1.0,
+  "PARENT_ACC_mixed": 1.0,
+  "TIME_RESOLUTION_ACC": 1.0,
+  "REFERENCE_RESOLUTION_ACC": 1.0,
+  "n_STATE_EXACT": 89,
+  "n_RESPONSE_EXACT": 87,
+  "n_RENDER_EXACT": 87,
+  "n_IR_EXACT": 27,
+  "n_PARENT_ACC": 45,
+  "n_PARENT_ACC_single": 9,
+  "n_ENTITY_RESOLUTION_ACC": 20,
+  "n_VM_PROGRAM_EXACT": 88,
+  "n_QUERY_RESULT_EXACT": 53,
+  "n_SCENARIO_EXACT": 20,
+  "n_PARENT_ACC_same": 4,
+  "n_PARENT_ACC_mixed": 32,
+  "n_TIME_RESOLUTION_ACC": 9,
+  "n_REFERENCE_RESOLUTION_ACC": 9,
+  "GOLD_IR_SCENARIO_EXACT": 1.0,
+  "gates": {
+   "IR_EXACT": {
+    "threshold": 0.95,
+    "value": 1.0,
+    "pass": true
+   },
+   "PARENT_ACC": {
+    "threshold": 0.97,
+    "value": 1.0,
+    "pass": true
+   },
+   "VM_PROGRAM_EXACT": {
+    "threshold": 1.0,
+    "value": 1.0,
+    "pass": true
+   },
+   "STATE_EXACT": {
+    "threshold": 0.95,
+    "value": 1.0,
+    "pass": true
+   },
+   "QUERY_RESULT_EXACT": {
+    "threshold": 0.95,
+    "value": 1.0,
+    "pass": true
+   },
+   "SCENARIO_EXACT": {
+    "threshold": 0.9,
+    "value": 1.0,
+    "pass": true
+   },
+   "GOLD_IR_SCENARIO_EXACT": {
+    "threshold": 1.0,
+    "value": 1.0,
+    "pass": true
+   }
+  },
+  "all_gates_pass": true,
+  "failure_taxonomy": {},
+  "per_scenario": {
+   "locked_test-001-S1": {
+    "category": "S1",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-002-S1": {
+    "category": "S1",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-003-S2": {
+    "category": "S2",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-004-S2": {
+    "category": "S2",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-005-S3": {
+    "category": "S3",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-006-S3": {
+    "category": "S3",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-007-S4": {
+    "category": "S4",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-008-S4": {
+    "category": "S4",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-009-S5": {
+    "category": "S5",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-010-S6": {
+    "category": "S6",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-011-S7": {
+    "category": "S7",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-012-S7": {
+    "category": "S7",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-013-S8": {
+    "category": "S8",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-014-S9": {
+    "category": "S9",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-015-S9": {
+    "category": "S9",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-016-S10": {
+    "category": "S10",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-017-S11": {
+    "category": "S11",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-018-S12": {
+    "category": "S12",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-019-S12": {
+    "category": "S12",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   },
+   "locked_test-020-ROLLBACK": {
+    "category": "ROLLBACK",
+    "FULL_exact": true,
+    "GOLD_IR_exact": true,
+    "first_failure": null
+   }
+  },
+  "by_category": {
+   "ROLLBACK": {
+    "n": 1,
+    "FULL_exact": 1.0
+   },
+   "S1": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S10": {
+    "n": 1,
+    "FULL_exact": 1.0
+   },
+   "S11": {
+    "n": 1,
+    "FULL_exact": 1.0
+   },
+   "S12": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S2": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S3": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S4": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S5": {
+    "n": 1,
+    "FULL_exact": 1.0
+   },
+   "S6": {
+    "n": 1,
+    "FULL_exact": 1.0
+   },
+   "S7": {
+    "n": 2,
+    "FULL_exact": 1.0
+   },
+   "S8": {
+    "n": 1,
+    "FULL_exact": 1.0
+   },
+   "S9": {
+    "n": 2,
+    "FULL_exact": 1.0
+   }
+  },
+  "neural_pass": {
+   "checkpoint_sha256": "3f23d13cbb38f88d8cc66ece21d6de51e2b563760df30a1959e078d8415bc823",
+   "state_hash_before": "c254dd854c29f40013b396d5e05f9ae56ef1aa250f29c785a458f9cfe4215086",
+   "state_hash_after": "c254dd854c29f40013b396d5e05f9ae56ef1aa250f29c785a458f9cfe4215086",
+   "frozen_ok": true,
+   "requires_grad_any": false,
+   "optimizer": null,
+   "device": "cpu",
+   "torch": "2.5.1+cu121",
+   "python": "3.10.12",
+   "machine": "x86_64",
+   "n_assertions": 27,
+   "seconds": 4.0
+  },
+  "determinism_full_replay_bit_identical": true,
+  "restart_segments_fresh_process": {
+   "locked_test-018-S12": 3,
+   "locked_test-019-S12": 3
+  },
+  "seconds": 105.1
+ },
+ "RESULT_E": {
+  "note": "descriptive only; outside V1 scope; nothing tuned after viewing",
+  "n": 8,
+  "pipeline_UNSUPPORTED_INPUT": 8,
+  "direct_ir_valid": 1,
+  "direct_ir_exact": 0,
+  "mean_oov_fraction": 0.329
+ },
+ "backend_equivalence_DEV": {
+  "local_job": "results/jobs/poc-eval_dev_local_attempt_001",
+  "modal_job": "results/jobs/poc-eval_dev_modal_attempt_001",
+  "decoded_neural_outputs_identical": true,
+  "max_abs_log_mass_diff": 0.000244140625,
+  "FULL_and_GOLD_IR_traces_identical_excl_pid": true,
+  "metrics_identical": true,
+  "modal_cpu_profile": "cpu-small (2 cpu, 8 GiB, no GPU)",
+  "modal_container_s": 25.3,
+  "modal_est_cost_usd": 0.00111
+ },
+ "relocation_run": {
+  "copied_to": "scratch dir outside the repo",
+  "unit_tests": "17/17",
+  "DEV_SCENARIO_EXACT": 0.9667,
+  "all_gates_pass": true
+ },
+ "p3_before_both_diagnostic": "NOT RUN (optional, spec \u00a726; no order-robustness claim is made)",
+ "interpretation": "RESULT A within the registered controlled-language regime: gold-IR runtime perfect (DEV/LOCKED 1.0), FULL end-to-end scenario exact DEV .967 / LOCKED 1.0, binding strong (mixed-parent PARENT_ACC DEV .975 / LOCKED 1.0), persistent multi-turn queries/updates/restart/rollback work; the only failure is one neural N_BIND on DEV"
+}

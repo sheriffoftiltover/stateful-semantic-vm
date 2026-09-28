@@ -1,0 +1,48 @@
+{
+ "version": "HTG_TEACHER_PROTOCOL_V1 (PDX V1 + goal-faithfulness contract)",
+ "registered": "2026-09-28, before the grounder preflight and FINAL_DEV",
+ "checkpoint": "openai/gpt-oss-120b @ b5c939de8f754692c1647ca79fbf85e8c1e70f8a (locks/HOSTED_CHECKPOINT_MANIFEST.json)",
+ "serving": "vLLM 0.11.0, one Modal H100, app semvm-htg-hosted",
+ "generation": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 4096,
+  "reasoning_effort": "high",
+  "seed": 0
+ },
+ "system_prompt_sha256": "2b5d18ba3803fb201b4c6398fb0b12018f917c9b2ae072bfe6ab60000d45eecd",
+ "changes_vs_parent": [
+  "goal-faithfulness / no-unrequested-constraint contract (spec \u00a716) added to the capability card; no other teacher prompt change"
+ ],
+ "budgets": {
+  "max_teacher_turns_per_demonstration": 8,
+  "max_clarification_exchanges_per_instruction": 2,
+  "max_demonstrations_per_target": 3
+ },
+ "cache": "teacher_responses/ keyed by sha256(role, backend, model, checkpoint, body)",
+ "truncation": "finish_reason=length or empty -> HOSTED_TRUNCATION, re-requested once (TRUNCATION_TRIES=2), then PROVIDER_FAILURE; never parsed, never cached",
+ "retry": {
+  "max_tries": 6,
+  "backoff_s": [
+   5,
+   10,
+   20,
+   40,
+   60,
+   90
+  ],
+  "timeout_s": 600
+ },
+ "sees": [
+  "goal",
+  "capability card",
+  "dialogue history",
+  "templated student questions / outcomes"
+ ],
+ "never_sees": [
+  "gold trace / AST",
+  "grounder prompt / output",
+  "evaluator labels",
+  "LOCKED answers"
+ ]
+}

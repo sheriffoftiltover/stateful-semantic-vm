@@ -1,0 +1,83 @@
+{
+ "name": "calls_with",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\nRETURN $v0\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.71,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_ambiguous_entity",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person}\nRETURN $v0\nEND",
+   "program_hash": "f06f7459ce45ccb5b538f754492f4458e86caa588f240eebd108ccd719614027"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:calls_with:v1",
+ "chosen": "deterministic"
+}

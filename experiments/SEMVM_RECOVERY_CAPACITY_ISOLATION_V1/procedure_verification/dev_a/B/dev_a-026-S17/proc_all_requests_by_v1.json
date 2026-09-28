@@ -1,0 +1,83 @@
+{
+ "name": "all_requests_by",
+ "n_traces": 1,
+ "paths": {
+  "deterministic": {
+   "proposal": "PROCEDURE all_requests_by(person:PERSON)\n$v0 = FIND REQUEST WHERE SELF.WHO={person}\nRETURN $v0\nEND",
+   "status": "VERIFIED",
+   "verify_seconds": 0.86,
+   "tests": [
+    [
+     "static_validation",
+     true
+    ],
+    [
+     "interface",
+     true
+    ],
+    [
+     "replay_0",
+     true
+    ],
+    [
+     "counterfactual_t0_0",
+     true
+    ],
+    [
+     "counterfactual_t0_1",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_all_closed_t0_cf",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_src",
+     true
+    ],
+    [
+     "perturb_alternate_closed_t0_cf",
+     true
+    ],
+    [
+     "neg_missing_input",
+     true
+    ],
+    [
+     "neg_wrong_type",
+     true
+    ],
+    [
+     "neg_empty_result",
+     true
+    ],
+    [
+     "neg_ambiguous_entity",
+     true
+    ],
+    [
+     "neg_deleted_object",
+     true
+    ],
+    [
+     "neg_empty_world_precondition",
+     true
+    ],
+    [
+     "determinism",
+     true
+    ]
+   ],
+   "failed": [],
+   "program": "PROCEDURE all_requests_by(person:PERSON)\n$v0 = FIND REQUEST WHERE SELF.WHO={person}\nRETURN $v0\nEND",
+   "program_hash": "e280ba6082c40140bd6da6bb4331b9df886fbdab7bf358f3750d4b84c6054456"
+  }
+ },
+ "status": "VERIFIED",
+ "stored": "proc:all_requests_by:v1",
+ "chosen": "deterministic"
+}

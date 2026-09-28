@@ -1,0 +1,45 @@
+{
+ "name": "count_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Oscar"
+ },
+ "interaction_id": "locked_test-017-S16:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-017-S16/learn/snapshots/locked_test-017-S16_a1_start.sqlite",
+ "start_snapshot_sha256": "efa0419017f0b7846eb47d83bec5d3037777e5a8400603e7c64a9685de5d0b4c",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Oscar"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "ffa04b4e686e3426c37201b1e3ef1a94e6249c5ac63fe05ef43a139316e18f0c",
+ "nl_mode": "GOLD_TRACE"
+}

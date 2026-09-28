@@ -1,0 +1,134 @@
+{
+ "name": "count_open_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Sam"
+ },
+ "interaction_id": "locked_test-006-S6:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/GOLD_TRACE/locked_test-006-S6/learn/snapshots/locked_test-006-S6_a1_start.sqlite",
+ "start_snapshot_sha256": "55c0a80360d5c7df2c902a1daf4361ac32ee526e440b54eb86f9d525bd50063e",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-006-S6:a2",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Sam"
+       }
+      ]
+     ],
+     "status": {
+      "const": "OPEN"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "state_after": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "seconds": 0.169
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-006-S6:a3",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "state_after": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "seconds": 0.179
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "locked_test-006-S6:a4",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "state_after": "000f733a174d7854169418e18664d19ea16547ea5bd7421c33dfc85562fdffd2",
+   "seconds": 0.168
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Sam"
+     }
+    ]
+   ],
+   "status": {
+    "const": "OPEN"
+   }
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "68931c106d5cdf1bb71426e6c70923287ea1bd09e671ce352be9580b8e04b7d5",
+ "nl_mode": "GOLD_TRACE"
+}

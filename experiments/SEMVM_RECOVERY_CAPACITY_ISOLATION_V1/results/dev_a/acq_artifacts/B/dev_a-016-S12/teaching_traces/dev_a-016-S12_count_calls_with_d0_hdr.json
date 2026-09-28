@@ -1,0 +1,252 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev_a-016-S12:count_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/B/dev_a-016-S12/learn/snapshots/dev_a-016-S12_count_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "b4b54214fa9eee59b8da6f823e0d3dd7cb5117f92ea0cec4017c28da4b267504",
+ "utterances": [
+  {
+   "utterance": "Look up Yves's calls.",
+   "uid": "dev_a-016-S12:count_calls_with:d0:demo1-slot1:0",
+   "instruction": "Look up Yves's calls.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Look up Yves's calls.",
+    "values": {
+     "PERSON": [
+      "Yves"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "dc79b57bf46c0de3e6fce8ef683627bd21eedbe94a0f2961d7f8f7de181dd688"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Yves\"}}]}",
+    "request_hash": "dc79b57bf46c0de3e6fce8ef683627bd21eedbe94a0f2961d7f8f7de181dd688",
+    "cached": true,
+    "input_tokens": 4449,
+    "output_tokens": 89,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Yves"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Yves"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "state_after": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "seconds": 0.295
+  },
+  {
+   "utterance": "Please get the number of them.",
+   "uid": "dev_a-016-S12:count_calls_with:d0:demo1-slot2:1",
+   "instruction": "Please get the number of them.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please get the number of them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "b4595790916d8581f10e046a0744fb61e339ffd4094e3f300b5f1561409711c0"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "18d04a1c62f6a2ca51f9f391608cdccaa1de901803b19c796c5f30473cc25861"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "18d04a1c62f6a2ca51f9f391608cdccaa1de901803b19c796c5f30473cc25861",
+    "cached": true,
+    "input_tokens": 4584,
+    "output_tokens": 77,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "state_after": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "seconds": 0.268
+  },
+  {
+   "utterance": "Hand back the total.",
+   "uid": "dev_a-016-S12:count_calls_with:d0:demo1-slot3:2",
+   "instruction": "Hand back the total.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Hand back the total.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "a78e29aa51eada65cde5ed98e0cb39cd897da8dbae589075d8a042390edf19c8"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "a78e29aa51eada65cde5ed98e0cb39cd897da8dbae589075d8a042390edf19c8",
+    "cached": true,
+    "input_tokens": 4505,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "state_after": "5e6fb338536cba48a52dc611b696d28d9eb44c5c08149ac0e6e665eb08f3809c",
+   "seconds": 0.268
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Yves"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "b45e05e091de97474f7e4d863f1bac12dda2f0c6e4a6927d45dffdd82e8301d0",
+ "nl_mode": "NL_TEACH"
+}

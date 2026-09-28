@@ -1,0 +1,273 @@
+{
+ "scenario_id": "dev-029-S12",
+ "suite": "dev",
+ "category": "S12",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "request gamma at midnight per delta , and after that then , email delta and to Oscar per gamma",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REQUEST"
+     },
+     {
+      "local_id": "e1",
+      "type": "EMAIL"
+     },
+     {
+      "local_id": "v0",
+      "type": "PERSON",
+      "surface": "Oscar"
+     },
+     {
+      "local_id": "v1",
+      "type": "TIME",
+      "surface": "midnight"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "RECIPIENT",
+      "subject": "e0",
+      "object": "v0"
+     },
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHEN",
+      "subject": "e1",
+      "object": "v1"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REQUEST",
+    "inner": "EMAIL",
+    "mods": [
+     [
+      "WHEN",
+      "midnight",
+      "inner"
+     ],
+     [
+      "RECIPIENT",
+      "Oscar",
+      "outer"
+     ]
+    ]
+   },
+   "pattern": "IO",
+   "layout": [
+    "straddle_o3",
+    [
+     "M1",
+     "M2"
+    ]
+   ]
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF EMAIL"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "UPDATE LAST_EMAIL WHEN=6:15"
+  },
+  {
+   "kind": "RESTART"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHEN OF EMAIL"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "request:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Oscar"
+     ]
+    ]
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "midnight"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHEN",
+      "time:MIDNIGHT"
+     ],
+     [
+      "request:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Oscar"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHEN",
+      "time:06:15"
+     ],
+     [
+      "request:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Oscar"
+     ]
+    ]
+   }
+  },
+  null,
+  {
+   "status": "OK",
+   "result": [
+    "6:15"
+   ],
+   "state": {
+    "objects": [
+     [
+      "email:000001",
+      "EMAIL"
+     ],
+     [
+      "person:000001",
+      "PERSON"
+     ],
+     [
+      "request:000001",
+      "REQUEST"
+     ]
+    ],
+    "relations": [
+     [
+      "email:000001",
+      "WHEN",
+      "time:06:15"
+     ],
+     [
+      "request:000001",
+      "RECIPIENT",
+      "person:000001"
+     ],
+     [
+      "request:000001",
+      "TODO",
+      "email:000001"
+     ]
+    ],
+    "aliases": [
+     [
+      "person:000001",
+      "Oscar"
+     ]
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "version": "TEACHING_STATE_MACHINE_V1",
+ "implementation": "teacher/transactional.py (Demo.go)",
+ "states": [
+  "NEW",
+  "OPEN",
+  "WAITING_FOR_EXAMPLE",
+  "WAITING_FOR_GROUNDING",
+  "WAITING_FOR_CLARIFICATION",
+  "WAITING_FOR_REPHRASE",
+  "READY_TO_COMMIT",
+  "COMMITTED",
+  "ABORTED"
+ ],
+ "transitions": {
+  "NEW": [
+   "OPEN"
+  ],
+  "OPEN": [
+   "ABORTED",
+   "WAITING_FOR_EXAMPLE",
+   "WAITING_FOR_GROUNDING"
+  ],
+  "WAITING_FOR_EXAMPLE": [
+   "ABORTED",
+   "WAITING_FOR_GROUNDING"
+  ],
+  "WAITING_FOR_GROUNDING": [
+   "ABORTED",
+   "READY_TO_COMMIT",
+   "WAITING_FOR_CLARIFICATION",
+   "WAITING_FOR_GROUNDING",
+   "WAITING_FOR_REPHRASE"
+  ],
+  "WAITING_FOR_CLARIFICATION": [
+   "ABORTED",
+   "WAITING_FOR_GROUNDING",
+   "WAITING_FOR_REPHRASE"
+  ],
+  "WAITING_FOR_REPHRASE": [
+   "ABORTED",
+   "WAITING_FOR_GROUNDING"
+  ],
+  "READY_TO_COMMIT": [
+   "ABORTED",
+   "COMMITTED"
+  ],
+  "COMMITTED": [],
+  "ABORTED": []
+ },
+ "illegal_transition": "ControllerError (runtime error; never silently continues)",
+ "commit": "READY_TO_COMMIT -> COMMITTED only after completeness() == [] ; then :endteach / :endexample (the trace becomes learning evidence)",
+ "abort": "any state -> ABORTED: sandbox restored to the demonstration's start snapshot, S.teach cleared, zero evidence; reasons: NO_STEPS, EXAMPLE_INCOMPLETE, SLOT_RECOVERY_FAIL, MISSING_SLOT, INCOMPLETE, PREMATURE_TERMINATION, RESTARTED_BY_TEACHER, TEACHER_GAVE_NO_REMAINING_STEPS, EPISODE_END",
+ "execution_model": "slots execute one by one inside the teaching sandbox (later slots need earlier runtime results for grounding); the demonstration as a whole is one transaction over the sandbox snapshot: commit = evidence admission, abort = rollback of every slot"
+}

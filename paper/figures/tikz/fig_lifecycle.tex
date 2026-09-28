@@ -1,0 +1,51 @@
+% Figure 2: demonstration transaction state machine (top) and procedure lifecycle (bottom)
+\begin{tikzpicture}[
+  font=\sffamily\scriptsize,
+  st/.style={draw=semblue, fill=semblue!7, rounded corners=6pt, align=center, minimum height=8mm, inner xsep=2mm, line width=0.6pt},
+  good/.style={st, draw=semblue, fill=semblue!22, font=\sffamily\scriptsize\bfseries},
+  bad/.style={st, draw=inkmuted, fill=black!6},
+  arr/.style={-{Stealth[length=1.7mm]}, line width=0.55pt, draw=ink},
+  lab/.style={font=\sffamily\tiny, text=inkmuted, align=center, inner sep=1pt},
+  sec/.style={font=\sffamily\footnotesize\bfseries, anchor=west}]
+% ---- row 1
+\node[sec] at (-0.9,1.75) {(a) One demonstration = one transaction (teaching controller)};
+\node[st] (new) at (0,0) {NEW};
+\node[st, right=5mm of new] (open) {OPEN};
+\node[st, right=12mm of open] (ex) {WAITING\\FOR\_EXAMPLE};
+\node[st, right=12mm of ex] (gr) {WAITING\\FOR\_GROUNDING};
+\node[st, above right=3mm and 8mm of gr] (cl) {WAITING\\FOR\_CLARIFICATION};
+\node[st, below right=3mm and 8mm of gr] (re) {WAITING\\FOR\_REPHRASE};
+\node[st, right=40mm of gr] (ready) {READY\\TO\_COMMIT};
+\node[good, right=13mm of ready] (com) {COMMITTED};
+\node[bad, below=17mm of ex, text width=58mm] (ab) {ABORTED: sandbox restored to the start snapshot; \textbf{zero evidence}};
+\draw[arr] (new) -- (open);
+\draw[arr] (open) -- node[lab, above]{EXAMPLE\\ missing} (ex);
+\draw[arr] (ex) -- node[lab, above]{EXAMPLE\\ supplied} (gr);
+\draw[arr] (open.north) to[bend left=28] node[lab, above]{EXAMPLE line present} (gr.north west);
+\draw[arr] ($(gr.south)+(-7mm,0)$) .. controls +(-2mm,-7mm) and +(2mm,-7mm) .. node[lab, below]{next slot} ($(gr.south)+(-2mm,0)$);
+\draw[arr] ([yshift=1mm]gr.north east) -- node[lab, above left, pos=0.6]{ambiguous} (cl.west);
+\draw[arr] (cl.south) to[bend left=8] ([yshift=0.8mm]gr.east);
+\draw[arr] ([yshift=-1mm]gr.south east) -- node[lab, below left, pos=0.6]{ungroundable} (re.west);
+\draw[arr] (re.north) to[bend right=8] ([yshift=-0.8mm]gr.east);
+\draw[arr] (gr.east) -- node[lab, above, pos=0.78]{all slots\\ executed} (ready.west);
+\draw[arr] (ready) -- node[lab, above]{complete-\\ness = []} (com);
+\draw[arr, draw=inkmuted, dashed] (open.south) |- (ab.west);
+\draw[arr, draw=inkmuted, dashed] ($(gr.south)+(6mm,0)$) |- ($(ab.east)+(0,1.5mm)$);
+\draw[arr, draw=inkmuted, dashed] (ready.south) |- ($(ab.east)+(0,-1.5mm)$);
+\node[lab, anchor=west, text width=60mm, align=left] at ($(ab.east)+(12mm,-7mm)$) {abort reasons: missing slot, incomplete, premature termination (unrequested RETURN), slot-recovery failure, restart by teacher, budget exhausted, episode end};
+% ---- row 2
+\def\yy{-5.4}
+\node[sec] at (-0.9,\yy+1.2) {(b) Procedure lifecycle (library; every transition logged in \texttt{lib\_log})};
+\node[st] (tr) at (0.3,\yy) {committed\\ traces};
+\node[st, right=6mm of tr] (au) {anti-\\unifier};
+\node[st, right=6mm of au] (cand) {CANDIDATE};
+\node[st, right=6mm of cand] (test) {TESTING};
+\node[st, right=6mm of test] (ver) {VERIFIED};
+\node[good, right=14mm of ver] (act) {ACTIVE};
+\node[bad, below=6mm of test, text width=48mm] (rej) {REJECTED\_FAILED\_COUNTERFACTUAL, \dots\ (kept, never executable)};
+\node[lab, right=3mm of act, text width=30mm, align=left] {\texttt{active\_pointer} names one version; reuse reads ACTIVE procedures only};
+\draw[arr] (tr) -- (au); \draw[arr] (au) -- (cand); \draw[arr] (cand) -- (test);
+\draw[arr] (test) -- node[lab, above]{all tests\\ pass} (ver);
+\draw[arr] (ver) -- node[lab, above]{explicit\\ accept} (act);
+\draw[arr] (test) -- node[lab, right]{any test fails} (rej);
+\end{tikzpicture}

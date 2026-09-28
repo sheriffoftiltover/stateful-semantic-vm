@@ -1,0 +1,322 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":example",
+ "declared": {
+  "person": "Trent",
+  "time": "9"
+ },
+ "interaction_id": "dev-014-T6:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-014-T6/learn/snapshots/dev-014-T6_19_start.sqlite",
+ "start_snapshot_sha256": "d2ff855db12947aacfb7444c4eb295dd32975d5109f5b826f1588d4686878e4f",
+ "utterances": [
+  {
+   "utterance": "Find Trent's requests at 9.",
+   "uid": "dev-014-T6:20",
+   "instruction": "Find Trent's requests at 9.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Find Trent's requests at 9.",
+    "values": {
+     "PERSON": [
+      "Trent"
+     ],
+     "TIME": [
+      "9"
+     ],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 9,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Trent\", \"WHEN\": \"9\"}}\n\n",
+      "score": -0.812
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHEN\": \"9\", \"WHO\": \"Trent\"}}\n\n",
+      "score": -1.951
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHEN\": \"9\"}}\n\n",
+      "score": -2.595
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"REQUEST\"}\n\n",
+      "score": -6.482
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\"}\n\n",
+      "score": -7.155
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"REQUEST\", \"where\": {\"WHO\": \"Trent\", \"WHEN\": \"9\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "REQUEST",
+      "where": {
+       "WHO": "Trent",
+       "WHEN": "9"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"REQUEST\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Trent\"}], [\"SELF\", \"WHEN\", {\"const\": \"9\"}]]}]",
+      "score": -0.534,
+      "n": 2
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -2.565,
+      "n": 3
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -9.19,
+      "n": 1
+     }
+    ],
+    "margin": 2.03,
+    "reference_notes": [],
+    "seconds": 7.89,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "REQUEST"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Trent"
+       }
+      ],
+      [
+       "SELF",
+       "WHEN",
+       {
+        "const": "9"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "fec9584ce94e067dc974b3abd0a6587a9a3aadeb97ad23240446734f7bccc4ba",
+   "state_after": "fec9584ce94e067dc974b3abd0a6587a9a3aadeb97ad23240446734f7bccc4ba",
+   "seconds": 7.968
+  },
+  {
+   "utterance": "Tell me how many there are.",
+   "uid": "dev-014-T6:21",
+   "instruction": "Tell me how many there are.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Tell me how many there are.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 3,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+      "score": -0.478
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -2.3
+     },
+     {
+      "text": "r2 = {\"op\": \"FIRST\", \"of\": \"r1\"}\n\n",
+      "score": -7.416
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "REFERENCE_AMBIGUOUS",
+      "score": -2.3,
+      "n": 1
+     }
+    ],
+    "margin": null,
+    "reference_notes": [],
+    "seconds": 3.78,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 3.785
+  },
+  {
+   "utterance": "I mean: count them and return the number.",
+   "uid": "dev-014-T6:21#rescue",
+   "instruction": "count them and return the number.",
+   "correction": false,
+   "grounding": {
+    "instruction": "count them and return the number.",
+    "segmented": true,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Count them.",
+        "Return the number."
+       ],
+       "valid": true,
+       "why": null,
+       "parts": [
+        {
+         "segment": "Count them.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        },
+        {
+         "segment": "Return the number.",
+         "status": "OK",
+         "reason": null,
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 2,
+    "llm_calls": 12,
+    "seconds": 11.17,
+    "raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"COUNT\", \"of\": \"r1\"}\n\n{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+    "whole_raw_actions": [
+     {
+      "op": "COUNT",
+      "of": "r1",
+      "bind": "r2"
+     },
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "margin": 2.129,
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0",
+     "RETURN.value=r2 licensed by R1"
+    ]
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    },
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "fec9584ce94e067dc974b3abd0a6587a9a3aadeb97ad23240446734f7bccc4ba",
+   "state_after": "fec9584ce94e067dc974b3abd0a6587a9a3aadeb97ad23240446734f7bccc4ba",
+   "seconds": 11.332
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Trent"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "9"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "a1b311efd62cc548103d7204ea5b788e256e4b232a191094b5cfb5c05e736280",
+ "nl_mode": "NL_TEACH"
+}

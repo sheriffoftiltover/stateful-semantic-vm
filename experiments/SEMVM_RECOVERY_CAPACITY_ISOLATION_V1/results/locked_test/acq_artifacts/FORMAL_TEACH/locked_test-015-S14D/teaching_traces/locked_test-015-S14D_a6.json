@@ -1,0 +1,45 @@
+{
+ "name": "count_calls_with",
+ "mode": ":example",
+ "declared": {
+  "person": "Peggy"
+ },
+ "interaction_id": "locked_test-015-S14D:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-015-S14D/learn/snapshots/locked_test-015-S14D_a6_start.sqlite",
+ "start_snapshot_sha256": "b4249583d6d5a253a85e756d50db5c81e2a5a2f5fb004aa0cec2a4eaff182417",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Peggy"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "d78460e0be1b7b5f52f6fe2efb8621a7f9aa109916ba633ffe3fce6c2020c98f",
+ "nl_mode": "GOLD_TRACE"
+}

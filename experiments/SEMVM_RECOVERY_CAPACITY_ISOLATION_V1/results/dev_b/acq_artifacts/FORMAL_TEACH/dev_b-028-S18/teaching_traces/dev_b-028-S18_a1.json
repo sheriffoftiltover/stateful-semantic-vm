@@ -1,0 +1,45 @@
+{
+ "name": "count_emails_to",
+ "mode": ":teach",
+ "declared": {
+  "person": "Uma"
+ },
+ "interaction_id": "dev_b-028-S18:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/FORMAL_TEACH/dev_b-028-S18/learn/snapshots/dev_b-028-S18_a1_start.sqlite",
+ "start_snapshot_sha256": "4f7cbd0d5e81b603a46f4dae64a093f690a245e1facc6a16f8acfaef15e84ad4",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [
+    [
+     "SELF",
+     "RECIPIENT",
+     {
+      "const": "Uma"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "b3ba310acc19fd6d5b1c860ca2649e3518708ced3077d97b13e00a6e64ea962d",
+ "nl_mode": "GOLD_TRACE"
+}

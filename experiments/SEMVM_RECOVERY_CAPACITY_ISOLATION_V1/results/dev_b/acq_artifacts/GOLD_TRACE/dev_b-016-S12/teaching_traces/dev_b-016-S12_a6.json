@@ -1,0 +1,127 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev_b-016-S12:a6",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/GOLD_TRACE/dev_b-016-S12/learn/snapshots/dev_b-016-S12_a6_start.sqlite",
+ "start_snapshot_sha256": "540325a5d5b78c66f98fd2d3f83108e5ce6877ccf090f260360d9e973c996e24",
+ "utterances": [
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-016-S12:a7",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "e0e744d6500416d40db4b290917e00c00848fb796dd58ece3cd06de5ffe5d569",
+   "state_after": "e0e744d6500416d40db4b290917e00c00848fb796dd58ece3cd06de5ffe5d569",
+   "seconds": 0.075
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-016-S12:a8",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Xena"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000001"
+    ]
+   ],
+   "state_before": "e0e744d6500416d40db4b290917e00c00848fb796dd58ece3cd06de5ffe5d569",
+   "state_after": "b996e729e65aaf20503c17bf778cf6f327cf70688a345f95de2c92042e753bed",
+   "seconds": 0.131
+  },
+  {
+   "utterance": "<gold>",
+   "uid": "dev_b-016-S12:a9",
+   "instruction": "<gold>",
+   "correction": false,
+   "slot_id": null,
+   "source": null,
+   "grounding": {
+    "source": "gold"
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "b996e729e65aaf20503c17bf778cf6f327cf70688a345f95de2c92042e753bed",
+   "state_after": "b996e729e65aaf20503c17bf778cf6f327cf70688a345f95de2c92042e753bed",
+   "seconds": 0.077
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Xena"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "106fa090c7f58e0743c4ef4ec81e57cec5b9bad0667c53fb506de4079761a886",
+ "nl_mode": "GOLD_TRACE"
+}

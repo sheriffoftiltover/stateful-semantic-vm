@@ -1,0 +1,158 @@
+{
+ "scenario_id": "locked_test-002-S1",
+ "suite": "locked_test",
+ "category": "S1",
+ "reference_time": "2026-09-26T16:00:00-07:00",
+ "turns": [
+  {
+   "kind": "ASSERT",
+   "text": "message gamma ; so and then later again , while in Seoul per gamma : remind eta",
+   "gold_ir": {
+    "objects": [
+     {
+      "local_id": "e0",
+      "type": "REMINDER"
+     },
+     {
+      "local_id": "e1",
+      "type": "MESSAGE"
+     },
+     {
+      "local_id": "v0",
+      "type": "PLACE",
+      "surface": "Seoul"
+     }
+    ],
+    "relations": [
+     {
+      "predicate": "TODO",
+      "subject": "e0",
+      "object": "e1"
+     },
+     {
+      "predicate": "WHERE",
+      "subject": "e1",
+      "object": "v0"
+     }
+    ]
+   },
+   "facts": {
+    "outer": "REMINDER",
+    "inner": "MESSAGE",
+    "mods": [
+     [
+      "WHERE",
+      "Seoul",
+      "inner"
+     ]
+    ]
+   },
+   "pattern": "I",
+   "layout": [
+    "between_i3",
+    [
+     "M1"
+    ]
+   ]
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF MESSAGE"
+  },
+  {
+   "kind": "COMMAND",
+   "text": "QUERY WHERE OF REMINDER"
+  }
+ ],
+ "expected": [
+  {
+   "status": "OK",
+   "result": null,
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHERE",
+      "place:seoul"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [
+    "Seoul"
+   ],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHERE",
+      "place:seoul"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ]
+    ],
+    "aliases": []
+   }
+  },
+  {
+   "status": "OK",
+   "result": [],
+   "state": {
+    "objects": [
+     [
+      "message:000001",
+      "MESSAGE"
+     ],
+     [
+      "reminder:000001",
+      "REMINDER"
+     ]
+    ],
+    "relations": [
+     [
+      "message:000001",
+      "WHERE",
+      "place:seoul"
+     ],
+     [
+      "reminder:000001",
+      "TODO",
+      "message:000001"
+     ]
+    ],
+    "aliases": []
+   }
+  }
+ ]
+}

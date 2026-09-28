@@ -1,0 +1,397 @@
+{
+ "name": "close_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Rita"
+ },
+ "interaction_id": "dev_b-017-S13:close_calls_with:d0:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_b/work/E/dev_b-017-S13/learn/snapshots/dev_b-017-S13_close_calls_with_d0_hdr_start.sqlite",
+ "start_snapshot_sha256": "4bb08d7219b951bafcb0b58ca5eb9c2fb5604b23b018ddab1870f657f33d6a65",
+ "utterances": [
+  {
+   "utterance": "Find all calls with Rita.",
+   "uid": "dev_b-017-S13:close_calls_with:d0:demo1-slot1:0",
+   "instruction": "Find all calls with Rita.",
+   "correction": false,
+   "slot_id": "demo1-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Find all calls with Rita.",
+    "values": {
+     "PERSON": [
+      "Rita"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "fdc0113d0a9b9bdf2a0fabc9d784456086c5b164085101dc560f338e9b1be2ad"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Rita\"}}]}",
+    "request_hash": "fdc0113d0a9b9bdf2a0fabc9d784456086c5b164085101dc560f338e9b1be2ad",
+    "cached": false,
+    "input_tokens": 4449,
+    "output_tokens": 82,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Rita"
+      }
+     }
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.8
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "CALL"
+     },
+     "where": [
+      [
+       "SELF",
+       "WHO",
+       {
+        "const": "Rita"
+       }
+      ]
+     ],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "adb971d1a82e92e00165e85dbcd3c2b581b4dffcb6fc93b743f2d767e2c0aa89",
+   "state_after": "adb971d1a82e92e00165e85dbcd3c2b581b4dffcb6fc93b743f2d767e2c0aa89",
+   "seconds": 2.171
+  },
+  {
+   "utterance": "Also send the result to Kevin by Slack.",
+   "uid": "dev_b-017-S13:close_calls_with:d0:demo1-slot5:1",
+   "instruction": "Also send the result to Kevin by Slack.",
+   "correction": false,
+   "slot_id": "demo1-slot5",
+   "source": "EVALUATOR_INJECTION",
+   "grounding": {
+    "instruction": "Also send the result to Kevin by Slack.",
+    "values": {
+     "PERSON": [
+      "Kevin"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "UNSUPPORTED",
+      "reason": "grounder: No VM action for sending results via Slack.",
+      "feedback": null,
+      "request_hash": "38146794d63b820f4c13da4144b404fa1d7a094ac8f6011f5cd76de3b8db175d"
+     }
+    ],
+    "raw_text": "{\"status\": \"UNSUPPORTED\", \"reason\": \"No VM action for sending results via Slack.\"}",
+    "request_hash": "38146794d63b820f4c13da4144b404fa1d7a094ac8f6011f5cd76de3b8db175d",
+    "cached": false,
+    "input_tokens": 4486,
+    "output_tokens": 42,
+    "envelope_status": "UNSUPPORTED",
+    "retried": false,
+    "seconds": 1.12
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 1.119
+  },
+  {
+   "utterance": "Close them all.",
+   "uid": "dev_b-017-S13:close_calls_with:d0:demo1-slot2:2",
+   "instruction": "Close them all.",
+   "correction": false,
+   "slot_id": "demo1-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Close them all.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "a9413d9054b5b2a9a7f81312641bb6e0f083ef6d74cb4751a2e9faa7a80d3fac"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"SET_STATUS\", \"each\": \"r1\", \"value\": \"CLOSED\"}]}",
+    "request_hash": "a9413d9054b5b2a9a7f81312641bb6e0f083ef6d74cb4751a2e9faa7a80d3fac",
+    "cached": false,
+    "input_tokens": 4481,
+    "output_tokens": 52,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "SET_STATUS",
+      "each": "r1",
+      "value": "CLOSED"
+     }
+    ],
+    "reference_notes": [
+     "SET_STATUS.each=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.21
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FOR",
+     "as": "e0",
+     "list": {
+      "var": "r1"
+     },
+     "body": [
+      {
+       "op": "SET_STATUS",
+       "obj": {
+        "var": "e0"
+       },
+       "value": {
+        "const": "CLOSED"
+       }
+      }
+     ]
+    }
+   ],
+   "diff": [
+    [
+     "status",
+     "call:000004",
+     "OPEN",
+     "CLOSED"
+    ],
+    [
+     "status",
+     "call:000007",
+     "CLOSED",
+     "CLOSED"
+    ]
+   ],
+   "state_before": "adb971d1a82e92e00165e85dbcd3c2b581b4dffcb6fc93b743f2d767e2c0aa89",
+   "state_after": "98b5256dd408bcc1f0ca7ca9c426906f8b829d0ebb64145acc52d135a9f1ddc7",
+   "seconds": 1.854
+  },
+  {
+   "utterance": "Please count them.",
+   "uid": "dev_b-017-S13:close_calls_with:d0:demo1-slot3:3",
+   "instruction": "Please count them.",
+   "correction": false,
+   "slot_id": "demo1-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please count them.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "163999888b3dcd8888cfbd29a9b72e4ae55a81321399d25a5bb90bb0c40e6f84"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "224fbdbc7b0f33dabfc22d95b8c0bb12866f925c4c8e4526ac8cf00b41818d96"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r2\", \"op\": \"COUNT\", \"of\": \"r1\"}]}",
+    "request_hash": "224fbdbc7b0f33dabfc22d95b8c0bb12866f925c4c8e4526ac8cf00b41818d96",
+    "cached": false,
+    "input_tokens": 4581,
+    "output_tokens": 67,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r2",
+      "op": "COUNT",
+      "of": "r1"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [
+     "COUNT.of=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": true,
+    "seconds": 2.81
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "COUNT",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "98b5256dd408bcc1f0ca7ca9c426906f8b829d0ebb64145acc52d135a9f1ddc7",
+   "state_after": "98b5256dd408bcc1f0ca7ca9c426906f8b829d0ebb64145acc52d135a9f1ddc7",
+   "seconds": 3.131
+  },
+  {
+   "utterance": "Return the number.",
+   "uid": "dev_b-017-S13:close_calls_with:d0:demo1-slot4:4",
+   "instruction": "Return the number.",
+   "correction": false,
+   "slot_id": "demo1-slot4",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Return the number.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "e3261410c6292755c6f3e818200b5a7ec3bb7b80ad0ef3d9bdaf47de39f6edc3"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r2\"}]}",
+    "request_hash": "e3261410c6292755c6f3e818200b5a7ec3bb7b80ad0ef3d9bdaf47de39f6edc3",
+    "cached": false,
+    "input_tokens": 4504,
+    "output_tokens": 38,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r2"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r2 licensed by R2"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.09
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r2"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "98b5256dd408bcc1f0ca7ca9c426906f8b829d0ebb64145acc52d135a9f1ddc7",
+   "state_after": "98b5256dd408bcc1f0ca7ca9c426906f8b829d0ebb64145acc52d135a9f1ddc7",
+   "seconds": 1.448
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Rita"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "FOR",
+   "as": "e0",
+   "list": {
+    "var": "r1"
+   },
+   "body": [
+    {
+     "op": "SET_STATUS",
+     "obj": {
+      "var": "e0"
+     },
+     "value": {
+      "const": "CLOSED"
+     }
+    }
+   ]
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "7a5080543e5a076031352a8cafde5e0f51aa057c16fde0404509ef173d5bc351",
+ "nl_mode": "NL_TEACH"
+}

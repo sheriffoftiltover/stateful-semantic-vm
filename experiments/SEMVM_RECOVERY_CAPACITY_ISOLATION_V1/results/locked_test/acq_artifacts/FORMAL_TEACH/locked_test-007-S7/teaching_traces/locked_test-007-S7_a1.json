@@ -1,0 +1,53 @@
+{
+ "name": "count_requests_by_at",
+ "mode": ":teach",
+ "declared": {
+  "person": "Victor",
+  "time": "9:30"
+ },
+ "interaction_id": "locked_test-007-S7:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/locked_test/work/FORMAL_TEACH/locked_test-007-S7/learn/snapshots/locked_test-007-S7_a1_start.sqlite",
+ "start_snapshot_sha256": "bfb2085f0e3c4b349e484226173816ed27bd702e06e0bfbfeb3001784ee8df20",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "REQUEST"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Victor"
+     }
+    ],
+    [
+     "SELF",
+     "WHEN",
+     {
+      "const": "9:30"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "COUNT",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r2"
+   }
+  }
+ ],
+ "trace_sha256": "91c09cfdd947e820704604040548fbd25a4198496710473021640629e2debfce",
+ "nl_mode": "GOLD_TRACE"
+}

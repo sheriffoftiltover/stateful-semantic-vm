@@ -1,0 +1,45 @@
+{
+ "status": "RUN_ONCE",
+ "arms_run": [
+  "GOLD_TRACE",
+  "FORMAL_TEACH",
+  "D"
+ ],
+ "pass_rule": "registered before running (ENGINEERING_LOG #7): D learned/scenario/distilled >= .90, grounding >= .95, all safety + backend gates, controls exact",
+ "as_recorded": {
+  "D_failed_gates": [],
+  "D": {
+   "LEARNED_PROCEDURE_EXACT": 1.0,
+   "SCENARIO_EXACT": 1.0,
+   "DISTILLED_SKILL_EXACT": 1.0,
+   "GROUNDING_BEHAVIORAL_EXACT": 0.9565,
+   "WRONG_BEHAVIORAL_ACTION_EXECUTED": 0,
+   "HOSTED_TEARDOWN_VERIFIED": 1.0
+  }
+ },
+ "strict_teardown_rescore": {
+  "D_failed_gates": [
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION",
+   "HOSTED_TEARDOWN_VERIFIED",
+   "FLOOR_DISTILLED_SKILL_EXACT"
+  ],
+  "D": {
+   "LEARNED_PROCEDURE_EXACT": 1.0,
+   "SCENARIO_EXACT": 1.0,
+   "DISTILLED_SKILL_EXACT": 0.0,
+   "GROUNDING_BEHAVIORAL_EXACT": 0.9565,
+   "TEACHER_DISCONNECT_REUSE_GIVEN_ACQUISITION": 0.0,
+   "HOSTED_TEARDOWN_VERIFIED": 0.0
+  }
+ },
+ "teardown": {
+  "modal_app_stop_rc": 0,
+  "probe_at_handoff": "HTTP 401 (endpoint still answering while stopping)",
+  "probe_later": "HTTP 404; app list 'stopped'",
+  "post_handoff_network_attempts": 0,
+  "post_handoff_hosted_calls": 0,
+  "defect": "htg_evaluate.teardown accepted any HTTP error as 'destroyed'; spec requires 404/unavailable. Fixed after the run (polling until a real 404) for future experiments; LOCKED is not rerun (spec \u00a785)."
+ },
+ "verdict": "LOCKED: every acquisition, grounding, safety and retention gate passes; HOSTED_TEARDOWN_VERIFIED is NOT satisfied as registered (401 at the handoff probe), and the teardown-dependent DISTILLED_SKILL_EXACT / TEACHER_DISCONNECT_REUSE therefore fail under the strict reading. Not a clean LOCKED pass.",
+ "locked_manifest": "locks/LOCKED_TEST_MANIFEST.json"
+}

@@ -1,0 +1,249 @@
+{
+ "name": "retarget_last_email",
+ "mode": ":example",
+ "declared": null,
+ "interaction_id": "dev_a-015-S12:retarget_last_email:d1:hdr",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/E/dev_a-015-S12/learn/snapshots/dev_a-015-S12_retarget_last_email_d1_hdr_start.sqlite",
+ "start_snapshot_sha256": "dc68acfc49921123cd3b3704d2e550ab71c1c9579b6dea79132889f51e846b99",
+ "utterances": [
+  {
+   "utterance": "Get my latest email.",
+   "uid": "dev_a-015-S12:retarget_last_email:d1:demo2-slot1:0",
+   "instruction": "Get my latest email.",
+   "correction": false,
+   "slot_id": "demo2-slot1",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Get my latest email.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 2,
+    "hosted_calls": 2,
+    "attempts": [
+     {
+      "status": "CLARIFY",
+      "reason": "hosted plan rejected: UNREQUESTED_RETURN",
+      "feedback": [
+       {
+        "error": "UNREQUESTED_RETURN",
+        "rule": "RETURN is allowed only when the instruction asks to return / give back the result"
+       }
+      ],
+      "request_hash": "6cb4bc395741dbd9540d40197d9f54c2f106a78e03f9f7f51235ad9fbebfd748"
+     },
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "a60b7a8f11c42aef9f205ac14600ddcdfb5d9bed4760a1138f9be539fb438f66"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}]}",
+    "request_hash": "a60b7a8f11c42aef9f205ac14600ddcdfb5d9bed4760a1138f9be539fb438f66",
+    "cached": true,
+    "input_tokens": 4549,
+    "output_tokens": 51,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "bind": "r1",
+      "op": "FIND_LAST",
+      "type": "EMAIL"
+     }
+    ],
+    "plan_errors": [
+     "UNREQUESTED_RETURN"
+    ],
+    "reference_notes": [],
+    "repaired": false,
+    "retried": true,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND_LAST",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "state_after": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "seconds": 0.616
+  },
+  {
+   "utterance": "Address it to Heidi.",
+   "uid": "dev_a-015-S12:retarget_last_email:d1:demo2-slot2:1",
+   "instruction": "Address it to Heidi.",
+   "correction": false,
+   "slot_id": "demo2-slot2",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Address it to Heidi.",
+    "values": {
+     "PERSON": [
+      "Heidi"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "ef4a206fb4cfdac21772935eb1092a2ec0d068cb1b7cde51da10085d8db31fca"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"UPDATE\", \"target\": \"r1\", \"rel\": \"RECIPIENT\", \"value\": \"Heidi\"}]}",
+    "request_hash": "ef4a206fb4cfdac21772935eb1092a2ec0d068cb1b7cde51da10085d8db31fca",
+    "cached": true,
+    "input_tokens": 4469,
+    "output_tokens": 67,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "UPDATE",
+      "target": "r1",
+      "rel": "RECIPIENT",
+      "value": "Heidi"
+     }
+    ],
+    "reference_notes": [
+     "UPDATE.target=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 0.0
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "UPDATE",
+     "obj": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT",
+     "value": {
+      "const": "Heidi"
+     }
+    }
+   ],
+   "diff": [
+    [
+     "-rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000005"
+    ],
+    [
+     "+rel",
+     "email:000008",
+     "RECIPIENT",
+     "person:000001"
+    ]
+   ],
+   "state_before": "80034f4585271418ff5be95fc316c85f0cea55372023000e5db2eaaae4189ba4",
+   "state_after": "a2c2fbace0c32c925f3cbca70c1fe5dbd87d1557a9c758d846e33212ee58b3b6",
+   "seconds": 0.984
+  },
+  {
+   "utterance": "Please return the email.",
+   "uid": "dev_a-015-S12:retarget_last_email:d1:demo2-slot3:2",
+   "instruction": "Please return the email.",
+   "correction": false,
+   "slot_id": "demo2-slot3",
+   "source": "SCRIPTED_TEACHER",
+   "grounding": {
+    "instruction": "Please return the email.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "grounder": "HOSTED",
+    "llm_calls": 1,
+    "hosted_calls": 1,
+    "attempts": [
+     {
+      "status": "OK",
+      "reason": null,
+      "feedback": null,
+      "request_hash": "53570de622672ff9ca1a0f8aea7cfc51d7a844cfeb3591b77f9bd8936bb45410"
+     }
+    ],
+    "raw_text": "{\"status\": \"PLAN\", \"steps\": [{\"op\": \"RETURN\", \"value\": \"r1\"}]}",
+    "request_hash": "53570de622672ff9ca1a0f8aea7cfc51d7a844cfeb3591b77f9bd8936bb45410",
+    "cached": false,
+    "input_tokens": 4469,
+    "output_tokens": 39,
+    "envelope_status": "PLAN",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r1"
+     }
+    ],
+    "reference_notes": [
+     "RETURN.value=r1 licensed by R0"
+    ],
+    "repaired": false,
+    "retried": false,
+    "seconds": 1.46
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r1"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "a2c2fbace0c32c925f3cbca70c1fe5dbd87d1557a9c758d846e33212ee58b3b6",
+   "state_after": "a2c2fbace0c32c925f3cbca70c1fe5dbd87d1557a9c758d846e33212ee58b3b6",
+   "seconds": 1.984
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND_LAST",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   }
+  },
+  {
+   "op": "UPDATE",
+   "obj": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT",
+   "value": {
+    "const": "Heidi"
+   }
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "c3f14be3e822ca3ce57783b2c39ea5c46d98d867c7416913a04aaa2e536270d0",
+ "nl_mode": "NL_TEACH"
+}

@@ -1,0 +1,414 @@
+[
+ {
+  "turn": 0,
+  "pid": 2641840,
+  "utterance_id": "dev-027-S11:0",
+  "INPUT": "note theta : at 2 re theta ; so then again soon , email beta ; while in Rome per beta",
+  "kind": "ASSERT",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": "BYPASSED (GOLD_IR)",
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "NOTE"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PLACE",
+     "surface": "Rome"
+    },
+    {
+     "local_id": "v1",
+     "type": "TIME",
+     "surface": "2"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHEN",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "SCALAR",
+    "v0",
+    "Rome",
+    "place:rome"
+   ],
+   [
+    "TIME",
+    "v1",
+    "2",
+    "time:02:00"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "NOTE",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:rome",
+    "PLACE",
+    "rome",
+    "Rome"
+   ],
+   [
+    "ENSURE_VALUE",
+    "time:02:00",
+    "TIME",
+    "02:00",
+    "2"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHEN",
+    "time:02:00"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHERE",
+    "place:rome"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "772c04295208f0a5d4e449316af517a6dd7dd8aead3dda779ec78f5618d4a2b6",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "note:000001",
+    "NOTE"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "TODO",
+    "email:000001"
+   ],
+   [
+    "+rel",
+    "note:000001",
+    "WHEN",
+    "time:02:00"
+   ],
+   [
+    "+rel",
+    "email:000001",
+    "WHERE",
+    "place:rome"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "87c8775ed56b3cd85ab770b6b7c5a1a4ea596e23ef290853afb249ee434f8eaf",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:rome"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ],
+    [
+     "note:000001",
+     "WHEN",
+     "time:02:00"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2641840,
+  "utterance_id": "dev-027-S11:1",
+  "INPUT": "RETRACT LAST_NOTE WHEN",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "87c8775ed56b3cd85ab770b6b7c5a1a4ea596e23ef290853afb249ee434f8eaf",
+  "COMMAND_AST": {
+   "op": "RETRACT",
+   "ref": "LAST_NOTE",
+   "rel": "WHEN"
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "note:000001",
+    "WHEN",
+    "time:02:00"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0d63709ca5af20680ea011f4e06647f4ca71c4856544da279cc6aa4821201057",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "note:000001",
+    "WHEN",
+    "time:02:00"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "710c15a818298419b83d6a40ebc2698a237175f279183928f2b016a1e8db218e",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:rome"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2641840,
+  "utterance_id": "dev-027-S11:2",
+  "INPUT": "QUERY WHEN OF NOTE",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "710c15a818298419b83d6a40ebc2698a237175f279183928f2b016a1e8db218e",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHEN",
+   "target": "NOTE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "NOTE",
+     "rel": "WHEN",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "a6ff893f8711fd07b6b4827813a6309c2c69989051ce8ded1de7edd518c713fd",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "710c15a818298419b83d6a40ebc2698a237175f279183928f2b016a1e8db218e",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [
+    [
+     "email:000001",
+     "WHERE",
+     "place:rome"
+    ],
+    [
+     "note:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2641840,
+  "utterance_id": "dev-027-S11:3",
+  "INPUT": "DELETE LAST_EMAIL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "710c15a818298419b83d6a40ebc2698a237175f279183928f2b016a1e8db218e",
+  "COMMAND_AST": {
+   "op": "DELETE",
+   "ref": "LAST_EMAIL"
+  },
+  "VM_PROGRAM": [
+   [
+    "DELETE",
+    "email:000001"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "266f0791eb2104451c48532dd54a3573458ae50ec733784773326ced7e8e0c0d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-obj",
+    "email:000001"
+   ],
+   [
+    "-rel",
+    "email:000001",
+    "WHERE",
+    "place:rome"
+   ],
+   [
+    "-rel",
+    "note:000001",
+    "TODO",
+    "email:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "163bad636e1980ebdac88033cdbea92eb4ff9fb9799f3a3b08b861c7592db468",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [],
+   "aliases": []
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2641840,
+  "utterance_id": "dev-027-S11:4",
+  "INPUT": "QUERY WHERE OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "GOLD_IR",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "163bad636e1980ebdac88033cdbea92eb4ff9fb9799f3a3b08b861c7592db468",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f99549db16bb27827bd1fbbef6a5d29fd71d09e84bf36170923849a84b5eb74d",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "163bad636e1980ebdac88033cdbea92eb4ff9fb9799f3a3b08b861c7592db468",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "note:000001",
+     "NOTE"
+    ]
+   ],
+   "relations": [],
+   "aliases": []
+  }
+ }
+]

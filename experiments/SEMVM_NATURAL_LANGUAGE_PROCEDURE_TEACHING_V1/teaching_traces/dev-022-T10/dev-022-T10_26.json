@@ -1,0 +1,361 @@
+{
+ "name": "count_calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Dad"
+ },
+ "interaction_id": "dev-022-T10:26",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-022-T10/learn/snapshots/dev-022-T10_26_start.sqlite",
+ "start_snapshot_sha256": "a1af72107eceac67cbc89278d5db14b163ea0f999ad452ed603eb4196fea8a7f",
+ "utterances": [
+  {
+   "utterance": "Please look up Dad's calls.",
+   "uid": "dev-022-T10:27",
+   "instruction": "Please look up Dad's calls.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please look up Dad's calls.",
+    "values": {
+     "PERSON": [
+      "Dad"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 12,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\n\n",
+      "score": -1.658
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -2.098
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\n\n",
+      "score": -3.278
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -3.399
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHEN\"}\n\n",
+      "score": -3.444
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Dad"
+      },
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}]",
+      "score": -1.658,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+      "score": -2.098,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -2.415,
+      "n": 3
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -3.399,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHEN\"}]",
+      "score": -3.444,
+      "n": 1
+     }
+    ],
+    "margin": 0.44,
+    "reference_notes": [],
+    "seconds": 9.52,
+    "runner_up": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 9.524
+  },
+  {
+   "utterance": "I mean: find all calls with Dad.",
+   "uid": "dev-022-T10:27#rescue",
+   "instruction": "find all calls with Dad.",
+   "correction": false,
+   "grounding": {
+    "instruction": "find all calls with Dad.",
+    "values": {
+     "PERSON": [
+      "Dad"
+     ],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 13,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -1.236
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\n\n",
+      "score": -1.291
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHEN\"}\n\n",
+      "score": -3.628
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHERE\"}\n\n",
+      "score": -3.675
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\"}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -3.943
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"CALL\", \"where\": {\"WHO\": \"Dad\"}}\nr2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "CALL",
+      "where": {
+       "WHO": "Dad"
+      },
+      "bind": "r1"
+     },
+     {
+      "op": "GROUP",
+      "of": "r1",
+      "by": "WHO",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+      "score": -1.236,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}]",
+      "score": -1.291,
+      "n": 1
+     },
+     {
+      "outcome": "COVERAGE_INCOMPLETE",
+      "score": -3.228,
+      "n": 3
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHEN\"}]",
+      "score": -3.628,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}, {\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHERE\"}]",
+      "score": -3.675,
+      "n": 1
+     }
+    ],
+    "margin": 0.056,
+    "reference_notes": [
+     "GROUP.of=r1 licensed by R0"
+    ],
+    "seconds": 7.92,
+    "runner_up": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"CALL\"}, \"where\": [[\"SELF\", \"WHO\", {\"const\": \"Dad\"}]]}]",
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 7.915
+  },
+  {
+   "utterance": "Work out how many there are and give it back.",
+   "uid": "dev-022-T10:28",
+   "instruction": "Work out how many there are and give it back.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Work out how many there are and give it back.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -0.456
+     },
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -1.004
+     }
+    ],
+    "raw_text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "UNSUPPORTED"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -0.456,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -1.004,
+      "n": 1
+     }
+    ],
+    "margin": 0.548,
+    "reference_notes": [],
+    "seconds": 0.75,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 1,
+     "tried": [
+      {
+       "segments": [
+        "Work out how many there are.",
+        "Give it back."
+       ],
+       "valid": false,
+       "why": "a clause did not ground",
+       "parts": [
+        {
+         "segment": "Work out how many there are.",
+         "status": "UNSUPPORTED",
+         "reason": "frontend: UNSUPPORTED",
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "UNSUPPORTED",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "UNSUPPORTED",
+   "seconds": 1.509
+  },
+  {
+   "utterance": "I mean: count them, then return the count.",
+   "uid": "dev-022-T10:28#rescue",
+   "instruction": "count them, then return the count.",
+   "correction": false,
+   "grounding": {
+    "instruction": "count them, then return the count.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 1,
+    "top": [
+     {
+      "text": "{\"op\": \"CLARIFY\"}\n\n",
+      "score": -0.263
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -1.465
+     }
+    ],
+    "raw_text": "{\"op\": \"CLARIFY\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "CLARIFY"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "SPECIAL:CLARIFY",
+      "score": -0.263,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -1.465,
+      "n": 1
+     }
+    ],
+    "margin": 1.202,
+    "reference_notes": [],
+    "seconds": 0.8,
+    "segmentation": {
+     "input_clause_count": 2,
+     "strong_clause_count": 2,
+     "tried": [
+      {
+       "segments": [
+        "Count them.",
+        "Return the count."
+       ],
+       "valid": false,
+       "why": "a clause did not ground",
+       "parts": [
+        {
+         "segment": "Count them.",
+         "status": "UNSUPPORTED",
+         "reason": "frontend: UNSUPPORTED",
+         "clarify_kind": null,
+         "clarify_info": null
+        }
+       ]
+      }
+     ],
+     "whole_status": "CLARIFY",
+     "whole_valid": false,
+     "whole_why": "a clause did not ground"
+    },
+    "grounded_clause_count": 0
+   },
+   "status": "CLARIFY",
+   "seconds": 1.576
+  }
+ ],
+ "final_steps": [],
+ "trace_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+ "nl_mode": "NL_TEACH"
+}

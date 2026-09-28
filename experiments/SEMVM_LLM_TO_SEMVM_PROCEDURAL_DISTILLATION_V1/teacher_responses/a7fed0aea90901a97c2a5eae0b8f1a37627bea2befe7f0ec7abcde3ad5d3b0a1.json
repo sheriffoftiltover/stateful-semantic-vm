@@ -1,0 +1,30 @@
+{
+ "text": "PROCEDURE count_open_calls_with(person:PERSON)\n$v0 = FIND CALL WHERE SELF.WHO={person} STATUS=OPEN\n$v1 = COUNT $v0\nRETURN $v1\nEND",
+ "provenance": {
+  "provider": "modal-vllm",
+  "model": "openai/gpt-oss-120b",
+  "request_hash": "a7fed0aea90901a97c2a5eae0b8f1a37627bea2befe7f0ec7abcde3ad5d3b0a1",
+  "prompt_sha256": "28f0f96ca9d9269835bbabf9e89b16e2d451cfffe722e18a2d2b9b374e61daab",
+  "generation": {
+   "model": "gpt-oss-120b",
+   "temperature": 0.0,
+   "top_p": 1.0,
+   "max_tokens": 4096,
+   "seed": 0,
+   "reasoning_effort": "high"
+  },
+  "kind": "DIRECT_AST",
+  "meter_usd_before": 4.707,
+  "request_id": "chatcmpl-b620563d58c84193822d2d39401af738",
+  "timestamp": "2026-09-27T15:53:37Z",
+  "latency_s": 5.444,
+  "retry_count": 0,
+  "input_tokens": 1218,
+  "output_tokens": 848,
+  "finish_reason": "stop",
+  "response_sha256": "9779c9881acedc46bbd8984e920fc71ce086ab32da83fe67d4a0fafbc330c9ad",
+  "reasoning_chars": 3250,
+  "cached": false
+ },
+ "messages_sha256": "28f0f96ca9d9269835bbabf9e89b16e2d451cfffe722e18a2d2b9b374e61daab"
+}

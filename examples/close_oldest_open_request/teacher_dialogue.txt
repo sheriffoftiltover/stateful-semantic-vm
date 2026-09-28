@@ -1,0 +1,38 @@
+# target close_oldest_open_request: final status ACTIVE
+# system prompt = teacher card (teacher/protocol.py; sha in locks/FINAL_CONFIG_FREEZE.json)
+
+=== STUDENT -> TEACHER
+SKILL TO TEACH: close_oldest_open_request(person:person)
+WHAT IT DOES: Given a person, take that person's open requests, sort them by time, close the first one, and return it.
+
+THE STUDENT'S SAVED SKILLS: (none)
+
+VALUES (use only these for example values):
+- people: Frank, Grace, Peggy, Yves
+- times: 7, 4:30, 2:45, 12
+- places: Seoul, Delhi, Madrid, Tokyo
+- topics: schedule, report, survey, budget
+
+STYLE: Teach compactly: a few STEP lines, each may combine two closely related actions (e.g. "find ... and count them").
+
+Give demonstration 1 now (EXAMPLE line, then STEP lines).
+
+=== TEACHER
+EXAMPLE: person=Frank
+STEP: Find the open requests with person Frank and sort them by when.
+STEP: Take the first one.
+STEP: Mark it closed.
+STEP: Return it.
+
+=== STUDENT -> TEACHER
+For step 2 ("Take the first one.") more than one earlier result fits:
+  r1: the requests found (who=Frank, status open) (1 element), from the step "Find the open requests with person Frank and sort them by when."
+  r2: r1 sorted by when (1 element), from the step "Find the open requests with person Frank and sort them by when."
+Reply with one line: REFERENT: <id>
+
+=== TEACHER
+REFERENT: r2
+
+# teacher-call provenance
+# LESSON: role initial_teacher, request 83e63f83143728e1, tokens in/out 1285/1129, finish stop
+# CLARIFY_REFERENCE: role recovery_teacher, request 5428bd6218eed1de, tokens in/out 1427/216, finish stop

@@ -1,0 +1,387 @@
+[
+ {
+  "turn": 0,
+  "pid": 2644758,
+  "utterance_id": "locked_test-001-S1:0",
+  "INPUT": "request alpha ; so then , to Heidi per alpha , email gamma",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "EMAIL",
+    "layout": [
+     "between_o2",
+     [
+      "M2"
+     ]
+    ],
+    "n_mod": 1,
+    "outer": "REQUEST"
+   },
+   "graph": {
+    "edges": [
+     [
+      "RECIPIENT",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "PERSON",
+       "Heidi",
+       7
+      ]
+     ],
+     [
+      "TODO",
+      [
+       "REQUEST",
+       null,
+       0
+      ],
+      [
+       "EMAIL",
+       null,
+       11
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "EMAIL",
+      null,
+      11
+     ],
+     [
+      "PERSON",
+      "Heidi",
+      7
+     ],
+     [
+      "REQUEST",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REQUEST",
+     null,
+     0
+    ]
+   },
+   "log_mass": 814.09130859375,
+   "margin": 11.961669921875,
+   "n_outputs": 31,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REQUEST"
+    },
+    {
+     "local_id": "e1",
+     "type": "EMAIL"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Heidi"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "RECIPIENT",
+     "subject": "e0",
+     "object": "v0"
+    },
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Heidi",
+    "NEW",
+    null
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REQUEST",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "EMAIL",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Heidi"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "RECIPIENT",
+    "$v0"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "c86bbfe8acdb0f4fd9b5080adc02899d4af3c123bc4c2b8b1d90f223e90ed2a4",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "request:000001",
+    "REQUEST"
+   ],
+   [
+    "+obj",
+    "email:000001",
+    "EMAIL"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Heidi"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "RECIPIENT",
+    "person:000001"
+   ],
+   [
+    "+rel",
+    "request:000001",
+    "TODO",
+    "email:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "6a583e96c9c39a70d38243092458e4fc3c99695892c959f52b35ffea1db72ad0",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Heidi"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2644758,
+  "utterance_id": "locked_test-001-S1:1",
+  "INPUT": "QUERY RECIPIENT OF REQUEST",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "6a583e96c9c39a70d38243092458e4fc3c99695892c959f52b35ffea1db72ad0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "REQUEST",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "REQUEST",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "0147b7b67ea1e6c3de9d4fc6aef410c9d9bf7874c616a24f68af36c8eb5a1192",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [
+   "person:000001"
+  ],
+  "STATE_AFTER": "6a583e96c9c39a70d38243092458e4fc3c99695892c959f52b35ffea1db72ad0",
+  "RESPONSE": "Heidi",
+  "RETURN_RENDERED": [
+   "Heidi"
+  ],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Heidi"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2644758,
+  "utterance_id": "locked_test-001-S1:2",
+  "INPUT": "QUERY RECIPIENT OF EMAIL",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "6a583e96c9c39a70d38243092458e4fc3c99695892c959f52b35ffea1db72ad0",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "RECIPIENT",
+   "target": "EMAIL",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "EMAIL",
+     "rel": "RECIPIENT",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "9b6f7fc5af2a7207cd4841f841378a209776cbdeba3c6189d219d9a268abf477",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "6a583e96c9c39a70d38243092458e4fc3c99695892c959f52b35ffea1db72ad0",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "email:000001",
+     "EMAIL"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "request:000001",
+     "REQUEST"
+    ]
+   ],
+   "relations": [
+    [
+     "request:000001",
+     "RECIPIENT",
+     "person:000001"
+    ],
+    [
+     "request:000001",
+     "TODO",
+     "email:000001"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Heidi"
+    ]
+   ]
+  }
+ }
+]

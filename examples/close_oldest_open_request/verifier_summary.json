@@ -1,0 +1,226 @@
+{
+ "scenario": "dev_a-022-S15",
+ "arm": "D",
+ "suite": "dev_a",
+ "candidates": [
+  {
+   "file": "proc_close_oldest_open_request_v1.json",
+   "status": "VERIFIED",
+   "program": "PROCEDURE close_oldest_open_request(person:PERSON)\n$v0 = FIND REQUEST WHERE SELF.WHO={person} STATUS=OPEN\n$v1 = SORT $v0 WHEN\n$v2 = FIRST $v1\nSET_STATUS $v2 CLOSED\nRETURN $v2\nEND",
+   "tests_passed": 20,
+   "tests_run": 20,
+   "tests": [
+    {
+     "id": "static_validation",
+     "pass": true
+    },
+    {
+     "id": "interface",
+     "pass": true
+    },
+    {
+     "id": "replay_0",
+     "pass": true
+    },
+    {
+     "id": "counterfactual_t0_0",
+     "pass": true
+    },
+    {
+     "id": "counterfactual_t0_1",
+     "pass": true
+    },
+    {
+     "id": "perturb_all_closed_t0_src",
+     "pass": true
+    },
+    {
+     "id": "perturb_all_closed_t0_cf",
+     "pass": true
+    },
+    {
+     "id": "perturb_alternate_closed_t0_src",
+     "pass": true
+    },
+    {
+     "id": "perturb_alternate_closed_t0_cf",
+     "pass": true
+    },
+    {
+     "id": "neg_missing_input",
+     "pass": true
+    },
+    {
+     "id": "neg_wrong_type",
+     "pass": true
+    },
+    {
+     "id": "neg_empty_result",
+     "pass": true
+    },
+    {
+     "id": "neg_ambiguous_entity",
+     "pass": true
+    },
+    {
+     "id": "neg_deleted_object",
+     "pass": true
+    },
+    {
+     "id": "neg_empty_world_precondition",
+     "pass": true
+    },
+    {
+     "id": "txn_inject_after_1",
+     "pass": true
+    },
+    {
+     "id": "txn_inject_after_2",
+     "pass": true
+    },
+    {
+     "id": "txn_inject_after_3",
+     "pass": true
+    },
+    {
+     "id": "txn_inject_after_4",
+     "pass": true
+    },
+    {
+     "id": "determinism",
+     "pass": true
+    }
+   ]
+  },
+  {
+   "file": "proc_close_oldest_open_request_v2.json",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "program": "PROCEDURE close_oldest_open_request()\n$v0 = FIND REQUEST WHERE SELF.WHO=Frank STATUS=OPEN\n$v1 = SORT $v0 WHEN\n$v2 = FIRST $v1\nSET_STATUS $v2 CLOSED\nRETURN $v2\nEND",
+   "tests_passed": 1,
+   "tests_run": 2,
+   "tests": [
+    {
+     "id": "static_validation",
+     "pass": true
+    },
+    {
+     "id": "interface",
+     "pass": false
+    }
+   ]
+  },
+  {
+   "file": "proc_close_oldest_open_request_v3.json",
+   "status": "REJECTED_FAILED_COUNTERFACTUAL",
+   "program": "PROCEDURE close_oldest_open_request(person:PERSON)\n$v0 = FIND REQUEST WHERE SELF.WHO={person}\n$v1 = SORT $v0 WHEN\n$v2 = FIRST $v1\nSET_STATUS $v2 CLOSED\nRETURN $v2\nEND",
+   "tests_passed": 5,
+   "tests_run": 6,
+   "tests": [
+    {
+     "id": "static_validation",
+     "pass": true
+    },
+    {
+     "id": "interface",
+     "pass": true
+    },
+    {
+     "id": "replay_0",
+     "pass": true
+    },
+    {
+     "id": "counterfactual_t0_0",
+     "pass": true
+    },
+    {
+     "id": "counterfactual_t0_1",
+     "pass": true
+    },
+    {
+     "id": "perturb_all_closed_t0_src",
+     "pass": false
+    }
+   ]
+  }
+ ],
+ "active_pointer": [
+  {
+   "name": "close_oldest_open_request",
+   "procedure_id": "proc:close_oldest_open_request:v1",
+   "enabled": 1
+  }
+ ],
+ "lib_log": [
+  {
+   "n": 1,
+   "event": "CANDIDATE",
+   "json": {
+    "id": "proc:close_oldest_open_request:v1"
+   }
+  },
+  {
+   "n": 2,
+   "event": "TESTING",
+   "json": {
+    "id": "proc:close_oldest_open_request:v1"
+   }
+  },
+  {
+   "n": 3,
+   "event": "VERIFIED",
+   "json": {
+    "id": "proc:close_oldest_open_request:v1"
+   }
+  },
+  {
+   "n": 4,
+   "event": "ACTIVATE",
+   "json": {
+    "id": "proc:close_oldest_open_request:v1",
+    "retired": null
+   }
+  },
+  {
+   "n": 5,
+   "event": "CANDIDATE",
+   "json": {
+    "id": "proc:close_oldest_open_request:v2"
+   }
+  },
+  {
+   "n": 6,
+   "event": "TESTING",
+   "json": {
+    "id": "proc:close_oldest_open_request:v2"
+   }
+  },
+  {
+   "n": 7,
+   "event": "REJECTED_FAILED_COUNTERFACTUAL",
+   "json": {
+    "id": "proc:close_oldest_open_request:v2"
+   }
+  },
+  {
+   "n": 8,
+   "event": "CANDIDATE",
+   "json": {
+    "id": "proc:close_oldest_open_request:v3"
+   }
+  },
+  {
+   "n": 9,
+   "event": "TESTING",
+   "json": {
+    "id": "proc:close_oldest_open_request:v3"
+   }
+  },
+  {
+   "n": 10,
+   "event": "REJECTED_FAILED_COUNTERFACTUAL",
+   "json": {
+    "id": "proc:close_oldest_open_request:v3"
+   }
+  }
+ ]
+}

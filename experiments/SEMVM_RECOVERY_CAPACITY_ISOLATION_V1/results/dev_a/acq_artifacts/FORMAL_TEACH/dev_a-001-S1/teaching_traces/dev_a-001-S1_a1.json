@@ -1,0 +1,38 @@
+{
+ "name": "calls_with",
+ "mode": ":teach",
+ "declared": {
+  "person": "Judy"
+ },
+ "interaction_id": "dev_a-001-S1:a1",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_RECOVERY_CAPACITY_ISOLATION_V1/results/dev_a/work/FORMAL_TEACH/dev_a-001-S1/learn/snapshots/dev_a-001-S1_a1_start.sqlite",
+ "start_snapshot_sha256": "a619c9317026fb9f8aba8e6946938b7e1a5354acd990ae7a7583684d7a29e04f",
+ "utterances": [],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "CALL"
+   },
+   "where": [
+    [
+     "SELF",
+     "WHO",
+     {
+      "const": "Judy"
+     }
+    ]
+   ],
+   "status": null
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r1"
+   }
+  }
+ ],
+ "trace_sha256": "7177391c6cc39178c05daa43036a00f99240f483857b120ecbfc0cab14d14bb5",
+ "nl_mode": "GOLD_TRACE"
+}

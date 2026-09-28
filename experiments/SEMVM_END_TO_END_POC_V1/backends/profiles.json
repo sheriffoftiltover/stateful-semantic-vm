@@ -1,0 +1,10 @@
+{
+ "_comment": "Resource profiles: provider-neutral names used by JobSpecs; each backend maps them. Scientific configs never name a GPU.",
+ "profiles": {
+  "cpu-small": {"local": {"device": "cpu", "max_parallel": 4}, "modal": {"gpu": null, "cpu": 2.0, "memory_mib": 8192}},
+  "cpu-large": {"local": {"device": "cpu", "max_parallel": 2}, "modal": {"gpu": null, "cpu": 8.0, "memory_mib": 16384}},
+  "gpu-small": {"local": {"device": "cuda", "max_parallel": 1}, "modal": {"gpu": "T4", "cpu": 2.0, "memory_mib": 12288}},
+  "gpu-medium": {"local": {"device": "cuda", "max_parallel": 1}, "modal": {"gpu": "A10", "cpu": 4.0, "memory_mib": 16384}}
+ },
+ "notes": {"gpu-small": "measured V1 behaviour: T4, 2 cores, 12 GiB (peak host RSS 8.2 GB)"}
+}

@@ -1,0 +1,391 @@
+{
+ "name": "email_topic_report",
+ "mode": ":teach",
+ "declared": null,
+ "interaction_id": "dev-012-T5:19",
+ "start_snapshot": "$SEMVM_INTERNAL_ROOT/experiments/SEMVM_NATURAL_LANGUAGE_PROCEDURE_TEACHING_V1/results/dev/work/NL_TEACH/dev-012-T5/learn/snapshots/dev-012-T5_19_start.sqlite",
+ "start_snapshot_sha256": "88b43340ec495d13a1c252f9bea10a2973202ddf2d575603a046d7f2f1c979c8",
+ "utterances": [
+  {
+   "utterance": "Look up all of my emails.",
+   "uid": "dev-012-T5:20",
+   "instruction": "Look up all of my emails.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Look up all of my emails.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 4,
+    "top": [
+     {
+      "text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+      "score": -0.582
+     },
+     {
+      "text": "r1 = {\"op\": \"FIND_LAST\", \"type\": \"EMAIL\"}\n\n",
+      "score": -5.747
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -10.032
+     }
+    ],
+    "raw_text": "r1 = {\"op\": \"FIND\", \"type\": \"EMAIL\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "FIND",
+      "type": "EMAIL",
+      "bind": "r1"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND\", \"status\": null, \"type\": {\"const\": \"EMAIL\"}, \"where\": []}]",
+      "score": -0.582,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r1\", \"op\": \"FIND_LAST\", \"type\": {\"const\": \"EMAIL\"}}]",
+      "score": -5.747,
+      "n": 1
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -10.032,
+      "n": 1
+     }
+    ],
+    "margin": 5.165,
+    "reference_notes": [],
+    "seconds": 2.19,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "FIND",
+     "bind": "r1",
+     "type": {
+      "const": "EMAIL"
+     },
+     "where": [],
+     "status": null
+    }
+   ],
+   "diff": [],
+   "state_before": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "state_after": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "seconds": 2.276
+  },
+  {
+   "utterance": "Sort them into groups by recipient.",
+   "uid": "dev-012-T5:21",
+   "instruction": "Sort them into groups by recipient.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Sort them into groups by recipient.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"RECIPIENT\"}\n\n",
+      "score": -0.077
+     },
+     {
+      "text": "r2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHO\"}\n\n",
+      "score": -4.151
+     },
+     {
+      "text": "r2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"WHERE\"}\n\n",
+      "score": -6.256
+     }
+    ],
+    "raw_text": "r2 = {\"op\": \"GROUP\", \"of\": \"r1\", \"by\": \"RECIPIENT\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "GROUP",
+      "of": "r1",
+      "by": "RECIPIENT",
+      "bind": "r2"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"RECIPIENT\"}]",
+      "score": -0.077,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHO\"}]",
+      "score": -4.151,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r2\", \"list\": {\"var\": \"r1\"}, \"op\": \"GROUP\", \"rel\": \"WHERE\"}]",
+      "score": -6.256,
+      "n": 1
+     }
+    ],
+    "margin": 4.073,
+    "reference_notes": [
+     "GROUP.of=r1 licensed by R0"
+    ],
+    "seconds": 3.21,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "GROUP",
+     "bind": "r2",
+     "list": {
+      "var": "r1"
+     },
+     "rel": "RECIPIENT"
+    }
+   ],
+   "diff": [],
+   "state_before": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "state_after": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "seconds": 3.283
+  },
+  {
+   "utterance": "Summarize the topics per group.",
+   "uid": "dev-012-T5:22",
+   "instruction": "Summarize the topics per group.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Summarize the topics per group.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 7,
+    "top": [
+     {
+      "text": "r3 = {\"op\": \"REPORT\", \"of\": \"r2\", \"rel\": \"TOPIC\"}\n\n",
+      "score": -0.131
+     },
+     {
+      "text": "r3 = {\"op\": \"REPORT\", \"of\": \"r2\", \"rel\": \"WHERE\"}\n\n",
+      "score": -3.91
+     },
+     {
+      "text": "r3 = {\"op\": \"REPORT\", \"of\": \"r2\", \"rel\": \"WHO\"}\n\n",
+      "score": -5.482
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -5.726
+     }
+    ],
+    "raw_text": "r3 = {\"op\": \"REPORT\", \"of\": \"r2\", \"rel\": \"TOPIC\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "REPORT",
+      "of": "r2",
+      "rel": "TOPIC",
+      "bind": "r3"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"bind\": \"r3\", \"groups\": {\"var\": \"r2\"}, \"op\": \"REPORT\", \"rel\": \"TOPIC\"}]",
+      "score": -0.131,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r3\", \"groups\": {\"var\": \"r2\"}, \"op\": \"REPORT\", \"rel\": \"WHERE\"}]",
+      "score": -3.91,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"bind\": \"r3\", \"groups\": {\"var\": \"r2\"}, \"op\": \"REPORT\", \"rel\": \"WHO\"}]",
+      "score": -5.482,
+      "n": 1
+     },
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r2\"}}]",
+      "score": -5.726,
+      "n": 1
+     }
+    ],
+    "margin": 3.779,
+    "reference_notes": [
+     "REPORT.of=r2 licensed by R0"
+    ],
+    "seconds": 3.28,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "REPORT",
+     "bind": "r3",
+     "groups": {
+      "var": "r2"
+     },
+     "rel": "TOPIC"
+    }
+   ],
+   "diff": [],
+   "state_before": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "state_after": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "seconds": 3.35
+  },
+  {
+   "utterance": "Please return it.",
+   "uid": "dev-012-T5:23",
+   "instruction": "Please return it.",
+   "correction": false,
+   "grounding": {
+    "instruction": "Please return it.",
+    "values": {
+     "PERSON": [],
+     "TIME": [],
+     "PLACE": [],
+     "TOPIC": []
+    },
+    "llm_calls": 2,
+    "top": [
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r3\"}\n\n",
+      "score": -0.277
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r1\"}\n\n",
+      "score": -1.651
+     },
+     {
+      "text": "{\"op\": \"RETURN\", \"value\": \"r2\"}\n\n",
+      "score": -3.033
+     },
+     {
+      "text": "{\"op\": \"UNSUPPORTED\"}\n\n",
+      "score": -8.773
+     }
+    ],
+    "raw_text": "{\"op\": \"RETURN\", \"value\": \"r3\"}\n\n",
+    "raw_actions": [
+     {
+      "op": "RETURN",
+      "value": "r3"
+     }
+    ],
+    "candidates": [
+     {
+      "outcome": "[{\"op\": \"RETURN\", \"value\": {\"var\": \"r3\"}}]",
+      "score": -0.002,
+      "n": 3
+     },
+     {
+      "outcome": "SPECIAL:UNSUPPORTED",
+      "score": -8.773,
+      "n": 1
+     }
+    ],
+    "margin": 8.771,
+    "reference_notes": [
+     "RETURN.value=r3 licensed by R3"
+    ],
+    "seconds": 1.32,
+    "repaired": false,
+    "segmentation": {
+     "input_clause_count": 1,
+     "strong_clause_count": 1,
+     "tried": [],
+     "whole_status": "OK",
+     "whole_valid": true,
+     "whole_why": null
+    },
+    "grounded_clause_count": 1
+   },
+   "status": "OK",
+   "steps": [
+    {
+     "op": "RETURN",
+     "value": {
+      "var": "r3"
+     }
+    }
+   ],
+   "diff": [],
+   "state_before": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "state_after": "cb87a397a279055f786a97122df04dca2fa6d8b489be11f66141cdb95cd560d2",
+   "seconds": 1.4
+  }
+ ],
+ "final_steps": [
+  {
+   "op": "FIND",
+   "bind": "r1",
+   "type": {
+    "const": "EMAIL"
+   },
+   "where": [],
+   "status": null
+  },
+  {
+   "op": "GROUP",
+   "bind": "r2",
+   "list": {
+    "var": "r1"
+   },
+   "rel": "RECIPIENT"
+  },
+  {
+   "op": "REPORT",
+   "bind": "r3",
+   "groups": {
+    "var": "r2"
+   },
+   "rel": "TOPIC"
+  },
+  {
+   "op": "RETURN",
+   "value": {
+    "var": "r3"
+   }
+  }
+ ],
+ "trace_sha256": "fda47d9998efb27f74c47187db6e4e6cc7a20ea2c42c17c9a44cdf3b2517c53a",
+ "nl_mode": "NL_TEACH"
+}

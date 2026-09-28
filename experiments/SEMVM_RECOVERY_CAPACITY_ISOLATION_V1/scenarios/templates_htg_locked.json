@@ -1,0 +1,73 @@
+{
+ "split": "locked_test",
+ "note": "LOCKED_TEST natural-language templates for HTG V1, authored blind and independently of the DEV wording. Placeholders: {P} person, {T} time, {PL} place, {TO} topic. Clauses are lower-case imperatives without final punctuation. 'A' = direct imperative, 'B' = lexical paraphrase. Return patterns carry 'noun' and pronoun-only forms.",
+ "clauses": {
+  "find_calls_with": {"A": ["pull up the calls with {P}", "list every call with {P}"], "B": ["fetch the calls I have lined up with {P}", "retrieve each call with {P}", "bring up all calls with {P}"]},
+  "find_open_calls_with": {"A": ["pull up the open calls with {P}", "list the open calls with {P}"], "B": ["fetch the calls with {P} that remain open", "retrieve each open call with {P}", "bring up the calls with {P} that nobody has closed"], "E": ["of the calls with {P}, keep just the open ones", "keep just the calls with {P} that are still open"]},
+  "find_calls_at": {"A": ["pull up the calls set for {T}", "list the calls happening at {T}"], "B": ["fetch the calls booked for {T}", "retrieve the calls on the schedule at {T}"]},
+  "find_requests_by_at": {"A": ["pull up the requests made by {P} at {T}", "list the requests from {P} for {T}"], "B": ["fetch the requests that {P} filed for {T}", "retrieve the requests {P} put in for {T}"]},
+  "find_open_emails_to": {"A": ["pull up the open emails sent to {P}", "list the open emails to {P}"], "B": ["fetch the emails addressed to {P} that remain open", "retrieve each open email sent to {P}"], "E": ["of the emails sent to {P}, keep just the open ones", "keep just the emails to {P} that are still open"]},
+  "find_all_emails": {"A": ["pull up all of my emails", "list every one of my emails"], "B": ["fetch the full set of emails", "retrieve each email I have"]},
+  "find_last_reminder": {"A": ["pull up my most recent reminder", "fetch my newest reminder"], "B": ["retrieve the latest reminder I have", "grab the reminder that came last"]},
+  "find_last_email": {"A": ["pull up my most recent email", "fetch my newest email"], "B": ["retrieve the latest email I have", "grab the email that came last"]},
+  "find_last_visit": {"A": ["pull up my most recent visit", "fetch my newest visit"], "B": ["retrieve the latest visit I have", "grab the visit that came last"]},
+  "update_when": {"A": ["shift it to {T}", "put it at {T}"], "B": ["push it to {T}", "make its time {T}"]},
+  "update_recipient": {"A": ["set its recipient to {P}", "send it to {P} instead"], "B": ["have {P} be the recipient", "replace the recipient with {P}"]},
+  "update_where": {"A": ["shift it to {PL}", "put it in {PL}"], "B": ["make its place {PL}", "have it take place in {PL}"]},
+  "update_where_again": {"A": ["shift that one to {PL} as well", "put that one in {PL} too"], "B": ["make that one's place {PL} too", "have that one take place in {PL} as well"]},
+  "child": {"A": ["fetch the call it is a reminder for", "pull up its call"], "B": ["retrieve the call this reminder is about", "grab the call linked to it"]},
+  "parent": {"A": ["fetch its parent", "pull up its parent"], "B": ["retrieve the event that contains it", "grab its parent event"]},
+  "get_who": {"A": ["check which person it is with", "fetch who it is with"], "B": ["determine who is on that call", "figure out which person is on it"]},
+  "first": {"A": ["keep the first one", "select the first of them"], "B": ["go with the first call", "use the first result"]},
+  "count": {"A": ["tally them", "tally how many of them there are"], "B": ["figure out how many of them exist", "find the number of them"]},
+  "select_who": {"A": ["list who is on each of them", "fetch the person each of them is with"], "B": ["gather who they are with", "extract the person on every call"]},
+  "group_by_recipient": {"A": ["bucket them by recipient", "bucket them by who they are sent to"], "B": ["split them up by recipient", "organize them into recipient groups"]},
+  "report_topics": {"A": ["write up a report of each group's topics", "produce a report of the topics per group"], "B": ["list the topics of each group as a report", "compile the topics of every group"]},
+  "close_each": {"A": ["close every one of them", "close each one"], "B": ["mark them all closed", "set all of them to closed"]},
+  "call_person_on_call_at": {"A": ["call person_on_call_at to get who is on the {T} call"], "B": ["apply person_on_call_at to find out who I talk to at {T}", "invoke person_on_call_at for {T}"]},
+  "call_count_calls_with": {"A": ["tally the calls with that person via count_calls_with"], "B": ["apply count_calls_with to that person", "invoke count_calls_with on that person"]}
+ },
+ "returns": {
+  "return_count": {"noun": {"A": ["return that count", "return the total"], "B": ["send back the number", "pass back the count"]}, "pronoun": ["return that", "send it back"]},
+  "return_person": {"noun": {"A": ["return that individual", "return that name"], "B": ["send back the person", "pass back the name"]}, "pronoun": ["return that", "send it back"]},
+  "return_people": {"noun": {"A": ["return those people", "return the list of names"], "B": ["send back the people", "pass back the names"]}, "plural_pronoun": ["return those", "send them back"]},
+  "return_report": {"noun": {"A": ["return that report"], "B": ["send back the report", "pass back the report"]}, "pronoun": ["return that", "send it back"]},
+  "return_calls": {"noun": {"A": ["return those calls"], "B": ["send back the calls"]}, "plural_pronoun": ["return those", "send them back"]},
+  "return_emails": {"noun": {"A": ["return those emails"], "B": ["send back the emails"]}, "plural_pronoun": ["return those", "send them back"]},
+  "return_email": {"noun": {"A": ["return that email"], "B": ["send back the email"]}, "pronoun": ["return that", "send it back"]},
+  "return_visit": {"noun": {"A": ["return that visit"], "B": ["send back the visit", "pass back that visit"]}, "pronoun": ["return that", "send it back"]}
+ },
+ "combos": {
+  "find_calls_with+count": ["tally the calls with {P}", "tally how many calls there are with {P}"],
+  "find_open_calls_with+count": ["tally the open calls with {P}", "tally how many calls with {P} are open"],
+  "count+return_count": ["return the number of them", "report back how many of them there are"],
+  "first+get_who": ["check who the first one is with"],
+  "find_last_email+update_recipient": ["set the recipient of my most recent email to {P}"],
+  "find_last_visit+update_where": ["shift my most recent visit to {PL}"],
+  "find_last_reminder+update_when": ["shift my most recent reminder to {T}"],
+  "parent+update_where_again": ["put its parent in {PL} too"],
+  "find_all_emails+group_by_recipient": ["bucket all of my emails by recipient"]
+ },
+ "connectors": ["{a}; then {b}", "{a}, and after that {b}", "first {a}, then {b}"],
+ "sentence": {"prefixes": ["", "", "now "], "end": "."},
+ "clarify_answers": {"people": ["the people are what I want", "I want the people"]},
+ "unsupported": ["phone {P} about it", "tweet it out", "export it as a spreadsheet", "fax the list to me"],
+ "failing": [["grab my newest plan and set it to closed", "PLAN"], ["fetch my latest note and mark it closed", "NOTE"]],
+ "correction_marker": ["sorry, "],
+ "rephrase_prefix": "In other words: ",
+ "_pdx_extra": {
+  "dev": {
+   "find_open_requests_by": {"A": ["pull up the open requests made by {P}", "list the open requests from {P}"], "B": ["fetch the requests by {P} that remain open"]},
+   "sort_by_time": {"A": ["order them by time", "arrange them by their time"], "B": ["line them up chronologically by time"]},
+   "close_it": {"A": ["close that", "set it closed"], "B": ["mark that one as closed"]},
+   "find_requests_by": {"A": ["pull up every request from {P}", "list all requests made by {P}"], "B": ["fetch each request by {P}"]},
+   "find_emails_to": {"A": ["pull up the emails sent to {P}", "list every email to {P}"], "B": ["fetch each email addressed to {P}"]},
+   "find_emails_about": {"A": ["pull up the emails about {TO}", "list every email on {TO}"], "B": ["fetch each email about {TO}"]},
+   "find_visits_in": {"A": ["pull up the visits in {PL}", "list every visit at {PL}"], "B": ["fetch each visit in {PL}"]}
+  },
+  "returns": {
+   "return_request": {"noun": {"A": ["return that request"], "B": ["send back the request"]}, "pronoun": ["return that"]},
+   "return_requests": {"noun": {"A": ["return those requests"], "B": ["send back the requests"]}, "plural_pronoun": ["return those"]}
+  }
+ }
+}

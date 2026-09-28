@@ -1,0 +1,109 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "SEMVM canonical procedure AST V1",
+ "type": "object",
+ "required": [
+  "name",
+  "parameters",
+  "body"
+ ],
+ "properties": {
+  "name": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9_]*$"
+  },
+  "parameters": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "name",
+     "type"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "type": {
+      "enum": [
+       "PERSON",
+       "TIME",
+       "PLACE",
+       "TOPIC",
+       "EVENT_TYPE",
+       "STATUS"
+      ]
+     }
+    }
+   }
+  },
+  "body": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/step"
+   }
+  }
+ },
+ "$defs": {
+  "expr": {
+   "oneOf": [
+    {
+     "type": "object",
+     "required": [
+      "var"
+     ]
+    },
+    {
+     "type": "object",
+     "required": [
+      "param"
+     ]
+    },
+    {
+     "type": "object",
+     "required": [
+      "const"
+     ]
+    }
+   ]
+  },
+  "step": {
+   "type": "object",
+   "required": [
+    "op"
+   ],
+   "properties": {
+    "op": {
+     "enum": [
+      "CALL",
+      "CHILD",
+      "COUNT",
+      "DELETE",
+      "FILTER",
+      "FIND",
+      "FIND_LAST",
+      "FIRST",
+      "FOR",
+      "GET",
+      "GROUP",
+      "IF",
+      "PARENT",
+      "PRECONDITION",
+      "REPORT",
+      "RETRACT",
+      "RETURN",
+      "SELECT",
+      "SET_STATUS",
+      "SORT",
+      "UPDATE"
+     ]
+    },
+    "bind": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "x-text-form": "procedure/lang.py (PROCEDURE name(p:TYPE, ...) / SEMVM_STEP_V1 lines / END)",
+ "x-identity": "lang.program_hash: canonical JSON of parameter types + body with parameters renamed positionally"
+}

@@ -1,0 +1,567 @@
+[
+ {
+  "turn": 0,
+  "pid": 2645658,
+  "utterance_id": "locked_test-017-S11:0",
+  "INPUT": "remind delta by Aunt re gamma , and after that then , message gamma and while in Delhi re delta",
+  "kind": "ASSERT",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t000",
+  "STATE_BEFORE": "d8122e2ff4bc293fc67eae4bd643a7313232e8d85e6ad91fd2f6c6ba329d8c98",
+  "NEURAL_OUTPUT": {
+   "envelope": {
+    "inner": "MESSAGE",
+    "layout": [
+     "straddle_o3",
+     [
+      "M1",
+      "M2"
+     ]
+    ],
+    "n_mod": 2,
+    "outer": "REMINDER"
+   },
+   "graph": {
+    "edges": [
+     [
+      "TODO",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "MESSAGE",
+       null,
+       12
+      ]
+     ],
+     [
+      "WHERE",
+      [
+       "REMINDER",
+       null,
+       0
+      ],
+      [
+       "PLACE",
+       "Delhi",
+       17
+      ]
+     ],
+     [
+      "WHO",
+      [
+       "MESSAGE",
+       null,
+       12
+      ],
+      [
+       "PERSON",
+       "Aunt",
+       3
+      ]
+     ]
+    ],
+    "occs": [
+     [
+      "MESSAGE",
+      null,
+      12
+     ],
+     [
+      "PERSON",
+      "Aunt",
+      3
+     ],
+     [
+      "PLACE",
+      "Delhi",
+      17
+     ],
+     [
+      "REMINDER",
+      null,
+      0
+     ]
+    ],
+    "root": [
+     "REMINDER",
+     null,
+     0
+    ]
+   },
+   "log_mass": 1796.5679931640625,
+   "margin": 5.967529296875,
+   "n_outputs": 95,
+   "status": "PARSED"
+  },
+  "neural_cached": true,
+  "CANONICAL_IR": {
+   "objects": [
+    {
+     "local_id": "e0",
+     "type": "REMINDER"
+    },
+    {
+     "local_id": "e1",
+     "type": "MESSAGE"
+    },
+    {
+     "local_id": "v0",
+     "type": "PERSON",
+     "surface": "Aunt"
+    },
+    {
+     "local_id": "v1",
+     "type": "PLACE",
+     "surface": "Delhi"
+    }
+   ],
+   "relations": [
+    {
+     "predicate": "TODO",
+     "subject": "e0",
+     "object": "e1"
+    },
+    {
+     "predicate": "WHERE",
+     "subject": "e0",
+     "object": "v1"
+    },
+    {
+     "predicate": "WHO",
+     "subject": "e1",
+     "object": "v0"
+    }
+   ]
+  },
+  "IR_VALIDATION": "OK",
+  "RESOLUTION": [
+   [
+    "EVENT",
+    "e0",
+    "NEW"
+   ],
+   [
+    "EVENT",
+    "e1",
+    "NEW"
+   ],
+   [
+    "ENTITY",
+    "v0",
+    "Aunt",
+    "NEW",
+    null
+   ],
+   [
+    "SCALAR",
+    "v1",
+    "Delhi",
+    "place:delhi"
+   ]
+  ],
+  "VM_PROGRAM": [
+   [
+    "CREATE",
+    "REMINDER",
+    "$e0"
+   ],
+   [
+    "CREATE",
+    "MESSAGE",
+    "$e1"
+   ],
+   [
+    "CREATE",
+    "PERSON",
+    "$v0"
+   ],
+   [
+    "ADD_ALIAS",
+    "$v0",
+    "Aunt"
+   ],
+   [
+    "ENSURE_VALUE",
+    "place:delhi",
+    "PLACE",
+    "delhi",
+    "Delhi"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "TODO",
+    "$e1"
+   ],
+   [
+    "ASSERT",
+    "$e0",
+    "WHERE",
+    "place:delhi"
+   ],
+   [
+    "ASSERT",
+    "$e1",
+    "WHO",
+    "$v0"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "e5d48c94c6d424fadb19b5303b4041a9eb91a7f1063291a4f59202e7123fc63a",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "+obj",
+    "reminder:000001",
+    "REMINDER"
+   ],
+   [
+    "+obj",
+    "message:000001",
+    "MESSAGE"
+   ],
+   [
+    "+obj",
+    "person:000001",
+    "PERSON"
+   ],
+   [
+    "+alias",
+    "person:000001",
+    "Aunt"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "TODO",
+    "message:000001"
+   ],
+   [
+    "+rel",
+    "reminder:000001",
+    "WHERE",
+    "place:delhi"
+   ],
+   [
+    "+rel",
+    "message:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "5152b1f9f777bb13651c54235b649e5ff1bf92f07ff83efbc84432a2b759ae78",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "message:000001",
+     "WHO",
+     "person:000001"
+    ],
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 1,
+  "pid": 2645658,
+  "utterance_id": "locked_test-017-S11:1",
+  "INPUT": "RETRACT LAST_MESSAGE WHO",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t001",
+  "STATE_BEFORE": "5152b1f9f777bb13651c54235b649e5ff1bf92f07ff83efbc84432a2b759ae78",
+  "COMMAND_AST": {
+   "op": "RETRACT",
+   "ref": "LAST_MESSAGE",
+   "rel": "WHO"
+  },
+  "VM_PROGRAM": [
+   [
+    "RETRACT",
+    "message:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "1a6221f391e1ec85ebeba55b28df79459dec3852228571cc36a5bad04375c52c",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-rel",
+    "message:000001",
+    "WHO",
+    "person:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "8223db466013a81985737d9d4dd7d3d5296fb07af6ab832e8ffdaef6efc59e77",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 2,
+  "pid": 2645658,
+  "utterance_id": "locked_test-017-S11:2",
+  "INPUT": "QUERY WHO OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t002",
+  "STATE_BEFORE": "8223db466013a81985737d9d4dd7d3d5296fb07af6ab832e8ffdaef6efc59e77",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHO",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHO",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "dfb99ecbc3f70b32766fccc786a1d1ec453c688e4f517ae45de9f6bcaf5395dc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "8223db466013a81985737d9d4dd7d3d5296fb07af6ab832e8ffdaef6efc59e77",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "message:000001",
+     "MESSAGE"
+    ],
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "TODO",
+     "message:000001"
+    ],
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 3,
+  "pid": 2645658,
+  "utterance_id": "locked_test-017-S11:3",
+  "INPUT": "DELETE LAST_MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t003",
+  "STATE_BEFORE": "8223db466013a81985737d9d4dd7d3d5296fb07af6ab832e8ffdaef6efc59e77",
+  "COMMAND_AST": {
+   "op": "DELETE",
+   "ref": "LAST_MESSAGE"
+  },
+  "VM_PROGRAM": [
+   [
+    "DELETE",
+    "message:000001"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "f76f3eaa47e0f853e188f71449f3a12edf82535960d91c0aa7ef8cf30d7f23fc",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [
+   [
+    "-obj",
+    "message:000001"
+   ],
+   [
+    "-rel",
+    "reminder:000001",
+    "TODO",
+    "message:000001"
+   ]
+  ],
+  "RETURN": null,
+  "STATE_AFTER": "39bf012b8ac9796ea31f2bfb296b88e0f47de0ce860df8e6781d050d57123bf1",
+  "RESPONSE": "OK.",
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ]
+   ]
+  }
+ },
+ {
+  "turn": 4,
+  "pid": 2645658,
+  "utterance_id": "locked_test-017-S11:4",
+  "INPUT": "QUERY WHERE OF MESSAGE",
+  "kind": "COMMAND",
+  "mode": "FULL",
+  "reference_timestamp": "2026-09-26T16:00:00-07:00#t004",
+  "STATE_BEFORE": "39bf012b8ac9796ea31f2bfb296b88e0f47de0ce860df8e6781d050d57123bf1",
+  "COMMAND_AST": {
+   "op": "QUERY",
+   "rel": "WHERE",
+   "target": "MESSAGE",
+   "where": []
+  },
+  "VM_PROGRAM": [
+   [
+    "MATCH",
+    {
+     "target": "MESSAGE",
+     "rel": "WHERE",
+     "where": []
+    }
+   ],
+   [
+    "RETURN",
+    "VALUES"
+   ]
+  ],
+  "VM_PROGRAM_JSON_SHA256": "7e0299949495b894abfa0d7d8a8136a132f258302e5c2c272f6dbcef90da9bf7",
+  "status": "OK",
+  "failure_stage": null,
+  "STATE_DIFF": [],
+  "RETURN": [],
+  "STATE_AFTER": "39bf012b8ac9796ea31f2bfb296b88e0f47de0ce860df8e6781d050d57123bf1",
+  "RESPONSE": "No matching item.",
+  "RETURN_RENDERED": [],
+  "STATE_CANONICAL_AFTER": {
+   "objects": [
+    [
+     "person:000001",
+     "PERSON"
+    ],
+    [
+     "reminder:000001",
+     "REMINDER"
+    ]
+   ],
+   "relations": [
+    [
+     "reminder:000001",
+     "WHERE",
+     "place:delhi"
+    ]
+   ],
+   "aliases": [
+    [
+     "person:000001",
+     "Aunt"
+    ]
+   ]
+  }
+ }
+]
